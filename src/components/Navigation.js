@@ -7,7 +7,7 @@ const Navigation = () => {
       <div>
         <img />
       </div>
-      <div>
+      <nav>
         <h1>
           <Link to="/">Yagmur C. Tas</Link>
         </h1>
@@ -16,13 +16,18 @@ const Navigation = () => {
           curiosity for many things in life. Reads a lot and sometimes writes a
           lot. Also makes things out of clay that she's sometimes proud of.
         </p>
-        <p>
-          <Link to="/blog">Blog</Link>
-        </p>
-        <p>
-          <Link to="/gallery">Gallery</Link>
-        </p>
-      </div>
+        <ul>
+          <li>
+            <Link to="/">Portfolio</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/gallery">Gallery</Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }

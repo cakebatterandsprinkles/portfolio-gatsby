@@ -1,13 +1,16 @@
 import React from "react"
+import Layout from "../components/Layout"
 
 const portfolioPage = () => {
   return (
-    <div>
+    <Layout>
       <div>
-        <h1>Art Gallery</h1>
-        <p>Art related stuff will show here</p>
+        <div>
+          <h1>Art Gallery</h1>
+          <p>Art related stuff will show here</p>
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
