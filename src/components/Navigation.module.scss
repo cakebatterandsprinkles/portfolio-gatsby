@@ -1,0 +1,30 @@
+.heading {
+  font-family: "ovo";
+  text-decoration: none;
+  color: #222;
+}
+
+.navlink-container {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  color: gray;
+}
+
+.active-nav-link {
+  color: deeppink;
+}
+
+.aboutMe {
+  font-family: "Muli";
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+}

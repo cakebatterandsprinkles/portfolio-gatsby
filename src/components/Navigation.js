@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import styles from "./Navigation.module.scss"
 
 const Navigation = () => {
   return (
@@ -9,22 +10,42 @@ const Navigation = () => {
       </div>
       <nav>
         <h1>
-          <Link to="/">Yagmur C. Tas</Link>
+          <Link to="/" className={styles.heading}>
+            Yagmur C. Tas
+          </Link>
         </h1>
-        <p>
+        <p className={styles.aboutMe}>
           Full stack web developer living in Orlando, Florida. Has an immense
           curiosity for many things in life. Reads a lot and sometimes writes a
           lot. Also makes things out of clay that she's sometimes proud of.
         </p>
-        <ul>
+        <ul className={styles.navlinkContainer}>
           <li>
-            <Link to="/">Portfolio</Link>
+            <Link
+              to="/"
+              className={styles.navLink}
+              activeClassName={styles.activeNavLink}
+            >
+              Portfolio{" "}
+            </Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link
+              to="/blog"
+              className={styles.navLink}
+              activeClassName={styles.activeNavLink}
+            >
+              Blog
+            </Link>
           </li>
           <li>
-            <Link to="/gallery">Gallery</Link>
+            <Link
+              to="/gallery"
+              className={styles.navLink}
+              activeClassName={styles.activeNavLink}
+            >
+              Gallery
+            </Link>
           </li>
         </ul>
       </nav>

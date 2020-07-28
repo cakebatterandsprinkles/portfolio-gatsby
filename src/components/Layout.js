@@ -1,19 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
+import "../styles/index.scss"
+import styles from "./Layout.module.scss"
 
 const Layout = props => {
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
+      <div className={styles.navWrapper}>
         <Navigation />
       </div>
-      <div>
-        <div>{props.children}</div>
-        <div>
-          <Footer />
-        </div>
+      <div className={styles.contentWrapper}>
+        <div className={styles.content}>{props.children}</div>
+        <Footer />
       </div>
     </div>
   )
