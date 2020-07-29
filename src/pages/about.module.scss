@@ -1,0 +1,31 @@
+.aboutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.aboutWrapper {
+  width: 800px;
+  background-color: white;
+  padding: 3rem;
+}
+
+.greeting {
+  font-size: 2rem;
+  font-family: "Share Tech Mono", monospace;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.timeLink {
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  background-color: var(--lightcloudgray);
+}
+
+.aboutMe {
+  line-height: 1.25rem;
+  padding-top: 2rem;
+}

@@ -1,11 +1,13 @@
 :root {
   --black: #202020;
-  --pink: deeppink;
-  --lightgray: #cedeec;
+  --lightcloudgray: #cedeec;
+  --lightgray: #cacfd2;
+  --silver: #bfcacf;
+  --snow: #fbf9fa;
   --purple: #ae9fe0;
   --palepink: #eb89a5;
-  --regular-font: "Muli";
-  --heading-font: "Ovo";
+  --regular-font: "Anonymous Pro";
+  --heading-font: "Muli";
   --font-size: 16px;
 }
 
@@ -262,7 +264,7 @@ form,
 noscript,
 iframe,
 address {
-  margin: 0 0 1.45rem 0;
+  margin: 0 0 1rem 0;
   padding: 0;
 }
 

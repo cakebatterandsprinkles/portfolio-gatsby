@@ -5,7 +5,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Ovo", "Muli"],
+          families: ["Ovo", "Muli", "Anonymous Pro", "Share Tech Mono"],
         },
       },
     },
