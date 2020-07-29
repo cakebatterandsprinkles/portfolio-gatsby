@@ -12,15 +12,15 @@
 
 .nav-link {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 .nav-link:hover {
-  color: gray;
+  color: var(--purple);
 }
 
 .active-nav-link {
-  color: deeppink;
+  color: var(--pink);
 }
 
 .aboutMe {
