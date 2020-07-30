@@ -53,7 +53,7 @@
 }
 
 .nav-list {
-  height: 50vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,4 +97,69 @@
   margin-bottom: 1.5rem;
   filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
     hue-rotate(168deg) brightness(91%) contrast(92%);
+}
+
+@media (max-width: 800px) {
+  .imgWrapper {
+    padding: 1rem;
+  }
+
+  .img {
+    margin: 0.5rem 0;
+    height: 10rem;
+  }
+
+  .nav-list {
+    height: 20vh;
+  }
+
+  .navlink-container > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navlink-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    justify-content: space-evenly;
+    width: 70%;
+  }
+
+  .heading {
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+  .hr {
+    margin-bottom: 1.25rem;
+  }
+
+  .point {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .socialIcon {
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .mailIcon {
+    height: 1.1rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .navlink-container {
+    width: 90%;
+  }
 }
