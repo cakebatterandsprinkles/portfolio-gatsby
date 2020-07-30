@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
 import styles from "./about.module.scss"
+import coffee from "../images/main/coffee.svg"
+import watch from "../images/main/watch.svg"
 
 function AboutPage() {
   const [text, setText] = useState("")
@@ -10,10 +12,12 @@ function AboutPage() {
         <div className={styles.aboutWrapper}>
           <p className={styles.greeting}>Hello!</p>
           <button className={styles.timeLink} onClick={() => setText("long")}>
+            <img src={coffee} alt="coffee img" className={styles.icon} />
             "I have time"
           </button>{" "}
           or{" "}
           <button className={styles.timeLink} onClick={() => setText("short")}>
+            <img src={watch} alt="watch img" className={styles.icon} />
             "make it short"
           </button>
           ?

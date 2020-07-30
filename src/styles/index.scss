@@ -1,14 +1,20 @@
 :root {
   --black: #202020;
   --lightcloudgray: #cedeec;
+  --darkcloudgray: #b3c1ce;
   --lightgray: #cacfd2;
+  --darkgray: #3d5062;
   --silver: #bfcacf;
   --snow: #fbf9fa;
   --purple: #ae9fe0;
   --palepink: #eb89a5;
+  --yellow: #feb101;
+  --orange: #ff6200;
+  --crimson: #eb2557;
+  --limegreen: #21d511;
+  --cornflowerblue: #4399de;
   --regular-font: "Anonymous Pro";
-  --heading-font: "Muli";
-  --font-size: 16px;
+  --heading-font: "Share Tech Mono";
 }
 
 html {
@@ -221,7 +227,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 1.45rem 0;
+  margin: 0 0 0.5rem 0;
   padding: 0;
   color: inherit;
   font-family: var(--heading-font), BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -264,7 +270,7 @@ form,
 noscript,
 iframe,
 address {
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
   padding: 0;
 }
 

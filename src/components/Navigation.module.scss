@@ -1,15 +1,50 @@
 .heading {
   font-family: var(--heading-font);
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: var(--black);
-  margin: auto;
+  margin-bottom: 1rem !important;
+}
+
+.hr {
+  height: 2px;
+  width: 9rem;
+  background-color: var(--black);
+  margin-bottom: 2rem;
 }
 
 .navlink-container {
   text-decoration: none;
   list-style-type: none;
-  margin: 0;
+  margin-bottom: 2rem;
+  margin-left: 0;
+}
+
+.navlink-container > li {
+  display: flex;
+}
+
+.point {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.orange {
+  background-color: var(--orange);
+}
+
+.crimson {
+  background-color: var(--crimson);
+}
+
+.green {
+  background-color: var(--limegreen);
 }
 
 .nav-link {
@@ -18,7 +53,7 @@
 }
 
 .nav-list {
-  height: 30vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,21 +61,16 @@
 }
 
 .nav-link:hover {
-  color: var(--lightcloudgray);
+  color: var(--darkcloudgray);
 }
 
 .active-nav-link {
-  color: var(--lightgray);
-}
-
-.aboutMe {
-  font-family: var(--heading-font);
-  font-size: 0.9rem;
-  line-height: 1.25rem;
+  font-weight: bold;
+  color: var(--darkgray);
 }
 
 .imgWrapper {
-  background-color: var(--lightcloudgray);
+  background-color: var(--yellow);
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -51,4 +81,20 @@
   height: 13rem;
   width: auto;
   border-radius: 50%;
+}
+
+.socialIcon {
+  margin-right: 0.75rem;
+  height: 1.5rem;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
+    hue-rotate(168deg) brightness(91%) contrast(92%);
+}
+
+.mailIcon {
+  height: 1.35rem;
+  width: auto;
+  margin-bottom: 1.5rem;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
+    hue-rotate(168deg) brightness(91%) contrast(92%);
 }
