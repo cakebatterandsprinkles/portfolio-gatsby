@@ -63,10 +63,18 @@ const Navigation = () => {
           </li>
         </ul>
         <div>
-          <a href="https://github.com/cakebatterandsprinkles" target="_blank">
+          <a
+            href="https://github.com/cakebatterandsprinkles"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={github} alt="github icon" className={styles.socialIcon} />
           </a>
-          <a href="https://twitter.com/modaijoubu" target="_blank">
+          <a
+            href="https://twitter.com/modaijoubu"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={twitter}
               alt="twitter icon"
@@ -76,6 +84,7 @@ const Navigation = () => {
           <a
             href="https://www.linkedin.com/in/yagmur-cetin-tas/"
             target="_blank"
+            rel="noreferrer"
           >
             <img
               src={linkedin}
@@ -83,7 +92,11 @@ const Navigation = () => {
               className={styles.socialIcon}
             />
           </a>
-          <a href="mailto:yagmurcetin@gmail.com" target="_blank">
+          <a
+            href="mailto:yagmurcetin@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={mail} alt="mail icon" className={styles.mailIcon} />
           </a>
         </div>
