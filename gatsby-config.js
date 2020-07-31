@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: "portfolio-gatsby",
+    author: "Yagmur C. Tas",
+    github: "cakebatterandsprinkles",
+  },
   plugins: [
     `gatsby-plugin-sass`,
     {

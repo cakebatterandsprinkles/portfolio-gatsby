@@ -27,7 +27,7 @@ function AboutPage() {
           </div>
 
           {text === "" ? null : (
-            <p className={styles.aboutMe}>
+            <div className={styles.aboutMe}>
               {text === "short" ? (
                 <p>
                   I am a{" "}
@@ -44,7 +44,7 @@ function AboutPage() {
               ) : (
                 "Loooong text here."
               )}
-            </p>
+            </div>
           )}
         </div>
       </div>

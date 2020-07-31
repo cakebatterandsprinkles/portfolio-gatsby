@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import styles from "./Navigation.module.scss"
 import tempCat from "../images/main/tempcat.jpg"
 import linkedin from "../images/main/social-1_round-linkedin.svg"
@@ -8,6 +8,16 @@ import twitter from "../images/main/social-1_round-twitter.svg"
 import mail from "../images/main/envelope.svg"
 
 const Navigation = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `)
+
   return (
     <header className={styles.mainContainer}>
       <div className={styles.imgWrapper}>
@@ -16,7 +26,7 @@ const Navigation = () => {
       <nav className={styles.navList}>
         <p>
           <Link to="/" className={styles.heading}>
-            Yagmur C. Tas
+            {data.site.siteMetadata.author}
           </Link>
         </p>
         <div className={styles.hr}></div>
