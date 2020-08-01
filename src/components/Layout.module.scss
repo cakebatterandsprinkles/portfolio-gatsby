@@ -32,3 +32,10 @@
     height: 50vh;
   }
 }
+
+@media (max-width: 600px) {
+  .content {
+    flex-grow: 1;
+    padding: 2rem 1rem;
+  }
+}

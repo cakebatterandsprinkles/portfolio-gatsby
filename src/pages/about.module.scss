@@ -8,8 +8,8 @@
   width: 800px;
   background-color: white;
   padding: 3rem;
-  height: 80vh;
-  margin-top: 2rem;
+  height: 90vh;
+  margin-top: 8rem;
 }
 
 .greeting {
@@ -19,24 +19,90 @@
   padding-bottom: 1rem;
 }
 
+.queryWrapper {
+  display: flex;
+  margin-top: 1rem;
+}
+
 .timeLink {
   border: none;
   cursor: pointer;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 0.8rem;
   background-color: var(--lightcloudgray);
   border-radius: 5px;
   display: flex;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .icon {
-  height: 2rem;
+  height: 1.25rem;
   width: auto;
   margin: 0;
   color: var(--purple);
+  margin-right: 0.5rem;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
+    hue-rotate(168deg) brightness(91%) contrast(92%);
 }
 
 .aboutMe {
-  line-height: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.4rem;
   padding-top: 2rem;
+  text-align: justify;
+  font-family: "Roboto Mono", monospace;
+}
+
+.yellow {
+  background-color: var(--yellow);
+  color: white;
+  padding: 0.5rem;
+}
+
+.orange {
+  background-color: var(--orange);
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.crimson {
+  background-color: var(--crimson);
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.green {
+  background-color: var(--limegreen);
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.blue {
+  background-color: var(--cornflowerblue);
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.purple {
+  background-color: var(--darkviolet);
+  color: white;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .timeLink {
+    font-size: 0.8rem;
+  }
+  .icon {
+    margin-right: 0;
+  }
+
+  .aboutWrapper {
+    padding: 2rem 1rem;
+  }
 }

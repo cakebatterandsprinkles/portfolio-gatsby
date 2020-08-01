@@ -11,21 +11,39 @@ function AboutPage() {
       <div className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
           <p className={styles.greeting}>Hello!</p>
-          <button className={styles.timeLink} onClick={() => setText("long")}>
-            <img src={coffee} alt="coffee img" className={styles.icon} />
-            "I have time"
-          </button>{" "}
-          or{" "}
-          <button className={styles.timeLink} onClick={() => setText("short")}>
-            <img src={watch} alt="watch img" className={styles.icon} />
-            "make it short"
-          </button>
-          ?
+          <p>Which version would you like?</p>
+          <div className={styles.queryWrapper}>
+            <button className={styles.timeLink} onClick={() => setText("long")}>
+              <img src={coffee} alt="coffee img" className={styles.icon} />
+              "I have time"
+            </button>{" "}
+            <button
+              className={styles.timeLink}
+              onClick={() => setText("short")}
+            >
+              <img src={watch} alt="watch img" className={styles.icon} />
+              "make it short"
+            </button>
+          </div>
+
           {text === "" ? null : (
             <p className={styles.aboutMe}>
-              {text === "short"
-                ? "Front end web developer living in Orlando, Florida. Has an immense curiosity for many things in life. Reads a lot and sometimes writes a lot. Also makes things out of clay that she's sometimes proud of."
-                : "Loooong text here."}
+              {text === "short" ? (
+                <p>
+                  I am a{" "}
+                  <span className={styles.orange}>front end web developer</span>{" "}
+                  living in Orlando, Florida. I happen to have an immense
+                  curiosity for many things in life, such as{" "}
+                  <span className={styles.crimson}>neuroscience</span>,{" "}
+                  <span className={styles.green}>computer science</span>,{" "}
+                  <span className={styles.blue}>animal behaviour</span> and{" "}
+                  <span className={styles.purple}>art</span>. I read a lot and
+                  sometimes write a lot. Also I make things out of clay and ink
+                  that I'm sometimes proud of.
+                </p>
+              ) : (
+                "Loooong text here."
+              )}
             </p>
           )}
         </div>
