@@ -5,7 +5,7 @@ module.exports = {
     github: "cakebatterandsprinkles",
   },
   plugins: [
-    `gatsby-plugin-sass`,
+    "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
@@ -14,5 +14,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "src",
+        path: `${__dirname}/src/`,
+      },
+    },
+    "gatsby-transformer-remark",
   ],
 }
