@@ -19,6 +19,10 @@
   padding-bottom: 1rem;
 }
 
+.query {
+  font-family: var(--regular-font);
+}
+
 .queryWrapper {
   display: flex;
   margin-top: 1rem;
@@ -39,7 +43,6 @@
   height: 1.25rem;
   width: auto;
   margin: 0;
-  color: var(--purple);
   margin-right: 0.5rem;
   filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
     hue-rotate(168deg) brightness(91%) contrast(92%);
@@ -47,51 +50,50 @@
 
 .aboutMe {
   font-size: 0.85rem;
-  line-height: 1.4rem;
+  line-height: 1.75rem;
   padding-top: 2rem;
-  text-align: justify;
+  font-family: var(--regular-font);
+}
+
+.highlight {
+  color: white;
+  padding: 0.15rem 0.35rem;
+  border-radius: 5px;
+  font-weight: bold;
+  white-space: nowrap;
   font-family: "Roboto Mono", monospace;
 }
 
 .yellow {
   background-color: var(--yellow);
-  color: white;
-  padding: 0.5rem;
 }
 
 .orange {
   background-color: var(--orange);
-  color: white;
-  font-weight: bold;
-  padding: 0.25rem;
 }
 
 .crimson {
   background-color: var(--crimson);
-  color: white;
-  font-weight: bold;
-  padding: 0.25rem;
 }
 
 .green {
   background-color: var(--limegreen);
-  color: white;
   font-weight: bold;
-  padding: 0.25rem;
 }
 
 .blue {
   background-color: var(--cornflowerblue);
-  color: white;
   font-weight: bold;
-  padding: 0.25rem;
 }
 
 .purple {
   background-color: var(--darkviolet);
-  color: white;
   font-weight: bold;
-  padding: 0.25rem;
+}
+
+.pink {
+  background-color: var(--deeppink);
+  font-weight: bold;
 }
 
 @media (max-width: 600px) {

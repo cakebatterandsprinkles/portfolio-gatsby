@@ -1,0 +1,54 @@
+.blogContainer {
+  display: flex;
+  align-items: center;
+  height: 70vh;
+}
+
+.blogWrapper {
+  width: 800px;
+  background-color: white;
+  padding: 3rem;
+  height: 90vh;
+  margin-top: 8rem;
+}
+
+.tagContainer {
+  display: flex;
+  align-items: center;
+}
+.tagContainer > * {
+  margin-bottom: 0;
+}
+
+.tag {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--cornflowerblue);
+}
+
+.yellow {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--yellow);
+}
+
+.crimson {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--crimson);
+}
+
+.green {
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--limegreen);
+}
+
+.icon {
+  height: 1.25rem;
+  width: auto;
+  margin: 0;
+  margin-right: 0.5rem;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
+    hue-rotate(168deg) brightness(91%) contrast(92%);
+}

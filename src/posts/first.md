@@ -1,7 +1,7 @@
 ---
 title: "My first blogpost"
 date: "2019-04-04"
-tags: ["english", "science", "cats"]
+tags: ["english", "dogs", "cats"]
 ---
 
 This is the first blogpost of my new blog!
