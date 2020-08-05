@@ -12,6 +12,15 @@
   margin-top: 8rem;
 }
 
+.sidebar {
+  width: 300px;
+  background-color: white;
+  padding: 1rem;
+  height: 90vh;
+  margin-top: 8rem;
+  margin-left: 1.5rem;
+}
+
 .tagContainer {
   display: flex;
   align-items: center;
@@ -51,4 +60,51 @@
   margin-right: 0.5rem;
   filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
     hue-rotate(168deg) brightness(91%) contrast(92%);
+}
+
+// sidebar styling
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  min-width: 120px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 14px;
+}
+
+.clear-icon {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 12px;
+  cursor: pointer;
+}
+
+.invisible {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 12px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.search {
+  border: 1px solid var(--darkcloudgray);
+  border-radius: 15px;
+  height: 30px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: var(--snow);
+}
+
+.search:hover,
+.search:focus {
+  border: 1.5px solid var(--yellow);
 }
