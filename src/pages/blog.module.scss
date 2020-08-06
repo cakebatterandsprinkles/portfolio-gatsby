@@ -136,8 +136,6 @@
 
 @media (max-width: 1200px) {
   .blogContainer {
-    display: flex;
-    align-items: center;
     height: 70vh;
     flex-direction: column;
   }
@@ -152,7 +150,6 @@
 
   .blogWrapper {
     width: 100%;
-    background-color: white;
     padding: 3rem;
     height: 90vh;
     margin-top: 1rem;

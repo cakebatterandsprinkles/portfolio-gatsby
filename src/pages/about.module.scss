@@ -37,6 +37,7 @@
   display: flex;
   align-items: center;
   margin-right: 1rem;
+  font-size: 0.85rem;
 }
 
 .icon {
@@ -78,30 +79,44 @@
 
 .green {
   background-color: var(--limegreen);
-  font-weight: bold;
 }
 
 .blue {
   background-color: var(--cornflowerblue);
-  font-weight: bold;
 }
 
 .purple {
   background-color: var(--darkviolet);
-  font-weight: bold;
 }
 
 .pink {
   background-color: var(--deeppink);
-  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .aboutWrapper {
+    width: 100%;
+    padding: 3rem;
+    height: 80vh;
+    margin-top: 0;
+  }
+
+  .aboutContainer {
+    height: 80vh;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
+  .aboutMe,
   .timeLink {
     font-size: 0.8rem;
   }
+
   .icon {
-    margin-right: 0;
+    height: 1rem;
+    width: auto;
+    margin-right: 0.25rem;
   }
 
   .aboutWrapper {

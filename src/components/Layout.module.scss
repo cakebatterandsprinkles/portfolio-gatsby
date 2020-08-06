@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  height: 100vh;
 }
 
 .navWrapper {
@@ -14,7 +13,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background-color: var(--snow);
+  background-color: var(--dirtysnow);
 }
 
 .content {
@@ -24,7 +23,6 @@
 
 @media (max-width: 1200px) {
   .content {
-    flex-grow: 1;
     padding: 2rem;
   }
 }
@@ -32,6 +30,10 @@
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
+  }
+
+  .contentWrapper {
+    min-height: auto;
   }
 
   .navWrapper {
@@ -42,7 +44,6 @@
 
 @media (max-width: 600px) {
   .content {
-    flex-grow: 1;
     padding: 2rem 1rem;
   }
 }
