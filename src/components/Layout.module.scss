@@ -22,7 +22,14 @@
   padding: 3rem 2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
+  .content {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
   .container {
     flex-direction: column;
   }
