@@ -13,12 +13,13 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: var(--dirtysnow);
 }
 
 .content {
-  flex-grow: 1;
-  padding: 3rem 2rem;
+  padding: 2rem;
+  padding-bottom: 0;
 }
 
 @media (max-width: 1200px) {

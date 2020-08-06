@@ -1,15 +1,14 @@
 .aboutContainer {
   display: flex;
   align-items: center;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .aboutWrapper {
   width: 800px;
   background-color: white;
   padding: 3rem;
-  height: 90vh;
-  margin-top: 8rem;
+  min-height: 90vh;
 }
 
 .greeting {
@@ -97,12 +96,12 @@
   .aboutWrapper {
     width: 100%;
     padding: 3rem;
-    height: 80vh;
+    min-height: 80vh;
     margin-top: 0;
   }
 
   .aboutContainer {
-    height: 80vh;
+    min-height: 80vh;
     flex-direction: column;
   }
 }
