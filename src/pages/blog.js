@@ -26,6 +26,11 @@ const BlogPage = () => {
   const clearIcon = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
   const [tags, setTags] = useState([])
+  const [filteredPosts, setFilteredPosts] = useState(
+    posts.allMarkdownRemark.edges.map(post => {
+      return post
+    })
+  )
 
   const setCurrentTags = () => {
     let allTags = posts.allMarkdownRemark.edges.flatMap(post => {
@@ -92,12 +97,23 @@ const BlogPage = () => {
     return style
   }
 
+  const filterPosts = tag => {
+    let filteredList = []
+    posts.allMarkdownRemark.edges.map(post => {
+      if (post.node.frontmatter.tags.includes(tag)) {
+        filteredList.push(post)
+      }
+    })
+    setFilteredPosts(filteredList)
+    console.log(filteredList)
+  }
+
   return (
     <Layout>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
           <ul className={styles.articleList}>
-            {posts.allMarkdownRemark.edges.map((post, index) => {
+            {filteredPosts.map((post, index) => {
               return (
                 <li key={index} className={styles.article}>
                   <div className={styles.articleTitleAndDateWrapper}>
@@ -165,6 +181,7 @@ const BlogPage = () => {
                       <span
                         className={`${chooseClass(tag)} ${styles.tag}`}
                         key={index}
+                        onClick={() => filterPosts(tag)}
                       >
                         {tag}
                       </span>
