@@ -22,45 +22,69 @@
   display: flex;
   align-items: center;
 }
+
 .tagContainer > * {
   margin-bottom: 0;
 }
 
+.summaryContainer {
+  font-family: var(--article-font), "sans-serif";
+  font-size: 0.9rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.bookmarkIcon {
+  height: 1.2rem;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
+    hue-rotate(168deg) brightness(91%) contrast(92%);
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .tag {
-  margin-right: 0.5rem;
-  padding: 0.5rem;
-  background-color: var(--cornflowerblue);
-  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.4rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  color: var(--snow);
+  font-weight: bold;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+  // text-shadow: 0.5px 0.5px 1px var(--darkgray);
+}
+
+.default {
+  background-color: var(--palepink);
 }
 
 .yellow {
-  margin-right: 0.5rem;
-  padding: 0.5rem;
   background-color: var(--yellow);
-  margin-bottom: 0.5rem;
 }
 
 .orange {
-  margin-right: 0.5rem;
-  padding: 0.5rem;
   background-color: var(--orange);
-  margin-bottom: 0.5rem;
 }
 
 .crimson {
-  margin-right: 0.5rem;
-  padding: 0.5rem;
   background-color: var(--crimson);
-  margin-bottom: 0.5rem;
 }
 
 .green {
-  margin-right: 0.5rem;
-  padding: 0.5rem;
   background-color: var(--limegreen);
-  margin-bottom: 0.5rem;
 }
 
+.blue {
+  background-color: var(--cornflowerblue);
+}
+
+.purple {
+  background-color: var(--darkviolet);
+}
+
+.pink {
+  background-color: var(--deeppink);
+}
 .icon {
   height: 1.25rem;
   width: auto;
@@ -68,6 +92,33 @@
   margin-right: 0.5rem;
   filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
     hue-rotate(168deg) brightness(91%) contrast(92%);
+}
+
+.articleList {
+  list-style: none;
+  margin-left: 0;
+}
+
+.article {
+  margin-bottom: 1.5rem;
+  background-color: var(--dirtysnow);
+  padding: 2rem 1rem 1rem 2rem;
+  border-left: 3px solid var(--darkcloudgray);
+}
+
+.articleTitleAndDateWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.articleTitle {
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+}
+
+.articleDate {
+  font-size: 0.8rem;
 }
 
 // sidebar styling
@@ -121,9 +172,21 @@
 
 // Side bar tags styling
 
+hr {
+  border: 0;
+  height: 1.25px;
+  background: var(--darkgray);
+}
+
+.heading {
+  font-family: var(--heading-font);
+  font-size: 1.1rem;
+}
+
 .tagSideContainer {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .tagSideWrapper {
@@ -141,7 +204,7 @@
     order: -1;
     width: 100%;
     padding: 1rem;
-    height: 20vh;
+    min-height: 20vh;
     margin: 0;
   }
 

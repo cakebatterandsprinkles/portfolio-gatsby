@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { graphql, useStaticQuery } from "gatsby"
 import styles from "./blog.module.scss"
+import bookmark from "../images/main/bookmark.svg"
 
 const BlogPage = () => {
   const posts = useStaticQuery(graphql`
@@ -13,6 +14,7 @@ const BlogPage = () => {
               title
               date
               tags
+              summary
             }
           }
         }
@@ -62,20 +64,29 @@ const BlogPage = () => {
   const chooseClass = tag => {
     let style
     switch (tag) {
-      case "cats":
+      case "Javascript":
         style = styles.yellow
         break
-      case "english":
-        style = styles.crimson
-        break
-      case "science":
-        style = styles.green
-        break
-      case "fluff":
+      case "Programming":
         style = styles.orange
         break
+      case "Japan":
+        style = styles.crimson
+        break
+      case "Art":
+        style = styles.green
+        break
+      case "History":
+        style = styles.blue
+        break
+      case "Neuroscience":
+        style = styles.purple
+        break
+      case "Ethology":
+        style = styles.pink
+        break
       default:
-        style = styles.tag
+        style = styles.default
         break
     }
     return style
@@ -85,17 +96,33 @@ const BlogPage = () => {
     <Layout>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
-          <h1>Blog</h1>
-          <ol>
+          <ul className={styles.articleList}>
             {posts.allMarkdownRemark.edges.map((post, index) => {
               return (
-                <li key={index}>
-                  <p>{post.node.frontmatter.title}</p>
-                  <p>{post.node.frontmatter.date}</p>
+                <li key={index} className={styles.article}>
+                  <div className={styles.articleTitleAndDateWrapper}>
+                    <span className={styles.articleTitle}>
+                      {post.node.frontmatter.title}
+                    </span>
+                    <span className={styles.articleDate}>
+                      {post.node.frontmatter.date}
+                    </span>
+                  </div>
+                  <div className={styles.summaryContainer}>
+                    {post.node.frontmatter.summary}
+                  </div>
                   <div className={styles.tagContainer}>
+                    <img
+                      src={bookmark}
+                      className={styles.bookmarkIcon}
+                      alt="bookmark icon"
+                    />
                     {post.node.frontmatter.tags.map((tag, index) => {
                       return (
-                        <p className={chooseClass(tag)} key={index}>
+                        <p
+                          className={`${chooseClass(tag)} ${styles.tag}`}
+                          key={index}
+                        >
                           {tag}
                         </p>
                       )
@@ -104,7 +131,7 @@ const BlogPage = () => {
                 </li>
               )
             })}
-          </ol>
+          </ul>
         </div>
         <div className={styles.sidebar}>
           <div className={styles.searchWrapper}>
@@ -135,7 +162,10 @@ const BlogPage = () => {
               {tags !== []
                 ? tags.map((tag, index) => {
                     return (
-                      <span className={chooseClass(tag)} key={index}>
+                      <span
+                        className={`${chooseClass(tag)} ${styles.tag}`}
+                        key={index}
+                      >
                         {tag}
                       </span>
                     )

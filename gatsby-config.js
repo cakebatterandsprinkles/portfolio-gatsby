@@ -10,7 +10,12 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Roboto Mono", "Anonymous Pro", "Share Tech Mono"],
+          families: [
+            "Roboto Mono",
+            "Anonymous Pro",
+            "Share Tech Mono",
+            "Raleway",
+          ],
         },
       },
     },
