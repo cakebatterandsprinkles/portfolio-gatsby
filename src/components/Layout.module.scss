@@ -3,7 +3,7 @@
 }
 
 .navWrapper {
-  width: 400px;
+  width: 350px;
   max-height: 100vh;
 }
 
@@ -45,6 +45,6 @@
 
 @media (max-width: 600px) {
   .content {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
   }
 }
