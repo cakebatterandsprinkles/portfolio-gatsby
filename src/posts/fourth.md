@@ -1,7 +1,7 @@
 ---
 title: "My fourth blogpost"
 date: "2020-04-06"
-tags: ["Japan", "Mithology"]
+tags: ["Japan", "Mythology"]
 summary: "Bear claw jelly cake muffin macaroon I love marshmallow I love. Pudding croissant donut soufflé cake sugar plum halvah. Ice cream tiramisu gummi bears liquorice gummies candy."
 ---
 

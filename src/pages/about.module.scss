@@ -11,20 +11,40 @@
   min-height: 90vh;
 }
 
+.greetingContainer {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.treeIcon {
+  height: 3rem;
+  width: auto;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
 .greeting {
   font-size: 2rem;
   font-family: "Share Tech Mono", monospace;
   font-weight: bold;
-  padding-bottom: 1rem;
+  margin: 0;
 }
 
 .query {
   font-family: var(--regular-font);
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--darkgray);
 }
 
 .queryWrapper {
   display: flex;
-  margin-top: 1rem;
+  margin: 1rem 0;
+}
+
+.hr {
+  background-color: var(--lightcloudgray);
 }
 
 .timeLink {
@@ -49,10 +69,10 @@
 }
 
 .aboutMe {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.75rem;
   padding-top: 2rem;
-  font-family: var(--regular-font);
+  font-family: var(--article-font);
 }
 
 .highlight {
@@ -62,6 +82,7 @@
   font-weight: bold;
   white-space: nowrap;
   font-family: "Roboto Mono", monospace;
+  font-size: 0.85rem;
 }
 
 .yellow {
@@ -92,6 +113,22 @@
   background-color: var(--deeppink);
 }
 
+.longtext {
+  font-family: var(--article-font);
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.longtext > p {
+  margin-bottom: 1.25rem;
+}
+
+.longtextHighlight {
+  padding: 0.1rem;
+  background-color: var(--paleyellow);
+  border-radius: 5px;
+}
+
 @media (max-width: 1200px) {
   .aboutWrapper {
     width: 100%;
@@ -103,6 +140,13 @@
   .aboutContainer {
     min-height: 80vh;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 900px) {
+  .greeting {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -119,6 +163,6 @@
   }
 
   .aboutWrapper {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
   }
 }
