@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql, useStaticQuery } from "gatsby"
 import styles from "./blog.module.scss"
 import bookmark from "../images/main/bookmark.svg"
+import chevronRight from "../images/main/cheveron-right.svg"
 
 const BlogPage = () => {
   const posts = useStaticQuery(graphql`
@@ -108,6 +109,14 @@ const BlogPage = () => {
     console.log(filteredList)
   }
 
+  const restoreAllArticles = () => {
+    setFilteredPosts(
+      posts.allMarkdownRemark.edges.map(post => {
+        return post
+      })
+    )
+  }
+
   return (
     <Layout>
       <div className={styles.blogContainer}>
@@ -188,6 +197,17 @@ const BlogPage = () => {
                     )
                   })
                 : "No posts to review!"}
+            </div>
+            <div
+              className={styles.resetContainer}
+              onClick={() => restoreAllArticles()}
+            >
+              <img
+                src={chevronRight}
+                alt="chevron right"
+                className={styles.chevronRightIcon}
+              />
+              <p className={styles.resetText}>View all articles</p>
             </div>
           </div>
         </div>

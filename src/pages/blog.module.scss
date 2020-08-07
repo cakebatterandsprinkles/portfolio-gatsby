@@ -195,6 +195,30 @@ hr {
   flex-wrap: wrap;
 }
 
+// reset button styling
+
+.resetContainer {
+  display: flex;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  padding-left: 0;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chevronRightIcon {
+  height: 1rem;
+  width: auto;
+  margin-bottom: 0;
+}
+
+.resetText {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: var(--darkgray);
+}
+
 @media (max-width: 1200px) {
   .blogContainer {
     min-height: 70vh;
