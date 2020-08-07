@@ -72,7 +72,7 @@ const Navigation = () => {
             </Link>
           </li>
         </ul>
-        <div>
+        <div className={styles.socialContainer}>
           <a
             href="https://github.com/cakebatterandsprinkles"
             target="_blank"

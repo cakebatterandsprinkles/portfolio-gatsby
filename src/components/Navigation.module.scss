@@ -3,7 +3,7 @@
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--black);
-  margin-bottom: 1rem !important;
+  margin-bottom: 1rem;
 }
 
 .hr {
@@ -22,13 +22,15 @@
 
 .navlink-container > li {
   display: flex;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .point {
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 10px;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 .yellow {
@@ -49,24 +51,28 @@
 
 .nav-link {
   text-decoration: none;
+  padding: 0.5rem;
   color: var(--black);
 }
 
 .nav-list {
-  height: 40vh;
+  min-height: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 1.5rem;
 }
 
 .nav-link:hover {
-  color: var(--darkcloudgray);
+  color: var(--darkgray);
 }
 
 .active-nav-link {
   font-weight: bold;
   color: var(--darkgray);
+  background-color: var(--dirtysnow);
+  border-radius: 5px;
 }
 
 .imgWrapper {
@@ -87,16 +93,22 @@
   margin-right: 0.75rem;
   height: 1.5rem;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
-    hue-rotate(168deg) brightness(91%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(38%) sepia(1%) saturate(6582%)
+    hue-rotate(182deg) brightness(84%) contrast(97%);
 }
 
 .mailIcon {
   height: 1.35rem;
   width: auto;
   margin-bottom: 1.5rem;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
-    hue-rotate(168deg) brightness(91%) contrast(92%);
+  filter: brightness(0) saturate(100%) invert(38%) sepia(1%) saturate(6582%)
+    hue-rotate(182deg) brightness(84%) contrast(97%);
+}
+
+.socialIcon:hover,
+.mailIcon:hover {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(167%)
+    hue-rotate(154deg) brightness(90%) contrast(89%);
 }
 
 @media (max-width: 900px) {
@@ -110,7 +122,8 @@
   }
 
   .nav-list {
-    height: 20vh;
+    min-height: 20vh;
+    margin-top: 1rem;
   }
 
   .navlink-container > li {
@@ -121,7 +134,7 @@
 
   .navlink-container {
     display: flex;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     justify-content: space-evenly;
     width: 70%;
   }
@@ -145,21 +158,50 @@
     font-size: 0.9rem;
   }
 
+  .socialContainer {
+    border-top: 1px solid var(--silver);
+    padding-top: 0.5rem;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+  }
+
   .socialIcon {
     height: 1.25rem;
-    margin-right: 0.75rem;
-    margin-bottom: 0.5rem;
+    margin: 0 0.25rem 0.5rem 0.25rem;
   }
 
   .mailIcon {
     height: 1.1rem;
-    margin-right: 0.75rem;
-    margin-bottom: 0.6rem;
+    margin: 0 0.25rem 0.5rem 0.25rem;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .navlink-container {
     width: 90%;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.35rem;
+  }
+
+  .point {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .navlink-container {
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .point {
+    margin-right: 0.15rem;
   }
 }
