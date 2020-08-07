@@ -16,6 +16,7 @@
   background-color: white;
   padding: 1rem;
   margin-left: 1.5rem;
+  min-height: 50vh;
 }
 
 .tagContainer {
@@ -175,8 +176,8 @@
 
 hr {
   border: 0;
-  height: 1.25px;
   background: var(--darkgray);
+  margin-bottom: 1rem;
 }
 
 .heading {
@@ -199,7 +200,7 @@ hr {
 
 .resetContainer {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 0.5rem;
   padding-left: 0;
   align-items: center;
@@ -217,6 +218,24 @@ hr {
   font-weight: bold;
   margin-bottom: 0;
   color: var(--darkgray);
+}
+
+// date container styling
+
+.dateContainer {
+  margin-top: 2rem;
+}
+
+.year {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  border: 1px solid var(--darkgray);
+  color: var(--darkgray);
+  background-color: var(--dirtysnow);
+  border-radius: 5px;
 }
 
 @media (max-width: 1200px) {

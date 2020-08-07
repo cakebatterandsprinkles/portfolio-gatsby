@@ -27,6 +27,7 @@ const BlogPage = () => {
   const clearIcon = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
   const [tags, setTags] = useState([])
+  const [years, setYears] = useState([])
   const [filteredPosts, setFilteredPosts] = useState(
     posts.allMarkdownRemark.edges.map(post => {
       return post
@@ -41,7 +42,19 @@ const BlogPage = () => {
     setTags(Array.from(currentTags))
   }
 
-  useEffect(() => setCurrentTags(), [posts])
+  const setAvailableYears = () => {
+    let allYears = posts.allMarkdownRemark.edges.flatMap(post => {
+      return post.node.frontmatter.date.slice(0, 4)
+    })
+    const availableYears = new Set(allYears)
+    setYears(Array.from(availableYears))
+    console.log(availableYears)
+  }
+
+  useEffect(() => {
+    setCurrentTags()
+    setAvailableYears()
+  }, [posts])
 
   const handleClearClick = () => {
     searchInput.current.value = ""
@@ -106,7 +119,6 @@ const BlogPage = () => {
       }
     })
     setFilteredPosts(filteredList)
-    console.log(filteredList)
   }
 
   const restoreAllArticles = () => {
@@ -115,6 +127,16 @@ const BlogPage = () => {
         return post
       })
     )
+  }
+
+  const filterPostsByYear = year => {
+    let filteredList = []
+    posts.allMarkdownRemark.edges.map(post => {
+      if (post.node.frontmatter.date.slice(0, 4) === year) {
+        filteredList.push(post)
+      }
+    })
+    setFilteredPosts(filteredList)
   }
 
   return (
@@ -208,6 +230,23 @@ const BlogPage = () => {
                 className={styles.chevronRightIcon}
               />
               <p className={styles.resetText}>View all articles</p>
+            </div>
+            <div className={styles.dateContainer}>
+              <p className={styles.heading}>Years</p>
+              <hr></hr>
+              {years !== []
+                ? years.map((year, index) => {
+                    return (
+                      <span
+                        className={styles.year}
+                        key={index}
+                        onClick={() => filterPostsByYear(year)}
+                      >
+                        {year}
+                      </span>
+                    )
+                  })
+                : "No posts to review!"}
             </div>
           </div>
         </div>
