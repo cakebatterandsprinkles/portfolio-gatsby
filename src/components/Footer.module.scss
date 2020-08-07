@@ -46,5 +46,22 @@
   .footerContainer {
     flex-direction: column;
     padding: 0.75rem 0.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .link {
+    margin: 0 0.15rem;
+  }
+
+  .footerContainer {
+    padding: 0.75rem 0.25rem;
+    font-size: 0.5rem;
+  }
+
+  .starIcon {
+    height: 0.75rem;
+    margin-right: 0.25rem;
   }
 }
