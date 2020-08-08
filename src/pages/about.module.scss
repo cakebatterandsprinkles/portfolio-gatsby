@@ -124,9 +124,9 @@
 }
 
 .longtextHighlight {
-  padding: 0.1rem;
-  background-color: var(--paleyellow);
+  padding: 0.1rem 0.2rem;
   border-radius: 5px;
+  color: var(--snow);
 }
 
 @media (max-width: 1200px) {
@@ -147,6 +147,10 @@
   .greeting {
     font-size: 1.5rem;
     padding-bottom: 1rem;
+  }
+
+  .aboutMe {
+    padding-top: 1rem;
   }
 }
 

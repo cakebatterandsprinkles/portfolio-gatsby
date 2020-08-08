@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styles from "./Navigation.module.scss"
-import tempCat from "../images/main/tempcat.jpg"
+import me from "../images/main/me.jpg"
 import linkedin from "../images/main/social-1_round-linkedin.svg"
 import github from "../images/main/social-1_round-github.svg"
 import twitter from "../images/main/social-1_round-twitter.svg"
@@ -21,7 +21,7 @@ const Navigation = () => {
   return (
     <header className={styles.mainContainer}>
       <div className={styles.imgWrapper}>
-        <img src={tempCat} alt="me" className={styles.img} />
+        <img src={me} alt="my profile picture" className={styles.img} />
       </div>
       <nav className={styles.navList}>
         <p>
