@@ -1,5 +1,12 @@
 .whereiscovid {
   background-image: url("../images//portfolio/maskedmonalisa.jpg");
+}
+
+.mendokusai {
+  background-image: url("../images/portfolio/mendokusai2.jpg");
+}
+
+.frontside {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -10,7 +17,7 @@
   box-shadow: 2px 2px 4px 1px #30303038;
 }
 
-.whereiscovid > p {
+.frontside > p {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -21,7 +28,7 @@
   border-radius: 5px;
 }
 
-.whereiscovid > p:hover {
+.frontside > p:hover {
   color: var(--dirtysnow);
   background-color: var(--black);
 }
