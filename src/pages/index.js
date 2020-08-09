@@ -8,6 +8,7 @@ import CardBack from "../components/CardBack"
 const PortfolioPage = () => {
   const [isFlipped1, setIsFlipped1] = useState(false)
   const [isFlipped2, setIsFlipped2] = useState(false)
+  const [isFlipped3, setIsFlipped3] = useState(false)
 
   const ClickHandler1 = e => {
     e.preventDefault()
@@ -17,6 +18,11 @@ const PortfolioPage = () => {
   const ClickHandler2 = e => {
     e.preventDefault()
     setIsFlipped2(prevState => !prevState)
+  }
+
+  const ClickHandler3 = e => {
+    e.preventDefault()
+    setIsFlipped3(prevState => !prevState)
   }
 
   return (
@@ -119,13 +125,60 @@ const PortfolioPage = () => {
                     Technologies used:{" "}
                     <span id={styles.technologies}>
                       React.js react-router-dom react-redux OpenWeatherMapAPI
-                      GeoIP Express.js MongoDB Atlas Sendgrid Heroku
+                      GeoIP Express.js MongoDB-Atlas Sendgrid Heroku
                     </span>
                   </p>
                 </div>
               </CardBack>
             </ReactCardFlip>
-            <div className={styles.yellow}></div>
+            <ReactCardFlip
+              isFlipped={isFlipped3}
+              flipDirection="vertical"
+              flipSpeedFrontToBack="2"
+              flipSpeedBackToFront="2"
+            >
+              <CardFront style="mockingbird" onClick={ClickHandler3}>
+                <p>mockingbird</p>
+              </CardFront>
+              <CardBack style="backside" onClick={ClickHandler3}>
+                <p className={styles.cardTitle}>mockingbird</p>
+                <p className={styles.cardSummary}>
+                  A 7 minute journal app for well-being.
+                </p>
+                <hr className={styles.hr}></hr>
+                <div className={styles.cardWrapper}>
+                  <p className={styles.cardLinkTitle}>Demo: </p>
+                  <a
+                    href="https://mendokusai.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.cardlink}
+                  >
+                    https://mendokusai.app/
+                  </a>
+                </div>
+                <div className={styles.cardWrapper}>
+                  <p className={styles.cardLinkTitle}>Github: </p>
+                  <a
+                    href="https://github.com/cakebatterandsprinkles/mockingbird"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.cardlink}
+                  >
+                    cakebatterandsprinkles/mockingbird
+                  </a>
+                </div>
+                <div className={styles.cardWrapper}>
+                  <p className={styles.cardLinkTitle}>
+                    Technologies used:{" "}
+                    <span id={styles.technologies}>
+                      React.js react-router-dom react-redux Express.js
+                      MongoDB-Atlas Sendgrid Heroku
+                    </span>
+                  </p>
+                </div>
+              </CardBack>
+            </ReactCardFlip>
             <div className={styles.yellow}></div>
           </div>
         </div>
