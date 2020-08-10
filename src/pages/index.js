@@ -9,6 +9,7 @@ const PortfolioPage = () => {
   const [isFlipped1, setIsFlipped1] = useState(false)
   const [isFlipped2, setIsFlipped2] = useState(false)
   const [isFlipped3, setIsFlipped3] = useState(false)
+  const [isFlipped4, setIsFlipped4] = useState(false)
 
   const ClickHandler1 = e => {
     e.preventDefault()
@@ -23,6 +24,11 @@ const PortfolioPage = () => {
   const ClickHandler3 = e => {
     e.preventDefault()
     setIsFlipped3(prevState => !prevState)
+  }
+
+  const ClickHandler4 = e => {
+    e.preventDefault()
+    setIsFlipped4(prevState => !prevState)
   }
 
   return (
@@ -179,7 +185,51 @@ const PortfolioPage = () => {
                 </div>
               </CardBack>
             </ReactCardFlip>
-            <div className={styles.yellow}></div>
+            <ReactCardFlip
+              isFlipped={isFlipped4}
+              flipDirection="vertical"
+              flipSpeedFrontToBack="2"
+              flipSpeedBackToFront="2"
+            >
+              <CardFront style="breakout" onClick={ClickHandler4}>
+                <p>breakout</p>
+              </CardFront>
+              <CardBack style="backside" onClick={ClickHandler4}>
+                <p className={styles.cardTitle}>breakout</p>
+                <p className={styles.cardSummary}>
+                  Atari Breakout game remade with HTML5 Canvas API.
+                </p>
+                <hr className={styles.hr}></hr>
+                <div className={styles.cardWrapper}>
+                  <p className={styles.cardLinkTitle}>Demo: </p>
+                  <a
+                    href="https://cakebatterandsprinkles.github.io/breakout/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.cardlink}
+                  >
+                    https://cakebatterandsprinkles.github.io/breakout/
+                  </a>
+                </div>
+                <div className={styles.cardWrapper}>
+                  <p className={styles.cardLinkTitle}>Github: </p>
+                  <a
+                    href="https://github.com/cakebatterandsprinkles/breakout"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={styles.cardlink}
+                  >
+                    cakebatterandsprinkles/breakout
+                  </a>
+                </div>
+                <div className={styles.cardWrapper}>
+                  <p className={styles.cardLinkTitle}>
+                    Technologies used:{" "}
+                    <span id={styles.technologies}>HTML5 Canvas API</span>
+                  </p>
+                </div>
+              </CardBack>
+            </ReactCardFlip>
           </div>
         </div>
       </div>
