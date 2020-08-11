@@ -61,6 +61,7 @@
   margin-left: 0.25rem;
   color: var(--darkviolet);
   padding: 0.25rem 0.5rem;
+  word-break: break-word;
 }
 
 .cardlink:hover {
@@ -113,6 +114,44 @@
 
 @media (max-width: 600px) {
   .portfolioWrapper {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .cardSummary,
+  .cardWrapper {
+    font-size: 0.75rem;
+  }
+
+  .cardWrapper {
+    margin-bottom: 0.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card {
+    min-height: 34vh;
+  }
+
+  .hr {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .cardSummary,
+  .cardWrapper {
+    font-size: 0.6rem;
+  }
+
+  .cardWrapper {
+    margin-bottom: 0.2rem;
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
   }
 }

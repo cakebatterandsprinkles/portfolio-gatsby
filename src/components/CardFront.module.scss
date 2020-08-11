@@ -40,3 +40,9 @@
   color: var(--dirtysnow);
   background-color: var(--black);
 }
+
+@media (max-width: 600px) {
+  .frontside > p {
+    font-size: 0.9rem;
+  }
+}
