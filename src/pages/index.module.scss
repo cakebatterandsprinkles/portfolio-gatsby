@@ -8,21 +8,26 @@
   width: 1000px;
   background-color: white;
   padding: 3rem;
-  min-height: 90vh;
+  min-height: 70vh;
 }
 
 .gridContainer {
   width: 100%;
-  min-height: 70vh;
+  min-height: 36vh;
   padding-top: 1rem;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.yellow {
-  background-color: var(--yellow);
+.gridContainer .card {
+  width: 48%;
+}
+
+.card {
+  min-height: 35vh;
+  display: flex;
+  margin: 0.5rem 0;
 }
 
 // Card backside styling
@@ -96,9 +101,14 @@
     min-height: 80vh;
     flex-direction: column;
   }
-}
 
-@media (max-width: 900px) {
+  .gridContainer .card {
+    width: 100%;
+  }
+
+  .card {
+    min-height: 40vh;
+  }
 }
 
 @media (max-width: 600px) {
