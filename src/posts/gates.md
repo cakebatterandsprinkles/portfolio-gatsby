@@ -2,7 +2,7 @@
 title: "Small things that make up a computer: Bits and Logic Gates"
 date: "2020-09-02"
 tags: ["Computer Science"]
-summary: "Tiny bits that computers are made of"
+summary: "This article briefly explains the binary system, bits, and logic gates. It also talks about a very weird room with crazy light switches."
 ---
 
 **Binary and bit**

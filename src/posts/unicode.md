@@ -1,5 +1,5 @@
 ---
-title: "My fourth blogpost"
+title: "The lovely Unicode"
 date: "2020-04-06"
 tags: ["Japan", "Mythology"]
 summary: "Bear claw jelly cake muffin macaroon I love marshmallow I love. Pudding croissant donut soufflé cake sugar plum halvah. Ice cream tiramisu gummi bears liquorice gummies candy."
