@@ -1,6 +1,6 @@
 ---
 title: ""
-date: "2020-09-01"
+date: "08-13-2020"
 tags: ["React", "Javascript"]
 summary: ""
 ---
