@@ -45,4 +45,4 @@ In a nutshell, if the set is on (1), the output of this diagram will be whatever
 
 And this is how a computer "remembers" a single bit. Isn't it impressive?
 
-**The smallest unit of human memory: Neuron**
+**The smallest unit of human memory: The Neuron**

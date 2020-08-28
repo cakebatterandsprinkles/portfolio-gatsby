@@ -41,6 +41,8 @@ For another example, let's turn back to our imaginary room. As we turn off the f
 
 But here we are, and welcome to the **AND gate**! An AND gate specifically creates an output of 1 only if both of its inputs are 1. Otherwise, it creates an output of 0. Basically what you do is, take a simple NAND gate and add a NOT gate to its tail.
 
+![Gates](../images/blog/gates/gates.png)
+
 I have written about NAND gate, NOT gate and AND gate, but there are many more gates inside of our computers. (OR gate, XOR gate, NOR gate, and many more, and all can be built from NAND gates!) As they implement logic, and a computer is a logical creature, we call these building blocks **logic gates.**
 
 If you want to know more and deeper about this subject, I recommend you to check out the resources of this article.
