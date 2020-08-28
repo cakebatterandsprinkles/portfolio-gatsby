@@ -2,10 +2,10 @@
 title: "The lovely Unicode"
 date: "08-31-2020"
 tags: ["Computer Science", "History"]
-summary: "This article explains ASCII, Unicode and a little bit of their history."
+summary: "This article explains ASCII, Unicode, UTF-8 and a little bit of their history."
 ---
 
-**How ASCII is born**
+**How ASCII was born**
 
 Every data inside a computer has to be kept as 0's and 1's. And when I say everything, it means everything, from the numbers, symbols and letters to the images and sounds. Everything inside a computer is 1's and 0's.
 
@@ -13,7 +13,7 @@ When the digital computer was first invented, as the computer scientists inventi
 
 The modifiable 128 bits was called **the extended ASCII character set.** This became a problem, as different organizations such as HP, Adobe, Apple, Microsoft etc, were all using this extended character set to do their own thing. The same binary code meant different things in different platforms, and sharing data in between these platforms became a problem.
 
-**How Unicode is born**
+**How Unicode was born**
 
 When the world wide web came along, computers needed to support all these conflicting character sets from different platforms. And if they didn't, the data could be corrupted when it was shared. Of course, nobody wanted that.
 
