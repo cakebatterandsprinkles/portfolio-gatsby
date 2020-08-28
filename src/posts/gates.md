@@ -17,7 +17,7 @@ So let's start with bits.
 
 Think of a basic light switch. It is either on or off, right? If there is electricity in the wires, you can say it is on, if there is no electricity in the wires, it is off. This is like this regardless of the result - indeed, there might be no lightbulb connected to the wire, but it will still be on and off. This two version of states (on/off, yes/no) is called **binary.** Binary can be shown with numbers as well, like 0 and 1.
 
-A computer is composed of tiny wires (a lot of them in fact!), and there is either electricity passing through them or not. This single, tiny on or off data is called a **bit.** And computers in the most basic sense, work with A LOT of these wires connected in ways that make sense.
+A computer is composed of tiny wires (a lot of them in fact!), and there is either electricity passing through them or not. This single, tiny on or off data is called a **bit.** Modern computers mostly work with sets of 8 bits, which is also referred to as a **byte.** And computers in the most basic sense, work with A LOT of these wires connected in ways that make sense.
 
 **What the heck is a NAND Gate?**
 
