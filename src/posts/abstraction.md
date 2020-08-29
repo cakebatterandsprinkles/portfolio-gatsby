@@ -1,0 +1,10 @@
+---
+title: "Layers of Abstraction"
+date: "07-21-2020"
+tags: ["Computer Science"]
+summary: ""
+---
+
+A simple program that prints out 'hello world' to your console is actually nothing more than some characters that are stored in a text file. For the computer to actually do what it's asked to do, you must parse that text and re-express it in a language understood by your computer. This process is called **compilation** and the result of this process will be yet another text file containing bunch of text, but in machine-level code. Machine language is also an abstraction, on top of some binary codes. In order for it to work, it must be realized by a **hardware architecture** which is implemented by a certain configuration of a chip set that consists of registers, memory units etc. Each of these hardware devices is made from elementary logic gates, and these gates can be built from primitive logic gates like _Nand_ and _Nor_. A gate is a physical device that implements a Boolean function. Each of these logic gates contains several switching devices, that are implemented by transistors.
+
+Each of these complex abstractions are created by individual modules that are related to each other. A good modular design means you can work on individual modules independently, without worrying about the rest of the system. Implementation is how a computer does something, abstraction is what it really does. To run a program on a higher level, you only need to worry about the abstractions, about what is doing what, instead of how they are doing it. This is the main point of learning programming languages, somebody else has worried about compiling, so you could worry about the task on your hand, printing 'hello world' to your console. This is also a great thing, so you can 'seperate concerns', once something is implemented, you generally don't need to worry about how, only worry about how to use it. This lets you build a complex system with simple layers, only worrying about one thing at a time.

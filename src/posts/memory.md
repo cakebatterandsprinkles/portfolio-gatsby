@@ -46,3 +46,5 @@ In a nutshell, if the set is on (1), the output of this diagram will be whatever
 And this is how a computer "remembers" a single bit. Isn't it impressive?
 
 **The smallest unit of human memory: The Neuron**
+
+Humans store different kinds of information, such as facts, events, skills, habits, emotional memory and muscle memory. The neurons that store these diverse data are distributed throughout the brain, but they all have
