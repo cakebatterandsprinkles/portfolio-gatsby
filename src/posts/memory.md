@@ -9,7 +9,7 @@ summary: "This article briefly explains how computers can retain data, by showin
 
 Let's start with a simple question: What is your name?
 
-I'm pretty sure that question instantly popped an answer in your mind. (And if you don't know your name, it's time to see a neurologist.) Your name is one of the first things you've learned as you were born to this world. But what does learning mean?
+I'm pretty sure that question instantly popped an answer in your mind. (And if you don't know your name, it's time to see a neurologist.) Your name is one of the first things you've learned (whoa!) as you were born to this world. But what does learning mean?
 
 Learning can be defined as the acquisition of new knowledge (or a new skill), but retaining that information is what is called the **memory.**
 
