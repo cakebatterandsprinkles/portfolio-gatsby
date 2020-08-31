@@ -5,7 +5,7 @@ tags: ["Computer Science", "Mathematics", "History"]
 summary: "This article briefly explains the history of numbers, as well as the definitions of binary, senary, denary and hexadecimal."
 ---
 
-### The very first numbers
+### Our first numbers: How many rocks do you have?
 
 **Tally Marks**
 
