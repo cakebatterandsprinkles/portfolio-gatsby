@@ -2,7 +2,7 @@
 title: "Computer Networks, Ethernet, Internet "
 date: "07-12-2020"
 tags: ["Computer Science"]
-summary: "This article briefly explains how the internet works, what world wide web is and the underlying technologies supporting these."
+summary: "This article briefly explains how the internet works, what world wide web is and the underlying technologies supporting these. We will also talk about Starlink and internet as a human right."
 ---
 
 I bet you have a computer, a smartphone or a tablet that's connected to the internet. How do I know? I know it because that's how you are reading this piece of text that I wrote from my own computer. So you and I, we are sharing information somehow. This article will exactly be about this: our connection to each other.
@@ -20,6 +20,8 @@ There are some type of networks, and they differ according to the area they cove
 In a **Wide Area Network (WAN)** computers can be physically away from each other. A WAN covers a wider area, an entire city, a country or even the whole world. A WAN simply connects LANs to each other. The internet is a worldwide public WAN. Signals in this network can be encrypted, but it is still less secure than a LAN. WANs also require more specialized devices and data has to travel for long distances, so WANs are more expensive to build.
 
 **Wi-Fi (Wireless Fidelity) network** uses radio waves instead of cables. Wi-Fi Network can also referred to as **WLAN**, which stands for "Wireless Local Area Network."
+
+The most powerful computers in the networks are **servers.** A server is a computer that provides data to other computers, it is like a library that is open 24/7.
 
 Now, we should talk about **Heinrich Hertz**, a german scientist from 1800's that studied electricity that was going on and off very quickly, therefore creating electromagnetic waves. Some time after his death, scientists decided to use his name to describe how fast the electricity was turning on and off in a second. For example, 1 Hz meant there was 1 cycle happening in 1 second (on and off). 500 Hz meant there were 500 cycles happening in 1 second. So to make it more simple, we can say Hz is a unit for defining frequency.
 
@@ -59,7 +61,7 @@ The computer that is sending the data is responsible for breaking the data into 
 
 ### Some other protocols in the TCP/IP suite
 
-**HTTP Protocol:** HTTP (HyperText Transfer Protocol) is used to deliver webpages to your browser over the World Wide Web (we are getting there!).
+**HTTP Protocol:** HTTP (HyperText Transfer Protocol) is used to deliver webpages to your browser over the World Wide Web (We will look at www in one of the following subtitles).
 
 **FTP Protocol:** FTP (File Transfer Protocol) is used for transferring files from one computer to another.
 
@@ -116,23 +118,37 @@ Made-up URL: http://www.kawaiicompany.com/furniture/indoor.php?sku=123&lang=en&s
 
 :wavy_dash: In order your web browser to make a connection to the website, it needs its IP address. IP addresses are not easy to remember for humans, and that's where DNS comes into play.
 
-1. A computer requests a website by either typing a particular domain into the address bar or clicking to a hyperlink. This computer is called **the client.**
-2. The client keeps a cache of recently resolved web addresses. A software built into the client's operating system checks if it already knows the IP address for this hostname. If it does, it will use the cached IP address.
-3. If the client doesn't know the IP address for this host, it needs to consult a DNS server. For a regular home user, everything goes through the **Internet Service Provider (ISP).** So the request will first reach to the ISP server, and the ISP server will consult its own DNS server. This is a special type of DNS server that is known as a **recursive resolver.** It doesn't have a database of IP addresses, but it does maintain a cache of previously resolved domain names and their matching IP addresses. If the ISP's resolver has the matching IP address, it will pass it to the client. Client will cache this IP address 24 to 48 hours. The client can now directly request data from the website via ISP server.
-4. If the ISP's resolver doesn't have the matching IP address, using the DNS protocol, it will query it from a Root Name Server (which is actually a huge database.
+**Let's go through everything that happens when you are trying to view a website:**
 
-   There are over 750 physical root name servers throughout the world, but they're reachable from only 13 unique IP addresses, so the request is being made to one of these 13 IP addresses.) The root name server stores information about more than a thousand top level domains. These top level domain serves are looked after by the **Internet Corperation for Assigned Names and Numbers (ICANN)**. This is the organization you contact if you require a new hostname and you usually do this by a web hosting service provider. The original and most well known TLDs include .com, .org, .net, .edu, .mil, .gov. Country TDL's were added later (like .us, .uk), including many others like .biz, .me, .computer, .dev, .cool etc.
+1. You request a website by either typing a particular domain into the address bar or clicking to a hyperlink. The computer you are using is called **the client.**
+2. The client keeps the IP addresses of recently viewed websites in its memory (this is called **caching**). So the first thing your computer does is to check if the address you requested has an IP address in the memory of your computer. If there is an IP address matching that website in its cache, it uses that IP address.
+3. If your computer doesn't know the IP address of that website, it needs to consult a DNS server. For a regular home user, everything goes through the **Internet Service Provider** (ISPs are companies you pay to serve you internet service, in US it can be AT&T or Comcast, in UK it can be BT or TalkTalk). So your request will first reach to the ISP server, and the ISP server will consult its own DNS server. If this server has the matching IP address, it will pass it to the client. Client will cache this IP address 24 to 48 hours. The client can now directly request data from the website via ISP server.
+4. If the ISP's DNS server doesn't have the matching IP address it will query it from a Root Name Server (which is actually a huge database.)
+
+   Information about Root Name Servers: Although there are over 750 physical root name servers throughout the world, you can only reach those from 13 unique IP addresses. The root name server stores information about more than a thousand top level domains (TLDs). These top level domain serves are looked after by the **Internet Corperation for Assigned Names and Numbers (ICANN)**. This is the organization you contact if you require a new hostname and you usually do this by a web hosting service provider (like GoDaddy, HostGator, Hostwinds etc.). The original and most well known TLDs include .com, .org, .net, .edu, .mil, .gov. Country TDL's were added later (like .us, .uk), including many others like .biz, .me, .computer, .dev, .cool etc.
 
 5. Root Name Server will send a response back to ISP's DNS server, referring to the relevant TLD server (if the website ends with .com, it will refer to .com server) that includes this server's IP address.
 6. ISP's DNS server will send another request for the IP address, this time to the relevant TLD server. Each TLD server holds information about another group of servers known as **Authoritative Name Server**s and there are thousands of these. Each Authoritative Name Server maintains a database of host names and matching IP addresses.
 7. TLD server responds with the list of IP addresses that belong to Authoritative Name Servers that might possibly have the information the ISP's server needs.
 8. ISP's server chooses an Authoritative Name Server IP randomly from the list and asks if they know the IP address to the requested website. It does this until it finds the information it needs.
-9. The IP address of the website reaches the ISP's server which is passed to the client. Now the client can reach the IP address of the requested website via the ISP.
+9. The IP address of the website reaches the ISP's server which is passed to the client.
+10. Now the client can reach the IP address of the requested website via the ISP. This request is delivered via what's called the **internet backbone**. This literally is the backbone of the internet, which are the main underground cables. The internet is made of huge sprawling masses of wires connecting all of the world's internet users.
 
-   This whole process works faster than it seems. The new IP also gets added to ISP's DNS server and cached for future reference. Client computer also caches the IP address for that hostname (for a shorter time).
+[https://www.submarinecablemap.com/](https://www.submarinecablemap.com/) → you can view the world's underground internet wires from here!
 
-   Companies might have their own DNS servers that keep track of the organization's own computer names and IP addresses. If these computers want to reach the internet, they have to use the organization's internet service provider's recursive resolver.
+This seems very overwhelming, right?
 
-   Looking up the IP address for a given domain name is known as a **forward lookup**, but a DNS server can also do the same thing in reverse (looking up the domain name from a given IP address) and this is called **reverse lookup**. Reverse lookup is useful when you are looking for a location of a computer that's trying to break through a firewall or the sender of a junk mail, etc.
+But this whole process works faster than it seems. The new IP also gets added to ISP's DNS server and cached for future reference. Client computer also caches the IP address for that hostname (for a shorter time).
 
-   There are many DNS servers throughout the world that does the same job. This infrastructure design is for preventing the overload of a single server (also prevents a single-point of failure!), increasing the speed and making the servers easier to maintain.
+So this is how the internet works.
+
+### The World Wide Web
+
+### Internet as a human right
+
+### Starlink
+
+**Resources**
+
+1. https://webfoundation.org/about/vision/history-of-the-web/
+2.
