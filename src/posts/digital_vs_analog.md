@@ -25,5 +25,5 @@ Technology until around 40 years ago was mostly analog as well. When I was a chi
 
 **Resources**
 
-1. [Online Etymology Dictionary](https://www.etymonline.com/) by Douglas Harper
+1. [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
 2.
