@@ -1,11 +1,11 @@
 ---
-title: "JavaScript- An introduction"
+title: "JavaScript- A brief introduction"
 date: "2019-04-06"
 tags: ["Web Development", "JavaScript"]
-summary: "This article gives a general information about JavaScript, engines, and explains some terminology related to JS. "
+summary: "This article gives a general information about JavaScript, engines, and explains some terminology related to JS, such as scopes and hoisting. "
 ---
 
-**ECMAScript, JavaScript engines, and some other things**
+### ECMAScript, JavaScript engines, and some other things
 
 JavaScript (abbreviated as JS) is a high-level, just-in-time compiled, and multi-paradigm programming language. It initially had another name which was "Livescript", but as Java was quite popular those days, that naming the language "JavaScript" would make more people use it. Alongside of HTML and CSS, JS became one of the most important technologies in the World Wide Web.
 
@@ -28,7 +28,7 @@ Examples of these languages are: CoffeeScript, TypeScript (adds strict data typi
 
 **Second note:** You can either write your JS code separately and import it to the html file with a script tag (which we will refer to as _external script_) or write JS code in between script tags inside the html file (which we will refer to as _internal script_).
 
-**When to use the [\<noscript>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) tag**
+### When to use the [\<noscript>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) tag
 
 It is totally possible to disable JS execution from the client side, this means the browser will not be executing the JS files. If your website is heavily depending on JS, you might want to leave them a note, saying 'turn on your JS, or you will not be getting a good UI/UX experience.' For this purpose, you use <noscript> tag. The text or HTML you write inside noscript tag will only be shown to the user only if script type is not supported or if the browser has scripting disabled.
 
@@ -38,7 +38,7 @@ It is totally possible to disable JS execution from the client side, this means 
 </noscript>
 ```
 
-**'defer' & 'async' tags**
+### 'defer' & 'async' tags
 
 These tags are only available for external scripts. Internal scripts will be executed right away.
 
@@ -50,39 +50,30 @@ If you don't want the html parsing to stop and also scripts can execute right af
 
 Another way to import external scripts is to add them to the end of the body tag. This way, as the browser will see them after it has loaded the html, they will definitely be executed after the html is loaded. but, importing scripts in the head section with async or defer tags is faster than adding them at the bottom of the body tag, as downloading the scripts and parsing and loading the html can be done at the same time. So there's that.
 
-**What is 'strict' mode?**
+### What is 'strict' mode?
 
 JS can work without using semicolons (just using line breaks will be ok), or without using let for a new variable. Still, it is not the best way to use JS, and using it with semicolons, etc. is the best practice. To enforce this best practice, if you write **'use strict'**; as the first line of code in your script, it will throw errors if it's used otherwise. This will ensure you are writing a more optimized code.
 
 Downside/disadvantage: If you use a strict code and a library that you use doesn't, then you are going to get errors!
 
-**What is dynamic typing in JS?**
+### What is dynamic typing in JS?
 
 When you declare a variable in JS, you can reassign it's value. Types are associated with values, not variables. Because you did not assign a type at the first place, the first value can be a string, and the second value that is reassigned can be any other type, which means you can change a variable's type in JS! This is why JS is called 'loosely typed' or 'dynamically typed'. If you want to use JS but you want 'strictly typed' variables, then using TypeScript will make more sense for you.
 
-**What is scope?**
+### What is scope?
 
-You can think of scopes as the place where variables are registered to.
+You can think of scopes as the place where variables are registered to. Scope is important because it determines the accesibility to variables.
 
 There are mainly 2 major scopes:
 
-1. Global Scope: Default scope, refers to our window object. (The top level of the code is the window object) Anything you create in the global scope are available throughout the application.
-2. Local Scope: It is nested inside the global scope. It is created when you create a function
+1. Global Scope: Default scope, in the browser this refers to our window object. (The top level of the code in the browser is the window object!) Global variables are declared outside of a block and they are available throughout the application.
+2. Local Scope: It is nested inside the global scope. Local variables are declared inside of a block.
 
-- When you define a variable in a function, it is only defined in that function. When you define a variable directly, it is in global scope.
-- When we define a variable outside of function, we still have access to it inside of any function.
+A block is mainly a group of zero or more statements inside curly braces. For example, whatever is inside 'if...else' and 'for' statements are scoped locally. Also functions are scoped locally. (There is a difference in between declaring a variable with var or let/const, but I will discuss it in a separate article.)
 
-  - You define a variable in the global context. Then when you late define the same variable in a function. (NOT USING VAR X=Y, USING X = Y)
+### What is hoisting?
 
-    What happens is, it does not create a new variable, it goes to the parent variable and change its value. So both inside and outside of the function, the value of that variable changes.
-
-  - If you define the same variable WITH VAR X = Y, it creates a new variable inside that specific function. So that variable's value is different between global and inside contexts.
-
-- Every function has it's own scope and they are not shared btw functions.
-
-**What is hoisting?**
-
-Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Inevitably, this means that no matter where functions and variables are declared, **they are moved to the top of their scope** whether their scope is global or local.
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. Inevitably, this means that no matter where functions and variables are declared, **they are moved to the top of their scope**.
 
 Actually, your code isn’t moving anywhere. It isn’t magically being moved to the top of the file. What’s actually happening is that your function and variable declarations are added to memory during the compile phase.
 
@@ -90,17 +81,31 @@ How this happens is, your browser actually runs your scripts twice. At the first
 
 **JavaScript only hoists declarations. Initializations are not hoisted. (function declarations are also hoisted!)**
 
-If we declare and initialize a variable, say `var a = 3;`, only the `var a;`portion (the declaration) is going to be hoisted. The `a = 3;` (the initialization) is not hoisted and therefore not added to memory.
+Ok so, what does this mean?
+
+Let's declare a variable: `let a;`
+Let's declare and initialize a variable: `let a = 3;`
+
+Declaring a variable is just saying that variable exists, initializing it is giving that variable a value. Hoisting is only for declarations. It does not keep the values, it just makes note of which variables exist in the script. In both cases, only the declarations will be hoisted.
 
 ```jsx
-var a
+// First case:
+let a
 console.log(a)
 a = 3
-// undefined
+// Prints undefined
 
+// Second case:
 console.log(a)
-var a = 3
-// undefined
+let a = 3
+// Prints undefined
+
+// Third case:
+let a = 3
+console.log(a)
+// Prints 3
 ```
 
 **Best Practice:** Because of hoisting, it’s considered a best practice to always declare your variables at the top of their respective scopes. This way there are no undesirable effects. You should also always try to initialize variables when you declare them. This will provide cleaner code and help avoid undefined variables.
+
+**Resources:**
