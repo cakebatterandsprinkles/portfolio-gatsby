@@ -5,7 +5,7 @@ tags: ["Computer Science"]
 summary: "In this article, I briefly explain what ALU, CPU, RAM, ROM and the disc are. Disclaimer: This article is a very simplified version of the real things."
 ---
 
-This article aims to explain what Arithmetic Logic Unit (ALU), Central Processing Unit (CPU), Random Access Memory (RAM), Read-Only Memory (ROM) and the disc are, in a very simple manner. If you have heard some of these terms before, and you don't really understand what the topic is, then you are in luck. This article is for you.
+This article aims to explain what Arithmetic Logic Unit (ALU), Central Processing Unit (CPU), Random Access Memory (RAM), Read-Only Memory (ROM) and the disc are, in a very simple manner. If you have heard some of these terms before, and you don't really understand what they are, then you are in luck. This article is for you.
 
 These are the electrical circuits that many of the electronic devices we use daily have, but we rarely know what they do, let alone how they work.
 
@@ -41,7 +41,19 @@ Registers are byte sized memory cells, which contain the results of different op
 
 Now, if you have ever bought a laptop by yourself in the last 5 years, you have probably seen 2/4/6/8-core processors. Processor is the name of the chip that is responsible for executing instructions, but it can contain multiple CPU's, that are called "cores". So If you are working with a 6-core processor, this means your processor has 6 CPU's, which means you can calculate the calorie amounts of 6 dishes at the same time.
 
+### Computer Memory Basics
+
+Let's define RAM, ROM and hard disc first, and then talk about why we need all these different ways of keeping data.
+
 **Random Access Memory (RAM)**
+
+Random Access Memory is basically a collection of registers. It is also called by other names, such as "read write memory", or "primary memory". When we are running a program, CPU requires certain data to run it properly and this is where that data is kept. It is volatile, meaning the data will get lost when the power is off.
+
+**Read-Only Memory (ROM)**
+
+ROM stores crucial information that is essential for the computer to work properly, such as a program essential to boot the computer. It is not volatile, it is not be lost when the power source is gone. The data ROM holds is either unchangable or requires a special operation to change.
+
+**Hard-disc**
 
 **Resources:**
 
