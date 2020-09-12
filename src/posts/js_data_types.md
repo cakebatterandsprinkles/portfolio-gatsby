@@ -17,6 +17,8 @@ Browsers also give you a couple of other features which are called API's. API is
 
 Now, how are your variables stored? How does function execution work, how is the order of execution guaranteed? Let's dive into those.
 
+We have two important concepts inside of the JS engine, the "heap" and the "stack". Heap is a long term memory allocated to the browser by the operating system and the browser manages the heap. Stack manages the execution flow of the program, it is more of a short term memory. The stack is interested in the current function that is being executed.
+
 ### Data Types in JS
 
 The data types in JS can be divided into 2 major categories:
