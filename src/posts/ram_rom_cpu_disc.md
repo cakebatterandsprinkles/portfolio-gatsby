@@ -53,8 +53,51 @@ Random Access Memory is basically a collection of registers. It is also called b
 
 ROM stores crucial information that is essential for the computer to work properly, such as a program essential to boot the computer. It is not volatile, it is not be lost when the power source is gone. The data ROM holds is either unchangable or requires a special operation to change.
 
-**Hard-disc**
+**Hard disk**
+
+Hard disks were invented around 1950's and their working principles are very similar to a casette tape. Both use the same magnetic recording techniques to store and retrieve digital data, as well as other older technologies such as CDs, VCRs, floppy disks.
+
+Let's start with a cassette tape and then compare it to hard disks.
+
+If you look inside a casette tape, you'll see a very simple device. There is a looong piece of tape (in fact, for a recording that's 90 minutes long, the tape is 443 feet -135 meters- long), there are 2 rollers that help you roll that long tape, two halves of plastic outer shell to keep everything together, and a small felt pad that acts as a backstop for the playback head.
+
+![Casette Tape](../images/blog/ram_rom/CassetteTypes1.jpg)
+
+_If you're fairly new to earth, here is what a casette tape looks like. Also, go check out the birds, they are very cool. Image Credit: CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=256864_
+
+Now, this long tape is actually a thin plastic coated with ferric oxide (Fe₂O₃) powder that was mixed with a binder for it to attach to the plastic base. (Yes it is like iron oxide, but still a different material, as iron oxide is FeO.) Ferric oxide is a ferromagnetic material, if you expose it to a magnetic field it will be permanently magnetized by the magnetic field. Still, you can erase the tape, or make a recording top of it, so it is pretty much reusable. To record an audio, you use something called "a tape recorder" which basically has a very tiny, rounded electromagnet that applies magnetic flux to the ferrix oxide on the tape. It also has an iron core wrapped with a wire, and this is where the audio signal is sent to create the magnetic field. And when you are playing a recorded tape, the motion of the tape creates a varying magnetic field that becomes a signal in the coil, and this signal is amplified for the speakers.
+
+Now we can go back to the hard disk. In a hard disk, the material used for the magnetic recording is not a plastic tape, but an aluminum or glass disk. The information encoded in a hard disk takes a much smaller space when compared to a casette tape, this allows to store a lot more information in a smaller space. The read/write head of the hard disk never touches the disk (in a cassette, the head touches the tape directly), but mainly flies over it, and it moves way faster. Moreover, the aluminum/glass disk stands on top of a platter that can spin, so the information can be accessed a lot faster.
+
+![Hard disk](../images/blog/ram_rom/hard-drive-cover-removed.jpg)
+
+_This is a hard disk with its cover removed._
+
+_Image Credit: https://commons.wikimedia.org/wiki/File:01b-hard-drive-cover-removed.JPG_
+
+_**Important Note: Don't do this to your working hard disks, removing their cover destroys them.** If you already have one that's broken and not working, you can go for it._
+
+### How everything works together
+
+Now that we know what these things are and what they are responsible for, let's try to understand how they work together.
+
+You need your CPU to do the simple tasks you need. In order to do that, CPU needs to use some memory, but it if it constantly reached out to permenant storage for every bit of information, it would be a slow process. So to make it faster, people who designed computers made temporary storage areas like RAM, and caches. They are positioned closer to the CPU and it is faster to retrieve information from them.
+
+![Memory Diagram](../images/blog/ram_rom/computer-memory-pyramid.gif)
+
+_This is a memory pyramid diagram. The higher it you go in the pyramid, the smaller the amount of data you can keep. For example, CPU Register is the smallest, and Level 1 of the cache is smaller than the Level 2._
+
+_Image Credit: Jeff Tyson "How Computer Memory Works" 23 August 2000. HowStuffWorks.com. <https://computer.howstuffworks.com/computer-memory.htm>_
+
+1. You turn your computer on.
+2. After you turn your computer on, the computer loads data from ROM, and tests all the major components of the computer to determine if they are working properly.
+3. The computer loads the basic input/output system (BIOS) from ROM. This system performs the low-level routines of different hardwares (keyboard, screen, ports, hard disks, etc.), which means it kind of makes them ready to perform their jobs.
+4. The computer loads operating system (OS) from the hard drive into the RAM.
+
+### Comparison: Human Memory vs. Computer Memory
 
 **Resources:**
 
-1.
+1. Wikipedia - [Hard disk](https://en.wikipedia.org/wiki/Hard_disk_drive), [Casette Tape](https://en.wikipedia.org/wiki/Cassette_tape), [RAM](), [ROM](), [CPU](), [ALU]()
+2. https://www.howstuffworks.com/
+3.
