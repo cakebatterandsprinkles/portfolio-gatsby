@@ -117,6 +117,8 @@ _Image Credit: Jeff Tyson "How Computer Memory Works" 23 August 2000. HowStuffWo
 7. Every time a file is loaded or an application is opened, the essential parts of it are copied into RAM. RAM is the temporary memory that is always in touch with CPU. When CPU needs something, it first checks level 1 cache, if it's not there, it checks level 2 cache, after that level 3 cache, and if it's not in the cache, it checks RAM. If an application is working with a file, it also is copied to RAM, then after CPU works on it and makes the changes the user wants, it is re-written to RAM. Shuffling data between CPU and RAM can happen million times in a second!
 8. If data gets purged from RAM before it is encoded in a permanent storage (like a hard disk), it will get lost, as nothing in RAM is permanent.
 
+**Note:** You can see a "virtual memory" section under RAM in the pyramid. **Virtual memory** is a method that is used for adding memory to RAM beyond it's capacity, as it is a limited and expensive memory space. As a CPU can access one memory place at a time, most of the RAM is unused, so if you locate the spaces that have been unused for some time and move them to hard disk temporarily, there will be some space left in your RAM for acute usage. And as hard disk space is cheaper when compared to RAM, it is a cheaper method of expanding your RAM, without physically doing it.
+
 ### Why we need so many types of memory systems working together
 
 ### Comparison: Human Memory vs. Computer Memory
@@ -128,3 +130,4 @@ _Image Credit: Jeff Tyson "How Computer Memory Works" 23 August 2000. HowStuffWo
 3. Jeff Tyson "How Computer Memory Works",
    HowStuffWorks.com. <https://computer.howstuffworks.com/computer-memory.htm>
 4. "From Nand to Tetris" Part1 & Part2 by [Hebrew University of Jerusalem](https://www.nand2tetris.org/)
+5.
