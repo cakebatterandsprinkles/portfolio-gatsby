@@ -2,16 +2,18 @@
 title: "Numbers"
 date: "08-22-2020"
 tags: ["Computer Science", "Mathematics", "History"]
-summary: "This article briefly explains the history of numbers, as well as the definitions of binary, senary, denary and hexadecimal."
+summary: "This article briefly explains the history of numbers, as well as the definitions of binary, senary, denary, and hexadecimal."
 ---
 
 ### Our first numbers: How many rocks do you have?
 
 **Tally Marks**
 
-Counting stuff is as ancient as we are. Around 30,000 years ago, even without a written language, our ancestors were counting stuff by bending their fingers, or pointing out to stones, or making marks with sharp stuff on bones which we now call the **[tally marks](https://en.wikipedia.org/wiki/Tally_marks)** (also called hash marks.) Clusters of five strokes made it more legible, and different groups of people all around the world invented the tally system in slightly different ways, but always with the same logic - clustering 5 strokes in an order.
+Counting stuff is as ancient as we are. Around 30,000 years ago, even without a written language, our ancestors were counting stuff by bending their fingers, or pointing out to stones, or making marks with sharp stuff on bones which we now call the **[tally marks](https://en.wikipedia.org/wiki/Tally_marks)** (also called hash marks.) Clusters of five strokes made it more legible, and different groups of people all around the world invented the tally system in slightly different ways, but always with the same logic- clustering 5 strokes in an order.
 
-The **[written language](http://www.pbs.org/opb/historydetectives/feature/the-written-word/)** came later than the spoken language, when humans began to build more permenant social groups and start to grow their own food. I guess at some point somebody thought writing numbers with tally marks took very, very long when the numbers get bigger, and it was cumbersome for the person who was reading it as well. So at some point, humans decided to use symbols to indicate certain numbers, and these symbols are called **[the numerals.](https://en.wikipedia.org/wiki/Numeral_system)**
+The **[written language](http://www.pbs.org/opb/historydetectives/feature/the-written-word/)** came later than the spoken language, when humans began to build more permanent social groups and start to grow their own food. I guess at some point somebody thought writing numbers with tally marks took very, very long when the numbers get bigger, and it was cumbersome for the person who was reading it as well. So at some point, humans decided to use symbols to indicate certain numbers, and these symbols are called **[the numerals.](https://en.wikipedia.org/wiki/Numeral_system)**
+
+Some experiments and obeservations show that animals also seem to have a good number sense. For example in the insect world, mother wasp lays her eggs in individual cells and provides every cell with a certain amount of caterpillars for her hatchlings. Some subspecies of wasps provide 5 for each, another one provides 12, and another one does 24, but they always provide the same number of caterpillars for each egg. Another subspecies (the solitary wasp in the genus Eumenus) provides five caterpillars if the hatchling is going to be a male, and ten caterpillars for a female (unequal for a good reason: males tend to be smaller than females). Humans share this innate sense of numbers with other animals. Human children under 18 months are sensitive to small changes of small quantities (values up to 3 or 4), for example the difference between 3 apples and 1 apple. If you are interested in how the numerical sense develop in human children I suggest you to read **[this](http://alumni.media.mit.edu/~stefanm/society/som_final.html)** article.
 
 There are various number systems that were invented throughout the human history, but there are 4 main ones that were used by biggest ancient human civilizations: the Babylonian numerals, the Egyptian numerals, the Roman numerals and the Mayan numerals.
 
@@ -22,13 +24,13 @@ The Babylonian numeral system is the first known [positional numeral system](htt
 This is what ancient Babylonian numeral system looked like:
 ![Babylonian numerals](../images/blog/numbers/babylonian_numerals.png)
 
-The ancient [Babylonian counting system](https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals) (appeared around 2000 BC) was base-60. Today we use a base-10 system. This means that with each digit to the left, the number's place value is increased 10 fold. So when we ask for 7532 carrots in base 10, it actually means 7 \* 1000 + 5 \* 100 + 3 \* 10 + 2 \* 1 carrots. The same number in the Babylonian system would be 25 32 (2 \* 3600 + 5 \* 60 + 32 \* 1). 7532 in base 10 is equal to 25 32 in base 60.
+The ancient [Babylonian counting system](https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals) (appeared around 2000 BC) was base-60. Today we use a base-10 system. This means that with each digit to the left, the number's place value is increased 10 fold. So when we ask for 7532 carrots in base-10, it actually means 7 \* 1000 + 5 \* 100 + 3 \* 10 + 2 \* 1 carrots. The same number in the Babylonian system would be 25 32 (2 \* 3600 + 5 \* 60 + 32 \* 1). 7532 in base-10 is equal to 25 32 in base-60.
 
-Ancient Babylonians affected the world in many ways. Did you ever wonder why there are 60 seconds in a minute, 60 minutes in an hour and 24 hours in a day? Or why there are 360 degrees in a full circle? These are all echoes of this base 60 numeral system that ancient Babylonians used.
+Ancient Babylonians affected the world in many ways. Did you ever wonder why there are 60 seconds in a minute, 60 minutes in an hour and 24 hours in a day? Or why there are 360 degrees in a full circle? These are all echoes of this base-60 numeral system that ancient Babylonians used.
 
 **Ancient Egyptian numerals**
 
-The (ancient Egyptian counting system)[https://en.wikipedia.org/wiki/Egyptian_numerals] (appeared around 3000 BC) used objects from everyday life to symbolize numbers and used base 10. A rod meant 1, a cattle hobble was 10, a coiled rope was 100, a lotus flower was 1000. They didn't have the concept of positional notation.
+The [ancient Egyptian counting system](https://en.wikipedia.org/wiki/Egyptian_numerals) (appeared around 3000 BC) used objects from everyday life to symbolize numbers and used base-10. A rod meant 1, a cattle hobble was 10, a coiled rope was 100, a lotus flower was 1000. They didn't have the concept of positional notation.
 
 This is what ancient Egyptian numeral system looked like:
 
@@ -46,10 +48,72 @@ This is what ancient Roman numeral system looked like:
 
 Image Credit: https://www.unrv.com/culture/roman-numerals.php
 
-To give some examples, the number 37 in base 10 is represented as XXXVI (XXX + VII) in Roman numerals. The number 247 is represented with CCXLVII (CC + XL + VII).
+To give some examples, the number 37 in base-10 is represented as XXXVI (XXX + VII) in Roman numerals. The number 247 is represented with CCXLVII (CC + XL + VII).
 
 We still see Roman numerals around, in the clockface of Big Ben, or at the backside of the coins as the regnal numbers of kings and queens, or in movie sequels.
 
+### Civilizations of Central and South America
+
+Central and South America (which is now Mexico, Belize, Guatemala, Honduras, El Salvador, Nicaragua, and Costa Rica, Ecuador, Chile) was home to 3 major ancient civilizations: The Mayans, the Aztecs and the Incas.
+
+The Mayans were not a unified society but a combination of twenty culturally similar, independent states. They had a writing system, which enabled them to build a highly developed society, built beautiful cities and temples using stones and metals, observed the skies and made themselves a calendar, was occupied with mathemathics, astronomy, art and architecture and had a political, military and religious order. Unfortunately one of the materials the used for their writings were tree barks, and much of it was destroyed by the tropical climate. Most of other cultural remnants were destroyed in 1500s by the Spanish conquerors. (In fact, all three ancient civilizations of America shared the same faith. They were suffered from the attacks of Spanish conquerors and was devestated by the spread of smallpox.)
+
 **Ancient Mayan numerals**
 
-Mayan number system dates back to 4th century, and it had a base 20. The theory is that as Mayans lived in a hotter climate, they rarely wore shoes, and total number of fingers and toes around was mostly 20. Mayans used a combination of 2 symbols, a dot (.) was used to represent the single units (one through four) and a dash (-) was used to represent five.
+Mayan number system dates back to 4th century, and it had a base of 20. The theory is that as Mayans lived in a hotter climate, and for this reason shoes were worn rarely, and total number of fingers and toes around all the time was mostly 20. Mayans used a 2 symbols to write their numbers: a dot (.) represented the single units (one through four) and a dash (-) represented five. These symbols when used together to write the numbers resembles an abacus, so it is speculated that Mayan's might have used an abacus. [An abacus](https://en.wikipedia.org/wiki/Abacus) is a counting frame that consists of rows and movable beads connected to those rows. It's origin is unknown, as it was used in slightly different designs almost all throughout the world. Nowadays it is used to teach children mathemathics.
+
+The Mayan's were also the first to symbolize the concept of nothing (or zero). They most commonly used symbol for zero was a shell.
+
+![Mayan Basic Numerals](../images/blog/numbers/mayan1469.gif)
+
+_This is how Mayans showed small numbers._
+
+_Image Credit: http://www.math.wichita.edu/history/topics/num-sys.html#mayan_
+
+The Mayans wrote their numbers vertically, with the lowest denomination at the bottom. The numbers also hold positional value, meaning the number at the bottom was multiplied with 20⁰, second row from the bottom was multiplied with 20¹ (20), third with 20² (400), fourth with 20³ (8,000), fifth with 20⁴ (160,000).
+
+Mayans used a base-18 system when making their calendar. They must have figured out that the Earth was spinning around one time around sun in 365 days, because they made their calendar exactly 365 days long. Each month had 20 days and there were 18 months in a year (20 \* 18 = 360), and the 19th month of the year was just 5 days long (360 + 5 = 365), and those 5 days were believed to be filled with bad luck, misfortune and danger. We still use a manipulated version of the 365 day calendar Mayans invented.
+
+### Bonus Section:
+
+**Ancient Inca Counting System: Quipu**
+
+Incans were a highly advanced civilization that built huge cities, developed road systems, did trading, created jewelleries from gold, became skillfull potters, wowen beautiful fabrics and treated their citizens fairly. What makes it even more impressive is that they did all of this without a written language.
+
+How did they track important information? They did this using a tool made of knotted strings called a **[quipu](https://en.wikipedia.org/wiki/Quipu)**. The men in charge of maintaining the quipu were known as the "keeper of the quipu." The fate of oral traditions and cultures are all the same, some of it is forgotten and only can be speculated. It is speculated that a quipu was used to keep records of the number of things. Another mystery about the quipu is, we can only guess the base they used. It seems like the Incans used a base-10 system.
+
+Quipu was made by thinner strings that were looped around a larger cord. Now, Quipu meant "knot" in the ancient Inca language, and that is very appropriate name for this tool, because the numbers were indicated by knots of colored threads that were tied around the thinner strings. Where the knots were placed mattered, because that's how the value was indicated. The knots that were closer to the larger cord indicated bigger values. The way the knots were tied, or the varying colors of the strings might have had their own meanings but as they didn't have a written language, we're unable to understand it.
+
+![Inca Quipu](../images/blog/numbers/2560px-Quipo_in_the_Museo_Machu_Picchu,_Casa_Concha,_Cusco.jpg)
+
+_This is what an Inca quipu looked like._
+
+_Image Credit: By Pi3.124 - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=69539294_
+
+**Papua New Guinea- Oksapmin Counting System**
+
+Another society in the Oksapmin area of Papua New Guinea created a counting system where numerical representations were mapped on body parts. Their numerical system initially didn't include arithmetic functions, but after they began trading they also incorporated an arithmetic system into their counting system.
+
+![Oksapmin counting System](../images/blog/numbers/The-Oksapmin-27-body-part-counting-system-adapted-from-Saxe-2012-2.png)
+
+_Image Credit: https://www.researchgate.net/publication/274496244_Approaches_to_Reduction_in_Treatments_of_Culture-Cognition_Relations_Affordances_and_Limitations_
+
+Here is a woman displaying the Oksapmin counting system:
+
+[![Oksapmin counting system](http://img.youtube.com/vi/0aZZcErLYJQ/0.jpg)](http://www.youtube.com/watch?v=0aZZcErLYJQ "Oksapmin counting system")
+
+### Numbers in computer science
+
+When we first learned to count as humanity, we used fingers for counting, and each finger represented a single unit. That system is called "unary". A computer stores data in "binary", a system in which there are only two digits, 0 and 1. Binary is also known as the "base-2" number system. These binary digits are known as 'bits'(**bi**nary digi**ts**)
+
+At some point we created numerals between 0 and 9, and began to use a base-10 system(which is also called "the decimal system", also known as the "denary"). This number system is quite intuitive as we have 10 fingers ourselves.
+
+Both decimal and binary systems are positional number systems, meaning every digit has a positional value.
+
+**Resources:**
+
+1. [Numerical Mechanisms and Children’s Concept of Numbers](http://alumni.media.mit.edu/~stefanm/society/som_final_natalia_aggelos_stefan.pdf)- Natalia Marmasse, Aggelos Bletsas, Stefan Marti
+2. Geary, D.C. (1994). Children’ s Mathematical Development: Research and Practical Applications. Washington, DC: American Psychological Association.
+3. Ifrah, Georges. From One to Zero: A Universal History of Numbers. New York: Viking Penguin, Inc., 1985.
+4. Ortenzi, E. C. (1964). Numbers in ancient times. Portland, ME: J. Weston Walch.
+5. Wikipedia- [Abacus](https://en.wikipedia.org/wiki/Abacus), [Quipu](https://en.wikipedia.org/wiki/Quipu)
