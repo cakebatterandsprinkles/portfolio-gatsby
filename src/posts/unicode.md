@@ -14,11 +14,19 @@ English, so they were only interested in representing the English letters, symbo
 
 They used 8 bits to represent all the characters in written language. Earlier computers worked by grouping 8 bits, which is also known as a byte. This could hold 256 possible combinations of 1's and 0's, and each of these combinations could be assigned to a unique character. This first system to represent characters is called **[ASCII (American Standard Code for Information Interchange)](https://en.wikipedia.org/wiki/ASCII).** ASCII only used the first 128 of these possible combinations and there were 128 bits left to use, and this provided space for other letters or symbols from other languages.
 
+This was the standard 7-bit ASCII table (characters between 0-127):
+
+![7-bit ASCII](../images/blog/unicode/astab1.gif)
+
+_Image Credit: https://www.mkssoftware.com/docs/man5/ascii.5.asp_
+
 These modifiable 128 bits was called **[the extended ASCII character set](https://en.wikipedia.org/wiki/Extended_ASCII).** This became a problem, as different organizations such as HP, Adobe, Apple, Microsoft, etc, were all using this extended character set to do their own thing. The same binary code meant different things in different platforms, and sharing data between these platforms became a problem.
 
-This is an example extended ASCII table:
+This is an example extended ASCII table (characters between 128-255):
 
-![Extended ASCII table](../images/blog/unicode/ascii_extended.png)
+![Extended ASCII table](../images/blog/unicode/EXT-ASC.gif)
+
+_Image Credit: https://www.webopedia.com/TERM/E/extended_ASCII.html_
 
 **How Unicode was born**
 
