@@ -1,6 +1,6 @@
 ---
 title: ""
-date: "08-13-2020"
+date: "07-19-2020"
 tags: ["Computer Science", "Neuroscience"]
 summary: "This article briefly explains how computers can retain data, by showing how a single memory cell operates."
 ---
@@ -21,7 +21,7 @@ Magic? Nope.
 
 Let's start with computer's memory.
 
-Since anything and everything inside a computer is bits, the computer can only remember if a bit was 0 or 1. And retaining those bits are done with a special wiring of 4 NAND gates. (If you don't know what gates or bits are, check out this article.)
+Since anything and everything inside a computer is bits, the computer can only remember if a bit was 0 or 1. And retaining those bits are done with a special wiring of 4 NAND gates.
 
 The following diagram holds a single memory cell, by that I mean the gate diagram that holds a single bit:
 
@@ -43,8 +43,8 @@ Now, let's continue where we left off and this time turn set off (set 0). Input 
 
 In a nutshell, if the set is on (1), the output of this diagram will be whatever input is. If the set is turned off (0), the output will be whatever the input was when set was turned off.
 
-And this is how a computer "remembers" a single bit. Isn't it impressive?
+And this is how a computer "remembers" a single bit. Isn't that impressive?
 
-**The smallest unit of human memory: The Neuron**
+**The smallest unit of human memory: The Brain Cells**
 
 Humans store different kinds of information, such as facts, events, skills, habits, emotional memory and muscle memory. The neurons that store these diverse data are distributed throughout the brain, but they all have

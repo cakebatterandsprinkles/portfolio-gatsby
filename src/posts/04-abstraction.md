@@ -1,6 +1,6 @@
 ---
 title: "Layers of Abstraction"
-date: "07-21-2020"
+date: "07-08-2020"
 tags: ["Computer Science", "Neuroscience"]
 summary: "This article defines 2 important concepts: abstraction and modularity. It also tries to explain why we (as humans) need abstraction to do programming."
 ---

@@ -134,7 +134,7 @@ Made-up URL: http://www.kawaiicompany.com/furniture/indoor.php?sku=123&lang=en&s
 9. The IP address of the website reaches the ISP's server which is passed to the client.
 10. Now the client can reach the IP address of the requested website via the ISP. This request is delivered via what's called the **internet backbone**. This literally is the backbone of the internet, which are the main underground cables. The internet is made of huge sprawling masses of wires connecting all of the world's internet users.
 
-[https://www.submarinecablemap.com/](https://www.submarinecablemap.com/) → you can view the world's underground internet wires from here!
+You can view the world's underground internet wires from [this link](https://www.submarinecablemap.com/)!
 
 This seems very overwhelming, right?
 

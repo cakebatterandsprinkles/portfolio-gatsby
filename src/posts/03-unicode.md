@@ -1,6 +1,6 @@
 ---
 title: "The lovely Unicode"
-date: "08-31-2020"
+date: "06-30-2020"
 tags: ["Computer Science", "History"]
 summary: "This article explains ASCII, Unicode, UTF-8 and a little bit of their history."
 ---
