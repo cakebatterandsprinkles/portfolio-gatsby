@@ -41,6 +41,12 @@ Now, let's see all of the layers on top of each other:
 
 **8. Quantum Physics:** Transistors are built upon quantum physics, the behavior of subatomic particles are what make transistors do what they do.
 
+This is a schematic version of the layers:
+
+![Levels of Abstraction Scheme](../images/blog/abstraction/levels_of_abstraction_scheme.jpg)
+
+_Image courtesy: http://theembeddedguy.com/2016/05/15/layers-of-abstraction/_
+
 I am making a tiny but important note here. Although the idea of "working memory is limited" is still accepted as a concept, the limit of it is still argued by scientists. In 2001, Nelson Cowan published [an article](https://www.researchgate.net/publication/11830840_The_Magical_Number_4_in_Short-Term_Memory_A_Reconsideration_of_Mental_Storage_Capacity) suggesting the limit was narrower than 7 and he found out another magical number: 4. [Another article](https://www.semanticscholar.org/paper/Chunks-in-expert-memory%3A-Evidence-for-the-magical-%E2%80%A6-Gobet-Clarkson/7a1afc70878db47c13cd76dbf2aa3bb6f3b96b9c) published in 2004 by F. Gobet et al. suggested that it was limited to 2. A common clinical test to measure cognitive impairment and dementia screening that's called the [Mini–Mental State Examination (MMSE)](https://en.wikipedia.org/wiki/Mini%E2%80%93Mental_State_Examination) measures the impairment of working memory by using 3 as the limit. If you are interested in how MMSE is done, you can check these 2 resources which show the [questions that are asked](http://www.fammed.usouthal.edu/Guides&JobAids/Geriatric/MMSE.pdf) and [how they are interpreted](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/GetPdf.cgi?id=phd001525.1#:~:text=The%20Mini%2DMental%20State%20Exam,1.).
 
 Another tiny but important note, compilers are very intricate and complicated programs that can do many things. Their main purpose is to translate a high-level language to low-level machine code in an optimized way, but they do so much more. They read and analyze the entire program and detect errors, produce clear and meaningful diagnostics for the programmer. They are great tools that enable us to write code efficiently.
