@@ -5,23 +5,23 @@ tags: ["Computer Science", "Neuroscience"]
 summary: "This article briefly explains how computers can retain data, by showing how a single memory cell operates."
 ---
 
-**What is memory?**
+### What is memory?
 
 Let's start with a simple question: What is your name?
 
 I'm pretty sure that question instantly popped an answer in your mind. (And if you don't know your name, it's time to see a neurologist.) Your name is one of the first things you've learned (whoa!) as you were born to this world. But what does learning mean?
 
-Learning can be defined as the acquisition of new knowledge (or a new skill), but retaining that information is what is called the **memory.**
+Learning can be defined as the acquisition of new knowledge (or a new skill), but retaining that information (stored, and retrieved when necessary) is what is called the **[memory](https://en.wikipedia.org/wiki/Memory)**.
 
-You've probably heard some stuff about "computer memory" before. You can write some text into a file, save it, close your computer, come back, open that file, and what you wrote will still be there. You remembering your name and the computer remembering some text you wrote is a skill that you share.
+You've probably heard some stuff about **[computer memory](https://en.wikipedia.org/wiki/Computer_memory)** before. You can write some text into a file, save it, close your computer, come back, open that file, and what you wrote will still be there. You remembering your name and the computer remembering some text you wrote is a skill that you share.
 
 Magic? Nope.
 
-**The smallest unit of computer memory: Memory Cell**
+### The smallest unit of computer memory: Memory Cell
 
 Let's start with computer's memory.
 
-Since anything and everything inside a computer is bits, the computer can only remember if a bit was 0 or 1. And retaining those bits are done with a special wiring of 4 NAND gates.
+Since anything and everything inside a computer is bits, the computer can only remember if a bit was 0 or 1. And retaining those bits are done with a special wiring of 4 [NAND gates](https://en.wikipedia.org/wiki/NAND_gate).
 
 The following diagram holds a single memory cell, by that I mean the gate diagram that holds a single bit:
 
@@ -45,6 +45,58 @@ In a nutshell, if the set is on (1), the output of this diagram will be whatever
 
 And this is how a computer "remembers" a single bit. Isn't that impressive?
 
-**The smallest unit of human memory: The Brain Cells**
+### Cellular memory
 
-Humans store different kinds of information, such as facts, events, skills, habits, emotional memory and muscle memory. The neurons that store these diverse data are distributed throughout the brain, but they all have
+Humans store different kinds of information, such as facts, events, skills, habits, emotional memory and muscle memory. Human brain encodes data that you use everyday in your daily life, consciously or subconsciously. But this is not the kind of memory that we are going to talk about in this section. We are going to talk about something called **the cellular memory.**
+
+_Cellular memory can be defined as a cell's sustained response to any type of stimulus._
+
+All cells have some sort of a huge manual, with the title: "How to human". This special book is what we call the **[DNA](https://en.wikipedia.org/wiki/DNA).** The book is kept in a special room called **[the nucleus](https://en.wikipedia.org/wiki/Cell_nucleus)** so only some selected few can get in and read the book. And when they need to build something, anything in fact, they go on and check the book on how to do that. The manual never leaves this room, only some copies of some parts do. If something needs to be done, that section of the book is opened, being noted to a piece of paper, book is closed and secured, and only the piece of paper leaves the room. The piece of paper is called a **[messenger RNA](https://en.wikipedia.org/wiki/Messenger_RNA)**, and the process of copying the information is called **[transcription](https://en.wikipedia.org/wiki/Eukaryotic_transcription)**.
+
+This special book defines how to do anything and everything that makes a human. But not all of this book makes sense, actually more than half of it is gibberish. It is useful to confuse intruders that may try to corrupt the book though. Aliens outside might shoot their book-corrupting, DNA-breaking lasers, but as more than half of it is gibberish, the data inside that is so precious to us has a small chance of being corrupted.
+
+Around the special room where we call nucleus, there is a whole house. Something different is done in each room of this house, and one room is responsible for reading the messenger RNA and building whatever's written on it. This process is called **[translation](<https://en.wikipedia.org/wiki/Translation_(biology)>)**.
+
+Cells sense their environment by the structures on their surface that are called **[receptors](https://en.wikipedia.org/wiki/Cell_surface_receptor)**. There are receptors inside of the cell too. There are many type of receptors, all of them serve one purpose: to understand what the hell is going on outside.
+
+Now, life is what we do and how we react to the stimulus we receive. This is what life is about to our cells as well.
+
+I am going to give two examples of how a given cell remembers something. The first example will be some sort of a short term memory, because for some time a stimulus will cause a response, but after a while that response will diminish if the stimulus is not continued.
+
+The second example is more of a long term memory, in which a repeated stimulus will cause a permanent effect in a cell.
+
+So here is the first example:
+
+1. Human is cutting onions. Onions are very vengeful creatures, and when they are cut, they release a gas called "propanethiol S-oxide", which reaches the human's eyes, gets mixed with water and forms "sulphuric acid". Human starts crying, but must cut the onions, because the pan is on the stove and is ready to cook stuff. Human is in a hurry and cuts her hand.
+
+   Human washes the hand and applies moderate pressure on the cut with a clean cloth. Now what happens there?
+
+   First, the bleeding must be stopped. The related cells called "platelets" stick around the wound and stop the bleeding. When the bleeding stops, other related cells come around to wound and they assess the situation, these are called "the inflammatory cells". The assessing cells produce tiny little paper planes with different colors, which are called "cytokines". Each color of paper plane goes around to inform a different type of cell. Each cell has a role in the repairing process.
+
+   Until the cut is healed, each cell continues on doing the work they do. If their job is to prevent a potential bacterial invasion, they kill every bacteria that is not supposed to be there. If their job is to remove the unwanted material from the tissue, or if they need to divide and replace the cells in that area, they do that. When the wound is healed and there is no threat, the inflammatory cells stop sending paper planes around and leave the area.
+
+   Many books are open, many stuff is synthesised and many stuff is modified and the cut is repaired at the end. Everyone goes back to their daily lives and nothing is permanently changed.
+
+2. Human cuts hand way too often. Psychologically traumatized by the effects of onions in her life, she starts taking alcohol, occasionally.
+
+   Chronic consumption of ethanol results with the increased production of tiny ninja molecules that are called "miRNA's". These miRNA's can go in and out of the special room (the nucleus) without getting too much attention. Each type of miRNA has a special power, they can change the amount of copies of something that are sent outside of the room.
+
+   Now, there is another concept that I have to talk about here. Although each cell have the same book, they are slightly different from each other. Each cell lives in some different environment, and they have their own things to do so they use the different chapters of the book more frequently than others. Each chapter is marked with something that either says "will be used more frequently" or "will be used less frequently". These bookmarks are called **[epigenetic markers](https://en.wikipedia.org/wiki/Epigenetics)**, and unfortunately they can be changed by external factors such as the human's diet, stress and nutrition, also they can effect the bookmarks that will be passed on the next generations. Unfortunately you are what you eat, and what your mother ate.
+
+   Check out this impressive [image](https://www.nature.com/articles/pr2007128/figures/1) of _genetically identical_ mice with epigenetic change on a single gene. Isn't that impressive? That's how important epigenetic changes are.
+
+   Back to our onion-hating, alcoholic human. Although she is not aware of it much, (because let's be honest, she is drinking to forget about the onion) her gene expression on her liver is changing as she consumes more and more alcohol. The levels of certain miRNA's are increasing, and these ninja's go in to the special room without being noticed and play with the bookmarks. The ninja ethanol induces increases the amount of fat the liver will accumulate. And if the ethanol keeps coming and coming, the human will suffer from cirrhosis or even hepatic cancer.
+
+   And this is one example of long term memory of a single cell.
+
+Long story short, if onions make you sad, don't eat them. You absolutely don't have to. And stop eating sh\*t starting from today. You know better now.
+
+**Resources:**
+
+1. Wikipedia- [Memory](https://en.wikipedia.org/wiki/Memory), [Computer memory](https://en.wikipedia.org/wiki/Computer_memory), [NAND gates](https://en.wikipedia.org/wiki/NAND_gate), [DNA](https://en.wikipedia.org/wiki/DNA), [Cell nucleus](https://en.wikipedia.org/wiki/Cell_nucleus), [messenger RNA](https://en.wikipedia.org/wiki/Messenger_RNA), [transcription](https://en.wikipedia.org/wiki/Eukaryotic_transcription), [translation](<https://en.wikipedia.org/wiki/Translation_(biology)>), [receptors](https://en.wikipedia.org/wiki/Cell_surface_receptor), [epigenetics](https://en.wikipedia.org/wiki/Epigeneticsrg/wiki/Cell_surface_receptor)
+2. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+3. Dolinoy, D., Das, R., Weidman, J. et al. [Metastable Epialleles, Imprinting, and the Fetal Origins of Adult Diseases.](https://www.nature.com/articles/pr2007128) Pediatr Res 61, 30–37 (2007). https://doi.org/10.1203/pdr.0b013e31804575f7
+4. Shah JM, Omar E, Pai DR, Sood S. [Cellular events and biomarkers of wound healing.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3495371/) Indian J Plast Surg. 2012;45(2):220-228. doi:10.4103/0970-0358.101282
+5. [National Human Genome Research Institute](https://www.genome.gov/About-Genomics/Introduction-to-Genomics)
+6. Burrill DR, Silver PA. [Making cellular memories.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2882105/) Cell. 2010;140(1):13-18. doi:10.1016/j.cell.2009.12.034
+7. Shukla SD, Lim RW. [Epigenetic effects of ethanol on the liver and gastrointestinal system.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3860425/) Alcohol Res. 2013;35(1):47-55.
