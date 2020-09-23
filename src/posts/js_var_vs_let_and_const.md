@@ -2,7 +2,7 @@
 title: "JavaScript- 'var' vs. 'let' and 'const'"
 date: "2019-04-06"
 tags: ["Web Development", "JavaScript"]
-summary: "This article makes a brief comparison between pre-ES6 "var" keyword and ES6 "let" and "const" keywords with simple examples. "
+summary: "This article makes a brief comparison between pre-ES6 "var" keyword and ES6 "let" and "const" keywords with simple examples."
 ---
 
 Before ES6, there was a single way to declare a variable, and that was with using the keyword "var". "var" keyword had its own set of problems, and this article will discuss what ES6 (ES2015) improved by introducing "let" and "const" syntaxes instead of "var".

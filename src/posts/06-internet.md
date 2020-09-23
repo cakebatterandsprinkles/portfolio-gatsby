@@ -1,6 +1,6 @@
 ---
 title: "How the Internet Works: Computer Networks, Ethernet, and the World Wide Web"
-date: "07-12-2020"
+date: "07-26-2020"
 tags: ["Computer Science"]
 summary: "This article briefly explains how the internet works, what world wide web is and the underlying technologies supporting these."
 ---
