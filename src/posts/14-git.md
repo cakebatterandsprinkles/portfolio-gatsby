@@ -2,7 +2,7 @@
 title: "Git, GitHub, GitLab, Gitflow"
 date: "2019-04-06"
 tags: ["Web Development"]
-summary: "In this article, I aim to explain what Git, GitHub, GitLab and GitHub flow are."
+summary: "In this article, I aim to explain what Git and services like GitHub, GitLab, and Bitbucket are."
 ---
 
 ### What is Git?
@@ -13,13 +13,13 @@ Most experiments take time, some more than the others. Researchers have lab note
 
 Developing software is also some sort of experimenting, you need to add some pieces, and they might not work all the time. Or even if they do work, you might not be happy with their performance or basically decide to do something else instead. So software developers also need some sort of lab notebooks and theirs is even cooler (I'll tell why a little bit later), and it is called a "version control system". So every step of their experiment becomes a "version" of a software.
 
-A **version control system** tracks the changes and keeps every version, and facilitates colloboration between developers by making it possible to contribute new code with the confidence of knowing you can recover any version at any given time. Also you can easily see what changes were made at what time, by who and possibly why.
+A **[version control system](https://en.wikipedia.org/wiki/Version_control)** tracks the changes and keeps every version, and facilitates colloboration between developers by making it possible to contribute new code with the confidence of knowing you can recover any version at any given time. Also you can easily see what changes were made at what time, by who and possibly why.
 
 Oh I said a very cool thing there: "with the confidence of knowing you can recover any version at any given time". That is what makes their lab notebook way cooler than any other, you can take a step back. With any other experiment, at the end of the experiment your resources are mostly gone. The 5 year old smart cookie mentioned in the first paragraph cannot isolate the yellow paint back from the orange. The yellow paint that is mixed is already a part of some other color now. If she wants to repeat her color experiments, she has to ask for more paint. But programmers have the freedom to write a code, not like it, and take it back.
 
 Developer community is also very cool for other reasons, and one of them is the open source project concept. An open source project is maintained by many people, and all people are free to use, study, modify and distribute the project itself. It is something humans do for humans. The open source software projects can be maintained by many people who are all around the world that don't know each other, and this is all possible because of the so called "version control systems".
 
-So let's come back to our real purpose, which is explaining Git. **Git** is the most used (and loved) version control system software developers use. It can also be called a **distributed version control system (DVCS)**, which simply means that it is commonly used for open source projects. When you use git, you can contribute to projects from any time zone, and you can always keep track of what is done, by who, when and why, also take the previous versions back if you need to. **A git repository** is a folder that encompasses everything associated with that project. The copy of the repository is stored in a server, and also a local copy where you can change things is kept on your computer.
+So let's come back to our real purpose, which is explaining Git. **[Git](https://en.wikipedia.org/wiki/Git)** is the most used (and loved) version control system software developers use. It can also be called a **[distributed version control system (DVCS)](https://en.wikipedia.org/wiki/Distributed_version_control)**, which simply means that it doesn't rely on a single location for a backup, but is distributed to every developer's local computer that is working on that project. When you use git, you can contribute to projects from any time zone, and you can always keep track of what is done, by who, when and why, also take the previous versions back if you need to. **[A git repository](<https://en.wikipedia.org/wiki/Repository_(version_control)>)** is a folder that encompasses everything associated with that project. The copy of the repository is stored in a server, and also a local copy where you can change things is kept on your computer.
 
 ### How to use Git
 
@@ -39,8 +39,20 @@ These are the basic git commands:
 
 ### GitHub, GitLab, Bitbucket
 
-GitHub, GitLab and Bitbucket are websites that host Git repositories, and you don't need them to use git, but they sure are useful.
+[GitHub](https://github.com/), [GitLab](https://gitlab.com/explore) and [Bitbucket](https://bitbucket.org/product/) are websites that host Git repositories, and you don't need them to use git, but they sure are useful.
 
 The services like GitHub, GitLab and Bitbucket are needed when you are colloborating with people, because you'll need a repo to keep in a central computer within everybody's reach. They also add other features like creating pull requests, reviewing code and deploying.
 
-### GitHub flow
+### Workflow
+
+The workflow of Git is branch-based. Each feature should be developed in their own branch, and the branch names should be descriptive and must indicate the work being done. Changes made on any branch that is not the main branch don't affect the main branch, so you can experiment safely. Anything on the main branch, on the other hand, is deployable. When you finish a feature you merge your branch with the main branch, and the process continues on like that.
+
+A project will consist of many branches. Each branch will consist of numerous commits, and each commit will considered as a single, separate unit of change. Each commit will be associated with a message indicating why that particular change was made. When the feature is done, the person works on that branch will open a pull request to merge it with the main branch, and it will be reviewed by a person in the team. The code will be discussed and if additional work is needed (a bug fix or maybe something missing) the developer can fix it in your branch and push the change.
+
+**Resources:**
+
+1. https://git-scm.com/
+2. [GitHub- Git handbook](https://guides.github.com/introduction/git-handbook/)
+3. [Atlassian- Tutorials](https://www.atlassian.com/git/tutorials/what-is-git)
+4. https://www.freecodecamp.org/
+5. Wikipedia- , [GitHub](https://en.wikipedia.org/wiki/GitHub), [GitLab](https://en.wikipedia.org/wiki/GitLab), [Bitbucket](https://en.wikipedia.org/wiki/Bitbucket)
