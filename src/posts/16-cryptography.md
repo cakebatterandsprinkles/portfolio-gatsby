@@ -84,3 +84,33 @@ Each binary unit of the plain text will be XORed with the complementing binary u
 The encrypted letter z is: 00101111
 
 When decrypting, put the cipher text and the encryption key and perform XOR operation for every bit. (You do the same thing when encrypting and decrypting and that's why this method is also symmetrical and also very fast. So your data is secure and you can encrypt and decrypt it quickly.)
+
+### Asymmetric key cryptography
+
+To use symmetric key cryptography, both sides has to know 3 things, the cipher text, the encryption key (secret) and the algorithm used for encryption. But what if two sides cannot communicate each other the secret key and the algorithm privately? Then the symmetric cryptography would not be safe enough to use.
+
+Ron Rivest, Adi Shamir and Leonard Adleman suggested using two separate keys to make it safer, one to encrypt the data and another one to decrypt it. The decryption key would be unique to that specific encryption key. These are known as asymmetric keys. The three computer scientists who suggested this system won the Turing award for this work. They also gave their names to this cryptography system, asymmetric key cryptography is also known as the **RSA algorithm.**
+
+So how does this work?
+
+A → B
+
+One side (A) decides to send the other side (B) a secret message, and makes this intention known by (B). (The first communication is A to B. This could be sent as plain text, as this is simply saying 'I want to send a secret message to you.').
+
+A ← B
+
+B uses a program to generate two keys, an encryption key and a decryption key. B sends A the copy of the encryption key, but doesn't send the decryption key. Anyone can have a copy of any encryption key, as they are public knowledge.
+
+A → B
+
+A uses his copy of the encryption key to encrypt his message and he sends it to B. (It's not important if anybody can reach the ciphertext at this point, as only B has the unique decryption key that is not sent anywhere.)
+
+If B wants to send a secret message as well, she can ask A for an encryption key, and the same circle will happen in the reverse direction. Therefore each person in the communication line will have their own encryption keys, and as the decryption keys never leave their own devices, it is safe and they can communicate privately.
+
+A pair of asymmetric keys are often called **public key (encryption key)** and **private key (decryption key).**
+
+RSA is not good for encrypting really long messages, but using this, both sides can agree on a secret key and use symmetric key cryptography for the long encryptions.
+
+Asymmetric key cryptography is the heart of secure internet communication. When you are visiting an online shop or online banking systems, asymmetric key cryptography is going on behind the scenes. Your web browser takes care of encrypting and decrypting messages. You can view the public key your browser is using when you connect to a secure website by clicking to the lock icon in front of the URL of the site.
+
+(Lock Icon > Certificate > Details > Public Key Info > Public Key)
