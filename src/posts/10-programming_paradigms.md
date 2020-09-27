@@ -15,9 +15,9 @@ All programming languages need to follow a strategy when they are implemented. N
 
 So most programming paradigms can be classified inside 2 main titles: imperative and declarative. Let's check them out.
 
-**Note:** There are multi-paradigm languages (languages that allow the usage of multiple paradigms) or languages that strictly enforce a single paradigm. JavaScript is a multi-paradigm language, it allows the programmer to choose between declarative, functional and object-oriented and even a mixture of those. Java on the other hand strictly uses object-oriented programming paradigm.
+**Note:** There are multi-paradigm languages (languages that allow the usage of multiple paradigms) or languages that strictly enforce a single paradigm. For example, JavaScript is a multi-paradigm language, as it allows the programmer to choose between declarative, functional and object-oriented and even a mixture of those. Java, on the other hand, strictly uses object-oriented programming paradigm.
 
-**1. Imperative programming paradigm:**
+### Imperative programming paradigm:
 
 The word "imperative" comes from Latin word "imperare", which means "to give orders, command". (The word "emperor" also comes from the same root.)
 
@@ -70,7 +70,8 @@ A class is code defining an object, or code that can be used for creating an obj
 
 An object is an instance of a class. You can create multiple instances of a class. (the process of creating an object instance from a class is called instantiation, you can instantiate multiple objects of the same type from a particular class.) When an object instance is created from a class, the class' constructor function runs first to create the instance. If you give the object a specific name to refer to, it is called a namespace.
 
-**The 4 main concepts of OOP are:**
+**The 4 main concepts of OOP are abstraction, encapsulation, inheritance, polymorphism.**
+
 **a. Abstraction:**
 
 Abstraction means to simplify reality, to create a simple model of a somewhat complex thing. For example, you can create a Cat class, and add some properties and methods to that class that you find relevant. You will put properties and methods that you will use in your own program, but let's be honest- there is way more data and functionalities of a real cat than the ones you put there! But you abstracted the cat for your program's needs.
@@ -93,17 +94,19 @@ Some languages that support the object-oriented paradigm are: Python, Ruby, Java
 
 **:lollipop: Parallel processing approach:**
 
-Parallel processing meand dividing program instructions among multiple processors. A parallel processing system allows multiple processors to run a program to do something in much less time. Think of the burger again, if someone prepares the patties, another one prepares the onions and another one prepares the buns, you'll be done in no time!
+Parallel processing means dividing program instructions among multiple processors. A parallel processing system allows multiple processors to run a program to do something in much less time. Think of the burger again, if someone prepares the patties, another one prepares the onions and another one prepares the buns, you'll be done in no time!
+
+Of course, you can only use it if you have a multi-core processor, or multiple CPUs.
 
 Some languages that support the Parallel processing approach: NESL (one of the oldest ones), C, C++
 
-**2. Declarative programming paradigm:**
+### Declarative programming paradigm:
 
 The word "declarative" comes from Latin word "declarare", which means "to make it visible, to clarify".
 
 In a declarative programming paradigm, you tell the computer what to do, but you don't explain it step by step. How to do it is up to the compiler.
 
-If we go back to our cooking analogy, when declarative cooks a burger, you only give it the onions, frozen buns, beef, cheese and other ingredients and say "I want a burger". At the end it will present you a burger. You won't know or care how the onions were cut, in which temperature the patty was cooked.
+If we go back to our cooking analogy, when declarative cooks a burger, you only give it the onions, frozen buns, beef, cheese and other ingredients and say "I want a burger". At the end it will present you a burger. You won't know or care how the onions were cut, in which temperature the patty was cooked. It can decide those parameters on it's own.
 
 **:lollipop: Logic programming paradigm:**
 
