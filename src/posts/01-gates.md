@@ -48,7 +48,7 @@ I have written about NAND gate, NOT gate and AND gate, but there are many more g
 **Resources**
 
 1. Wikipedia- [NAND Gate](https://en.wikipedia.org/wiki/NAND_gate), [NOT Gate](<https://en.wikipedia.org/wiki/Inverter_(logic_gate)>), [AND Gate](https://en.wikipedia.org/wiki/AND_gate)
-2. "From Nand to Tetris" Part1 & Part2 by [Hebrew University of Jerusalem](https://www.nand2tetris.org/)
-3. "The Elements of Computing Systems: Building a Modern Computer from First Principles" by [Noam Nisan, Shimon Schocken](https://www.goodreads.com/book/show/910789.The_Elements_of_Computing_Systems)
-4. "Computer Science" channel by [Kevin Drumm](https://www.youtube.com/c/KevinDrumm/videos)
-5. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+2. ["From Nand to Tetris" Part1 & Part2](https://www.nand2tetris.org/) by Hebrew University of Jerusalem
+3. [The Elements of Computing Systems: Building a Modern Computer from First Principles](https://www.goodreads.com/book/show/910789.The_Elements_of_Computing_Systems) by Noam Nisan, Shimon Schocken
+4. ["Computer Science" channel](https://www.youtube.com/c/KevinDrumm/videos) by Kevin Drumm
+5. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
