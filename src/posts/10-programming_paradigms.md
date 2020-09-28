@@ -110,7 +110,27 @@ If we go back to our cooking analogy, when declarative cooks a burger, you only 
 
 **:lollipop: Logic programming paradigm:**
 
+This way of programming based on logic as its name indicates, so let's define what logic is first.
+
+There was a man in ancient Greece with the name of **Aristotle**, who was interested in how to think more sensibly. And by sensibly I mean to take two piece of facts and from those facts make a deduction that creates a third fact. This was called "logic". Through your education you probably have faced many problems that needed the simple use of logic.
+
+Let's give a simple example:
+
+1: Yuki is older than Mora.
+2: Carry is older than Yuki.
+Deduction: Mora is younger than Carry.
+
+Languages that support logic programming mainly work with true or false statements. You define the facts that are true first, which will be the program's knowledge base. Then you make the queries, and the program itself returns you a deducible solution, if there is one.
+
+Some languages that support the logic programming paradigm are Prolog, Absys, ALF (algebraic logic functional programming language), Alice, Ciao.
+
 **:lollipop: Functional programming paradigm:**
+
+Functional programming paradigm is a language independent paradigm, and the key principle of this paradigm is handling everything by executing a series of short and simple functions. You simply organize your code
+
+In this paradigm, all written code is within a function, all variables are scoped inside a function, functions do not modify any values outside of their block scopes, and they are not affected by any values outside of their scopes. Functions are reusable, arguably more legible, unit testing and debugging is easier. No for and while loops are used, as functional programming languages rely on recursion for iteration (Bhadwal, 2019).
+
+Languages that support functional programming paradigm are Haskell, Scala, Clojure, Racket, JavaScript.
 
 **:lollipop: Database processing approach:**
 
