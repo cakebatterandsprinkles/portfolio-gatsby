@@ -27,9 +27,9 @@ Now, let's see all of the layers on top of each other:
 
 **1. Application:** (e.g. Photoshop) The software that you use. For example, when you're using photoshop, you don't care how the crop button works. The only thing you worry about is how to crop your picture.
 
-**2. High-level Language:** (e.g. JavaScript) The language that is highly abstracted and is easier for humans to use.
+**2. Programming Language:** (e.g. JavaScript, Java, C) The language that is highly abstracted and is easier for humans to use.
 
-**3. Low-level language:** (e.g. C): This is the language hardware understands, but harder to use for humans.
+**3. Assembly language:** This is the language hardware understands, but still human readable.
 
 **4. Machine Language:** Binary code, all the stuff that's translated into 0's and 1's.
 
@@ -56,9 +56,9 @@ If you want to read more, you can check out the stuff in the resources section. 
 **Resources:**
 
 1. Wikipedia - [Working Memory](https://en.wikipedia.org/wiki/Working_memory), [Machine Code](https://en.wikipedia.org/wiki/Machine_code), [Compilation](https://en.wikipedia.org/wiki/Compilation), [Compiler](https://en.wikipedia.org/wiki/Compiler), [Programming language](https://en.wikipedia.org/wiki/Programming_language), [Abstraction](<https://en.wikipedia.org/wiki/Abstraction_(computer_science)>), [Implementation](https://en.wikipedia.org/wiki/Implementation), [Modular design](https://en.wikipedia.org/wiki/Modular_design)
-2. "From Nand to Tetris" Part 1 & Part 2 by [Hebrew University of Jerusalem](https://www.nand2tetris.org/)
-3. "The Elements of Computing Systems: Building a Modern Computer from First Principles" by [Noam Nisan, Shimon Schocken](https://www.goodreads.com/book/show/910789.The_Elements_of_Computing_Systems)
-4. "The magical number seven plus or minus two: Some limits on our capacity for processing information." by [George A. Miller](https://pdfs.semanticscholar.org/4023/ae0ba18eed43a97e8b8c9c8fcc9a671b7aa3.pdf), 1956
-5. "The Magical Number 4 in Short-Term Memory: A Reconsideration of Mental Storage Capacity" by [Nelson Cowan](https://www.researchgate.net/publication/11830840_The_Magical_Number_4_in_Short-Term_Memory_A_Reconsideration_of_Mental_Storage_Capacity), 2001
-6. "Chunks in expert memory: Evidence for the magical number four … or is it two?" by [F. Gobet, G. Clarkson](https://www.semanticscholar.org/paper/Chunks-in-expert-memory%3A-Evidence-for-the-magical-%E2%80%A6-Gobet-Clarkson/7a1afc70878db47c13cd76dbf2aa3bb6f3b96b9c), 2004
-7. "Neuroscience: Exploring the Brain" by [Mark F. Bear, Barry W. Connors, Michael A. Paradiso](https://www.goodreads.com/book/show/52796769-neuroscience)
+2. ["From Nand to Tetris" Part1 & Part2](https://www.nand2tetris.org/) by Hebrew University of Jerusalem
+3. [The Elements of Computing Systems: Building a Modern Computer from First Principles](https://www.goodreads.com/book/show/910789.The_Elements_of_Computing_Systems) by Noam Nisan, Shimon Schocken
+4. [The magical number seven plus or minus two: Some limits on our capacity for processing information](https://pdfs.semanticscholar.org/4023/ae0ba18eed43a97e8b8c9c8fcc9a671b7aa3.pdf) by George A. Miller, 1956
+5. [The Magical Number 4 in Short-Term Memory: A Reconsideration of Mental Storage Capacity](https://www.researchgate.net/publication/11830840_The_Magical_Number_4_in_Short-Term_Memory_A_Reconsideration_of_Mental_Storage_Capacity) by Nelson Cowan, 2001
+6. [Chunks in expert memory: Evidence for the magical number four … or is it two?](https://www.semanticscholar.org/paper/Chunks-in-expert-memory%3A-Evidence-for-the-magical-%E2%80%A6-Gobet-Clarkson/7a1afc70878db47c13cd76dbf2aa3bb6f3b96b9c) by F. Gobet, G. Clarkson, 2004
+7. [Neuroscience: Exploring the Brain](https://www.goodreads.com/book/show/52796769-neuroscience) by Mark F. Bear, Barry W. Connors, Michael A. Paradiso
