@@ -25,7 +25,7 @@ This is what the ancient Babylonian numeral system looked like:
 
 ![Babylonian numerals](../images/blog/numbers/babylonian_numerals.png)
 
-The ancient [Babylonian counting system](https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals) (appeared around 2000 BC) was base-60. Today we use a base-10 system. This means that with each digit to the left, the number's place value is increased 10 fold. So when we ask for 7532 carrots in base-10, it actually means 7 \* 1000 + 5 \* 100 + 3 \* 10 + 2 \* 1 carrots. The same number in the Babylonian system would be 25 32 (2 \* 3600 + 5 \* 60 + 32 \* 1). 7532 in base-10 is equal to 25 32 in base-60.
+The ancient [Babylonian counting system](https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals) (appeared around 2000 BC) was base-60. Today we use a base-10 system. This means that with each digit to the left, the number's place value is increased 10 fold. So when we ask for 7532 carrots in base-10, it actually means 7 \* 1000 + 5 \* 100 + 3 \* 10 + 2 \* 1 carrots. The same number in the Babylonian system would be 2 5 32 (2 \* 3600 + 5 \* 60 + 32 \* 1). 7532 in base-10 is equal to 2 5 32 in base-60.
 
 Ancient Babylonians affected the world in many ways. Did you ever wonder why there are 60 seconds in a minute, 60 minutes in an hour, and 24 hours in a day? Or why there are 360 degrees in a full circle? These are all echoes of this base-60 numeral system that ancient Babylonians used.
 
@@ -49,7 +49,7 @@ This is what the ancient Roman numeral system looked like:
 
 Image Credit: https://www.unrv.com/culture/roman-numerals.php
 
-To give some examples, the number 37 in base-10 is represented as XXXVI (XXX + VII) in Roman numerals. The number 247 is represented with CCXLVII (CC + XL + VII).
+To give some examples, the number 37 in base-10 is represented as XXXVII (XXX + VII) in Roman numerals. The number 247 is represented with CCXLVII (CC + XL + VII).
 
 We still see Roman numerals around, in the clock face of [Big Ben](https://en.wikipedia.org/wiki/Big_Ben), or at the backside of the coins as the regnal numbers of kings and queens, or in movie sequels.
 
@@ -57,7 +57,7 @@ We still see Roman numerals around, in the clock face of [Big Ben](https://en.wi
 
 Central and South America (which is now Mexico, Belize, Guatemala, Honduras, El Salvador, Nicaragua, and Costa Rica, Ecuador, Chile) was home to 3 major ancient civilizations: The [Mayans](https://en.wikipedia.org/wiki/Maya_civilization), the [Aztecs](https://en.wikipedia.org/wiki/Aztecs) and the [Incas](https://en.wikipedia.org/wiki/Inca_Empire).
 
-The Mayans were not a unified society but a combination of twenty culturally similar, independent states. They had a writing system, which enabled them to build a highly developed society, built beautiful cities and temples using stones and metals, observed the skies and made themselves a calendar, was occupied with mathematics, astronomy, art, architecture, and had a political, military and religious order. Unfortunately, one of the materials they used for their writings was tree barks, and much of it was destroyed by the tropical climate. Most of the other cultural remnants were destroyed in the 1500s by the Spanish conquerors. (In fact, all three ancient civilizations of America shared the same faith. They suffered from the attacks of Spanish conquerors and were devastated by the spread of smallpox.)
+The Mayans were not a unified society but a combination of twenty culturally similar, independent states. They had a writing system, which enabled them to build a highly developed society, built beautiful cities and temples using stones and metals, observed the skies and made themselves a calendar, was occupied with mathematics, astronomy, art, architecture, and had a political, military and religious order. Unfortunately, one of the materials they used for their writings was tree barks, and much of it was destroyed by the tropical climate. Most of the other cultural remnants were destroyed in the 1500s by the Spanish conquerors. (In fact, all three ancient civilizations of America shared the same fate. They suffered from the attacks of Spanish conquerors and were devastated by the spread of smallpox.)
 
 **Ancient Mayan numerals**
 
@@ -111,7 +111,7 @@ A computer stores data in "binary", a system in which there are only two digits,
 
 At some point in human history, we created numerals between 0 and 9, and began to use a base-10 system (which is also called "the decimal system", also known as the "denary"). This number system is quite intuitive as we have 10 fingers ourselves. Both decimal and binary systems are positional number systems, meaning every digit has a positional value.
 
-Now, imagine a bizarre animal with eight fingers on each hand, with preferably two hands in total. (Now I'm really curious about what you've imagined. But let's keep on keeping on.) This animal is also smart, and it wants to count the bizarre alien fruit it's going to eat because it's probably counting calories. So it looks at its 18 fingers and says "hey, I'm going to utilize these fingers when I'm counting stuff from now on". Our bizarre animal is now counting in hexadecimal, which is also known as base-16 (oh, Latin again. Hexa is 6 and deca is 10, so it's 10+6 system). The hexadecimal system uses our normal 10 digits (0 to 9) and also the first 6 letters of the English alphabet (A to F). The hexadecimal system is also a positional number system.
+Now, imagine a bizarre animal with eight fingers on each hand, with preferably two hands in total. (Now I'm really curious about what you've imagined. But let's keep on keeping on.) This animal is also smart, and it wants to count the bizarre alien fruit it's going to eat because it's probably counting calories. So it looks at its 16 fingers and says "hey, I'm going to utilize these fingers when I'm counting stuff from now on". Our bizarre animal is now counting in hexadecimal, which is also known as base-16 (oh, Latin again. Hexa is 6 and deca is 10, so it's 10+6 system). The hexadecimal system uses our normal 10 digits (0 to 9) and also the first 6 letters of the English alphabet (A to F). The hexadecimal system is also a positional number system.
 
 **Conversion Example:**
 
@@ -120,7 +120,7 @@ Let's convert 986 in base-10 to base-16 and base-2 together.
 When we are calculating 986 in base 10, we actually do this pretty much subconsciously:
 (9 \* 100) + (8 \* 10) + (6 \* 1)
 
-When you change the positional values to the power of 2's instead of 10's, your place values become ...2¹⁰(1032), 2⁹(512), 2⁸(256), 2⁷(128), 2⁶(64), 2⁵(32), 2⁴(16), 2³(8), 2²(4), 2¹(2), 2⁰(1) You start converting with the biggest possible place value you can use and work downstream from there.
+When you change the positional values to the power of 2's instead of 10's, your place values become ...2¹⁰(1024), 2⁹(512), 2⁸(256), 2⁷(128), 2⁶(64), 2⁵(32), 2⁴(16), 2³(8), 2²(4), 2¹(2), 2⁰(1) You start converting with the biggest possible place value you can use and work downstream from there.
 
 So 986 in base-10 becomes this in base-2: (1 \* 512) + (1 \* 256) + (1 \* 128) + (1 \* 64) + (0 \* 32) + (1 \* 16) + (1 \* 8) + (0 \* 4) + (1 \* 2) + (0 \* 1), which is **1111011010**.
 
@@ -135,6 +135,6 @@ So 986 in base-10 becomes this in base-16: (3 _ 256) + (13(D) \* 16) + (10(A) _ 
 3. Ifrah, Georges. From One to Zero: A Universal History of Numbers. New York: Viking Penguin, Inc., 1985.
 4. Ortenzi, E. C. (1964). Numbers in ancient times. Portland, ME: J. Weston Walch.
 5. Wikipedia- [Abacus](https://en.wikipedia.org/wiki/Abacus), [Quipu](https://en.wikipedia.org/wiki/Quipu), [Tally marks](https://en.wikipedia.org/wiki/Tally_marks), [Numeral system](https://en.wikipedia.org/wiki/Numeral_system), [Positional notation](https://en.wikipedia.org/wiki/Positional_notation), [Babylonian counting system](https://en.wikipedia.org/wiki/Babylonian_cuneiform_numerals), [Egyptian counting system](https://en.wikipedia.org/wiki/Egyptian_numerals), [Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals), [Maya Civilization](https://en.wikipedia.org/wiki/Maya_civilization), [Aztecs](https://en.wikipedia.org/wiki/Aztecs), [Inca Empire](https://en.wikipedia.org/wiki/Inca_Empire)
-6. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+6. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
 7. math.wichita.edu- [history](http://www.math.wichita.edu/history/topic-tree.html)
-8. Geoffrey Saxe, [Cultural Development of Mathematical Ideas: Papua New Guinea Studies](https://culturecognition.com/)
+8. [Cultural Development of Mathematical Ideas: Papua New Guinea Studies](https://culturecognition.com/) by Geoffrey Saxe

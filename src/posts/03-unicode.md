@@ -48,5 +48,5 @@ Unicode is universally supported by all operating systems, search engines, brows
 
 1. Unicode Official Webpage - https://home.unicode.org/
 2. Wikipedia - [ASCII (American Standard Code for Information Interchange)](https://en.wikipedia.org/wiki/ASCII), [The extended ASCII character set](https://en.wikipedia.org/wiki/Extended_ASCII), [Unicode Transformation Format (UTF-8)](https://en.wikipedia.org/wiki/UTF-8), [world wide web](https://en.wikipedia.org/wiki/World_Wide_Web), [Unicode](https://en.wikipedia.org/wiki/Unicode)
-3. "Computer Science" channel by [Kevin Drumm](https://www.youtube.com/c/KevinDrumm/videos)
-4. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+3. ["Computer Science" channel](https://www.youtube.com/c/KevinDrumm/videos) by Kevin Drumm
+4. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
