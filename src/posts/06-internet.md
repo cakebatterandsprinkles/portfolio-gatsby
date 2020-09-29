@@ -21,7 +21,7 @@ In a **[Wide Area Network (WAN)](https://en.wikipedia.org/wiki/Wide_area_network
 
 **[Wi-Fi (Wireless Fidelity) network](https://en.wikipedia.org/wiki/Wireless_network)** uses radio waves instead of cables. Wi-Fi Network can also be referred to as **[WLAN](https://en.wikipedia.org/wiki/Wireless_LAN)**, which stands for "Wireless Local Area Network."
 
-The most powerful computers in the networks are **[servers](https://en.wikipedia.org/wiki/Server_(computing)**. A server is a computer that provides data to other computers, it is like a library that is open 24/7.
+The most powerful computers in the networks are **[servers](<https://en.wikipedia.org/wiki/Server_(computing)>)**. A server is a computer that provides data to other computers, it is like a library that is open 24/7.
 
 Now, we should talk about **[Heinrich Hertz](https://en.wikipedia.org/wiki/Heinrich_Hertz)**, a German scientist from the 1800s that studied electricity that was going on and off very quickly, therefore creating electromagnetic waves. Sometime after his death, scientists decided to use his name to describe how fast the electricity was turned on and off in a second. For example, 1 Hz meant there was 1 cycle happening in 1 second (on and off). 500 Hz meant 500 cycles were happening in 1 second. So to make it more simple, we can say Hz is a unit for defining frequency.
 
@@ -51,7 +51,7 @@ In a Wi-Fi network, as all data has to flow through a Wireless Access Point, the
 
 How about your neighbors' Wi-Fi? Why does or doesn't it interfere with yours?
 
-Normally each WAP operates within its own radio frequency range. When it sets itself up, it will choose a channel that seems quite enough at the time, and your wireless devices will tune into this frequency, like listening to a radio station. A modern WAP can choose between 23 possible non-overlapping channels. So if the neighbor's WiFi is operating in a different frequency range, there will be no overlaps so there will be no collisions.
+Normally each WAP operates within its own radio frequency range. When it sets itself up, it will choose a channel that seems quiet enough at the time, and your wireless devices will tune into this frequency, like listening to a radio station. A modern WAP can choose between 23 possible non-overlapping channels. So if the neighbor's WiFi is operating in a different frequency range, there will be no overlaps so there will be no collisions.
 
 ### Network Protocols
 
@@ -182,4 +182,4 @@ There will also be some problems related to governments after the initial scient
 2. https://webfoundation.org/about/vision/history-of-the-web/
 3. https://www.starlink.com/
 4. https://www.thespacereview.com/article/3849/1
-5. "Computer Science" channel by [Kevin Drumm](https://www.youtube.com/c/KevinDrumm/videos)
+5. ["Computer Science" channel](https://www.youtube.com/c/KevinDrumm/videos) by Kevin Drumm
