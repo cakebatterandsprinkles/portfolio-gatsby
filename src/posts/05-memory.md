@@ -71,13 +71,13 @@ So here is the first example:
 
    The human washes her hand and applies moderate pressure on the cut with a clean cloth. Now, let's see what invisible things happen after that.
 
-   First, the bleeding must be stopped. The related cells called "platelets" stick around the wound and stop the bleeding. When the bleeding stops, other related cells come around to wound and they assess the situation, these are called **the inflammatory cells**. The assessing cells produce tiny little paper planes with different colors, which are called "cytokines". Each color of paper plane goes around to inform a different type of cell. Each cell has a role in the repairing process.
+   First, the bleeding must be stopped. The relevant cells called "platelets" stick around the wound and stop the bleeding. When the bleeding stops, other relevant cells come around to wound and they assess the situation, these are called **the inflammatory cells**. The assessing cells produce tiny little paper planes with different colors, which are called "cytokines". Each color of paper plane goes around to inform a different type of cell. Each cell has a role in the repairing process.
 
    Until the cut is healed, each cell continues doing the work they do. If their job is to prevent a potential bacterial invasion, they kill every bacteria that is not supposed to be there. If their job is to remove the unwanted material from the tissue, or if they need to divide and replace the cells in that area, they do that. When the wound is healed and there is no threat, the inflammatory cells stop sending paper planes around and leave the area.
 
-   Many books are open, many stuff is synthesized and many stuff is modified and the cut is repaired at the end. Everyone goes back to their daily lives and nothing is permanently changed.
+   Many books are opened, a lot of things are synthesized, some things are modified and the cut is repaired at the end. Everyone goes back to their daily lives and nothing is permanently changed.
 
-2. Human cuts hand way too often. Psychologically traumatized by the effects of onions in her life, she starts taking alcohol, occasionally.
+2. Human cuts hand way too often. Psychologically traumatized by the effects of onions in her life, she starts consuming alcohol, occasionally.
 
    Chronic consumption of ethanol results in the increased production of tiny ninja molecules that are called **[miRNAs (microRNA)](https://en.wikipedia.org/wiki/MicroRNA)**. These miRNAs can go in and out of the special room (the nucleus) without getting too much attention. Each type of miRNA has a special power, they can change the number of copies of something that are sent outside of the room.
 
@@ -94,7 +94,7 @@ Long story short, if onions make you sad, don't eat them. You absolutely don't h
 **Resources:**
 
 1. Wikipedia- [Memory](https://en.wikipedia.org/wiki/Memory), [Computer memory](https://en.wikipedia.org/wiki/Computer_memory), [NAND gates](https://en.wikipedia.org/wiki/NAND_gate), [DNA](https://en.wikipedia.org/wiki/DNA), [Cell nucleus](https://en.wikipedia.org/wiki/Cell_nucleus), [messenger RNA](https://en.wikipedia.org/wiki/Messenger_RNA), [transcription](https://en.wikipedia.org/wiki/Eukaryotic_transcription), [translation](<https://en.wikipedia.org/wiki/Translation_(biology)>), [receptors](https://en.wikipedia.org/wiki/Cell_surface_receptor), [epigenetics](https://en.wikipedia.org/wiki/Epigeneticsrg/wiki/Cell_surface_receptor), [propanethial S-oxide](https://en.wikipedia.org/wiki/Syn-Propanethial-S-oxide), [Inflammation](https://en.wikipedia.org/wiki/Inflammation), [microRNA](https://en.wikipedia.org/wiki/MicroRNA)
-2. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+2. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
 3. Martin, P., & Leibovich, S. J. (2005). [Inflammatory cells during wound repair: the good, the bad and the ugly.](https://pubmed.ncbi.nlm.nih.gov/16202600/) Trends in Cell Biology, 15(11), 599–607. doi:10.1016/j.tcb.2005.09.002
 4. Dolinoy, D., Das, R., Weidman, J. et al. [Metastable Epialleles, Imprinting, and the Fetal Origins of Adult Diseases.](https://www.nature.com/articles/pr2007128) Pediatr Res 61, 30–37 (2007). https://doi.org/10.1203/pdr.0b013e31804575f7
 5. Shah JM, Omar E, Pai DR, Sood S. [Cellular events and biomarkers of wound healing.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3495371/) Indian J Plast Surg. 2012;45(2):220-228. doi:10.4103/0970-0358.101282
