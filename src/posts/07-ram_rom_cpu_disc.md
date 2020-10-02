@@ -140,10 +140,10 @@ So, you should stop bullying yourself when you can't remember stuff. You're not 
 **Resources:**
 
 1. Wikipedia - [Hard disk](https://en.wikipedia.org/wiki/Hard_disk_drive), [Casette Tape](https://en.wikipedia.org/wiki/Cassette_tape), [RAM](https://en.wikipedia.org/wiki/Random-access_memory), [ROM](https://en.wikipedia.org/wiki/Read-only_memory), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [ALU](https://en.wikipedia.org/wiki/Arithmetic_logic_unit), [Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory), [neuron](https://en.wikipedia.org/wiki/Neuron), [synapse](https://en.wikipedia.org/wiki/Synapse), [Synaptic plasticity](https://en.wikipedia.org/wiki/Synaptic_plasticity), [Declarative](https://en.wikipedia.org/wiki/Explicit_memory), [Procedural](https://en.wikipedia.org/wiki/Implicit_memory), [Short-term memory](https://en.wikipedia.org/wiki/Short-term_memory), [Long-term memory](https://en.wikipedia.org/wiki/Long-term_memory), [ECT](https://en.wikipedia.org/wiki/Electroconvulsive_therapy), [memory consolidation](https://en.wikipedia.org/wiki/Memory_consolidation)
-2. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+2. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
 3. Jeff Tyson "How Computer Memory Works",
    HowStuffWorks.com. <https://computer.howstuffworks.com/computer-memory.htm>
-4. "From Nand to Tetris" Part1 & Part2 by [Hebrew University of Jerusalem](https://www.nand2tetris.org/)
+4. [From Nand to Tetris" Part1 & Part2](https://www.nand2tetris.org/) by Hebrew University of Jerusalem
 5. Bear, M. F., Connors, B. W., & Paradiso, M. A. (2016). [Neuroscience: exploring the brain. Fourth edition.](https://www.amazon.com/Neuroscience-Exploring-Mark-F-Bear/dp/0781778174) Philadelphia: Wolters Kluwer.
 6. [Neural Correlates of Reactivation and Retrieval-Induced Distortion.](https://www.jneurosci.org/content/32/35/12144) Donna J. Bridge, Ken A. Paller, Journal of Neuroscience 29 August 2012, 32 (35) 12144-12151; DOI: 10.1523/JNEUROSCI.1378-12.2012
 7. Mayford M, Siegelbaum SA, Kandel ER. [Synapses and memory storage.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3367555/) Cold Spring Harb Perspect Biol. 2012;4(6):a005751. Published 2012 Jun 1. doi:10.1101/cshperspect.a005751

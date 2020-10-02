@@ -45,8 +45,8 @@ _Image Credit: Gdfhjjbb at English Wikipedia / CC BY-SA 4.0 <https://commons.wik
 **Resources:**
 
 1. Wikipedia - [Operating System](https://en.wikipedia.org/wiki/Operating_system), [Linux](https://en.wikipedia.org/wiki/Linux), [Application Program Interface (API)](https://en.wikipedia.org/wiki/API), GUI (Graphical User Interface)](https://en.wikipedia.org/wiki/Graphical_user_interface), [CLI (command-line interface)](https://en.wikipedia.org/wiki/Command-line_interface), [Kernel](<https://en.wikipedia.org/wiki/Kernel_(operating_system)>)
-2. "But How Do It Know" by [J. Clark Scott](http://www.buthowdoitknow.com/index.html)
+2. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
 3. Jeff Tyson "How Operating Systems Work",
    HowStuffWorks.com. <https://computer.howstuffworks.com/operating-system.htm>
-4. "From Nand to Tetris" Part1 & Part2 by [Hebrew University of Jerusalem](https://www.nand2tetris.org/)
+4. [From Nand to Tetris" Part1 & Part2](https://www.nand2tetris.org/) by Hebrew University of Jerusalem
 5. http://linuxcommand.org/lc3_lts0010.php

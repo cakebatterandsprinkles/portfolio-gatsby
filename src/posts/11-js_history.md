@@ -134,7 +134,7 @@ console.log(a)
 
 1. [The Modern JavaScript Tutorial- javascript.info](https://javascript.info/)
 2. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-3. [Academind](https://academind.com/) - Maximilian Schwarzmüller
+3. [Academind](https://academind.com/)
 4. [Eloquent JavaScript: A Modern Introduction to Programming](https://eloquentjavascript.net/)
 5. [w3schools](https://www.w3schools.com/js/)
 6. Wikipedia- [JavaScript](https://en.wikipedia.org/wiki/JavaScript), [ECMA International](https://en.wikipedia.org/wiki/Ecma_International), [Operating System (OS)](https://en.wikipedia.org/wiki/Operating_system)
