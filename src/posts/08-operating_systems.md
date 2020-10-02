@@ -23,7 +23,7 @@ _This is one of the first GUI's ever made, the Dynabook GUI (Smalltalk-76 runnin
 
 _By SUMIM.ST - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=61612766_
 
-**The shell** is the actual program run by the OS to process the commands you enter into the command line. It is named shell because it is the outermost layer of an OS. Mostly, users interact with the shell using a CLI, which is a simple graphical window. In macOS, Terminal is used as a CLI, in Windows 10, it is Bash shell or Git Bash.
+**The shell** is the actual program run by the OS to process the commands you enter into the command line. It is named shell because it is the outermost layer of an OS. Mostly, users interact with the shell using a CLI, which is a simple graphical window. In macOS, Terminal is used as a CLI, in Windows 10, it is Bash shell, Git Bash or Power Shell.
 
 For example, this is how a Linux CLI (bash) looks like:
 

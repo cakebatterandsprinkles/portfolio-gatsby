@@ -23,7 +23,7 @@ Now, what if you were asked how many calories you would get from 3 fried eggs. G
 
 **Arithmetic Logic Unit (ALU)**
 
-There are tiny circuits made from basic logic gates that do certain operations. Simplified version: You have input wires, and you have an output wire. These circuits are wires that are connected in such ways that they create a certain output. With the same inputs they always create the same output, they are consistent and reliable. All the basic operations (the building blocks of bigger operations) have individual circuits. If we go back to the fired eggs example, two main arithmetic operations will lead you to your final answer: addition and multiplication.
+There are tiny circuits made from basic logic gates that do certain operations. Simplified version: You have input wires, and you have an output wire. These circuits are wires that are connected in such ways that they create a certain output. With the same inputs they always create the same output, they are consistent and reliable. All the basic operations (the building blocks of bigger operations) have individual circuits. If we go back to the fried eggs example, two main arithmetic operations will lead you to your final answer: addition and multiplication.
 
 If you combine all the wires that do basic arithmetic operations that a computer can do on a single chip, it becomes an [Arithmetic Logic Unit](https://en.wikipedia.org/wiki/Arithmetic_logic_unit). Now you can combine simple operations to find answers to life's complicated problems.
 

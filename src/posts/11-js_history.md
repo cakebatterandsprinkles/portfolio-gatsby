@@ -66,7 +66,7 @@ It is possible to disable JS execution from the client side, this means the brow
 
 These tags are only available for external scripts. Internal scripts will be executed right away.
 
-If you add your script imports to the head section of the HTML document, the browser will parse the script tags before the hmtl content. If it has no attributes other then src, it will block the HTML parsing until the script is being downloaded, it will also execute the JS before the HTML content is loaded. Your loading time will get longer too.
+If you add your script imports to the head section of the HTML document, the browser will parse the script tags before the HTML content. If it has no attributes other then src, it will block the HTML parsing until the script is being downloaded, it will also execute the JS before the HTML content is loaded. Your loading time will get longer too.
 
 When you use the 'defer' attribute, the browser downloads the JS files before the HTML is loaded, but it doesn't stop parsing the HTML and only execute the scripts after everything else is finished. (The order of the script execution is guaranteed with defer. The JS files will execute in the same order they are imported.)
 
