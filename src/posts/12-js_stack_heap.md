@@ -65,7 +65,7 @@ Call stack has a certain type of order, it is to keep the relationship between t
 
 If there is something in the code that gives a compiling error, the code execution will stop and the JS engine will show you an error that contains something called a **[stack trace.](https://en.wikipedia.org/wiki/Stack_trace)** It is a snapshot of the call stack.
 
-Example of an erroneus function call:
+Example of an erroneous function call:
 
 ```
 function sayHiBack(){
