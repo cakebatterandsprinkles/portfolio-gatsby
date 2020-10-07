@@ -255,6 +255,14 @@ listenerAdderButton.addEventListener('click', function(){
 
 Things change when you are using an anonymous function (a function without a reference) when adding a new event listener. The function is created on the fly, and every anonymous function that is created is a new object. The browser will not recognize the function so it will keep creating a new function and adding it as a callback function. In code snippet-3, you will end up with multiple event listeners if you click the listenerAdderButton multiple times. This is a potential problem because it will most definitely cause memory leaks.
 
+### <3 V8 Engine
+
+V8 engine is the JS engine that Chrome and Node.js uses. It is written in C++ and developed by Google. It can run standalone or be embedded into other C++ applications.
+
+V8 engine (the one embedded in your browser) compiles and executes JS code, handles the call stack, manages the heap memory, does garbage collection and provides all the data types, operators, objects and functions.
+
+It doesn't provide the event loop, event loop is implemented by the browser. It also doesn't know anything about the DOM (Document Object Model) which is also provided by the browser.
+
 That's it, folks! Hope you enjoyed it.
 
 **Resources:**

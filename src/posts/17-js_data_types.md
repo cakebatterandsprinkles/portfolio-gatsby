@@ -1,5 +1,5 @@
 ---
-title: "JavaScript- How JS Code executes & Data Types"
+title: "JavaScript- Data Types"
 date: "2019-04-06"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference values."
@@ -13,9 +13,21 @@ The data types in JS can be divided into 2 major categories:
 
    If i make a variable and link a value to it (e.g. var a = 5), it will be stored in a memory. If I make another variable and assign it to the first variable(var b= a), in memory, a copy of the first variable is created and copied to the second variable(in memory, it is var b=5). If you change the first variable after this( eg. a = 10), the second variable created will still be equal to the initial value (b = 5).
 
+   - **String:**
+   - **Number:**
+   - **Boolean:**
+   - **Null:**
+   - **Undefined:**
+   - **Symbol:**
+
 2. **Reference values:** Arrays, Object Literals, Functions, Dates, anything else..
 
    In reference data types, if we create a variable, the variable doesn't actually hold a value, it holds a pointer. When you copy a variable, it's pointer gets copied, not it's value.
+
+   - **Object:**
+   - **Array:**
+   - **Function:**
+   - **Date:**
 
 **Resources:**
 
