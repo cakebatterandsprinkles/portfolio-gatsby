@@ -115,7 +115,7 @@ We have talked about the Web APIs in the previous paragraphs. [Here](https://dev
 
 There is another program called **[the event loop](https://en.wikipedia.org/wiki/Event_loop)** and all this guy does is to check the callback queue and the call stack. If the call stack is empty and if there are callback functions in the callback queue, it pushes the first callback function to the call stack.
 
-The asynchronous code execution is not managed by the JS engine, but the browser. The event loop is not a part of the engine, but the host environment. When the callback is ready for executing, the browser waits until the call stack is empty, then pushes the callback function into the call stack.
+The asynchronous code execution is not managed by the JS engine, but by the browser. The event loop is not a part of the engine, but the host environment. When the callback is ready for executing, the browser waits until the call stack is empty, then pushes the callback function into the call stack.
 
 Let's give a very simple example:
 
@@ -179,7 +179,7 @@ function getUserPosition() {
          console.log(error);
       }
    );
-   console.log("Fetching user location data. Please wait.);
+   console.log("Fetching user location data. Please wait.");
 }
 
 button.addEventListener('click', getUserPosition);
@@ -189,21 +189,73 @@ In this example, when the button is clicked, "Fetching user location data. Pleas
 
 ### Bonus: Garbage Collection
 
-We have described the heap is a long term memory allocated to the browser by the operating system. The variables and function declarations of the programs that are currently being used by your browser, they all live here. Heap is a limited resource, as all memory spaces in a computer is expensive and must be used correctly. If your browser exceeds the heap limits allocated for it's use, the browser gets angry and it simply kills the browser. (Don't worry, although it's being killed, it doesn't easily die. Who wants their browser to shut itself off when they are doing something? Only crazy people.)
+We have described the heap is a long term memory allocated to the browser by the operating system. The variables and function declarations of the programs that are currently being used by your browser, they all live here. Heap is a limited resource, as all memory spaces in a computer are expensive and must be used correctly. If your browser exceeds the heap limits allocated for its use, the browser gets angry and it simply kills the browser. (Don't worry, although it's being killed, it doesn't easily die. Who wants their browser to shut itself off when they are doing something? Only crazy people.)
 
-Good news! You almost never need to actively manage the heap as a user. It is something your browser does for you in the shadows, and you simply take it for granted. (Not judging, I do too!)
+Good news! You seldom need to actively manage the heap as a user. It is something your browser does for you in the shadows, and you simply take it for granted. (Not judging, I do too!)
 
 So how does your browser manage this precious memory? What happens when you close an application?
 
 You have guessed correctly: all the redundant information that belongs to the program that we just closed are still lingering in the heap. They become "garbage" as they are taking space that we want to actively use, and the heap must be cleaned.
 
-And every JS engine has a guy called **the garbage collector.** It's job is to check the heap periodically and look for unused objects, which are objects without references. If an object that is registered in the heap is not used anywhere in the current code that is running, it will just go ahead and remove it.
+Every JS engine has a guy called **[the garbage collector.](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>)** Its job is to check the heap periodically and look for unused objects, which are objects without references. If an object that is registered in the heap is not used anywhere in the current code that is running, it will just go ahead and remove it.
 
-This **garbage collector** guy, while being very useful, is a free spirited dude. You can't trigger it yourself, or you can't force your script to go ahead and clean stuff up. It has it's own algorithm and it will run on its own schedule.
+This **garbage collector** guy, while being very useful, is a free-spirited dude. You can't trigger it yourself, or you can't force your script to go ahead and clean stuff up. It has its own algorithm and it will run on its own schedule.
 
-There is one thing here to be aware of. If you don't use an object after some point, you must destroy all the references to it, or else the garbage collector won't be able to delete it. And even though it is not used anymore, it will take up space in the heap memory, because there is still a reference to it. This is called a **memory leak.**
+There is one thing here to be aware of. If you don't use an object after some point, you must destroy all the references to it, or else the garbage collector won't be able to delete it. And even though it is not used anymore, it will take up space in the heap memory, because there is still a reference to it. This is called a **[memory leak.](https://en.wikipedia.org/wiki/Memory_leak)** A memory leak will reduce a computer's performance by simply decreasing the available memory.
 
-That's it, folks! Hope you enjoyed.
+Let's give some examples to demonstrate:
+
+**_Code snippet-1:_**
+
+```
+let article = {title: "Rolling Stones"};
+
+article = {title: "Paint it, black"};
+```
+
+So the first example doesn't make sense as a whole, but it will demonstrate what I mean, so try to stick with me. In the first line, we created a new object which is `{title: "Rolling Stones"}` and assigned a reference to that object which is "article". If we finished the code here, the garbage collector wouldn't have cleaned this object at its next round, because a reference still points out to it. But with the second line we change what that reference points out to, we create another object, which is `{title: "Paint it, black"}` and we point that reference to the new object, so now, there is nothing that points out to the old one. The garbage collector will clean out the `{title: "Rolling Stones"}` object the next time it visits the heap.
+
+**_Code snippet-2:_**
+
+```
+const listenerAdderButton = document.getElementById('listener-adder-btn');
+const printButton = document.getElementById('print-btn');
+
+function printSomeMessage() {
+   console.log("Nan desu ka.");
+}
+
+function addEventListener() {
+   printButton.addEventListener('click', printSomeMessage);
+}
+
+listenerAdderButton.addEventListener('click', addEventListener);
+```
+
+Here, we have two buttons, one of them adds an event listener to the other one (listenerAdderButton), and after that button is clicked, the other button (printButton) can print some text to the console when it is clicked.
+
+What do you think happens when you click the listenerAdderButton multiple times?
+
+You would expect it to add more and more event listeners as you click. But that doesn't happen because the browser is smart and when it sees a function you already used before as a callback to an event listener, it just goes ahead and replaces the previous event listener with the new one, therefore you don't end up with multiple event listeners.
+
+**_Code snippet-3:_**
+
+```
+const listenerAdderButton = document.getElementById('listener-adder-btn');
+const printButton = document.getElementById('print-btn');
+
+function printSomeMessage() {
+   console.log("Nan desu ka.");
+}
+
+listenerAdderButton.addEventListener('click', function(){
+   printButton.addEventListener('click', printSomeMessage);
+});
+```
+
+Things change when you are using an anonymous function (a function without a reference) when adding a new event listener. The function is created on the fly, and every anonymous function that is created is a new object. The browser will not recognize the function so it will keep creating a new function and adding it as a callback function. In code snippet-3, you will end up with multiple event listeners if you click the listenerAdderButton multiple times. This is a potential problem because it will most definitely cause memory leaks.
+
+That's it, folks! Hope you enjoyed it.
 
 **Resources:**
 
