@@ -331,63 +331,81 @@ So if you change the value, all the values of the variables that store a pointer
 
 **Bonus: Some topics a beginner to JS should check out**
 
-These notes are about some topics we didn't talk about in the article, so if you're interested, check the links out. If these does not interest you, you can simply skip this section.
+These notes are about some miscallenous topics we didn't talk about in the main section of the article, so if you're interested, check the links out. If these does not interest you, you can simply skip this section, and voila! This line is the end of the article for you! Good job.
+
+Now, rest of you: keep reading!
 
 - **Logical operators:** There are many of these. The most commonly used ones are or(||), and(&&) and not(!).
 
-Parenthesis has a precedence over && and || operators. && operator has a precedence over || operator. ! operator has a higher precedence than both && and ||.
+  Parenthesis has a precedence over && and || operators. && operator has a precedence over || operator. ! operator has a higher precedence than both && and ||.
 
 - **Switch statement:** Slightly more legible syntax of **conditionals** (if, else if, else). Example code:
 
-```
+  ```
 
-let emoji = "happy";
-let color;
+  let emoji = "happy";
+  let color;
 
-switch(emoji) {
-case "happy":
-case "content":
-color = "yellow";
-break;
-case "angry":
-color = "red";
-break;
-case "excited":
-color = "pink";
-break;
-default:
-color = "blue";
-}
+  switch(emoji) {
+  case "happy":
+  case "content":
+  color = "yellow";
+  break;
+  case "angry":
+  color = "red";
+  break;
+  case "excited":
+  color = "pink";
+  break;
+  default:
+  color = "blue";
+  }
 
-// If you have "happy" or "content" as emoji, the color variable will be "yellow".
+  // If you have "happy" or "content" as emoji, the color variable will be "yellow".
 
-```
+  ```
 
 - **Ternary operator:**
 
-A shorter syntax for conditionals. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
+  A shorter syntax for conditionals. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
 
-```
+  ```
 
-let status = "offline";
+  let status = "offline";
 
-// Written with if-else:
+  // Written with if-else:
 
-let color;
-if (status === "offline") {
-color = "red";
-} else {
-color = "green";
-}
+  let color;
+  if (status === "offline") {
+  color = "red";
+  } else {
+  color = "green";
+  }
 
-// Written with ternary:
+  // Written with ternary:
 
-let color = status === "offline" ? "red" : "green";
+  let color = status === "offline" ? "red" : "green";
 
-```
+  ```
 
 - **Loops:** There are 4 types of loops: for loops, while loops, infinite loops (a loop where the endong condition is never met- the one kind of loop you don't want), and for...of (to iterate over arrays) and for...in (to iterate over objects) loops. To avoid creating infinite loops using while loops (which is fairly easy), you need to update the condition and attempt to make it false inside the while loop. for...of loops and for...in loops are not supported by IE.
--
+- **Recursion:** Recursion is a method of solving a bigger problem by solving smaller instances of the same problem. It is generally used as functions calling themselves, and the rule is to always have a base case. A base case is where you decide where to stop the recursion process. (Reminds you of while loops, doesn't it? You have to define a way to stop that loop or function from running. Same logic.)
+
+  Let's see a small example:
+
+  ```
+   // Our task is to take a number, decrement it by one on each step, and print each number to the console until we reach 0.
+
+   function printNum(n) {
+      // Let's define our base case first:
+      if(n <= 0) {
+         return;
+      }
+
+      console.log(n);
+      printNum(n-1);
+   }
+  ```
 
 **Resources:**
 
@@ -397,27 +415,3 @@ let color = status === "offline" ? "red" : "green";
 4. [Academind](https://academind.com/) - Maximilian Schwarzmüller
 5. [Eloquent JavaScript: A Modern Introduction to Programming](https://eloquentjavascript.net/)
 6. [w3schools](https://www.w3schools.com/js/)
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
