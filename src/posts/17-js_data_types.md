@@ -662,7 +662,98 @@ printNum(10, 2) // prints: 10 8 6 4 2
       Titles: (2) ["Mrs.", "Dr."]
   ```
 
-- **Destructuring:**
+- **Destructuring:** A shorter syntax for assigning values to variables.
+
+  Let's see it in use:
+
+  ```
+   const petNames = ["Ollie", "Jojo", "Milo", "Kiki"];
+
+   const [dog, cat, bird] = petNames;
+   console.log("Dog's name: ", dog); // prints: "Dog's name: Ollie"
+   console.log("Cat's name: ", cat); // prints: "Cat's name: Jojo"
+   console.log("Bird's name: ", bird); // prints: "Bird's name: Milo"
+
+   // As you can see, the order matters. And if you want to skip a variable, you can use an empty space instead of it, like this:
+
+   const names = ["Ellie", "Ollie", "Wally"];
+
+   const [first, , third] = names;
+   console.log(first, third); // prints: Ellie Wally
+
+   // You can combine it with rest syntax as well:
+
+   const nums = [1, 2, 3, 4, 5, 6];
+
+   const [firstNum, , , ...others];
+   console.log(firstNum); // prints: 1
+   console.log(others); // prints: [4, 5, 6]
+
+   // Destructuring can be used with objects as well, but the destructuring name has to match the keynames, or the variable will still be created but the value of it will become undefined:
+
+   const rat = {legCount: 4, hasTeeth: "true", name: "Taco", personality: "very cool"};
+
+   const {name, personality, hasTail} = rat;
+   console.log(name); // prints: "Taco"
+   console.log(hasTail); // prints: undefined
+
+   // If you want to use destructuring, but want to name your variable as a different name, you can do that too:
+
+   const {name: petRatName} = rat;
+   console.log(petRatName); // prints: "Taco"
+
+   // You can combine it with rest parameter as well:
+
+   const {name: petRatName, ...otherRatParameters} = rat;
+
+   console.log(otherRatParameters); // prints: {legCount: 4, hasTeeth: "true", personality: "very cool"}
+
+   // Nested destructuring is also possible:
+
+   const pets = [
+      {
+         name: "Ollie",
+         species: "dog"
+      },
+      {
+         name: "Milo",
+         species: "bird"
+      },
+      {
+         name: "Taco",
+         species: "rat"
+      }
+   ];
+
+   const [ , {name: petBirdName}] = pets;
+   console.log(petBirdName); // prints: "Milo"
+
+   // You can use destructuring in function parameters as well:
+
+   printFullName = ({firstName, lastName}) => {
+      console.log(`${firstName} ${lastName}`);
+   }
+
+   const person = {
+      firstName: "Carrie",
+      lastName: "Longwood",
+      age: 32,
+      hairColor: "black"
+   }
+
+   printFullName(person); // prints: "Carrie Longwood"
+
+   // Can do the same with arrays too:
+
+   const response = ['HTTP/1.1', '200 OK', 'application/json'];
+
+   function parseResponse([protocol, statusCode, contentType]) {
+      console.log(`Status: ${statusCode}`);
+   }
+
+   parseResponse(response); // prints: Status: 200 OK
+
+  ```
 
 - **Document Object Model (DOM):**
 
