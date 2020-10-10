@@ -287,22 +287,22 @@ O hey bigint
 
 - **Boolean:**
 
-There are only two boolean values: true or false. They are really useful for setting flags.
+  There are only two boolean values: true or false. They are really useful for setting flags.
 
-_Truthy and Falsy:_
+  _Truthy and Falsy:_
 
-All values have an inherent truthy or falsy value under their real values. That means, in certain conditions they will act like boolean values, and either look like true or false.
+  All values have an inherent truthy or falsy value under their real values. That means, in certain conditions they will act like boolean values, and either look like true or false.
 
-Everything else is truthy except falsy values!
+  Everything else is truthy except falsy values!
 
-Falsy values are:
+  Falsy values are:
 
-1.  False
-2.  0
-3.  "" (empty string)
-4.  null
-5.  undefined
-6.  NaN
+  1.  False
+  2.  0
+  3.  "" (empty string)
+  4.  null
+  5.  undefined
+  6.  NaN
 
 - **Null:**
 
@@ -320,9 +320,120 @@ So if you change the value, all the values of the variables that store a pointer
 - **Object:**
 - **Array:**
 
+  Arrays are list like objects, and each item has an index number associated with it. They also have a length property just like strings.
+
   Here are some built-in array methods and examples:
 
   ```
+   // -> Array.from() static method creates a new array of a given iterable object. You can use an optional second argument to map the iterable value.
+
+   console.log(Array.from(123)); // prints: [], numbers are not iterable!
+   console.log(Array.from("sauce")); // prints: ["s", "a", "u", "c", "e"], strings are iterable!
+   console.log(Array.from([1,2,3], x => x+3)); prints: [4, 5, 6]
+
+   ---------------------------
+
+   // -> Array.isArray() static method determines if a given value is an array or not.
+
+   Array.isArray([1, 2, 3]);  // true
+   Array.isArray({name: "Elisa"}); // false
+   Array.isArray('Elisa');   // false
+   Array.isArray(undefined);  // false
+   Array.isArray(null);  // false
+
+   ---------------------------
+
+   // -> Array.of() static method creates an array from any given value.
+
+   Array.of(78);       // [78]
+   Array.of(1, 2, 3); // [1, 2, 3]
+   Array.of("sauce", "apple"); // ["sauce", "apple"]
+   Array(8); // creates an empty array with the length property of 8.
+
+   ---------------------------
+
+   // -> concat() method merges two or more arrays and returns the result as a new array.
+
+   const arr1 = ['h', 'i'];
+   const arr2 = ["M", "r"];
+   const arr3 = ['C', 'a', 't'];
+
+   const arr4 = arr1.concat(arr2);
+   const arr5 = arr1.concat(arr2, arr3);
+
+   console.log(arr4); // prints: ["h", "i", "M", "r"]
+   console.log(arr5); // prints: ["h", "i", "M", "r", "C", "a", "t"]
+   console.log(arr1); // prints: ['h', 'i']
+
+   ---------------------------
+
+   // -> entries() method returns an Array Iterator object that contains key-value pairs for each item on that given array.
+
+   const arr = ['a', 'b', 'c'];
+
+   const iterator = arr.entries();
+
+   console.log(iterator.next().value);
+   // prints: Array [0, "a"]
+
+   for(let [index, element] of iterator) {
+      console.log(index, element);
+   }
+   // prints: 0 "a" 1 "b" 2 "c"
+
+   ---------------------------
+
+   // -> every() method tests whether every item in a given array passes the test by a given function, and returns a boolean value in the end.
+   // every method on an empty array will return true for any condition.
+
+   const isOver21 = age => age>= 21;
+
+   const arr = [26, 29, 30, 32];
+
+   console.log(arr.every(isOver21)); // prints: true
+
+   ---------------------------
+
+   // -> fill(value, start, end) method replaces values with another value, from a start index (default 0) to an end index (default array.length). It returns the modified array.
+   // fill is a mutator method, it will change the array.
+
+   const arr = [1, 2, 3, 4, 5, 6];
+
+   console.log(arr.fill(0, 2, 4)); // prints: [1, 2, 0, 0, 5, 6]
+   console.log(arr.fill("hello", 3)); // prints: [1, 2, 0, "hello", "hello", "hello"]
+   console.log(array1.fill(6)); // prints: [6, 6, 6, 6, 6, 6]
+   console.log(array1); // prints: [6, 6, 6, 6, 6, 6]
+
+   ---------------------------
+
+   // filter() method provides a callback function and calls that callback function for every item in the array, constructs a new array of the values that returns true and returns this new array.
+   // filter() is NOT a mutator method, it will return a new array without touching the giving one.
+
+   const words = ['camp', 'marshmallow', 'tent', 'firewood', 'mountain', 'bag'];
+
+   const result = words.filter(word => word.length >= 5);
+
+   console.log(result); // prints: Array ['marshmallow', 'firewood', 'mountain']
+
+   console.log(words); // prints: ['camp', 'marshmallow', 'tent', 'firewood', 'mountain', 'bag'];
+
+   ---------------------------
+
+   // -> find() method returns the value of the first element in the given array that satisfies the testing function provided by the callback function.
+   // -> findIndex() method does the same thing, but instead of the value, it returns the index.
+
+   const words = ['camp', 'marshmallow', 'tent', 'firewood', 'mountain', 'bag'];
+
+   const found = words.find(el => el.length > 7);
+   const foundNum = words.findIndex(el => el.length > 7);
+   console.log(found); // prints: 'marshmallow'
+   console.log(foundNum); // prints: 1
+
+   ---------------------------
+
+   // -> indexOf() method
+   // -> includes() method
+   // -> some() method
 
   ```
 
@@ -337,75 +448,223 @@ Now, rest of you: keep reading!
 
 - **Logical operators:** There are many of these. The most commonly used ones are or(||), and(&&) and not(!).
 
-  Parenthesis has a precedence over && and || operators. && operator has a precedence over || operator. ! operator has a higher precedence than both && and ||.
+Parenthesis has a precedence over && and || operators. && operator has a precedence over || operator. ! operator has a higher precedence than both && and ||.
 
 - **Switch statement:** Slightly more legible syntax of **conditionals** (if, else if, else). Example code:
 
-  ```
+```
 
-  let emoji = "happy";
-  let color;
+let emoji = "happy";
+let color;
 
-  switch(emoji) {
-  case "happy":
-  case "content":
-  color = "yellow";
-  break;
-  case "angry":
-  color = "red";
-  break;
-  case "excited":
-  color = "pink";
-  break;
-  default:
-  color = "blue";
-  }
+switch(emoji) {
+case "happy":
+case "content":
+color = "yellow";
+break;
+case "angry":
+color = "red";
+break;
+case "excited":
+color = "pink";
+break;
+default:
+color = "blue";
+}
 
-  // If you have "happy" or "content" as emoji, the color variable will be "yellow".
+// If you have "happy" or "content" as emoji, the color variable will be "yellow".
 
-  ```
+```
 
 - **Ternary operator:**
 
-  A shorter syntax for conditionals. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
+A shorter syntax for conditionals. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
 
-  ```
+```
 
-  let status = "offline";
+let status = "offline";
 
-  // Written with if-else:
+// Written with if-else:
 
-  let color;
-  if (status === "offline") {
-  color = "red";
-  } else {
-  color = "green";
-  }
+let color;
+if (status === "offline") {
+color = "red";
+} else {
+color = "green";
+}
 
-  // Written with ternary:
+// Written with ternary:
 
-  let color = status === "offline" ? "red" : "green";
+let color = status === "offline" ? "red" : "green";
 
-  ```
+```
 
 - **Loops:** There are 4 types of loops: for loops, while loops, infinite loops (a loop where the endong condition is never met- the one kind of loop you don't want), and for...of (to iterate over arrays) and for...in (to iterate over objects) loops. To avoid creating infinite loops using while loops (which is fairly easy), you need to update the condition and attempt to make it false inside the while loop. for...of loops and for...in loops are not supported by IE.
-- **Recursion:** Recursion is a method of solving a bigger problem by solving smaller instances of the same problem. It is generally used as functions calling themselves, and the rule is to always have a base case. A base case is where you decide where to stop the recursion process. (Reminds you of while loops, doesn't it? You have to define a way to stop that loop or function from running. Same logic.)
+- **Recursion:** Recursion is a method of solving a bigger problem by solving smaller instances of the same problem. It is generally used as functions calling themselves, and the rule is to always have a base case. A base case is where you decide where to stop the recursion process. (Reminds you of while loops, doesn't it? You have to define a way to stop that loop or function from running. Same logic.) Also, always make sure that you have reasonable default numbers of the optional arguments you are receiving to safely handle the recursion.
 
-  Let's see a small example:
+Let's see a small example:
 
-  ```
-   // Our task is to take a number, decrement it by one on each step, and print each number to the console until we reach 0.
+```
 
-   function printNum(n) {
-      // Let's define our base case first:
-      if(n <= 0) {
-         return;
-      }
+// Our task is to take a number, decrement it by one on each step, and print each number to the console until we reach 0.
+
+// Here, if we don't point out a decrement, by default it will be 1.
+function printNum(n, dec = 1) {
+// Let's define our base case first:
+if(n <= 0) {
+return;
+}
 
       console.log(n);
-      printNum(n-1);
-   }
+      printNum(n-dec, dec);
+
+}
+
+printNum(-1); // prints nothing
+printNum(0); // prints nothing
+printNum(5); // prints: 5 4 3 2 1
+printNum(10, 2) // prints: 10 8 6 4 2
+
+```
+
+- **Default Parameters:** If you have functions with multiple arguments, the best way to handle future bugs would be defining logical default parameters. Default parameters can take any type of value, an array, an object, a string, a number, you name it. Let's walk through this with an example:
+
   ```
+   function multiply(x,y) {
+      return x * y;
+   }
+
+   multiply(4,5); // returns 20
+   multiply(5); // This will return NaN because y is undefined, and undefined multiplied by anything is NaN.
+
+   // Let's define the same function by giving y a default parameter of 1:
+
+   function multiply(x,y = 1) {
+      return x * y;
+   }
+
+   multiply(3,4); // returns 12
+   multiply(5); // returns 5
+  ```
+
+  - **Spread syntax:** Spread syntax allows an iterable (such as an array) to be expanded in places where elements are expected. The syntax is always 3 dots right next to each other. Let's see the places where this can be useful:
+
+  ```
+  // Arrays are iterable
+  const numArr = [2,56,41,98,14,26];
+  Math.max(...numArr); // this is the same as this: Math.max(2,56,41,98,14,26); //prints: 98
+
+  // Strings are also iterable
+  const str = "hello";
+  function spellFive(a,b,c,d,e) {
+     console.log(a, b, c, d, e);
+  }
+
+  spellFive(...str); // prints: h e l l o
+
+  // You can use it to combine arrays, but the spread order does matter.
+
+  const flowers = ["rose", "daisy", "lily", "peony"];
+  const vegetables = ["broccoli", "asparagus"];
+
+  const flora = [...flowers, ...vegetables, "tomato"];
+  console.log(flora); // prints: ["rose", "daisy", "lily", "peony", "broccoli", "asparagus", "tomato"]
+
+  // You can use it to create a copy of an array:
+
+  const animals = ["cat", "bird", "dog", ["squirrel", "rabbit", "deer"]];
+  const animalsCopy = [...animals];
+
+  // Although they look the same, they point out to different arrays, so they are not triple equal.
+  // This is not true for nested arrays. Nested arrays are shallow copied, they will point out to the same references.
+
+  console.log(animalsCopy === animals); // prints: "false"
+  console.log(animalsCopy[3] === animals[3]); // prints: "true"
+
+  // You can directly spread strings, just like str.split("") does:
+
+  console.log([..."violet"]); // prints: ["v", "i", "o", "l", "e", "t"]
+
+  // Objects are not iterable, but the spread syntax can be used in objects as well:
+
+  const cat = {legCount: 4, hasTeeth: "true"};
+  const dog = {legCount: 4, hasTeeth: "true"};
+  const bird = {legCount: 2, hasTeeth: "false"};
+
+  const myCat = {...cat, name: "Ollie", personality: "unpredictable"};
+  const myDog = {...dog, name: "Jojo", personality: "cute"};
+  const myBird = {...bird, name: "Milo", personality: "might seduce your dad type"}
+
+  console.log(myBird); // prints: {legCount: 2, hasTeeth: "false", name: "Milo", personality: "might seduce your dad type"}
+
+  // If you have conflicting properties the order of spreading does matter.
+
+  const alienCat1 = {...cat, legCount: 6, eyeCount: 3}; // has a legCount of 6
+  const alienCat2 = {legCount: 6, eyeCount: 3, ...cat}; // has a legCount of 4
+
+  // Spreading can be used to copy objects, but just like the arrays, the copy and the initial object will point to different references, although they look the same.
+
+  const myDogCopy = {...myDog};
+  console.log(myDog === myDogCopy); // prints: "false"
+
+  // You can't spread an object inside an array, it will throw an error.
+  // You can spread an array into an object though. It will assign each item in the array a key, which is the same as their index.
+
+  console.log({...[1,2,3]}); // prints: {0: 1, 1: 2, 2: 3}
+  ```
+
+- **Rest Syntax and arguments object:** The syntax is exactly the same as the spread syntax, which is three dots next to each other.
+
+  In every function we have access to what is called an arguments object. It is an array-like object that has a length property, but built-in array methods are not available for it. It contains all arguments passed into a function, if you don't know how many arguments the function will take, then instead of specifying the arguments, you can simply use this object. It is not available in arrow functions.
+
+  Let's see it in use:
+
+  ```
+  // First, we'll start with arguments object:
+
+   function doesntMatter() {
+      console.log(arguments);
+   }
+
+   doesntMatter(1,5,23,759); // prints all the arguments as an array-like object: [1, 5, 23, 759, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+   function multiply() {
+      return [...arguments].reduce((total, currVal) => {
+         return total * currVal;
+      })
+   }
+
+   multiply(2, 5, 8); // prints: 80
+
+   // Now, same function with rest syntax will look like this:
+
+   function multiply(...args) {
+      console.log(args); // This returns an actual array that consists all arguments, not an array-like object.
+      return args.reduce((total, currVal) => {
+         return total * currVal;
+      })
+   }
+
+   multiply(2, 5, 9); // prints: [2, 5, 9] 90
+
+   // You can also use it to encapsulate some of the arguments:
+
+   function fullName(firstName, lastName, ...titles) {
+      console.log("First name:", firstName);
+      console.log("Last name:", lastName);
+      console.log("Titles:", titles);
+   }
+
+   fullName("Mary", "Johnsson", "Mrs.", "Dr.");
+   // prints:
+      First name: Mary
+      Last name: Johnsson
+      Titles: (2) ["Mrs.", "Dr."]
+  ```
+
+- **Destructuring:**
+
+- **Document Object Model (DOM):**
 
 **Resources:**
 
