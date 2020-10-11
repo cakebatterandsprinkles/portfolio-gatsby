@@ -755,7 +755,7 @@ printNum(10, 2) // prints: 10 8 6 4 2
 
   ```
 
-- **Document Object Model (DOM):**
+- **RegExp:**
 
 **Resources:**
 
