@@ -115,6 +115,8 @@ The data types in JS can be divided into 2 major categories:
   const sentence = "Roses are red. Violets are blue.";
   console.log(sentence.match(/[A-Z]/g)); // prints: ["R", "V"]
 
+  // Match method either returns an array that contains the elements that match, or null.
+
   ---------------------------
 
   // -> padEnd() method pads the string with a given string (if needed, repeated), until the resulting string reaches the given length. The padding is applied from the end of the given string.
@@ -755,7 +757,95 @@ printNum(10, 2) // prints: 10 8 6 4 2
 
   ```
 
-- **RegExp:**
+- **RegExp:** Regular expressions are patterns that are used to match character combinations in strings. In JavaScript, regular expressions are also objects. They are awfully useful in input validation.
+
+  You can construct a regular expression in two ways:
+
+  ```
+   // 1. Literal expression:
+   var re = /ab+c/
+
+   // 2. "new" keyword, which calls the constructor function of the RegExp object:
+   var re = new RegExp('ab+c');
+  ```
+
+  If you want to see if a regular expression matches a string, you can use the text function:
+
+  ```
+  const string = "Cake base cannot be eaten raw";
+  const regex = /base/;
+
+  const isExisting = regex.test(string);
+  console.log(isExisting);  //prints: true
+  ```
+
+  Some basic things to know:
+
+  - Square brackets symbolize in between.
+  - Regex is case sesitive: [a-z] means lowercase letters
+  - [A-Z] means uppercase letters
+  - [0-9] covers the numbers
+  - [a-zA-Z] covers all uppercase and lowercase letters
+  - [a-zA-Z0-9] covers all uppercase and lowercase letters + numbers
+  - [xyz] matches any single character inside the square brackets, in this case x, y or z
+  - [xyz]+ matches one or more of any characters inside square brackets, in this case x, y or z
+  - **/g** means global, if you don't put it at the end, the execution of it will stop with the first match that is found.
+  - **/i** means insensitive to uppercase or lowercase
+  - \$ matches the end of the string.
+  - ^ matches the beginning of a string.
+  - [^a-z] when inside of square brackets, the ^ means match anything that is NOT a lowercase letter.
+  - \d matches one or more arbitrary digits
+  - \w matches any word character [a-zA-Z0-9_]
+  - \s matches space
+  - \n matches new line
+  - \t matches tabs
+
+```
+const string = "filea.mp3 file_01.mp3 file_02.mp3 test.csv other.txt ANTS.md football.md foosball.md fooooootball.mp4"
+
+console.log(string.match(/[A-Z]/g)); // prints: ["A", "N", "T", "S"]
+
+console.log(string.match(/[a-zA-Z0-9]/)); // prints: ["f"]
+
+console.log(string.match(/\w/)); // prints: ["f"]
+
+console.log(string.match(/\w+/)); // prints: ["filea"]
+
+console.log(string.match(/\w+\./g)); // prints: ["filea.", "file_01.", "file_02.", "test.", "other.", "ANTS.", "football.", "foosball.", "fooooootball."]
+console.log(string.match(/\w+\s/g)); // prints: ["mp3 ", "mp3 ", "mp3 ", "csv ", "txt ", "md ", "md ", "md "]
+
+const sentence = "I didn't eat it all";
+console.log(sentence.replace(/[aei]/g, "o")); // prints: "I dodn't oot ot oll"
+
+// regex.test() function checks if a regex matches a given value, returns a boolean value.
+// ? is a modifier that matches the value before them between 0 and 1 times
+// + is a modifier that matches the value before them between 1 and unlimited times
+// * is a modifier that matches the value before them between 0 and unlimited times
+
+const claim = "You just kissed a bm boom boooom baby";
+console.log(/boo?m/g.test(claim)); // prints: true
+console.log([...claim.matchAll(/boo?m/g)]); // returns you all the matching elements in an array
+console.log(/bo?m/g.test(claim));  // prints: false
+console.log(/bo+m/g.test(claim));  // prints: true // matches 2 strings: boom, boooom
+console.log(/bo*m/g.test(claim));  // prints: true // matches 3 strings: bm, boom, boooom
+
+const regexp = /c(a)(t(\d?))/g;
+const str = 'cat1cat2cat3max';
+
+const array = [...str.matchAll(regexp)];
+
+console.log(array[0]);
+// expected output: Array ["cat1", "c", "t1", "1"]
+
+console.log(array[1]);
+// expected output: Array ["cat2", "c", "t2", "2"]
+
+console.log(array[2]);
+// expected output: Array ["cat3", "c", "t3", "3"]
+
+```
+
+You can test your regexps from here: https://regex101.com/
 
 **Resources:**
 
