@@ -63,15 +63,15 @@ The built-in functions for stack data structure manipulation in JS are **push** 
 
 As array has all these built-in functions in JS, you can create an an array and use it like a stack.
 
-```
-
-```
-
 ### Finally, Big O
 
 There are many problems in the world, and on many occassions a problem can be solved in multiple ways. In real life, we try to choose the best solutions by making pro-con lists, trying to compare the side effects each option. Computer science uses Big O notation for the same purpose, to describe the performance or complexity of an algorithm. There might be multiple valid solutions (algorithms) to solve a single problem, and each of them might be using a different approach. With each algorithm, Big O decides the worst outcome possible, and when comparing algorithms we actually compare their worst outcomes. The big O notation also provides a common vocabulary to talk about the performance of a code block. Unfortunately, it is really hard to express real life problems as mathematical equations, so big O is kinda useless outside of its forte. At the end, what we try to do is the same: try to find the best, the most efficient solution.
 
 Now let's talk about how we decide if an algorithm is efficient or not. We look at _the time it takes to do the work, the amount of memory it uses, the amount of secondary storage space it needs._ The performance of an algorithm also depends on the capabilities of the computer it is running on. You also have to think of scalability- what happens when the amount of data the algorithm has to deal with increases? (Common sense tells us that a solving a problem takes longer when there is more data to work on. But it is not necessarily always true.) The code also needs to be readable so it can be maintained.
+
+### Runtime Complexity
+
+Runtime complexity describes the performance of an algorithm in terms of how much processing power/time is required to run the algorithm if you increase the input size. For comparing algorithms, software engineers had to come up with a certain common language, which brings us to the Big O.
 
 ### The order of magnitude
 
@@ -103,6 +103,8 @@ findLast(["Holly", "Sally", "Catherine", "Jack", "Emma", "Conny", "Marcus", "May
 Regardless of the number of items in a given array, the time of a single iteration will be constant. No matter the size of the given array, this function will iterate over it just a single time, so the complexity of this algorithm is O(1).
 
 **O(log(n))**
+
+O(n²) describes a logaritmic-time algorithm.
 
 Logarithms (log for short) were discovered by a mathematician named **John Napier** in the 1500s. Simply put, logarithms are the inverse of exponentiation, just like the substraction is the inverse of addition or division is the reverse of multiplication.
 
@@ -149,13 +151,27 @@ The complexity of the algorithm is highly dependent on the data size, so this al
 
 **O(n log(n))**
 
+O(n²) describes a quasilinear-time algorithm.
+
 One of the examples of an algorithm that has a complexity of O(n log(n)) is the **merge sort algorithm.** This algorithm sorts the data in a list. It works by splitting each list into sublists, each of them containing 1 item at first, therefore each sublist is sorted. It merges the sublists by 2, sorting as it merges. At the end, it results with a single sorted list. This is usually the most efficient approach if you're dealing with large lists.
 
 Another example would be **the quick sort algorithm.** This algorithm deals with a large list by selecting a random pivot number, and sets 2 pointers, one to the beginning of the list (let's name it leftside pointer), and one at the end of the list (and this could be the rightside pointer). Each value the pointers point at is compared to the pivot value, and for example, until the leftside pointer value is bigger than the pivot value, it will keep moving to the one right next to it. Same goes with the right pointer, until it finds a value smaller that the pivot value, it skips to the one ext to it. When both of the pointers find what they are looking for, they exchange values, and continue on doing the same thing until the whole list is sorted.
 
 **O(n²)**
 
-**O(2ⁿ)**
+O(n²) describes a quadratic-time algorithm.
+
+**O(2ⁿ) and memoization**
+
+O(n²) describes a exponential-time algorithm. If an algorithm uses exponential runtime, it means it can be written better, so try not to accept a solution that has an exponential runtime. For example, the recursive solution to the fibonacci problem that is shown [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js) as the fib2 function has exponential runtime. For an n of 5, this function calls fib(4) and fib(3), and both of them call the same function with smaller numbers until it returns with a number, not caring about calling the same functions as each other, so it is very much ineffective as well.
+
+Alright, now here's the golden question: Is there any way we can improve this recursive solution's runtime?
+
+The answer is yes! And it is called memoization.
+
+Memoization is the act of storing the arguments of each function call as well as the result. So if the function is called with the same arguments multiple times, the function will return the stored result instead of running that function again. So when you memoize a function, you basically cache the arguments and the computed results.
+
+Now it's time to refactor the recursive solution. For that, we write a memoizer function that will take our ineffective recursive function and return a fast, memoized fibonacci function. So the memoizer function will be a function that will return a better version of our old fib2 function. Check the fib3 example from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js). The second run of the same function with same arguments takes under 1 ms, because it was already cached.
 
 **O(n!)**
 
@@ -216,31 +232,7 @@ Accessing elements in an array(by index) or object(by key) is constant!
 
 In a loop, the complexity is the length of the loop times the complexity of whatever happens inside of that loop!
 
-(•ᴗ•) Summing up Big O
-Big O notation can give us an understanding of the time and space complexity of an algorithm. Big O doesn't care about precision, it cares about general trends. The time and space complexity measured by Big O depends only on the algorithm, not the hardware used to run the algorithm. So the actual runtime of an algorithm will change between computers with different hardware, but the general trend will be the same. n: simple operations a computer has to do for that algorithm The big O of an algorithm is a function of "n" => O(f(n))
-
-f(n) can be linear (f(n) = n)
-f(n) can be quadratic (f(n) = n^2)
-f(n) can be constant (f(n) = 1)
-f(n) can be many things!
-addUpToV2(n) described at the previous part has always 3 operations => it has a big O of 1, it means as the n grows, it is not reflected in the runtime. => O(1)
-
-addUpToV1(n) described at the previous part has 5n+2 operations => it has a big O of n, it means as the n grows, runtime will also grow as a multiple of n => O(n)
-
 Note: If a function has more than one for loops(not nested), the for loops will each have O(n). At the end, the function itself will have a O(n). But for example, if a function has a single nested for loop, it will have a O notation of O(n^2).
-
-Note: You always get the O notation of the worst case scenario!
-
-Note: The smaller, the better!
-
-Space And Time Complexity
-We can use the Big O notation to describe the time or spca complexity of an algorithm.
-
-Time Complexity
-
-Answers this question: How does the runtime of an algorithm changes as the size of its input increases?
-
-Comparing Running Time Complexity in terms of Big O (O(f(n))): From best to worse: O(1) (best! )-> O(logn) (good! ) -> O(n) (fair! ) -> O(nlogn) (bad! ) -> O(n^c) -> O(c^n) -> O(n!) (worst! )
 
 Space Complexity (Space = memory)
 
@@ -279,41 +271,42 @@ return newArr;
 }
 In this example as the input length approaches infinity, the length of the array will be increasing directly proportionate to the length of the given array. This means the big O for space complexity for this algorithm is O(n).
 
-(•ᴗ•) Analyzing Performance of Arrays and Objects
+### Memoization
 
-An object is an unordered data structure consisting key-value pairs.
+### Analyzing the Performance of Arrays and Objects
 
-Big O of actions related to objects:
+**Big O of actions related to objects:**
 
-Insertion -> O(1)
-Removal -> O(1)
-Access -> O(1)
-Search -> O(n)
-Big O's of object methods:
+- Insertion -> O(1)
+- Removal -> O(1)
+- Access -> O(1)
+- Search -> O(n)
 
-Object.keys -> O(n)
-Object.values -> O(n)
-Object.entries -> O(n)
-hasOwnProperty -> O(1)
-An array is an ordered data structure consisting values and each value has an index number that corresponds to it.
+**Big O's of object methods:**
 
-Big O of actions related to arrays:
+- Object.keys -> O(n)
+- Object.values -> O(n)
+- Object.entries -> O(n)
+- hasOwnProperty -> O(1)
 
-Insertion -> If you are inserting to the end of the array (push) it is O(1). If you insert an item to the beginning of an array (unshift), it becomes O(n), because you will be changing the indices of every item on that array.
-Removal -> If you are removing from the end of the array (pop) it is O(1). If you remove an item from the beginning of an array (shift), it becomes O(n), because you will be changing the indices of every item on that array.
-Access -> O(1)
-Search -> O(n)
-Big O's of array methods:
+**Big O of actions related to arrays:**
 
-push -> O(1)
-pop -> O(1)
-shift -> O(n)
-unshift -> O(n)
-concat -> O(n)
-slice -> O(n)
-splice -> O(n)
-sort -> O(n\*log(n))
-forEach/map/filter/reduce -> O(n)
+- Insertion -> If you are inserting to the end of the array (push) it is O(1). If you insert an item to the beginning of an array (unshift), it becomes O(n), because you will be changing the indices of every item on that array.
+- Removal -> If you are removing from the end of the array (pop) it is O(1). If you remove an item from the beginning of an array (shift), it becomes O(n), because you will be changing the indices of every item on that array.
+- Access -> O(1)
+- Search -> O(n)
+
+**Big O's of array methods:**
+
+- push -> O(1)
+- pop -> O(1)
+- shift -> O(n)
+- unshift -> O(n)
+- concat -> O(n)
+- slice -> O(n)
+- splice -> O(n)
+- sort -> O(n\*log(n))
+- forEach/map/filter/reduce -> O(n)
 
 **Resources:**
 
