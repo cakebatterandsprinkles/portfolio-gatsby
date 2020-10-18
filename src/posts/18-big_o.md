@@ -57,19 +57,25 @@ A hash table can also be called a hash map, an object or a dictionary. It is a d
 
 A queue is also like a container of sorts, where pieces of data enter from one end and exit from the other. The best way to imagine a queue is to imagine a real life queue, where you're going to buy a train ticket, or a movie ticket. A person has to enter the line from the end, and wait until it's his/her turn, buy the ticket and leave the line. Skipping or cutting in line is strictly prohibited, so the order does matter. The process of adding data into a queue is called **enqueuing**, and removing data from the queue is called **dequeuing**.
 
-A queue follows First In First Out principle (FIFO for short), which means whenever we attempt to remove anything from the queue, it will always be the one that's closest to the end point of the queue. So the first one in will always be the first one out.
+A queue follows _First In First Out principle_ (FIFO for short), which means whenever we attempt to remove anything from the queue, it will always be the one that's closest to the end point of the queue. So the first one in will always be the first one out.
 
 There is not a queue data structure that is implemented in JS, but there is a data structure called an array, which can do whatever a queue can do and many more. While you can interact with a JS array in many ways, a queue has a very tiny API attached to it, which only has the ability to add and remove records. So in JS, whenever you want to implement a queue from an array (to restrict other methods to interact with an array), you can make a queue class and use two of built-in array methods, and you are done. For adding records to a queue, you'll need `array.unshift()`, and for removing records, you'll need `array.pop()`. You can see the queue implemented from a JS array from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/queue/index.js).
 
 **Stack:**
 
-Think of a stack of books. The topmost book in the stack is the last book you put there, and if you remove that book, the topmost book becomes the one before the last book you put there. If you try to grab a book from the middle, the stack could collapse. So the only way to work with this book stack is to pick the last one you put.
+The stack data structure is extremely similar to the queue data structure.
+
+In the stack data structure, data also lives in some sort of a container. Adding data to a stack is called **pushing** and removing data from a stack is referred to as **popping**.
+
+A stack follows _First In Last Out principle_ (FILO for short), which means whenever we attempt to remove anything from a stack, it will always be the last one that has been added to the stack. So the first one in will always be the last one out.
+
+Think of a stack of books. The topmost book in the stack is the last book you put there, and if you remove that book, the topmost book becomes the one before the last book you put there. If you try to grab a book from the middle, the stack could collapse, so removing stuff in between is strictly prohibited. So the only way to work with this book stack is to pick the last one you put.
 
 An example of a stack we daily use is the browser's back button. When you visit a new website, that URL is pushed on top of a stack. If you click a hyperlink and visit a new one, it is again pushed on top of the stack, making it the topmost URL. When you press the back button, it will pop off the topmost URL in the stack.
 
 The built-in functions for stack data structure manipulation in JS are **push** (to place data on the topmost layer on a stack), **pop** ( to remove the data on the topmost layer on the stack), **peek** (to display the topmost element in the stack), **length** (to determine how many items there are on the stack).
 
-As array has all these built-in functions in JS, you can create an an array and use it like a stack.
+Just like queue, stack data structure can be implemented from a JS array. You can see an example from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/stack/index.js).
 
 ### Finally, Big O
 
