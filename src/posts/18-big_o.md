@@ -31,9 +31,11 @@ In fact, this is a very simplified algorithm of me getting out of my house every
 
 ### Understanding the data structures
 
-Another thing you probably heard about is **data structures.** Data structures is our ways of storing and organizing our data. It is important how you organize things, so that you're trying to find something, you won't feel so much pain. Think of your closet, you could have tossed every clothing item inside, and you would spend hours trying to find a single thing, everyday. Or you can organize it by dividing into subdivisions using their type (shirt, pants, shorts, hats) or if you're feeling crazier, you can divide these subdivisions by their colors.
+Another thing you probably heard about is **data structures.** Data structures is our ways of storing and organizing our data with optimal runtime complexity for accesing, adding or removing data. It is important how you organize things, so that when you're trying to find something, you won't be in so much agony. Think of your closet, you could have tossesd every clothing item inside, and you would spend hours trying to find a single thing, everyday. Or you can organize it by dividing into subdivisions using their type (shirt, pants, shorts, hats) or if you're feeling crazier, you can divide these subdivisions by their colors.
 
 The types of data structures used in computer science are **array**, **hash table**, **linked list**, **graph**, **tree**, **queue**, and **stack.** The type of the data structures are important, because each and every one of them have their own organization methods.
+
+JavaScript natively implements several data structures. The array data structure in JS is very powerful, and can do tremendous amount of things. For example, it covers everything a queue data structure can do, and much more. So you can use a JS array to represent a queue.
 
 Let's talk about them one by one.
 
@@ -52,6 +54,12 @@ A hash table can also be called a hash map, an object or a dictionary. It is a d
 **Tree:**
 
 **Queue:**
+
+A queue is also like a container of sorts, where pieces of data enter from one end and exit from the other. The best way to imagine a queue is to imagine a real life queue, where you're going to buy a train ticket, or a movie ticket. A person has to enter the line from the end, and wait until it's his/her turn, buy the ticket and leave the line. Skipping or cutting in line is strictly prohibited, so the order does matter. The process of adding data into a queue is called **enqueuing**, and removing data from the queue is called **dequeuing**.
+
+A queue follows First In First Out principle (FIFO for short), which means whenever we attempt to remove anything from the queue, it will always be the one that's closest to the end point of the queue. So the first one in will always be the first one out.
+
+There is not a queue data structure that is implemented in JS, but there is a data structure called an array, which can do whatever a queue can do and many more. While you can interact with a JS array in many ways, a queue has a very tiny API attached to it, which only has the ability to add and remove records. So in JS, whenever you want to implement a queue from an array (to restrict other methods to interact with an array), you can make a queue class and use two of built-in array methods, and you are done. For adding records to a queue, you'll need `array.unshift()`, and for removing records, you'll need `array.pop()`. You can see the queue implemented from a JS array from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/queue/index.js).
 
 **Stack:**
 
@@ -171,7 +179,7 @@ The answer is yes! And it is called memoization.
 
 Memoization is the act of storing the arguments of each function call as well as the result. So if the function is called with the same arguments multiple times, the function will return the stored result instead of running that function again. So when you memoize a function, you basically cache the arguments and the computed results.
 
-Now it's time to refactor the recursive solution. For that, we write a memoizer function that will take our ineffective recursive function and return a fast, memoized fibonacci function. So the memoizer function will be a function that will return a better version of our old fib2 function. Check the fib3 example from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js). The second run of the same function with same arguments takes under 1 ms, because it was already cached.
+Now it's time to refactor the recursive solution. For that, we write a memoizer function that will take our ineffective recursive function and return a fast, memoized fibonacci function. So the memoizer function will be a function that will return a better version of our old fib2 function. Check the fib3 example from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js).
 
 **O(n!)**
 
@@ -270,8 +278,6 @@ newArr.push(2 \* arr[i]);
 return newArr;
 }
 In this example as the input length approaches infinity, the length of the array will be increasing directly proportionate to the length of the given array. This means the big O for space complexity for this algorithm is O(n).
-
-### Memoization
 
 ### Analyzing the Performance of Arrays and Objects
 
