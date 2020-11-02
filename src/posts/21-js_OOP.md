@@ -88,7 +88,7 @@ Surprise! It prints the window object. 'this' keyword refers to the parent objec
 
 But you have noticed that this function is capitalized, and we were talking about constructor functions. So this must be a constructor function, and that's right, it is! But only if you create an instance with the 'new' keyword. Seeing the 'new' keyword, JS creates a new, empty object, links 'this' keyword to the just created empty object, then returns that object at the end. It also sets the constructor function of this new object to the main constructor function, which is Animal in our example. So any method inside the Animal constructor will be available to the instances of it through the prototype, but they will not be an actual part of the individual objects. This is much more efficient when compared to factory functions.
 
-Let's write the same blueprint object with a constructor function:
+Let's write the same blueprint object using a constructor function:
 
 ```
 function Animal(type, noise) {
@@ -101,6 +101,37 @@ Animal.prototype.makeNoise = function() {
 }
 
 const taro = new Animal("cat", "meow");
+const mochi = new Animal("bird", "chirp");
 
 taro.makeNoise(); // prints: "MEOWMEOWMEOW"
+mochi.makeNoise(); // prints: "CHIRPCHIRPCHIRP"
 ```
+
+Now, with the constructor function approach, makeNoise function refers to the same prototype object. This time, `taro.makeNoise === mochi.makeNoise` will return true, because they literally point to the same function.
+
+### JS Classes
+
+Although the constructor function method worked, the syntax was a little bit annoying, because things weren't grouped together, and the definition of the blueprint and it's methods were separated from each other. This was one of the reasons why Class syntax was introduced. The Class syntax achieves the same result as a constructor function, but with a prettier syntax.
+
+For this, we use the keyword class. Class names also start with an uppercase letter, just like constructor functions, indicating they are blueprints. The first function in a class is a constructor function, and this function executes immediately after an instance of this blueprint is created.
+
+Let's re-write the example we had in the previous title with the class syntax:
+
+```
+class Animal {
+  constructor(type, noise) {
+    this.type = type;
+    this.noise = noise;
+  }
+  makeNoise() {
+    console.log(this.noise.toUpperCase().repeat(3));
+  }
+}
+
+const lulu = new Animal("parrot", "hello");
+lulu.makeNoise(); // prints: "HELLOHELLOHELLO"
+```
+
+The methods defined inside the class are added to the prototype automatically. So the pieces of a bluprint is grouped together, which makes it way easier to read and manage.
+
+### Extends, Super, and Subclasses
