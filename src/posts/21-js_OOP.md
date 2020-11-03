@@ -134,4 +134,83 @@ lulu.makeNoise(); // prints: "HELLOHELLOHELLO"
 
 The methods defined inside the class are added to the prototype automatically. So the pieces of a bluprint is grouped together, which makes it way easier to read and manage.
 
-### Extends, Super, and Subclasses
+### Extends and Super keywords
+
+You can create classes based on other classes. As an example we had a very generic Animal class, and by using an extends keyword, we can make a Bird class that is based on the Animal class, but has it's own additional methods and properties.
+
+Let's rewrite and extend the animal class:
+
+```
+class Animal {
+  constructor(name, age, legNumber) {
+    this.name = name;
+    this.age = age;
+    this.numberOfLegs = legNumber;
+  }
+
+  sleep(){
+    return `Sssh! ${this.name} is sleeping.`;
+  }
+}
+
+class Bird extends Animal {
+  talk(){
+    return `Chirp chirp`;
+  }
+}
+```
+
+When you extend from another class, it uses the that class' constructor. When you call a method, it first checks the current class, if it doesn't have that function definition, it moves along the prototype chain one by one, until it finds the method it's looking for. (If it can't find it at all, it will be very unhappy and shout at you, so you will know.) So, if you redefine a method that is also defined in the prototype, it will execute the redefined version.
+
+Check this example out:
+
+```
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  sleep(){
+    return `Sssh! ${this.name} is sleeping.`;
+  }
+}
+
+class Parrot extends Animal {
+  talk(){
+    return `Hello, can I have a kiss?`;
+  }
+  sleep() {
+    console.log("ZzZzZzZzZz...");
+  }
+}
+
+const parrot1 = new Parrot("Loki", 2);
+parrot1.sleep(); // prints: "ZzZzZzZzZz..."
+```
+
+What if we want to extend, but have additional stuff in our constructor as well? That's when the **super** keyword comes into play. Super keyword calls the extended class' constructor function, so super is a reference to what you're extending from.
+
+Let's see it in action:
+
+```
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sleep(){
+    return `Sssh! ${this.name} is sleeping.`;
+  }
+}
+
+class Bird extends Animal {
+  constructor(name, age, colors){
+    super(name,age);
+    this.colors = colors;
+  }
+  talk(){
+    return `Chirp chirp`;
+  }
+}
+```
