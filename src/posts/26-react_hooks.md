@@ -34,14 +34,63 @@ function Example() {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0)
 
+  function handleClick(event) {
+    setCount(count + 1)
+  }
+
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <p>You clicked the button {count} times</p>
+      <button onClick={handleClick}>Click me</button>
     </div>
   )
 }
 ```
+
+### useEffect()
+
+useEffect hook accepts a function as an argument and runs that function after React renders (or re-renders) your component to the DOM. It also accepts a second (optional) argument, which is the data it should look out for. This second argument is called **the array of dependencies** and it can be of any length. This second argument decides when this hook will run. If there is a second argument, the function that is given as the first argument will only run when the data specified in the second argument changes. If there is no second argument, the function given as the first argument will run for every update of the component. If there is an empty array as the second argument, the function will run when the component is destroyed.
+
+Another thing to remember is that useEffect does a shallow comparison (===) for all the items in the array of dependencies. So be careful when you are using referance type data.
+
+This hook is very useful for causing side effects, such as interacting with local storage or making HTTP requests.
+
+Example:
+
+```javascript
+React.useEffect(
+  () => {
+    // this console.log statement will run when the component is created & re-rendered:
+    console.log("Hello from the useEffect hook")
+    // if useEffect returns a function, it is for clean-up purposes
+    // it will not run when the component is created
+    // when the component is re-rendered, cleanup will run before the side effect, so this is the best time to clean timers and stuff
+    return () => {
+      console.log("Hello from the useEffect cleanup")
+    }
+  },
+  // if the second argument is not specified, this hook will run in both creation and re-renders
+  // if it's an empty array ([]) it will only run when the component is being destroyed (unmounted from the DOM)
+  // if it's given an array of dependencies [data1, data2, fn], it will run whenever those are updated
+  []
+)
+```
+
+### useRef()
+
+### useReducer()
+
+### useCallback()
+
+### useContext()
+
+### useLayoutEffect()
+
+### useImperativeHandle()
+
+### useDebugValue()
+
+### useMemo()
 
 **Resources:**
 
