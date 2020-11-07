@@ -1,0 +1,48 @@
+---
+title: "React- Component Lifecycle Methods"
+date: "2019-04-06"
+tags: ["React", "Web Development", "JavaScript"]
+summary: "In this article, I talk about what React hooks are and how to use some of them."
+---
+
+React is a UI library that works with separate and reusable code blocks that render a piece of the application's UI, which are called **components**.
+
+In a React app, there are two distinct ways of creating components. The first way is to use normal JS classes, which are called **class components**. These components can keep data inside the component as the component's "state". **State** is a JS object that contains some amount of data relevant to that specific component. As they can keep and update state, class components used to be referred to as "smart" or "stateful". Another advantage of class components was the availability of the lifecycle methods. Lifecycle methods are functions that run at certain points in a component's life.
+
+The second type of component is called **functional components**, and these are just simple JS functions that return some JSX code. Before version 16.8, functional components could not hold data as the component's state, and lifecycle methods were not available to them. They were referred to as "dumb", "presentational" or "stateless". With version 16.8, hooks were added, and the functional components were not dumb anymore. React hooks allow you to add some functionality to the functional components, such as state manipulation and lifecycle methods, which were not available to functional components without hooks. Now both functional and class components are equally powerful, and functional components are even more favored because they are easier to read and test. And this article is about these lovely hooks.
+
+Let's roll.
+
+### useState()
+
+useState hook accepts a single argument as the initial value of a property of the state, and always returns an array with two elements. Generally this array is destructured at the spot. The first one in the returned array is the state property with the given value and the second item is a function to update the state. By convention, this function is named with adding the "set" prefix to the name of the property.
+
+Example:
+
+```javascript
+const [name, setName] = React.useState("")
+```
+
+In the example above, the state property is named "name", initialized with an empty string, and the updater function is named "setName".
+
+Let's see another example inside a functional React component:
+
+```javascript
+import React, { useState } from "react"
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+```
+
+**Resources:**
+
+1.
