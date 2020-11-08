@@ -78,6 +78,31 @@ React.useEffect(
 
 ### useRef()
 
+After a component is rendered, the DOM nodes are created. If you need to reach the DOM nodes for some reason (for example for creating event handlers, etc.), you use the useRef hook. useRef hook is a function that returns a ref object. When you add the 'ref' attribute to any JSX element, React becomes aware of it and creates a referance to that object, and then you can use that DOM node to create side effects.
+
+Example:
+
+```javascript
+function someComponent({ children }) {
+  const h1Ref = React.useRef()
+  console.log(someRef.current) // This is going to log undefined, as we have not defined an initial value when we are creating the ref object.
+  // current property is mutable.
+
+  React.useEffect(() => {
+    const h1Node = h1Ref.current
+    console.log(h1Node)
+  })
+
+  return (
+    <div>
+      <h1 ref={h1Ref}>{children}</h1>
+    </div>
+  )
+}
+```
+
+So basically, you use useRef hook whenever you want to maintain a reference to a DOM node, and you want to make changes on it without triggering a rerender.
+
 ### useReducer()
 
 ### useCallback()
