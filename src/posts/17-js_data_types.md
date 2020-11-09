@@ -29,7 +29,7 @@ The data types in JS can be divided into 2 major categories:
 
   There are some methods that come built-in with every string, which are extremely useful. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), but I will give an example of a few:
 
-  ```
+  ```javascript
   let color = "yellow";
 
   // -> Template string:
@@ -250,13 +250,11 @@ The data types in JS can be divided into 2 major categories:
 
   For example:
 
-  ```
-
-     console.log(25 % 5);     // prints 0
-     console.log(17 % 5);     // prints 2
-     console.log(29 % 2);     // prints 1 (odd number)
-     console.log(32 % 2);     // prints 0 (even number)
-
+  ```javascript
+  console.log(25 % 5) // prints 0
+  console.log(17 % 5) // prints 2
+  console.log(29 % 2) // prints 1 (odd number)
+  console.log(32 % 2) // prints 0 (even number)
   ```
 
   _A small note:_ JS does not store infinitely precise numbers. (Which means 1,0000000000000000009 will be equal to 1.)
@@ -267,20 +265,18 @@ The data types in JS can be divided into 2 major categories:
 
   **NaN** is a special numeric value that represents things that are not numbers. It is still the type of number. **Infinity** and **-Infinity** are also numeric values.
 
-  ```
-
-  0/0 = NaN
+  ```javascript
+  0 / 0 = NaN
   NaN + 3 = NaN
-  1/0 = Infinity
-  -1/0 = -Infinity
-
-  // -0 is also a number in JS.
-  +0 === -0 // this statement is true!
+  1 / 0 = Infinity - 1 / 0 =
+    -Infinity +
+      // -0 is also a number in JS.
+      0 ===
+    -0 // this statement is true!
 
   // But they can act differently, like this:
-  32/-0 = -Infinity
-  32/0 = Infinity
-
+  32 / -0 = -Infinity
+  32 / 0 = Infinity
   ```
 
 * **BigInt:**
@@ -308,7 +304,7 @@ O hey bigint
 
 - **Null:**
 
-Hello
+Null and undefined are very similar with a slight difference. They both mean nothing, but null has the connotation of to be set specifically to to nothing, while undefined has the connotation that that property has never been set.
 
 - **Undefined:**
 - **Symbol:**
@@ -320,13 +316,16 @@ In reference data types, when you create a variable, the variable doesn't actual
 So if you change the value, all the values of the variables that store a pointer to that value will change. Keep this in mind when you're working with reference type values!
 
 - **Object:**
+
+An object is an _unordered_ data structure consisting key-value pairs.
+
 - **Array:**
 
-  Arrays are list like objects, and each item has an index number associated with it. They also have a length property just like strings.
+  An array is an _ordered_ data structure consisting values and each value has an index number that corresponds to it. They also have a length property just like strings.
 
   Here are some built-in array methods and examples:
 
-  ```
+  ```javascript
    // -> Array.from() static method creates a new array of a given iterable object. You can use an optional second argument to map the iterable value.
 
    console.log(Array.from(123)); // prints: [], numbers are not iterable!
@@ -454,51 +453,47 @@ Parenthesis has a precedence over && and || operators. && operator has a precede
 
 - **Switch statement:** Slightly more legible syntax of **conditionals** (if, else if, else). Example code:
 
-```
+```javascript
+let emoji = "happy"
+let color
 
-let emoji = "happy";
-let color;
-
-switch(emoji) {
-case "happy":
-case "content":
-color = "yellow";
-break;
-case "angry":
-color = "red";
-break;
-case "excited":
-color = "pink";
-break;
-default:
-color = "blue";
+switch (emoji) {
+  case "happy":
+  case "content":
+    color = "yellow"
+    break
+  case "angry":
+    color = "red"
+    break
+  case "excited":
+    color = "pink"
+    break
+  default:
+    color = "blue"
 }
 
 // If you have "happy" or "content" as emoji, the color variable will be "yellow".
-
 ```
 
 - **Ternary operator:**
 
 A shorter syntax for conditionals. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
 
-```
-
-let status = "offline";
+```javascript
+let status = "offline"
 
 // Written with if-else:
 
-let color;
+let color
 if (status === "offline") {
-color = "red";
+  color = "red"
 } else {
-color = "green";
+  color = "green"
 }
 
 // Written with ternary:
 
-let color = status === "offline" ? "red" : "green";
-
+let color = status === "offline" ? "red" : "green"
 ```
 
 - **Loops:** There are 4 types of loops: for loops, while loops, infinite loops (a loop where the endong condition is never met- the one kind of loop you don't want), and for...of (to iterate over arrays) and for...in (to iterate over objects) loops. To avoid creating infinite loops using while loops (which is fairly easy), you need to update the condition and attempt to make it false inside the while loop. for...of loops and for...in loops are not supported by IE.
@@ -506,346 +501,579 @@ let color = status === "offline" ? "red" : "green";
 
 Let's see a small example:
 
-```
-
+```javascript
 // Our task is to take a number, decrement it by one on each step, and print each number to the console until we reach 0.
 
 // Here, if we don't point out a decrement, by default it will be 1.
 function printNum(n, dec = 1) {
-// Let's define our base case first:
-if(n <= 0) {
-return;
+  // Let's define our base case first:
+  if (n <= 0) {
+    return
+  }
+
+  console.log(n)
+  printNum(n - dec, dec)
 }
 
-      console.log(n);
-      printNum(n-dec, dec);
-
-}
-
-printNum(-1); // prints nothing
-printNum(0); // prints nothing
-printNum(5); // prints: 5 4 3 2 1
+printNum(-1) // prints nothing
+printNum(0) // prints nothing
+printNum(5) // prints: 5 4 3 2 1
 printNum(10, 2) // prints: 10 8 6 4 2
-
 ```
 
 - **Default Parameters:** If you have functions with multiple arguments, the best way to handle future bugs would be defining logical default parameters. Default parameters can take any type of value, an array, an object, a string, a number, you name it. Let's walk through this with an example:
 
-  ```
-   function multiply(x,y) {
-      return x * y;
-   }
+```javascript
+function multiply(x,y) {
+return x \* y;
+}
 
-   multiply(4,5); // returns 20
-   multiply(5); // This will return NaN because y is undefined, and undefined multiplied by anything is NaN.
+multiply(4,5); // returns 20
+multiply(5); // This will return NaN because y is undefined, and undefined multiplied by anything is NaN.
 
-   // Let's define the same function by giving y a default parameter of 1:
+// Let's define the same function by giving y a default parameter of 1:
 
-   function multiply(x,y = 1) {
-      return x * y;
-   }
+function multiply(x,y = 1) {
+return x \* y;
+}
 
-   multiply(3,4); // returns 12
-   multiply(5); // returns 5
-  ```
+multiply(3,4); // returns 12
+multiply(5); // returns 5
 
-  - **Spread syntax:** Spread syntax allows an iterable (such as an array) to be expanded in places where elements are expected. The syntax is always 3 dots right next to each other. Let's see the places where this can be useful:
+```
 
-  ```
-  // Arrays are iterable
-  const numArr = [2,56,41,98,14,26];
-  Math.max(...numArr); // this is the same as this: Math.max(2,56,41,98,14,26); //prints: 98
+- **Spread syntax:** Spread syntax allows an iterable (such as an array) to be expanded in places where elements are expected. The syntax is always 3 dots right next to each other. Let's see the places where this can be useful:
 
-  // Strings are also iterable
-  const str = "hello";
-  function spellFive(a,b,c,d,e) {
-     console.log(a, b, c, d, e);
-  }
+```javascript
+// Arrays are iterable
+const numArr = [2, 56, 41, 98, 14, 26]
+Math.max(...numArr) // this is the same as this: Math.max(2,56,41,98,14,26); //prints: 98
 
-  spellFive(...str); // prints: h e l l o
+// Strings are also iterable
+const str = "hello"
+function spellFive(a, b, c, d, e) {
+  console.log(a, b, c, d, e)
+}
 
-  // You can use it to combine arrays, but the spread order does matter.
+spellFive(...str) // prints: h e l l o
 
-  const flowers = ["rose", "daisy", "lily", "peony"];
-  const vegetables = ["broccoli", "asparagus"];
+// You can use it to combine arrays, but the spread order does matter.
 
-  const flora = [...flowers, ...vegetables, "tomato"];
-  console.log(flora); // prints: ["rose", "daisy", "lily", "peony", "broccoli", "asparagus", "tomato"]
+const flowers = ["rose", "daisy", "lily", "peony"]
+const vegetables = ["broccoli", "asparagus"]
 
-  // You can use it to create a copy of an array:
+const flora = [...flowers, ...vegetables, "tomato"]
+console.log(flora) // prints: ["rose", "daisy", "lily", "peony", "broccoli", "asparagus", "tomato"]
 
-  const animals = ["cat", "bird", "dog", ["squirrel", "rabbit", "deer"]];
-  const animalsCopy = [...animals];
+// You can use it to create a copy of an array:
 
-  // Although they look the same, they point out to different arrays, so they are not triple equal.
-  // This is not true for nested arrays. Nested arrays are shallow copied, they will point out to the same references.
+const animals = ["cat", "bird", "dog", ["squirrel", "rabbit", "deer"]]
+const animalsCopy = [...animals]
 
-  console.log(animalsCopy === animals); // prints: "false"
-  console.log(animalsCopy[3] === animals[3]); // prints: "true"
+// Although they look the same, they point out to different arrays, so they are not triple equal.
+// This is not true for nested arrays. Nested arrays are shallow copied, they will point out to the same references.
 
-  // You can directly spread strings, just like str.split("") does:
+console.log(animalsCopy === animals) // prints: "false"
+console.log(animalsCopy[3] === animals[3]) // prints: "true"
 
-  console.log([..."violet"]); // prints: ["v", "i", "o", "l", "e", "t"]
+// You can directly spread strings, just like str.split("") does:
 
-  // Objects are not iterable, but the spread syntax can be used in objects as well:
+console.log([..."violet"]) // prints: ["v", "i", "o", "l", "e", "t"]
 
-  const cat = {legCount: 4, hasTeeth: "true"};
-  const dog = {legCount: 4, hasTeeth: "true"};
-  const bird = {legCount: 2, hasTeeth: "false"};
+// Objects are not iterable, but the spread syntax can be used in objects as well:
 
-  const myCat = {...cat, name: "Ollie", personality: "unpredictable"};
-  const myDog = {...dog, name: "Jojo", personality: "cute"};
-  const myBird = {...bird, name: "Milo", personality: "might seduce your dad type"}
+const cat = { legCount: 4, hasTeeth: "true" }
+const dog = { legCount: 4, hasTeeth: "true" }
+const bird = { legCount: 2, hasTeeth: "false" }
 
-  console.log(myBird); // prints: {legCount: 2, hasTeeth: "false", name: "Milo", personality: "might seduce your dad type"}
+const myCat = { ...cat, name: "Ollie", personality: "unpredictable" }
+const myDog = { ...dog, name: "Jojo", personality: "cute" }
+const myBird = {
+  ...bird,
+  name: "Milo",
+  personality: "might seduce your dad type",
+}
 
-  // If you have conflicting properties the order of spreading does matter.
+console.log(myBird) // prints: {legCount: 2, hasTeeth: "false", name: "Milo", personality: "might seduce your dad type"}
 
-  const alienCat1 = {...cat, legCount: 6, eyeCount: 3}; // has a legCount of 6
-  const alienCat2 = {legCount: 6, eyeCount: 3, ...cat}; // has a legCount of 4
+// If you have conflicting properties the order of spreading does matter.
 
-  // Spreading can be used to copy objects, but just like the arrays, the copy and the initial object will point to different references, although they look the same.
+const alienCat1 = { ...cat, legCount: 6, eyeCount: 3 } // has a legCount of 6
+const alienCat2 = { legCount: 6, eyeCount: 3, ...cat } // has a legCount of 4
 
-  const myDogCopy = {...myDog};
-  console.log(myDog === myDogCopy); // prints: "false"
+// Spreading can be used to copy objects, but just like the arrays, the copy and the initial object will point to different references, although they look the same.
 
-  // You can't spread an object inside an array, it will throw an error.
-  // You can spread an array into an object though. It will assign each item in the array a key, which is the same as their index.
+const myDogCopy = { ...myDog }
+console.log(myDog === myDogCopy) // prints: "false"
 
-  console.log({...[1,2,3]}); // prints: {0: 1, 1: 2, 2: 3}
-  ```
+// You can't spread an object inside an array, it will throw an error.
+// You can spread an array into an object though. It will assign each item in the array a key, which is the same as their index.
+
+console.log({ ...[1, 2, 3] }) // prints: {0: 1, 1: 2, 2: 3}
+```
 
 - **Rest Syntax and arguments object:** The syntax is exactly the same as the spread syntax, which is three dots next to each other.
 
-  In every function we have access to what is called an arguments object. It is an array-like object that has a length property, but built-in array methods are not available for it. It contains all arguments passed into a function, if you don't know how many arguments the function will take, then instead of specifying the arguments, you can simply use this object. It is not available in arrow functions.
+In every function we have access to what is called an arguments object. It is an array-like object that has a length property, but built-in array methods are not available for it. It contains all arguments passed into a function, if you don't know how many arguments the function will take, then instead of specifying the arguments, you can simply use this object. It is not available in arrow functions.
 
-  Let's see it in use:
+Let's see it in use:
 
-  ```
-  // First, we'll start with arguments object:
+```javascript
+// First, we'll start with arguments object:
 
-   function doesntMatter() {
-      console.log(arguments);
-   }
+function doesntMatter() {
+console.log(arguments);
+}
 
-   doesntMatter(1,5,23,759); // prints all the arguments as an array-like object: [1, 5, 23, 759, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+doesntMatter(1,5,23,759); // prints all the arguments as an array-like object: [1, 5, 23, 759, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 
-   function multiply() {
-      return [...arguments].reduce((total, currVal) => {
-         return total * currVal;
-      })
-   }
+function multiply() {
+return [...arguments].reduce((total, currVal) => {
+return total \* currVal;
+})
+}
 
-   multiply(2, 5, 8); // prints: 80
+multiply(2, 5, 8); // prints: 80
 
-   // Now, same function with rest syntax will look like this:
+// Now, same function with rest syntax will look like this:
 
-   function multiply(...args) {
-      console.log(args); // This returns an actual array that consists all arguments, not an array-like object.
-      return args.reduce((total, currVal) => {
-         return total * currVal;
-      })
-   }
+function multiply(...args) {
+console.log(args); // This returns an actual array that consists all arguments, not an array-like object.
+return args.reduce((total, currVal) => {
+return total \* currVal;
+})
+}
 
-   multiply(2, 5, 9); // prints: [2, 5, 9] 90
+multiply(2, 5, 9); // prints: [2, 5, 9] 90
 
-   // You can also use it to encapsulate some of the arguments:
+// You can also use it to encapsulate some of the arguments:
 
-   function fullName(firstName, lastName, ...titles) {
-      console.log("First name:", firstName);
-      console.log("Last name:", lastName);
-      console.log("Titles:", titles);
-   }
+function fullName(firstName, lastName, ...titles) {
+console.log("First name:", firstName);
+console.log("Last name:", lastName);
+console.log("Titles:", titles);
+}
 
-   fullName("Mary", "Johnsson", "Mrs.", "Dr.");
-   // prints:
-      First name: Mary
-      Last name: Johnsson
-      Titles: (2) ["Mrs.", "Dr."]
-  ```
+fullName("Mary", "Johnsson", "Mrs.", "Dr.");
+// prints:
+First name: Mary
+Last name: Johnsson
+Titles: (2) ["Mrs.", "Dr."]
+
+```
 
 - **Destructuring:** A shorter syntax for assigning values to variables.
 
-  Let's see it in use:
+Let's see it in use:
 
-  ```
-   const petNames = ["Ollie", "Jojo", "Milo", "Kiki"];
+```javascript
+const petNames = ["Ollie", "Jojo", "Milo", "Kiki"];
 
-   const [dog, cat, bird] = petNames;
-   console.log("Dog's name: ", dog); // prints: "Dog's name: Ollie"
-   console.log("Cat's name: ", cat); // prints: "Cat's name: Jojo"
-   console.log("Bird's name: ", bird); // prints: "Bird's name: Milo"
+const [dog, cat, bird] = petNames;
+console.log("Dog's name: ", dog); // prints: "Dog's name: Ollie"
+console.log("Cat's name: ", cat); // prints: "Cat's name: Jojo"
+console.log("Bird's name: ", bird); // prints: "Bird's name: Milo"
 
-   // As you can see, the order matters. And if you want to skip a variable, you can use an empty space instead of it, like this:
+// As you can see, the order matters. And if you want to skip a variable, you can use an empty space instead of it, like this:
 
-   const names = ["Ellie", "Ollie", "Wally"];
+const names = ["Ellie", "Ollie", "Wally"];
 
-   const [first, , third] = names;
-   console.log(first, third); // prints: Ellie Wally
+const [first, , third] = names;
+console.log(first, third); // prints: Ellie Wally
 
-   // You can combine it with rest syntax as well:
+// You can combine it with rest syntax as well:
 
-   const nums = [1, 2, 3, 4, 5, 6];
+const nums = [1, 2, 3, 4, 5, 6];
 
-   const [firstNum, , , ...others];
-   console.log(firstNum); // prints: 1
-   console.log(others); // prints: [4, 5, 6]
+const [firstNum, , , ...others];
+console.log(firstNum); // prints: 1
+console.log(others); // prints: [4, 5, 6]
 
-   // Destructuring can be used with objects as well, but the destructuring name has to match the keynames, or the variable will still be created but the value of it will become undefined:
+// Destructuring can be used with objects as well, but the destructuring name has to match the keynames, or the variable will still be created but the value of it will become undefined:
 
-   const rat = {legCount: 4, hasTeeth: "true", name: "Taco", personality: "very cool"};
+const rat = {legCount: 4, hasTeeth: "true", name: "Taco", personality: "very cool"};
 
-   const {name, personality, hasTail} = rat;
-   console.log(name); // prints: "Taco"
-   console.log(hasTail); // prints: undefined
+const {name, personality, hasTail} = rat;
+console.log(name); // prints: "Taco"
+console.log(hasTail); // prints: undefined
 
-   // If you want to use destructuring, but want to name your variable as a different name, you can do that too:
+// If you want to use destructuring, but want to name your variable as a different name, you can do that too:
 
-   const {name: petRatName} = rat;
-   console.log(petRatName); // prints: "Taco"
+const {name: petRatName} = rat;
+console.log(petRatName); // prints: "Taco"
 
-   // You can combine it with rest parameter as well:
+// You can combine it with rest parameter as well:
 
-   const {name: petRatName, ...otherRatParameters} = rat;
+const {name: petRatName, ...otherRatParameters} = rat;
 
-   console.log(otherRatParameters); // prints: {legCount: 4, hasTeeth: "true", personality: "very cool"}
+console.log(otherRatParameters); // prints: {legCount: 4, hasTeeth: "true", personality: "very cool"}
 
-   // Nested destructuring is also possible:
+// Nested destructuring is also possible:
 
-   const pets = [
-      {
-         name: "Ollie",
-         species: "dog"
-      },
-      {
-         name: "Milo",
-         species: "bird"
-      },
-      {
-         name: "Taco",
-         species: "rat"
-      }
-   ];
+const pets = [
+{
+name: "Ollie",
+species: "dog"
+},
+{
+name: "Milo",
+species: "bird"
+},
+{
+name: "Taco",
+species: "rat"
+}
+];
 
-   const [ , {name: petBirdName}] = pets;
-   console.log(petBirdName); // prints: "Milo"
+const [ , {name: petBirdName}] = pets;
+console.log(petBirdName); // prints: "Milo"
 
-   // You can use destructuring in function parameters as well:
+// You can use destructuring in function parameters as well:
 
-   printFullName = ({firstName, lastName}) => {
-      console.log(`${firstName} ${lastName}`);
-   }
+printFullName = ({firstName, lastName}) => {
+console.log(`${firstName} ${lastName}`);
+}
 
-   const person = {
-      firstName: "Carrie",
-      lastName: "Longwood",
-      age: 32,
-      hairColor: "black"
-   }
+const person = {
+firstName: "Carrie",
+lastName: "Longwood",
+age: 32,
+hairColor: "black"
+}
 
-   printFullName(person); // prints: "Carrie Longwood"
+printFullName(person); // prints: "Carrie Longwood"
 
-   // Can do the same with arrays too:
+// Can do the same with arrays too:
 
-   const response = ['HTTP/1.1', '200 OK', 'application/json'];
+const response = ['HTTP/1.1', '200 OK', 'application/json'];
 
-   function parseResponse([protocol, statusCode, contentType]) {
-      console.log(`Status: ${statusCode}`);
-   }
+function parseResponse([protocol, statusCode, contentType]) {
+console.log(`Status: ${statusCode}`);
+}
 
-   parseResponse(response); // prints: Status: 200 OK
+parseResponse(response); // prints: Status: 200 OK
 
-  ```
+```
 
 - **RegExp:** Regular expressions are patterns that are used to match character combinations in strings. In JavaScript, regular expressions are also objects. They are awfully useful in input validation.
 
-  You can construct a regular expression in two ways:
+You can construct a regular expression in two ways:
 
-  ```
-   // 1. Literal expression:
-   var re = /ab+c/
+```javascript
+// 1. Literal expression:
+var re = /ab+c/
 
-   // 2. "new" keyword, which calls the constructor function of the RegExp object:
-   var re = new RegExp('ab+c');
-  ```
-
-  If you want to see if a regular expression matches a string, you can use the text function:
-
-  ```
-  const string = "Cake base cannot be eaten raw";
-  const regex = /base/;
-
-  const isExisting = regex.test(string);
-  console.log(isExisting);  //prints: true
-  ```
-
-  Some basic things to know:
-
-  - Square brackets symbolize in between.
-  - Regex is case sesitive: [a-z] means lowercase letters
-  - [A-Z] means uppercase letters
-  - [0-9] covers the numbers
-  - [a-zA-Z] covers all uppercase and lowercase letters
-  - [a-zA-Z0-9] covers all uppercase and lowercase letters + numbers
-  - [xyz] matches any single character inside the square brackets, in this case x, y or z
-  - [xyz]+ matches one or more of any characters inside square brackets, in this case x, y or z
-  - **/g** means global, if you don't put it at the end, the execution of it will stop with the first match that is found.
-  - **/i** means insensitive to uppercase or lowercase
-  - \$ matches the end of the string.
-  - ^ matches the beginning of a string.
-  - [^a-z] when inside of square brackets, the ^ means match anything that is NOT a lowercase letter.
-  - \d matches one or more arbitrary digits
-  - \w matches any word character [a-zA-Z0-9_]
-  - \s matches space
-  - \n matches new line
-  - \t matches tabs
-
+// 2. "new" keyword, which calls the constructor function of the RegExp object:
+var re = new RegExp("ab+c")
 ```
-const string = "filea.mp3 file_01.mp3 file_02.mp3 test.csv other.txt ANTS.md football.md foosball.md fooooootball.mp4"
 
-console.log(string.match(/[A-Z]/g)); // prints: ["A", "N", "T", "S"]
+If you want to see if a regular expression matches a string, you can use the text function:
 
-console.log(string.match(/[a-zA-Z0-9]/)); // prints: ["f"]
+```javascript
+const string = "Cake base cannot be eaten raw"
+const regex = /base/
 
-console.log(string.match(/\w/)); // prints: ["f"]
+const isExisting = regex.test(string)
+console.log(isExisting) //prints: true
+```
 
-console.log(string.match(/\w+/)); // prints: ["filea"]
+Some basic things to know:
 
-console.log(string.match(/\w+\./g)); // prints: ["filea.", "file_01.", "file_02.", "test.", "other.", "ANTS.", "football.", "foosball.", "fooooootball."]
-console.log(string.match(/\w+\s/g)); // prints: ["mp3 ", "mp3 ", "mp3 ", "csv ", "txt ", "md ", "md ", "md "]
+- Square brackets symbolize in between.
+- Regex is case sesitive: [a-z] means lowercase letters
+- [A-Z] means uppercase letters
+- [0-9] covers the numbers
+- [a-zA-Z] covers all uppercase and lowercase letters
+- [a-zA-Z0-9] covers all uppercase and lowercase letters + numbers
+- [xyz] matches any single character inside the square brackets, in this case x, y or z
+- [xyz]+ matches one or more of any characters inside square brackets, in this case x, y or z
+- **/g** means global, if you don't put it at the end, the execution of it will stop with the first match that is found.
+- **/i** means insensitive to uppercase or lowercase
+- \$ matches the end of the string.
+- ^ matches the beginning of a string.
+- [^a-z] when inside of square brackets, the ^ means match anything that is NOT a lowercase letter.
+- \d matches one or more arbitrary digits
+- \w matches any word character [a-zA-Z0-9_]
+- \s matches space
+- \n matches new line
+- \t matches tabs
 
-const sentence = "I didn't eat it all";
-console.log(sentence.replace(/[aei]/g, "o")); // prints: "I dodn't oot ot oll"
+```javascript
+const string =
+  "filea.mp3 file_01.mp3 file_02.mp3 test.csv other.txt ANTS.md football.md foosball.md fooooootball.mp4"
+
+console.log(string.match(/[A-Z]/g)) // prints: ["A", "N", "T", "S"]
+
+console.log(string.match(/[a-zA-Z0-9]/)) // prints: ["f"]
+
+console.log(string.match(/\w/)) // prints: ["f"]
+
+console.log(string.match(/\w+/)) // prints: ["filea"]
+
+console.log(string.match(/\w+\./g)) // prints: ["filea.", "file_01.", "file_02.", "test.", "other.", "ANTS.", "football.", "foosball.", "fooooootball."]
+console.log(string.match(/\w+\s/g)) // prints: ["mp3 ", "mp3 ", "mp3 ", "csv ", "txt ", "md ", "md ", "md "]
+
+const sentence = "I didn't eat it all"
+console.log(sentence.replace(/[aei]/g, "o")) // prints: "I dodn't oot ot oll"
 
 // regex.test() function checks if a regex matches a given value, returns a boolean value.
 // ? is a modifier that matches the value before them between 0 and 1 times
 // + is a modifier that matches the value before them between 1 and unlimited times
-// * is a modifier that matches the value before them between 0 and unlimited times
+// \* is a modifier that matches the value before them between 0 and unlimited times
 
-const claim = "You just kissed a bm boom boooom baby";
-console.log(/boo?m/g.test(claim)); // prints: true
-console.log([...claim.matchAll(/boo?m/g)]); // returns you all the matching elements in an array
-console.log(/bo?m/g.test(claim));  // prints: false
-console.log(/bo+m/g.test(claim));  // prints: true // matches 2 strings: boom, boooom
-console.log(/bo*m/g.test(claim));  // prints: true // matches 3 strings: bm, boom, boooom
+const claim = "You just kissed a bm boom boooom baby"
+console.log(/boo?m/g.test(claim)) // prints: true
+console.log([...claim.matchAll(/boo?m/g)]) // returns you all the matching elements in an array
+console.log(/bo?m/g.test(claim)) // prints: false
+console.log(/bo+m/g.test(claim)) // prints: true // matches 2 strings: boom, boooom
+console.log(/bo\*m/g.test(claim)) // prints: true // matches 3 strings: bm, boom, boooom
 
-const regexp = /c(a)(t(\d?))/g;
-const str = 'cat1cat2cat3max';
+const regexp = /c(a)(t(\d?))/g
+const str = "cat1cat2cat3max"
 
-const array = [...str.matchAll(regexp)];
+const array = [...str.matchAll(regexp)]
 
-console.log(array[0]);
+console.log(array[0])
 // expected output: Array ["cat1", "c", "t1", "1"]
 
-console.log(array[1]);
+console.log(array[1])
 // expected output: Array ["cat2", "c", "t2", "2"]
 
-console.log(array[2]);
+console.log(array[2])
 // expected output: Array ["cat3", "c", "t3", "3"]
-
 ```
 
 You can test your regexps from here: https://regex101.com/
+
+- **Generator Functions:**
+
+  Babel is a JS transcompiler, and it is used to convert ES2015+ code to ES5. ES5 is the version that can be run by older JS engines, so ES5 code is much more cross-browser friendly.
+
+  Generators are a complicated subject that only a few people like, but they are a part of ES2015+.
+
+  To define a generator, you start with the function keyword, and before the name of the function, you put a star, like this: `function *generateNum() {}`.
+
+  There are also people using the star just after the function keyword, like this: `function* generateNum() {}`. Regardless, both of these sytaxes can be used to create generators. Whenever you run these functions, they will create a generator object.
+
+  When we call a generator, the code inside the generator is going to execute until a yield statement is found. When a yield statement is found, the execution of the generator function is paused.
+
+  A generator function returns a generator object, which has certain built in methods to it, such as `.next()`, `.value`. These functions can be called multiple times.
+
+  Let's walk through a simple example:
+
+```javascript
+// Let's define a generator:
+function\* generateNum(num){
+const result = 12 + num;
+return 56 + (yield result);
+}
+
+// Let's create a generator object by calling a generator function:
+const generator = generateNum(1);
+
+// The first time we call the next function, the generator executes up to the
+// first yield statement and returns whatever was yielded.
+console.log(generator.next()); // prints: { value: 13, done: false }
+
+// The second time we call the next function and we pass a value to it,
+// the value will be inserted in the place of the yield statement.
+console.log(generator.next(1)); // prints: { value: 57, done: false }
+
+```
+
+That doesn't sound very useful does it? So how can we use this?
+
+Let's create another example:
+
+```javascript
+function\* list(){
+yield 1;
+yield 2;
+yield 3;
+yield 4;
+yield 5;
+}
+
+const generator1 = list();
+console.log(generator1.next()); // { value: 1, done: false }
+console.log(generator1.next()); // { value: 2, done: false }
+console.log(generator1.next()); // { value: 3, done: false }
+console.log(generator1.next()); // { value: 4, done: false }
+console.log(generator1.next()); // { value: 5, done: false }
+console.log(generator1.next()); // { value: undefined, done: true }
+
+// We can iterate over a generator function for every yield statement we have:
+
+const generator2 = list();
+
+const numbers = [];
+for (let value of generator2) {
+numbers.push(value);
+}
+
+console.log(numbers); // prints: [1, 2, 3, 4, 5]
+```
+
+We can nest generators inside generators too:
+
+```javascript
+function* numList1() {
+yield 1;
+yield 2;
+// yield* means the upcoming function is also a generator:
+yield\* numlist2();
+yield 8;
+yield 9;
+}
+
+function\* numlist2() {
+yield 3;
+yield 4;
+yield 5;
+yield 6;
+yield 7;
+}
+
+const generator = numList1();
+
+let nums =[];
+for(let value of generator) {
+nums.push(value);
+}
+
+console.log(nums); // prints: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+- **Iterables:**
+
+Iterable concept allows us to use for...of loops in any chosen object.
+Data types that have built-in iteration feature are array, string, set, map. Other than that, if you want to make a collection of data iterable, you have to make it on your own.
+
+- Example-1:
+
+  Let's create an iterator from an object:
+
+```javascript
+let classroom = {
+  start: 1,
+  end: 15,
+}
+
+// By default, for...of loop will not work in objects.
+
+// For for...of to work on classroom object, we need to make it an iterator.
+
+classroom[Symbol.iterator] = function () {
+  return {
+    current: this.start,
+    last: this.end,
+
+    // the next function will be called with each iteration of the for...of loop
+    // but it should return each value as an object with the value and a done flag
+    next() {
+      if (this.current <= this.last) {
+        return { value: this.current++, done: false }
+      } else {
+        return { value: undefined, done: true }
+      }
+    },
+  }
+}
+
+for (let num of classroom) {
+  console.log(num)
+} // prints: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+```
+
+- Example-2:
+  In the first example, the iterator object is seperate from the object it iterates over. But you can combine them as well:
+
+```javascript
+let classroom = {
+  start: 1,
+  end: 15,
+
+  [Symbol.iterator]() {
+    this.current = this.start
+    return this
+  },
+
+  next() {
+    if (this.current <= this.end) {
+      return { value: this.current++, done: false }
+    } else {
+      return { value: undefined, done: true }
+    }
+  },
+}
+
+for (let num of classroom) {
+  console.log(num)
+} // prints: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+```
+
+- Example-3:
+  You can also combine an iterator with a generator function, which has it's own built-in next method, so you don't need to write your own:
+
+```javascript
+let classroom = {
+start:1,
+end: 15
+}
+
+classroom[Symbol.iterator] = function\* () {
+let current = this.start;
+while (this.end > current) {
+yield current;
+current++;
+}
+}
+
+for (let num of classroom) {
+console.log(num);
+} // prints: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+```
+
+Example-4:
+This time let's create a iterator creator, a function that will make an iterator out of every object it is given as an argument and return its key value pairs:
+
+```javascript
+let iteratorCreator = function(obj) {
+return obj[Symbol.iterator] = function () {
+const allEntries = Object.entries(obj);
+return {
+counter: 0,
+
+         next() {
+            if (this.counter < allEntries.length) {
+              const entry = allEntries[this.counter++];
+              const [key, value] = entry;
+               return {value: {key , value}, done: false};
+            } else {
+               return {value: undefined, done: true};
+            }
+         }
+         }
+      }
+
+}
+
+let person = {
+name: "Arisi",
+eyes: "old",
+nickname: "wise"
+}
+
+iteratorCreator(person);
+
+for (let entries of person) {
+console.log(entries);
+}
+// prints: {key: "name", value: "Arisi"}
+{key: "eyes", value: "old"}
+{key: "nickname", value: "wise"}
+
+```
 
 **Resources:**
 
