@@ -53,7 +53,7 @@ useEffect hook accepts a function as an argument and runs that function after Re
 
 Another thing to remember is that useEffect does a shallow comparison (===) for all the items in the array of dependencies. So be careful when you are using referance type data.
 
-This hook is very useful for causing side effects, such as interacting with local storage or making HTTP requests.
+This hook is very useful for causing side effects, such as interacting with local storage or making HTTP requests (interacting with a backend, making async requests).
 
 Example:
 
@@ -102,6 +102,12 @@ function someComponent({ children }) {
 ```
 
 So basically, you use useRef hook whenever you want to maintain a reference to a DOM node, and you want to make changes on it without triggering a rerender.
+
+### ErrorBoundary Component
+
+There are no hooks for ErrorBoundary (so far), so it has to be written as a class component. ErrorBoundary is a higher order component that wraps up another component with the goal of handling any errors that component (and its children) will throw in all lifecycle events (including render), and displays a fallback UI for them.
+
+There is an npm package called **[react-error-boundary](https://www.npmjs.com/package/react-error-boundary)** which implements a ErrorBoundary component you can import and use anywhere in your app, so you kinda never have to write this yourself. But if you really want to, here ya go: [React Error Boundaries documentation](https://reactjs.org/docs/error-boundaries.html)
 
 ### useReducer()
 
