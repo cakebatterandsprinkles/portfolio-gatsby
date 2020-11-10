@@ -49,9 +49,46 @@ A hash table can also be called a hash map, an object or a dictionary. It is a d
 
 **Linked List:**
 
+A linked list is an ordered collection of data. The collection contains multiple nodes, and each note contains a chunk of data and a referance to the next node (hence the name "linked"). You can think of a chain when you think of a linked list, with each circle being the nodes. In every linked list, there are two special nodes, one is the head node (first node of the linked list), the other one is the tail node (the last node of the linked list). The tail node can easily be identified as the only node that doesn't have a reference to the next node.
+
+There is two distinctive parts of each node, one is the data container that can hold any type of data, and the second one is the referance to the next one in the chain. Let's create a very primitive linked list with three nodes as an example:
+
+```
+// This is a very simple linked list data structure with only three nodes:
+
+const firstNode = {
+  data: 1
+}
+
+const secondNode = {
+  data: "two"
+}
+
+const thirdNode = {
+  data: [3]
+}
+
+firstNode.next = secondNode;
+secondNode.next = thirdNode;
+```
+
 **Graph:**
 
 **Tree:**
+
+Tree data structure is useful for both back end and front end development. There are different types of trees, but we'll start with the one that is used the most (the most basic type of tree).
+
+Each container on a tree data structure is also called **node**, just like linked lists. Each node holds a data and a reference to its children (or branches, you could say). A child is any node directly underneath a given node. And a child node can refer to the node directly top of it as its parent. Nodes at a given level are called **siblings** if they share the same parent.
+
+Of course, it is possible to traverse through a tree. Tree traversal has different types, but in general it means to iterate through different elements inside a tree in some fashion. There are 2 major types of tree traversal methods. The order of traversing is what distinguishes the methods of tree traversal. Let's talk about those 2:
+
+1. Breadth-first traversal: With this method, we iterate each level of a tree one by one. By that I mean starting at the root of the tree (where every branch stems), and then go to its children and iterate over all of them, and then go over their children an iterate all over them, and don't reach the next generation before finishing iterating over every member of the current generation.
+
+2. Depth-first traversal: With this method, we iterate each branch and only when all of the subbranches are finished, we start to iterate over another one. But when the first subbranch is traversed, the first thing we do is to hit the bottom branch, iterate over its siblings, then climb to the parent, and iterate over its siblings, until you reach to the very top, which is the root. Then you go hit another branch with the same method, until all branches are finished.
+
+To see the JavaScript implementation of a tree, you can check [here]().
+
+You can say how a tree of yours should look like. For example, if we say that each node in a tree can only have a maximum of two children, our tree would be called a **binary tree**. If you also want to restrict the values of the nodes you have, it is called a **binary search tree**, and this tree has more strict requirements. Still, a node can only have a maximum of two children, and these children are referred to by their position to the parent (like left and right). So rather than making children an array, the child nodes are assigned to properties named left and right. The leftside child cannot have a bigger values than its parent, and the rightside child cannot have a smaller value than its parents. The value a single node carries can be named data, value or key.
 
 **Queue:**
 
@@ -319,6 +356,107 @@ In this example as the input length approaches infinity, the length of the array
 - splice -> O(n)
 - sort -> O(n\*log(n))
 - forEach/map/filter/reduce -> O(n)
+
+### Sorting Algorithms:
+
+There are many types of sorting algorithms, all working in different ways. I am going to discuss the most common four, which are **bubble sort**, **selection sort**, **merge sort** and **quick sort**.
+
+Bubble sort and selection sort have the same worst case runtime (n²), which makes them a bad choice for big datasets. If your dataset is expected to grow bigger in time, or you just don't know if it will ever get bigger, other algorithms with better worst case runtimes will work better.
+
+Merge sort has a complexity of n\*log(n), which is better than bubble sort and selection sort, but it is a little bit harder to implement.
+
+Now let's implement these together.
+
+Bubble sort is composed of nested for loops, one of them itering over the whole array, and the other one creates a smaller bubble inside to compare two consecutive values in order. If the value index-1 is bigger than index, then the values will be switched, essentially carrying the biggest values to the end of the array with each iteration. Also, with each iteration, the inner bubble gets smaller, because you know that you carried the biggest number inside the current iteration is carried to the end, so you don't need to check the last item anymore.
+
+The implementation looks like this:
+
+```
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      let num1 = arr[j];
+      let num2 = arr[j + 1];
+      if (num1 > num2) {
+        arr[j] = num2;
+        arr[j + 1] = num1;
+      }
+    }
+  }
+  return arr;
+}
+```
+
+Selection sort is very similar to bubble sort and is consisted of nested for loops. This time, when you're iterating through the array, you assume that the value you are iterating over is the lowest value in the array, and if you see a lower value, you swap the current value with that one.
+
+The implementation looks like this:
+
+```
+
+// I will use a helper function to swap the values in given indexes:
+
+function swapper(arr, index1, index2) {
+  let value1 = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = value1;
+}
+
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let indexOfMin = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[indexOfMin]) {
+        indexOfMin = j;
+      }
+    }
+
+    if (indexOfMin !== i) {
+      swapper(arr, indexOfMin, i);
+    }
+  }
+  return arr;
+}
+```
+
+Merge sort algorithm is generally implemented with recursion. The recursive solution uses 2 seperate functions. The first function takes two sorted arrays, compares the first index of both arrays, pushes the smallest one to a results array, and continues on doing it until nothing is left on at least one of the arrays. The first function returns a combined sorted array from two seperate sorted arrays.
+
+Second function takes an array, divides the array into two parts. Until there are subarrays that only consist of one value, the function keeps on calling the mergeSort function. When each subarray has only one value, it means each subarray is sorted, and then we can merge them using the first function. The implementation is below:
+
+```
+// The first function:
+
+function merge(sortedArr1, sortedArr2) {
+  const results = [];
+  while (sortedArr1.length && sortedArr2.length) {
+    for (let i = 0; i < sortedArr1.length; i++) {
+      if (sortedArr1[0] < sortedArr2[0]) {
+        results.push(sortedArr1.shift());
+      } else if (sortedArr2[0] < sortedArr1[0]) {
+        results.push(sortedArr2.shift());
+      }
+    }
+  }
+  return [...results, ...sortedArr1, ...sortedArr2];
+}
+
+// The second function:
+
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+
+  const center = Math.floor(arr.length / 2);
+
+  let left = arr.slice(0, center);
+  let right = arr.slice(center);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+```
+
+Quick sort algorithm also requires recursion.
 
 **Resources:**
 
