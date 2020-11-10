@@ -1,11 +1,11 @@
 ---
 title: "JavaScript- DOM and Some Useful Web API's"
-date: "2019-04-06"
+date: "04-06-2019"
 tags: ["Web Development", "JavaScript"]
-summary: "In this article, I very briefly explain the DOM and navigator, location and history objects."
+summary: "In this article, I very briefly explain the DOM and navigator, location and history objects. These are mostly tiny notes I took for myself when I was studying the DOM."
 ---
 
-### Document Object Model (DOM)
+## Document Object Model (DOM)
 
 DOM is a structured representation of the HTML document where each HTML element is represented as objects, an interface between HTML+CSS and JS created by the browser.
 
@@ -15,7 +15,7 @@ If you open the document object in various websites, you'll see that it has a ce
 
 The topmost object in JS is the window object. Document object itself is one of the objects the window object encapsulates. You can simply check out the window object by logging it to your console: `console.log(window)`
 
-**Selecting nodes in DOM:**
+### 1. Selecting:
 
 This is the first step of manipulating DOM, and there are various ways to do that.
 
@@ -34,7 +34,34 @@ You can look for nested objects as well.
 
 `document.querySelectorAll("")` -> This one takes a tag, id or class, returns all matching elements as a Node List.
 
-**A node list** is another type of collection which is also an array-like object. A slight difference between an HTML collection and a node list is node list has forEach loop available to it while an HTML collection doesn't.
+**A node list** is another type of collection which is also an array-like object. A slight difference between an HTML collection and a node list is node list has forEach loop available to it while an HTML collection doesn't. But you can use for...of loop or regular for loop for both of them.
+
+### 2. Manipulating:
+
+- **innerText - textContent:** Both of these are used to change or get the text content of an HTML element. All the text contents of the nested elements will also show. The difference between these is innerText is aware of the content we are showing on the page, and just gets the text content as a simple string. textContent will show additional data, such as script tags or returns. Although innerText returns a much cleaner text, textContent is faster. With both of them, you have the ability to override the nested HTML nodes if you're not careful.
+
+- **innerHTML:** innerHTML returns every HTML code inside the chosen object as a string. You can pass in some HTML code to change what's inside the selected object, but you have to pass it in string form.
+
+- **value, src, href:** To get the user input inside forms (text or password), you can use their value property after selecting them. For checkboxes, we have another property that indicates value, and that's the "checked" property, which is either true or false. Inputs with the type submit won't have a value property. For inputs with type range, you generally have min and max attributes, (and an optional step attribute, default is 1) so the value of this input will depend on these properties.
+
+  The selected links have href properties and selected images have src properties, both can be manipulated through the DOM.
+
+- **getAttribute / setAttribute:** After selecting a node from the DOM, you can reach its attributes by simply typing `el.getAttribute("max")`. If the element has that attribute, it will return its value as a string, if it doesn't, it will return null. If you want to set an attribute, you need to say the name of the attribute and its desired value, like this: `el.setAttribute("min", "-250")`. This will set the value of the min attribute of the selected element to -250.
+
+- **Traversing the DOM: (parentElement, children, nextSibling, previousSibling)** These methods allow you to access other elements based on the current element you're working with. Think of a very simple HTML document, that has a single unordered list inside the body tags, and inside that unordered list there is 3 list items. The parent of any list item is the unordered list, the parent of unordered list is body, the parent of body is html document and the parent of the html document is null (doesn't exist). If you go the opposite way, all the list items are unordered list's children, the unordered list is body's children and body is html's children. List items are siblings to each other.
+
+  The children property will return an HTML collection that consists of all the nested elements.
+
+  There are other properties such as nextElementSibling and previousElementSibling, which chooses the next and previous siblings, respectfully.
+
+- **Altering Styles with style property:** We can use style property to change the styling of an element, but reading the existing style from the style property is generally not possible. Style property will only have the inline styles, but most of the time our styles are in a separate file, not incorporated into our HTML. If you change anything using the style property, the changed property will become an inline attribute. Inline attributes are written in camel case.
+
+- **getComputedStyle:** This returns an object called CSS style declaration, with a lot of key-value pairs. Most of these values are just the default values, but it does take both the stylesheet and the inline styles into account and creates a single object.
+- **creatingElements:**
+- **append, prepend, insertBefore:**
+- **removeChild, remove:**
+
+### 3. Events:
 
 **Resources:**
 
