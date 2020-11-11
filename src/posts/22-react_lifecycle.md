@@ -36,6 +36,10 @@ When the state of a component changes, it will force a react component to run th
 5. **getSnapshotBeforeUpdate:** This is a lifecycle method that takes the previous props and state as input and returns a snapshot object.
 6. **componentDidUpdate:** Good place to do data loading!
 
+### The equivalent of lifecycle methods for functional components
+
 ### React.memo
 
 ### PureComponent
+
+### How React updates the DOM
