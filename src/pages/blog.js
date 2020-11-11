@@ -44,7 +44,9 @@ const BlogPage = () => {
 
   const setAvailableYears = () => {
     let allYears = posts.allMarkdownRemark.edges.flatMap(post => {
-      return post.node.frontmatter.date.slice(0, 4)
+      if (post.node.frontmatter.date) {
+        return post.node.frontmatter.date.slice(-4)
+      }
     })
     const availableYears = new Set(allYears)
     setYears(Array.from(availableYears))
@@ -83,26 +85,35 @@ const BlogPage = () => {
   const chooseClass = tag => {
     let style
     switch (tag) {
-      case "Javascript":
+      case "JavaScript":
         style = styles.yellow
         break
-      case "Programming":
+      case "Computer Science":
         style = styles.orange
         break
-      case "Japan":
+      case "Mathematics":
         style = styles.crimson
         break
-      case "Art":
+      case "Genetics":
         style = styles.green
         break
-      case "History":
+      case "Language":
         style = styles.blue
         break
       case "Neuroscience":
         style = styles.purple
         break
-      case "Ethology":
+      case "Japan":
         style = styles.pink
+        break
+      case "History":
+        style = styles.seagreen
+        break
+      case "Web Development":
+        style = styles.salmon
+        break
+      case "React":
+        style = styles.lightpurple
         break
       default:
         style = styles.default
@@ -114,7 +125,10 @@ const BlogPage = () => {
   const filterPosts = tag => {
     let filteredList = []
     posts.allMarkdownRemark.edges.map(post => {
-      if (post.node.frontmatter.tags.includes(tag)) {
+      if (
+        post.node.frontmatter.tags &&
+        post.node.frontmatter.tags.includes(tag)
+      ) {
         filteredList.push(post)
       }
     })
@@ -132,7 +146,7 @@ const BlogPage = () => {
   const filterPostsByYear = year => {
     let filteredList = []
     posts.allMarkdownRemark.edges.map(post => {
-      if (post.node.frontmatter.date.slice(0, 4) === year) {
+      if (post.node.frontmatter.date.slice(-4) === year) {
         filteredList.push(post)
       }
     })
@@ -164,16 +178,18 @@ const BlogPage = () => {
                       className={styles.bookmarkIcon}
                       alt="bookmark icon"
                     />
-                    {post.node.frontmatter.tags.map((tag, index) => {
-                      return (
-                        <p
-                          className={`${chooseClass(tag)} ${styles.tag}`}
-                          key={index}
-                        >
-                          {tag}
-                        </p>
-                      )
-                    })}
+                    {post.node.frontmatter.tags
+                      ? post.node.frontmatter.tags.map((tag, index) => {
+                          return (
+                            <p
+                              className={`${chooseClass(tag)} ${styles.tag}`}
+                              key={index}
+                            >
+                              {tag}
+                            </p>
+                          )
+                        })
+                      : null}
                   </div>
                 </li>
               )
