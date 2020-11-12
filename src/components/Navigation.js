@@ -21,7 +21,7 @@ const Navigation = () => {
   return (
     <header className={styles.mainContainer}>
       <div className={styles.imgWrapper}>
-        <img src={me} alt="my profile picture" className={styles.img} />
+        <img src={me} alt="me" className={styles.img} />
       </div>
       <nav className={styles.navList}>
         <p>
@@ -78,36 +78,28 @@ const Navigation = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={github} alt="github icon" className={styles.socialIcon} />
+            <img src={github} alt="github" className={styles.socialIcon} />
           </a>
           <a
             href="https://twitter.com/modaijoubu"
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src={twitter}
-              alt="twitter icon"
-              className={styles.socialIcon}
-            />
+            <img src={twitter} alt="twitter" className={styles.socialIcon} />
           </a>
           <a
             href="https://www.linkedin.com/in/yagmur-cetin-tas/"
             target="_blank"
             rel="noreferrer"
           >
-            <img
-              src={linkedin}
-              alt="linkedin icon"
-              className={styles.socialIcon}
-            />
+            <img src={linkedin} alt="linkedin" className={styles.socialIcon} />
           </a>
           <a
             href="mailto:yagmurcetin@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={mail} alt="mail icon" className={styles.mailIcon} />
+            <img src={mail} alt="mail" className={styles.mailIcon} />
           </a>
         </div>
       </nav>
