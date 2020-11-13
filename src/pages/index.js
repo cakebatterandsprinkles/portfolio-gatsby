@@ -11,23 +11,19 @@ const PortfolioPage = () => {
   const [isFlipped3, setIsFlipped3] = useState(false)
   const [isFlipped4, setIsFlipped4] = useState(false)
 
-  const ClickHandler1 = e => {
-    e.preventDefault()
+  const ClickHandler1 = () => {
     setIsFlipped1(prevState => !prevState)
   }
 
-  const ClickHandler2 = e => {
-    e.preventDefault()
+  const ClickHandler2 = () => {
     setIsFlipped2(prevState => !prevState)
   }
 
-  const ClickHandler3 = e => {
-    e.preventDefault()
+  const ClickHandler3 = () => {
     setIsFlipped3(prevState => !prevState)
   }
 
-  const ClickHandler4 = e => {
-    e.preventDefault()
+  const ClickHandler4 = () => {
     setIsFlipped4(prevState => !prevState)
   }
 

@@ -15,11 +15,28 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--dirtysnow);
+  position: relative;
 }
 
 .content {
   padding: 2rem;
   padding-bottom: 0;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.img {
+  margin: 2rem 0;
+  height: 13rem;
+  width: auto;
+  border-radius: 50%;
 }
 
 @media (max-width: 1200px) {

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { graphql, useStaticQuery } from "gatsby"
-import Article from "../components/Article"
+import Article from "../templates/Article"
 import styles from "./blog.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styles from "./Navigation.module.scss"
-import me from "../images/main/me.jpg"
+import me from "../images/main/me_in_color.png"
 import linkedin from "../images/main/social-1_round-linkedin.svg"
 import github from "../images/main/social-1_round-github.svg"
 import twitter from "../images/main/social-1_round-twitter.svg"
