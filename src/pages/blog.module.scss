@@ -56,6 +56,11 @@
   cursor: pointer;
 }
 
+.link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .default {
   background-color: var(--palepink);
 }

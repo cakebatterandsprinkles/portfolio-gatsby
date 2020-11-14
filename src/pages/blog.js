@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Article from "../templates/Article"
 import styles from "./blog.module.scss"
 import bookmark from "../images/main/bookmark.svg"
@@ -18,6 +18,9 @@ const BlogPage = () => {
               tags
               summary
             }
+            fields {
+              slug
+            }
             html
           }
         }
@@ -28,7 +31,6 @@ const BlogPage = () => {
   const searchInput = useRef(null)
   const clearIcon = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [chosenPost, setChosenPost] = useState(null)
   const [tags, setTags] = useState([])
   const [years, setYears] = useState([])
   const [filteredPosts, setFilteredPosts] = useState(
@@ -37,13 +39,8 @@ const BlogPage = () => {
     })
   )
 
-  const handlePostClick = index => {
-    const post = filteredPosts[index]
-    setChosenPost(post.node)
-  }
-
-  const renderChosenArticle = () => {
-    return <Article post={chosenPost} />
+  const renderChosenArticle = post => {
+    return <Article post={post} />
   }
 
   const setCurrentTags = () => {
@@ -168,16 +165,13 @@ const BlogPage = () => {
     <Layout>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
-          {!chosenPost ? (
-            <ul className={styles.articleList}>
-              {filteredPosts.map((post, index) => {
-                return (
-                  <li
-                    key={index}
-                    className={styles.article}
-                    onClick={() => handlePostClick(index)}
-                    onKeyDown={() => {}}
-                    aria-hidden="true"
+          <ul className={styles.articleList}>
+            {filteredPosts.map((post, index) => {
+              return (
+                <li key={index} className={styles.article}>
+                  <Link
+                    to={`/blog/${post.node.fields.slug}`}
+                    className={styles.link}
                   >
                     <div className={styles.articleTitleAndDateWrapper}>
                       <span className={styles.articleTitle}>
@@ -187,35 +181,33 @@ const BlogPage = () => {
                         {post.node.frontmatter.date}
                       </span>
                     </div>
-                    <div className={styles.summaryContainer}>
-                      {post.node.frontmatter.summary}
-                    </div>
-                    <div className={styles.tagContainer}>
-                      <img
-                        src={bookmark}
-                        className={styles.bookmarkIcon}
-                        alt="bookmark icon"
-                      />
-                      {post.node.frontmatter.tags
-                        ? post.node.frontmatter.tags.map((tag, index) => {
-                            return (
-                              <p
-                                className={`${chooseClass(tag)} ${styles.tag}`}
-                                key={index}
-                              >
-                                {tag}
-                              </p>
-                            )
-                          })
-                        : null}
-                    </div>
-                  </li>
-                )
-              })}
-            </ul>
-          ) : (
-            renderChosenArticle(chosenPost)
-          )}
+                  </Link>
+                  <div className={styles.summaryContainer}>
+                    {post.node.frontmatter.summary}
+                  </div>
+                  <div className={styles.tagContainer}>
+                    <img
+                      src={bookmark}
+                      className={styles.bookmarkIcon}
+                      alt="bookmark icon"
+                    />
+                    {post.node.frontmatter.tags
+                      ? post.node.frontmatter.tags.map((tag, index) => {
+                          return (
+                            <p
+                              className={`${chooseClass(tag)} ${styles.tag}`}
+                              key={index}
+                            >
+                              {tag}
+                            </p>
+                          )
+                        })
+                      : null}
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
         </div>
         <div className={styles.sidebar}>
           <div className={styles.searchWrapper}>

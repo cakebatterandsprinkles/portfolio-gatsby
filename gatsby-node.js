@@ -4,7 +4,11 @@ module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === "MarkdownRemark") {
-    const slug = node.frontmatter.title.split(" ").join("-")
+    const slug = node.frontmatter.title
+      .replace(/[^\w\d ]/g, "")
+      .split(" ")
+      .join("-")
+      .toLowerCase()
     createNodeField({
       node,
       name: "slug",
@@ -21,9 +25,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
+            frontmatter {
+              title
+              date
+              tags
+            }
             fields {
               slug
             }
+            html
           }
         }
       }
@@ -35,6 +45,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
       component: articleTemplate,
       path: `/blog/${edge.node.fields.slug}`,
       context: {
+        metadata: edge.node.frontmatter,
+        content: edge.node.html,
         slug: edge.node.fields.slug,
       },
     })

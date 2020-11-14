@@ -1,25 +1,26 @@
 import React from "react"
 // import { graphql, useStaticQuery } from "gatsby"
-// import Layout from "./Layout"
-// import styles from "./Article.module.scss"
+import Layout from "../components/Layout"
+import styles from "../pages/blog.module.scss"
+import articleStyle from "./Article.module.scss"
 
-const ArticlePage = ({ post }) => {
-  const title = post.frontmatter.title
-  const date = post.frontmatter.date
-  const summary = post.frontmatter.summary
-  const tags = post.frontmatter.tags
-  const content = post.html
-
-  console.log(post)
-
+const ArticlePage = props => {
+  console.log(props)
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{date}</p>
-      <p>{summary}</p>
-      <p>{tags}</p>
-      <div>{content}</div>
-    </div>
+    <Layout>
+      <div className={styles.blogContainer}>
+        <div className={styles.blogWrapper}>
+          <div>
+            {props.pageContext.metadata.title} -{" "}
+            {props.pageContext.metadata.date}
+            {props.pageContext.metadata.tags}
+          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: props.pageContext.content }}
+          />
+        </div>
+      </div>
+    </Layout>
   )
 }
 
