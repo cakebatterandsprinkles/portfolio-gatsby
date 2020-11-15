@@ -1,0 +1,87 @@
+.galleryContainer {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.galleryWrapper {
+  width: 1000px;
+  background-color: white;
+  padding: 3rem;
+  min-height: 70vh;
+}
+
+.gridContainer {
+  width: 100%;
+  min-height: 36vh;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gridContainer .card {
+  width: 48%;
+}
+
+.card {
+  min-height: 35vh;
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 1200px) {
+  .galleryWrapper {
+    width: 100%;
+    padding: 3rem;
+    min-height: 80vh;
+    margin-top: 0;
+  }
+
+  .galleryContainer {
+    min-height: 80vh;
+    flex-direction: column;
+  }
+
+  .gridContainer .card {
+    width: 100%;
+  }
+
+  .card {
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .galleryWrapper {
+    padding: 2rem 1rem;
+  }
+
+  .cardSummary,
+  .cardWrapper {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card {
+    min-height: 34vh;
+  }
+}
+
+@media (max-width: 300px) {
+  .cardSummary,
+  .cardWrapper {
+    font-size: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
+  }
+}
