@@ -1,5 +1,5 @@
 ---
-title: "React- Component Lifecycle Methods"
+title: "React- Hooks"
 date: "2019-04-06"
 tags: ["React", "Web Development", "JavaScript"]
 summary: "In this article, I talk about what React hooks are and how to use some of them."

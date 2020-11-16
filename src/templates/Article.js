@@ -10,12 +10,16 @@ const ArticlePage = props => {
     <Layout>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
-          <div>
-            {props.pageContext.metadata.title} -{" "}
-            {props.pageContext.metadata.date}
-            {props.pageContext.metadata.tags}
+          <div className={articleStyle.headerContainer}>
+            <div className={articleStyle.mainHeader}>
+              {props.pageContext.metadata.title}
+            </div>
+            <div className={articleStyle.date}>
+              {props.pageContext.metadata.date}
+            </div>
           </div>
           <div
+            className={articleStyle.content}
             dangerouslySetInnerHTML={{ __html: props.pageContext.content }}
           />
         </div>

@@ -1,1 +1,21 @@
-  
+.headerContainer {
+  font-family: var(--heading-font);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--silver);
+  padding-bottom: 0.25rem;
+}
+
+.mainHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: var(--darkgray);
+}
+
+.content {
+  font-family: var(--article-font);
+  line-height: 1.75rem;
+}
