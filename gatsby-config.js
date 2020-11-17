@@ -39,6 +39,27 @@ module.exports = {
               linkImagesToOriginal: false,
             },
           },
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              showLineNumbers: true,
+              noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: "superscript",
+                  extend: "javascript",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+            },
+          },
         ],
       },
     },

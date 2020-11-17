@@ -25,23 +25,23 @@ If you declare a function but never call it, it gets registered in the heap. The
 
 Let's see how heap and stack works on a simple JS code snippet:
 
-```
-function getAge(){
-   return prompt('Your age:', '');
-};
-
-function getPermission(){
-   const age = parseInt(getAge());
-   if (age >= 0 && age < 21) {
-      console.log('Age under 21: drinking alcoholic beverages is not permitted.')
-   } else if (age >= 21) {
-      console.log('You are legally permitted to drink. Enjoy yourself.')
-   } else if (typeof(age) !== number ){
-      console.log("Please enter a valid number.")
-   }
+```javascript
+function getAge() {
+  return prompt("Your age:", "")
 }
 
-getPermission();
+function getPermission() {
+  const age = parseInt(getAge())
+  if (age >= 0 && age < 21) {
+    console.log("Age under 21: drinking alcoholic beverages is not permitted.")
+  } else if (age >= 21) {
+    console.log("You are legally permitted to drink. Enjoy yourself.")
+  } else if (typeof age !== number) {
+    console.log("Please enter a valid number.")
+  }
+}
+
+getPermission()
 ```
 
 You can try running this code snippet in your Chrome console.
@@ -67,17 +67,17 @@ If there is something in the code that gives a compiling error, the code executi
 
 Example of an erroneous function call:
 
-```
-function sayHiBack(){
-   throw new Error("Subject scared of people.");
-};
-
-function createConversation(){
-   console.log("Hi!");
-   sayHiBack();
+```javascript
+function sayHiBack() {
+  throw new Error("Subject scared of people.")
 }
 
-createConversation();
+function createConversation() {
+  console.log("Hi!")
+  sayHiBack()
+}
+
+createConversation()
 ```
 
 If you run this code snippet in your console, it will give back a stack trace with the error message that looks like this:
@@ -86,12 +86,12 @@ If you run this code snippet in your console, it will give back a stack trace wi
 
 Example of a recursive function that causes an error:
 
-```
-function callsItself(){
-   callsItself();
+```javascript
+function callsItself() {
+  callsItself()
 }
 
-callsItself();
+callsItself()
 ```
 
 If you run this code in your console, you will encounter this error:
@@ -119,14 +119,14 @@ The asynchronous code execution is not managed by the JS engine, but by the brow
 
 Let's give a very simple example:
 
-```
-console.log("Start");
+```javascript
+console.log("Start")
 
-setTimeout(function() {
+setTimeout(function () {
   console.log("Finish line")
-}, 2000);
+}, 2000)
 
-console.log("Wroom wroom!");
+console.log("Wroom wroom!")
 ```
 
 Let's see what happens where step by step:
