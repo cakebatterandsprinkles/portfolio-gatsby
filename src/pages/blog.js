@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Article from "../templates/Article"
 import styles from "./blog.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
@@ -38,10 +37,6 @@ const BlogPage = () => {
       return post
     })
   )
-
-  const renderChosenArticle = post => {
-    return <Article post={post} />
-  }
 
   const setCurrentTags = () => {
     let allTags = posts.allMarkdownRemark.edges.flatMap(post => {

@@ -7,69 +7,105 @@ import Lines from "../images/gallery/digital_art/IMG_0274.png"
 import JustChoose from "../images/gallery/digital_art/IMG_0276.png"
 import SocialDistance from "../images/gallery/digital_art/IMG_0277.png"
 
-const galleryPage = () => {
+const GalleryPage = () => {
+  const [section, setSection] = React.useState("digital")
+
+  const changeSection = str => {
+    setSection(str)
+  }
+
+  const sections = [
+    { handle: "digital", title: "Digital" },
+    { handle: "clay", title: "Clay" },
+    { handle: "ink", title: "Ink" },
+  ]
+
+  const renderContent = () => {
+    if (section === "digital") {
+      return (
+        <div className={styles.gridContainer}>
+          <div className={styles.card}>
+            <Polaroid
+              name="Self Portrait"
+              year="2020"
+              medium="Digital art made by using Procreate."
+            >
+              <img
+                src={MeInColor}
+                alt="digital illustration of myself in color"
+              />
+            </Polaroid>
+          </div>
+          <div className={styles.card}>
+            <Polaroid
+              name="Serene"
+              year="2020"
+              medium="Digital art made by using Procreate."
+            >
+              <img
+                src={Lines}
+                alt="digital illustration of power lines with weird colorful creatures"
+              />
+            </Polaroid>
+          </div>
+          <div className={styles.card}>
+            <Polaroid
+              name="Just Choose"
+              year="2020"
+              medium="Digital art made by using Procreate."
+            >
+              <img
+                src={JustChoose}
+                alt="digital illustration of a beach and road signs with weird creatures"
+              />
+            </Polaroid>
+          </div>
+          <div className={styles.card}>
+            <Polaroid
+              name="Social Distance"
+              year="2020"
+              medium="Digital art made by using Procreate."
+            >
+              <img
+                src={SocialDistance}
+                alt="digital illustration of humanity in 2020 social distancing"
+              />
+            </Polaroid>
+          </div>
+        </div>
+      )
+    }
+  }
+
+  React.useEffect(() => {
+    renderContent()
+  }, [section, renderContent])
+
   return (
     <Layout>
       <div className={styles.galleryContainer}>
         <div className={styles.galleryWrapper}>
           <h1>Art Gallery</h1>
-          <div>
+          <div className={styles.disclaimerText}>
             Be a kind human and get permission before using my content. Thanks!
           </div>
-          <div className={styles.gridContainer}>
-            <div className={styles.card}>
-              <Polaroid
-                name="Self Portrait"
-                year="2020"
-                medium="Digital art made by using Procreate."
+          <nav className={styles.navbar}>
+            {sections.map(s => (
+              <div
+                className={`${styles.navbarLink} ${
+                  section === s.handle ? styles.activeLink : ""
+                }`}
+                onClick={() => changeSection(s.handle)}
               >
-                <img
-                  src={MeInColor}
-                  alt="digital illustration of myself in color"
-                />
-              </Polaroid>
-            </div>
-            <div className={styles.card}>
-              <Polaroid
-                name="Serene"
-                year="2020"
-                medium="Digital art made by using Procreate."
-              >
-                <img
-                  src={Lines}
-                  alt="digital illustration of power lines with weird colorful creatures"
-                />
-              </Polaroid>
-            </div>
-            <div className={styles.card}>
-              <Polaroid
-                name="Just Choose"
-                year="2020"
-                medium="Digital art made by using Procreate."
-              >
-                <img
-                  src={JustChoose}
-                  alt="digital illustration of a beach and road signs with weird creatures"
-                />
-              </Polaroid>
-            </div>
-            <div className={styles.card}>
-              <Polaroid
-                name="Social Distance"
-                year="2020"
-                medium="Digital art made by using Procreate."
-              >
-                <img
-                  src={SocialDistance}
-                  alt="digital illustration of humanity in 2020 social distancing"
-                />
-              </Polaroid>
-            </div>
-          </div>
+                {s.title}
+              </div>
+            ))}
+          </nav>
+          {renderContent()}
         </div>
       </div>
     </Layout>
   )
 }
 
-export default galleryPage
+export default GalleryPage

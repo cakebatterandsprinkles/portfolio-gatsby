@@ -30,6 +30,31 @@
   margin: 0.5rem 0;
 }
 
+.disclaimerText {
+  font-size: 0.8rem;
+}
+
+.navbar {
+  display: flex;
+  padding: 1.25rem 1rem 1rem 0;
+  border-bottom: 1px solid var(--darkgray);
+}
+
+.navbarLink {
+  margin-right: 1rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  background: none;
+}
+
+.activeLink {
+  border-bottom: 1px solid var(--silver);
+  border-right: 1px solid var(--silver);
+  background-color: var(--snow);
+}
+
 @media (max-width: 1200px) {
   .galleryWrapper {
     width: 100%;
