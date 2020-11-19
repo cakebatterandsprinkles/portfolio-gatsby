@@ -20,58 +20,53 @@ const GalleryPage = () => {
     { handle: "ink", title: "Ink" },
   ]
 
+  const digitalWork = [
+    {
+      name: "Self Portrait",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: MeInColor,
+      imgAlt: "digital illustration of myself in color",
+    },
+    {
+      name: "Serene",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: Lines,
+      imgAlt:
+        "digital illustration of power lines with weird colorful creatures",
+    },
+    {
+      name: "Just Choose",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: JustChoose,
+      imgAlt:
+        "digital illustration of a beach and road signs with weird creatures",
+    },
+    {
+      name: "Social Distance",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: SocialDistance,
+      imgAlt: "digital illustration of humanity in 2020 social distancing",
+    },
+  ]
+
   const renderContent = () => {
     if (section === "digital") {
       return (
         <div className={styles.gridContainer}>
-          <div className={styles.card}>
-            <Polaroid
-              name="Self Portrait"
-              year="2020"
-              medium="Digital art made by using Procreate."
-            >
-              <img
-                src={MeInColor}
-                alt="digital illustration of myself in color"
-              />
-            </Polaroid>
-          </div>
-          <div className={styles.card}>
-            <Polaroid
-              name="Serene"
-              year="2020"
-              medium="Digital art made by using Procreate."
-            >
-              <img
-                src={Lines}
-                alt="digital illustration of power lines with weird colorful creatures"
-              />
-            </Polaroid>
-          </div>
-          <div className={styles.card}>
-            <Polaroid
-              name="Just Choose"
-              year="2020"
-              medium="Digital art made by using Procreate."
-            >
-              <img
-                src={JustChoose}
-                alt="digital illustration of a beach and road signs with weird creatures"
-              />
-            </Polaroid>
-          </div>
-          <div className={styles.card}>
-            <Polaroid
-              name="Social Distance"
-              year="2020"
-              medium="Digital art made by using Procreate."
-            >
-              <img
-                src={SocialDistance}
-                alt="digital illustration of humanity in 2020 social distancing"
-              />
-            </Polaroid>
-          </div>
+          {digitalWork.map(w => (
+            <div className={styles.card}>
+              <Polaroid name={w.name} year={w.year} medium={w.medium}>
+                <img
+                  src={w.src}
+                  alt="digital illustration of myself in color"
+                />
+              </Polaroid>
+            </div>
+          ))}
         </div>
       )
     }
