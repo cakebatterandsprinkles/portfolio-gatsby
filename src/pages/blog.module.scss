@@ -147,6 +147,9 @@
 
 .articleDate {
   font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--darkgray);
+  padding-top: 0.35rem;
 }
 
 // sidebar styling
@@ -290,11 +293,18 @@ hr {
   .dateContainer {
     margin-top: 1rem;
   }
+
+  .mainHeading {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 900px) {
   .blogWrapper {
     padding: 1.5rem;
+  }
+  .mainHeading {
+    font-size: 1.75rem;
   }
 }
 
@@ -307,14 +317,19 @@ hr {
   .article {
     margin-bottom: 1.5rem;
     background-color: var(--dirtysnow);
-    padding: 1.25rem 1rem 1rem 1.25rem;
+    padding: 0.85rem 0.5rem 0.5rem 0.75rem;
     border-left: 3px solid var(--darkcloudgray);
   }
 
   .articleTitle {
     margin-bottom: 0.25rem;
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.25rem;
     border-bottom: 1px solid var(--darkcloudgray);
+    font-size: 1rem;
+  }
+
+  .articleDate {
+    font-size: 0.7rem;
   }
 
   .summaryContainer {
@@ -329,6 +344,11 @@ hr {
 
   .search {
     font-size: 0.9rem;
+  }
+
+  .mainHeading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 

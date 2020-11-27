@@ -31,7 +31,7 @@ const PortfolioPage = () => {
     <Layout>
       <div className={styles.portfolioContainer}>
         <div className={styles.portfolioWrapper}>
-          <h1>Portfolio</h1>
+          <h1 className={styles.heading}>Portfolio</h1>
           <div className={styles.disclaimerText}>
             My web development portfolio
           </div>

@@ -80,7 +80,7 @@ const GalleryPage = () => {
     <Layout>
       <div className={styles.galleryContainer}>
         <div className={styles.galleryWrapper}>
-          <h1>Art Gallery</h1>
+          <h1 className={styles.heading}>Art Gallery</h1>
           <div className={styles.disclaimerText}>
             Be a kind human and get permission before using my content. Thanks!
           </div>
