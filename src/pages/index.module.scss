@@ -11,6 +11,14 @@
   min-height: 70vh;
 }
 
+.disclaimerText {
+  font-size: 0.8rem;
+  color: var(--darkgray);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--silver);
+}
+
 .gridContainer {
   width: 100%;
   min-height: 36vh;

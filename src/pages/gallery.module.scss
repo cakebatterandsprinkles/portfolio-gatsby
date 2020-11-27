@@ -32,27 +32,32 @@
 
 .disclaimerText {
   font-size: 0.8rem;
+  color: var(--darkgray);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--silver);
 }
 
 .navbar {
   display: flex;
-  padding: 1.25rem 1rem 1rem 0;
-  border-bottom: 1px solid var(--darkgray);
+  padding: 1.25rem 1rem 0.75rem 0;
 }
 
 .navbarLink {
+  font-size: 0.9rem;
   margin-right: 1rem;
-  padding: 0.4rem;
+  padding: 0.5rem 0.8rem;
   cursor: pointer;
   border: none;
-  border-radius: 0.5rem;
   background: none;
 }
 
 .activeLink {
-  border-bottom: 1px solid var(--silver);
-  border-right: 1px solid var(--silver);
-  background-color: var(--snow);
+  border: 1px solid var(--silver);
+  border-radius: 5px;
+  background: var(--snow);
+  outline: solid 1px var(--silver);
+  outline-offset: -4px;
 }
 
 @media (max-width: 1200px) {

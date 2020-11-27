@@ -11,6 +11,14 @@
   min-height: 90vh;
 }
 
+.disclaimerText {
+  font-size: 0.8rem;
+  color: var(--darkgray);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--darkcloudgray);
+}
+
 .sidebar {
   width: 300px;
   background-color: white;

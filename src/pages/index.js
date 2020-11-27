@@ -32,6 +32,9 @@ const PortfolioPage = () => {
       <div className={styles.portfolioContainer}>
         <div className={styles.portfolioWrapper}>
           <h1>Portfolio</h1>
+          <div className={styles.disclaimerText}>
+            My web development portfolio
+          </div>
           <div className={styles.gridContainer}>
             <div className={styles.card}>
               <ReactCardFlip

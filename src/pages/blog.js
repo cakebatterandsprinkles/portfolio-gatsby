@@ -160,6 +160,10 @@ const BlogPage = () => {
     <Layout>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
+          <h1>Blog</h1>
+          <div className={styles.disclaimerText}>
+            More of a notebook than a blog, but why not.
+          </div>
           <ul className={styles.articleList}>
             {filteredPosts.map((post, index) => {
               return (
