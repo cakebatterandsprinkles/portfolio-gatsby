@@ -6,6 +6,9 @@ import MeInColor from "../images/gallery/digital_art/me_in_color.png"
 import Lines from "../images/gallery/digital_art/IMG_0274.png"
 import JustChoose from "../images/gallery/digital_art/IMG_0276.png"
 import SocialDistance from "../images/gallery/digital_art/IMG_0277.png"
+import Kitsune from "../images/gallery/clay/kitsune_yagmur.jpg"
+import StandingTall from "../images/gallery/clay/standingtall_yagmur-scaled.jpg"
+import Kaonashi from "../images/gallery/clay/kaonashi_yagmur.jpg"
 
 const GalleryPage = () => {
   const [section, setSection] = React.useState("digital")
@@ -53,6 +56,30 @@ const GalleryPage = () => {
     },
   ]
 
+  const clayWork = [
+    {
+      name: "Kitsune",
+      year: "2019",
+      medium: "Cone 6 clay & underglaze.",
+      src: Kitsune,
+      imgAlt: "Clay mask of kitsune",
+    },
+    {
+      name: "Kaonashi",
+      year: "2019",
+      medium: "Cone 6 clay & underglaze.",
+      src: Kaonashi,
+      imgAlt: "Clay mask of kaonashi",
+    },
+    {
+      name: "Standing Tall",
+      year: "2019",
+      medium: "Cone 6 clay, underglaze & clear glaze.",
+      src: StandingTall,
+      imgAlt: "Small clay sculpture",
+    },
+  ]
+
   const renderContent = () => {
     if (section === "digital") {
       return (
@@ -60,10 +87,19 @@ const GalleryPage = () => {
           {digitalWork.map(w => (
             <div className={styles.card}>
               <Polaroid name={w.name} year={w.year} medium={w.medium}>
-                <img
-                  src={w.src}
-                  alt="digital illustration of myself in color"
-                />
+                <img src={w.src} alt={w.imgAlt} />
+              </Polaroid>
+            </div>
+          ))}
+        </div>
+      )
+    } else if (section === "clay") {
+      return (
+        <div className={styles.gridContainer}>
+          {clayWork.map(w => (
+            <div className={styles.card}>
+              <Polaroid name={w.name} year={w.year} medium={w.medium}>
+                <img src={w.src} alt={w.imgAlt} />
               </Polaroid>
             </div>
           ))}
