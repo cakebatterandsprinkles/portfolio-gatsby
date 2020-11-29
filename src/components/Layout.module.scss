@@ -2,12 +2,16 @@
   display: flex;
 }
 
-.navWrapper {
-  width: 350px;
-  max-height: 100vh;
+.nav {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .contentWrapper {
+  margin-left: 300px;
   width: 100%;
   min-height: 100vh;
   overflow-y: auto;
@@ -57,11 +61,13 @@
 
   .contentWrapper {
     min-height: auto;
+    margin-left: 0;
   }
 
-  .navWrapper {
+  .nav {
     width: 100%;
-    min-height: 40vh;
+    height: 40vh;
+    position: relative;
   }
 }
 

@@ -40,7 +40,7 @@ const Layout = props => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.navWrapper}>
+      <div className={styles.nav}>
         <Navigation />
       </div>
       <div className={styles.contentWrapper}>

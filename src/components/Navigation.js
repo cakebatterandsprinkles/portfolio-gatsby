@@ -19,7 +19,7 @@ const Navigation = () => {
   `)
 
   return (
-    <header className={styles.mainContainer}>
+    <div className={styles.mainContainer}>
       <div className={styles.imgWrapper}>
         <img src={me} alt="me" className={styles.img} />
       </div>
@@ -103,7 +103,7 @@ const Navigation = () => {
           </a>
         </div>
       </nav>
-    </header>
+    </div>
   )
 }
 
