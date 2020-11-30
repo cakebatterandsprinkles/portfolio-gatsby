@@ -111,22 +111,29 @@ There is an npm package called **[react-error-boundary](https://www.npmjs.com/pa
 
 ### useReducer()
 
-useReducer hook takes two arguments, the first one is a reducer function, and the second one is the initial state.
+useReducer hook takes two arguments, the first one is a reducer function, and the second one is the initial value of the state. Let's try to make a simple counter component that will increment its value when clicked.
 
 Example:
 
 ```javascript
 import React from "react"
 
+// Reducer function is the function that will actually affect the state.
+// When it is called, it accepts an "action", which will basically define the new piece of the state, as an object or a function. In this example the action will be an object, and we refer to it as the "newState".
+// The reducer returns the updated version of the state.
 function countReducer(currentState, newState) {
-  return newState
+  return { ...currentState, ...newState }
 }
 
-function Counter({ start = 0, incrementBy = 1 }) {
-  const [count, setCountDispatch] = React.useReducer(countReducer, start)
+function Counter({ initialValue = 0, incrementBy = 1 }) {
+  const [state, setState] = React.useReducer(countReducer, {
+    count: initialValue,
+  })
 
-  const incrementCounter = () => countReducer(count + incrementBy)
-  return <button onClick={incrementCounter}></button>
+  const { count } = state
+
+  const incrementCounter = () => setState({ count: count + incrementBy })
+  return <button onClick={incrementCounter}>{count}</button>
 }
 function App() {
   return <Counter />
@@ -134,6 +141,76 @@ function App() {
 
 export default App
 ```
+
+setState can accept a function or an object as an argument. Either way, it has to define a new state in some way and it will be passed onto the reducer function. And the reducer will act the same way, by returning the new version of the state.
+
+```javascript
+import * as React from "react"
+
+// Reducer function will check if the action (which defines the newState) is an object or a function.
+const countReducer = (currentState, newState) => ({
+  ...currentState,
+  ...(typeof newState === "function" ? newState(currentState) : newState),
+})
+
+function Counter({ initialValue = 0, incrementBy = 1 }) {
+  const [state, setState] = React.useReducer(countReducer, {
+    count: initialValue,
+  })
+  const { count } = state
+  const incrementCounter = () =>
+    setState(currentState => ({ count: currentState.count + incrementBy }))
+  return <button onClick={incrementCounter}>{count}</button>
+}
+
+function App() {
+  return <Counter />
+}
+
+export default App
+```
+
+You can also use it as a regular action and dispatch (like redux). The incrementCounter function will dispatch an action type (which is just a string), and the reducer function will do something according to the action that is dispatched. Just to spice it up, we'll add decrement as a dispatch as well:
+
+```javascript
+import * as React from "react"
+
+function countReducer(currentState, action) {
+  switch (action.type) {
+    case "increment": {
+      return { count: currentState.count + action.incrementBy }
+    }
+    case "decrement": {
+      return { count: currentState.count - action.decrementBy }
+    }
+    default: {
+      throw new Error(`Unknown action type: ${action.type}`)
+    }
+  }
+}
+
+function Counter({ initialValue = 0, incrementBy = 1, decrementBy = 1 }) {
+  const [state, dispatch] = React.useReducer(countReducer, {
+    count: initialValue,
+  })
+  const { count } = state
+  const incrementCounter = () => dispatch({ type: "increment", incrementBy })
+  const decrementCounter = () => dispatch({ type: "decrement", decrementBy })
+  return (
+    <button onClick={incrementCounter} onMouseEnter={decrementCounter}>
+      {count}
+    </button>
+  )
+}
+
+function App() {
+  return <Counter initialValue={50} />
+}
+
+export default App
+```
+
+So why use useReducer instead of useState hook? Basically they are useful in different conditions. Most often you will use useState hook, as most of the time you will be managing state that has elements independent from each other. If you have multiple elements of state that change together in some condition, and if one of them depends on the other, useReducer can be helpful. Check out [this awesome article](https://kentcdodds.com/blog/should-i-usestate-or-usereducer) by Kent C. Dodds which helped me understand this subject better.
 
 ### useCallback()
 
@@ -150,3 +227,5 @@ export default App
 **Resources:**
 
 1.
+
+2. [Should I useState or useReducer?](https://kentcdodds.com/blog/should-i-usestate-or-usereducer)
