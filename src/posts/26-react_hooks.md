@@ -271,6 +271,12 @@ Most of the time apps are more complicated than this and they have a folder stru
 
 #### useLayoutEffect()
 
+When you are causing side effects in your React app, you can use two built-in API's. One of them is the useEffect hook (mentioned before!) and the other one is the useLayoutEffect hook, which we'll talk about now. These two API's are incredibly similar, with just a couple of subtle differences.
+
+useEffect hook runs _after_ React renders your component. So your useEffect callback does not fiddle with the rendering of the component, so the user sees something immediately, and this is how the app should behave most of the time. But what if the useEffect callback was doing something that changed the appearance of a DOM node inside the component that was being rendered? You would first see the component's initial UI, then the updated one, and as the change happens in terms of miliseconds, you would see it as a flicker. useLayoutEffect hook exists to solve this problem.
+
+If you are going to mutate the DOM as soon as a component is being rendered (or make a DOM measurement, or update a value of a node by useRef), you use useLayoutEffect instead of useEffect. This way, the useLayoutEffect callback will run synchronously before the component is printed on the screen, and you'll render an up-to-date initial component.
+
 #### useImperativeHandle()
 
 #### useDebugValue()
