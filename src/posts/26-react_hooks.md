@@ -13,7 +13,7 @@ The second type of component is called **functional components**, and these are 
 
 Let's roll.
 
-### useState()
+#### useState()
 
 useState hook accepts a single argument as the initial value of a property of the state, and always returns an array with two elements. Generally this array is destructured at the spot. The first one in the returned array is the state property with the given value and the second item is a function to update the state. By convention, this function is named with adding the "set" prefix to the name of the property.
 
@@ -47,7 +47,7 @@ function Example() {
 }
 ```
 
-### useEffect()
+#### useEffect()
 
 useEffect hook accepts a function as an argument and runs that function after React renders (or re-renders) your component to the DOM. It also accepts a second (optional) argument, which is the data it should look out for. This second argument is called **the array of dependencies** and it can be of any length. This second argument decides when this hook will run. The point of this list is to keep your component's state fresh and in sync with the side effect you are causing. If there is a second argument, the function that is given as the first argument will only run when the data specified in the second argument changes. If there is no second argument, the function given as the first argument will run for every update of the component. If there is an empty array as the second argument, the function will run when the component is destroyed.
 
@@ -76,7 +76,7 @@ React.useEffect(
 )
 ```
 
-### useRef()
+#### useRef()
 
 After a component is rendered, the DOM nodes are created. If you need to reach the DOM nodes for some reason (for example for creating event handlers, etc.), you use the useRef hook. useRef hook is a function that returns a ref object. When you add the 'ref' attribute to any JSX element, React becomes aware of it and creates a referance to that object, and then you can use that DOM node to create side effects.
 
@@ -101,15 +101,9 @@ function someComponent({ children }) {
 }
 ```
 
-So basically, you use useRef hook whenever you want to maintain a reference to a DOM node, and you want to make changes on it without triggering a rerender.
+So basically, you use useRef hook whenever you want to maintain a reference to a DOM node, and you want to make changes on it without triggering a re-render.
 
-### ErrorBoundary Component
-
-There are no hooks for ErrorBoundary (so far), so it has to be written as a class component. ErrorBoundary is a higher order component that wraps up another component with the goal of handling any errors that component (and its children) will throw in all lifecycle events (including render), and displays a fallback UI for them.
-
-There is an npm package called **[react-error-boundary](https://www.npmjs.com/package/react-error-boundary)** which implements a ErrorBoundary component you can import and use anywhere in your app, so you kinda never have to write this yourself. But if you really want to, here ya go: [React Error Boundaries documentation](https://reactjs.org/docs/error-boundaries.html)
-
-### useReducer()
+#### useReducer()
 
 useReducer hook takes two arguments, the first one is a reducer function, and the second one is the initial value of the state. Let's try to make a simple counter component that will increment its value when clicked.
 
@@ -212,7 +206,84 @@ export default App
 
 So why use useReducer instead of useState hook? Basically they are useful in different conditions. Most often you will use useState hook, as most of the time you will be managing state that has elements independent from each other. If you have multiple elements of state that change together in some condition, and if one of them depends on the other, useReducer can be helpful. Check out [this awesome article](https://kentcdodds.com/blog/should-i-usestate-or-usereducer) by Kent C. Dodds which helped me understand this subject better.
 
-### useCallback()
+#### useContext()
+
+Sometimes passing the state between components can be a pain in the grass. You can always lift a state (make the data a part of the parent component's state, as the data can only be passed top to down or parent to child) but passing the state more than a single level is very cumbersome and leads to redundant code, and that's where the concept of a shared application state comes in. This 'shared application state' is called the **context**, and all components can reach it without the need of explicitly passing it along as a prop.
+
+Let's make a small app with counter and counterDisplay components, and even though it is an overkill, let's create a context for this app.
+
+```javascript
+import React from "react"
+// You create a context object by using createContext API.
+// You can provide a default value by passing it as an argument.
+const UserContext = React.CreateContext()
+
+// Data passing works via subscribing and consuming. The components that want to use the context data (which are called consumers) has to subscribe to it.
+// The branch of the component tree that is going to need that context should be wrapped with a provider component.
+// Every created context object comes with a provider component, which will help the consumer component to subscribe to the changes of the given context.
+// When a consumer is subscribed to a context, it will read the value from the closest provider component above. So the provider components provide the value for the context. If there are no given values to a provider component, it will grab the default value given to the createContext function.
+// To get the value of a given context, you need to use useContext hook and provide the context variable to it (import it if you created it in another file).
+
+// We can make a custom consumer hook to throw error if there is no context. If there is a context, it will return the context as it is.
+function useCountContext() {
+  const context = React.useContext(CountContext)
+  if (!context) {
+    throw new Error(
+      "useCountContext must be rendered within the CountContext.Provider"
+    )
+  }
+  return context
+}
+
+function CountDisplay() {
+  const { count } = useCountContext()
+  return <div>{`You have pressed the button ${count} times.`}</div>
+}
+
+function Counter() {
+  const { setCount } = useCountContext()
+  return (
+    <button onClick={() => setCount(prevCount => prevCount + 1)}>
+      Don't press this button.
+    </button>
+  )
+}
+
+function App() {
+  // The context object will check the value of the closest context provider value. As the CountDisplay component is only used in display, we only passed the state to it.
+  // As the Counter component is responsible for the increase in count, we passed setCount function to it, which will update the App component's state.
+  const [count, setCount] = React.useState(0)
+
+  return (
+    <div>
+      <CountContext.Provider value={{ count, setCount }}>
+        <Counter />
+        <CountDisplay />
+      </CountContext.Provider>
+    </div>
+  )
+}
+
+export default App
+```
+
+Most of the time apps are more complicated than this and they have a folder structure, and you may need to keep your context files in a separate folder. It's cool, you'll just import and use them, and all will be fine.
+
+#### useLayoutEffect()
+
+#### useImperativeHandle()
+
+#### useDebugValue()
+
+### Memoization
+
+It does feel like there is an 'r' missing in this word, doesn't it? But I have not misspelled it. It is really written this way.
+
+Memoization is a form of caching. What is caching? Caching is storing some data for future use. You may not be aware of it, but many websites you visit do cache data in your browser. Memoization is storing the data as an object (as key-value pairs) so if you request some data with the same parameters, it will directly return the previous result. If you request data with different parameters, it will add it to the object as a key-value pair, and return the result. Memoization is especially important if you are doing expensive calculations, and doing them repeatedly will decrease the performance of your app. When using React, memoization can help you prevent unnecessary re-renders and re-calling expensive functions.
+
+There are two hooks that helps us do memoization in React. One is useCallback, and the other one is useMemo. Let's check them out.
+
+#### useCallback()
 
 To understand useCallback, we need to remember how useEffect worked. useEffect hook accepts two arguments, one is a callback function and the second one is an array of dependencies. The array of dependencies is optional, and if useEffect is not provided with one, React will just call the callback in every render.
 
@@ -259,15 +330,13 @@ export default ColorMode
 
 Although useCallback has improved our performance by preventing unnecessary re-renders in this tiny example, it doesn't mean that you should use it everywhere. As you probably imagined, useCallback keeps a reference to the old version of the function, so it won't be garbage collected.
 
-### useContext()
+#### useMemo()
 
-### useLayoutEffect()
+### ErrorBoundary Component
 
-### useImperativeHandle()
+There are no hooks for ErrorBoundary (so far), so it has to be written as a class component. ErrorBoundary is a higher order component that wraps up another component with the goal of handling any errors that component (and its children) will throw in all lifecycle events (including render), and displays a fallback UI for them.
 
-### useDebugValue()
-
-### useMemo()
+There is an npm package called **[react-error-boundary](https://www.npmjs.com/package/react-error-boundary)** which implements a ErrorBoundary component you can import and use anywhere in your app, so you kinda never have to write this yourself. But if you really want to, here ya go: [React Error Boundaries documentation](https://reactjs.org/docs/error-boundaries.html)
 
 **Resources:**
 
