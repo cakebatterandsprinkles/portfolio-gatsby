@@ -16,17 +16,17 @@ They used 8 bits to represent all the characters in written language. Earlier co
 
 This was the standard 7-bit ASCII table (characters between 0-127):
 
-![7-bit ASCII](../images/blog/unicode/astab1.gif)
+![7-bit ASCII](../images/blog/unicode/astab1.jpg)
 
-_Image Credit: https://www.mkssoftware.com/docs/man5/ascii.5.asp_
+###### _Image Credit: https://www.mkssoftware.com/docs/man5/ascii.5.asp_
 
 These modifiable 128 bits was called **[the extended ASCII character set](https://en.wikipedia.org/wiki/Extended_ASCII).** This became a problem, as different organizations such as HP, Adobe, Apple, Microsoft, etc, were all using this extended character set to do their own thing. The same binary code meant different things in different platforms, and sharing data between these platforms became a problem.
 
 This is an example extended ASCII table (characters between 128-255):
 
-![Extended ASCII table](../images/blog/unicode/EXT-ASC.gif)
+![Extended ASCII table](../images/blog/unicode/EXT-ASC.jpg)
 
-_Image Credit: https://www.webopedia.com/TERM/E/extended_ASCII.html_
+###### _Image Credit: https://www.webopedia.com/TERM/E/extended_ASCII.html_
 
 **How Unicode was born**
 
@@ -48,5 +48,5 @@ Unicode is universally supported by all operating systems, search engines, brows
 
 1. Unicode Official Webpage - https://home.unicode.org/
 2. Wikipedia - [ASCII (American Standard Code for Information Interchange)](https://en.wikipedia.org/wiki/ASCII), [The extended ASCII character set](https://en.wikipedia.org/wiki/Extended_ASCII), [Unicode Transformation Format (UTF-8)](https://en.wikipedia.org/wiki/UTF-8), [world wide web](https://en.wikipedia.org/wiki/World_Wide_Web), [Unicode](https://en.wikipedia.org/wiki/Unicode)
-3. ["Computer Science" channel](https://www.youtube.com/c/KevinDrumm/videos) by Kevin Drumm
+3. ["Computer Science" channel](https://www.youtube.com/c/ComputerScienceLessons/featured) by Kevin Drumm
 4. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott

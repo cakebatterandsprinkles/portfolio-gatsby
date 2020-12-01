@@ -270,6 +270,9 @@ h5 {
 }
 h6 {
   font-size: 0.78405rem;
+  font-family: var(--article-font) !important;
+  font-weight: normal;
+  opacity: 0.7;
 }
 ol,
 ul {
