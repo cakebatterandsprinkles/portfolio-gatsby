@@ -49,7 +49,7 @@ function Example() {
 
 ### useEffect()
 
-useEffect hook accepts a function as an argument and runs that function after React renders (or re-renders) your component to the DOM. It also accepts a second (optional) argument, which is the data it should look out for. This second argument is called **the array of dependencies** and it can be of any length. This second argument decides when this hook will run. If there is a second argument, the function that is given as the first argument will only run when the data specified in the second argument changes. If there is no second argument, the function given as the first argument will run for every update of the component. If there is an empty array as the second argument, the function will run when the component is destroyed.
+useEffect hook accepts a function as an argument and runs that function after React renders (or re-renders) your component to the DOM. It also accepts a second (optional) argument, which is the data it should look out for. This second argument is called **the array of dependencies** and it can be of any length. This second argument decides when this hook will run. The point of this list is to keep your component's state fresh and in sync with the side effect you are causing. If there is a second argument, the function that is given as the first argument will only run when the data specified in the second argument changes. If there is no second argument, the function given as the first argument will run for every update of the component. If there is an empty array as the second argument, the function will run when the component is destroyed.
 
 Another thing to remember is that useEffect does a shallow comparison (===) for all the items in the array of dependencies. So be careful when you are using referance type data.
 
@@ -214,6 +214,51 @@ So why use useReducer instead of useState hook? Basically they are useful in dif
 
 ### useCallback()
 
+To understand useCallback, we need to remember how useEffect worked. useEffect hook accepts two arguments, one is a callback function and the second one is an array of dependencies. The array of dependencies is optional, and if useEffect is not provided with one, React will just call the callback in every render.
+
+If another function is called inside the useEffect callback, you need to include the function in the dependency list as well, as the function itself might change over time.
+
+```javascript
+import * as React from "react"
+
+function ColorMode({ mode }) {
+  const updateLocalStorage = () => window.localStorage.setItem("mode", mode)
+  React.useEffect(() => {
+    updateLocalStorage()
+  }, [updateLocalStorage])
+  return <div>`Color mode: ${window.localStorage.getItem("mode")}`</div>
+}
+
+export default ColorMode
+```
+
+Now, you have a new problem. As the function is defined inside the component body, with every render of the component, another replica of this function will be created again. Although they look very, very alike, it is a replica, so it is not the same function as the previous one. This means the useEffect callback will be called in every render, which defies the point of the dependency list array we provide, and results with function call we do not need.
+
+_useCallback hook solves this particular problem._
+
+We pass useCallback a function as a first argument, and a dependency array of its own. If the dependency array doesn't change, it will return the previous function to us, this way our useEffect callback will not run. If dependencies of useCallback changes, it will create the new function and pass it back, and our useEffect callback will run.
+
+Example:
+
+```javascript
+import * as React from "react"
+
+function ColorMode({ mode }) {
+  const updateLocalStorage = React.useCallback(
+    () => window.localStorage.setItem("mode", mode),
+    [mode]
+  )
+  React.useEffect(() => {
+    updateLocalStorage()
+  }, [updateLocalStorage])
+  return <div>`Color mode: ${window.localStorage.getItem("mode")}`</div>
+}
+
+export default ColorMode
+```
+
+Although useCallback has improved our performance by preventing unnecessary re-renders in this tiny example, it doesn't mean that you should use it everywhere. As you probably imagined, useCallback keeps a reference to the old version of the function, so it won't be garbage collected.
+
 ### useContext()
 
 ### useLayoutEffect()
@@ -229,3 +274,4 @@ So why use useReducer instead of useState hook? Basically they are useful in dif
 1.
 
 2. [Should I useState or useReducer?](https://kentcdodds.com/blog/should-i-usestate-or-usereducer)
+3. [When to useMemo and useCallback](https://kentcdodds.com/blog/usememo-and-usecallback)
