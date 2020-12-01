@@ -162,7 +162,10 @@ const BlogPage = () => {
         <div className={styles.blogWrapper}>
           <h1 className={styles.mainHeading}>Blog</h1>
           <div className={styles.disclaimerText}>
-            More of a notebook than a blog, but why not.
+            This is more of a notebook than a blog. If you have copyright
+            claims, mail me and I'll take it down. If you think I'm wrong about
+            something, mail me, as I'd love to learn and discuss. Thanks for
+            hanging around. You're cool.
           </div>
           <ul className={styles.articleList}>
             {filteredPosts.map((post, index) => {

@@ -6,6 +6,7 @@ import MeInColor from "../images/gallery/digital_art/me_in_color.png"
 import Lines from "../images/gallery/digital_art/IMG_0274.png"
 import JustChoose from "../images/gallery/digital_art/IMG_0276.png"
 import SocialDistance from "../images/gallery/digital_art/IMG_0277.png"
+import NeuronsWalking from "../images/gallery/digital_art/IMG_0371.png"
 import Kitsune from "../images/gallery/clay/kitsune_yagmur.jpg"
 import StandingTall from "../images/gallery/clay/standingtall_yagmur-scaled.jpg"
 import Kaonashi from "../images/gallery/clay/kaonashi_yagmur.jpg"
@@ -25,13 +26,6 @@ const GalleryPage = () => {
 
   const digitalWork = [
     {
-      name: "Self Portrait",
-      year: "2020",
-      medium: "Digital art made by using Procreate.",
-      src: MeInColor,
-      imgAlt: "digital illustration of myself in color",
-    },
-    {
       name: "Serene",
       year: "2020",
       medium: "Digital art made by using Procreate.",
@@ -46,6 +40,20 @@ const GalleryPage = () => {
       src: JustChoose,
       imgAlt:
         "digital illustration of a beach and road signs with weird creatures",
+    },
+    {
+      name: "Neuron Riot",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: NeuronsWalking,
+      imgAlt: "digital illustration of neurons walking",
+    },
+    {
+      name: "Self Portrait",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: MeInColor,
+      imgAlt: "digital illustration of myself in color",
     },
     {
       name: "Social Distance",
