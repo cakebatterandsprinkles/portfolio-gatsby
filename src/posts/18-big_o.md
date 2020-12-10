@@ -2,7 +2,7 @@
 title: "Algorithms- The Big O"
 date: "06-06-2020"
 tags: ["Computer Science"]
-summary: "In this article, I briefly explain what the big O notation is."
+summary: "In this article, I briefly explain what the data structures in computer science are and the big O notation."
 ---
 
 #### Understanding the algorithm
@@ -43,13 +43,19 @@ Let's talk about them one by one.
 
 Think of a box that has tiny little boxes inside of it. Each tiny little box is numbered. The big box is an array, and the numbers on the little boxes are the index numbers of the items inside of an array. Nobody cares what you put inside of the smaller boxes (hell, it can be another set of smaller boxes, which is another array!). But it is easy to get a hold of anything you like, you just go and say, oh I want the thing inside the 8th box, and there you have it.
 
+![Array Graph](../images/blog/bigO/array.jpg)
+
 **Hash Table**
 
-A hash table can also be called a hash map, an object or a dictionary. It is a data structure that stores key-value pairs. Think of a box again, it contains many smaller boxes, but this time the smaller boxes have some stuff written on them instead of the numbers. You can think of a phone book too, it has phone numbers inside but each phone number is linked to a name. So this way, if you want to call somebody but don't know their phone number, you just open the book up and look for the person's name (key), and the phone number (value) attached to it.
+A [hash table](https://en.wikipedia.org/wiki/Hash_table) can also be called a hash map, an object or a dictionary. It is a data structure that can map keys to values. Think of a box again, it contains many smaller boxes, but this time the smaller boxes have some stuff written on them instead of the numbers. You can think of a phone book too, it has phone numbers inside but each phone number is linked to a name. So this way, if you want to call somebody but don't know their phone number, you just open the book up and look for the person's name (key), and the phone number (value) attached to it.
+
+A hash table uses a hash function to map the indexes (keys) to an array of buckets, which consists of all the values. Ideally, the has function should assign each key to a unique bucket, but collisions are possible.
+
+![Hash Table Graph](../images/blog/bigO/hashtable.jpg)
 
 **Linked List**
 
-A linked list is an ordered collection of data. The collection contains multiple nodes, and each note contains a chunk of data and a referance to the next node (hence the name "linked"). You can think of a chain when you think of a linked list, with each circle being the nodes. In every linked list, there are two special nodes, one is the head node (first node of the linked list), the other one is the tail node (the last node of the linked list). The tail node can easily be identified as the only node that doesn't have a reference to the next node.
+[A linked list](https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20science%2C%20a%20linked,which%20together%20represent%20a%20sequence.) is an ordered collection of data. The collection contains multiple nodes, and each note contains a chunk of data and a referance to the next node (hence the name "linked"). You can think of a chain when you think of a linked list, with each circle being the nodes. In every linked list, there are two special nodes, one is the head node (first node of the linked list), the other one is the tail node (the last node of the linked list). The tail node can easily be identified as the only node that doesn't have a reference to the next node.
 
 There is two distinctive parts of each node, one is the data container that can hold any type of data, and the second one is the referance to the next one in the chain. Let's create a very primitive linked list with three nodes as an example:
 
@@ -72,6 +78,8 @@ firstNode.next = secondNode
 secondNode.next = thirdNode
 ```
 
+![Linked List](../images/blog/bigO/linkedlist.jpg)
+
 **Graph**
 
 In the graph data structure, the data points are called **nodes** or **vertices** and the relationship between them are called **edges** or **connections**.
@@ -82,11 +90,15 @@ GPS systems and Google Maps also uses a graph data structure to find the shortes
 
 Social networks use **unweighted graphs**, which don't have data associated with their edges.
 
+![Graph](../images/blog/bigO/graph.jpg)
+
 **Tree**
 
 Tree data structure is useful for both back end and front end development. There are different types of trees, but we'll start with the one that is used the most (the most basic type of tree).
 
 Each container on a tree data structure is also called **node**, just like linked lists. Each node holds a data and a reference to its children (or branches, you could say). A child is any node directly underneath a given node. And a child node can refer to the node directly top of it as its parent. Nodes at a given level are called **siblings** if they share the same parent.
+
+![Tree](../images/blog/bigO/tree.jpg)
 
 Of course, it is possible to traverse through a tree. Tree traversal has different types, but in general it means to iterate through different elements inside a tree in some fashion. There are 2 major types of tree traversal methods. The order of traversing is what distinguishes the methods of tree traversal. Let's talk about those 2:
 
@@ -106,6 +118,8 @@ A queue follows _First In First Out principle_ (FIFO for short), which means whe
 
 There is not a queue data structure that is implemented in JS, but there is a data structure called an array, which can do whatever a queue can do and many more. While you can interact with a JS array in many ways, a queue has a very tiny API attached to it, which only has the ability to add and remove records. So in JS, whenever you want to implement a queue from an array (to restrict other methods to interact with an array), you can make a queue class and use two of built-in array methods, and you are done. For adding records to a queue, you'll need `array.unshift()`, and for removing records, you'll need `array.pop()`. You can see the queue implemented from a JS array from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/queue/index.js).
 
+![Queue](../images/blog/bigO/queue.jpg)
+
 **Stack:**
 
 The stack data structure is extremely similar to the queue data structure.
@@ -113,6 +127,8 @@ The stack data structure is extremely similar to the queue data structure.
 In the stack data structure, data also lives in some sort of a container. Adding data to a stack is called **pushing** and removing data from a stack is referred to as **popping**.
 
 A stack follows _First In Last Out principle_ (FILO for short), which means whenever we attempt to remove anything from a stack, it will always be the last one that has been added to the stack. So the first one in will always be the last one out.
+
+![Stack](../images/blog/bigO/stack.jpg)
 
 Think of a stack of books. The topmost book in the stack is the last book you put there, and if you remove that book, the topmost book becomes the one before the last book you put there. If you try to grab a book from the middle, the stack could collapse, so removing stuff in between is strictly prohibited. So the only way to work with this book stack is to pick the last one you put.
 
@@ -363,9 +379,11 @@ There are many types of sorting algorithms, all working in different ways. I am 
 
 Bubble sort and selection sort have the same worst case runtime (n²), which makes them a bad choice for big datasets. If your dataset is expected to grow bigger in time, or you just don't know if it will ever get bigger, other algorithms with better worst case runtimes will work better.
 
-Merge sort has a complexity of n\*log(n), which is better than bubble sort and selection sort, but it is a little bit harder to implement.
+Merge sort has a complexity of O(nlogn), which is better than bubble sort and selection sort, but it is a little bit harder to implement. Quick sort also has a time complexity of O(nlogn).
 
 Now let's implement these together.
+
+**◉ Bubble Sort**
 
 Bubble sort is composed of nested for loops, one of them itering over the whole array, and the other one creates a smaller bubble inside to compare two consecutive values in order. If the value index-1 is bigger than index, then the values will be switched, essentially carrying the biggest values to the end of the array with each iteration. Also, with each iteration, the inner bubble gets smaller, because you know that you carried the biggest number inside the current iteration is carried to the end, so you don't need to check the last item anymore.
 
@@ -386,6 +404,8 @@ function bubbleSort(arr) {
   return arr
 }
 ```
+
+**◉ Selection Sort**
 
 Selection sort is very similar to bubble sort and is consisted of nested for loops. This time, when you're iterating through the array, you assume that the value you are iterating over is the lowest value in the array, and if you see a lower value, you swap the current value with that one.
 
@@ -416,6 +436,8 @@ function selectionSort(arr) {
   return arr
 }
 ```
+
+**◉ Merge Sort**
 
 Merge sort algorithm is generally implemented with recursion. The recursive solution uses 2 seperate functions. The first function takes two sorted arrays, compares the first index of both arrays, pushes the smallest one to a results array, and continues on doing it until nothing is left on at least one of the arrays. The first function returns a combined sorted array from two seperate sorted arrays.
 
@@ -454,7 +476,63 @@ function mergeSort(arr) {
 }
 ```
 
-Quick sort algorithm also requires recursion.
+**◉ Quick Sort**
+
+Quick sort algorithm also requires recursion. You define the middle element of the given array as the pivot, and put two pointers, one pointer to the start of the array (leftIndex) and one pointer to the end of the array (rightIndex). You compare the value of the leftIndex to your pivot, and until you find an element that is greater than the pivot, you move your pointer to the one next to it. You also move your right pointer the one next to it until you find a value that's smaller than the pivot. Swap these two values, and continue until you meet at the pivot. Then sort the subarrays that are positioned left and right to the pivot the same way.
+
+```javascript
+// this function will swap the leftIndex and rightIndex
+function swap(items, leftIndex, rightIndex) {
+  let temporaryVariable = items[leftIndex]
+  items[leftIndex] = items[rightIndex]
+  items[rightIndex] = temporaryVariable
+}
+
+function partition(items, left, right) {
+  let pivot = items[Math.floor((right + left) / 2)] // choose the middle element as the pivot
+  let i = left // assign a left pointer
+  let j = right // assign a right pointer
+  while (i <= j) {
+    while (items[i] < pivot) {
+      i++
+    }
+    while (items[j] > pivot) {
+      j--
+    }
+    if (i <= j) {
+      swap(items, i, j)
+      i++
+      j--
+    }
+  }
+  return i
+}
+
+function quickSort(items, left, right) {
+  let index
+  if (items.length > 1) {
+    index = partition(items, left, right) //index is returned from the partition function
+    if (left < index - 1) {
+      // it means there are more elements on the left side of the pivot, time to quicksort those!
+      quickSort(items, left, index - 1)
+    }
+    if (index < right) {
+      // it means there are more elements on the right side of the pivot, time to quicksort those!
+      quickSort(items, index, right)
+    }
+  }
+  return items
+}
+
+// Let's call quicksort with an array
+let numberArray = [6, 2, 12, 8, 4, 7, 101]
+let sortedArray = quickSort(numberArray, 0, numberArray.length - 1)
+console.log(sortedArray) //prints [2, 4, 6, 7, 8, 12, 101]
+```
+
+JavaScript has a built-in `sort()` function that sorts given arrays in ascending order. Then why do we need all these other algorithms if we have that?
+
+Default `sort()` function in JavaScript is implemented with insertion sort in Chrome's V8 Engine, and it is implemented with merge sort algorithm in the JS engines of Mozilla Firefox and Safari.
 
 #### Resources:
 
@@ -463,3 +541,4 @@ Quick sort algorithm also requires recursion.
 3. https://justin.abrah.ms/computer-science/big-o-notation-explained.html
 4. https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/
 5. https://medium.com/cesars-tech-insights/big-o-notation-javascript-25c79f50b19b
+6.
