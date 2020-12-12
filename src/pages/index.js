@@ -45,46 +45,49 @@ const PortfolioPage = () => {
                 flipSpeedBackToFront="2"
                 containerStyle={{ width: "100%", height: "100%" }}
               >
-                <CardFront style="whereiscovid" onClick={ClickHandler1}>
+                <CardFront cardStyle="whereiscovid" onClick={ClickHandler1}>
                   <p>whereiscovid</p>
                 </CardFront>
-                <CardBack style="backside" onClick={ClickHandler1}>
-                  <p className={styles.cardTitle}>whereiscovid</p>
-                  <p className={styles.cardSummary}>
-                    A COVID19 tracking app. This app provides recent information
-                    about Coronavirus while visualizing data on Google Maps.
-                  </p>
-                  <hr className={styles.hr}></hr>
-                  <div className={styles.cardWrapper}>
-                    <p className={styles.cardLinkTitle}>Demo: </p>
-                    <a
-                      href="https://whereiscovid.info/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.cardlink}
-                    >
-                      https://whereiscovid.info/
-                    </a>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <p className={styles.cardLinkTitle}>Github: </p>
-                    <a
-                      href="https://github.com/cakebatterandsprinkles/whereiscovid"
-                      target="_blank"
-                      rel="noreferrer"
-                      className={styles.cardlink}
-                    >
-                      cakebatterandsprinkles/whereiscovid
-                    </a>
-                  </div>
-                  <div className={styles.cardWrapper}>
-                    <p className={styles.cardLinkTitle}>
-                      Technologies used:{" "}
-                      <span id={styles.technologies}>
-                        React.js, react-router-dom, novelcovid API, pubmed API,
-                        GeoIP, Google Maps API
-                      </span>
+                <CardBack cardStyle="backside" onClick={ClickHandler1}>
+                  <div className={styles.cardBackContainer}>
+                    <p className={styles.cardTitle}>whereiscovid</p>
+                    <p className={styles.cardSummary}>
+                      A COVID19 tracking app. This app provides recent
+                      information about Coronavirus while visualizing data on
+                      Google Maps.
                     </p>
+                    <hr className={styles.hr}></hr>
+                    <div className={styles.cardWrapper}>
+                      <p className={styles.cardLinkTitle}>Demo: </p>
+                      <a
+                        href="https://whereiscovid.info/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.cardlink}
+                      >
+                        https://whereiscovid.info/
+                      </a>
+                    </div>
+                    <div className={styles.cardWrapper}>
+                      <p className={styles.cardLinkTitle}>Github: </p>
+                      <a
+                        href="https://github.com/cakebatterandsprinkles/whereiscovid"
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.cardlink}
+                      >
+                        cakebatterandsprinkles/whereiscovid
+                      </a>
+                    </div>
+                    <div className={styles.cardWrapper}>
+                      <p className={styles.cardLinkTitle}>
+                        Technologies used:{" "}
+                        <span id={styles.technologies}>
+                          React.js, react-router-dom, novelcovid API, pubmed
+                          API, GeoIP, Google Maps API
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </CardBack>
               </ReactCardFlip>
@@ -97,10 +100,10 @@ const PortfolioPage = () => {
                 flipSpeedBackToFront="2"
                 containerStyle={{ width: "100%", height: "100%" }}
               >
-                <CardFront style="mendokusai" onClick={ClickHandler2}>
+                <CardFront cardStyle="mendokusai" onClick={ClickHandler2}>
                   <p>mendokusai</p>
                 </CardFront>
-                <CardBack style="backside" onClick={ClickHandler2}>
+                <CardBack cardStyle="backside" onClick={ClickHandler2}>
                   <p className={styles.cardTitle}>mendokusai</p>
                   <p className={styles.cardSummary}>
                     A todo list app for people who have problem planning their
@@ -149,10 +152,10 @@ const PortfolioPage = () => {
                 flipSpeedBackToFront="2"
                 containerStyle={{ width: "100%", height: "100%" }}
               >
-                <CardFront style="mockingbird" onClick={ClickHandler3}>
+                <CardFront cardStyle="mockingbird" onClick={ClickHandler3}>
                   <p>mockingbird</p>
                 </CardFront>
-                <CardBack style="backside" onClick={ClickHandler3}>
+                <CardBack cardStyle="backside" onClick={ClickHandler3}>
                   <p className={styles.cardTitle}>mockingbird</p>
                   <p className={styles.cardSummary}>
                     A 7 minute journal app for well-being.
@@ -200,10 +203,10 @@ const PortfolioPage = () => {
                 flipSpeedBackToFront="2"
                 containerStyle={{ width: "100%", height: "100%" }}
               >
-                <CardFront style="breakout" onClick={ClickHandler4}>
+                <CardFront cardStyle="breakout" onClick={ClickHandler4}>
                   <p>breakout</p>
                 </CardFront>
-                <CardBack style="backside" onClick={ClickHandler4}>
+                <CardBack cardStyle="backside" onClick={ClickHandler4}>
                   <p className={styles.cardTitle}>breakout</p>
                   <p className={styles.cardSummary}>
                     Atari Breakout game remade with HTML5 Canvas API.

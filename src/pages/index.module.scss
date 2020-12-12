@@ -71,6 +71,10 @@
   border-radius: 5px;
 }
 
+.cardBackContainer {
+  position: relative;
+}
+
 .cardWrapper {
   width: 100%;
   display: flex;
@@ -120,9 +124,6 @@
   .cardSummary,
   .cardWrapper {
     font-size: 0.75rem;
-  }
-
-  .cardWrapper {
     margin-bottom: 0.25rem;
   }
 
@@ -145,9 +146,6 @@
   .cardSummary,
   .cardWrapper {
     font-size: 0.6rem;
-  }
-
-  .cardWrapper {
     margin-bottom: 0.2rem;
   }
 

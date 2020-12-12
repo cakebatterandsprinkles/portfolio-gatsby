@@ -3,7 +3,12 @@ import styles from "./CardBack.module.scss"
 
 const CardBack = props => {
   return (
-    <div className={styles[props.style]} onClick={props.onClick}>
+    <div
+      className={styles[props.cardStyle]}
+      onClick={props.onClick}
+      onKeyDown={() => {}}
+      aria-hidden="true"
+    >
       {props.children}
     </div>
   )

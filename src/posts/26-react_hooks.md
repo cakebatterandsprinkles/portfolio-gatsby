@@ -111,6 +111,30 @@ There is an npm package called **[react-error-boundary](https://www.npmjs.com/pa
 
 ### useReducer()
 
+useReducer hook takes two arguments, the first one is a reducer function, and the second one is the initial state.
+
+Example:
+
+```javascript
+import React from "react"
+
+function countReducer(currentState, newState) {
+  return newState
+}
+
+function Counter({ start = 0, incrementBy = 1 }) {
+  const [count, setCountDispatch] = React.useReducer(countReducer, start)
+
+  const incrementCounter = () => countReducer(count + incrementBy)
+  return <button onClick={incrementCounter}></button>
+}
+function App() {
+  return <Counter />
+}
+
+export default App
+```
+
 ### useCallback()
 
 ### useContext()
