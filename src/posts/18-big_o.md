@@ -49,13 +49,13 @@ Think of a box that has tiny little boxes inside of it. Each tiny little box is 
 
 A [hash table](https://en.wikipedia.org/wiki/Hash_table) can also be called a hash map, an object, or a dictionary. It is a data structure that can map keys to values. Think of a box again, it contains many smaller boxes, but this time the smaller boxes have some stuff written on them instead of the numbers. You can think of a phone book too, it has phone numbers inside but each phone number is linked to a name. So this way, if you want to call somebody but don't know their phone number, you just open the book up and look for the person's name (key), and the phone number (value) attached to it.
 
-A hash table uses a hash function to map the indexes (keys) to an array of buckets, which consists of all the values. Ideally, the has function should assign each key to a unique bucket, but collisions are possible.
+A hash table uses a hash function to map the **indexes (keys)** to an **array of buckets**, which consists of all the values. Ideally, the hash function should assign each key to a unique bucket, but collisions are possible.
 
 ![Hash Table Graph](../images/blog/bigO/hashtable.jpg)
 
 **Linked List**
 
-[A linked list](https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20science%2C%20a%20linked,which%20together%20represent%20a%20sequence.) is an ordered collection of data. The collection contains multiple nodes, and each note contains a chunk of data and a reference to the next node (hence the name "linked"). You can think of a chain when you think of a linked list, with each circle being the nodes. In every linked list, there are two special nodes, one is the head node (first node of the linked list), the other one is the tail node (the last node of the linked list). The tail node can easily be identified as the only node that doesn't have a reference to the next node.
+A [linked list](https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20science%2C%20a%20linked,which%20together%20represent%20a%20sequence.) is an ordered collection of data. The collection contains multiple nodes, and each note contains a chunk of data and a reference to the next node (hence the name "linked"). You can think of a chain when you think of a linked list, with each circle being the nodes. In every linked list, there are two special nodes, one is the **head node** (first node of the linked list), the other one is the **tail node** (the last node of the linked list). The tail node can easily be identified as the only node that doesn't have a reference to the next node.
 
 There are two distinct parts of each node, one is the data container that can hold any type of data, and the second one is the reference to the next one in the chain. Let's create a very primitive linked list with three nodes as an example:
 
@@ -80,9 +80,11 @@ secondNode.next = thirdNode
 
 ![Linked List](../images/blog/bigO/linkedlist.jpg)
 
+There is also another version of the linked list, which is called the **[doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list)**, which differs from the regular linked list data type by adding an extra slot that keeps a reference to the previous node. The advantage of this data type is, the traversal can be bilateral, the disadvantage of it is it will take more space, as you're keeping additional data on each node.
+
 **Graph**
 
-In the graph data structure, the data points are called **nodes** or **vertices**, and the relationships between them are called **edges** or **connections**.
+In the [graph data structure](<https://en.wikipedia.org/wiki/Graph_(abstract_data_type)>), the data points are called **nodes** or **vertices**, and the relationships between them are called **edges** or **connections**.
 
 The graph data structure is used to represent networks, such as a telephone network of a city or a social network like Twitter, Instagram, and Facebook. The relationship between nodes can be bi or unidirectional depending on the design. If they work unilaterally, meaning the connection exists one way but not the other way, then it is called a **directed graph.** If the edges don't have a specific direction (they're active in both ways) they are called **undirected graphs.** Some operations you can perform on a graph data structure is addNode, addEdge, removeNode, removeEdge, contains (to check if a given value is inside the graph), or hasEdge (to check if a certain connection between given nodes exists).
 
@@ -94,7 +96,7 @@ Social networks use **unweighted graphs**, which don't have data associated with
 
 **Tree**
 
-The tree data structure is useful for both back end and front end development. There are different types of trees, but we'll start with the one that is used the most (the most basic type of tree).
+The [tree data structure](<https://en.wikipedia.org/wiki/Tree_(data_structure)>) is useful for both back end and front end development. There are different types of trees, but we'll start with the one that is used the most (the most basic type of tree).
 
 Each container on a tree data structure is also called **node**, just like linked lists. Each node holds data and a reference to its children (or branches, you could say). A child is any node directly underneath a given node. And a child node can refer to the node directly on top of it as its parent. Nodes at a given level are called **siblings** if they share the same parent.
 
@@ -112,7 +114,7 @@ To see the JavaScript implementation of a binary search tree, you can check [her
 
 **Queue:**
 
-A queue is also like a container of sorts, where pieces of data enter from one end and exit from the other. The best way to imagine a queue is to imagine a real-life queue, where you're going to buy a train ticket or a movie ticket. A person has to enter the line from the end, and wait until it's his/her turn, buy the ticket and leave the line. Skipping or cutting in line is strictly prohibited, so the order does matter. The process of adding data into a queue is called **enqueuing**, and removing data from the queue is called **dequeuing**.
+A [queue](<https://en.wikipedia.org/wiki/Queue_(abstract_data_type)>) is also like a container of sorts, where pieces of data enter from one end and exit from the other. The best way to imagine a queue is to imagine a real-life queue, where you're going to buy a train ticket or a movie ticket. A person has to enter the line from the end, and wait until it's his/her turn, buy the ticket and leave the line. Skipping or cutting in line is strictly prohibited, so the order does matter. The process of adding data into a queue is called **enqueuing**, and removing data from the queue is called **dequeuing**.
 
 A queue follows _First In First Out principle_ (FIFO for short), which means whenever we attempt to remove anything from the queue, it will always be the one that's closest to the endpoint of the queue. So the first one in will always be the first one out.
 
@@ -122,7 +124,7 @@ There is not a queue data structure that is implemented in JS, but there is a da
 
 **Stack:**
 
-The stack data structure is extremely similar to the queue data structure.
+The [stack data structure](<https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>) is extremely similar to the queue data structure.
 
 In the stack data structure, data also lives in some sort of a container. Adding data to a stack is called **pushing** and removing data from a stack is referred to as **popping**.
 
@@ -187,13 +189,13 @@ findLast([
 ]) // prints "Darwin", complexity O(1).
 ```
 
-Regardless of the number of items in a given array, the time of a single iteration will be constant. No matter the size of the given array, this function will iterate over it just a single time, so the complexity of this algorithm is O(1).
+This function will access a single index, which takes constant time, so the complexity of this algorithm is O(1).
 
 **O(log(n))**
 
-O(n²) describes a logarithmic-time algorithm.
+O(log(n)) describes a logarithmic-time algorithm.
 
-Logarithms (log for short) were discovered by a mathematician named **John Napier** in the 1500s. Simply put, logarithms are the inverse of exponentiation, just like subtraction is the inverse of addition or division is the reverse of multiplication.
+Logarithms (log for short) were discovered by a mathematician named **[John Napier](https://en.wikipedia.org/wiki/John_Napier)** in the 1500s. Simply put, logarithms are the inverse of exponentiation, just like subtraction is the inverse of addition or division is the reverse of multiplication.
 
 Let's see an example, and get used to the related terminology:
 
@@ -236,7 +238,7 @@ The complexity of the algorithm is highly dependent on the data size, so this al
 
 **O(n log(n))**
 
-O(n²) describes a quasilinear-time algorithm.
+O(n log(n)) describes a quasilinear-time algorithm.
 
 One of the examples of an algorithm that has a complexity of O(n log(n)) is the **merge sort algorithm.** This algorithm sorts the data in a list. It works by splitting each list into sublists, each of them containing 1 item at first, therefore each sublist is sorted. It merges the sublists by 2, sorting as it merges. In the end, it results in a single sorted list. This is usually the most efficient approach if you're dealing with large lists.
 
@@ -248,7 +250,7 @@ O(n²) describes a quadratic-time algorithm.
 
 **O(2ⁿ) and memoization**
 
-O(2ⁿ) describes an exponential-time algorithm. If an algorithm uses exponential runtime, it means it can be written better, so try not to accept a solution that has an exponential runtime. For example, the recursive solution to the Fibonacci problem that is shown [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js) as the fib2 function has exponential runtime. For an n of 5, this function calls fib(4) and fib(3), and both of them call the same function with smaller numbers until it returns with a number, not caring about calling the same functions as each other, so it is very much ineffective as well.
+O(2ⁿ) describes an exponential-time algorithm. Try not to accept a solution that has an exponential runtime (although sometimes, it is what it is). For example, the recursive solution to the Fibonacci problem that is shown [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js) as the fib2 function has exponential runtime. For an n of 5, this function calls fib(4) and fib(3), and both of them call the same function with smaller numbers until it returns with a number, not caring about calling the same functions as each other, so it is very much ineffective as well.
 
 Now here's the golden question: Is there any way we can improve this recursive solution's runtime?
 
@@ -259,6 +261,8 @@ Memoization is the act of storing the arguments of each function call as well as
 Now it's time to refactor the recursive solution. For that, we write a memoizer function that will take our ineffective recursive function and return a fast, memoized Fibonacci function. So the memoizer function will be a function that will return a better version of our old fib2 function. Check the fib3 example from [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/fibonacci/index.js).
 
 **O(n!)**
+
+O(n!) describes a factorial-time algorithm. An example of an algorithm that does have a factorial-time complexity is **[bogosort](https://en.wikipedia.org/wiki/Bogosort)**, which is an extremely inefficient sorting algorithm that randomly shuffles items and checks if they are sorted until it is somehow sorted.
 
 The overall comparison between these Big Os look like this:
 
@@ -341,9 +345,9 @@ In this example, as the input length approaches infinity, the length of the arra
 - Insertion -> O(1)
 - Removal -> O(1)
 - Access -> O(1)
-- Search -> O(n)
+- Search -> Searching for a key is O(1), but searching for a value is O(n).
 
-**Big O's of object methods:**
+**Big O's of some object methods:**
 
 - Object.keys -> O(n)
 - Object.values -> O(n)
@@ -377,7 +381,7 @@ There are many types of sorting algorithms, all working in different ways. I am 
 
 Bubble sort and selection sort have the same worst-case runtime (n²), which makes them a bad choice for big datasets. If your dataset is expected to grow bigger in time, or you just don't know if it will ever get bigger, other algorithms with better worst-case runtimes will work better.
 
-Merge sort has a complexity of O(nlog(n)), which is better than bubble sort and selection sort, but it is a little bit harder to implement. Quicksort also has a time complexity of O(nlog(n)).
+Merge sort has a complexity of O(n\*log(n)), which is better than bubble sort and selection sort, but it is a little bit harder to implement. Quicksort also has a time complexity of O(n\*log(n)).
 
 Now let's implement these together.
 
@@ -539,3 +543,4 @@ Default `sort()` function in JavaScript is implemented with insertion sort in Ch
 3. [Big-O notation explained by a self-taught programmer](https://justin.abrah.ms/computer-science/big-o-notation-explained.html) by Justin Abrahms
 4. [What is Big O Notation Explained: Space and Time Complexity](https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/) by Shen Huang
 5. [Big O Notation in JavaScript](https://medium.com/cesars-tech-insights/big-o-notation-javascript-25c79f50b19b) by César Antón Dorantes
+6. [Big O of Objects](https://medium.com/@diego.zegarra78/big-o-of-objects-e1e92d7358e7) by Diego Zegarra
