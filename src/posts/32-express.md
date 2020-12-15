@@ -78,7 +78,7 @@ yourApp/
  |--public/           # Holds all the static files
  |--views/            # Contains HTML templates that are served by the routes
  |--tests/            # The code that tests the application code
- |--.env              # Logs environment-specific variables
+ |--.env              # Holds environment-specific variables
  |--.gitignore        # Specifies files that Git should ignore
  |--README.md         # Contains information about the app, a form of documentation
  |--LICENSE           # Specifies license information
