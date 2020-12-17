@@ -13,19 +13,91 @@ In JavaScript, **scope** can be defined as the area that something covers, which
 
 **★ Global Scope**
 
-If a variable is defined outside of all functions and curly braces (which can be referred to as **blocks**), it is in global scope and it can be accessed from anywhere from your code. Although it looks easier to declare every variable globally, it is not advised to, as it can cause name collisions and unintended modifications. You should declare variables as locally as possible, so that only the code blocks who actually need that variable will be able to access it or change it.
+If a variable is defined outside of all functions and curly braces (which can be referred to as **blocks**), it is in the global scope and it can be accessed from anywhere from your code. Although it looks easier to declare every variable globally, it is not advised to, as it can cause name collisions and unintended modifications. You should declare variables as locally as possible so that only the code blocks who actually need that variable will be able to access it or change it.
 
 **★ Local Scope**
 
-In JavaScript, there are two main kinds of local scope, one being the **function scope**, and the other one being the **block scope**. Any variable declared inside these scopes are considered to be **local variables**.
+In JavaScript, there are two main kinds of local scope, one being the **function scope**, and the other one being the **block scope**. Any variable declared inside these scopes is considered to be **local variables**.
 
-Any varible declared in function scope (between the curly braces in the function definition) can only be used inside the same scope. It cannot be accessed from anywhere. Also, functions do not have access to each other's scopes. They all have their individual scopes.
+Any variable declared in function scope (between the curly braces in the function definition) can only be used inside the same scope. It cannot be accessed from anywhere. Also, functions do not have access to each other's scopes. They all have their individual scopes.
 
 If a function is defined inside of another function, the inner function has the access to the outer function's variables, but the outer function doesn't have access to the inner function's variables. This is called **lexical scoping**.
 
 A block is any code in between curly braces, and if you declare any variable inside a block using 'let' and 'const', it will only be available inside of that block. (We'll elaborate this in the differences subtitle.)
 
 #### What is Closure?
+
+**A closure** in JavaScript is a function that is defined inside of another function. The closure has access to three different scopes, one is its own functional scope, the second one is the outer function's variables (outer function's function scope), and the third one is the global scope. Closures are usually returned so that they can be used to create side effects and create private variables.
+
+Let's create a very simple closure:
+
+```javascript
+function outerFn() {
+  const outerVariable = "Hello from the OuterFn!"
+  return function innerFn() {
+    alert(outerVariable)
+  }
+}
+
+outerFn()() // Alert: "Hello from the OuterFn!"
+```
+
+**Side effects** are anything you do that is observable from outside, aside from returning a value from a function. A side effect can be logging something to the console, writing to a file or the screen, modifying external variables (variables outside of its own scope), setting a timeout or an interval, an Ajax request, or calling other functions that have side effects.
+
+Let's create an example of closure with some side effect:
+
+```javascript
+// You want to create a function that will celebrate your friend's birthday, but on their birthday.
+// It should also inform you about their age.
+function celebrateBirthday(name, age) {
+  return function createAlertAndLogInformation() {
+    alert(`Happy birthday, ${name}!`)
+    console.log(`${name} is ${age} years old.`)
+  }
+}
+
+const celebrateFriend1 = celebrateBirthday("Friend1", 30)
+
+console.log(typeof celebrateFriend1) // function
+celebrateFriend1()
+```
+
+You don't always have to return a function, you can return an object that has methods you can call.
+
+```javascript
+function celebrateBirthday(name, age) {
+  return {
+    createAlertAndLogInformation() {
+      alert(`Happy birthday, ${name}!`)
+      console.log(`${name} is ${age} years old.`)
+    },
+    sayHi() {
+      console.log("Hi!")
+    },
+  }
+}
+
+const celebrateFriend1 = celebrateBirthday("Friend1", 30)
+
+console.log(typeof celebrateFriend1, celebrateFriend1) // object
+celebrateFriend1.createAlertAndLogInformation()
+```
+
+In both of the examples above, the age variable is only exposed by the createAlertAndLogInformation closure. It cannot be reached or manipulated by outside sources, so it serves as one of the reasons why we use closures: **data privacy**.
+
+Another reason to use closures is to use functions to create functions (which can be referred to as **function composition**). Let's create a simple example of this:
+
+```javascript
+function createGreeting(greeting, name) {
+  return `${greeting}, ${name}-san.`
+}
+
+const morningGreetingJp = name => createGreeting("Ohayou gozaimasu", name)
+const eveningGreetingJp = name => createGreeting("Konbanwa", name)
+
+console.log(morningGreetingJp("Watanabe"))
+console.log(eveningGreetingJp("Akiyama"))
+```
 
 #### var, let and const: the differences
 
@@ -63,7 +135,7 @@ const cat = "Crookshanks";
 cat = "Nelly" // throws an error. You cannot reassign a value to a constant variable.
 ```
 
-★ With let and const, a new concept was introduced to JS, named **block scope**, that was introduced at the beginning of this article. It means a variable is only available in the block you define it in or any lower blocks.
+★ With let and const, a new concept was introduced to JS, named **block scope**, which was introduced at the beginning of this article. It means a variable is only available in the block you define it in or any lower blocks.
 
 **A block** is a snippet surrounded with curly braces ({}).
 
