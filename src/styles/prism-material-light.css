@@ -63,7 +63,7 @@ pre[class*="language-"] {
 }
 
 .token.atrule {
-  color: #7c4dff;
+  color: #df18c1;
 }
 
 .token.attr-name {
@@ -145,7 +145,7 @@ pre[class*="language-"] {
 }
 
 .token.keyword {
-  color: #7c4dff;
+  color: #df18c1;
 }
 
 .token.number {

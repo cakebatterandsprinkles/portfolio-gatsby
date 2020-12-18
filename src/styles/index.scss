@@ -97,10 +97,7 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
+
 mark {
   background-color: #ff0;
   color: #000;
@@ -262,11 +259,14 @@ h3 {
   margin-top: 1.25rem;
 }
 h4 {
-  font-size: 1rem;
-  margin-top: 1.25rem;
+  font-size: 1.1rem;
+  font-family: inherit !important;
+  font-weight: bolder;
+  margin-top: 1.5rem;
 }
 h5 {
-  font-size: 0.85028rem;
+  font-size: 0.9rem;
+  font-family: var(--article-font) !important;
 }
 h6 {
   font-size: 0.78405rem;
