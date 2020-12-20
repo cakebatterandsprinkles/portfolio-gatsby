@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "gatsby": "^2.24.27",
+    "gatsby-plugin-page-progress": "^2.1.1",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.10.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",

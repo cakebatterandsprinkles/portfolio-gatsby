@@ -63,5 +63,16 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-page-progress",
+      options: {
+        includePaths: [{ regex: "^/blog" }],
+        excludePaths: ["/gallery"],
+        height: 3,
+        prependToBody: false,
+        color: `var(--palepink)`,
+        footerHeight: 500,
+      },
+    },
   ],
 }

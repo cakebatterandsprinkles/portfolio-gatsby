@@ -25,6 +25,16 @@
   --heading-font: "Share Tech Mono";
 }
 
+#gatsby-plugin-page-progress {
+  background: linear-gradient(
+    to right,
+    var(--orange) 0%,
+    var(--crimson) 30%,
+    var(--deeppink) 60%,
+    var(--darkviolet) 100%
+  );
+}
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
