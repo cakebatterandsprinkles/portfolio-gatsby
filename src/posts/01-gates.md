@@ -1,11 +1,11 @@
 ---
 title: "Small things that make up a computer: Bits and Logic Gates"
-date: "06-02-2020"
+date: "2020-06-02"
 tags: ["Computer Science"]
 summary: "This article briefly explains the binary system, bits, and logic gates. It also talks about a very weird room with crazy light switches."
 ---
 
-**Binary and bit**
+#### Binary and bit
 
 When I started to get interested in programming, I realized that I didn't know much about how computers work. I could use a computer efficiently, but I had no idea how it did all the things it did.
 
@@ -19,7 +19,7 @@ Think of a basic light switch. It is either on or off, right? If there is electr
 
 A computer is composed of tiny wires (a lot of them in fact!), and there is either electricity passing through them or not. This single, tiny on or off data is called a **bit.** Modern computers mostly work with sets of 8 bits, which is also referred to as a **byte.** And computers in the most basic sense, work with A LOT of these wires connected in ways that make sense.
 
-**What the heck is a NAND Gate?**
+#### What the heck is a NAND Gate?
 
 In order to understand what a NAND gate is, we need to understand the gate concept first.
 
@@ -29,7 +29,7 @@ Now imagine you enter a room. There is a light that is off, but when you look at
 
 Welcome to the NAND gate. NAND gate specifically creates an output of 0 only if both of its inputs are 1. Otherwise, it creates an output of 1.
 
-**Some Other Gates**
+#### Some Other Gates
 
 Why did we start with the NAND gate?
 
@@ -45,7 +45,7 @@ But here we are, and welcome to the **AND gate**! An AND gate specifically creat
 
 I have written about NAND gate, NOT gate and AND gate, but there are many more gates inside of our computers. (OR gate, XOR gate, NOR gate, and many more, and all can be built from NAND gates!) As they implement logic, and a computer is a logical creature, we call these building blocks **logic gates.**
 
-**Resources**
+#### Resources:
 
 1. Wikipedia- [NAND Gate](https://en.wikipedia.org/wiki/NAND_gate), [NOT Gate](<https://en.wikipedia.org/wiki/Inverter_(logic_gate)>), [AND Gate](https://en.wikipedia.org/wiki/AND_gate)
 2. ["From Nand to Tetris" Part1 & Part2](https://www.nand2tetris.org/) by Hebrew University of Jerusalem
