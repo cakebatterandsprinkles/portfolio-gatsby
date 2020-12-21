@@ -1,11 +1,11 @@
 ---
 title: "The lovely Unicode"
-date: "06-30-2020"
+date: "2020-06-30"
 tags: ["Computer Science", "History"]
 summary: "This article explains ASCII, Unicode, UTF-8 and a little bit of their history."
 ---
 
-**How ASCII was born**
+#### How ASCII was born
 
 Every data inside a computer has to be kept as 0's and 1's. And when I say everything, it means everything, from the numbers, symbols, and letters to the images and sounds. Everything inside a computer is 1's and 0's.
 
@@ -28,7 +28,7 @@ This is an example extended ASCII table (characters between 128-255):
 
 ###### _Image Credit: https://www.webopedia.com/TERM/E/extended_ASCII.html_
 
-**How Unicode was born**
+#### How Unicode was born
 
 When the [world wide web](https://en.wikipedia.org/wiki/World_Wide_Web) came along (around the 1990s), computers actively started to share data. To parse the data correctly, computers needed to support all these conflicting character sets from different platforms. And if they didn't, the data could be corrupted when it was shared. Of course, nobody wanted that.
 
@@ -44,7 +44,7 @@ The characters in Arabic Hebrew and most European languages are encoded with 2 b
 
 Unicode is universally supported by all operating systems, search engines, browsers, laptops, smartphones, and the world wide web. It is great to have standards!
 
-**Resources:**
+#### Resources:
 
 1. Unicode Official Webpage - https://home.unicode.org/
 2. Wikipedia - [ASCII (American Standard Code for Information Interchange)](https://en.wikipedia.org/wiki/ASCII), [The extended ASCII character set](https://en.wikipedia.org/wiki/Extended_ASCII), [Unicode Transformation Format (UTF-8)](https://en.wikipedia.org/wiki/UTF-8), [world wide web](https://en.wikipedia.org/wiki/World_Wide_Web), [Unicode](https://en.wikipedia.org/wiki/Unicode)
