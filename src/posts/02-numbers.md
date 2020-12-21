@@ -1,13 +1,11 @@
 ---
-title: "Numbers"
-date: "06-14-2020"
+title: "Our first numbers: How many rocks do you have?"
+date: "2020-06-14"
 tags: ["Computer Science", "Mathematics", "History"]
 summary: "This article briefly explains the history of numbers, as well as the definitions of unary, binary, denary, and hexadecimal."
 ---
 
-### Our first numbers: How many rocks do you have?
-
-**Tally Marks**
+#### Tally Marks
 
 Counting stuff is as ancient as we are. Around 30,000 years ago, even without a written language, our ancestors were counting stuff by bending their fingers, or pointing out to stones, or making marks with sharp stuff on bones which we now call the **[tally marks](https://en.wikipedia.org/wiki/Tally_marks)** (also called hash marks.) Clusters of five strokes made it more legible, and different groups of people all around the world invented the tally system in slightly different ways, but always with the same logic- clustering 5 strokes in an order.
 
@@ -17,7 +15,7 @@ Some experiments and observations show that animals also seem to have a good num
 
 Various number systems were invented throughout human history, but 4 main ones were used by the biggest ancient human civilizations: the Babylonian numerals, the Egyptian numerals, the Roman numerals, and the Mayan numerals.
 
-**Ancient Babylonian numerals**
+#### Ancient Babylonian numerals
 
 The Babylonian numeral system is the first known [positional numeral system](https://en.wikipedia.org/wiki/Positional_notation), which means a value of a digit depends on the position of the digit.
 
@@ -29,7 +27,7 @@ The ancient [Babylonian counting system](https://en.wikipedia.org/wiki/Babylonia
 
 Ancient Babylonians affected the world in many ways. Did you ever wonder why there are 60 seconds in a minute, 60 minutes in an hour, and 24 hours in a day? Or why there are 360 degrees in a full circle? These are all echoes of this base-60 numeral system that ancient Babylonians used.
 
-**Ancient Egyptian numerals**
+#### Ancient Egyptian numerals
 
 The [ancient Egyptian counting system](https://en.wikipedia.org/wiki/Egyptian_numerals) (appeared around 3000 BC) used objects from everyday life to symbolize numbers and used base-10. A rod meant 1, a cattle hobble was 10, a coiled rope was 100, a lotus flower was 1000. They didn't have the concept of positional notation.
 
@@ -39,7 +37,7 @@ This is what the ancient Egyptian numeral system looked like:
 
 Ancient Egyptians also had a symbol for zero, but as their system is not positional, it was mainly used to indicate the base level of the structures they were building (like pyramids!).
 
-**Ancient Roman numerals**
+#### Ancient Roman numerals
 
 [Ancient Romans](https://en.wikipedia.org/wiki/Ancient_Rome) invented [their own numerals](https://en.wikipedia.org/wiki/Roman_numerals). These numerals were widely used in Europe until the more efficient Arabic numerals took their place. Romans used selected letters from the Latin alphabet to indicate certain numbers. For example "I" was one, "V" was 5, "X" was 10, "L" was 50, "C" was a hundred, "D" was five hundred and "M" was one thousand. Every other number was constructed from these 7 numerals. They also invented a method, when you write multiple symbols, you take the biggest symbol, and if there is a symbol on their left, you subtract them (like IV, which is 4), if there is a symbol on their right side you add them (like VII, which is 7). So Roman numerals didn't have positional notation, this numeral system also lacked zero, but had a verbal equivalent, which was "nulla" (meant none).
 
@@ -47,7 +45,7 @@ This is what the ancient Roman numeral system looked like:
 
 ![Roman numerals](../images/blog/numbers/roman-numerals.png)
 
-Image Credit: https://www.unrv.com/culture/roman-numerals.php
+###### Image Credit: https://www.unrv.com/culture/roman-numerals.php
 
 To give some examples, the number 37 in base-10 is represented as XXXVII (XXX + VII) in Roman numerals. The number 247 is represented with CCXLVII (CC + XL + VII).
 
@@ -59,25 +57,23 @@ Central and South America (which is now Mexico, Belize, Guatemala, Honduras, El 
 
 The Mayans were not a unified society but a combination of twenty culturally similar, independent states. They had a writing system, which enabled them to build a highly developed society, built beautiful cities and temples using stones and metals, observed the skies and made themselves a calendar, was occupied with mathematics, astronomy, art, architecture, and had a political, military and religious order. Unfortunately, one of the materials they used for their writings was tree barks, and much of it was destroyed by the tropical climate. Most of the other cultural remnants were destroyed in the 1500s by the Spanish conquerors. (In fact, all three ancient civilizations of America shared the same fate. They suffered from the attacks of Spanish conquerors and were devastated by the spread of smallpox.)
 
-**Ancient Mayan numerals**
+#### Ancient Mayan numerals
 
 The Mayan number system dates back to the 4th century, and it had a base of 20. The theory is that as Mayans lived in a hotter climate, and for this reason, shoes were worn rarely, and the total number of fingers and toes around all the time was mostly 20. Mayans used two symbols to write their numbers: a dot (.) represented the single units (one through four) and a dash (-) represented five. These symbols when used together to write the numbers resemble an abacus, so it is speculated that Mayans might have used an abacus. [An abacus](https://en.wikipedia.org/wiki/Abacus) is a counting frame that consists of rows and movable beads connected to those rows. Its origin is unknown, as it was used in slightly different designs throughout the world. Nowadays it is used as a tool to teach children mathematics.
 
 The Mayan's were also the first to symbolize the concept of nothing (or zero). The most commonly used symbol for zero was a shell.
 
-![Mayan Basic Numerals](../images/blog/numbers/mayan1469.gif)
+![Mayan Basic Numerals](../images/blog/numbers/mayan1469.jpeg)
 
-_This is how Mayans showed small numbers._
+###### This is how Mayans showed small numbers.
 
-_Image Credit: http://www.math.wichita.edu/history/topics/num-sys.html#mayan_
+###### Image Credit: http://www.math.wichita.edu/history/topics/num-sys.html#mayan
 
 The Mayans wrote their numbers vertically, with the lowest denomination at the bottom. The numbers also hold positional value, meaning the number at the bottom was multiplied with 20⁰, the second row from the bottom was multiplied with 20¹ (20), third with 20² (400), fourth with 20³ (8,000), fifth with 20⁴ (160,000).
 
 Mayans used a base-18 system when making their calendar. They must have figured out that the Earth was spinning around one time around the sun in 365 days because they made their calendar exactly 365 days long. Each month had 20 days and there were 18 months in a year (20 \* 18 = 360), and the 19th month of the year was just 5 days long (360 + 5 = 365), and those 5 days were believed to be filled with bad luck, misfortune, and danger. We still use a manipulated version of the 365-day calendar Mayans invented.
 
-### Bonus Section:
-
-**Ancient Inca Counting System: Quipu**
+#### Ancient Inca Counting System: Quipu
 
 Incans were a highly advanced civilization that built huge cities, developed road systems, did trading, created jewelry from gold, became skillful potters, wowen beautiful fabrics, and treated their citizens fairly. What makes it even more impressive is that they did all of this without a written language.
 
@@ -87,17 +83,17 @@ Quipu was made by thinner strings that were looped around a larger cord. Now, Qu
 
 ![Inca Quipu](../images/blog/numbers/2560px-Quipo_in_the_Museo_Machu_Picchu,_Casa_Concha,_Cusco.jpg)
 
-_This is what an Inca quipu looked like._
+###### This is what an Inca quipu looked like.
 
-_Image Credit: By Pi3.124 - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=69539294_
+###### Image Credit: By Pi3.124 - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=69539294
 
-**Papua New Guinea- Oksapmin Counting System**
+#### Papua New Guinea- Oksapmin Counting System
 
 Another society in the Oksapmin area of Papua New Guinea created a counting system (and [a language](https://en.wikipedia.org/wiki/Oksapmin_language)!) where numerical representations were mapped on body parts. Their numerical system initially didn't include arithmetic functions, but after they began trading they also incorporated an arithmetic system into their counting system.
 
 ![Oksapmin counting System](../images/blog/numbers/The-Oksapmin-27-body-part-counting-system-adapted-from-Saxe-2012-2.png)
 
-_Image Credit: https://www.researchgate.net/publication/274496244_Approaches_to_Reduction_in_Treatments_of_Culture-Cognition_Relations_Affordances_and_Limitations_
+###### Image Credit: https://www.researchgate.net/publication/274496244_Approaches_to_Reduction_in_Treatments_of_Culture-Cognition_Relations_Affordances_and_Limitations
 
 Here is a video of a woman displaying the Oksapmin counting system:
 
@@ -128,7 +124,7 @@ It is the same with hexadecimal, just the place values change (..., 16³(4096), 
 
 So 986 in base-10 becomes this in base-16: (3 _ 256) + (13(D) \* 16) + (10(A) _ 1), which is **3DA**.
 
-**Resources:**
+#### Resources:
 
 1. [Numerical Mechanisms and Children’s Concept of Numbers](http://alumni.media.mit.edu/~stefanm/society/som_final_natalia_aggelos_stefan.pdf)- Natalia Marmasse, Aggelos Bletsas, Stefan Marti
 2. Geary, D.C. (1994). Children’ s Mathematical Development: Research and Practical Applications. Washington, DC: American Psychological Association.
