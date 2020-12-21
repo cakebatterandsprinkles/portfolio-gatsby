@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import styles from "./blog.module.scss"
+import styles from "./journal.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
 
@@ -160,19 +160,18 @@ const BlogPage = () => {
     <Layout>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
-          <h1 className={styles.mainHeading}>Blog</h1>
+          <h1 className={styles.mainHeading}>Journal</h1>
           <div className={styles.disclaimerText}>
-            This is more of a notebook than a blog. If you have copyright
-            claims, mail me and I'll take it down. If you think I'm wrong about
-            something, mail me, as I'd love to learn and discuss. Thanks for
-            hanging around. You're cool.
+            If you have copyright claims, mail me and I'll take it down. If you
+            think I'm wrong about something, mail me, as I'd love to learn and
+            discuss. Thanks for hanging around. You're cool.
           </div>
           <ul className={styles.articleList}>
             {filteredPosts.map((post, index) => {
               return (
                 <li key={index} className={styles.article}>
                   <Link
-                    to={`/blog/${post.node.fields.slug}`}
+                    to={`/journal/${post.node.fields.slug}`}
                     className={styles.link}
                   >
                     <div className={styles.articleTitleAndDateWrapper}>

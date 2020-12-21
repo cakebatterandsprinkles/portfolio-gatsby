@@ -1,7 +1,7 @@
 import React from "react"
 // import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/Layout"
-import styles from "../pages/blog.module.scss"
+import styles from "../pages/journal.module.scss"
 import articleStyle from "./Article.module.scss"
 
 const ArticlePage = props => {

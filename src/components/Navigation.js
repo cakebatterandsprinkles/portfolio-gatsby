@@ -44,11 +44,11 @@ const Navigation = () => {
           <li>
             <div className={`${styles.point} ${styles.orange}`}></div>
             <Link
-              to="/blog"
+              to="/journal"
               className={styles.navLink}
               activeClassName={styles.activeNavLink}
             >
-              Blog
+              Journal
             </Link>
           </li>
           <li>
