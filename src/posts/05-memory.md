@@ -1,11 +1,11 @@
 ---
 title: "Memory Cell"
-date: "07-19-2020"
+date: "2020-07-19"
 tags: ["Computer Science", "Genetics"]
 summary: "In this article, I briefly explain how computers can retain data, by showing how a single memory cell operates. I also talk about how human cells can 'remember'."
 ---
 
-### What is memory?
+#### What is memory?
 
 Let's start with a simple question: What is your name?
 
@@ -19,7 +19,7 @@ Magic? Nope.
 
 Let's start with the computer's memory.
 
-### The smallest unit of computer memory: Memory Cell
+#### The smallest unit of computer memory: Memory Cell
 
 Since anything and everything inside a computer is bits, the computer can only remember if a bit was 0 or 1. And retaining those bits are done with special wiring of four [NAND gates](https://en.wikipedia.org/wiki/NAND_gate).
 
@@ -45,7 +45,7 @@ In a nutshell, if the set is on (1), the output of this diagram will be whatever
 
 And this is how a computer "remembers" a single bit. Isn't that impressive?
 
-### Cellular memory
+#### Cellular memory
 
 Humans store different kinds of information, such as facts, events, skills, habits, emotional memory, and muscle memory. The human brain encodes data that you use every day in your life, consciously, or subconsciously. But this is not the kind of memory that we are going to talk about in this section. We are going to talk about something called **cellular memory.**
 
@@ -91,7 +91,7 @@ So here is the first example:
 
 Long story short, if onions make you sad, don't eat them. You absolutely don't have to. And stop eating sh\*t starting from today. You know better now.
 
-**Resources:**
+#### Resources:
 
 1. Wikipedia- [Memory](https://en.wikipedia.org/wiki/Memory), [Computer memory](https://en.wikipedia.org/wiki/Computer_memory), [NAND gates](https://en.wikipedia.org/wiki/NAND_gate), [DNA](https://en.wikipedia.org/wiki/DNA), [Cell nucleus](https://en.wikipedia.org/wiki/Cell_nucleus), [messenger RNA](https://en.wikipedia.org/wiki/Messenger_RNA), [transcription](https://en.wikipedia.org/wiki/Eukaryotic_transcription), [translation](<https://en.wikipedia.org/wiki/Translation_(biology)>), [receptors](https://en.wikipedia.org/wiki/Cell_surface_receptor), [epigenetics](https://en.wikipedia.org/wiki/Epigeneticsrg/wiki/Cell_surface_receptor), [propanethial S-oxide](https://en.wikipedia.org/wiki/Syn-Propanethial-S-oxide), [Inflammation](https://en.wikipedia.org/wiki/Inflammation), [microRNA](https://en.wikipedia.org/wiki/MicroRNA)
 2. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
