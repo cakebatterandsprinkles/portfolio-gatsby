@@ -2,7 +2,7 @@
 title: "The lovely Unicode"
 date: "2020-06-30"
 tags: ["Computer Science", "History"]
-summary: "This article explains ASCII, Unicode, UTF-8 and a little bit of their history."
+summary: "In this article, I explain ASCII, Unicode, UTF-8 and a little bit of their history."
 ---
 
 #### How ASCII was born

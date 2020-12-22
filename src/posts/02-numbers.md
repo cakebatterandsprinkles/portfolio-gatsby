@@ -2,7 +2,7 @@
 title: "Our first numbers: How many rocks do you have?"
 date: "2020-06-14"
 tags: ["Computer Science", "Mathematics", "History"]
-summary: "This article briefly explains the history of numbers, as well as the definitions of unary, binary, denary, and hexadecimal."
+summary: "In this article, I briefly explain the history of numbers, as well as the definitions of unary, binary, denary, and hexadecimal."
 ---
 
 #### Tally Marks

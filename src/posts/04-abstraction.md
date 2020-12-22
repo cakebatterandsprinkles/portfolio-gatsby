@@ -1,8 +1,8 @@
 ---
 title: "Layers of Abstraction"
-date: "07-08-2020"
+date: "2020-07-08"
 tags: ["Computer Science", "Neuroscience"]
-summary: "This article defines 2 important concepts: abstraction and modularity. It also tries to explain why we (as humans) need abstraction to do programming."
+summary: "In this article, I try to define two important concepts: abstraction and modularity. I also try to explain why we (as humans) need abstraction to do programming."
 ---
 
 I began to think every article here will start with these sentences: Everything inside computers is made of bits, and bits can only be 0's and 1's. So this means everything inside computers is 0's and 1's.
@@ -45,15 +45,13 @@ This is a schematic version of the layers:
 
 ![Levels of Abstraction Scheme](../images/blog/abstraction/levels_of_abstraction_scheme.jpg)
 
-_Image courtesy: http://theembeddedguy.com/2016/05/15/layers-of-abstraction/_
+###### Image courtesy: http://theembeddedguy.com/2016/05/15/layers-of-abstraction/
 
 I am making a tiny but important note here. Although the idea of "working memory is limited" is still accepted as a concept, the limit of it is still argued by scientists. In 2001, Nelson Cowan published [an article](https://www.researchgate.net/publication/11830840_The_Magical_Number_4_in_Short-Term_Memory_A_Reconsideration_of_Mental_Storage_Capacity) suggesting the limit was narrower than 7 and he found out another magical number: 4. [Another article](https://www.semanticscholar.org/paper/Chunks-in-expert-memory%3A-Evidence-for-the-magical-%E2%80%A6-Gobet-Clarkson/7a1afc70878db47c13cd76dbf2aa3bb6f3b96b9c) published in 2004 by F. Gobet et al. suggested that it was limited to 2. A common clinical test to measure cognitive impairment and dementia screening that's called the [Mini–Mental State Examination (MMSE)](https://en.wikipedia.org/wiki/Mini%E2%80%93Mental_State_Examination) measures the impairment of working memory by using 3 as the limit. If you are interested in how MMSE is done, you can check these 2 resources which show the [questions that are asked](http://www.fammed.usouthal.edu/Guides&JobAids/Geriatric/MMSE.pdf) and [how they are interpreted](https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/GetPdf.cgi?id=phd001525.1#:~:text=The%20Mini%2DMental%20State%20Exam,1.).
 
 Another tiny but important note, compilers are very intricate and complicated programs that can do many things. Their main purpose is to translate a high-level language to low-level machine code in an optimized way, but they do so much more. They read and analyze the entire program and detect errors, produce clear and meaningful diagnostics for the programmer. They are great tools that enable us to write code efficiently.
 
-If you want to read more, you can check out the stuff in the resources section. You can also check out the article I wrote about memory from this blog.
-
-**Resources:**
+#### Resources:
 
 1. Wikipedia - [Working Memory](https://en.wikipedia.org/wiki/Working_memory), [Machine Code](https://en.wikipedia.org/wiki/Machine_code), [Compilation](https://en.wikipedia.org/wiki/Compilation), [Compiler](https://en.wikipedia.org/wiki/Compiler), [Programming language](https://en.wikipedia.org/wiki/Programming_language), [Abstraction](<https://en.wikipedia.org/wiki/Abstraction_(computer_science)>), [Implementation](https://en.wikipedia.org/wiki/Implementation), [Modular design](https://en.wikipedia.org/wiki/Modular_design)
 2. ["From Nand to Tetris" Part1 & Part2](https://www.nand2tetris.org/) by Hebrew University of Jerusalem
