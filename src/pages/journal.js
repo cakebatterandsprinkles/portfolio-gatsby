@@ -5,7 +5,7 @@ import styles from "./journal.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
 
-const BlogPage = () => {
+const JournalPage = () => {
   const posts = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -29,14 +29,30 @@ const BlogPage = () => {
 
   const searchInput = useRef(null)
   const clearIcon = useRef(null)
+  const [searchText, setSearchText] = useState("")
   const [isVisible, setIsVisible] = useState(false)
   const [tags, setTags] = useState([])
   const [years, setYears] = useState([])
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const pageSize = 10
+
   const [filteredPosts, setFilteredPosts] = useState(
     posts.allMarkdownRemark.edges.map(post => {
       return post
     })
   )
+
+  const searchResults =
+    searchText.length === 0
+      ? filteredPosts
+      : filteredPosts.filter(
+          post =>
+            post.node.frontmatter.title.toLowerCase().includes(searchText) ||
+            post.node.frontmatter.summary.toLowerCase().includes(searchText)
+        )
+
+  const pageCount = Math.ceil(searchResults.length / pageSize)
 
   const setCurrentTags = () => {
     let allTags = posts.allMarkdownRemark.edges.flatMap(post => {
@@ -64,6 +80,8 @@ const BlogPage = () => {
 
   const handleClearClick = () => {
     searchInput.current.value = ""
+    setIsVisible(false)
+    setSearchText("")
   }
 
   const handleUserInput = e => {
@@ -74,11 +92,17 @@ const BlogPage = () => {
     }
 
     if (e.key === "Enter") {
+      setFilteredPosts(
+        posts.allMarkdownRemark.edges.map(post => {
+          return post
+        })
+      )
       console.log("searching: " + searchInput.current.value)
+      setSearchText(searchInput.current.value.toLowerCase())
     }
   }
 
-  const changeVisibility = () => {
+  const getVisibilityClass = () => {
     if (isVisible) {
       return styles.clearIcon
     } else {
@@ -86,44 +110,20 @@ const BlogPage = () => {
     }
   }
 
-  const chooseClass = tag => {
-    let style
-    switch (tag) {
-      case "JavaScript":
-        style = styles.yellow
-        break
-      case "Computer Science":
-        style = styles.orange
-        break
-      case "Mathematics":
-        style = styles.crimson
-        break
-      case "Genetics":
-        style = styles.green
-        break
-      case "Language":
-        style = styles.blue
-        break
-      case "Neuroscience":
-        style = styles.purple
-        break
-      case "Japan":
-        style = styles.pink
-        break
-      case "History":
-        style = styles.seagreen
-        break
-      case "Web Development":
-        style = styles.salmon
-        break
-      case "React":
-        style = styles.lightpurple
-        break
-      default:
-        style = styles.default
-        break
-    }
-    return style
+  const tagStyles = {
+    JavaScript: styles.yellow,
+    "Computer Science": styles.orange,
+    Mathematics: styles.crimson,
+    Genetics: styles.green,
+    Redux: styles.blue,
+    Neuroscience: styles.purple,
+    Japan: styles.pink,
+    History: styles.seagreen,
+    "Web Development": styles.salmon,
+    React: styles.lightpurple,
+    GraphQL: styles.grassgreen,
+    "Express.js": styles.palepink,
+    default: styles.default,
   }
 
   const filterPosts = tag => {
@@ -136,15 +136,20 @@ const BlogPage = () => {
         filteredList.push(post)
       }
     })
+    setCurrentPage(0)
     setFilteredPosts(filteredList)
+    handleClearClick()
   }
 
   const restoreAllArticles = () => {
+    setCurrentPage(0)
     setFilteredPosts(
       posts.allMarkdownRemark.edges.map(post => {
         return post
       })
     )
+    setSearchText("")
+    handleClearClick()
   }
 
   const filterPostsByYear = year => {
@@ -154,6 +159,8 @@ const BlogPage = () => {
         filteredList.push(post)
       }
     })
+    setCurrentPage(0)
+    setFilteredPosts(filteredList)
   }
 
   return (
@@ -167,48 +174,63 @@ const BlogPage = () => {
             discuss. Thanks for hanging around. You're cool.
           </div>
           <ul className={styles.articleList}>
-            {filteredPosts.map((post, index) => {
-              return (
-                <li key={index} className={styles.article}>
-                  <Link
-                    to={`/journal/${post.node.fields.slug}`}
-                    className={styles.link}
-                  >
-                    <div className={styles.articleTitleAndDateWrapper}>
-                      <span className={styles.articleTitle}>
-                        {post.node.frontmatter.title}
-                      </span>
-                      <span className={styles.articleDate}>
-                        {post.node.frontmatter.date}
-                      </span>
+            {searchResults
+              .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+              .map((post, index) => {
+                return (
+                  <li key={index} className={styles.article}>
+                    <Link
+                      to={`/journal/${post.node.fields.slug}`}
+                      className={styles.link}
+                    >
+                      <div className={styles.articleTitleAndDateWrapper}>
+                        <span className={styles.articleTitle}>
+                          {post.node.frontmatter.title}
+                        </span>
+                        <span className={styles.articleDate}>
+                          {post.node.frontmatter.date}
+                        </span>
+                      </div>
+                    </Link>
+                    <div className={styles.summaryContainer}>
+                      {post.node.frontmatter.summary}
                     </div>
-                  </Link>
-                  <div className={styles.summaryContainer}>
-                    {post.node.frontmatter.summary}
-                  </div>
-                  <div className={styles.tagContainer}>
-                    <img
-                      src={bookmark}
-                      className={styles.bookmarkIcon}
-                      alt="bookmark icon"
-                    />
-                    {post.node.frontmatter.tags
-                      ? post.node.frontmatter.tags.map((tag, index) => {
-                          return (
-                            <p
-                              className={`${chooseClass(tag)} ${styles.tag}`}
-                              key={index}
-                            >
-                              {tag}
-                            </p>
-                          )
-                        })
-                      : null}
-                  </div>
-                </li>
-              )
-            })}
+                    <div className={styles.tagContainer}>
+                      <img
+                        src={bookmark}
+                        className={styles.bookmarkIcon}
+                        alt="bookmark icon"
+                      />
+                      {post.node.frontmatter.tags
+                        ? post.node.frontmatter.tags.map((tag, index) => {
+                            return (
+                              <p
+                                className={
+                                  tagStyles[tag]
+                                    ? `${tagStyles[tag]} ${styles.tag}`
+                                    : `${tagStyles["default"]} ${styles.tag}`
+                                }
+                                key={index}
+                              >
+                                {tag}
+                              </p>
+                            )
+                          })
+                        : null}
+                    </div>
+                  </li>
+                )
+              })}
           </ul>
+          {pageCount > 1 ? (
+            <div>
+              {Array.from({ length: pageCount }).map((d, i) => (
+                <button onClick={() => setCurrentPage(i)} key={i}>
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
         <div className={styles.sidebar}>
           <div className={styles.searchWrapper}>
@@ -225,7 +247,7 @@ const BlogPage = () => {
               placeholder="Search"
             />
             <img
-              className={changeVisibility()}
+              className={getVisibilityClass()}
               ref={clearIcon}
               onClick={handleClearClick}
               onKeyDown={() => {}}
@@ -242,7 +264,11 @@ const BlogPage = () => {
                 ? tags.map((tag, index) => {
                     return (
                       <span
-                        className={`${chooseClass(tag)} ${styles.tag}`}
+                        className={
+                          tagStyles[tag]
+                            ? `${tagStyles[tag]} ${styles.tag}`
+                            : `${tagStyles["default"]} ${styles.tag}`
+                        }
                         key={index}
                         onClick={() => filterPosts(tag)}
                         onKeyDown={() => {}}
@@ -293,4 +319,4 @@ const BlogPage = () => {
   )
 }
 
-export default BlogPage
+export default JournalPage

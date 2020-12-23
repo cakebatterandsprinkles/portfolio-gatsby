@@ -14,8 +14,11 @@
   --orange: #ff6200;
   --crimson: #eb2557;
   --limegreen: #21d511;
+  --grassgreen: #8da73e;
+  --springgreen: #01fd82;
   --mint: #91fff4;
   --cornflowerblue: #4399de;
+  --indigo: #0e18dd;
   --darkviolet: #8d09f7;
   --deeppink: #df18c1;
   --salmon: #ff9580;
@@ -53,6 +56,12 @@ a {
   color: var(--cornflowerblue);
   text-decoration: none;
   font-weight: bold;
+}
+
+details:focus,
+summary:focus {
+  outline: none;
+  cursor: pointer;
 }
 
 article,
