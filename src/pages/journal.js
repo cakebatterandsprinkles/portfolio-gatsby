@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import { tagStyles, posts } from "../data/blog"
 import styles from "./journal.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
@@ -108,22 +109,6 @@ const JournalPage = () => {
     } else {
       return styles.invisible
     }
-  }
-
-  const tagStyles = {
-    JavaScript: styles.yellow,
-    "Computer Science": styles.orange,
-    Mathematics: styles.crimson,
-    Genetics: styles.green,
-    Redux: styles.blue,
-    Neuroscience: styles.purple,
-    Japan: styles.pink,
-    History: styles.seagreen,
-    "Web Development": styles.salmon,
-    React: styles.lightpurple,
-    GraphQL: styles.grassgreen,
-    "Express.js": styles.palepink,
-    default: styles.default,
   }
 
   const filterPosts = tag => {
