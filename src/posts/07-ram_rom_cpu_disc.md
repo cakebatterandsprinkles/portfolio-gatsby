@@ -1,6 +1,6 @@
 ---
 title: "ALU, CPU, RAM, ROM, the disk and how they get along"
-date: "08-03-2020"
+date: "2020-08-03"
 tags: ["Computer Science", "Neuroscience"]
 summary: "In this article, I briefly explain what ALU, CPU, RAM, ROM and the disk are. I also talk about how parts of computer memory work together, and compare computer memory to human memory. Disclaimer: This article is a very simplified version of the real things inside a computer and human brain."
 ---
@@ -21,7 +21,7 @@ Now, what if you were asked how many calories you would get from 3 fried eggs. G
 
 ### ALU and CPU
 
-**Arithmetic Logic Unit (ALU)**
+#### Arithmetic Logic Unit (ALU)
 
 There are tiny circuits made from basic logic gates that do certain operations. Simplified version: You have input wires, and you have an output wire. These circuits are wires that are connected in such ways that they create a certain output. With the same inputs they always create the same output, they are consistent and reliable. All the basic operations (the building blocks of bigger operations) have individual circuits. If we go back to the fried eggs example, two main arithmetic operations will lead you to your final answer: addition and multiplication.
 
@@ -29,11 +29,11 @@ If you combine all the wires that do basic arithmetic operations that a computer
 
 ![The combinational logic circuitry of a simple four-bit ALU](../images/blog/ram_rom/alu4bit.png)
 
-_This is how the circuitry of a simple four-bit ALU looks like on the logic gate level. Don't be scared, some very cool people are working on this stuff and making sure everything works just fine._
+###### This is how the circuitry of a simple four-bit ALU looks like on the logic gate level. Don't be scared, some very cool people are working on this stuff and making sure everything works just fine.
 
-_Image Credit: CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=168473_
+###### Image Credit: CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=168473
 
-**Central Processing Unit (CPU)**
+#### Central Processing Unit (CPU)
 
 CPU is the part that executes the instructions of a program.
 
@@ -51,28 +51,29 @@ Now, if you have ever bought a laptop by yourself in the last 5 years, you have 
 
 ![CPU](../images/blog/ram_rom/1280px-Laptop-intel-core2duo-t5500.jpg)
 
-_This is what a real-life CPU looks like when it is removed from the motherboard (right side). The socket is on the left side._
+###### This is what a real-life CPU looks like when it is removed from the motherboard (right side). The socket is on the left side.
 
-_Image Credit: https://en.wikipedia.org/wiki/Central_processing_unit#/media/File:Laptop-intel-core2duo-t5500.jpg_
+###### Image Credit: https://en.wikipedia.org/wiki/Central_processing_unit#/media/File:Laptop-intel-core2duo-t5500.jpg
 
 ### Computer Memory Basics
 
 Let's define RAM, ROM, and hard disc first, and then talk about why we need all these different ways of keeping data.
 
-**Random Access Memory (RAM)**
+#### Random Access Memory (RAM)
 
 Random Access Memory is a collection of registers. It is also called by other names, such as "read-write memory", or "primary memory". When we are running a program, CPU requires certain data to run it properly and this is where that data is kept. It is volatile (temporary), meaning the data will get lost when the power is off.
 
 ![RAM](../images/blog/ram_rom/Swissbit_2GB_PC2-5300U-555.jpg)
-_This is what a real-life RAM looks like._
 
-_Image Credit: By An-d - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27224495_
+###### This is what a real-life RAM looks like.
 
-**Read-Only Memory (ROM)**
+###### Image Credit: By An-d - Own work, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27224495
+
+#### Read-Only Memory (ROM)
 
 ROM stores crucial information that is essential for the computer to work properly, such as a program essential to boot the computer. It is nonvolatile (permanent), meaning the data kept in ROM is not lost when the power source is gone. The data ROM holds is either unchangeable or requires a special operation to change.
 
-**Hard disk**
+#### Hard disk
 
 Hard disks were invented around the 1950s and their working principles are very similar to a cassette tape. Both use the same magnetic recording techniques to store and retrieve digital data, as well as other older technologies such as CDs, VCRs, floppy disks.
 
@@ -82,7 +83,9 @@ If you look inside a cassette tape, you'll see a very simple device. There is a 
 
 ![Casette Tape](../images/blog/ram_rom/CassetteTypes1.jpg)
 
-_If you're fairly new to earth, here is what a cassette tape looks like. Also, go check out the birds, they are very cool, and your children may not see most of them. Image Credit: CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=256864_
+###### If you're fairly new to earth, here is what a cassette tape looks like. Also, go check out the birds, they are very cool, and your children may not see most of them.
+
+###### Image Credit: CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=256864
 
 When we dissect this long tape, we can see that it's a thin plastic coated with ferric oxide (Fe₂O₃) powder that was mixed with a binder for it to attach to the plastic base. (Yes it is like iron oxide but slightly different, as iron oxide is FeO.) Ferric oxide is a ferromagnetic material, if you expose it to a magnetic field it will be permanently magnetized by the magnetic field. Still, you can erase the tape, or make a recording top of it, so it is pretty much reusable. To record audio, you use something called "a tape recorder" which is a simple device that has a very tiny, rounded electromagnet that applies magnetic flux to the ferric oxide on the tape. It also has an iron core wrapped with a wire, and this is where the audio signal is sent to create the magnetic field. And when you are playing a recorded tape, the motion of the tape creates a varying magnetic field that becomes a signal in the coil, and this signal is amplified for the speakers.
 
@@ -90,11 +93,11 @@ Now we can go back to the hard disk. In a hard disk, the material used for the m
 
 ![Hard disk](../images/blog/ram_rom/hard-drive-cover-removed.jpg)
 
-_This is a hard disk with its cover removed._
+###### This is a hard disk with its cover removed.
 
-_Image Credit: https://commons.wikimedia.org/wiki/File:01b-hard-drive-cover-removed.JPG_
+###### Image Credit: https://commons.wikimedia.org/wiki/File:01b-hard-drive-cover-removed.JPG
 
-_**Important Note: Don't do this to your working hard disks, removing their cover destroys them.** If you already have one that's broken and not working, you can go for it._
+###### **Important Note: Don't do this to your working hard disks, removing their cover destroys them.** If you already have one that's broken and not working, you can go for it.
 
 ### How everything works together
 
@@ -102,11 +105,11 @@ Now that we know what these things are and what they are responsible for, let's 
 
 You need your CPU to do the simple tasks you need. To do that, CPU needs to use some memory, but it if it constantly reached out to permanent storage for every bit of information, it would be a slow process. So to make it faster, people who designed computers made temporary storage areas like RAM and caches. They are positioned closer to the CPU and it is faster to retrieve information from them.
 
-![Memory Diagram](../images/blog/ram_rom/computer-memory-pyramid.gif)
+![Memory Diagram](../images/blog/ram_rom/computer-memory-pyramid.png)
 
-_This is a memory pyramid diagram. The higher you go in the pyramid, the smaller the amount of data you can keep. For example, CPU Register is the smallest, and Level 1 of the cache is smaller than Level 2. And many computers today have a Level 3 cache, which is bigger than Level 2._
+###### This is a memory pyramid diagram. The higher you go in the pyramid, the smaller the amount of data you can keep. For example, CPU Register is the smallest, and Level 1 of the cache is smaller than Level 2. And many computers today have a Level 3 cache, which is bigger than Level 2.
 
-_Image Credit: Jeff Tyson "How Computer Memory Works" 23 August 2000. HowStuffWorks.com. <https://computer.howstuffworks.com/computer-memory.htm>_
+###### Image Credit: Jeff Tyson "How Computer Memory Works" 23 August 2000. HowStuffWorks.com. <https://computer.howstuffworks.com/computer-memory.htm>
 
 Let's go through what happens when you open your computer:
 
@@ -137,7 +140,7 @@ Computer memory, on the other hand, consists of volatile, short-term-like memory
 
 So, you should stop bullying yourself when you can't remember stuff. You're not a computer, you are a human, and everything is fine. That's how we operate. And we still rock.
 
-**Resources:**
+#### Resources:
 
 1. Wikipedia - [Hard disk](https://en.wikipedia.org/wiki/Hard_disk_drive), [Casette Tape](https://en.wikipedia.org/wiki/Cassette_tape), [RAM](https://en.wikipedia.org/wiki/Random-access_memory), [ROM](https://en.wikipedia.org/wiki/Read-only_memory), [CPU](https://en.wikipedia.org/wiki/Central_processing_unit), [ALU](https://en.wikipedia.org/wiki/Arithmetic_logic_unit), [Virtual memory](https://en.wikipedia.org/wiki/Virtual_memory), [neuron](https://en.wikipedia.org/wiki/Neuron), [synapse](https://en.wikipedia.org/wiki/Synapse), [Synaptic plasticity](https://en.wikipedia.org/wiki/Synaptic_plasticity), [Declarative](https://en.wikipedia.org/wiki/Explicit_memory), [Procedural](https://en.wikipedia.org/wiki/Implicit_memory), [Short-term memory](https://en.wikipedia.org/wiki/Short-term_memory), [Long-term memory](https://en.wikipedia.org/wiki/Long-term_memory), [ECT](https://en.wikipedia.org/wiki/Electroconvulsive_therapy), [memory consolidation](https://en.wikipedia.org/wiki/Memory_consolidation)
 2. [But How Do It Know](http://www.buthowdoitknow.com/index.html) by J. Clark Scott
