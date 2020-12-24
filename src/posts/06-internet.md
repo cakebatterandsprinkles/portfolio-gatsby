@@ -1,15 +1,15 @@
 ---
 title: "How the Internet Works: Computer Networks, Ethernet, and the World Wide Web"
-date: "07-26-2020"
+date: "2020-07-26"
 tags: ["Computer Science"]
-summary: "This article briefly explains how the internet works, what world wide web is and the underlying technologies supporting these."
+summary: "In this article I briefly explain how the internet works, what world wide web is and the underlying technologies supporting these."
 ---
 
 I bet you have a computer, a smartphone, or a tablet that's connected to the internet. How do I know? I know it because that's how you are reading this piece of text that I wrote on my computer. So you and I, we are sharing information somehow. This article will exactly be about this: our connection to each other.
 
 We have to understand some other stuff before we get to the internet and the world wide web though. I must warn you that this is an information-intensive article, so wear your seatbelts. Let's start.
 
-### Computer Networks
+#### Computer Networks
 
 Think of a single computer, that is connected to electricity and nothing else. This is called **a stand-alone computer**. A standalone computer is a computer that is not connected to any other computer. It might have some peripheral devices attached to it (printer, keyboard, mouse, etc.), but it can't communicate with any other computer. It literally stands alone.
 
@@ -31,13 +31,13 @@ A small note: radio waves are non-ionizing radiation, which means they don't car
 
 All WiFi signals (in both directions) go through the same place to reach a wider network, and that place is called the **[Wireless Access Point (WAP)](https://en.wikipedia.org/wiki/Wireless_access_point)**. Wi-Fi signals are broadcast on the air and basically, any device that can pick them up can also read them, if the information is not encrypted.
 
-### Network Hardware
+#### Network Hardware
 
 What does it take for a computer to connect to a network? Think of a desktop computer where you have a port on the back that you can plug your network cable into. Inside this port, there is a special electronic device called the **[Network Interface Card (NIC)](https://en.wikipedia.org/wiki/Network_interface_controller).** NIC is responsible for both transmitting and receiving signals. Every NIC has a unique address that's assigned to them by their manufacturer (it's hardcoded and it cannot be changed), which is called **[MAC address (media access control address)](https://en.wikipedia.org/wiki/MAC_address).** Any electronic device that can connect to a network has to have its own network interface card with a unique address because devices in a network identify each other with this unique MAC address.
 
 Now think of your smartphone. It can connect to a WiFi network without you connecting a cable to it. Your phone also has a special NIC (remember, for a device to have the ability to connect to a network, it has to have a network interface card.). This special NIC uses radio signals to receive and transmit data. The range of a wireless NIC is somewhere around 20-50 meters and as Wi-Fi is radio waves, the range also depends on the obstacles along the way.
 
-### Ethernet
+#### Ethernet
 
 Ethernet is a system that enables the data exchange between devices that are connected to the same network. Almost every computer network uses ethernet.
 
@@ -53,13 +53,13 @@ How about your neighbors' Wi-Fi? Why does or doesn't it interfere with yours?
 
 Normally each WAP operates within its own radio frequency range. When it sets itself up, it will choose a channel that seems quiet enough at the time, and your wireless devices will tune into this frequency, like listening to a radio station. A modern WAP can choose between 23 possible non-overlapping channels. So if the neighbor's WiFi is operating in a different frequency range, there will be no overlaps so there will be no collisions.
 
-### Network Protocols
+#### Network Protocols
 
 There are also a set of rules that govern the way data is packaged, transmitted, and received. This is called a **[network protocol](https://en.wikipedia.org/wiki/Communication_protocol)**. Only devices that share a common protocol can communicate with each other. If we go back to our cupboard analogy, there are a set of rules that says which parts of the cupboard go to which package and in which order they are put in that package. A couch, a cupboard, a library, a table, each one has another set of rules as it's being disassembled and packaged. They all have their manual and only if you have that manual you can understand how to reassemble the item. There are many different types of network protocols available, but **[TCP/IP (Transmission Control Protocol/Internet Protocol)](https://en.wikipedia.org/wiki/Internet_protocol_suite)** is the most commonly known one because it is the one being used by the internet. This is not a single protocol but a group of protocols.
 
 The computer that is sending the data is responsible for breaking the data into frames. Each frame has a sequence number so that it can be reassembled correctly at the recipient (frames don't always use the same route, they use the best route available at that moment, and they might reach the recipient in a different order than transmission order). The sender computer also has to calculate something called a check sequence and add it as a final sequence of the frame. A check sequence is created by using an algorithm on the data, and the receiving computer also creates a check sequence using the same algorithm and compares two sequences. If they are not the same, it means the data in the package is corrupted and is requested again. All these steps (disassembling, reassembling, check sequence creation, crosschecking) are done by using Transmission Control Protocol (TCP). TCP is all about ensuring the integrity of the data. Internet Protocol (IP) adds address information to each package (IP address of the sender and the recipient). IP addresses also include information about the sender and recipient whereabouts, and this information is used by the routers. For the packages to be sent to the correct machines, every computer using the TCP/IP protocol must have an IP address that is unique on the network.
 
-### Some other protocols in the TCP/IP suite
+#### Some other protocols in the TCP/IP suite
 
 **[HTTP Protocol:](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)** HTTP (HyperText Transfer Protocol) is used to deliver webpages to your browser over the World Wide Web (We will look at www in one of the following subtitles).
 
@@ -93,7 +93,7 @@ An IP address is a 32-bit number (IPv4), but for the humans to understand it bet
 
 IPv4 has a serious limitation: as it is only 32 bits, there can only be around 4 billion unique IP addresses that are available. For this reason, DHCP and proxy servers allow IP addresses to be issued only when necessary, and also to be reused and shared. Gradually we are switching into 128-bit IP addresses which are also known as IPv6. For readability, an IPv6 IP address is written as 8 groups of 4 hexadecimal digits that are separated by colons.
 
-### DNS (Domain Name System)
+#### DNS (Domain Name System)
 
 **URL (Uniform Resource Locator)**
 
@@ -142,7 +142,7 @@ But this whole process works faster than it seems. The new IP also gets added to
 
 So this is how the internet works.
 
-### The World Wide Web
+#### The World Wide Web
 
 The **[World Wide Web](https://en.wikipedia.org/wiki/World_Wide_Web)** (**the Web** for short), is not the same thing as the internet. The internet existed before the Web, it is mainly the infrastructure that made the Web possible.
 
@@ -156,7 +156,7 @@ In 1990, Berners-Lee wrote all the tools necessary for the Web, the world's firs
 
 In 1991, the Web was made public. The creators of the Web fought to make underlying code available for everybody, on a royalty-free basis. This sparked a global wave of creativity and innovation, and the Web became a central piece of the **[Information Age](https://en.wikipedia.org/wiki/Information_Age)**, as information became more and more available, everywhere.
 
-### Starlink: What is it?
+#### Starlink: What is it?
 
 **[Starlink](https://en.wikipedia.org/wiki/Starlink)** is a satellite-based internet access provider that is currently being constructed by **[SpaceX](https://en.wikipedia.org/wiki/SpaceX)**. It is planned as thousands of little satellites positioned in the [Low Earth Orbit(LEO)](https://en.wikipedia.org/wiki/Low_Earth_orbit), blanketing the Earth. (Most of the man-made objects in the outer space are in LEO, but there are satellites in Medium Earth Orbit and High Earth Orbit as well.)
 
