@@ -37,6 +37,11 @@
   margin-bottom: 0;
 }
 
+.tagContainer > .tag {
+  cursor: default;
+  opacity: 65%;
+}
+
 .summaryContainer {
   font-family: var(--article-font), "sans-serif";
   font-size: 0.9rem;
