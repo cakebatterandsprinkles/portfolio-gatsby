@@ -1,11 +1,11 @@
 ---
 title: "JavaScript- A brief introduction"
-date: "2019-04-06"
+date: "2020-09-12"
 tags: ["Web Development", "JavaScript"]
-summary: "This article gives general information about the history of JavaScript, JavaScript engines, and explains some related terminology, such as scopes and hoisting. "
+summary: "In this article, I give general information about the history of JavaScript, JavaScript engines, and explain some related terminology, such as scopes and hoisting. "
 ---
 
-### ECMAScript, JavaScript engines, and some other things
+#### ECMAScript, JavaScript engines, and some other things
 
 [JavaScript](https://en.wikipedia.org/wiki/JavaScript) (abbreviated as JS) is a high-level, just-in-time compiled, and multi-paradigm programming language. It initially had another name which was "LiveScript" (introduced by Netscape in 1995), but as Java was quite popular those days, that naming the language "JavaScript" would make more people use it. (Still, I should emphasize that JS and Java are two different independent languages with different syntax and principles.) Alongside HTML and CSS, JS became one of the most important technologies in the World Wide Web.
 
@@ -23,7 +23,7 @@ Why is this important? Well, even if the language has some feature, if the engin
 
 JS code runs on a single thread, and what do I mean by that? The computer most of the time has multiple tasks to manage at the same time. The part of a computer that helps manage these multiple tasks is called the **[operating system (OS)](https://en.wikipedia.org/wiki/Operating_system)**. Running the JS code is yet another task that the operating system has to take care of. OS may be able to do multiple tasks at the same time which is called multi-threading, but JS code always runs on a single thread.
 
-### JavaScript runs on a host environment
+#### JavaScript runs on a host environment
 
 JavaScript runs on any environment that has a JS engine.
 
@@ -37,7 +37,7 @@ In-browser JS can do some stuff like modifying HTML and styles on a webpage, rea
 
 Node.js can access the local file system (on the machine where it executes, for example like the server) and interact with the operating system. It doesn't have the access to the loaded webpage, therefore cannot manipulate HTML or CSS.
 
-### Dynamic vs. Weakly Typed Languages
+#### Dynamic vs. Weakly Typed Languages
 
 You've probably read a sentence like this before: JS is a dynamic, interpreted, and weakly typed programming language. Oooh, the terminology. What do we mean by that?
 
@@ -50,13 +50,13 @@ Examples of these languages are CoffeeScript, TypeScript (adds strict data typin
 
 **Second note:** You can either write your JS code separately and import it to the HTML file with a script tag (which we will refer to as _external script_) or write JS code in between script tags inside the HTML file (which we will refer to as _internal script_).
 
-### Miscellaneous: noscript, defer, async, strict mode
+#### Miscellaneous: noscript, defer, async, strict mode
 
 **When to use the [\<noscript>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) tag**
 
-It is possible to disable JS execution from the client side, this means the browser will not be executing the JS files. If your website is heavily depending on JS, you might want to leave them a note, saying 'turn on your JS, or you will not be getting a good UI/UX experience.' For this purpose, you use <noscript> tag. The text or HTML you write inside the noscript tags will only be shown to the user only if the script type is not supported or if the browser has scripting disabled.
+It is possible to disable JS execution from the client side, this means the browser will not be executing the JS files. If your website is heavily depending on JS, you might want to leave them a note, saying 'turn on your JS, or you will not be getting a good UI/UX experience.' For this purpose, you use [\<noscript>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) tag. The text or HTML you write inside the noscript tags will only be shown to the user only if the script type is not supported or if the browser has scripting disabled.
 
-```js
+```javascript
 <noscript>
   Please turn on javascript on your browser to get a full user experience.
 </noscript>
@@ -80,7 +80,7 @@ JS can work without using semicolons (just using line breaks will be ok), or wit
 
 Downside/disadvantage: If you use a strict code and a library that you use doesn't, then you are going to get errors!
 
-### Scope and hoisting
+#### Scope and hoisting
 
 **What is the scope?**
 
@@ -130,7 +130,7 @@ console.log(a)
 
 **Best Practice:** Because of hoisting, it’s considered a best practice to always declare your variables at the top of their respective scopes. This way there are no undesirable effects. You should also always try to initialize variables when you declare them. This will provide cleaner code and help avoid undefined variables.
 
-**Resources:**
+#### Resources:
 
 1. [The Modern JavaScript Tutorial- javascript.info](https://javascript.info/)
 2. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
