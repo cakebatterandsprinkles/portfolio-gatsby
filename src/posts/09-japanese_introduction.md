@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Japanese- Where did the Kanji come from anyway?"
-date: "08-23-2020"
-tags: ["Language", "Japan"]
+date: "2020-08-23"
+tags: ["Japan"]
 summary: "In this article, I briefly talk about the origins and history of Japanese kana (hiragana, katakana) and kanji."
 ---
 
@@ -11,23 +11,23 @@ When you're learning Japanese, (especially if you're learning how to write) you 
 
 Now, as you can see this is a problem that makes it hard to learn Japanese, not just for us the "gaijin" (foreigners), but for Japanese people too. This article is my attempt of understanding how it became the way it is, by tracing the historical timeline.
 
-**The history of Kanji, Hiragana and Katakana**
+#### The history of Kanji, Hiragana and Katakana
 
 Before the 5th century, Japan had no written language. China, on the other hand, was using a script that consisted of many symbols that indicated words. The Kanji system in China was invented by a legendary historian named Cangjie, and I am emphasizing the word legendary here because according to the legend the dude had four eyes and when he invented these characters, the deities and ghosts cried and the sky rained millet. Believe it if you must.
 
 ![Cangjie](../images/blog/japanese-introduction/Cangjie2.jpg)
 
-_Portrait of Cangjie showing his four eyes. If you are interested, read more from [here.](https://en.wikipedia.org/wiki/Cangjie)_
+###### Portrait of Cangjie showing his four eyes. If you are interested, read more from [here.](https://en.wikipedia.org/wiki/Cangjie)
 
 Another theory of how kanji was born is ancient Chinese people who wanted to ask questions to the heavens made a ritual of burning turtle shells or animal bones and looking at the cracks that formed after, trying to find some sort of meaning in them. At some point, they started to connect those shapes to items and use them as symbols to indicate those items. They even replicated those symbols onto not-burnt turtle shells (maybe these were some sort of prayers, sent to Gods). Whatever the reason was, there they are, we have found a lot of oracle bones with scripts on them from that era.
 
 ![Oracle bone script](../images/blog/japanese-introduction/university_of_pittsburgh_japan_module_chinese_inscription_on_an_oracle_bone.jpg)
 
-_Chinese inscription on an oracle bone. Image by Dr. Meierhofer [CC BY-SA 3.0], via Wikimedia Commons. If you are interested, read more from [here.](https://en.wikipedia.org/wiki/Oracle_bone_script)_
+###### Chinese inscription on an oracle bone. Image by Dr. Meierhofer [CC BY-SA 3.0], via Wikimedia Commons. If you are interested, read more from [here.](https://en.wikipedia.org/wiki/Oracle_bone_script)
 
 ![Turtle, not impressed](../images/blog/japanese-introduction/turtle.jpg)
 
-_As you can see, this turtle is not impressed. [Click](https://unsplash.com/photos/L-2p8fapOA8) for the original picture._
+###### As you can see, this turtle is not impressed. [Click](https://unsplash.com/photos/L-2p8fapOA8) for the original picture.
 
 After the rise of Confucianism, which is a system of thought, a philosophy, a way of life that originates from China, it propagated to the Korean peninsula and spread to Japan. As the Japanese didn't have a written language and they wanted to understand Buddhist scriptures written in Chinese as well, they adopted the Chinese writing system. This became a problem because the Japanese have different sounds. The whole Japanese language consists of only 105 sounds. Chinese on the other hand has a much complicated phonetic system with a larger inventory of sounds.
 
@@ -44,13 +44,13 @@ This is the katakana chart:
 
 ![katakana chart](../images/blog/japanese-introduction/2560px-Table_katakana.svg.png)
 
-_Image Credit: By User:Pmx - Based upon Image:Table katakana.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1713700_
+###### Image Credit: By User:Pmx - Based upon Image:Table katakana.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1713700
 
 This is the hiragana chart:
 
 ![hiragana chart](../images/blog/japanese-introduction/2560px-Table_hiragana.svg.png)
 
-_Image Credit: By User:Pmx - Based upon Image:Table hiragana.jpgOriginal autor : Karine WIDMER. ( http://www.escale-japon.com )From :_ http://www.escale-japon.com/cours/table_katakana.jpg_ http://www.escale-japon.com/cours/table_hiragana.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1710234_
+###### Image Credit: By User:Pmx - Based upon Image:Table hiragana.jpgOriginal autor : Karine WIDMER. ( http://www.escale-japon.com )From :_ http://www.escale-japon.com/cours/table_katakana.jpg_ http://www.escale-japon.com/cours/table_hiragana.jpg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1710234
 
 So how exactly the Chinese characters were assimilated into the Japanese language? This is an example I borrow from [this](https://www.japanpitt.pitt.edu/essays-and-articles/language/japanese-writing-system-i) article, and it is one of the examples I like the most. This Chinese character 山 means "mountain" in Chinese and pronounced as "shan". When this character was brought into Japanese, it still meant "mountain", but the pronunciation was a little bit altered and was made "san" which was easier for Japanese people to say. That's awesome, but there was still a word for a mountain in the Japanese language, which was "yama". Now, the character 山 had two pronunciations both with a meaning of "mountain", one with a Japanese, and another one with a Chinese origin. The Japanese pronunciation was called **[Kun'yomi](<https://en.wikipedia.org/wiki/Kanji#Kun'yomi_(native_reading)>)**, and the Chinese pronunciation was called **[On'yomi](<https://en.wikipedia.org/wiki/Kanji#On'yomi_(Sino-Japanese_reading)>)**. This is the case with most kanji (they have two readings), and the pronunciation to choose depends on how the word is used. Most of the time, if there is some Hiragana attached to the end of the Kanji, it is pronounced with Kun'yomi, and if it is used as a single character, it is pronounced with On'yomi.
 
@@ -58,17 +58,13 @@ Although this is generally true, the same kanji may be read in different ways de
 
 Now I hear you saying, we got that there were on'yomi and kun'yomi, but why the heck are there two different on'yomi readings? Well, as the Chinese emperors and dynasties changed during the centuries, the Chinese language also changed. So there are Wu, Han, and Tang pronunciations of the same characters in Chinese. So this means, for some characters, there are multiple On'yomi and Kun'yomi readings.
 
-![mind-blown gif](../images/blog/japanese-introduction/776.gif)
-
-_Image Credit: https://knowyourmeme.com/_
-
 There are tens of thousands of characters that can be learned, and they are probably not easy to learn for Japanese people as well. After World War 2, the Japanese Ministry of Education declared a standardized list of secondary school-level kanji, which consisted of 1,850 characters, which was called **[the tōyō kanji](https://en.wikipedia.org/wiki/T%C5%8Dy%C5%8D_kanji)**. In 1981, the list was replaced with another list that was called **[the jōyō kanji](https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji).** In 2010, that list was expanded to 2,136 characters. You can see the full list of jōyō kanji from [here](https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji). Although it is not a comprehensive list for every character that is used daily, many people say that you'll get by just fine by learning the jōyō kanji. It is more of a literacy baseline for people who completed compulsory education in Japan, and a permitted list of characters and their pronunciations to use in official government documents. 1,026 of the jōyō kanji is taught in primary school (grades 1 to 6), 1,110 additional kanji is taught in secondary school (Grades 7 to 12).
 
 Japanese is predominantly written starting from the right top corner of the page with each line written vertically. There is also another way of writing which is identical to English starting from the top left corner, with each line written horizontally.
 
 Cool, huh?
 
-**Resources:**
+#### Resources:
 
 1. [Tofugu](https://www.tofugu.com/)
 2. Wikipedia- [Cangjie](https://en.wikipedia.org/wiki/Cangjie), [Mora](<https://en.wikipedia.org/wiki/Mora_(linguistics)>), [Haiku](https://en.wikipedia.org/wiki/Haiku), [Katakana](https://en.wikipedia.org/wiki/Katakana), [Hiragana](https://en.wikipedia.org/wiki/Hiragana), [Kun'yomi](<https://en.wikipedia.org/wiki/Kanji#Kun'yomi_(native_reading)>), [On'yomi](<https://en.wikipedia.org/wiki/Kanji#On'yomi_(Sino-Japanese_reading)>), [The tōyō kanji](https://en.wikipedia.org/wiki/T%C5%8Dy%C5%8D_kanji), [The jōyō kanji](https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji)
