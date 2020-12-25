@@ -1,6 +1,6 @@
 ---
 title: "Operating Systems"
-date: "08-14-2020"
+date: "2020-08-14"
 tags: ["Computer Science"]
 summary: "In this article, I briefly talk about what operating systems are. I also simply describe what API, GUI, and CLI are."
 ---
