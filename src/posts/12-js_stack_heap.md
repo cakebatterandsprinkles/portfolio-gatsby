@@ -1,6 +1,6 @@
 ---
 title: "JavaScript- How JavaScript code is executed"
-date: "2019-04-06"
+date: "2020-09-17"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain how the JS engine works and what the Call Stack, Heap, Web API's are. I also talk about garbage collection feature of the JS engine."
 ---
@@ -265,7 +265,7 @@ It doesn't provide the event loop, event loop is implemented by the browser. It 
 
 That's it, folks! Hope you enjoyed it.
 
-**Resources:**
+#### Resources:
 
 1. [The Modern JavaScript Tutorial- javascript.info](https://javascript.info/)
 2. [MDN web docs- Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
