@@ -1,6 +1,6 @@
 ---
 title: "JavaScript- The story of var, let and const"
-date: "09-25-2020"
+date: "2020-09-25"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I make a brief comparison between pre-ES6 var keyword and ES6 let and const keywords with simple examples."
 ---
