@@ -1,44 +1,87 @@
 ---
-title: "JavaScript- Data Types"
+title: "JavaScript- Introduction to Data Types"
 date: "2019-04-06"
-tags: ["Web Development", "JavaScript"]
-summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference values. Warning: this is a beginner level article."
+tags: ["Computer Science", "Web Development", "JavaScript"]
+summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference."
 ---
-
-### Data Types in JS
 
 You can check the data type of a variable by using the **typeof operator.**
 
-The data types in JS can be divided into 2 major categories:
+We'll go through every data type you see in this example, and some more:
 
-1. **Primitive values:** String, Number, Boolean, Null, Undefined, Symbols(ES6), BigInt
+```javascript
+typeof 3 // ↪ "number"
+typeof "hello" // ↪ "string"
+typeof undefined // ↪ "undefined"
+typeof null // ↪ "object"
+typeof true // ↪ "boolean"
+typeof { name: "cake" } // ↪ "object"
+typeof [1, "cake"] // ↪ "object"
+typeof NaN // ↪ "number"
+```
 
-   What makes primitive values "primitive"?
+The data types in JS can be divided into 2 major categories: Primitive and Non-primitive (or Reference).
 
-   If we create a variable and link a value to it ( `let a = 5`), it will be stored in memory. If we create another variable and assign it to the first variable that we created (`let b = a`), a copy of the first variable is created and copied to the second variable (in memory, the second variable we created will be kept like this: `let b = 5`).
+#### Primitive data types:
 
-   If you change the value of the first variable (`a = 10`), the second variable created will still be equal to the initial value of a (`b = 5`).
+###### String, Number, Boolean, Null, Undefined, Symbols(ES6), BigInt
 
-   Now, let's talk about all primitive values separately:
+What makes primitive values "primitive"?
+
+If we create a variable and link a value to it ( `let a = 5`), it will be stored in memory. If we create another variable and assign it to the first variable that we created (`let b = a`), a copy of the first variable is created and copied to the second variable (in memory, the second variable we created will be kept like this: `let b = 5`).
+
+If you change the value of the first variable (`a = 10`), the second variable created will still be equal to the initial value of a (`b = 5`).
+
+Primitive data types are compared by their values:
+
+```javascript
+let a = 5
+let b = 5
+a === b // true
+
+a = "oh"
+b = "oh"
+a === b // true
+
+let c
+let d
+c === d // true
+```
+
+Primitive data types are considered **immutable**, which simply means you cannot modify a primitive data after it has been created.
+
+Example:
+
+```javascript
+let word = "hello"
+word[0] = y // This does not throw an error, but it also does not change anything.
+
+console.log(word) // "hello"
+```
+
+Now, let's talk about all primitive values one by one:
 
 - **String:**
 
-  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double or single quotes, it doesn't matter, but you need to be consistent. Don't mix both.
+  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double or single quotes, or backticks, it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
 
   **[Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)** are ways to make a string hold placeholders. If you want to write a string as a template literal, use backticks(``) instead of quotation marks. And when using a placeholder, place the placeholder inside \${}. A very simple example is shown in the next codeblock. You can nest template strings, and they also can hold stuff like ternary operators. You can even create multi line strings if you ever need to. One downside of it is, it is not supported by IE.
 
-  There are some methods that come built-in with every string, which are extremely useful. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), but I will give an example of a few:
+  There are some methods that come built-in with every string, which are extremely useful. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `String.prototype` to your chrome console, which will return you the String prototype object.
+
+  <details>
+    <summary>Built-in String methods cheatsheet</summary>
 
   ```javascript
   let color = "yellow";
 
   // -> Template string:
+  console.log(`${color} is the best color`); // Prints: yellow is the best color
 
-   console.log(`${color} is the best color`); // Prints: yellow is the best color
+  ---------------------------
 
-   ---------------------------
-
-  // -> Strings have indices, and indices always start with 0. They also have a built-in length property. ///// -> charAt() is a built-in method that gives us the character at a given index.
+  // -> Strings have indices, and indices always start with 0. They also have a built-in length property.
+  // -> charAt() is a built-in method that gives us the character at a given index.
   // -> charCodeAt() is the built-in method that gives us the UTF-16 code of the character at a given index.
 
   const sentence = "purple is the new yellow";
@@ -242,13 +285,15 @@ The data types in JS can be divided into 2 major categories:
 
   ```
 
+  </details>
+
 - **Number:**
 
-  This is the way of storing a number in JS. It doesn't matter if the number is positive, negative, a decimal or an integer. Every single one of them is a "number" in JS world.
+  Number is a data type that is used to represent integers and decimals.
 
-  Numbers can be used to make simple operations, such as addition(+), subtraction(-), multiplication(\*) and division(/). There is also **exponantial operator**, which is shown by **\*\***. (Example: 2 \*\* 3 will be equal to 8.) There are other operators as well, such as the **modulo operator**, which is also known as the "remainder operator". It takes the second operand and divides the first one with it, and returns the remainder that is left. A good way to use a modulo operator is to see if a given number is odd or even. (Use number % 2 for it.)
+  Numbers can be used to make simple operations, such as **addition (+)**, **subtraction (-)**, **multiplication (\*)** and **division (/)**. There is also the **exponantial operator**, which is symbolized by **\*\***. (Example: 2 \*\* 3 will be equal to 8.) There are other operators as well, such as the **modulo operator**, which is also known as the "remainder operator". It takes the second operand and divides the first one with it, and returns the remainder that is left. A good way to use a modulo operator is to see if a given number is odd or even. (Use number % 2 for it.)
 
-  For example:
+  Examples for the modulo operator:
 
   ```javascript
   console.log(25 % 5) // prints 0
@@ -263,25 +308,140 @@ The data types in JS can be divided into 2 major categories:
 
   **P**arenthesis > **E**xponents > **M**ultiplication > **D**ivision > **A**ddition > **S**ubtraction
 
-  **NaN** is a special numeric value that represents things that are not numbers. It is still the type of number. **Infinity** and **-Infinity** are also numeric values.
+  According to MDN Docs, the largest value a Number can hold is about 1.8×10³⁰⁸. Numbers bigger than this are shown as **[Infinity](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity)**.
+
+  Other data types can be converted to numbers by using the `Number()` function. If it's a value that cannot be converted, it will return **[NaN (Not A Number)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)**. NaN is also defined as a Number but it doesn't have a numeric value.
 
   ```javascript
+  85 === 85
+  85 === 85.0
+  Number("85") // returns the number 85
+
+  Number("Mordecai") // NaN
+  Number(undefined) // NaN
+  typeof NaN // "number"
+
   0 / 0 = NaN
   NaN + 3 = NaN
-  1 / 0 = Infinity - 1 / 0 =
-    -Infinity +
-      // -0 is also a number in JS.
-      0 ===
-    -0 // this statement is true!
 
-  // But they can act differently, like this:
+  // -0 is also a number in JS. Weird, but here it is:
+  0 === -0 // true
+
+  // There is also -Infinity, which are not strictly or loosely equal to each other.
   32 / -0 = -Infinity
   32 / 0 = Infinity
   ```
 
-* **BigInt:**
+  There are some methods that come built-in with every number. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `Number.prototype` to your chrome console, which will return you the Number prototype object.
 
-O hey bigint
+  <details>
+    <summary>Built-in Number methods cheatsheet</summary>
+
+  ```javascript
+  // -> Number.MAX_SAFE_INTEGER static property represents the biggest reliable integer JS can represent as a number.
+  // -> JS can only reliably represent numbers between -(2⁵³ - 1) and 2⁵³ - 1. Numbers outside this range can't be compared correctly.
+  Number.MAX_SAFE_INTEGER // ↪ 9007199254740991
+  Number.MAX_SAFE_INTEGER + 1 === Number.MAX_SAFE_INTEGER + 2 // ↪ true
+
+  // -> Number.MIN_SAFE_INTEGER static property represents the biggest reliable integer JS can represent as a number.
+  Number.MIN_SAFE_INTEGER // ↪ -9007199254740991
+  Number.MIN_SAFE_INTEGER - 1 === Number.MAX_SAFE_INTEGER - 2 // ↪ true
+
+  //-> Number.isSafeInteger() determines if a given value is a safe integer or not.
+  Number.isSafeInteger(10) // ↪ true
+  Number.isSafeInteger(10.3) // ↪ false
+  Number.isSafeInteger("10") // ↪ false
+  Number.isSafeInteger(Infinity) // ↪ false
+
+  // -> Number.MAX_VALUE represents the biggest numeric value a number can hold, beyond this number lies infinity.
+  Number.MAX_VALUE // ↪ 1.7976931348623157e+308
+  Number.MAX_VALUE * 2 // ↪ Infinity
+
+  // -> Number.MIN_VALUE represents the smallest number that is close to 0 and can be represented within float precision.
+  // -> It is NOT the smallest negative number JS can represent.
+  Number.MIN_VALUE // ↪ 5e-324
+
+  Number.NaN // represents NaN, same as NaN.
+  Number.NEGATIVE_INFINITY // represents -Infinity
+  Number.POSITIVE_INFINITY // represents +Infinity
+
+  // -> Number.isFinite() determines if a given value is finite or not.
+  Number.isFinite(1 / 0) // ↪ false
+  Number.isFinite(22312 / 23) // ↪ true
+  typeof 0 / 0 // NaN
+  Number.isFinite(0 / 0) // ↪ false
+
+  // -> Number.isInteger() determines if a given value is an integer or not.
+  Number.isInteger(0) // ↪ true
+  Number.isInteger(12) // ↪ true
+  Number.isInteger(-12) // ↪ true
+  Number.isInteger(0.3) // ↪ false
+  Number.isInteger(NaN) // ↪ false
+  Number.isInteger(Infinity || -Infinity) // ↪ false
+  Number.isInteger("10") // false
+  Number.isInteger(true || false) // ↪ false
+  Number.isInteger([1, "a"]) // false
+
+  // -> Number.isNaN() determines if a given value is type of NaN or not.
+  Number.isNaN(NaN && Number.NaN && 0 / 0) // ↪ true
+  Number.isNaN(10 && "hello" && undefined && true && null) // ↪ false
+
+  // -> Number.parseFloat(str) parses a floating point number from a given string. If it cannot be parsed, returns NaN.
+  Number.parseFloat("7.65") // ↪ 7.65
+  Number.parseFloat("hello world") // ↪ NaN
+
+  // -> Number.parseInt(str) parses an integer from a given string. If it cannot be parsed, returns NaN.
+  Number.parseInt("9.99") // ↪ 9
+  Number.parseInt("9.12") // ↪ 9
+  Number.parseInt("-9.92") // ↪ -9
+  Number.parseInt("") // ↪ NaN
+  Number.parseInt("hello") // ↪ NaN
+
+  // -> Number.prototype.toFixed() limits the floating point to a given number.
+  let num = 12.3456789
+
+  num.toFixed() // ↪ "12"
+  num.toFixed(2) // ↪ "12.35" // Note the rounding!
+  num.toFixed(5) // ↪ "12.34568" // Note the rounding!
+  num.toFixed(9) // ↪ "12.345678900" // Note the 0's at the end!
+
+  num = 123456789.0
+  // -> Number.toLocaleString() returns a language specific implementation of a given string.
+  num.toLocaleString("ar-EG") // ↪ "١٢٣٬٤٥٦٬٧٨٩"
+  // As a second argument you can give an optional argument that defines options
+  num.toLocaleString("de-DE", { style: "currency", currency: "EUR" }) // ↪ "123.456.789,00 €"
+  ```
+
+  You can use three methods to convert a string to a number:
+
+  ```javascript
+  let num = "123"
+  Number(num) + num // ↪ 123 // ↪ 123
+  parseInt(num) // ↪ 123
+  ```
+
+</details>
+
+- **BigInt:**
+
+  BigInt is the data type that is used for numbers that are larger than 2⁵³ - 1, which is the largest number that can be reliably represented with JavaScript Number data type. To indicate that a value is a BigInt type, you either append "n" to the end of the value, or call the BigInt function.
+
+  Example:
+
+  ```javascript
+  typeof 198798700707039858n === "bigint" // true
+  typeof BigInt("198798700707039858") === "bigint" // true
+
+  typeof 1 // ↪ "number"
+  typeof 1n // ↪ "bigint"
+
+  // A bigInt is not strictly equal to a Number
+  1n === 1 // ↪ false
+  // but they are loosely equal
+  1n == 1 // ↪ true
+  ```
+
+  Number and BigInt coercion is not recommended by [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt), as it can lead to a loss of precision.
 
 - **Boolean:**
 
@@ -309,11 +469,33 @@ Null and undefined are very similar with a slight difference. They both mean not
 - **Undefined:**
 - **Symbol:**
 
-2. **Reference values:** Arrays, Object Literals, Functions, Dates, anything else..
+#### Non-primitive (Reference) data types:
 
-In reference data types, when you create a variable, the variable doesn't actually hold a value, instead it holds a pointer to that value. So when you copy a variable, it's the pointer that gets copied, not the value.
+###### Arrays, Object Literals, Functions, Dates, and anything else..
+
+In reference data types, when you create a variable, the variable doesn't actually hold a value, instead it holds a pointer to that value. So when you copy a variable, it's the pointer that gets copied, not the value itself.
 
 So if you change the value, all the values of the variables that store a pointer to that value will change. Keep this in mind when you're working with reference type values!
+
+Example:
+
+```javascript
+let bird1 = { type: "parrotlet", name: "Cookie" }
+let bird2 = { type: "parrotlet", name: "Cookie" }
+
+bird1 === bird2 // false
+{} === {} // false
+```
+
+Non-primitive data types are mutable, which means you can modify them on the go (unlike primitive values).
+
+Example:
+
+```javascript
+let pets = ["Cookie", "Dust", "Dander"]
+pets[1] = "Cake"
+console.log(pets) // ["Cookie", "Cake", "Dander"]
+```
 
 - **Object:**
 
