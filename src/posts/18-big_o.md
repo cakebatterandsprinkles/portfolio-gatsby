@@ -1,6 +1,6 @@
 ---
 title: "Algorithms- The Big O"
-date: "06-06-2020"
+date: "2020-10-21"
 tags: ["Computer Science"]
 summary: "In this article, I briefly explain what the data structures in computer science are and the big O notation."
 ---
