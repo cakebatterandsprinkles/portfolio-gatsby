@@ -1,6 +1,6 @@
 ---
 title: "Digital vs. Analog"
-date: "2019-04-06"
+date: "2020-10-08"
 tags: ["Computer Science"]
 summary: "In this article, I explain the difference between digital and analog data. I also briefly talk about how analog/digital phones and telegraphs work."
 ---
@@ -15,19 +15,19 @@ In computers, everything is bits, and bits can only be 1's and 0's. They cannot 
 
 The words **[analog](https://en.wikipedia.org/wiki/Analog_signal)**, **analogy**, and **analogous** all come from the same roots, and all of them are used to describe "the likeness of things". For example, most of the time if you make an analogy, you are trying to find a similar but more relatable example of the same thing, so that you can describe the original thing better.
 
-Analog data is the data with continuous change. If we are using numbers 0 and 1 to define our data, if our data is digital, we can encode our data with 0 or 1, whereas if our data is analog, it can be encoded with 0, 1, and anything in between those. (0.25, 0.332, 0.99, whatever.)
+**Analog data** is the data with continuous change. If we are using numbers 0 and 1 to define our data, (it's either on or off, it can't be in between) our data is **digital**. You can only use 0 and 1 to encode digital data, but analog data can be encoded with 0, 1, and anything in between those. (0.25, 0.332, 0.99, whatever.)
 
-Example time! If you buy some acrylic paint, mix them and paint a flower, your painting is analog. How you mix your colors, how you hold your brush, the position of your hand, everything matters when you are doing an analog painting. If you paint a picture using a computer, your painting is digital (each tiny square that forms your painting, which is called a **[pixel](https://en.wikipedia.org/wiki/Pixel)**, have a specific binary data). If you sing your favorite song in the shower, your song is analog. When you are cooking, if you're following a recipe strictly by measuring everything, your cooking is digital. If you are adding spices and vegetables on a whim without following a set of rules, then your cooking is analog. You can perfectly replicate a digital thing, but replicating an analog thing is very, very hard because how much you try to imitate it, there will always be slight differences. In analog, you have an infinite number of choices, but in a digital setting, you have a limited amount of choices.
+_**Analogy time!**_ If you buy some acrylic paint, mix them and paint a flower, your painting is analog. How you mix your colors, how you hold your brush, the position of your hand, everything matters when you are doing an analog painting. If you paint a picture using a computer, your painting is digital (each tiny square that forms your painting, which is called a **[pixel](https://en.wikipedia.org/wiki/Pixel)**, have a specific binary data). If you sing your favorite song in the shower, your song is analog. When you are cooking, if you're following a recipe strictly by measuring everything, your cooking is digital. If you are adding spices and vegetables on a whim without following a set of rules, then your cooking is analog. You can perfectly replicate a digital thing, but replicating an analog thing is very, very hard because how much you try to imitate it, there will always be slight differences. In analog, you have an infinite number of choices, but in a digital setting, you have a limited amount of choices.
 
 The world surrounding us is mostly analog.
 
 Technology until around 40 years ago was mostly analog as well. [Telephone](https://en.wikipedia.org/wiki/Telephone), [phonograph](https://en.wikipedia.org/wiki/Phonograph), [radio](https://en.wikipedia.org/wiki/Radio), [television](https://en.wikipedia.org/wiki/Television), [tape recorders](https://en.wikipedia.org/wiki/Tape_recorder) and [videocassette recorders](https://en.wikipedia.org/wiki/Videocassette_recorder) were all analog devices. Oddly enough, telegraph was digital.
 
-Let's look at an analog phone (also known as a telephone). Maybe you had one in your house when you were a child like I did. It simply contained a switch that connected the phone to a network when the handset was lifted (when connected to the network it made a continuous sound), a speaker at the top side of the handset, and a microphone that was located at the bottom side of the handset. When you talked through the speaker, your sound was converted to an electrical pattern that was the analog of the sound, and through the wires that are directly connected to it, it traveled to another person's phone. There, the electrical signal is converted back to the analog sound. Of course, a system like this needed amplifiers if the sound is traveling long distances, as the electrical signal gets smaller and smaller on the way. When you amplify a signal, possible noise also amplifies as a side effect, so as the electrical data traveled, it got slightly distorted.
+_**Let's look at an analog phone**_ (also known as a telephone). Maybe you had one in your house when you were a child, like I did. It simply contained a switch that connected the phone to a network when the handset was lifted (when connected to the network it made a continuous sound), a speaker at the top side of the handset, and a microphone that was located at the bottom side of the handset. When you talked through the speaker, your sound was converted to an electrical pattern that was the analog of the sound, and through the wires that are directly connected to it, it traveled to another person's phone. There, the electrical signal is converted back to the analog sound. Of course, a system like this needed amplifiers if the sound is traveling long distances, as the electrical signal gets smaller and smaller on the way. When you amplify a signal, possible noise also amplifies as a side effect, so as the electrical data traveled, it got slightly distorted.
 
-Now let's look at a digital phone, the phones we use today. The system is kind of the same, there still is a microphone and a speaker, but the analog data (your voice) is converted to digital data instead of electrical data. It also has a radio transmitter and a receiver. The digital data is broadcasted as the radio waves by the radio transmitter to the nearest cellphone mast. The mast passes the signals on to its base station, and the base station routes the signals to the base station nearest to the destination phone, and then, finally, to the destination phone.
+_**Now let's look at a digital phone**_, the phones we use today. The system is kind of the same, there still is a microphone and a speaker, but the analog data (your voice) is converted to digital data instead of electrical data. It also has a radio transmitter and a receiver. The digital data is broadcasted as the radio waves by the radio transmitter to the nearest cellphone mast. The mast passes the signals on to its base station, and the base station routes the signals to the base station nearest to the destination phone, and then, finally, to the destination phone.
 
-### Why prefer digital over analog?
+#### Why prefer digital over analog?
 
 Why make a digital version of something that was working already?
 
@@ -35,7 +35,7 @@ Because one of the biggest advantages of digital data is, it does not distort, n
 
 Digital data on the other hand, no matter how many times you play it, will always be the same set of 1's and 0's. When you try to copy it, you always get the exact copy. Of course, while it's being converted from analog to digital there will be some data that is lost according to how many bits you choose to encode the loudness, or the sampling rate or to rounding errors, but after a sound is recorded digitally, it can be carried and copied without any loss.
 
-### Bonus: How do telegraphs work?
+#### Bonus: How do telegraphs work?
 
 The telegraph is a long-distance message transmission system that worked in both directions and was invented in the 1830s by [Samuel Morse](https://en.wikipedia.org/wiki/Samuel_Morse). He is also known for his other invention, which is the **[Morse code](https://en.wikipedia.org/wiki/Morse_code)**. What you probably didn't know was he was also a painter, and he was pretty good at it too.
 
@@ -47,7 +47,7 @@ An [electrical telegraph](https://en.wikipedia.org/wiki/Electrical_telegraph) us
 
 ![](../images/blog/digital_vs_analog/1280px-International_Morse_Code.svg.png)
 
-_Image Credit: By Rhey T. Snodgrass &amp; Victor F. Camp, 1922 - Public Domain, https://commons.wikimedia.org/w/index.php?curid=3902977_
+###### Image Credit: By Rhey T. Snodgrass &amp; Victor F. Camp, 1922 - Public Domain, https://commons.wikimedia.org/w/index.php?curid=3902977
 
 In the late 1840s, most developed nations had commercial telegraph networks and many local telegraph offices, and the public could send each other a telegram for a fee. In 1854, the [submarine telegraph cables](https://en.wikipedia.org/wiki/Submarine_communications_cable) were placed on the sea bed, and this allowed communication between continents. The first [transatlantic telegraph cable](https://en.wikipedia.org/wiki/Transatlantic_telegraph_cable) was placed in 1858.
 
@@ -57,7 +57,7 @@ This is the route of the first transatlantic cable:
 
 **Note:** If you're interested in the cable structures, [atlantic-cable.com](https://atlantic-cable.com/Maps/index.htm) has a cool collection of old maps that show submarine and land telegraph lines, and [infrapedia.com](https://live.infrapedia.com/) has an interactive map for showing the modern cables.
 
-**Resources**
+#### Resources:
 
 1. [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
 2. Wikipedia- [Digital data](https://en.wikipedia.org/wiki/Digital_data), [Analog signal](https://en.wikipedia.org/wiki/Analog_signal), [pixel](https://en.wikipedia.org/wiki/Pixel), [Samuel Morse](https://en.wikipedia.org/wiki/Samuel_Morse), [Morse code](https://en.wikipedia.org/wiki/Morse_code), [electrical telegraph](https://en.wikipedia.org/wiki/Electrical_telegraph), [submarine telegraph cables](https://en.wikipedia.org/wiki/Submarine_communications_cable), [transatlantic telegraph cable](https://en.wikipedia.org/wiki/Transatlantic_telegraph_cable)
