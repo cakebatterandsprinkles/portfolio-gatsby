@@ -1,13 +1,13 @@
 ---
 title: "Cryptography"
-date: "07-12-2020"
+date: "2020-10-13"
 tags: ["Computer Science"]
 summary: "In this article, I briefly talk about the history of cryptography, symmetric and asymmetric key cryptography techniques and explain the logic behind digital signatures and digital certificates."
 ---
 
 **[Cryptography](https://en.wikipedia.org/wiki/Cryptography)** is the art of taking a text and scrambling it in a very precise way, so only the people who know precisely how you scrambled it can read the original text. Cryptography is very old and has been used for centuries to protect sensitive information from unwelcome eyes. It has been used by merchants, by emperors, and today, normal people like us, even if we don't notice it. With the invention of the computer, the internet, and the world wide web, we started keeping personal information on our personal computers and we send data to each other occasionally. But how do we keep our information safe? That's where cryptography comes into play.
 
-### Symmetric key cryptography
+#### Symmetric key cryptography
 
 In symmetric key cryptography, you decrypt a message by directly doing the reverse of the actions during the encryption process.
 
@@ -19,7 +19,7 @@ One simple way of encrypting a text with the substitution cipher is using a ciph
 
 ![Cipher Wheel](../images/blog/cryptography/caesarcypherwheel.jpg)
 
-_Image Credit: https://bobmckay.com/i-t-support-networking/security/caesar-cipher-wheel-printable-pdf/_
+###### Image Credit: https://bobmckay.com/i-t-support-networking/security/caesar-cipher-wheel-printable-pdf/
 
 The outer letters represent the ciphertext, and the inner letters represent the plain text. If the encryption key is 2, you can rotate the inner wheel 2 places clockwise, then the substitutions for the real letters can be read directly from the outer wheel. As the Roman Emperor Julius Caesar used this method to send secret messages to his generals in the battlefield hundreds of years ago, this method of encrypting was called **[the Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher).**
 
@@ -93,7 +93,7 @@ The encrypted letter z is: 00101111
 
 When decrypting, put the ciphertext and the encryption key and perform XOR operation for every bit. (You do the same thing when encrypting and decrypting and that's why this method is also symmetrical and also very fast. So your data is secure and you can encrypt and decrypt it quickly.)
 
-### Asymmetric key cryptography
+#### Asymmetric key cryptography
 
 To use symmetric key cryptography, both sides have to know three things, the ciphertext, the encryption key (secret), and the algorithm used for encryption. But what if two sides cannot communicate with each other the secret key and the algorithm privately? Then the symmetric cryptography would not be safe enough to use.
 
