@@ -1,11 +1,11 @@
 ---
 title: "Asynchronous JS, callbacks, and promises"
-date: "2019-04-06"
-tags: ["Web Development", "JavaScript"]
+date: "2019-07-27"
+tags: ["Web Development", "JavaScript", "Neuroscience"]
 summary: "In this article, I briefly explain what asynchronous code is, and how we use promises to manage aynchronous code. After that we'll talk about various ways of making HTTP requests, and what Async & Await is and see how it can be used."
 ---
 
-### Before we talk about asynchronous code
+#### Before we talk about asynchronous code
 
 First let's remember what the call stack was.
 
@@ -17,7 +17,7 @@ It is pretty interesting though, because us humans can work like we're multi thr
 
 If you're interested in this subject, check [**this**](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7075496/pdf/cer-04-19.pdf) article out.
 
-### Asynchronous code
+#### Asynchronous code
 
 You've visited imdb.com and you're going to search for a movie title. You can't exactly remember the name of the movie, but you do remember it had "pool" in it. So you write pool to the search bar. A server receives your request and starts collecting all the movies that has "pool" in it, and return that data to you, to be displayed on your screen. This is a long road and if your internet connection is a little bit slow, the data might not reach you very fast.
 
@@ -45,7 +45,7 @@ Making an HTTP request is also not a thing JS does by itself, but gets help from
 
 To sum up, asynchronous code is pieces of code that run independent from the main program flow. By making the browser handle some of the hard work, JS can act as if it's multithreaded, although it's not.
 
-### Promises
+#### Promises
 
 Callbacks are not perfect, and everything can get very messy when you have to nest callbacks in other callbacks. This is called **callback hell**, and although there is technically nothing wrong with it, it is very error prone, not fun to write, hard to debug and read. This is where promises come in.
 
@@ -166,7 +166,31 @@ request("/users")
   })
 ```
 
-### HTTP Requests
+There are 4 states of promises:
+
+- **PENDING** => Promise is doing work, neither `then()` nor `catch()` executes at this moment
+- **RESOLVED** => Promise is resolved => `then()` executes
+- **REJECTED** => Promise was rejected => `catch()` executes
+- **SETTLED** => No more `then()` blocks is left, ready to execute `finally()`
+
+When you have another `then()` block after a `catch()` or `then()` block, the promise re-enters **PENDING** mode (keep in mind: `then()` and `catch()` always return a new promise - either not resolving to anything or resolving to what you `return` inside of `then()`). Only if there are no more `then()` blocks left, it enters a new, final mode: **SETTLED**.
+
+Once **SETTLED**, you can use a special block - **`finally()`** - to do final cleanup work, which is optional. `finally()` is reached no matter if you resolved or rejected before.
+
+Example:
+
+```javascript
+somePromiseCreatingCode()
+	.then(firstResult => { return 'done with first promise'; })
+	.catch(err => {
+			// would handle any errors thrown before
+			// implicitly returns a new promise - just like then() })
+	.finally(() => {
+			// the promise is settled now - finally() will NOT return a new promise!
+			// you can do final cleanup work here });
+```
+
+#### HTTP Requests
 
 Now we will see how we can use JS to get information from an API.
 
@@ -257,8 +281,8 @@ fetch("https://swapi.dev/api/planets/")
 
 **Axios:**
 
-### Async & Await
+#### Async & Await
 
-**Resources:**
+#### Resources
 
 1. Madore KP, Wagner AD. [Multicosts of Multitasking.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7075496/pdf/cer-04-19.pdf) Cerebrum. 2019;2019:cer-04-19. Published 2019 Apr 1.
