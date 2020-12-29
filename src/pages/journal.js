@@ -66,11 +66,11 @@ const JournalPage = () => {
   const setAvailableYears = () => {
     let allYears = posts.allMarkdownRemark.edges.flatMap(post => {
       if (post.node.frontmatter.date) {
-        return post.node.frontmatter.date.slice(-4)
+        return post.node.frontmatter.date.slice(0, 4)
       }
     })
     const availableYears = new Set(allYears)
-    setYears(Array.from(availableYears))
+    setYears(Array.from(availableYears).sort())
     console.log(availableYears)
   }
 
@@ -140,7 +140,7 @@ const JournalPage = () => {
   const filterPostsByYear = year => {
     let filteredList = []
     posts.allMarkdownRemark.edges.forEach(post => {
-      if (post.node.frontmatter.date.slice(-4) === year) {
+      if (post.node.frontmatter.date.slice(0, 4) === year) {
         filteredList.push(post)
       }
     })
