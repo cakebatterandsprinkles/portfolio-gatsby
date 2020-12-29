@@ -1,6 +1,6 @@
 ---
 title: "React- Component Lifecycle Methods"
-date: "06-06-2020"
+date: "2020-11-05"
 tags: ["React", "Web Development"]
 summary: "In this article, I briefly explain React component lifecycle methods, PureComponent concept and virtual DOM."
 ---
