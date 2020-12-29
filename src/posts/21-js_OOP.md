@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Object Oriented Programming"
-date: "06-06-2020"
+date: "2020-10-29"
 tags: ["Computer Science", "Web Development", "JavaScript"]
 summary: "In this article, I briefly explain what Object-Oriented Programming is, the difference between constructor functions and factory functions and super and extends keywords, using JavaScript."
 ---
