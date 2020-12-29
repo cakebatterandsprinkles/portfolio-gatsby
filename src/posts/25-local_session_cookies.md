@@ -1,6 +1,6 @@
 ---
 title: "Browser Storage Mechanisms: Local Storage, Session Storage, Cookies and more"
-date: "06-06-2020"
+date: "2020-11-19"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain the browser storage mechanism and their differences from each other."
 ---
@@ -77,7 +77,19 @@ console.log(localStorage.length) // 0
 
 #### Cookies
 
-[Cookies](https://en.wikipedia.org/wiki/HTTP_cookie) are mostly used for authentication and user data persistence. You create a token that is unique for the user and the session, and add it to every HTML request made from the client.
+[Cookies](https://en.wikipedia.org/wiki/HTTP_cookie) are mostly used for authentication and user data persistence. You create a token that is unique for the user and the session, and add it to every HTTP request made from the client. You can create cookies ofroOne of the reasons to use cookies is to keep track of what the user is doing in the website - such as adding items to your cart in an e-commerce site, or your login information.
+
+There are some types of cookies depending of the job they do. Let's see what those are:
+
+- **Session Cookies:**
+- **Persistent (tracking) Cookies:**
+- **Secure Cookies:**
+- **First-Party Cookies:**
+- **Third-Party Cookies:**
+
+Cookies can also be modified by the user or intercepted in transit. For security purposes, the data should always be encrypted, so in any interception attempt, the user's credentials stay safe.
+
+-
 
 #### The Cache API
 
