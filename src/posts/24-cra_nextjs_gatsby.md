@@ -1,6 +1,6 @@
 ---
 title: "React- CRA vs. Next.js vs. Gatsby"
-date: "2019-04-06"
+date: "2020-11-14"
 tags: ["React", "Web Development", "JavaScript"]
 summary: "In this article, I briefly compare create-react-app (CRA), Next.js and Gatsby, and how I choose in between them."
 ---
@@ -22,9 +22,10 @@ The first thing you need to do is properly understand what your project needs, b
    - The official SPA tool to create React apps, many blogposts to help you do things and has good documentation
    - Easy to learn
    - Flexible, you can still choose how you're going to do things, not so much opinionated
-   - 
+   -
 
    **cons:**
+
    - Needs manual setup for global state management, routing, styling
    - Might need to eject if you need special configurations with webpack, babel, jest, etc.
    - Can't use for public websites, as SEO is a concern
