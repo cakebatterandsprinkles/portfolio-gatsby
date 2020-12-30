@@ -1,6 +1,6 @@
 ---
 title: "React- Redux"
-date: "2019-04-06"
+date: "2020-12-09"
 tags: ["React", "Web Development", "JavaScript", "Redux"]
 summary: "In this article, I talk about what Redux is and how to use it with React."
 ---
