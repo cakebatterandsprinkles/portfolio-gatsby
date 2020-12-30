@@ -1,6 +1,6 @@
 ---
 title: "React- Hooks"
-date: "06-06-2020"
+date: "2020-11-26"
 tags: ["React", "Web Development"]
 summary: "In this article, I talk about what React hooks are and how to use some of them, such as useState, useEffect, useRef, useReducer, useContext, useCallback, useLayoutEffect, and useMemo."
 ---
