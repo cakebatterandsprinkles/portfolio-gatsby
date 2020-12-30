@@ -1,6 +1,6 @@
 ---
 title: "React- Routing"
-date: "06-06-2020"
+date: "2020-12-02"
 tags: ["React", "Web Development"]
 summary: "In this article, I briefly talk about routing in React apps."
 ---
