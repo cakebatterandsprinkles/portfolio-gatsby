@@ -1,6 +1,6 @@
 ---
 title: "React- Testing"
-date: "2019-04-06"
+date: "2020-12-29"
 tags: ["React", "Web Development", "JavaScript"]
 summary: "In this article, I briefly talk about testing React applications, including unit testing, integration testing and E2E testing."
 ---
@@ -37,7 +37,7 @@ These tests test functions that are not a unit by themselves, but depend on anot
 
 These tests test the User Interface, a part of the full application.
 
-Mostly, applications have a lot of unit tests, some integration tests, and a few E2E tests.
+Mostly, applications have a lot of unit tests, some integration tests, and a few E2E tests. And mostly, applications do cause side effects. We need to understand what side effects are, in order to understand why we cannot have them when we are testing an application. In computer science, if a function or an expression modifies the value some variables outside it's local environment and has an observable effect (besides returning a value to its invoker) on the application, then it is said to be causing side effects. Unit tests cannot have side-effects. According to Michael Feather's definition, they cannot talk to the database, communicate accross the network, touch the file system or edit your environmental files. By making your unit tests neither consume or create any side effects, you can have fast running tests and pure functions that always return the same value with the same input.
 
 #### Testing JavaScript
 
@@ -47,16 +47,20 @@ First of all, you'll most basically need 3 tools to test. One is the **test runn
 
 The second tool we need is an **assertion library**. As the action of comparing the expected value to the real outcome is also called **assertion**, these testing libraries are sometimes also called **assertion libraries**, because they provide some different kinds of comparison methods we can use. Node.js itself has a built-in **assert module**, which you can simply require and use that has a bunch of comparison methods, which you can check from [here](https://nodejs.org/api/assert.html). And if you want to check how to build a simple JS testing library from scratch, you can read [this](https://kentcdodds.com/blog/but-really-what-is-a-javascript-test) awesome article by Kent C. Dodds. Thankfully, we don't have to build one ourselves, and there are some really great ones we can use. **Chai** is a popular assertion library.
 
-**Jest** is a tool that is both a test runner and an assertion library, and therefore it is mostly referred to as a testing framework rather than library.
+**Jest** is a tool that is both a test runner and an assertion library, and therefore it is mostly referred to as a testing framework rather than library. Some React frameworks like create-react-app come bundled with jest and you don't need to install it separately.
 
 The third tool we use is for E2E testing, and it is called a **headless browser**, which is the browser without its UI. Puppeteer is a popular headless browser.
 
 #### Testing React Applications
 
+On top of the three tools I mentioned above, there are some other tools that are specific to React and make your life easier by providing you additional utilities to interact with elements in your application. Enzyme and react-testing-library do a similar job that differs in philosophy,
+
 **React Testing Library**
 
+React testing library is a part of a bigger project that is [@testing-library](https://testing-library.com/docs/), which is a family of packages that help you test UI components in a similar way the user will use them. One of the aims of this library is to write a testing code that does not depend on the implementation details, as much as possible, so that the implementation changes don't break your testing code.
+
 To test something in the UI, you may need to manipulate the DOM in some way. To ensure you're running tests in isolation to each other (and you don't have memory leaks), you need to cleanup the DOM before each test.
-React Testing Library does cleanup automatically, so you don't need to clean the DOM manually.
+React Testing Library does cleanup automatically, so you don't need to clean the DOM manually. (Which is kinda rad.)
 
 The **render method** of the React testing library accepts a single argument that is the component you are testing, and returns you a container object with bunch of utilities. The render method creates a div, appends that div to the document.body, and renders the component that's being tested into that promptly created div by using ReactDOM.render and return the div to the developer. So at the end, we get a container object that we can query like we normally do with the elements that are inside the DOM.
 
@@ -74,5 +78,6 @@ Instead of adding tests at the end of the build workflow, there is also an appro
 
 1. Node.js - [Assert API](https://nodejs.org/api/assert.html)
 2. [Jest](https://jestjs.io/)
-3. [But really, what is a JavaScript test?](https://kentcdodds.com/blog/but-really-what-is-a-javascript-test) by Kent C. Dodds
-4. [Avoid the Test User](https://kentcdodds.com/blog/avoid-the-test-user) by Kent C. Dodds
+3. [@react-testing-library](https://testing-library.com/docs/)
+4. [But really, what is a JavaScript test?](https://kentcdodds.com/blog/but-really-what-is-a-javascript-test) by Kent C. Dodds
+5. [Avoid the Test User](https://kentcdodds.com/blog/avoid-the-test-user) by Kent C. Dodds
