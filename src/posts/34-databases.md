@@ -1,6 +1,6 @@
 ---
 title: "Introduction to databases"
-date: "06-06-2020"
+date: "2021-01-17"
 tags: ["Computer Science"]
 summary: "In this article, I briefly talk about what databases are, SQL and NoSQL databases and their pro's and con's."
 ---
