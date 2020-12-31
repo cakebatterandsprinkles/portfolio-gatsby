@@ -1,6 +1,6 @@
 ---
 title: "Single-Page Application (SPA) vs. Multi-Page Application (MPA)"
-date: "06-06-2020"
+date: "2021-01-22"
 tags: ["Web Development"]
 summary: "In this article, I briefly explain about two main web application patterns, single-page application and multi-page application, and their differences."
 ---
