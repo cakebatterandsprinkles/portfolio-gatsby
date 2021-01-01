@@ -71,7 +71,6 @@ const JournalPage = () => {
     })
     const availableYears = new Set(allYears)
     setYears(Array.from(availableYears).sort())
-    console.log(availableYears)
   }
 
   useEffect(() => {
@@ -98,7 +97,6 @@ const JournalPage = () => {
           return post
         })
       )
-      console.log("searching: " + searchInput.current.value)
       setSearchText(searchInput.current.value.toLowerCase())
     }
   }
@@ -208,12 +206,42 @@ const JournalPage = () => {
               })}
           </ul>
           {pageCount > 1 ? (
-            <div>
+            <div className={styles.paginationButtonContainer}>
+              <div
+                className={styles.leftarrow}
+                onClick={() =>
+                  setCurrentPage(
+                    currentPage === 0 ? currentPage : currentPage - 1
+                  )
+                }
+              >
+                ◄
+              </div>
               {Array.from({ length: pageCount }).map((d, i) => (
-                <button onClick={() => setCurrentPage(i)} key={i}>
-                  {i + 1}
+                <button
+                  className={
+                    i === currentPage
+                      ? styles.activePaginationButton
+                      : styles.paginationButton
+                  }
+                  onClick={() => setCurrentPage(i)}
+                  key={i}
+                >
+                  <span className={styles.paginationAlignment}>{i + 1}</span>
                 </button>
               ))}
+              <div
+                className={styles.rightarrow}
+                onClick={() =>
+                  setCurrentPage(
+                    currentPage === pageCount - 1
+                      ? pageCount - 1
+                      : currentPage + 1
+                  )
+                }
+              >
+                ►
+              </div>
             </div>
           ) : null}
         </div>
