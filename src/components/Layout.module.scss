@@ -72,6 +72,10 @@
 }
 
 @media (max-width: 600px) {
+  .nav {
+    height: 50vh;
+  }
+
   .content {
     padding: 1rem 0;
   }
@@ -79,5 +83,41 @@
   .img {
     margin: 1.5rem 0;
     height: 10rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav {
+    height: 56vh;
+  }
+
+  .content {
+    padding: 1rem 0;
+  }
+
+  .img {
+    margin: 1.5rem 0;
+    height: 10rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .nav {
+    height: 65vh;
+  }
+
+  .content {
+    padding: 1rem 0;
+  }
+
+  .img {
+    margin: 1.5rem 0;
+    height: 10rem;
+  }
+}
+
+@media (max-width: 290px) {
+  .nav {
+    height: 55vh;
   }
 }
