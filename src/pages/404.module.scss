@@ -1,0 +1,68 @@
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin-bottom: 0.5rem;
+}
+
+.header {
+  display: flex;
+  font-family: var(--heading-font);
+  color: var(--black);
+  font-size: 4rem;
+}
+
+.text {
+  font-family: var(--heading-font);
+  font-size: 0.8rem;
+}
+
+.big404Img {
+  height: 75%;
+  width: 75%;
+  border-radius: 20px;
+  margin-bottom: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.jumpingChild {
+  height: 4rem;
+  width: 4rem;
+  margin: 0 2rem 1rem 2rem;
+  animation-delay: 0.6s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-100px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
