@@ -9,7 +9,7 @@ const Page404 = () => {
   return (
     <Layout>
       <div className={journalStyles.blogContainer}>
-        <div className={journalStyles.blogWrapper}>
+        <div className={`${journalStyles.blogWrapper} ${styles.blogWrapper}`}>
           <div className={styles.contentWrapper}>
             <div className={styles.infoWrapper}>
               <div className={styles.header}>404</div>
