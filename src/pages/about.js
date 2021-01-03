@@ -20,7 +20,6 @@ function AboutPage() {
             />
             <p className={styles.greeting}>Hello!</p>
           </div>
-          <div className={styles.hr}></div>
           <div className={styles.buttonWrapper}>
             <p className={styles.query}>Which version would you like?</p>
             <div className={styles.queryWrapper}>
