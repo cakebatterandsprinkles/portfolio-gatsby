@@ -7,6 +7,7 @@ import Lines from "../images/gallery/digital_art/IMG_0274.png"
 import JustChoose from "../images/gallery/digital_art/IMG_0276.png"
 import SocialDistance from "../images/gallery/digital_art/IMG_0277.png"
 import NeuronsWalking from "../images/gallery/digital_art/IMG_0371.png"
+import ThisIsFine from "../images/main/img404.jpg"
 import Kitsune from "../images/gallery/clay/kitsune_yagmur.jpg"
 import StandingTall from "../images/gallery/clay/standingtall_yagmur-scaled.jpg"
 import Kaonashi from "../images/gallery/clay/kaonashi_yagmur.jpg"
@@ -47,6 +48,14 @@ const GalleryPage = () => {
       medium: "Digital art made by using Procreate.",
       src: NeuronsWalking,
       imgAlt: "digital illustration of neurons walking",
+    },
+    {
+      name: "This is fine",
+      year: "2020",
+      medium: "Digital art made by using Procreate.",
+      src: ThisIsFine,
+      imgAlt:
+        "digital illustration of a character surrounded by little versions of himself.",
     },
     {
       name: "Self Portrait",
