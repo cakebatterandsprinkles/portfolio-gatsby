@@ -4,6 +4,7 @@ import styles from "./about.module.scss"
 import coffee from "../images/main/coffee.svg"
 import watch from "../images/main/time.svg"
 import tree from "../images/main/location-park.svg"
+import Child from "../images/main/character404.png"
 
 function AboutPage() {
   const [text, setText] = useState("")
@@ -12,23 +13,32 @@ function AboutPage() {
       <div className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
           <div className={styles.greetingContainer}>
-            <img src={tree} alt="tree icon" className={styles.treeIcon} />
+            <img
+              src={Child}
+              alt="pink character that represents the owner of the website"
+              className={styles.childIcon}
+            />
             <p className={styles.greeting}>Hello!</p>
           </div>
-          <hr className={styles.hr}></hr>
-          <p className={styles.query}>Which version would you like?</p>
-          <div className={styles.queryWrapper}>
-            <button className={styles.timeLink} onClick={() => setText("long")}>
-              <img src={coffee} alt="coffee img" className={styles.icon} />
-              "I have time"
-            </button>{" "}
-            <button
-              className={styles.timeLink}
-              onClick={() => setText("short")}
-            >
-              <img src={watch} alt="watch img" className={styles.icon} />
-              "make it short and fancy"
-            </button>
+          <div className={styles.hr}></div>
+          <div className={styles.buttonWrapper}>
+            <p className={styles.query}>Which version would you like?</p>
+            <div className={styles.queryWrapper}>
+              <button
+                className={styles.timeLink}
+                onClick={() => setText("long")}
+              >
+                <img src={coffee} alt="coffee img" className={styles.icon} />
+                "I have time"
+              </button>{" "}
+              <button
+                className={styles.timeLink}
+                onClick={() => setText("short")}
+              >
+                <img src={watch} alt="watch img" className={styles.icon} />
+                "make it short and fancy"
+              </button>
+            </div>
           </div>
           {text === "" ? null : (
             <div className={styles.aboutMe}>

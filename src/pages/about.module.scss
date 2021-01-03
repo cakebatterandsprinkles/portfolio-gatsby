@@ -13,12 +13,12 @@
 
 .greetingContainer {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.treeIcon {
-  height: 3rem;
+.childIcon {
+  height: 5rem;
   width: auto;
   margin: 0;
   margin-right: 0.5rem;
@@ -28,7 +28,8 @@
   font-size: 2rem;
   font-family: "Share Tech Mono", monospace;
   font-weight: bold;
-  margin: 0;
+  margin: 1rem 0 0 1rem;
+  color: var(--darkgray);
 }
 
 .query {
@@ -43,20 +44,35 @@
   margin: 1rem 0;
 }
 
+.buttonWrapper {
+  background: var(--snow);
+  margin-top: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 10px;
+  display: inline-block;
+}
+
 .hr {
   background-color: var(--lightcloudgray);
 }
 
 .timeLink {
-  border: none;
+  border: 2px solid var(--lightgray);
   cursor: pointer;
-  padding: 0.5rem 0.8rem;
-  background-color: var(--lightcloudgray);
+  padding: 0.4rem 0.8rem;
+  background-color: var(--dirtysnow);
   border-radius: 5px;
   display: flex;
   align-items: center;
   margin-right: 1rem;
   font-size: 0.85rem;
+}
+
+.timeLink:focus,
+.timeLink:hover {
+  outline: none;
+  border: 2px solid var(--springgreen);
 }
 
 .icon {
@@ -147,7 +163,6 @@
 @media (max-width: 900px) {
   .greeting {
     font-size: 1.5rem;
-    padding-bottom: 1rem;
   }
 
   .aboutMe {
