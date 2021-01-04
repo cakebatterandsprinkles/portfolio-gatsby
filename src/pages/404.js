@@ -4,10 +4,12 @@ import styles from "./404.module.scss"
 import JumpingBoy from "../images/main/character404.png"
 import TiredAdult from "../images/main/img404.jpg"
 import journalStyles from "./journal.module.scss"
+import { createHaiku } from "../utility/functions"
 
 const Page404 = () => {
   return (
     <Layout>
+      {createHaiku()}
       <div className={journalStyles.blogContainer}>
         <div className={`${journalStyles.blogWrapper} ${styles.blogWrapper}`}>
           <div className={styles.contentWrapper}>

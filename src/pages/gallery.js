@@ -11,6 +11,7 @@ import ThisIsFine from "../images/main/img404.jpg"
 import Kitsune from "../images/gallery/clay/kitsune_yagmur.jpg"
 import StandingTall from "../images/gallery/clay/standingtall_yagmur-scaled.jpg"
 import Kaonashi from "../images/gallery/clay/kaonashi_yagmur.jpg"
+import { createHaiku } from "../utility/functions"
 
 const GalleryPage = () => {
   const [section, setSection] = React.useState("digital")
@@ -131,6 +132,7 @@ const GalleryPage = () => {
 
   return (
     <Layout>
+      {createHaiku()}
       <div className={styles.galleryContainer}>
         <div className={styles.galleryWrapper}>
           <h1 className={styles.heading}>Art Gallery</h1>

@@ -1,10 +1,11 @@
 import React, { useRef, useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { tagStyles } from "../data/blog"
+import { tagStyles } from "../utility/blog"
 import styles from "./journal.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
+import { createHaiku } from "../utility/functions"
 
 const JournalPage = () => {
   const posts = useStaticQuery(graphql`
@@ -148,6 +149,7 @@ const JournalPage = () => {
 
   return (
     <Layout>
+      {createHaiku()}
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
           <h1 className={styles.mainHeading}>Journal</h1>

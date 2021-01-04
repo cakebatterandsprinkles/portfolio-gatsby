@@ -5,11 +5,13 @@ import coffee from "../images/main/coffee.svg"
 import watch from "../images/main/time.svg"
 import tree from "../images/main/location-park.svg"
 import Child from "../images/main/character404.png"
+import { createHaiku } from "../utility/functions"
 
 function AboutPage() {
   const [text, setText] = useState("")
   return (
     <Layout>
+      {createHaiku()}
       <div className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
           <div className={styles.greetingContainer}>
