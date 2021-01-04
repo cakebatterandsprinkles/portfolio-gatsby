@@ -11,6 +11,7 @@ import ThisIsFine from "../images/main/img404.jpg"
 import Kitsune from "../images/gallery/clay/kitsune_yagmur.jpg"
 import StandingTall from "../images/gallery/clay/standingtall_yagmur-scaled.jpg"
 import Kaonashi from "../images/gallery/clay/kaonashi_yagmur.jpg"
+import WolfMask from "../images/gallery/clay/wolf_yagmur.png"
 import { createHaiku } from "../utility/functions"
 
 const GalleryPage = () => {
@@ -96,14 +97,21 @@ const GalleryPage = () => {
       src: StandingTall,
       imgAlt: "Small clay sculpture",
     },
+    {
+      name: "Wolf",
+      year: "2019",
+      medium: "Cone 10 clay & underglaze.",
+      src: WolfMask,
+      imgAlt: "Clay wolf mask",
+    },
   ]
 
   const renderContent = () => {
     if (section === "digital") {
       return (
         <div className={styles.gridContainer}>
-          {digitalWork.map(w => (
-            <div className={styles.card}>
+          {digitalWork.map((w, i) => (
+            <div className={styles.card} key={`card-${i}`}>
               <Polaroid name={w.name} year={w.year} medium={w.medium}>
                 <img src={w.src} alt={w.imgAlt} />
               </Polaroid>
@@ -114,8 +122,8 @@ const GalleryPage = () => {
     } else if (section === "clay") {
       return (
         <div className={styles.gridContainer}>
-          {clayWork.map(w => (
-            <div className={styles.card}>
+          {clayWork.map((w, i) => (
+            <div className={styles.card} key={`claywork-${i}`}>
               <Polaroid name={w.name} year={w.year} medium={w.medium}>
                 <img src={w.src} alt={w.imgAlt} />
               </Polaroid>
@@ -140,8 +148,9 @@ const GalleryPage = () => {
             Be a kind human and get permission before using my content. Thanks!
           </div>
           <nav className={styles.navbar}>
-            {sections.map(s => (
+            {sections.map((s, i) => (
               <div
+                key={`section-${i}`}
                 className={`${styles.navbarLink} ${
                   section === s.handle ? styles.activeLink : ""
                 }`}

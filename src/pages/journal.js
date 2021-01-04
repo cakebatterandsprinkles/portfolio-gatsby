@@ -60,9 +60,9 @@ const JournalPage = () => {
   const pageCount = Math.ceil(searchResults.length / pageSize)
 
   const setCurrentTags = () => {
-    let allTags = posts.allMarkdownRemark.edges.flatMap(post => {
-      return post.node.frontmatter.tags
-    })
+    let allTags = posts.allMarkdownRemark.edges.flatMap(
+      post => post.node.frontmatter.tags
+    )
     const currentTags = new Set(allTags)
     setTags(Array.from(currentTags))
   }
