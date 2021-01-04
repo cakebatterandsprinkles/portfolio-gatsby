@@ -29,6 +29,13 @@ const JournalPage = () => {
     }
   `)
 
+  const allSortedPosts = posts.allMarkdownRemark.edges
+    .sort(
+      (a, b) =>
+        new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date)
+    )
+    .map(post => post)
+
   const searchInput = useRef(null)
   const clearIcon = useRef(null)
   const [searchText, setSearchText] = useState("")
@@ -39,11 +46,7 @@ const JournalPage = () => {
 
   const pageSize = 10
 
-  const [filteredPosts, setFilteredPosts] = useState(
-    posts.allMarkdownRemark.edges.map(post => {
-      return post
-    })
-  )
+  const [filteredPosts, setFilteredPosts] = useState(allSortedPosts)
 
   const searchResults =
     searchText.length === 0
@@ -93,11 +96,7 @@ const JournalPage = () => {
     }
 
     if (e.key === "Enter") {
-      setFilteredPosts(
-        posts.allMarkdownRemark.edges.map(post => {
-          return post
-        })
-      )
+      setFilteredPosts(allSortedPosts)
       setSearchText(searchInput.current.value.toLowerCase())
     }
   }
@@ -127,11 +126,7 @@ const JournalPage = () => {
 
   const restoreAllArticles = () => {
     setCurrentPage(0)
-    setFilteredPosts(
-      posts.allMarkdownRemark.edges.map(post => {
-        return post
-      })
-    )
+    setFilteredPosts(allSortedPosts)
     setSearchText("")
     handleClearClick()
   }
