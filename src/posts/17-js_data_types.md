@@ -5,7 +5,9 @@ tags: ["Computer Science", "Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference."
 ---
 
-You can check the data type of a variable by using the **typeof operator.**
+If you want to imitate any piece of code in this article, I simply suggest you to use the mighty Chrome console. You can open it by using `Command + Option + J` shortcut in Mac and `Control + Shift + J` shortcut in Windows.
+
+Let's start by learning how to check the variable types. JavaScript has a simple and very useful operator for this purpose, and that is the **typeof operator.**
 
 We'll go through every data type you see in this example, and some more:
 
@@ -399,17 +401,32 @@ Now, let's talk about all primitive values one by one:
 
   // -> Number.prototype.toFixed() limits the floating point to a given number.
   let num = 12.3456789
-
   num.toFixed() // ↪ "12"
   num.toFixed(2) // ↪ "12.35" // Note the rounding!
   num.toFixed(5) // ↪ "12.34568" // Note the rounding!
   num.toFixed(9) // ↪ "12.345678900" // Note the 0's at the end!
 
+  // -> Number.prototype.toLocaleString() returns a language specific implementation of a given string.
   num = 123456789.0
-  // -> Number.toLocaleString() returns a language specific implementation of a given string.
   num.toLocaleString("ar-EG") // ↪ "١٢٣٬٤٥٦٬٧٨٩"
   // As a second argument you can give an optional argument that defines options
   num.toLocaleString("de-DE", { style: "currency", currency: "EUR" }) // ↪ "123.456.789,00 €"
+
+  // -> Number.prototype.toString() returns a string value that represents the given number. You can give an optional base value as an argument.
+  let num = 256
+  let float = 128.25
+  let negativeNum = -256
+  num.toString() // ↪ "256"
+  float.toString() // ↪ "128.25"
+  negativeNum.toString() // ↪ "-256"
+  num.toString(2) // ↪ "100000000" // base 2, binary
+  num.toString(16) // ↪ "100" // base 16, hexadecimal
+
+  // -> Number.prototype.valueOf() returns the numeric value of a number object.
+  const numObject = new Number(123)
+  typeof numObject // ↪ "object"
+  const numValue = numObject.valueOf() // ↪ 123
+  typeof numValue // ↪ "number"
   ```
 
   You can use three methods to convert a string to a number:
@@ -445,28 +462,35 @@ Now, let's talk about all primitive values one by one:
 
 - **Boolean:**
 
-  There are only two boolean values: true or false. They are really useful for setting flags.
+  There are only two boolean values: _true_ or _false_. They are really useful for setting flags.
 
-  _Truthy and Falsy:_
+  All values have an inherent _truthy_ or _falsy_ value under their real values. That means, in certain conditions they will act like boolean values, and either look like true or false.
 
-  All values have an inherent truthy or falsy value under their real values. That means, in certain conditions they will act like boolean values, and either look like true or false.
+  Everything else is truthy except falsy values! And here are the falsy values:
 
-  Everything else is truthy except falsy values!
-
-  Falsy values are:
-
-  1.  False
+  1.  False (oh, such a coincidence)
   2.  0
-  3.  "" (empty string)
+  3.  "", '', `` (empty string)
   4.  null
   5.  undefined
   6.  NaN
 
 - **Null:**
 
-Null and undefined are very similar with a slight difference. They both mean nothing, but null has the connotation of to be set specifically to to nothing, while undefined has the connotation that that property has never been set.
+Null and undefined are very similar with a slight difference. They both mean nothing, but null has the connotation of to be set specifically to nothing, while undefined has the connotation that that property has never been set at all. For a value to be null, a developer has to explicitly set it to null.
 
-- **Undefined:**
+```javascript
+let name = null
+typeof name // ↪ null
+```
+
+- **Undefined:** If a variable is declared and no value is assigned to it, its value is _undefined_.
+
+```javascript
+let name
+typeof name // ↪ undefined
+```
+
 - **Symbol:**
 
 #### Non-primitive (Reference) data types:
@@ -1026,236 +1050,6 @@ console.log(array[2])
 ```
 
 You can test your regexps from here: https://regex101.com/
-
-- **Generator Functions:**
-
-  Babel is a JS transcompiler, and it is used to convert ES2015+ code to ES5. ES5 is the version that can be run by older JS engines, so ES5 code is much more cross-browser friendly.
-
-  Generators are a complicated subject that only a few people like, but they are a part of ES2015+.
-
-  To define a generator, you start with the function keyword, and before the name of the function, you put a star, like this: `function *generateNum() {}`.
-
-  There are also people using the star just after the function keyword, like this: `function* generateNum() {}`. Regardless, both of these sytaxes can be used to create generators. Whenever you run these functions, they will create a generator object.
-
-  When we call a generator, the code inside the generator is going to execute until a yield statement is found. When a yield statement is found, the execution of the generator function is paused.
-
-  A generator function returns a generator object, which has certain built in methods to it, such as `.next()`, `.value`. These functions can be called multiple times.
-
-  Let's walk through a simple example:
-
-```javascript
-// Let's define a generator:
-function\* generateNum(num){
-const result = 12 + num;
-return 56 + (yield result);
-}
-
-// Let's create a generator object by calling a generator function:
-const generator = generateNum(1);
-
-// The first time we call the next function, the generator executes up to the
-// first yield statement and returns whatever was yielded.
-console.log(generator.next()); // prints: { value: 13, done: false }
-
-// The second time we call the next function and we pass a value to it,
-// the value will be inserted in the place of the yield statement.
-console.log(generator.next(1)); // prints: { value: 57, done: false }
-
-```
-
-That doesn't sound very useful does it? So how can we use this?
-
-Let's create another example:
-
-```javascript
-function\* list(){
-yield 1;
-yield 2;
-yield 3;
-yield 4;
-yield 5;
-}
-
-const generator1 = list();
-console.log(generator1.next()); // { value: 1, done: false }
-console.log(generator1.next()); // { value: 2, done: false }
-console.log(generator1.next()); // { value: 3, done: false }
-console.log(generator1.next()); // { value: 4, done: false }
-console.log(generator1.next()); // { value: 5, done: false }
-console.log(generator1.next()); // { value: undefined, done: true }
-
-// We can iterate over a generator function for every yield statement we have:
-
-const generator2 = list();
-
-const numbers = [];
-for (let value of generator2) {
-numbers.push(value);
-}
-
-console.log(numbers); // prints: [1, 2, 3, 4, 5]
-```
-
-We can nest generators inside generators too:
-
-```javascript
-function* numList1() {
-yield 1;
-yield 2;
-// yield* means the upcoming function is also a generator:
-yield\* numlist2();
-yield 8;
-yield 9;
-}
-
-function\* numlist2() {
-yield 3;
-yield 4;
-yield 5;
-yield 6;
-yield 7;
-}
-
-const generator = numList1();
-
-let nums =[];
-for(let value of generator) {
-nums.push(value);
-}
-
-console.log(nums); // prints: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-```
-
-- **Iterables:**
-
-Iterable concept allows us to use for...of loops in any chosen object.
-Data types that have built-in iteration feature are array, string, set, map. Other than that, if you want to make a collection of data iterable, you have to make it on your own.
-
-- Example-1:
-
-  Let's create an iterator from an object:
-
-```javascript
-let classroom = {
-  start: 1,
-  end: 15,
-}
-
-// By default, for...of loop will not work in objects.
-
-// For for...of to work on classroom object, we need to make it an iterator.
-
-classroom[Symbol.iterator] = function () {
-  return {
-    current: this.start,
-    last: this.end,
-
-    // the next function will be called with each iteration of the for...of loop
-    // but it should return each value as an object with the value and a done flag
-    next() {
-      if (this.current <= this.last) {
-        return { value: this.current++, done: false }
-      } else {
-        return { value: undefined, done: true }
-      }
-    },
-  }
-}
-
-for (let num of classroom) {
-  console.log(num)
-} // prints: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-```
-
-- Example-2:
-  In the first example, the iterator object is seperate from the object it iterates over. But you can combine them as well:
-
-```javascript
-let classroom = {
-  start: 1,
-  end: 15,
-
-  [Symbol.iterator]() {
-    this.current = this.start
-    return this
-  },
-
-  next() {
-    if (this.current <= this.end) {
-      return { value: this.current++, done: false }
-    } else {
-      return { value: undefined, done: true }
-    }
-  },
-}
-
-for (let num of classroom) {
-  console.log(num)
-} // prints: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-```
-
-- Example-3:
-  You can also combine an iterator with a generator function, which has it's own built-in next method, so you don't need to write your own:
-
-```javascript
-let classroom = {
-start:1,
-end: 15
-}
-
-classroom[Symbol.iterator] = function\* () {
-let current = this.start;
-while (this.end > current) {
-yield current;
-current++;
-}
-}
-
-for (let num of classroom) {
-console.log(num);
-} // prints: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-```
-
-Example-4:
-This time let's create a iterator creator, a function that will make an iterator out of every object it is given as an argument and return its key value pairs:
-
-```javascript
-let iteratorCreator = function(obj) {
-return obj[Symbol.iterator] = function () {
-const allEntries = Object.entries(obj);
-return {
-counter: 0,
-
-         next() {
-            if (this.counter < allEntries.length) {
-              const entry = allEntries[this.counter++];
-              const [key, value] = entry;
-               return {value: {key , value}, done: false};
-            } else {
-               return {value: undefined, done: true};
-            }
-         }
-         }
-      }
-
-}
-
-let person = {
-name: "Arisi",
-eyes: "old",
-nickname: "wise"
-}
-
-iteratorCreator(person);
-
-for (let entries of person) {
-console.log(entries);
-}
-// prints: {key: "name", value: "Arisi"}
-{key: "eyes", value: "old"}
-{key: "nickname", value: "wise"}
-
-```
 
 **Resources:**
 
