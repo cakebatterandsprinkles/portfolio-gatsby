@@ -5,7 +5,6 @@ import styles from "../pages/journal.module.scss"
 import articleStyle from "./Article.module.scss"
 
 const ArticlePage = props => {
-  console.log(props)
   return (
     <Layout>
       <div className={styles.blogContainer}>

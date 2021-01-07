@@ -13,7 +13,9 @@ const tagStyles = {
   React: styles.lightpurple,
   GraphQL: styles.grassgreen,
   "Express.js": styles.palepink,
-  default: styles.default,
+  Ornithology: styles.aeroblue,
+  TypeScript: styles.candypink,
+  default: styles.mediumpurple,
 }
 
 export { tagStyles }
