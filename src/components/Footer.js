@@ -1,12 +1,12 @@
 import React from "react"
-import styles from "./Footer.module.scss"
 import star from "../images/main/star-full.svg"
+import styles from "./Footer.module.scss"
 
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.infoContainer}>
-        <p>© 2019-2020 Yagmur C. Tas</p>
+        <p>© 2019-{new Date().getFullYear()} Yagmur C. Tas</p>
       </div>
       <div className={styles.infoContainer}>
         <img src={star} alt="star icon" className={styles.starIcon} />
