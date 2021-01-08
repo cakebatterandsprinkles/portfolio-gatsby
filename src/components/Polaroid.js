@@ -10,6 +10,14 @@ const Polaroid = props => {
           {props.name}, {props.year}
         </div>
         <div className={styles.subHeader}>{props.medium}</div>
+        {props.studio ? (
+          <div className={styles.subHeader}>
+            Studio:{" "}
+            <a href={props.link} className={styles.link} target="_blank">
+              {props.studio}
+            </a>
+          </div>
+        ) : null}
       </div>
     </div>
   )
