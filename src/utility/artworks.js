@@ -120,7 +120,7 @@ const clayWork = [
     imgAlt: "Small clay sculpture",
   },
   {
-    name: "Kindred: Half lamb, lalf wolf",
+    name: "Kindred: Half lamb, half wolf",
     year: "2019",
     medium: "Cone 6 clay & underglaze.",
     studio: "Crealde School of Art",

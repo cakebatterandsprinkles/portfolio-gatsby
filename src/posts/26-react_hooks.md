@@ -216,7 +216,7 @@ Let's make a small app with counter and counterDisplay components, and even thou
 import React from "react"
 // You create a context object by using createContext API.
 // You can provide a default value by passing it as an argument.
-const UserContext = React.CreateContext()
+const CountContext = React.createContext()
 
 // Data passing works via subscribing and consuming. The components that want to use the context data (which are called consumers) have to subscribe to it.
 // The branch of the component tree that is going to need that context should be wrapped with a provider component.
