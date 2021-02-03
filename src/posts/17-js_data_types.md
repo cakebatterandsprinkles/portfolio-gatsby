@@ -647,11 +647,15 @@ An object is an _unordered_ data structure consisting key-value pairs.
 - **Function:**
 - **Date:**
 
-**Bonus: Some topics a beginner to JS should check out**
+---
 
-These notes are about some miscallenous topics we didn't talk about in the main section of the article, so if you're interested, check the links out. If these does not interest you, you can simply skip this section, and voila! This line is the end of the article for you! Good job.
+Following notes are about some miscallenous topics, so if you're interested, check them out. If these does not interest you, you can simply skip this section, and voila! This line is the end of the article for you! Good job.
+
+---
 
 Now, rest of you: keep reading!
+
+**Bonus: Some topics a beginner to JS should check out**
 
 - **Logical operators:** There are many of these. The most commonly used ones are or(||), and(&&) and not(!).
 
@@ -960,96 +964,6 @@ console.log(`Status: ${statusCode}`);
 parseResponse(response); // prints: Status: 200 OK
 
 ```
-
-- **RegExp:** Regular expressions are patterns that are used to match character combinations in strings. In JavaScript, regular expressions are also objects. They are awfully useful in input validation.
-
-You can construct a regular expression in two ways:
-
-```javascript
-// 1. Literal expression:
-var re = /ab+c/
-
-// 2. "new" keyword, which calls the constructor function of the RegExp object:
-var re = new RegExp("ab+c")
-```
-
-If you want to see if a regular expression matches a string, you can use the text function:
-
-```javascript
-const string = "Cake base cannot be eaten raw"
-const regex = /base/
-
-const isExisting = regex.test(string)
-console.log(isExisting) //prints: true
-```
-
-Some basic things to know:
-
-- Square brackets symbolize in between.
-- Regex is case sesitive: [a-z] means lowercase letters
-- [A-Z] means uppercase letters
-- [0-9] covers the numbers
-- [a-zA-Z] covers all uppercase and lowercase letters
-- [a-zA-Z0-9] covers all uppercase and lowercase letters + numbers
-- [xyz] matches any single character inside the square brackets, in this case x, y or z
-- [xyz]+ matches one or more of any characters inside square brackets, in this case x, y or z
-- **/g** means global, if you don't put it at the end, the execution of it will stop with the first match that is found.
-- **/i** means insensitive to uppercase or lowercase
-- \$ matches the end of the string.
-- ^ matches the beginning of a string.
-- [^a-z] when inside of square brackets, the ^ means match anything that is NOT a lowercase letter.
-- \d matches one or more arbitrary digits
-- \w matches any word character [a-zA-Z0-9_]
-- \s matches space
-- \n matches new line
-- \t matches tabs
-
-```javascript
-const string =
-  "filea.mp3 file_01.mp3 file_02.mp3 test.csv other.txt ANTS.md football.md foosball.md fooooootball.mp4"
-
-console.log(string.match(/[A-Z]/g)) // prints: ["A", "N", "T", "S"]
-
-console.log(string.match(/[a-zA-Z0-9]/)) // prints: ["f"]
-
-console.log(string.match(/\w/)) // prints: ["f"]
-
-console.log(string.match(/\w+/)) // prints: ["filea"]
-
-console.log(string.match(/\w+\./g)) // prints: ["filea.", "file_01.", "file_02.", "test.", "other.", "ANTS.", "football.", "foosball.", "fooooootball."]
-console.log(string.match(/\w+\s/g)) // prints: ["mp3 ", "mp3 ", "mp3 ", "csv ", "txt ", "md ", "md ", "md "]
-
-const sentence = "I didn't eat it all"
-console.log(sentence.replace(/[aei]/g, "o")) // prints: "I dodn't oot ot oll"
-
-// regex.test() function checks if a regex matches a given value, returns a boolean value.
-// ? is a modifier that matches the value before them between 0 and 1 times
-// + is a modifier that matches the value before them between 1 and unlimited times
-// \* is a modifier that matches the value before them between 0 and unlimited times
-
-const claim = "You just kissed a bm boom boooom baby"
-console.log(/boo?m/g.test(claim)) // prints: true
-console.log([...claim.matchAll(/boo?m/g)]) // returns you all the matching elements in an array
-console.log(/bo?m/g.test(claim)) // prints: false
-console.log(/bo+m/g.test(claim)) // prints: true // matches 2 strings: boom, boooom
-console.log(/bo\*m/g.test(claim)) // prints: true // matches 3 strings: bm, boom, boooom
-
-const regexp = /c(a)(t(\d?))/g
-const str = "cat1cat2cat3max"
-
-const array = [...str.matchAll(regexp)]
-
-console.log(array[0])
-// expected output: Array ["cat1", "c", "t1", "1"]
-
-console.log(array[1])
-// expected output: Array ["cat2", "c", "t2", "2"]
-
-console.log(array[2])
-// expected output: Array ["cat3", "c", "t3", "3"]
-```
-
-You can test your regexps from here: https://regex101.com/
 
 **Resources:**
 
