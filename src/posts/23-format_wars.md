@@ -11,7 +11,7 @@ One wonders - why the heck there are so many of them? This is what I exactly tho
 
 The first thing to know: everything inside the computer are composed of tiny bits. A pattern of bits only mean something if we assign a meaning to them. The same bits might indicate other things in different locations. Image formats exist because they encode the image data using different techniques and different amount of bits. And as a user, you have the responsibility of choosing the one that serves your purpose the best.
 
-To understand the image formats better, we are first going to understand how to represent an image in bits, then how to represent the color. After that, we are going to talk about something called **compression** which is a trade in itself, you trade the file size with image quality. After that we are going to look at different image file formats, and what they are useful for.
+To understand the image formats better, we are first going to understand how to represent an image in bits, then how to represent the color. After that, we are going to talk about something called **compression** which is the art of making the file size as small as possible, with the least amount of data loss. After that we are going to look at different image file formats, and what they are useful for.
 
 #### Representing an image with bits
 
@@ -72,6 +72,8 @@ A bitmap can also be saved by using something called **indexed color**, and it i
 
 Another thing to mention is the web-safe colors. Web-safe colors are colors that would look the same in any browser on most computer screens. Although 8 bits allow to encode 256 different colors, only 216 of them are web-safe. The web-safe pallete allows consistency, but if your image has more than 216 colors (which is most probably the case), then most of your color data will be lost on the saved file. The quality of the image saved with a web-safe palette will be worse in this case. In attempt to maintain the quality of the image, the image editing software can apply a process called **dithering**, which is also referred to as **color quatization**. Dithering works by placing available colors next to each other, an attempt to create the illusion of a color that does not exist in the palette. If the pixels are small enough, human eye can be deceived, but dithered images tend to have a speckled/grainy appearance when zoomed in.
 
+Resaving a 24 bit RGB true color image as an indexed bitmap will usually make the image file smaller. This is one method you can use to effectively compress a bitmap image file. Resaving a bitmap with fewer colors classifies as lossy compression (because the image will lose some of its quality in the process), and this data loss is irreversible, which is something we will discuss later.
+
 #### RGB and CMYK Color Spaces and How Screens Work
 
 Mathematical representation of a set of colors is called a **color space**. Color spaces differ depending on the medium that is being used. For example, physical pigments (such as crayons and colored pencils) and light (rainbows!) work differently, therefore they have their own color spaces.
@@ -120,9 +122,49 @@ There are also some other tricks that are used in printing, such as **[halftonin
 
 ###### The cerulean color that appears in the left side image is actually created by a pattern of cyan, magenta, yellow and black, that can be seen on the right side image, which is the same image under a microscope. Image Credit: Psiĥedelisto, CC0, via Wikimedia Commons
 
+There are other color models that also encode brightness information for each pixel, such as HSV (stands for Hue, Saturation, and Value (brightness)), HLS (Stands for Hue, Light, Saturation), YCbCr (Y is for brightness, Cb stands for 'Chroma blue' which is the blue color, Cr stands for 'Chroma red' which is the red color) and many more. As brightness information of a pixel is stored separately from the chroma information, chroma information can be changed independently from the brightness information. Human sight is much more sensitive to different levels of brightness than it is to differences in color. So with these models, we can reduce the color detail of an image without compromising the brightness. This way, we can generate an image that contains less data, hence taking up less space, but muore or less looks similar to the human eye.
+
 #### Data Compression
 
-Resaving a 24 bit RGB true color image as an indexed bitmap will usually make the image file smaller. This is one method you can use to effectively compress a bitmap image file. Resaving a bitmap with fewer colors is classifies as lossy compression (because the image will lose some of its quality in the process), and this loss is irreversible.
+The first question that poppes into mind is, why do we compress data? Isn't it better to keep and use everything at their best quality? This question has a simple answer: data storage and transmission costs money. Compressed data takes up less space in the memory and is transmitted more quickly, and is therefore cheaper to keep and use.
+
+There are 2 main types of compression:
+
+1. **Lossless:** Lossless compression has no loss in information or quality. You can recreate the original data from the compressed data. For example, GIF (stands for Graphics Interchange Format) is a widely used lossless compression format for images. GIF is generally used in simple images that has a large area of the same color, like logos. If you're working with text data (a document that includes text), then lossless compression is essential, otherwise the decompressed document will be unreadable.
+
+2. **Lossy:** Lossy compression has some loss in information or quality. You can NOT recreate the original data from the compressed data. For example, JPEG (stands for Joint Photographic Experts Group) is a widely used lossy compression format for images.
+
+So how do we compress image data? There are many ways to do that, and it is always a compromise (a balance, a trade) between image quality and space. Very simply put, we try to encode the same data in such ways that it takes up less space. Think of it as putting something in your luggage. With certain folding techniques, you can make your cardigan take less space then it usually does, but you can also take the scissors and cut some of it as well. Cutting some of it is irreversible, what is cut is lost. With or without cutting it, after it is folded, you need to unfold it when taking out of the luggage so you can put it on. Image data works the same way, a data compression program is used to convert data from a not-so-compressed format into a format that is optimized for compactness. A decompression program returns the data back into its original form. Needless to say, the decompression algorithm has to match the compression algorithm, and it will rely on some additional information like the width and height of the image.
+
+One of the compression techniques is called **Run Length Encoding (RLE)**, which is a lossless compression technique. RLE has a simple logic, when using this algorithm, compression program first scans the data. While scanning, it keep strack of how many times a unique value occurs in the data and it keeps track of it. At the end, it outputs a code that is composed of the number of the values followed by the value itself. It looks like this:
+
+```
+// Uncompressed Data-1:
+"qqqgffffhhhhhhhhhhjkkkkkkkkkkkk"
+
+// Compressed Data-1 with RLE:
+3q1g4f10h1j12k
+
+// Uncompressed Data-2:
+"qqgffhjkklllmnopprrstuuvwwwyzz"
+
+// Compressed Data-2 with RLE:
+2q1g2f1h1j2k3l1m1n1o2p2r1s1t2u1v3w1y2z
+```
+
+In this second dataset, compressed data is larger than the uncompressed one. This obviously does not work for us, and this is called **negative compression**. Clearly, this technique is not suitable for all types of data. RLE works best when data has long sequences that is the same value repeated. Line art images, architectural drawings that has small amounts of color data, data sent with fax machines are some of the data that is encoded well using RLE. Some medical scanners that create huge amounts of 3 dimensional imaging data that also lacks too many colors (MRI, CT scan, PET scan etc.) also take advantage of RLE. RLE is rarely used by itself, but generally combined with some other algorithm.
+
+There are many other [lossless](https://en.wikipedia.org/wiki/Category:Lossless_compression_algorithms) and [lossy compression algorithms](https://en.wikipedia.org/wiki/Category:Lossy_compression_algorithms). The image file formats are an indicator of the way they were organized and stored.
+
+#### Vector Graphics
+
+Until this point, we dealt with bitmap images (otherwise known as raster images or raster graphics), which we defined as an array of pixel color (and maybe brightness) data. Unlike bitmap images, vector images are composed of the coordinates of points, and lines, curves and shapes that are made by those points in space (see the Cartesian plane), which can be defined as mathematical formulas. As the vector images are simply defined mathematically, they can be scaled up and down without any loss of data. When a raster image is scaled up, we start to see the pixels that creates the image. When a vector image is scaled up, the image is redrawn using the same mathematical formula, so the resulting image is as smooth as the first one.
+
+![Vector graphics versus raster image](../images/blog/format_wars/vector_vs_raster.jpg)
+
+###### Vector graphics versus raster graphics. The original vector-based illustration is at the left. The upper-right image illustrates magnification of 7x as a vector image. The lower-right image illustrates the same magnification as a bitmap image. Raster images are based on pixels and thus scale with loss of clarity, while vector-based images can be scaled indefinitely without degrading quality.
+
+###### Image Credit: The original uploader was Darth Stabro at English Wikipedia., CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>, via Wikimedia Commons
 
 #### Image Formats and when to use which
 
