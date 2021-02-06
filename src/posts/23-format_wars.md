@@ -2,14 +2,14 @@
 title: "The Format Wars"
 date: "2020-11-09"
 tags: ["Web Development"]
-summary: "In this article, I briefly talk about how to represent an image in bits, what image compression is and various image file formats."
+summary: "In this article, I briefly talk about how to represent an image in bits, what image compression is, and various image file formats."
 ---
 
-This is the time and place where we talk about image file formats, yay! This is going to be a long one, because there are so many of them.
+This is the time and place where we talk about image file formats, yay! This is going to be a long one because there are so many of them.
 
-One wonders - why the heck there are so many of them? This is what I exactly thought after a very long night doing live cell imaging, while trying to export my data. Would I like to use TIFF, PNG, or JPG? I have always chosen TIFF because that was what we used in publications as it and high resolution without giving much thought to it. Then I made the mistake of writing **image file formats** to google. There is so much more. And I learned that each of them are useful for some purpose. Kinda amazing.
+One wonders - why the heck there are so many of them? This is what I exactly thought after a very long night doing live cell imaging while exporting my data. Would I like to export as TIFF, PNG, or JPG? We always chose TIFF because of the high resolution, without giving too much thought to it. Printing a poster, on the other hand, required the usage of some other formats, such as PSDs, PNGs, JPEGs, and PDFs. But why were we using so many file formats? This is the question that created this article.
 
-The first thing to know: everything inside the computer are composed of tiny bits. A pattern of bits only mean something if we assign a meaning to them. The same bits might indicate other things in different locations. Image formats exist because they encode the image data using different techniques and different amount of bits. And as a user, you have the responsibility of choosing the one that serves your purpose the best.
+The first thing to know: everything inside the computer is composed of tiny bits. A pattern of bits only means something if we attach a meaning to it. The same bits might indicate other things in different locations. Image formats exist because they encode the image data using different techniques and different amounts of bits. And as a user, you have the responsibility of choosing the one that serves your purpose the best.
 
 To understand the image formats better, we are first going to understand how to represent an image in bits, then how to represent the color. After that, we are going to talk about something called **compression** which is the art of making the file size as small as possible, with the least amount of data loss. After that we are going to look at different image file formats, and what they are useful for.
 
@@ -17,7 +17,7 @@ To understand the image formats better, we are first going to understand how to 
 
 **A bitmap** is the easiest way to represent image data. A bitmap image is also known as a **[raster image](https://en.wikipedia.org/wiki/Raster_graphics)**. To represent image data, we divide it into small squares and call each square a **[pixel](https://en.wikipedia.org/wiki/Pixel).** (Although, describing a pixel as a square is quite debatable. [This article](http://alvyray.com/Memos/CG/Microsoft/6_pixel.pdf) clearly states that a pixel is not a square but a point sample. But my simple mind likes to imagine it as a square, and you will see the square definition of pixel everywhere you look anyway, so here we go.) A pixel is the smallest addressable unit in image representation. Simply put, a bitmap is an array of bits that represent the color of these tiny pixels.
 
-Think of a monochrome picture. Each pixel is going to be either black or white, and nothing else. In this scenerio, we can enconde white with 0 and black with 1, and this was all the early computers could manage. The pixels were also quite large, so you could have images such as this:
+Think of a monochrome picture. Each pixel is going to be either black or white and nothing else. In this scenario, we can encode white with 0 and black with 1, and this was all the early computers could manage. The pixels were also quite large, so you could have images such as this:
 
 ![A simple bitmap image with just two colors](../images/blog/format_wars/bitmap.png)
 
@@ -29,9 +29,9 @@ The first letters were also designed like this:
 
 ###### Bitmap representation of letter "a". Image Credit: https://en.proft.me/2017/08/2/how-work-bitmap-android/
 
-The number of pixels per square inch is a measure of the pixel density, which is commonly referred as **[resolution](https://en.wikipedia.org/wiki/Image_resolution)**. Resolution is usually given as dots per inch (dpi). And as you can guess, if you make pixels smaller, you can fit more of them to the same screen area, which means you will have a higher density of pixels and a better image resolution.
+The number of pixels per square inch is a measure of the pixel density, which is commonly referred to as **[resolution](https://en.wikipedia.org/wiki/Image_resolution)**. Resolution is usually given as **dots per inch (dpi)**. And as you can guess, if you make pixels smaller, you can fit more of them to the same screen area, which means you will have a higher density of pixels and a better image resolution.
 
-![The illustration of same image in different resolutions](../images/blog/format_wars/Resolution_illustration.png)
+![The illustration of the same image in different resolutions](../images/blog/format_wars/Resolution_illustration.png)
 
 ###### The same image in different resolutions. Image Credit: Public Domain, https://commons.wikimedia.org/w/index.php?curid=1078380
 
@@ -192,13 +192,13 @@ This image format is useful for web images that needs to be downloaded fast, or 
 
 PNG's are optimized for the screen and don't do well with the CMYK color space, so it is not recommended to be used in printed media. JPEG and TIFF formats work better if the image is going to be printed. So we can safely say that JPEG is better for distributing (as it has a much smaller size), and PNG is better for storing and editing (as it is lossless).
 
-▶ **[TIFF/TIF:](https://en.wikipedia.org/wiki/TIFF)** TIFF (short for Tag Image File Format) is a lossless raster format. It is not widely supported by web browsers which limits its use in webpages, however, it is useful if you want to print or scan high-quality photographic images. It is also a safe choice for saving scientific images, where high-quality is also needed. The 'tagged' part is also useful in this case, as microscopy systems tend to populate the tags with useful metadata, such as the used objective, exposure and binning. TIFF also supports layers.
+▶ **[TIFF/TIF:](https://en.wikipedia.org/wiki/TIFF)** TIFF (short for Tag Image File Format) is a lossless raster format. It is not widely supported by web browsers which limits its use in webpages, however, it is useful if you want to print or scan high-quality photographic images. It is also a safe choice for saving scientific images, where high-quality is also needed. The 'tagged' part is also useful in this case, as microscopy systems tend to populate the tags with useful metadata, such as the used objective, exposure and binning. TIFF also supports layers and has a transparency channel.
 
 ▶ **[RAW:](https://en.wikipedia.org/wiki/Raw_image_format)** A raw image is the unprocessed and uncompressed data captured by a digital camera or another sensor (like a scanner). Raw isn't an image format by it's own, but a group name for some image formats, such as CRW (Canon), NEF (Nikon), and DNG (Adobe). A raw image is at the highest quality possible (which is great for editing), but it cannot be used for the web or printed without being compressed in some way.
 
 ▶ **[EXIF:](https://en.wikipedia.org/wiki/Exif)** EXIF (short for Exchangeable image file format) is mainly used to save the metadata tags, that includes date and time information, camera settings, a thumbnail of the picture, and other things that is related to a photographic image.
 
-Raster graphic editors also have their own file formats that allows data to be saved in different layers. Popular ones are: **PSD** (Adobe PhotoShop Document), **AFPhoto** (short for Affinity Photo Document), **CPT** (Corel Photo Paint), **KRA** (Krita) and **XCF** (eXperimental Computing Facility format, native GIMP format). These files can be used by their individual softwares to compose a final, compressed image with a web or print friendly format, but these are not usable themselves in neither printed nor digital media.
+Raster graphic editors also have their native file formats that allows data to be saved in different layers. Popular ones are: **PSD** (Adobe PhotoShop Document), **AFPhoto** (short for Affinity Photo Document), **CPT** (Corel Photo Paint), **KRA** (Krita) and **XCF** (eXperimental Computing Facility format, native GIMP format). These files can be used by their individual softwares to compose a final, compressed image with a web or print friendly format, but these are not usable themselves in neither printed nor digital media.
 
 **Vector Formats:**
 
@@ -206,13 +206,26 @@ Very simply put, vector images are a set of instructions on how to create a spec
 
 ▶ **[SVG:](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)** SVG (short for Scalable Vector Graphics) format is basically a set of notes that describe the image in XML format. SVG format doesn't have a compression algorithm of its own, but as XMLs are text files, it can be compressed by softwares like [gzip](https://en.wikipedia.org/wiki/Gzip). SVG images can be edited by a text editor or a image editing software. SVG supports simple shapes, text, fills, gradients, and is scriptable (supports interactivity, like the changes on hover, click, scroll etc). This creates a perfect opportunity to create animations. Websites that have animations and user interactivity mostly use SVGs, as they are also very lightweight regarding the image size.
 
-▶ **[PDF:](https://en.wikipedia.org/wiki/PDF)** PDF (short for Portable Document Format)
+▶ **[PDF:](https://en.wikipedia.org/wiki/PDF)** PDF (short for Portable Document Format) was developed by Adobe in 1993 to present documents that include both text and visual content (both raster and vector) in an application, software, hardware or operating system independent manner. It is very compact due to [various compression algorithms that it uses](https://www.prepressure.com/pdf/basics/compression), but if you are going to edit the file, it's not a way to go. (The rule is, if you are using lossy compression algorithms, after you edit and save your file it will be compressed again, so the quality will deteriorate with each edit. You don't want this when you're still working on some content.) Generally, works are exported as PDF at the end point, when they are ready to be shared or printed. And it is one of the formats printers like the most.
 
-▶ **[EPS:](https://en.wikipedia.org/wiki/Encapsulated_PostScript)** Can contain both raster and vector images.
+---
 
-▶ **AI:**
+**Note:** Both PDF and EPS are actually PostScript programs. [PostScript](https://en.wikipedia.org/wiki/PostScript) is a programming language that describes what a page looks like very accurately. PostScript programs are generally created by other softwares, and rarely by programmers. (Example: You open a vector graphic editor software such as Adobe Illustrator and draw a line. That line actually isn't a line, but a bunch of code that describes that line.) Like every programming language, PostScript also needs a processor and PostScript's processor is called Raster Image Processor (RIP for short). The saved vector image is a PostScript program and needs to be converted back to the image. RIP reads the code and prints whatever is described on the screen, exactly as it is.
+
+---
+
+▶ **[EPS:](https://en.wikipedia.org/wiki/Encapsulated_PostScript)** EPS (short for Encapsulated PostScript) is the most common vector image format. It is actually a PostScript program, with a low-resolution preview of the document encapsulated inside. As an advantage, EPS files can be edited by many softwares.
+
+Vector graphic editor softwares also have their native file formats, such as [AI](https://en.wikipedia.org/wiki/Adobe_Illustrator_Artwork) (short for Adobe Illustrator Artwork).
 
 There are many compression methods that were created for many other needs. I just scratched the surface and wrote about the most common ones. You can check other formats from [here](https://en.wikipedia.org/wiki/Image_file_formats).
+
+#### Summary
+
+- Need transparency? Choose PNG, GIF or TIFF (72dpi)
+- Going to use in a digital environment? (displayed on a screen, such as a website): Choose JPEG, PNG or GIF.
+- Going to print? Choose EPS or PDF (for vector graphics) or TIFF (300dpi)
+- Might want to edit later? Choose the native file format of the software you are using.
 
 #### Resources:
 
@@ -223,3 +236,4 @@ There are many compression methods that were created for many other needs. I jus
 5. [THE GIF IS DEAD. LONG LIVE THE GIF.](https://www.popularmechanics.com/technology/a21457/the-gif-is-dead-long-live-the-gif/) by Eric Limer
 6. ["Computer Science" channel](https://www.youtube.com/c/KevinDrumm/videos) by Kevin Drumm
 7. [File Formats for Microscopy](https://microscopy.duke.edu/guides/file-formats) by Duke University
+8. [PostScript vs. PDF](https://web.archive.org/web/20160413212438/https://www.adobe.com/print/features/psvspdf/) by David Evans
