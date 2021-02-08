@@ -1,78 +1,119 @@
 ---
-title: "Maps & Sets"
+title: "The Tale of Maps & Sets"
 date: "2021-02-16"
 tags: ["Web Development", "JavaScript"]
-summary: "In this article, I briefly explain what regular expressions are and how to use them in JavaScript context."
+summary: "In this article, I briefly explain Map and Set data structures in JavaScript."
 ---
 
-Two new kinds of collections introduced with ES6.
+Before ES6 (ECMAScript 2015), there were two built-in data structures in the JavaScript world that were used predominantly, and these two are known as Arrays and Objects. Arrays are data structures that keep the data as indexed lists. Objects keep the data as key-value pairs.
 
-### Maps:
+Two new kinds of iteratable data structures were introduced with ES6, which are Maps and Sets.
 
-A map is a collection which maps key-value pairs.
+Choosing the right data structure to store your data will help you manipulate it easier, which in turn will make your life easier. This article is about introducing the new data structures by describing the methods available to them, and comparing them to the other ones that we already know and love. You can use the Chrome Developer Console to follow up the examples.
 
-```jsx
-let cardAce = {
-	name: "Ace of Spades"
-};
+### Map:
 
-let cardKing = {
-	name: "King of Clubs"
-};
+A Map is an ordered collection which maps key-value pairs. From the very outside, it looks like an Array as data inside it are indexed, but the data is kept as key-value pairs, which resembles an Object. In a Map, the keys can be of any data type, whereas in an object they have to be of String type.
 
-//Create a new map
-let deck = new Map();
-//Setting a new key-value pair
-deck.set("as", cardAce);
-deck.set("kc", cardKing);
+**Initializing a map, and setting and getting values:**
 
-//Another way of setting new key-value pairs in a map:
-let deck = new Map([["as", cardAce],["kc", cardKing]]);
+You can use the `new` keyword to initialize a Map data structure, which will return an empty Map:
 
-console.log(deck); //[object Map] { ... }
-console.log(deck.size); //2
+```javascript
+let map = new Map()
+console.log(map) // prints: Map(0) {}
+```
 
-deck.set("as", cardKing);
-console.log(deck.size); //2
-//It is still 2, because you didn't add a new key-value pair but overriden a value
-//of a key that already exists.
+We've created a Map, which is awesome, but how do we put data inside or get a value out of it? Map data structure has `set` and `get` methods for these purposes. The `set` method takes the key and the value as an argument, respectively. The `get` method only takes the key.
 
-//extracting a value from a map
-console.log(deck.get("kc")); // [object Object] {
-														 //   name: "King of Clubs"
-														 // }
+```javascript
+let exampleMap = new Map()
 
-deck.delete("as"); //prints out undefined
-									 //deletes the specified key-value pair
+// Keys can be of any type!
+exampleMap.set("name", "River") // key is of String type
+exampleMap.set(1, "one") // key is of Number type
+exampleMap.set(true, "human") // key is of Boolean type
+console.log(exampleMap) // prints: Map(3) {"name" => "River", 1 => "one", true => "human"}
 
-deck.clear(); //clears all key-value pairs in the deck
+// You can even use Objects as keys:
+let pet = { type: "parrot" }
+exampleMap.set(pet, "Cookie")
+exampleMap.get(pet) // returns: "Cookie"
 
-console.log(deck.keys()); // [object Map Iterator] { ... }
-for (let key of deck.keys()) {
-	console.log(key);
-} // will print "as" and "kc"
+// Maps will keep the type! (Unlike Objects, which will turn all the keys into Strings.)
+exampleMap.get(1) // "one"
+```
 
-console.log(deck.values()); // [object Map Iterator] { ... }
-for (let value of deck.values()) {
-	console.log(value);
-} // will print [object Object] {
-								//name: "Ace of Spades"
-								};
-							//[object Object] {
-								//name: "King of Clubs"
-								};
+**Note:** Map compares keys with strict equality (===), using an algorithm called [SameValueZero](https://tc39.es/ecma262/#sec-samevaluezero). This means the key `1` and `"1"` gets treated separately and can hold unique values, because they are of different types. Maps don't allow duplicate values, so if you set another value with an existing key, it will be overwritten. Here, it's also important to remember how the reference types work. If you assign an Object as a key, even though you copy and paste the same object for setting another value to it, it won't see it as the same Object, so it will create another key-value pair. But if you define an object outside, and use that as a key twice, the first value will be overwritten, because now you'll be referring to the same object.
 
-for (let entry of deck.entries()) {
-	console.log(entry);
-}
+The Map we created above actually looks like this, if you extend it:
 
-//This will print out as:
-//["as", [object Object] {
-//name: "Ace of Spades"
-//}];
-//["kc", [object Object] {
-//name: "King of Clubs"
-//}];
+![Map](../images/blog/map_set/firstmap.jpg)
+
+We can also initialize a Map using an Array of key-value pairs which are also inside their individual Arrays, like this:
+
+```javascript
+const exampleMap2 = new Map([
+  ["name", "River"],
+  [1, "one"],
+  [true, "human"],
+])
+
+console.log(exampleMap2) // prints: Map(3) {"name" => "River", 1 => "one", true => "human"}
+```
+
+**Hint:** `Object.entries()` takes an object and returns an Array of Arrays with given key-value pairs, and makes the Map initialization with values easier than it looks!
+
+```javascript
+let obj = { ... }
+let newMap = new Map(Object.entries(obj));
+```
+
+Also, you can convert a Map into an object by using `Object.fromEntries()`, and you can convert a Map into an array by using `Array.from()`:
+
+```javascript
+const exampleObj = Object.fromEntries(exampleMap2)
+console.log(exampleObj) // prints: {1: "one", name: "River", true: "human"}
+
+const exampleArr = Array.from(exampleMap2)
+console.log(exampleArr) // prints: [["name", "River"], [1, "one"], [true, "human"]]
+```
+
+**Checking if a key exists, the Map size and deleting an entry:**
+
+Checking if a key exists is done with `map.has()`. This method returns a Boolean value.
+Maps have a built in `size` property that returns the number of key-value pairs in a Map.
+Deleting an entry is done with `map.delete()`, which takes a key as an argument and returns the new version of the Map.
+Deleting all the values inside a map is done with `map.clear()`
+
+```javascript
+const colorMap = new Map([
+  ["pants", "gray"],
+  ["shoes", "black"],
+  ["shirt", "red"],
+])
+
+colorMap.size // returns 3
+colorMap.has("belt") // returns false
+
+colorMap.has("shirt") // returns true
+colorMap.delete("shirt")
+colorMap.has("shirt") // returns false
+
+colorMap.clear()
+colorMap.size // returns 0
+```
+
+**Iterating over a Map:**
+
+There are three methods that return a MapIterator object which can be iterated over with a for...of loop, just like an array: `map.keys()`, `map.values()`, `map.entries()`, and a built-in `forEach()` method to iterate over a map in insertion order.
+
+```javascript
+const numberMap = new Map([
+  ["pants", 1],
+  ["shoes", 2],
+  ["shirt", 1],
+])
 ```
 
 ### WeakMap:
@@ -193,4 +234,5 @@ WeakMap and WeakSets are advanced concepts that are used for memory management (
 
 #### Resources:
 
-1. [JavaScript.info - Generators](https://javascript.info/generators)
+1. [JavaScript.info - Map and Set](https://javascript.info/map-set)
+2.
