@@ -220,6 +220,8 @@ It all starts with the invention of the [printing press](https://en.wikipedia.or
 
 The [Copyleft](https://en.wikipedia.org/wiki/Copyleft) license lets people use, modify and distribute the work, but there is a single condition that needs to be met: the modified/shared versions of the work has to have the same or equivalent license. The [GNU General Public License](https://en.wikipedia.org/wiki/GNU_General_Public_License) was the first Copyleft license to be used extensively in software.
 
+There is also the [sound recording copyright symbol](https://en.wikipedia.org/wiki/Sound_recording_copyright_symbol) (℗). The P letter stands for phonogram, which means sound recordings in legal language.
+
 ### Summing up
 
 Punctuation marks and symbols are not as old as the written language. When the written language first appeared, there were no punctuation marks, no spaces in between words, and understanding a text by reading it a single time was unheard of. If you're interested in the evolution of the punctuation marks, proceed with [this article](https://www.bbc.com/culture/article/20150902-the-mysterious-origins-of-punctuation). Although it is important to use the punctuation marks and symbols correctly, I think we should remember why we needed them first: To make our lives easier. So let's educate each other without sticks and stones.
