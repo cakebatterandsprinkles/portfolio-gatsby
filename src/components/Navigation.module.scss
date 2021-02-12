@@ -82,10 +82,10 @@
 }
 
 .imgWrapper {
-  background-color: var(--yellow);
   padding: 1rem;
   display: flex;
   justify-content: center;
+  background-image: linear-gradient(var(--yellow), var(--palepink));
 }
 
 .img {
