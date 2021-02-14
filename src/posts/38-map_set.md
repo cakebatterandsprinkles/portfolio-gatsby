@@ -5,15 +5,15 @@ tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain Map and Set data structures in JavaScript."
 ---
 
-Before ES6 (ECMAScript 2015), there were only two built-in data structures in the JavaScript world that were used predominantly, and these two are known as Arrays and Objects. Arrays are data structures that keep the data as indexed lists. Objects keep the data as key-value pairs.
+Before ES6 (ECMAScript 2015), there were only two built-in data structures in the JavaScript world that were used predominantly, and these two are known as Arrays and Objects. **Arrays** are data structures that keep the data as indexed lists. **Objects** keep the data as key-value pairs.
 
-Two new kinds of iterable data structures were introduced with ES6, which are Maps and Sets.
+Two new kinds of iterable data structures were introduced with ES6, which are **Maps** and **Sets**.
 
 Choosing the right data structure to store your data will help you manipulate it easier, which in turn will make your life easier. This article is about introducing the new data structures by describing the methods available to them and comparing them to the other ones that we already know and love. You can use the Chrome Developer Console to follow up with examples.
 
 ### Map:
 
-A Map is an ordered collection that maps key-value pairs. From the very outside, it looks like an Array as data inside it are indexed, but the data is kept as key-value pairs, which resembles an Object. In a Map, the keys can be of any data type, whereas in an object they have to be of String type.
+A [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) is an ordered collection that maps key-value pairs. From the outside it looks like an Array (as data inside it are indexed), but the data is kept as key-value pairs, which resembles an Object. In a Map, the keys can be of any data type, whereas in an object they have to be of String type.
 
 So if you want to match anything other than strings to any kind of data, you can use a Map.
 
@@ -144,7 +144,7 @@ numberMap.forEach((value, key, map) => {
 
 ### Sets:
 
-A set is a data collection with unique values. You can't really say that it is unordered, as the iterator functions will follow the insertion order (except the repeated values, which will not be added, so they will not change the previous order). Also, you both in maps and sets, you cannot reorder the values.
+A [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) is a data collection with unique values. You can't really say that it is unordered, as the iterator functions will follow the insertion order (except the repeated values, which will not be added, so they will not change the previous order). Also, you both in maps and sets, you cannot reorder the values.
 
 **⁂ Initializing a set, and setting and getting values:**
 
@@ -264,7 +264,7 @@ exampleWeakMap.set({}, 987) // Works fine as long as the key is an Object.
 
 WeakMap has four built-in methods: `set`, `get`, `has`, `delete`. A WeakMap cannot be emptied by a clear method. Also, the size property and forEach method are not available here, so a WeakMap cannot be iterated over.
 
-So what can it be useful for? If you don't want to do the cleanup on a data collection and want it to be garbage collected by itself, WeakMap is great. One of the things it can be used for is memoization (keeping the computed results of expensive functions), or it can be used for managing listeners and keeping private data (as it cannot be viewed completely from anywhere).
+So what can it be useful for? If you don't want to do the cleanup on a data collection and want it to be [garbage collected](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) by itself, WeakMap is great. One of the things it can be used for is memoization (keeping the computed results of expensive functions), or it can be used for managing listeners and keeping private data (as it cannot be viewed completely from anywhere).
 
 Memoization example:
 
