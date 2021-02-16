@@ -7,7 +7,7 @@ summary: "In this article, I aim to explain what Git and services like GitHub, G
 
 #### What is Git?
 
-Have you ever made an experiment? I bet you did, even if you are not aware of it. Think of a 5 year old that is going to play with her watercolor set, but only has 3 primary colors (yellow, red, blue). She sticks her brush into red and forgets to clean it before sticking it to somewhere else and sticks it to blue. She doesn't care and keeps on painting, but at one point she realizes, at the place where red and green kinda merged, she has another color: purple! She's a smart cookie. Now she understands that she can get different colors by mixing them. She cleans her brush, now mixes red and yellow, gets orange. After another cleaning session, she mixes blue and yellow and has green. She adds some more yellow to it, and she gets light green! Experimenting got her an infinite amount of colors, but she only started with three.
+Think of a 5 year old that is going to play with her watercolor set, but only has 3 primary colors (yellow, red, blue). She sticks her brush into red and forgets to clean it before sticking it to somewhere else and sticks it to blue. She doesn't care and keeps on painting, but at one point she realizes, at the place where red and green kinda merged, she has another color: purple! She's a smart cookie. Now she understands that she can get different colors by mixing them. She cleans her brush, now mixes red and yellow, gets orange. After another cleaning session, she mixes blue and yellow and has green. She adds some more yellow to it, and she gets light green! Experimenting got her an infinite amount of colors, but she only started with three.
 
 Most experiments take time, some more than the others. Researchers have lab notebooks that they use when keeping track of their experiments. If something is being changed, the 4 great w's need to be recorded: what, why, when, and by whom? Until something goes wrong you'll never understand why you keep records of these. But when it does, they become your only evidence, pieces of the puzzle to help you understand what went wrong, so the next time you'll do it better.
 
@@ -20,6 +20,10 @@ Oh, I said a very cool thing there: **with the confidence of knowing you can rec
 The developer community is also very cool for other reasons, and one of them is the open-source project concept. **[An open-source project](https://en.wikipedia.org/wiki/Open-source_software)** is maintained by many people, and all people are free to use, study, modify, and distribute the project itself. It is something humans do for humans. The open-source software projects can be maintained by many people who are all around the world that don't know each other, and this is all possible because of the version control systems (and many people advocating for it!).
 
 So let's come back to our real purpose, which is explaining Git. **[Git](https://en.wikipedia.org/wiki/Git)** is the most used (and loved) version control system software developers use. It can also be called a **[distributed version control system (DVCS)](https://en.wikipedia.org/wiki/Distributed_version_control)**, which simply means that it doesn't rely on a single location for a backup, but is distributed to every developer's local computer that is working on that project. When you use git, you can contribute to projects from any time zone, and you can always keep track of what is done, by whom, when, and why, also take the previous versions back if you need to. **[A git repository](<https://en.wikipedia.org/wiki/Repository_(version_control)>)** is a folder that encompasses everything associated with that project. The copy of the repository is stored in a server, and also a local copy where you can change things is kept on your computer.
+
+![XKCD Comic on Git](../images/blog/git/git.png)
+
+###### Image Credit: [XKCD](https://xkcd.com/), https://xkcd.com/1597/
 
 #### How to use Git
 
