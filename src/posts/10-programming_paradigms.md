@@ -1,5 +1,5 @@
 ---
-title: "Programming Paradigms"
+title: "Introduction to Programming Paradigms"
 date: "2020-09-01"
 tags: ["Computer Science"]
 summary: "In this article, I briefly explain programming paradigms under two main titles: imperative and declarative programming."
@@ -136,7 +136,7 @@ Some languages that support the Parallel processing approach are C, C++.
 
 ### Declarative programming paradigm:
 
-The word "declarative" comes from the Latin word "declarare", which means "to make visible, to clarify".
+The word **declarative** comes from the Latin word "declarare", which means "to make visible, to clarify".
 
 In a declarative programming paradigm, you tell the computer what to do, but you don't explain it step by step. How to do it is up to the compiler.
 
@@ -194,10 +194,55 @@ Snippets 1 and 2 do the same job. They both return the number of even numbers in
 
 Some languages that support the functional programming paradigm are Haskell, Scala, Clojure, Elixir, F#, Racket, JavaScript.
 
-#### ⁂ Database processing approach:
+#### ⁂ Database/Data-driven programming:
+
+[Database/Data-driven programming](https://en.wikipedia.org/wiki/Data-driven_programming) is a programming style that separates the data and the application logic, and rather than hardcoding everything, the user interface is created according to the data that's provided. The data is not merely a state of an object, but it controls the data flow throughout the program. The primary concern in data-driven programming is writing as little hardcode as possible. You can read the data from a database or an outsourced file, or provide the data yourself inside your code.
+
+Let's create two very simple code snippets, one with a non-data-driven and one with a data-driven approach to make the concept clearer:
+
+**Snippet 1: (non-data-driven)**
+
+```javascript
+const returnAppropriateTitle = handle => {
+  if (handle === "sociology") {
+    return "Human Ecology"
+  } else if (handle === "history") {
+    return "The History of the World"
+  } else if (handle === "literature") {
+    return "English Literature"
+  }
+}
+
+const printAllTitles = (...args) => {
+  args.map(arg => console.log(returnAppropriateTitle(arg)))
+}
+
+printAllTitles("sociology", "history", "literature")
+```
+
+**Snippet 2: (data-driven)**
+
+```javascript
+const sections = [
+  { handle: "sociology", title: "Human Ecology" },
+  { handle: "history", title: "The History of the World" },
+  { handle: "literature", title: "English Literature" },
+]
+
+sections.map(item => console.log(item.title))
+```
+
+Both snippets do the same thing: they print a title according to a given title. The data-driven approach is free from redundancy, easy to debug, read and manage, even by a non-developer person. The program logic is completely separated from the data.
+
+If you're using a relational database, a programming language like SQL can be used to access or manipulate data.
+
+### The End
+
+This article is a very simplified version of the real thing, and there is a lot more to this subject. Just looking at [this Wikipedia article](https://en.wikipedia.org/wiki/Programming_paradigm) makes me sweat bullets. If you're interested in these, go dive into them. You do you.
 
 **Resources**
 
 1. Wikipedia
 2. [Eloquent JavaScript](https://eloquentjavascript.net/)
-3.
+3. [Introduction to Data Driven Programming](https://effective-programmer.com/2018/05/27/introduction-to-data-driven-programming/) by Naveed Khan
+4. [Chapter 9- Data-Driven Programming](https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch09s01.html), [The Art of Unix Programming](http://www.catb.org/~esr/writings/taoup/html/) by Eric Steven Raymond
