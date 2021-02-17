@@ -108,9 +108,19 @@ Of course, it is possible to traverse through a tree. Tree traversal has differe
 
 2. **Depth-first traversal:** With this method, we iterate each branch, and only when all of the subbranches are finished, we start to iterate over another one. But when the first subbranch is traversed, the first thing we do is to hit the bottom branch, iterate over its siblings, then climb to the parent, and iterate over its siblings, until you reach the very top, which is the root. Then you go hit another branch with the same method until all branches are finished.
 
+![XKCD Comic, Depth and Breadth](../images/blog/bigO/depth_and_breadth2.png)
+
+###### **Comic Text:** A death-first search is when you lose your keys and travel to the depths of hell to find them, and then if they're not there you start checking your coat pockets.
+
+###### **Image Credit:** [xkcd](https://xkcd.com/), https://xkcd.com/2407/
+
 You can say how a tree of yours should look like. For example, if we say that each node in a tree can only have a maximum of two children, our tree would be called a **binary tree**. If you also want to restrict the values of the nodes you have, it is called a **binary search tree**, and this tree has more strict requirements. Still, a node can only have a maximum of two children, and these children are referred to by their position to the parent (like left and right). So rather than making children an array, the child nodes are assigned to properties named left and right. The left side child cannot have a bigger value than its parent, and the right side child cannot have a smaller value than its parents. The value a single node carries can be named data, value, or key.
 
-To see the JavaScript implementation of a binary search tree, you can check [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/binary_search_tree/index.js).
+To see the JavaScript implementation of a binary search tree, you can check [here](https://github.com/cakebatterandsprinkles/algorithms/blob/main/binary_search_tree/index.js). To see a comic, slightly move your eyes down:
+
+![XKCD Comic, Christmas Tree](../images/blog/bigO/tree.png)
+
+###### **Image Credit:** [xkcd](https://xkcd.com/), https://xkcd.com/835/
 
 **Queue:**
 

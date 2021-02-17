@@ -21,9 +21,9 @@ The developer community is also very cool for other reasons, and one of them is 
 
 So let's come back to our real purpose, which is explaining Git. **[Git](https://en.wikipedia.org/wiki/Git)** is the most used (and loved) version control system software developers use. It can also be called a **[distributed version control system (DVCS)](https://en.wikipedia.org/wiki/Distributed_version_control)**, which simply means that it doesn't rely on a single location for a backup, but is distributed to every developer's local computer that is working on that project. When you use git, you can contribute to projects from any time zone, and you can always keep track of what is done, by whom, when, and why, also take the previous versions back if you need to. **[A git repository](<https://en.wikipedia.org/wiki/Repository_(version_control)>)** is a folder that encompasses everything associated with that project. The copy of the repository is stored in a server, and also a local copy where you can change things is kept on your computer.
 
-![XKCD Comic on Git](../images/blog/git/git.png)
+![xkcd comic about Git](../images/blog/git/git.png)
 
-###### Image Credit: [XKCD](https://xkcd.com/), https://xkcd.com/1597/
+###### Image Credit: [xkcd](https://xkcd.com/), https://xkcd.com/1597/
 
 #### How to use Git
 
