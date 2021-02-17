@@ -1,5 +1,5 @@
 ---
-title: "Single-Page Application (SPA) vs. Multi-Page Application (MPA) vs. Progressive Web Apps (PWA)"
+title: "Single-Page Application vs. Multi-Page Application vs. Progressive Web Apps"
 date: "2021-01-22"
 tags: ["Web Development"]
 summary: "In this article, I briefly explain about two main web application patterns, single-page application and multi-page application, and their differences. I also talk about what progressive web apps are."
@@ -9,9 +9,9 @@ There are two main design patterns for web applications: One being the single-pa
 
 Let's start!
 
-### SPA
+### Single-Page Application (SPA)
 
-In a [Single-Page Application](https://en.wikipedia.org/wiki/Single-page_application) (an SPA for short), we don't have multiple HTML files for each path, but we instead use JavaScript to render different components for different paths on the same page. When you request a single-page app from a browser, you download a `bundle.js` file, which has the compiled JavaScript code of all the requested website. With this approach, the browser renders a single page according to the path the user chooses to go by making use of **[HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)**. If the site is doing **[lazy loading](https://en.wikipedia.org/wiki/Lazy_loading)**, there might be multiple bundle.js files that you download according to the path you request. So the page isn't reloaded (requested again from the server) unless it is absolutely necessary. This is especially important if you want to maintain the application state because reloading a page resets the application state. Only _data_ is sent between server and user (by utilizing AJAX calls), and the browser re-renders the UI components by itself.
+In a [Single-Page Application](https://en.wikipedia.org/wiki/Single-page_application), we don't have multiple HTML files for each path, but we instead use JavaScript to render different components for different paths on the same page. When you request a single-page app from a browser, you download a `bundle.js` file, which has the compiled JavaScript code of all the requested website. With this approach, the browser renders a single page according to the path the user chooses to go by making use of **[HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)**. If the site is doing **[lazy loading](https://en.wikipedia.org/wiki/Lazy_loading)**, there might be multiple bundle.js files that you download according to the path you request. So the page isn't reloaded (requested again from the server) unless it is absolutely necessary. This is especially important if you want to maintain the application state because reloading a page resets the application state. Only _data_ is sent between server and user (by utilizing AJAX calls), and the browser re-renders the UI components by itself.
 
 SPA's are very popular and some of them we use almost every day, such as Gmail, Twitter, Facebook, or GitHub.
 
@@ -37,9 +37,9 @@ SPA's are very popular and some of them we use almost every day, such as Gmail, 
 
 ⬇ **Security:** SPA's are more open to cross-site scripting attacks (XSS) when compared to MPA's.
 
-### MPA
+### Multi-Page Application (MPA)
 
-Multi-Page Applications (MPAs for short) are composed of multiple HTML files that are downloaded whenever a page is requested. This is more of a "traditional" pattern of making web applications. Examples of MPA's you probably might have used are Amazon and eBay websites. Every new URL that's written to the address bar or every hyperlink that's clicked sends a new request to the server and results in a new page being downloaded. In this approach, the server does the heavy lifting. So if the internet connection of the users is poor, each page might take a lot of time to load.
+Multi-Page Applications are composed of multiple HTML files that are downloaded whenever a page is requested. This is more of a "traditional" pattern of making web applications. Examples of MPA's you probably might have used are Amazon and eBay websites. Every new URL that's written to the address bar or every hyperlink that's clicked sends a new request to the server and results in a new page being downloaded. In this approach, the server does the heavy lifting. So if the internet connection of the users is poor, each page might take a lot of time to load.
 
 #### ☀ MPA pro's and con's
 
@@ -63,9 +63,9 @@ Multi-Page Applications (MPAs for short) are composed of multiple HTML files tha
 
 If the SEO doesn't matter to you that much and you have limited content, then SPA's are the way to go. An MPA will help you rank higher in Google searches, and scaling up will be easier, but it will be much slower to load. So it depends on what you expect from your application.
 
-### PWA
+### Progressive Web Apps (PWA)
 
-[Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_web_application) (PWAs for short) can run in a standalone window instead of a browser tab. Simply put, they are web applications that are made to resemble native apps and can be installed on one's mobile phone, tablet, or laptop. After being downloaded, the app can be reached from an icon from the home screen of the user. You can also send push messages and notifications to the user. Many web apps are PWA's, such as Twitter, Starbucks, Uber, and Pinterest. A PWA can be an SPA or an MPA. However, for an application to be a PWA, it has to meet three conditions:
+[Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_web_application) can run in a standalone window instead of a browser tab. Simply put, they are web applications that are made to resemble native apps and can be installed on one's mobile phone, tablet, or laptop. After being downloaded, the app can be reached from an icon from the home screen of the user. You can also send push messages and notifications to the user. Many web apps are PWA's, such as Twitter, Starbucks, Uber, and Pinterest. A PWA can be an SPA or an MPA. However, for an application to be a PWA, it has to meet three conditions:
 
 1. **Secure Contexts (HTTPS):** [Secure contexts](https://w3c.github.io/webappsec-secure-contexts/) are defined minimum standards for user authentication and confidentiality. Many API's and many features of a PWA (like geolocation) are only available if the app has been served over a secure network.
 

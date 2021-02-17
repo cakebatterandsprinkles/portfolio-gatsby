@@ -11,13 +11,13 @@ Browser storage mechanisms are useful for a variety of reasons:
 - you might want to keep the preferences of the user (such as the light mode or dark mode)
 - you might want to keep some additional information about the user that you use inside your app (like name or username).
 
-Either way, keeping that information in the browser on the client side saves you from an additional and unnecessary server call, and help you provide offline support. There are multiple ways of caching data in the browser, so you got to choose the one that fits your needs, and this article is going to be about that.
+Either way, keeping that information on the client-side saves you from an additional and unnecessary server call, and helps you provide offline support. There are multiple ways of caching data in the browser, so you got to choose the one that fits your needs, and this article is going to be about that.
 
 #### Where are they hiding in the browser?
 
 1. Open the Chrome Console (`Command + Option + J` in Mac and `Control + Shift + J` in Windows).
 
-2. From the tabs above, choose _Application_, and you can see all of them under the _Storage_ section (**Local Storage**, **Session Storage**, **IndexedDB**, **Web SQL** and **Cookies**).
+2. From the tabs above, choose _Application_, and you can see all of them under the _Storage_ section (**Local Storage**, **Session Storage**, **IndexedDB**, **Web SQL**, and **Cookies**).
 
 As you may have noticed how easy it is for you to see the data that's kept here, it is also easy for the user to delete or modify this data. So when you're writing your application, keep that in mind, and try not to rely on these guys so much.
 
@@ -29,9 +29,9 @@ As you may have noticed how easy it is for you to see the data that's kept here,
 
 #### localStorage and sessionStorage
 
-Browsers that support localStorage and sessionStorage keep localStorage and sessionStorage objects that allows you to save key/value pairs.
+Browsers that support localStorage and sessionStorage keep localStorage and sessionStorage objects that allow you to save key/value pairs.
 
-The API's of localStorage and sessionStorage are almost identical. Their main difference is **persistance**, and that's as the name suggests: sessionStorage is very temporary and cleared after a browser session ends (when the tab or the window is closed). Interestingly, the data stored in sessionStorage survives page reloads. Data that is stored in localStorage persists until it is intentionally and explicitly deleted.
+The APIs of localStorage and sessionStorage are almost identical. Their main difference is **persistance**, and that's as the name suggests: sessionStorage is very temporary and cleared after a browser session ends (when the tab or the window is closed). Interestingly, the data stored in sessionStorage survives page reloads. Data that is stored in localStorage persists until it is intentionally and explicitly deleted.
 
 The API is pretty simple and consists of 4 methods (setItem, getItem, removeItem and clear) and a length property.
 
