@@ -115,6 +115,6 @@ Cookies can also be modified by the user or intercepted in transit. For security
 
 #### Resources
 
-1. [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage) by MDN Web Docs
+1. [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage), [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), [Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) by MDN Web Docs
 2. [Storage for the web](https://web.dev/storage-for-the-web/) by Pete LePage
 3. [Web workers vs Service workers vs Worklets](https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/) by Ire Aderinokun
