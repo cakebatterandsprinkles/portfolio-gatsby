@@ -20,6 +20,10 @@
   line-height: 1.75rem;
 }
 
+.content *::selection {
+  background: var(--brightyellow);
+}
+
 .content a {
   color: inherit;
   text-decoration: none;
