@@ -2,7 +2,7 @@
 title: "JavaScript- Introduction to Data Types"
 date: "2019-04-06"
 tags: ["Computer Science", "Web Development", "JavaScript"]
-summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference."
+summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference. I also explain logical operators (!, ||, && and ??) in a separate subtitle at the end of the article."
 ---
 
 If you want to imitate any piece of code in this article, I simply suggest you to use the mighty Chrome console. You can open it by using `Command + Option + J` shortcut in Mac and `Control + Shift + J` shortcut in Windows.
@@ -21,6 +21,8 @@ typeof { name: "cake" } // ↪ "object"
 typeof [1, "cake"] // ↪ "object"
 typeof NaN // ↪ "number"
 ```
+
+Operators like `typeof`, `++`, `--` and `!` are called **unary operators**, because they accept a single value. Operators like >, <, +, -, \*, / are called **binary operators** as they accept two inputs and create a single output.
 
 The data types in JS can be divided into 2 major categories: Primitive and Non-primitive (or Reference).
 
@@ -63,9 +65,17 @@ console.log(word) // "hello"
 
 Now, let's talk about all primitive values one by one:
 
-- **String:**
+- **1. String:**
 
-  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double or single quotes, or backticks, it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
+  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double("") or single('') quotes, or backticks(``), it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
+
+  JS uses 16 bits to encode a single string element. But some characters (such as emojis) are represented with two character positions (2 blocks of 16 bits).
+
+  The only arithmetic operator that can be used on strings is +, and it does not add, but it **concatenates**, which is stiching two pieces of string to each other.
+
+  ```javascript
+  console.log("crazy" + " " + "bird" + " " + "lady") // prints: crazy bird lady
+  ```
 
   **[Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)** are ways to make a string hold placeholders. If you want to write a string as a template literal, use backticks(``) instead of quotation marks. And when using a placeholder, place the placeholder inside \${}. A very simple example is shown in the next codeblock. You can nest template strings, and they also can hold stuff like ternary operators. You can even create multi line strings if you ever need to. One downside of it is, it is not supported by IE.
 
@@ -248,10 +258,21 @@ Now, let's talk about all primitive values one by one:
   // -> \ is an escape character in JS. Special characters (quotation marks, and \) can be written using \ in front of them, so that they'll be perceived as normal characters.
   // -> \n is also an escape notation that adds a new line.
 
-  const str = "I/'ll keep coming"
+  const str = "I\'ll keep coming"
 
   console.log(str.substring(6,10)); // prints: "keep"
   console.log(str.substring(5)); // prints: "keep coming"
+
+  const poem = "Burn bridges\nand dance naked\nwith your tribe\non the islands\nthat you make.\n-Atticus"
+
+  console.log(poem);
+  // prints:
+  // Burn bridges
+  // and dance naked
+  // with your tribe
+  // on the islands
+  // that you make.
+  // -Atticus
 
   ---------------------------
 
@@ -289,11 +310,11 @@ Now, let's talk about all primitive values one by one:
 
   </details>
 
-- **Number:**
+- **2. Number:**
 
   Number is a data type that is used to represent integers and decimals.
 
-  Numbers can be used to make simple operations, such as **addition (+)**, **subtraction (-)**, **multiplication (\*)** and **division (/)**. There is also the **exponantial operator**, which is symbolized by **\*\***. (Example: 2 \*\* 3 will be equal to 8.) There are other operators as well, such as the **modulo operator**, which is also known as the "remainder operator". It takes the second operand and divides the first one with it, and returns the remainder that is left. A good way to use a modulo operator is to see if a given number is odd or even. (Use number % 2 for it.)
+  Numbers can be used to make simple mathematical operations, such as **addition (+)**, **subtraction (-)**, **multiplication (\*)** and **division (/)**. There is also the **exponantial operator**, which is symbolized by **\*\***. (Example: 2 \*\* 3 will be equal to 8.) There are other operators as well, such as the **modulo operator**, which is also known as the "remainder operator". It takes the second operand and divides the first one with it, and returns the remainder that is left. A good way to use a modulo operator is to see if a given number is odd or even. (Use number % 2 for it.)
 
   Examples for the modulo operator:
 
@@ -304,15 +325,21 @@ Now, let's talk about all primitive values one by one:
   console.log(32 % 2) // prints 0 (even number)
   ```
 
-  _A small note:_ JS does not store infinitely precise numbers. (Which means 1,0000000000000000009 will be equal to 1.)
+  ***
+
+  **A small note:** JS uses a fixed number of bits (to be more precise, 64 bits) to store a Number data. Given 64 binary digits, you can represent 2⁶⁴ of numbers. As numbers can be both negative and positive, one bit is always occupied with this data, leaving us with 63 bits to store the actual number. So integers smaller than 2⁶³ can be represented precisely. But here is another issue: the decimals. Decimals lose precision as many of need more than 64 bits to store them (think of π).
+
+  To sum up, we can treat whole numbers smaller than 2⁶³ as precise, but decimals (fractional numbers) should always be thought of as approximations rather than a precise value.
+
+  Also, if a number is not in the range that can be represented by 64 bits, its value will be **[Infinity](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity)** or **-Infinity**, which are also considered as of type Number.
+
+  ***
 
   There is also the issue of precedence, it there are multiple operations to be taken care of, the order of precedence will be: (You can remember it by the acronym they form: **PEMDAS**)
 
   **P**arenthesis > **E**xponents > **M**ultiplication > **D**ivision > **A**ddition > **S**ubtraction
 
-  According to MDN Docs, the largest value a Number can hold is about 1.8×10³⁰⁸. Numbers bigger than this are shown as **[Infinity](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity)**.
-
-  Other data types can be converted to numbers by using the `Number()` function. If it's a value that cannot be converted, it will return **[NaN (Not A Number)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)**. NaN is also defined as a Number but it doesn't have a numeric value.
+  Other data types can be converted to numbers by using the `Number()` function. If it's a value that cannot be converted, it will return **[NaN (Not A Number)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)**. NaN is also defined as a Number but it doesn't have a numeric value. NaN is also the only value in JS that is not equal to itself.
 
   ```javascript
   85 === 85
@@ -322,6 +349,8 @@ Now, let's talk about all primitive values one by one:
   Number("Mordecai") // NaN
   Number(undefined) // NaN
   typeof NaN // "number"
+
+  NaN == NaN //returns false
 
   0 / 0 = NaN
   NaN + 3 = NaN
@@ -439,7 +468,7 @@ Now, let's talk about all primitive values one by one:
 
 </details>
 
-- **BigInt:**
+- **3. BigInt:**
 
   BigInt is the data type that is used for numbers that are larger than 2⁵³ - 1, which is the largest number that can be reliably represented with JavaScript Number data type. To indicate that a value is a BigInt type, you either append "n" to the end of the value, or call the BigInt function.
 
@@ -460,7 +489,7 @@ Now, let's talk about all primitive values one by one:
 
   Number and BigInt coercion is not recommended by [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt), as it can lead to a loss of precision.
 
-- **Boolean:**
+- **4. Boolean:**
 
   There are only two boolean values: _true_ or _false_. They are really useful for setting flags.
 
@@ -475,7 +504,14 @@ Now, let's talk about all primitive values one by one:
   5.  undefined
   6.  NaN
 
-- **Null:**
+- **5. Undefined:** If a variable is declared and no value is assigned to it, its value is _undefined_. This is a value, but it is not a meaningful one as it carries no information. In JS, operations return the value of undefined, if they are not supposed to return some meaningful value.
+
+```javascript
+let name
+typeof name // ↪ undefined
+```
+
+- **6. Null:**
 
 Null and undefined are very similar with a slight difference. They both mean nothing, but null has the connotation of to be set specifically to nothing, while undefined has the connotation that that property has never been set at all. For a value to be null, a developer has to explicitly set it to null.
 
@@ -484,14 +520,7 @@ let name = null
 typeof name // ↪ null
 ```
 
-- **Undefined:** If a variable is declared and no value is assigned to it, its value is _undefined_.
-
-```javascript
-let name
-typeof name // ↪ undefined
-```
-
-- **Symbol:**
+- **7. Symbol:**
 
 #### Non-primitive (Reference) data types:
 
@@ -521,11 +550,11 @@ pets[1] = "Cake"
 console.log(pets) // ["Cookie", "Cake", "Dander"]
 ```
 
-- **Object:**
+- **1. Object:**
 
-An object is an _unordered_ data structure consisting key-value pairs.
+  An object is an _unordered_ data structure consisting key-value pairs.
 
-- **Array:**
+- **2. Array:**
 
   An array is an _ordered_ data structure consisting values and each value has an index number that corresponds to it. They also have a length property just like strings.
 
@@ -644,56 +673,69 @@ An object is an _unordered_ data structure consisting key-value pairs.
 
   ```
 
-- **Function:**
-- **Date:**
+- **3. Function:**
+- **4. Date:**
 
----
+#### Logical Operators
 
-Following notes are about some miscallenous topics, so if you're interested, check them out. If these does not interest you, you can simply skip this section, and voila! This line is the end of the article for you! Good job.
-
----
-
-Now, rest of you: keep reading!
-
-**Bonus: Some topics a beginner to JS should check out**
-
-- **Logical operators:** There are many of these. The most commonly used ones are or(||), and(&&) and not(!).
-
-Parenthesis has a precedence over && and || operators. && operator has a precedence over || operator. ! operator has a higher precedence than both && and ||.
-
-- **Switch statement:** Slightly more legible syntax of **conditionals** (if, else if, else). Example code:
+JS supports four logical operators, [OR(||)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR), [AND(&&)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND), [NOT(!)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT) and [NULLISH COALESCING(??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator).
 
 ```javascript
-let emoji = "happy"
-let color
+// NOT(!) is a unary operator and flips the value to the opposite when used.
+console.log(!false) // prints: true
 
-switch (emoji) {
-  case "happy":
-  case "content":
-    color = "yellow"
-    break
-  case "angry":
-    color = "red"
-    break
-  case "excited":
-    color = "pink"
-    break
-  default:
-    color = "blue"
-}
+// AND(&&) will return true only if both of the given values are true.
+console.log(!false && true) // prints: true
+console.log(!false && !true) // prints: false
 
-// If you have "happy" or "content" as emoji, the color variable will be "yellow".
+// OR(||) will return true if at least one of the given values are true.
+console.log(true || true) // prints: true
+console.log(false || true) // prints: true
+console.log(false || false) // prints: false
+
+// Nullish Coalescing(??) will return the rightside value only if the left side is either null or undefined.
+// Otherwise, it will return the leftside value.
+console.log(null ?? { name: "Barusu" }) // prints: {"name": "Barusu"}
+console.log(undefined ?? { name: "Barusu" }) // prints: {"name": "Barusu"}
+console.log(0 ?? { name: "Barusu" }) // prints: 0
+console.log("" ?? { name: "Barusu" }) // prints: ""
+console.log(["red", "apple", 12, false] ?? { name: "Barusu" }) // prints: ["red", "apple", 12, false]
 ```
 
-- **Ternary operator:**
+**Precedence:** || has the lowest precedence, followed by &&, comparison operators (>, <, >=, <=, ==, ===), which is also followed by the arithmetic operators (PEMDAS), respectively. ! has the highest precedence.
 
-A shorter syntax for conditionals. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
+**Peculiar behavior of logical operators:**
+
+The logical operators && and || handle things differently when they are given values of different types.
+
+OR(||) operator checks the leftside value first. If it is true or truthy, it will directly return the first value. If the leftside value is false or falsy, it checks the rightside value. If the rightside value is true or truthy in this situation, it will directly return the rightside value; if it is false as well, then it will return the rightside value.
+
+```javascript
+console.log("hello" || null) // prints: "hello"
+console.log(0 || "world") // prints: "world"
+console.log("!" || 2328) // prints: "!"
+console.log(NaN || undefined) // prints: undefined
+```
+
+AND(&&) operator works in a different way. It also checks the leftside value first, if it is false or falsy, it directly returns the leftside value. If the leftside value is true or truthy, it returns the rightside value.
+
+```javascript
+console.log("hello" && null) // prints: null
+console.log(0 && "world") // prints: 0
+console.log("!" && 2328) // prints: 2328
+console.log(NaN && undefined) // prints: NaN
+```
+
+Both of them have the same logic to it: They don't check the value on the right side unless they have to. An || operator will result with true if the leftside value is true or truthy, and in this case the rightside value doesn't matter, so it is short-circuited. Same goes for the && operator, if the leftside value is false or falsy, the result will be false no matter what the rightside value is, so it is never evaluated.
+
+**Ternary Operator:**
+
+We have seen unary and binary operators, but there is also a **ternary operator**, which is also known as the **conditional operator**. Binary operator operates on a single value, binary operator operates on two values, and ternary operator operates on three values. For the syntax, a question mark (?) and a colon (:) is used. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
 
 ```javascript
 let status = "offline"
 
 // Written with if-else:
-
 let color
 if (status === "offline") {
   color = "red"
@@ -702,273 +744,61 @@ if (status === "offline") {
 }
 
 // Written with ternary:
-
 let color = status === "offline" ? "red" : "green"
 ```
 
-- **Loops:** There are 4 types of loops: for loops, while loops, infinite loops (a loop where the endong condition is never met- the one kind of loop you don't want), and for...of (to iterate over arrays) and for...in (to iterate over objects) loops. To avoid creating infinite loops using while loops (which is fairly easy), you need to update the condition and attempt to make it false inside the while loop. for...of loops and for...in loops are not supported by IE.
-- **Recursion:** Recursion is a method of solving a bigger problem by solving smaller instances of the same problem. It is generally used as functions calling themselves, and the rule is to always have a base case. A base case is where you decide where to stop the recursion process. (Reminds you of while loops, doesn't it? You have to define a way to stop that loop or function from running. Same logic.) Also, always make sure that you have reasonable default numbers of the optional arguments you are receiving to safely handle the recursion.
+#### Type Coercion
 
-Let's see a small example:
-
-```javascript
-// Our task is to take a number, decrement it by one on each step, and print each number to the console until we reach 0.
-
-// Here, if we don't point out a decrement, by default it will be 1.
-function printNum(n, dec = 1) {
-  // Let's define our base case first:
-  if (n <= 0) {
-    return
-  }
-
-  console.log(n)
-  printNum(n - dec, dec)
-}
-
-printNum(-1) // prints nothing
-printNum(0) // prints nothing
-printNum(5) // prints: 5 4 3 2 1
-printNum(10, 2) // prints: 10 8 6 4 2
-```
-
-- **Default Parameters:** If you have functions with multiple arguments, the best way to handle future bugs would be defining logical default parameters. Default parameters can take any type of value, an array, an object, a string, a number, you name it. Let's walk through this with an example:
+Sometimes, JS automatically converts one type to another, especially if a operation is taking place. This is called the **type coercion**.
 
 ```javascript
-function multiply(x,y) {
-return x \* y;
-}
+// Null gets converted to 0 when used with mathematical operations:
+console.log(null * 10) // Prints: 0
+console.log(null + 10) // Prints: 0
 
-multiply(4,5); // returns 20
-multiply(5); // This will return NaN because y is undefined, and undefined multiplied by anything is NaN.
+// Strings can be converted to number when used with mathematical operations:
+console.log("12" - 1) // Prints: 11
+console.log("12" * 2) // Prints: 24
 
-// Let's define the same function by giving y a default parameter of 1:
+// Numbers get converted to strings if used with +:
+console.log("12" + 34) // Prints: 1234
+console.log(12 + "aa") // Prints: 12aa
 
-function multiply(x,y = 1) {
-return x \* y;
-}
-
-multiply(3,4); // returns 12
-multiply(5); // returns 5
-
+// Strings can be converted to NaN when used with mathematical operations:
+console.log("eightynine" - 1) // Prints: NaN
 ```
 
-- **Spread syntax:** Spread syntax allows an iterable (such as an array) to be expanded in places where elements are expected. The syntax is always 3 dots right next to each other. Let's see the places where this can be useful:
+There are two types of comparison operators, one is the **double equals(==)**, which tests loose equality, the other one is **triple equals(===)**, which tests for strict equality. Double equals perform type coercion, but triple equals doesn't. Triple equals compare both value and data type, but double equals just check for value.
 
 ```javascript
-// Arrays are iterable
-const numArr = [2, 56, 41, 98, 14, 26]
-Math.max(...numArr) // this is the same as this: Math.max(2,56,41,98,14,26); //prints: 98
+console.log(8 == "8") // Prints: true
+console.log(8 === "8") // Prints: false
 
-// Strings are also iterable
-const str = "hello"
-function spellFive(a, b, c, d, e) {
-  console.log(a, b, c, d, e)
-}
+console.log(undefined == null) // Prints: true
+console.log(undefined === null) // Prints: false
 
-spellFive(...str) // prints: h e l l o
+console.log(false == 0) // Prints: true
+console.log(0 == "") // Prints: true
 
-// You can use it to combine arrays, but the spread order does matter.
-
-const flowers = ["rose", "daisy", "lily", "peony"]
-const vegetables = ["broccoli", "asparagus"]
-
-const flora = [...flowers, ...vegetables, "tomato"]
-console.log(flora) // prints: ["rose", "daisy", "lily", "peony", "broccoli", "asparagus", "tomato"]
-
-// You can use it to create a copy of an array:
-
-const animals = ["cat", "bird", "dog", ["squirrel", "rabbit", "deer"]]
-const animalsCopy = [...animals]
-
-// Although they look the same, they point out to different arrays, so they are not triple equal.
-// This is not true for nested arrays. Nested arrays are shallow copied, they will point out to the same references.
-
-console.log(animalsCopy === animals) // prints: "false"
-console.log(animalsCopy[3] === animals[3]) // prints: "true"
-
-// You can directly spread strings, just like str.split("") does:
-
-console.log([..."violet"]) // prints: ["v", "i", "o", "l", "e", "t"]
-
-// Objects are not iterable, but the spread syntax can be used in objects as well:
-
-const cat = { legCount: 4, hasTeeth: "true" }
-const dog = { legCount: 4, hasTeeth: "true" }
-const bird = { legCount: 2, hasTeeth: "false" }
-
-const myCat = { ...cat, name: "Ollie", personality: "unpredictable" }
-const myDog = { ...dog, name: "Jojo", personality: "cute" }
-const myBird = {
-  ...bird,
-  name: "Milo",
-  personality: "might seduce your dad type",
-}
-
-console.log(myBird) // prints: {legCount: 2, hasTeeth: "false", name: "Milo", personality: "might seduce your dad type"}
-
-// If you have conflicting properties the order of spreading does matter.
-
-const alienCat1 = { ...cat, legCount: 6, eyeCount: 3 } // has a legCount of 6
-const alienCat2 = { legCount: 6, eyeCount: 3, ...cat } // has a legCount of 4
-
-// Spreading can be used to copy objects, but just like the arrays, the copy and the initial object will point to different references, although they look the same.
-
-const myDogCopy = { ...myDog }
-console.log(myDog === myDogCopy) // prints: "false"
-
-// You can't spread an object inside an array, it will throw an error.
-// You can spread an array into an object though. It will assign each item in the array a key, which is the same as their index.
-
-console.log({ ...[1, 2, 3] }) // prints: {0: 1, 1: 2, 2: 3}
+console.log(NaN == NaN) // Prints: false
 ```
 
-- **Rest Syntax and arguments object:** The syntax is exactly the same as the spread syntax, which is three dots next to each other.
+As it behaves loosely and sometimes yields unexpected results, double equals is not much liked by the community. It is strongly recommended to use triple equals for comparison purposes.
 
-In every function we have access to what is called an arguments object. It is an array-like object that has a length property, but built-in array methods are not available for it. It contains all arguments passed into a function, if you don't know how many arguments the function will take, then instead of specifying the arguments, you can simply use this object. It is not available in arrow functions.
+#### I hate the endings, but here we are
 
-Let's see it in use:
+If a new programmer is reading this, keep rocking on! If you don't understand things, guess what, you're just human. There's always cool people who'll help you understand things. And if you keep trying to learn things, one day you'll become a member of that cool and unique club, so keep on going on.
 
-```javascript
-// First, we'll start with arguments object:
+![xkcd Ten Thousand comic](../images/blog/data_types/ten_thousand_2x.png)
 
-function doesntMatter() {
-console.log(arguments);
-}
+###### [xkcd](https://xkcd.com/), https://xkcd.com/1053/
 
-doesntMatter(1,5,23,759); // prints all the arguments as an array-like object: [1, 5, 23, 759, callee: ƒ, Symbol(Symbol.iterator): ƒ]
-
-function multiply() {
-return [...arguments].reduce((total, currVal) => {
-return total \* currVal;
-})
-}
-
-multiply(2, 5, 8); // prints: 80
-
-// Now, same function with rest syntax will look like this:
-
-function multiply(...args) {
-console.log(args); // This returns an actual array that consists all arguments, not an array-like object.
-return args.reduce((total, currVal) => {
-return total \* currVal;
-})
-}
-
-multiply(2, 5, 9); // prints: [2, 5, 9] 90
-
-// You can also use it to encapsulate some of the arguments:
-
-function fullName(firstName, lastName, ...titles) {
-console.log("First name:", firstName);
-console.log("Last name:", lastName);
-console.log("Titles:", titles);
-}
-
-fullName("Mary", "Johnsson", "Mrs.", "Dr.");
-// prints:
-First name: Mary
-Last name: Johnsson
-Titles: (2) ["Mrs.", "Dr."]
-
-```
-
-- **Destructuring:** A shorter syntax for assigning values to variables.
-
-Let's see it in use:
-
-```javascript
-const petNames = ["Ollie", "Jojo", "Milo", "Kiki"];
-
-const [dog, cat, bird] = petNames;
-console.log("Dog's name: ", dog); // prints: "Dog's name: Ollie"
-console.log("Cat's name: ", cat); // prints: "Cat's name: Jojo"
-console.log("Bird's name: ", bird); // prints: "Bird's name: Milo"
-
-// As you can see, the order matters. And if you want to skip a variable, you can use an empty space instead of it, like this:
-
-const names = ["Ellie", "Ollie", "Wally"];
-
-const [first, , third] = names;
-console.log(first, third); // prints: Ellie Wally
-
-// You can combine it with rest syntax as well:
-
-const nums = [1, 2, 3, 4, 5, 6];
-
-const [firstNum, , , ...others];
-console.log(firstNum); // prints: 1
-console.log(others); // prints: [4, 5, 6]
-
-// Destructuring can be used with objects as well, but the destructuring name has to match the keynames, or the variable will still be created but the value of it will become undefined:
-
-const rat = {legCount: 4, hasTeeth: "true", name: "Taco", personality: "very cool"};
-
-const {name, personality, hasTail} = rat;
-console.log(name); // prints: "Taco"
-console.log(hasTail); // prints: undefined
-
-// If you want to use destructuring, but want to name your variable as a different name, you can do that too:
-
-const {name: petRatName} = rat;
-console.log(petRatName); // prints: "Taco"
-
-// You can combine it with rest parameter as well:
-
-const {name: petRatName, ...otherRatParameters} = rat;
-
-console.log(otherRatParameters); // prints: {legCount: 4, hasTeeth: "true", personality: "very cool"}
-
-// Nested destructuring is also possible:
-
-const pets = [
-{
-name: "Ollie",
-species: "dog"
-},
-{
-name: "Milo",
-species: "bird"
-},
-{
-name: "Taco",
-species: "rat"
-}
-];
-
-const [ , {name: petBirdName}] = pets;
-console.log(petBirdName); // prints: "Milo"
-
-// You can use destructuring in function parameters as well:
-
-printFullName = ({firstName, lastName}) => {
-console.log(`${firstName} ${lastName}`);
-}
-
-const person = {
-firstName: "Carrie",
-lastName: "Longwood",
-age: 32,
-hairColor: "black"
-}
-
-printFullName(person); // prints: "Carrie Longwood"
-
-// Can do the same with arrays too:
-
-const response = ['HTTP/1.1', '200 OK', 'application/json'];
-
-function parseResponse([protocol, statusCode, contentType]) {
-console.log(`Status: ${statusCode}`);
-}
-
-parseResponse(response); // prints: Status: 200 OK
-
-```
+Don't miss out all the fun!
 
 **Resources:**
 
 1. [The Modern JavaScript Tutorial- javascript.info](https://javascript.info/)
-2. [MDN web docs- Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+2. [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management), [Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators) by MDN web docs
 3. [JS V8 Engine Explained- hackernoon](https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
 4. [Academind](https://academind.com/) - Maximilian Schwarzmüller
 5. [Eloquent JavaScript: A Modern Introduction to Programming](https://eloquentjavascript.net/)
