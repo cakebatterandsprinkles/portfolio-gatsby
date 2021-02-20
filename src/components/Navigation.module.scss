@@ -81,11 +81,21 @@
   outline-offset: -3px;
 }
 
-.imgWrapper {
-  padding: 1rem;
+.imgBorder {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.imgWrapper {
   background-image: linear-gradient(var(--yellow), var(--palepink));
+  border-radius: 50%;
+  width: 14rem;
+  height: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img {
@@ -119,7 +129,8 @@
 
 @media (max-width: 900px) {
   .imgWrapper {
-    padding: 1rem;
+    width: 11rem;
+    height: 11rem;
   }
 
   .img {

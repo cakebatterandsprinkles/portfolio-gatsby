@@ -1,11 +1,11 @@
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import styles from "./Navigation.module.scss"
-import me from "../images/main/me_in_color.png"
-import linkedin from "../images/main/social-1_round-linkedin.svg"
-import github from "../images/main/social-1_round-github.svg"
-import twitter from "../images/main/social-1_round-twitter.svg"
 import mail from "../images/main/envelope.svg"
+import me from "../images/main/me_in_color.png"
+import github from "../images/main/social-1_round-github.svg"
+import linkedin from "../images/main/social-1_round-linkedin.svg"
+import twitter from "../images/main/social-1_round-twitter.svg"
+import styles from "./Navigation.module.scss"
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -20,8 +20,10 @@ const Navigation = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.imgWrapper}>
-        <img src={me} alt="me" className={styles.img} />
+      <div className={styles.imgBorder}>
+        <div className={styles.imgWrapper}>
+          <img src={me} alt="me" className={styles.img} />
+        </div>
       </div>
       <nav className={styles.navList}>
         <p>
