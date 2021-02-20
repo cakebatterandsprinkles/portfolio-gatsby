@@ -15,6 +15,7 @@ module.exports = {
             "Anonymous Pro",
             "Share Tech Mono",
             "Raleway",
+            "Rock Salt",
           ],
         },
       },
