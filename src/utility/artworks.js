@@ -15,12 +15,31 @@ import JustChoose from "../images/gallery/digital_art/IMG_0276.png"
 import SocialDistance from "../images/gallery/digital_art/IMG_0277.png"
 import NeuronsWalking from "../images/gallery/digital_art/IMG_0371.png"
 import MeInColor from "../images/gallery/digital_art/me_in_color.png"
+import Bird from "../images/gallery/ink/bird.png"
+import Butterflies from "../images/gallery/ink/butterflies.png"
 import ThisIsFine from "../images/main/img404.jpg"
 
 const sections = [
   { handle: "digital", title: "Digital" },
   { handle: "clay", title: "Clay" },
   { handle: "ink", title: "Ink" },
+]
+
+const inkWork = [
+  {
+    name: "Bird",
+    year: "2020",
+    medium: "Sumi-e ink",
+    src: Bird,
+    imgAlt: "bird hanging on a tree branch",
+  },
+  {
+    name: "Butterflies",
+    year: "2020",
+    medium: "Sumi-e ink",
+    src: Butterflies,
+    imgAlt: "butterflies why not",
+  },
 ]
 
 const digitalWork = [
@@ -169,4 +188,4 @@ const clayWork = [
   },
 ]
 
-export { sections, digitalWork, clayWork }
+export { sections, digitalWork, clayWork, inkWork }

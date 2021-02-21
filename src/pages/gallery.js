@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Polaroid from "../components/Polaroid"
-import { clayWork, digitalWork, sections } from "../utility/artworks"
+import { clayWork, digitalWork, inkWork, sections } from "../utility/artworks"
 import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
 
@@ -41,6 +41,18 @@ const GalleryPage = () => {
                     : null
                 }
               >
+                <img src={w.src} alt={w.imgAlt} />
+              </Polaroid>
+            </div>
+          ))}
+        </div>
+      )
+    } else if (section === "ink") {
+      return (
+        <div className={styles.gridContainer}>
+          {inkWork.map((w, i) => (
+            <div className={styles.card} key={`inkwork-${i}`}>
+              <Polaroid name={w.name} year={w.year} medium={w.medium}>
                 <img src={w.src} alt={w.imgAlt} />
               </Polaroid>
             </div>
