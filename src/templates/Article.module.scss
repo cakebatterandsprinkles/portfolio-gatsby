@@ -50,3 +50,9 @@
   background-size: 100% 100%;
   opacity: 90%;
 }
+
+@media (max-width: 900px) {
+  .mainHeader {
+    font-size: 1rem;
+  }
+}
