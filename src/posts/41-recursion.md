@@ -9,7 +9,7 @@ summary: "In this article, I briefly explain recursion using simple examples wri
 
 **Recursion** is a method of solving a bigger problem by solving smaller instances of the same problem.
 
-In other words, recursion is calling is a function calling itself, again and again, until a condition is met.
+In other words, recursion is calling a function calling itself, again and again, until a condition is met.
 
 Although it seems like a hard-to-understand concept, I think recursion is everywhere in our daily lives. When you eat, you eat until you feel full (or close), which makes "being full (or close)" your base condition and eating your recursive function. You sleep until you feel rested again, which makes "being rested" your base condition and sleeping your recursive function. You drink coffee until you are no longer sleepy, which makes "not feeling sleepy" your base condition, and drinking coffee your recursive function. You got the idea.
 
@@ -179,4 +179,4 @@ I leave you with this wonderful video of Hal trying to fix the lightbulb (Malcol
 3. [Functions](https://eloquentjavascript.net/03_functions.html) - [Eloquent JavaScript](http://eloquentjavascript.net/)
 4. [Tail call optimization in ECMAScript 6](https://2ality.com/2015/06/tail-call-optimization.html) by Dr. Axel Rauschmayer
 5. [Iteration vs Recursion](https://medium.com/backticks-tildes/iteration-vs-recursion-c2017a483890) by Bolaji
-6. [What is tail call optimization?](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) - stackoverflow
+6. [What is tail call optimization?](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) - [stackoverflow](https://stackoverflow.com/)
