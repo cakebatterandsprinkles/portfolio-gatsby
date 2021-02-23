@@ -41,13 +41,15 @@ function infiniteRecursion() {
 infiniteRecursion()
 ```
 
-The first thing we see in this code snippet is the function initialization. Then we see the function call in the global scope, so the function call gets added to our call stack. Inside the function, the function itself is called again, which adds another call of the same function to the call stack, and this goes on forever (or until it crashes), because there is absolutely nothing to stop it. If you run this code snippet in your chrome console, it will give you a `RangeError`, which looks like this:
+The first thing we see in this code snippet is the function initialization. Then we see the function call in the global scope, so the function call gets added to our call stack. Inside the function, the function itself is called again, which adds another call of the same function to the call stack, and this goes on forever (or until it crashes), because there is absolutely nothing to stop it. Another definition of a recursive function could be a group of nested function calls, which starts unwinding from the innermost function call.
+
+If you run this code snippet in your chrome console, it will give you a `RangeError`, which looks like this:
 
 ![Maximum call stack size exceeded error](../images/blog/recursion/infiniteRecursion.png)
 
 Each function call that gets added to our call stack uses some amount of memory. So, a disadvantage of using recursion is the increased space complexity.
 
-Also, when writing recursive functions, you should always make sure that you provide reasonable default values for the optional arguments you are receiving to safely handle the recursion.
+When writing recursive functions, you should always make sure that you provide reasonable default values for the optional arguments you are receiving to safely handle the recursion. Also if you need one (and you probably do), you might need to add a **termination condition** to weed out the unwanted inputs.
 
 Let's write three different code snippets that does the same thing, calculating the factorial of a given n number. One will be doing it with a for loop, one with while loop, and one will be recursive:
 
@@ -180,3 +182,4 @@ I leave you with this wonderful video of Hal trying to fix the lightbulb (Malcol
 4. [Tail call optimization in ECMAScript 6](https://2ality.com/2015/06/tail-call-optimization.html) by Dr. Axel Rauschmayer
 5. [Iteration vs Recursion](https://medium.com/backticks-tildes/iteration-vs-recursion-c2017a483890) by Bolaji
 6. [What is tail call optimization?](https://stackoverflow.com/questions/310974/what-is-tail-call-optimization) - [stackoverflow](https://stackoverflow.com/)
+7. [Learn and Understand Recursion in JavaScript](https://codeburst.io/learn-and-understand-recursion-in-javascript-b588218e87ea) by Brandon Morelli
