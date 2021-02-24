@@ -42,7 +42,7 @@ function outerFn() {
 outerFn()() // Alert: "Hello from the OuterFn!"
 ```
 
-**Side effects** are anything you do that is observable from outside, aside from returning a value from a function. A side effect can be logging something to the console, writing to a file or the screen, modifying external variables (variables outside of its own scope), setting a timeout or an interval, an Ajax request, or calling other functions that have side effects.
+**Side effects** are anything a piece of code does that can be observed from outside. To be counted as a side effect, it should either have an effect on the code that comes after it or change the display in some way. A side effect can be logging something to the console, writing to a file or the screen, modifying external variables (variables outside of its own scope), setting a timeout or an interval, an Ajax request, or calling other functions that have side effects.
 
 Let's create an example of closure with some side effect:
 
