@@ -5,7 +5,7 @@ tags: ["Computer Science", "Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference. I also explain logical operators (!, ||, && and ??) in a separate subtitle at the end of the article."
 ---
 
-If you want to imitate any piece of code in this article, I simply suggest you to use the mighty Chrome console. You can open it by using `Command + Option + J` shortcut in Mac and `Control + Shift + J` shortcut in Windows.
+If you want to imitate any piece of code in this article, I simply suggest using the mighty Chrome console. You can open it by using the `Command + Option + J` shortcut in Mac or the `Control + Shift + J` shortcut in Windows.
 
 Let's start by learning how to check the variable types. JavaScript has a simple and very useful operator for this purpose, and that is the **typeof operator.**
 
@@ -22,13 +22,13 @@ typeof [1, "cake"] // ↪ "object"
 typeof NaN // ↪ "number"
 ```
 
-Operators like `typeof`, `++`, `--` and `!` are called **unary operators**, because they accept a single value. Operators like >, <, +, -, \*, / are called **binary operators** as they accept two inputs and create a single output.
+Operators like `typeof`, `++`, `--` and `!` are called **unary operators** because they accept a single value. Operators like >, <, +, -, \*, / are called **binary operators** as they accept two inputs and create a single output.
 
-The data types in JS can be divided into 2 major categories: Primitive and Non-primitive (or Reference).
+The data types in JS can be divided into 2 major categories: **Primitive** and **Non-primitive** (or Reference).
 
-#### Primitive data types:
+### Primitive data types:
 
-###### String, Number, Boolean, Null, Undefined, Symbols(ES6), BigInt
+###### **String, Number, Boolean, Null, Undefined, Symbols(ES6), BigInt**
 
 What makes primitive values "primitive"?
 
@@ -52,7 +52,7 @@ let d
 c === d // true
 ```
 
-Primitive data types are considered **immutable**, which simply means you cannot modify a primitive data after it has been created.
+Primitive data types are considered **immutable**, which simply means you cannot modify primitive data after it has been created.
 
 Example:
 
@@ -67,19 +67,19 @@ Now, let's talk about all primitive values one by one:
 
 - **1. String:**
 
-  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double("") or single('') quotes, or backticks(``), it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
+  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double("") or single('') quotes, or backticks(\`\`), it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
 
   JS uses 16 bits to encode a single string element. But some characters (such as emojis) are represented with two character positions (2 blocks of 16 bits).
 
-  The only arithmetic operator that can be used on strings is +, and it does not add, but it **concatenates**, which is stiching two pieces of string to each other.
+  The only arithmetic operator that can be used on strings is +, and it does not add, but it **concatenates**, which is stitching two pieces of string to each other.
 
   ```javascript
   console.log("crazy" + " " + "bird" + " " + "lady") // prints: crazy bird lady
   ```
 
-  **[Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)** are ways to make a string hold placeholders. If you want to write a string as a template literal, use backticks(``) instead of quotation marks. And when using a placeholder, place the placeholder inside \${}. A very simple example is shown in the next codeblock. You can nest template strings, and they also can hold stuff like ternary operators. You can even create multi line strings if you ever need to. One downside of it is, it is not supported by IE.
+  Using **[template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)** is a way to make a string hold bindings (or placeholders). If you want to write a string as a template literal, use backticks(\`\`) instead of quotation marks. And when using a placeholder, place the placeholder inside `${}`. A very simple example is shown in the next code block. You can nest template strings, and they also can hold stuff like ternary operators. You can even create multiline strings if you ever need to. One downside of it is, it is not supported by IE.
 
-  There are some methods that come built-in with every string, which are extremely useful. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `String.prototype` to your chrome console, which will return you the String prototype object.
+  Some methods come built-in with every string and they are extremely useful. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `String.prototype` to your chrome console, which will return you the String prototype object.
 
   <details>
     <summary>Built-in String methods cheatsheet</summary>
@@ -107,7 +107,7 @@ Now, let's talk about all primitive values one by one:
 
   ---------------------------
 
-  // -> concat() is a built in method that merges two strings and returns the result as a new string.
+  // -> concat() is a built-in method that merges two strings and returns the result as a new string.
 
   const str1 = 'taco';
   const str2 = 'cat';
@@ -145,8 +145,8 @@ Now, let's talk about all primitive values one by one:
   ---------------------------
 
   // -> indexOf() returns the starting index of a given string. It can take a second argument that will make the search start from that given index.
-  // -> lastIndexOf() method does the same thing, but it starts searching from the end of a given string, so it will result with the last occurrance. It takes an optional second argument as an index to start the backwards search.
-  // Both of them returns -1 if the value is not found, and both of them are case sensitive.
+  // -> lastIndexOf() method does the same thing, but it starts searching from the end of a given string, so it will result in the last occurrence. It takes an optional second argument as an index to start the backward search.
+  // Both of them return -1 if the value is not found, and both of them are case sensitive.
 
   const sentence = "a taco cat loves tacos.";
 
@@ -205,8 +205,8 @@ Now, let's talk about all primitive values one by one:
   ---------------------------
 
   // -> repeat() method returns a new string with the specified number of copies of a given string.
-  // -> replace() method replaces a given string with another given string, but only the first occurrance of it.
-  // -> replaceAll() method replaces the matches of a given string with all occurances of another given string.
+  // -> replace() method replaces a given string with another given string, but only the first occurrence of it.
+  // -> replaceAll() method replaces the matches of a given string with all occurrences of another given string.
 
   const chirp = 'Chirp. Chirpy chirp. ';
   const birdSong = chirp.repeat(3);
@@ -222,7 +222,7 @@ Now, let's talk about all primitive values one by one:
 
   ---------------------------
 
-  // -> search() method returns the index of the first occurrance of a match between a given regular expression and a string. If there are no matches, it will return -1.
+  // -> search() method returns the index of the first occurrence of a match between a given regular expression and a string. If there are no matches, it will return -1.
 
   let str = "hello Cookie"
   let regExpCapitals = /[A-Z]/g
@@ -255,7 +255,7 @@ Now, let's talk about all primitive values one by one:
   ---------------------------
 
   // -> substring() method returns the part of the string between given start and end indexes.
-  // -> \ is an escape character in JS. Special characters (quotation marks, and \) can be written using \ in front of them, so that they'll be perceived as normal characters.
+  // -> \ is an escape character in JS. Special characters (quotation marks, and \) can be written using \ in front of them so that they'll be perceived as normal characters.
   // -> \n is also an escape notation that adds a new line.
 
   const str = "I\'ll keep coming"
@@ -314,7 +314,7 @@ Now, let's talk about all primitive values one by one:
 
   Number is a data type that is used to represent integers and decimals.
 
-  Numbers can be used to make simple mathematical operations, such as **addition (+)**, **subtraction (-)**, **multiplication (\*)** and **division (/)**. There is also the **exponantial operator**, which is symbolized by **\*\***. (Example: 2 \*\* 3 will be equal to 8.) There are other operators as well, such as the **modulo operator**, which is also known as the "remainder operator". It takes the second operand and divides the first one with it, and returns the remainder that is left. A good way to use a modulo operator is to see if a given number is odd or even. (Use number % 2 for it.)
+  Numbers can be used to make simple mathematical operations, such as **addition (+)**, **subtraction (-)**, **multiplication (\*)** and **division (/)**. There is also the **exponential operator**, which is symbolized by **\*\***. (Example: 2 \*\* 3 will be equal to 8.) There are other operators as well, such as the **modulo operator**, which is also known as the "remainder operator". It takes the second operand and divides the first one with it, and returns the remainder that is left. A good way to use a modulo operator is to see if a given number is odd or even. (Use number % 2 for it.)
 
   Examples for the modulo operator:
 
@@ -327,7 +327,7 @@ Now, let's talk about all primitive values one by one:
 
   ***
 
-  **A small note:** JS uses a fixed number of bits (to be more precise, 64 bits) to store a Number data. Given 64 binary digits, you can represent 2⁶⁴ of numbers. As numbers can be both negative and positive, one bit is always occupied with this data, leaving us with 63 bits to store the actual number. So integers smaller than 2⁶³ can be represented precisely. But here is another issue: the decimals. Decimals lose precision as many of need more than 64 bits to store them (think of π).
+  **A small note:** JS uses a fixed number of bits (to be more precise, 64 bits) to store a Number data. Given 64 binary digits, you can represent 2⁶⁴ of numbers. As numbers can be both negative and positive, one bit is always occupied with this data, leaving us with 63 bits to store the actual number. So integers smaller than 2⁶³ can be represented precisely. But here is another issue: the decimals. Decimals lose precision as many of them need more than 64 bits to store (think of π).
 
   To sum up, we can treat whole numbers smaller than 2⁶³ as precise, but decimals (fractional numbers) should always be thought of as approximations rather than a precise value.
 
@@ -335,11 +335,11 @@ Now, let's talk about all primitive values one by one:
 
   ***
 
-  There is also the issue of precedence, it there are multiple operations to be taken care of, the order of precedence will be: (You can remember it by the acronym they form: **PEMDAS**)
+  There is also the issue of precedence, if there are multiple operations to be taken care of, the order of precedence will be: (You can remember it by the acronym they form: **PEMDAS**)
 
   **P**arenthesis > **E**xponents > **M**ultiplication > **D**ivision > **A**ddition > **S**ubtraction
 
-  Other data types can be converted to numbers by using the `Number()` function. If it's a value that cannot be converted, it will return **[NaN (Not A Number)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)**. NaN is also defined as a Number but it doesn't have a numeric value. NaN is also the only value in JS that is not equal to itself.
+  Other data types can be converted to numbers by using the `Number()` function. If it's a value that cannot be converted, it will return **[NaN (Not A Number)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)**. NaN is also of type Number but it doesn't have a numeric value. NaN is also the only value in JS that is not equal to itself.
 
   ```javascript
   85 === 85
@@ -358,12 +358,12 @@ Now, let's talk about all primitive values one by one:
   // -0 is also a number in JS. Weird, but here it is:
   0 === -0 // true
 
-  // There is also -Infinity, which are not strictly or loosely equal to each other.
+  // There is also -Infinity:
   32 / -0 = -Infinity
   32 / 0 = Infinity
   ```
 
-  There are some methods that come built-in with every number. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `Number.prototype` to your chrome console, which will return you the Number prototype object.
+  Some methods come built-in with every number. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `Number.prototype` to your chrome console, which will return you the Number prototype object.
 
   <details>
     <summary>Built-in Number methods cheatsheet</summary>
@@ -470,7 +470,7 @@ Now, let's talk about all primitive values one by one:
 
 - **3. BigInt:**
 
-  BigInt is the data type that is used for numbers that are larger than 2⁵³ - 1, which is the largest number that can be reliably represented with JavaScript Number data type. To indicate that a value is a BigInt type, you either append "n" to the end of the value, or call the BigInt function.
+  BigInt is the data type that is used for numbers that are larger than 2⁵³ - 1, which is the largest number that can be reliably represented with JavaScript Number data type. To indicate that a value is a BigInt type, you either append "n" to the end of the value or call the BigInt function.
 
   Example:
 
@@ -487,13 +487,13 @@ Now, let's talk about all primitive values one by one:
   1n == 1 // ↪ true
   ```
 
-  Number and BigInt coercion is not recommended by [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt), as it can lead to a loss of precision.
+  Number to BigInt coercion (or otherwise) is not recommended by [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt), as it can lead to a loss of precision.
 
 - **4. Boolean:**
 
   There are only two boolean values: _true_ or _false_. They are really useful for setting flags.
 
-  All values have an inherent _truthy_ or _falsy_ value under their real values. That means, in certain conditions they will act like boolean values, and either look like true or false.
+  All values have an inherent _truthy_ or _falsy_ value under their real values. That means, in certain conditions, they will act like boolean values.
 
   Everything else is truthy except falsy values! And here are the falsy values:
 
@@ -513,18 +513,109 @@ typeof name // ↪ undefined
 
 - **6. Null:**
 
-Null and undefined are very similar with a slight difference. They both mean nothing, but null has the connotation of to be set specifically to nothing, while undefined has the connotation that that property has never been set at all. For a value to be null, a developer has to explicitly set it to null.
+  Null and undefined are very similar with a slight difference. They both mean nothing, but null has the connotation of being set specifically to nothing, while undefined has the connotation that that property has never been set at all. For a value to be null, a developer has to explicitly set it to null.
 
-```javascript
-let name = null
-typeof name // ↪ null
-```
+  ```javascript
+  let name = null
+  typeof name // ↪ null
+  ```
 
 - **7. Symbol:**
 
-#### Non-primitive (Reference) data types:
+  Symbol data type was introduced to JavaScript in ES2015. They are a little confusing and they have very special use cases. The most valuable part of a symbol is its uniqueness. You create a symbol by using the `Symbol()` keyword, and any argument it gets (which is also called the symbol name) is used for debugging purposes. It doesn't affect anything. Even if you don't provide any arguments, with each call, the Symbol keyword will create a unique symbol.
 
-###### Arrays, Object Literals, Functions, Dates, and anything else..
+  Also, JavaScript does not automatically coerce symbols into strings, if you want strings, you gotta make them yourself.
+
+  ```javascript
+  // This is how you create a symbol:
+
+  const bird = Symbol("Cookie")
+  console.log(typeof bird) // -> prints: symbol
+  console.log(bird) // -> prints: Symbol(Cookie)
+  console.log(bird.valueOf()) // -> prints: Symbol(Cookie)
+  console.log(bird.toString()) // -> prints: "Symbol(Cookie)"
+  console.log(bird.description) // -> prints: "Cookie"
+
+  // Each created symbol is unique and immutable.
+
+  console.log(Symbol("Cookie") === Symbol("Cookie")) // -> prints: false
+  console.log(Symbol("Cookie") == Symbol("Cookie")) // -> prints: false
+
+  // Symbols can be used to create private properties, to prevent accidental access or overwriting.
+  // If you're working with a third-party API that provides you some sort of information, but you would like to add another key-value pair for your own use, creating keys as symbols will prevent third-party access.
+
+  // This is our third party code:
+  let player = {
+    name: "Midoritori",
+    species: "Night elf",
+    occupation: "Monk",
+    covenant: "Night Fae",
+    mount: "Silky Shimmermoth",
+  }
+
+  // Let's say that we want to add an id to this player:
+
+  let id = Symbol(player.name)
+  player[id] = 1
+
+  console.log(player[id]) // -> prints: 1
+
+  // To add them in object literal, you need to wrap the Symbol in square brackets:
+
+  let id1 = Symbol("id")
+  let pet = {
+    species: "parrot",
+    name: "Cookie",
+    [id1]: 12,
+  }
+  console.log(pet[id1]) // -> prints: 12
+
+  // JavaScript keeps a global registry of all the Symbols created in that script.
+  // If you want to read a specific symbols value, but if it doesn't exist, create one, you use Symbol.for(key):
+
+  let id2 = Symbol.for("id")
+  let id3 = Symbol.for("id")
+  console.log(id1 === id2) // -> prints: false (for this to be true, we needed to create the id1 with Symbol.for(key) as well.)
+  console.log(id2 === id3) // -> prints: true
+
+  // You can also query the symbol name by using Symbol.keyFor(sym):
+  console.log(Symbol.keyFor(id2)) // prints: "id"
+  ```
+
+  Symbols are not enumerated. You cannot use `for...in`, or `for...of`, or any other loop on them. They will also not show among the the properties of the object when `Object.getOwnPropertyNames()` is used. `JSON.stringify` will also omit the key-value pairs where the key is of type Symbol.
+
+  ```javascript
+  let id1 = Symbol("id")
+  let pet = {
+    species: "parrot",
+    name: "Cookie",
+    [id1]: 123,
+  }
+
+  console.log(Object.getOwnPropertyNames(pet)) // -> prints: ["species", "name"]
+  console.log(pet) // {species: "parrot", name: "Cookie", Symbol(id): 123}
+
+  for (let key in pet) {
+    console.log(`key: ${key}, value: ${pet[key]}`)
+  }
+  // -> prints:
+  // key: species, value: parrot
+  // key: name, value: Cookie
+  ```
+
+  Although, the symbols are not completely hidden: you can reach them by using `Object.getOwnPropertySymbols(obj)` static method.
+
+  ```javascript
+  // I'm using the object in the example above:
+  console.log(Object.getOwnPropertySymbols(pet))
+  // -> prints: [Symbol(id)]
+  ```
+
+  To sum up, symbols are mostly used for providing unique values. Their use cases, however, are somewhat a little miscellaneous.
+
+### Non-primitive (Reference) data types:
+
+###### **Arrays, Object Literals, Functions, Dates, and anything else...**
 
 In reference data types, when you create a variable, the variable doesn't actually hold a value, instead it holds a pointer to that value. So when you copy a variable, it's the pointer that gets copied, not the value itself.
 
@@ -552,7 +643,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
 - **1. Object:**
 
-  An object is an _unordered_ data structure consisting key-value pairs.
+  An object is an _unordered_ data structure consisting key-value pairs. Object keys can be either of type string or symbol, and nothing else.
 
 - **2. Array:**
 
