@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from "react"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import React, { useEffect, useRef, useState } from "react"
 import Layout from "../components/Layout"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { tagStyles } from "../utility/blog"
-import styles from "./journal.module.scss"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
+import { tagStyles } from "../utility/blog"
 import { createHaiku } from "../utility/functions"
+import styles from "./journal.module.scss"
 
 const JournalPage = () => {
   const posts = useStaticQuery(graphql`
@@ -59,15 +59,15 @@ const JournalPage = () => {
 
   const pageCount = Math.ceil(searchResults.length / pageSize)
 
-  const setCurrentTags = () => {
+  const setCurrentTags = React.useCallback(() => {
     let allTags = posts.allMarkdownRemark.edges.flatMap(
       post => post.node.frontmatter.tags
     )
     const currentTags = new Set(allTags)
     setTags(Array.from(currentTags))
-  }
+  }, [posts.allMarkdownRemark.edges])
 
-  const setAvailableYears = () => {
+  const setAvailableYears = React.useCallback(() => {
     let allYears = posts.allMarkdownRemark.edges.flatMap(post => {
       if (post.node.frontmatter.date) {
         return post.node.frontmatter.date.slice(0, 4)
@@ -75,12 +75,12 @@ const JournalPage = () => {
     })
     const availableYears = new Set(allYears)
     setYears(Array.from(availableYears).sort())
-  }
+  }, [posts.allMarkdownRemark.edges])
 
   useEffect(() => {
     setCurrentTags()
     setAvailableYears()
-  }, [posts])
+  }, [posts, setAvailableYears, setCurrentTags ])
 
   const handleClearClick = () => {
     searchInput.current.value = ""
@@ -206,6 +206,7 @@ const JournalPage = () => {
             <div className={styles.paginationButtonContainer}>
               <div
                 className={styles.leftarrow}
+                aria-hidden="true"
                 onClick={() =>
                   setCurrentPage(
                     currentPage === 0 ? currentPage : currentPage - 1
@@ -223,12 +224,14 @@ const JournalPage = () => {
                   }
                   onClick={() => setCurrentPage(i)}
                   key={i}
+                  aria-hidden="true"
                 >
                   <span className={styles.paginationAlignment}>{i + 1}</span>
                 </button>
               ))}
               <div
                 className={styles.rightarrow}
+                aria-hidden="true"
                 onClick={() =>
                   setCurrentPage(
                     currentPage === pageCount - 1
@@ -277,7 +280,7 @@ const JournalPage = () => {
                         className={
                           tagStyles[tag]
                             ? `${tagStyles[tag]} ${styles.tag}`
-                            : `${tagStyles["default"]} ${styles.tag}`
+                            : `${tagStyles["springgreen"]} ${styles.tag}`
                         }
                         key={index}
                         onClick={() => filterPosts(tag)}

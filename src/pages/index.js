@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import ReactCardFlip from "react-card-flip"
-import Layout from "../components/Layout"
-import styles from "./index.module.scss"
-import CardFront from "../components/CardFront"
 import CardBack from "../components/CardBack"
+import CardFront from "../components/CardFront"
+import Layout from "../components/Layout"
 import { createHaiku } from "../utility/functions"
+import styles from "./index.module.scss"
 
 const PortfolioPage = () => {
   const [isFlipped1, setIsFlipped1] = useState(false)

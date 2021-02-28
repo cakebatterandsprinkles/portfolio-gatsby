@@ -12,7 +12,7 @@ const GalleryPage = () => {
     setSection(str)
   }
 
-  const renderContent = () => {
+  const renderContent = React.useCallback(() => {
     if (section === "digital") {
       return (
         <div className={styles.gridContainer}>
@@ -60,7 +60,8 @@ const GalleryPage = () => {
         </div>
       )
     }
-  }
+  }, [section])
+
 
   React.useEffect(() => {
     renderContent()
@@ -82,6 +83,7 @@ const GalleryPage = () => {
                 className={`${styles.navbarLink} ${
                   section === s.handle ? styles.activeLink : ""
                 }`}
+                aria-hidden="true"
                 onClick={() => changeSection(s.handle)}
               >
                 {s.title}

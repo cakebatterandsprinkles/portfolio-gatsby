@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from "../components/Layout"
-import styles from "./404.module.scss"
 import JumpingBoy from "../images/main/character404.png"
 import TiredAdult from "../images/main/img404.jpg"
-import journalStyles from "./journal.module.scss"
 import { createHaiku } from "../utility/functions"
+import styles from "./404.module.scss"
+import journalStyles from "./journal.module.scss"
 
 const Page404 = () => {
   return (
@@ -27,7 +27,7 @@ const Page404 = () => {
             </div>
             <img
               src={TiredAdult}
-              alt="404 image"
+              alt="404"
               className={styles.big404Img}
             />
           </div>
