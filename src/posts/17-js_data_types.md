@@ -640,16 +640,136 @@ let pets = ["Cookie", "Dust", "Dander"]
 pets[1] = "Cake"
 console.log(pets) // ["Cookie", "Cake", "Dander"]
 ```
+- **1. Function:**
+  
+  We have seen many built-in functions up until this point, and we'll keep on seeing them, but this is the time we talk about what functions are. Functions are reusable pieces of code that are designed to do certain tasks. Parentheses (\(\)) that follow the 'function' keyword is the most basic way to indicate that a code block will serve as a function. The parentheses may or may not include arguments.
 
-- **1. Object:**
+  You have to first define what the function is going to be called and what it is supposed to do, and this is called the **function declaration** or the **function statement**. (The terminology related to this subject are sometimes use synonymously, and although they have some subtle differences, and I'm not exactly sure if they really matter when it comes to everyday programming. For example, function declarations are hoisted to the top of their closures while function expressions are not. This simply means that the declared functions can be used before they were defined, but that won't work with expressed functions. But as a common sense, isn't it better to define functions before calling them anyways?)
 
-  An object is an _unordered_ data structure consisting key-value pairs. Object keys can be either of type string or symbol, and nothing else.
+  Let's create a function in three different ways:
 
-- **2. Array:**
+  ```javascript
+    // -> Function declaration:
+    function double(num) {
+      return num*2;
+    }
+
+    // -> Function expression:
+    const double = function d(num) { 
+      // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
+      return num*2;
+    } 
+
+    // If the inner function doesn't have a name, it will be an anonymous function, and it will look like this: (And it is totally fine if nothing else is referring to the inner function anyway.)
+    const double = function(num) { 
+      // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
+      return num*2;
+    } 
+
+    // -> Arrow function expression: (Introduced with ES6, fairly new.)
+    const double = (num) => {
+      return num*2
+    };
+
+    // Arrow functions can be simplified. If you have one argument, you can omit the parentheses and if you have a single line of code to execute, you can omit the curly braces and the return statement:
+
+    const double = num =>  num*2; // See how cute and simple this is?
+  ```
+  You can return or print something with a function, but you absolutely don't have to. If you return nothing from it, it will simply return `undefined`.
+
+  Defining a function will not run that piece of code, it is merely a description. To execute that code, you need to **invoke** or **call** that function.
+   
+  ```javascript
+    // -> Calling a function:
+    double(2); // prints: 4
+    double(39); // prints: 78
+  ```
+
+  A declared function returns us an arguments object, which we can use if we like to.
+
+  ```javascript
+  function doesntMatter() {
+    console.log(arguments)
+  }
+  doesntMatter(56, 'hello', true); // prints: [56, "hello", true, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+  // The arguments.callee method contains currently executing function. 
+
+  // -> The arrow function has a slightly different syntax called the rest operator:
+  const doesntMatter = (...args) => {
+    console.log(args)
+  }
+  doesntMatter(56, 'hello', true); // prints: [56, "hello", true]
+  ```
+
+- **2. Object:**
+
+  An object is an _unordered_ data structure consisting key-value pairs. Object keys can be either of type string or symbol, and nothing else. If the value of a property is a function, that key-value pair is called a **method**, otherwise, keys are also known as the **properties** of an object.
+
+  ```javascript
+    // -> To create an object literal, wrap the key-value pairs in double curly braces:
+    let obj = {
+      shape: "rectangle",
+      color: "black",
+      sides: 6
+    };
+    console.log(obj); // prints: {shape: "rectangle", color: "black", sides: 6}
+  ```
+  Notice something weird? I have no quotation marks around the keys. The keys are directly converted to strings without me doing anything, so I can write them without quotation marks too.
+  
+  ```javascript
+    // -> You can get the specific values by using either a dot or square brackets notation:
+    console.log(obj.shape); // prints: rectangle
+    console.log(obj["shape"]); // prints: rectangle
+  ```
+  There's a special keyword to indicate the properties of the object itself, and it is **this** keyword. (If you're going to use 'this', don't use the arrow function to define the method. 'this' in arrow functions refer to the window object, not the object you're defining the function in.)
+  
+  ```javascript
+    // Let's add a method to our object and use 'this' keyword as well:
+    obj.ring = function() {
+      console.log(`This ${this.color} ${this.shape} is ringing!`)
+    }
+    console.log(obj) // prints: {shape: "rectangle", color: "black", sides: 6, ring: ƒ}
+    obj.ring() // This black rectangle is ringing!
+  ```
+
+  <details>
+    <summary>Built-in Object methods cheatsheet</summary>
+    
+    ```javascript
+      // -> Object.assign() is used to copy an object (without touching the original object)
+      const obj = {
+        color: "white",
+        luckyNumbers: [12, 34, 56] 
+      }
+
+      const copyObj1 = Object.assign({}, obj);
+      const copyObj2 = Object.assign({hasAnotherProperty: true}, obj);
+
+      console.log(copyObj1); // prints: {color: "white", luckyNumbers: Array(3)}
+      console.log(copyObj2); // prints: {hasAnotherProperty: true, color: "white", luckyNumbers: Array(3)}
+      ---------------------------
+
+      // -> Object.keys() returns the keys of an object as an array
+      // -> Object.values() returns the values of an object as an array
+      // -> Object.entries() returns each key-value pair in their own array inside of another array (returns an array of arrays)
+
+      const user = {
+        name: "River Song",
+        id: 12134343454356
+      }
+
+      console.log(Object.keys(user)); // prints: ["name", "id"]
+      console.log(Object.values(user)); // prints: ["River Song", 12134343454356]
+      console.log(Object.entries(user)); // prints: [["name", "River Song"], ["id", 12134343454356]]
+    ```
+  </details>
+
+- **3. Array:**
 
   An array is an _ordered_ data structure consisting values and each value has an index number that corresponds to it. They also have a length property just like strings.
 
-  Here are some built-in array methods and examples:
+  <details>
+    <summary>Built-in Array methods cheatsheet</summary>
 
   ```javascript
    // -> Array.from() static method creates a new array of a given iterable object. You can use an optional second argument to map the iterable value.
@@ -763,8 +883,8 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    // -> some() method
 
   ```
+  </details>
 
-- **3. Function:**
 - **4. Date:**
 
 #### Logical Operators
@@ -882,7 +1002,7 @@ If a new programmer is reading this, keep rocking on! If you don't understand th
 
 ![xkcd Ten Thousand comic](../images/blog/data_types/ten_thousand_2x.png)
 
-###### [xkcd](https://xkcd.com/), https://xkcd.com/1053/
+###### Image Credit: [xkcd](https://xkcd.com/), https://xkcd.com/1053/
 
 Don't miss out all the fun!
 
