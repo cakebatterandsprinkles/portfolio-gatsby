@@ -132,7 +132,7 @@ The parallel processing approach is mainly about speed. The theoretical speed of
 
 Of course, you can only use it if you have a multi-core processor or multiple CPUs. So your hardware and software must be compatible.
 
-Some languages that support the Parallel processing approach are C, C++.
+Some languages that support the Parallel processing approach are C, C++, C#, Python.
 
 ### Declarative programming paradigm:
 
