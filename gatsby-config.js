@@ -5,6 +5,7 @@ module.exports = {
     github: "cakebatterandsprinkles",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-web-font-loader",
