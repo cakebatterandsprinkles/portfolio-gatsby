@@ -13,7 +13,7 @@ const Polaroid = props => {
         {props.studio ? (
           <div className={styles.subHeader}>
             Studio:{" "}
-            <a href={props.link} className={styles.link} target="_blank">
+            <a href={props.link} className={styles.link} target="_blank" rel="noreferrer">
               {props.studio}
             </a>
           </div>
