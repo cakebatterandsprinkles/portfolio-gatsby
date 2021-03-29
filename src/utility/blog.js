@@ -15,6 +15,7 @@ const tagStyles = {
   "Express.js": styles.palepink,
   Ornithology: styles.aeroblue,
   TypeScript: styles.candypink,
+  Typography: styles.indigo,
   default: styles.mediumpurple,
 }
 
