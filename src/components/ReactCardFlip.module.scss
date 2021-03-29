@@ -1,0 +1,109 @@
+.card {
+  min-height: 35vh;
+  display: flex;
+  margin: 0.5rem 0;
+  width: 48%;
+}
+
+.cardContainer {
+  border-radius: 10px;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--black);
+  color: var(--snow);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.cardSummary {
+  font-size: 0.85rem;
+  font-family: var(--article-font);
+}
+
+.hr {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--lightgray);
+}
+
+.cardlink {
+  text-decoration: none;
+  margin-left: 0.25rem;
+  color: var(--darkviolet);
+  padding: 0.25rem 0.5rem;
+  word-break: break-word;
+}
+
+.cardlink:hover {
+  color: snow;
+  background-color: var(--darkviolet);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.cardBackContainer {
+  position: relative;
+}
+
+.cardWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardLinkTitle {
+  font-family: var(--article-font);
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+#technologies {
+  font-weight: normal;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    min-height: 40vh;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardSummary,
+  .cardWrapper {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card {
+    min-height: 34vh;
+  }
+
+  .hr {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .cardSummary,
+  .cardWrapper {
+    font-size: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
+  }
+}
