@@ -1,5 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
+import beaker from "../images/main/beaker.svg"
 import mail from "../images/main/envelope.svg"
 import me from "../images/main/me_in_color.png"
 import github from "../images/main/social-1_round-github.svg"
@@ -80,28 +81,55 @@ const Navigation = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={github} alt="github" className={styles.socialIcon} />
+            <img
+              src={github}
+              alt="github"
+              className={`${styles.socialIcon} ${styles.githubLink}`}
+            />
           </a>
           <a
             href="https://twitter.com/modaijoubu"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={twitter} alt="twitter" className={styles.socialIcon} />
+            <img
+              src={twitter}
+              alt="twitter"
+              className={`${styles.socialIcon} ${styles.twitterLink}`}
+            />
           </a>
           <a
             href="https://www.linkedin.com/in/yagmur-cetin-tas/"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={linkedin} alt="linkedin" className={styles.socialIcon} />
+            <img
+              src={linkedin}
+              alt="linkedin"
+              className={`${styles.socialIcon} ${styles.linkedinLink}`}
+            />
+          </a>
+          <a
+            href="https://www.researchgate.net/profile/Yagmur-Cetin-Tas"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={beaker}
+              alt="researchgate"
+              className={`${styles.socialIcon} ${styles.researchgateLink}`}
+            />
           </a>
           <a
             href="mailto:yagmurcetin@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
-            <img src={mail} alt="mail" className={styles.mailIcon} />
+            <img
+              src={mail}
+              alt="mail"
+              className={`${styles.mailIcon} ${styles.mailLink}`}
+            />
           </a>
         </div>
       </nav>

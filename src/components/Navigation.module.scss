@@ -109,22 +109,41 @@
   margin-right: 0.75rem;
   height: 1.5rem;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(38%) sepia(1%) saturate(6582%)
-    hue-rotate(182deg) brightness(84%) contrast(97%);
+  filter: invert(19%) sepia(0%) saturate(1833%) hue-rotate(136deg)
+    brightness(79%) contrast(67%);
 }
 
 .mailIcon {
   height: 1.35rem;
   width: auto;
   margin-bottom: 1.5rem;
-  filter: brightness(0) saturate(100%) invert(38%) sepia(1%) saturate(6582%)
-    hue-rotate(182deg) brightness(84%) contrast(97%);
+  filter: invert(19%) sepia(0%) saturate(1833%) hue-rotate(136deg)
+    brightness(79%) contrast(67%);
 }
 
-.socialIcon:hover,
-.mailIcon:hover {
-  filter: brightness(0) saturate(100%) invert(89%) sepia(12%) saturate(167%)
-    hue-rotate(154deg) brightness(90%) contrast(89%);
+.githubLink:hover {
+  filter: invert(21%) sepia(97%) saturate(6051%) hue-rotate(272deg)
+    brightness(90%) contrast(119%);
+}
+
+.twitterLink:hover {
+  filter: invert(55%) sepia(97%) saturate(1570%) hue-rotate(181deg)
+    brightness(92%) contrast(87%);
+}
+
+.linkedinLink:hover {
+  filter: invert(38%) sepia(90%) saturate(5308%) hue-rotate(295deg)
+    brightness(102%) contrast(82%);
+}
+
+.researchgateLink:hover {
+  filter: invert(75%) sepia(68%) saturate(1249%) hue-rotate(90deg)
+    brightness(95%) contrast(109%);
+}
+
+.mailLink:hover {
+  filter: invert(42%) sepia(26%) saturate(5455%) hue-rotate(3deg)
+    brightness(104%) contrast(108%);
 }
 
 @media (max-width: 900px) {
@@ -197,6 +216,10 @@
 @media (max-width: 600px) {
   .navlink-container {
     width: 90%;
+  }
+
+  .mailIcon {
+    margin: 0.05rem 0.25rem 0rem 0.25rem;
   }
 
   .nav-link {
