@@ -56,6 +56,15 @@ const projects = [
     repoName: "breakout",
     technologies: ["HTML5 Canvas API"],
   },
+  {
+    name: "SmartMonke",
+    summary:
+      "A simple calculator for people who aren't sure if they want to buy or lease a car or rent or buy a house.",
+    demoLink: "https://cakebatterandsprinkles.github.io/smart-monke",
+    repoLink: "https://github.com/cakebatterandsprinkles/smart-monke",
+    repoName: "smart-monke",
+    technologies: ["CRA", "TypeScript"],
+  },
 ]
 
 export default projects
