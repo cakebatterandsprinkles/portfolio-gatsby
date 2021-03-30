@@ -48,16 +48,17 @@ const JournalPage = () => {
 
   const [filteredPosts, setFilteredPosts] = useState(allSortedPosts)
 
-  const searchResults =
-    searchText.length === 0
+  const searchResults = () => {
+    return searchText.length === 0
       ? filteredPosts
       : filteredPosts.filter(
           post =>
             post.node.frontmatter.title.toLowerCase().includes(searchText) ||
             post.node.frontmatter.summary.toLowerCase().includes(searchText)
         )
+  }
 
-  const pageCount = Math.ceil(searchResults.length / pageSize)
+  const pageCount = Math.ceil(filteredPosts.length / pageSize)
 
   const setCurrentTags = React.useCallback(() => {
     let allTags = posts.allMarkdownRemark.edges.flatMap(
@@ -80,7 +81,7 @@ const JournalPage = () => {
   useEffect(() => {
     setCurrentTags()
     setAvailableYears()
-  }, [posts, setAvailableYears, setCurrentTags ])
+  }, [posts, setAvailableYears, setCurrentTags])
 
   const handleClearClick = () => {
     searchInput.current.value = ""
@@ -96,8 +97,9 @@ const JournalPage = () => {
     }
 
     if (e.key === "Enter") {
-      setFilteredPosts(allSortedPosts)
       setSearchText(searchInput.current.value.toLowerCase())
+      filterPosts(searchInput.current.value.toLowerCase())
+      setCurrentPage(0)
     }
   }
 
@@ -113,8 +115,9 @@ const JournalPage = () => {
     let filteredList = []
     posts.allMarkdownRemark.edges.forEach(post => {
       if (
-        post.node.frontmatter.tags &&
-        post.node.frontmatter.tags.includes(tag)
+        post.node.frontmatter.title?.toLowerCase().includes(tag) ||
+        post.node.frontmatter.tags?.includes(tag) ||
+        post.node.frontmatter.summary?.toLowerCase().includes(tag)
       ) {
         filteredList.push(post)
       }
@@ -154,7 +157,7 @@ const JournalPage = () => {
             discuss. Thanks for hanging around. You're cool.
           </div>
           <ul className={styles.articleList}>
-            {searchResults
+            {searchResults()
               .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
               .map((post, index) => {
                 return (

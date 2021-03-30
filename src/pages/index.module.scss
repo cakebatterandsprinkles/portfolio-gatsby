@@ -28,80 +28,6 @@
   flex-wrap: wrap;
 }
 
-.gridContainer .card {
-  width: 48%;
-}
-
-.card {
-  min-height: 35vh;
-  display: flex;
-  margin: 0.5rem 0;
-}
-
-// Card backside styling
-
-.cardContainer {
-  border-radius: 10px;
-}
-
-.cardTitle {
-  font-size: 1.1rem;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--black);
-  color: var(--snow);
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-.cardSummary {
-  font-size: 0.85rem;
-  font-family: var(--article-font);
-}
-
-.hr {
-  width: 100%;
-  height: 1.5px;
-  background-color: var(--lightgray);
-}
-
-.cardlink {
-  text-decoration: none;
-  margin-left: 0.25rem;
-  color: var(--darkviolet);
-  padding: 0.25rem 0.5rem;
-  word-break: break-word;
-}
-
-.cardlink:hover {
-  color: snow;
-  background-color: var(--darkviolet);
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.cardBackContainer {
-  position: relative;
-}
-
-.cardWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  font-size: 0.85rem;
-  margin-bottom: 0.5rem;
-}
-
-.cardLinkTitle {
-  font-family: var(--article-font);
-  margin-bottom: 0;
-  font-weight: bold;
-}
-
-#technologies {
-  font-weight: normal;
-}
-
 @media (max-width: 1200px) {
   .portfolioWrapper {
     width: 100%;
@@ -117,14 +43,6 @@
 
   .gridContainer {
     padding-top: 0;
-  }
-
-  .gridContainer .card {
-    width: 100%;
-  }
-
-  .card {
-    min-height: 40vh;
   }
 
   .heading {
@@ -143,26 +61,6 @@
     padding: 2rem 1rem;
   }
 
-  .cardSummary,
-  .cardWrapper {
-    font-size: 0.75rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .cardTitle {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .card {
-    min-height: 34vh;
-  }
-
-  .hr {
-    margin-bottom: 0.5rem;
-  }
-
   .heading {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -170,17 +68,5 @@
 
   .disclaimerText {
     font-size: 0.7rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .cardSummary,
-  .cardWrapper {
-    font-size: 0.6rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .cardTitle {
-    font-size: 0.9rem;
   }
 }
