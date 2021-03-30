@@ -1,0 +1,14 @@
+.shareButton {
+  height: 2rem;
+  width: auto;
+  margin-bottom: 0;
+  padding: 0.25rem;
+  filter: invert(19%) sepia(0%) saturate(1833%) hue-rotate(136deg)
+    brightness(79%) contrast(67%);
+}
+
+.shareButton:hover {
+  cursor: pointer;
+  filter: invert(18%) sepia(0%) saturate(200%) hue-rotate(136deg)
+    brightness(200%) contrast(67%);
+}

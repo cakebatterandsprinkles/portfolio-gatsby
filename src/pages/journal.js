@@ -1,6 +1,7 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
 import Layout from "../components/Layout"
+import ShareButton from "../components/shareButton"
 import bookmark from "../images/main/bookmark.svg"
 import chevronRight from "../images/main/cheveron-right.svg"
 import { tagStyles } from "../utility/blog"
@@ -150,7 +151,10 @@ const JournalPage = () => {
       {createHaiku()}
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
-          <h1 className={styles.mainHeading}>Journal</h1>
+          <div className={styles.headingContainer}>
+            <h1 className={styles.mainHeading}>Portfolio</h1>
+            <ShareButton link="https://yagmurcetintas.com/journal" />
+          </div>
           <div className={styles.disclaimerText}>
             If you have copyright claims, mail me and I'll take it down. If you
             think I'm wrong about something, mail me, as I'd love to learn and

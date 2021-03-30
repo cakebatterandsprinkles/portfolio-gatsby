@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Polaroid from "../components/Polaroid"
+import ShareButton from "../components/shareButton"
 import { clayWork, digitalWork, inkWork, sections } from "../utility/artworks"
 import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
@@ -62,7 +63,6 @@ const GalleryPage = () => {
     }
   }, [section])
 
-
   React.useEffect(() => {
     renderContent()
   }, [section, renderContent])
@@ -72,7 +72,10 @@ const GalleryPage = () => {
       {createHaiku()}
       <div className={styles.galleryContainer}>
         <div className={styles.galleryWrapper}>
-          <h1 className={styles.heading}>Art Gallery</h1>
+          <div className={styles.headingContainer}>
+            <h1 className={styles.heading}>Art Gallery</h1>
+            <ShareButton link="https://yagmurcetintas.com/gallery" />
+          </div>
           <div className={styles.disclaimerText}>
             Be a kind human and get permission before using my content. Thanks!
           </div>

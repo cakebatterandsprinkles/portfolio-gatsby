@@ -28,6 +28,12 @@
   flex-wrap: wrap;
 }
 
+.headingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 1200px) {
   .portfolioWrapper {
     width: 100%;
@@ -53,6 +59,9 @@
 @media (max-width: 900px) {
   .heading {
     font-size: 1.75rem;
+  }
+  .headingContainer {
+    margin-bottom: 0.25rem;
   }
 }
 

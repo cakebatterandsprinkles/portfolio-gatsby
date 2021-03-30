@@ -1,12 +1,26 @@
 import React, { Fragment } from "react"
 import Helmet from "react-helmet"
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Layout from "../components/Layout"
 import ReactCardFlip from "../components/ReactCardFlip"
+import ShareButton from "../components/shareButton"
 import { createHaiku } from "../utility/functions"
 import projects from "../utility/projects"
 import styles from "./index.module.scss"
 
 const PortfolioPage = () => {
+  toast.configure()
+  toast({
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    pauseOnFocusLoss: false,
+    draggable: true,
+    transition: "bounce",
+  })
   return (
     <Fragment>
       <Helmet>
@@ -19,7 +33,10 @@ const PortfolioPage = () => {
         {createHaiku()}
         <div className={styles.portfolioContainer}>
           <div className={styles.portfolioWrapper}>
-            <h1 className={styles.heading}>Portfolio</h1>
+            <div className={styles.headingContainer}>
+              <h1 className={styles.heading}>Portfolio</h1>
+              <ShareButton link="https://yagmurcetintas.com/" />
+            </div>
             <div className={styles.disclaimerText}>
               My web development portfolio
             </div>
