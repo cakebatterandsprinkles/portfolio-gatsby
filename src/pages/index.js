@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect } from "react"
 import Helmet from "react-helmet"
 import { toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
@@ -10,17 +10,20 @@ import projects from "../utility/projects"
 import styles from "./index.module.scss"
 
 const PortfolioPage = () => {
-  toast.configure()
-  toast({
-    position: "top-center",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    pauseOnFocusLoss: false,
-    draggable: true,
-    transition: "bounce",
-  })
+  useEffect(() => {
+    toast.configure()
+    toast({
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      transition: "bounce",
+    })
+  }, [])
+
   return (
     <Fragment>
       <Helmet>
