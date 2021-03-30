@@ -4,7 +4,7 @@ import CardBack from "../components/CardBack"
 import CardFront from "../components/CardFront"
 import styles from "./ReactCardFlip.module.scss"
 
-const ReactCardFlip = props => {
+const Card = props => {
   const [isFlipped, setIsFlipped] = useState(false)
   const clickHandler = () => setIsFlipped(prevState => !prevState)
 
@@ -62,4 +62,4 @@ const ReactCardFlip = props => {
   )
 }
 
-export default ReactCardFlip
+export default Card
