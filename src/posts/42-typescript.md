@@ -273,12 +273,125 @@ console.log(isOlder(u2, 40)) // Prints: "Hi Cake! We are not accepting people un
 
 ### Interfaces
 
+An interface is a custom type that describes the structure of an object. They are not blueprints like classes are, and they are only useful for type checks that TypeScript compiler does for us.
+
+This code below works perfectly fine, but as the type annotations get longer and more complex, it makes the whole code crowded. If we used destructuring, it would look even more crowded than it is right now. And if we are using the same type in other places as well, we would be unnecessarily duplicating code, making it harder to manage, debug and read.
+
+```typescript
+const car = {
+  manufacturer: "Subaru",
+  year: 2019,
+  isAvailable: true,
+  label(): string {
+    return `${this.manufacturer.slice(0, 2).toUpperCase()}${this.year}`
+  },
+}
+
+const printInfo = (car: {
+  manufacturer: string
+  year: number
+  isAvailable: boolean
+  label(): string
+}): void => {
+  car.isAvailable
+    ? console.log(
+        `A ${car.year} model ${
+          car.manufacturer
+        } is available. Label: ${car.label()}`
+      )
+    : console.log(
+        `The ${car.year} model ${
+          car.manufacturer
+        } is not available. Label: ${car.label()}`
+      )
+}
+
+printInfo(car) // Prints: "A 2019 model Subaru is available."
+```
+
+Let's try to rewrite the code above, this time using an interface. To create an interface, we use the `interface` keyword, and the first letter is always capitalized as a convention:
+
+```typescript
+interface Car {
+  manufacturer: string
+  year: number
+  isAvailable: boolean
+  label(): string
+}
+
+const car1 = {
+  manufacturer: "Subaru",
+  year: 2022,
+  isAvailable: false,
+  label(): string {
+    return `${this.manufacturer.slice(0, 2).toUpperCase()}${this.year}`
+  },
+}
+
+// Any object given as an argument to printInfo function has to satisfy the type specifications that Car interface has. If it doesn't, we'll receive an error. It doesn't check for extra properties, so as long as it satisfies the interface, we are good to go.
+const printInfo = (car: Car): void => {
+  car.isAvailable
+    ? console.log(
+        `A ${car.year} model ${
+          car.manufacturer
+        } is available. Label: ${car.label()}`
+      )
+    : console.log(
+        `The ${car.year} model ${
+          car.manufacturer
+        } is not available. Label: ${car.label()}`
+      )
+}
+
+printInfo(car1) // Prints: "The 2022 model Subaru is not available."
+```
+
+Now let's try to make a more generic interface that we can reuse in multiple places:
+
+```typescript
+interface Product {
+  isAvailable: boolean
+  label(): string
+}
+
+const car = {
+  manufacturer: "Subaru",
+  year: 2022,
+  isAvailable: false,
+  label(): string {
+    return `Car label: ${this.manufacturer.slice(0, 2).toUpperCase()}${
+      this.year
+    }`
+  },
+}
+
+const fruit = {
+  name: "Strawberry",
+  expirationDate: new Date(),
+  isAvailable: true,
+  label(): string {
+    return `Produce label: ${this.name
+      .slice(0, 2)
+      .toUpperCase()}${this.expirationDate.toString().slice(8, 10)}`
+  },
+}
+
+const printInfo = (product: Product): void => {
+  console.log(`${product.label()}, Available: ${product.isAvailable}`)
+}
+
+// Notice that both objects have a label function, but they are different functions.
+printInfo(car) // Prints: "Car label: SU2022, Available: false"
+printInfo(fruit) // Prints: "Produce label: ST06, Available: true"
+```
+
 ### Classes
 
 ### Generics
 
 ### Resources:
 
-1. [tutorialspoint - TypeScript](https://www.tutorialspoint.com/typescript/)
-2. https://www.digitalocean.com/community/tutorials/typescript-type-alias
-3.
+1. [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+2. [tutorialspoint - TypeScript](https://www.tutorialspoint.com/typescript/)
+3. https://www.digitalocean.com/community/tutorials/typescript-type-alias
+4.
