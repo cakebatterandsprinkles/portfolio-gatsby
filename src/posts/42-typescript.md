@@ -2,7 +2,7 @@
 title: "Introduction to TypeScript"
 date: "2021-03-26"
 tags: ["TypeScript", "React"]
-summary: "In this article, I briefly explain some diffences between JavaScript and TypeScript, and give small examples of how to use TypeScript with React."
+summary: "In this article, I briefly explain some diffences between JavaScript and TypeScript, and give small examples of how to use TypeScript."
 ---
 
 ### What is TypeScript?
@@ -387,7 +387,255 @@ printInfo(fruit) // Prints: "Produce label: ST06, Available: true"
 
 ### Classes
 
+Classes define properties and methods of objects and can be referred as "blueprints" for objects,
+
+```typescript
+// class names conventionally start with a capital letter:
+class Beverage {
+  drink(): void {
+    console.log(`Chug chug chug...`)
+  }
+  slogan(): void {
+    console.log(`Drinking soda makes life better!`)
+  }
+}
+
+// classes can extend other classes and inherit all the properties and methods they have:
+class CaffeinatedBeverage extends Beverage {
+  // overriding the existing parent methods is also possible:
+  slogan(): void {
+    console.log("Caffeine: you know you need it anyway!")
+  }
+}
+
+const soda = new Beverage()
+const coffee = new CaffeinatedBeverage()
+coffee.slogan() // Prints: 'Caffeine: you know you need it anyway!'
+coffee.drink() // Prints: 'Chug chug chug...'
+soda.slogan() // Prints: 'Drinking soda makes life better!'
+soda.drink() // Prints: 'Chug chug chug...'
+```
+
+**Modifiers:**
+
+Modifiers are keywords that define the behaviors of properties and methods of a class. The main purpose of the modifiers are to restrict the access to certain methods or properties inside a class. There are three modifier keywords: `public`, `private` and `protected`.
+
+- **Public** modifier represents methods and properties that can be called from anywhere and anytime.
+- **Private** modifier represents methods that can only be called from other methods that are also defined inside this class.
+- **Protected** modifier represents methods that can be called by other methods in this class, or any class that is extended from this class, which are also called child classes.
+
+The default modifier is 'public', which means if there are no specified modifiers, the method or property is public. There is also `readonly` keyword to represent variables that should be initialized only once and should not be changed after.
+
+```typescript
+class Person {
+  // Constructor function is a special function that runs when a new instance is created from this class.
+  // The arguments can be specified when the instance is being created:
+  constructor(protected height: number, public weight: number) {}
+  public readonly heightUnit: string = "centimeters"
+  public readonly weightUnit: string = "kilograms"
+  private generateRandomNumber(): number {
+    return Math.floor(Math.random() * 10)
+  }
+  public shout(): string {
+    let num = this.generateRandomNumber()
+    return num < 5 ? "Me hungry!!!" : `I ate ${num} cookies!!!`
+  }
+  protected eat(): string {
+    let num = this.generateRandomNumber()
+    return "munch ".repeat(num)
+  }
+}
+
+const person = new Person(170, 70)
+console.log(person.weight) // Prints: 70
+console.log(person.weightUnit) // Prints: "kilograms"
+console.log(person.height) // Error: Property 'height' is protected and only accessible within class 'Person' and its subclasses.
+console.log(person.shout()) // Prints: "I ate x cookies!!!" or "Me hungry!!!" :)
+person.generateRandomNumber() // Error: Property 'generateRandomNumber' is private and only accessible within class 'Person'.
+console.log(person.eat()) // Prints: Property 'eat' is protected and only accessible within class 'Person' and its subclasses.
+
+// Let's create a child class and see how the protected, public, and private classes work that:
+class Ninja extends Person {
+  // A child constructor can have a separate constructor that does a different thing from its parent:
+  constructor(public favColor: string, weight: number) {
+    // To call the parent class' constructor, we use another special function called 'super' and supply it with the arguments needed:
+    super(180, weight)
+  }
+  eatDiscreetly(): string {
+    let text = this.eat()
+    return text ? "M" + this.eat().slice(1, -1) + "!!!!" : "Munch!!"
+  }
+  whisper(): string {
+    return this.shout()
+  }
+}
+
+const ninja = new Ninja("black", 90)
+const fakeNinja = new Ninja(1234, 90) // Error: Argument of type 'number' is not assignable to parameter of type 'string'.
+console.log(ninja.weight) // Prints: 90
+console.log(ninja.heightUnit) // Prints: "centimeters"
+console.log(ninja.height) // Error: Property 'height' is protected and only accessible within class 'Person' and its subclasses.
+console.log(ninja.favColor) // Prints: "black"
+console.log(ninja.generateRandomNumber()) // Error: Property 'generateRandomNumber' is private and only accessible within class 'Person'.
+console.log(ninja.eatDiscreetly()) // Prints: Different amounts of "Munch!!!!"
+console.log(ninja.whisper()) // Prints: "I ate x cookies!!!" or "Me hungry!!!" :)
+```
+
+Note: If you're overriding a method in a child class, you should not change the modifier.
+
+So why do we need modifiers? Simply put, if we have functions inside a class that deeply modifies the class or do major changes, calling it by mistake from elsewhere might be problematic and might cause bugs.
+
 ### Generics
+
+Generics are useful for writing code that is reusable with different data types. I will eloborate on this sentence, but first check out the code block below:
+
+```typescript
+// Let's implement a stack data structure for arrays of strings:
+class StackStr {
+  private stack: string[]
+  constructor(arr: string[]) {
+    this.stack = arr
+  }
+  public push(item: string): string[] {
+    this.stack = [item, ...this.stack]
+    return this.stack
+  }
+  public pop(): string {
+    let popped = this.stack[this.stack.length - 1]
+    this.stack = this.stack.slice(0, -1)
+    return popped
+  }
+  public printStack(): void {
+    console.log(this.stack)
+  }
+}
+
+const stack1 = new StackStr(["1", "2", "3"])
+const stack2 = new StackStr([1]) // Error: Type 'number' is not assignable to type 'string'.
+const stack3 = new StackStr([])
+stack1.printStack() // Prints: ["1", "2", "3"]
+console.log(stack1.pop()) // Prints: "3"
+stack1.printStack() // Prints: ["1", "2"]
+console.log(stack1.push("hai")) // Prints: ["hai", "1", "2"]
+```
+
+What if I wanted to use the same class with other data types as well? I have 3 options:
+
+1. I could use union types (which will make the code longer and hard to read).
+2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling the compilers ability to type-check.
+3. I could write the same class for every data type I'm planning to use it for.
+
+Or... I could use a placeholder type when defining this class, and specify the data structure when I'm creating an instance of it. And the class that I would create using a placeholder type would be defined as a generic class. Now let's re-write the Stack example with using generics:
+
+```typescript
+class Stack<T> {
+  private stack: T[]
+  constructor(arr: T[]) {
+    this.stack = arr
+  }
+  public push(item: T): T[] {
+    this.stack = [item, ...this.stack]
+    return this.stack
+  }
+  public pop(): T {
+    let popped = this.stack[this.stack.length - 1]
+    this.stack = this.stack.slice(0, -1)
+    return popped
+  }
+  public printStack(): void {
+    console.log(this.stack)
+  }
+}
+
+const stack1 = new Stack<string>(["1", "2", "3"])
+const stack2 = new Stack<number>([11, 22, 33])
+const stack3 = new Stack<boolean>([true, false, true, true, true])
+const stack4 = new Stack<string>(["1", 22]) // Error: Type 'number' is not assignable to type 'string'.
+stack1.printStack() // Prints: ["1", "2", "3"]
+stack2.printStack() // Prints: ["1", "2", "3"]
+stack3.printStack() // Prints: ["1", "2", "3"]
+console.log(stack1.pop()) // Prints: "3"
+console.log(stack2.pop()) // Prints: 33
+console.log(stack3.pop()) // Prints: true
+stack1.printStack() // Prints: ["1", "2"]
+stack2.printStack() // Prints: [11, 22]
+stack3.printStack() // Prints: [true, false, true, true]
+console.log(stack1.push("hai")) // Prints: ["hai", "1", "2"]
+console.log(stack2.push("hai")) // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
+console.log(stack3.push(false)) // Prints: [false, true, false, true, true]
+```
+
+**Using generics with multiple types:**
+
+It is also possible to use generics with classes and functions that require multiple types. But when using generic types, you can only use built-in methods available for every type. Type specific built-in methods are not available for use.
+
+```typescript
+function displayInfo<T, U>(
+  name: T,
+  age: U,
+  occupation: T,
+  hobbies: string[]
+): void {
+  const lastHobby: string | undefined = hobbies.length ? hobbies.pop() : ""
+  hobbies.length
+    ? console.log(
+        `${name}, the ${age} year old ${occupation}, likes ${hobbies.join(
+          ", "
+        )}, and ${lastHobby} in her free time.`
+      )
+    : console.log(`${name} is a ${age} year old ${occupation}.`)
+}
+
+displayInfo<string, number>("Irene", 29, "medical researcher", [
+  "fishing",
+  "painting",
+  "singing",
+]) // Prints: "Irene, the 29 year old medical researcher, likes fishing, painting, and singing in her free time."
+
+displayInfo<string, string>(
+  "Jamie",
+  "never-ask-a-lady-her-age",
+  "fashion designer",
+  ["running", "baking", "gardening"]
+) // Prints: "Jamie, the never-ask-a-lady-her-age year old fashion designer, likes running, baking, and gardening in her free time."
+```
+
+**Using generics with interfaces:**
+
+The generic types can also be used with interfaces. Let's create a generic interface ourselves:
+
+```typescript
+interface ProductInfo<T, U> {
+  productName: T
+  id: U
+  createLabel(productName: T, id: U): T
+}
+
+let strawberry: ProductInfo<string, number> = {
+  productName: "strawberry",
+  id: 123456789,
+  createLabel(arg1, arg2) {
+    return `${arg1}${arg2}`
+  },
+}
+
+let couch: ProductInfo<string, string> = {
+  productName: "couch",
+  id: "987654321",
+  createLabel(arg1, arg2) {
+    return `${arg2}${arg1}`
+  },
+}
+
+console.log(strawberry.createLabel(strawberry.productName, strawberry.id)) // Prints: "strawberry123456789"
+console.log(couch.createLabel(couch.productName, couch.id)) // Prints: "987654321couch"
+```
+
+That's all folks!
+
+![A screenshot from the road runner](../images/blog/typescript/TheEnd-AdventuresOfTheRoadRunner.PNG.png)
+
+###### Meep meep! Image Credit: https://looneytunes.fandom.com/wiki/That%27s_all_Folks!?file=TheEnd-AdventuresOfTheRoadRunner.PNG
 
 ### Resources:
 
