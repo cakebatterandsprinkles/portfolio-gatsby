@@ -11,7 +11,33 @@ TypeScript is an open source programming language developed and maintained by Mi
 
 The main advantage of using **TypeScript Type System** is catching errors during development phase. With JavaScript, you can only see errors during runtime, when you execute your code, which is not very efficient. The type system is an improvement for the development workflow. As the code is being written, TypeScript compiler constantly analyzes it, and this is called **type checking**. For type checking, the TS compiler uses something called **type annotations** which are simply type rules that the developer defines. This type system is only active during development and not available in runtime. (Which makes sense, because TS is run in JS environments and is compiled to JS before it is executed.) Also, the TS compiler does not do any performance optimizations.
 
-If you want to replicate the code in the following examples, I suggest you to use [TS Playground](https://www.typescriptlang.org/play), which is an in-browser TS compiler.
+**⁂ What is in this article?**
+
+This article is a long one and it consists of five main sections and their subtitles:
+
+1. [TypeScript Type System](#typescript-type-system)
+
+   - Type Annotations
+   - Type Inference
+   - Void and Never
+   - Destructuring with type annotations
+   - Typed Arrays
+   - Tuples
+   - Type Aliases
+
+2. [Interfaces](#interfaces)
+3. [Classes](#classes)
+   - Abstract class
+   - Access Modifiers
+   - Static keyword
+4. [Generics](#generics)
+   - Using generics with multiple types
+   - Using generics with interfaces
+5. [Namespaces](#namespaces)
+
+If you want to replicate the code in the following examples, I suggest you to use [TS Playground](https://www.typescriptlang.org/play), which is an in-browser TS compiler. Or you can install `typescript` and `ts-node` on your machine, and write typescript files in your own code editor. [This article](https://www.digitalocean.com/community/tutorials/typescript-running-typescript-ts-node) describes how to do that clearly.
+
+<div id="typescript-type-system"></div>
 
 ### TypeScript Type System
 
@@ -271,6 +297,8 @@ console.log(isOlder(u1, 21)) // Prints: "Hi Maruchan! Have a fun day!"
 console.log(isOlder(u2, 40)) // Prints: "Hi Cake! We are not accepting people under 40 at the moment. Please try again when you're older!"
 ```
 
+<div id="interfaces"></div>
+
 ### Interfaces
 
 An interface is a custom type that describes the structure of an object. They are not blueprints like classes are, and they are only useful for type checks that TypeScript compiler does for us.
@@ -385,9 +413,13 @@ printInfo(car) // Prints: "Car label: SU2022, Available: false"
 printInfo(fruit) // Prints: "Produce label: ST06, Available: true"
 ```
 
+<div id="classes"></div>
+
 ### Classes
 
-Classes define properties and methods of objects and can be referred as "blueprints" for objects,
+Classes define properties and methods of objects and can be referred as "blueprints" for objects. Classes in TypeScript are very much similar to the JavaScript classes with a few differences, such as access modifiers and abstract classes.
+
+If you know absolutely nothing about the class concept, read [this article](https://yagmurcetintas.com/journal/introduction-to-object-oriented-programming) first. If you do already know, the example below is there to remind a few simple things:
 
 ```typescript
 // class names conventionally start with a capital letter:
@@ -408,6 +440,7 @@ class CaffeinatedBeverage extends Beverage {
   }
 }
 
+// As classes are only "blueprints" of objects, you must create instances of them before you can use their methods and properties:
 const soda = new Beverage()
 const coffee = new CaffeinatedBeverage()
 coffee.slogan() // Prints: 'Caffeine: you know you need it anyway!'
@@ -416,7 +449,59 @@ soda.slogan() // Prints: 'Drinking soda makes life better!'
 soda.drink() // Prints: 'Chug chug chug...'
 ```
 
-**Modifiers:**
+**Abstract class:**
+
+Abstract classes are mainly created for inheritance purposes. You cannot create an instance of an abstract class, you can only extend it. A class that extends an abstract class has to define all the abstract methods the parent abstract class has. To create an abstract class, you have to use the `abstract` keyword:
+
+```typescript
+abstract class GeometricShape {
+  // An abstract class can have abstract properties and methods:
+  name: string
+  constructor(name: string) {
+    this.name = name
+  }
+
+  abstract displayInfo(): string
+  abstract calculateSurfaceArea(): number
+  abstract calculateVolume(): number
+}
+
+class Cone extends GeometricShape {
+  // A cone has an additional height and radius property:
+  height: number
+  radius: number
+  constructor(name: string, radius: number, height: number) {
+    // We need to call the parent class' constructor and give it the parameters it needs:
+    super(name)
+    this.height = height
+    this.radius = radius
+  }
+  // We also need to define the abstract methods:
+  displayInfo(): string {
+    return `Name: ${this.name}, Shape: Cone, Radius: ${this.radius}, Height: ${
+      this.height
+    }, Surface Area: ${this.calculateSurfaceArea().toFixed(
+      2
+    )}, Volume: ${this.calculateVolume().toFixed(2)}`
+  }
+
+  calculateSurfaceArea(): number {
+    return (
+      Math.PI *
+      this.radius *
+      (this.radius + Math.sqrt(this.height ** 2 + this.radius ** 2))
+    )
+  }
+  calculateVolume(): number {
+    return (Math.PI * this.radius ** 2 * this.height) / 3
+  }
+}
+
+const cone1 = new Cone("Cone1", 3, 4)
+console.log(cone1.displayInfo()) // Prints: "Name: Cone1, Shape: Cone, Radius: 3, Height: 4, Surface Area: 75.40, Volume: 37.70"
+```
+
+**Access Modifiers:**
 
 Modifiers are keywords that define the behaviors of properties and methods of a class. The main purpose of the modifiers are to restrict the access to certain methods or properties inside a class. There are three modifier keywords: `public`, `private` and `protected`.
 
@@ -484,6 +569,46 @@ console.log(ninja.whisper()) // Prints: "I ate x cookies!!!" or "Me hungry!!!" :
 Note: If you're overriding a method in a child class, you should not change the modifier.
 
 So why do we need modifiers? Simply put, if we have functions inside a class that deeply modifies the class or do major changes, calling it by mistake from elsewhere might be problematic and might cause bugs.
+
+**Static keyword:**
+
+Static properties and methods are also available in TypeScript, just like ES6. To understand the meaning of the `static` keyword, think of the built-in [Math object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) in JavaScript. For example, when you want a random floating-point number between 0 and 1 (only 1 is out of the bounds), you just call `Math.random()` and here you have it. But how can you use a method that belongs to the Math class without creating an instance of it? The answer is by making them static. Math object has numereous static methods all a number manipulation of some sorts, but all of them are static, which means you can call these methods from outside, without creating an instance of the Math class.
+
+Let's do something similar ourselves:
+
+```typescript
+class Sphere {
+  // Static and non-static properties can exist with the same name, because they will be accessed in different ways:
+  static pi: number = 3.14
+  public pi: number = 3
+
+  static calculateVolume(radius: number): number {
+    return (4 / 3) * (this.pi * radius ** 3)
+  }
+  static calculateSurfaceArea(radius: number): number {
+    return 4 * this.pi * radius ** 2
+  }
+
+  public calculateDiameter(radius: number): number {
+    return 2 * radius
+  }
+}
+
+// Now we can call the static methods and properties without creating an instance of the Sphere class:
+console.log(Sphere.pi) // Prints: 3.14
+console.log(Sphere.calculateVolume(2)) // Prints: 33.49333333333333
+console.log(Sphere.calculateSurfaceArea(2)) // Prints: 50.24
+console.log(Sphere.calculateDiameter(2)) // Error: Property 'calculateDiameter' does not exist on type 'typeof Sphere'.
+
+// What happens when we create an instance of it?
+const globe = new Sphere()
+console.log(globe.pi) // Prints: 3
+console.log(globe.calculateVolume(2)) // Error: Property 'calculateVolume' does not exist on type 'Sphere'. Did you mean to access the static member 'Sphere.calculateVolume' instead?
+console.log(globe.calculateSurfaceArea(2)) // Error: Property 'calculateSurfaceArea' does not exist on type 'Sphere'. Did you mean to access the static member 'Sphere.calculateSurfaceArea' instead?
+console.log(globe.calculateDiameter(2)) // Prints: 4
+```
+
+<div id="generics"></div>
 
 ### Generics
 
@@ -630,6 +755,10 @@ let couch: ProductInfo<string, string> = {
 console.log(strawberry.createLabel(strawberry.productName, strawberry.id)) // Prints: "strawberry123456789"
 console.log(couch.createLabel(couch.productName, couch.id)) // Prints: "987654321couch"
 ```
+
+<div id="namespaces"></div>
+
+### Namespaces
 
 That's all folks!
 
