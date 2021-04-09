@@ -33,7 +33,7 @@ This article is a long one and it consists of five main sections and their subti
 4. [Generics](#generics)
    - Using generics with multiple types
    - Using generics with interfaces
-5. [Namespaces](#namespaces)
+5. [Namespaces and Modules](#namespaces-and-modules)
 
 If you want to replicate the code in the following examples, I suggest you to use [TS Playground](https://www.typescriptlang.org/play), which is an in-browser TS compiler. Or you can install `typescript` and `ts-node` on your machine, and write typescript files in your own code editor. [This article](https://www.digitalocean.com/community/tutorials/typescript-running-typescript-ts-node) describes how to do that clearly.
 
@@ -756,9 +756,37 @@ console.log(strawberry.createLabel(strawberry.productName, strawberry.id)) // Pr
 console.log(couch.createLabel(couch.productName, couch.id)) // Prints: "987654321couch"
 ```
 
-<div id="namespaces"></div>
+<div id="namespaces-and-modules"></div>
 
-### Namespaces
+### Namespaces and Modules
+
+Anything you write in TypeScript is scoped globally, even if you write them in separate files. As the projects get bigger, there might be times that names of the functions and variables get very similar to each other. Also, if you name two variables same in different files, they might get overridden without you even knowing. To fix these problems, you can use either modules or namespaces. In ES6, you don't need to use namespaces, because modules are implied by the file structure. You can simply export a function from a file, and import it and use it another. TypeScript provides both modules and namespaces.
+
+Namespacing helps the logical grouping of related functions. To create a namespace, you use the `namespace` keyword, like so:
+
+```typescript
+namespace StringUtilities {
+  // Unless you export them you won't be able to use them elsewhere:
+  export function capitalize(str: string): string {
+    return str.slice(0, 1).toUpperCase() + str.slice(1)
+  }
+
+  export function selectRandomLetterFromString(str: string): string {
+    let randomNum = Math.floor(Math.random() * str.length)
+    return str.toLowerCase().split(" ").join("")[randomNum]
+  }
+}
+
+// you can use object literal notation when you're calling:
+console.log(StringUtilities.capitalize("hello world")) // Prints: "Hello world"
+console.log(
+  StringUtilities.selectRandomLetterFromString("why does it always rain on me")
+) // Prints random letter
+```
+
+There are multiple ways of creating namespaces, and [here is an article that explains them](https://addyosmani.com/blog/essential-js-namespacing/#beginners) super nicely.
+
+### The End
 
 That's all folks!
 
@@ -771,4 +799,4 @@ That's all folks!
 1. [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 2. [tutorialspoint - TypeScript](https://www.tutorialspoint.com/typescript/)
 3. https://www.digitalocean.com/community/tutorials/typescript-type-alias
-4.
+4. [Essential JavaScript Namespacing Patterns](https://addyosmani.com/blog/essential-js-namespacing/#beginners) by Addy Osmani
