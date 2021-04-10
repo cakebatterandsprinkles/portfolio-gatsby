@@ -2,16 +2,16 @@
 title: "Introduction to TypeScript"
 date: "2021-03-26"
 tags: ["TypeScript", "React"]
-summary: "In this article, I briefly explain some diffences between JavaScript and TypeScript, and give small examples of how to use TypeScript."
+summary: "In this article, I briefly explain some differences between JavaScript and TypeScript, and give small examples of how to use TypeScript features."
 ---
 
 ### What is TypeScript?
 
-TypeScript is an open source programming language developed and maintained by Microsoft, and it is simply a **superset** of JavaScript. Being a superset means offering every feature JavaScript has, but adding a little bit more on top, such as **optional static typing**, **generics**, and **interfaces**. (So TypeScript is nothing to be scared of. Underneath, it is our good old JavaScript, but has some additional functionalities similar to a more type-strict language, such as C#.) Of course, it comes with a certain disadvantage: it cannot be executed by JavaScript environments, such as the browsers. So TypeScript comes with a TypeScript compiler, which compiles TypeScript into JavaScript so that it can be run in JS environments.
+TypeScript is an open-source programming language developed and maintained by Microsoft, and it is simply a **superset** of JavaScript. Being a superset means offering every feature JavaScript has, but adding a little bit more on top, such as **optional static typing**, **generics**, and **interfaces**. (So TypeScript is nothing to be scared of. Underneath, it is our good old JavaScript, but has some additional functionalities similar to a more type-strict language, such as C#.) Of course, it comes with a certain disadvantage: it cannot be executed by JavaScript environments, such as the browser. So TypeScript comes with a TypeScript compiler, which compiles TypeScript into JavaScript so that it can be run in JavaScript environments.
 
 ![TypeScript Among Us Illustration](../images/blog/typescript/typescript_amongus.jpg)
 
-The main advantage of using **TypeScript Type System** is catching errors during development phase. With JavaScript, you can only see errors during runtime, when you execute your code, which is not very efficient. The type system is an improvement for the development workflow. As the code is being written, TypeScript compiler constantly analyzes it, and this is called **type checking**. For type checking, the TS compiler uses something called **type annotations** which are simply type rules that the developer defines. This type system is only active during development and not available in runtime. (Which makes sense, because TS is run in JS environments and is compiled to JS before it is executed.) Also, the TS compiler does not do any performance optimizations.
+The main advantage of using **TypeScript Type System** is catching errors during the development phase. With JavaScript, you can only see errors during runtime, when you execute your code, which is not very efficient. The type system is an improvement for the development workflow. As the code is being written, the TypeScript compiler constantly analyzes it, and this is called **type checking**. For type checking, the TypeScript compiler uses something called **type annotations** which are the type rules that the developer defines. This type system is only active during development and not available in runtime. (Which makes sense, because TS is run in JS environments and is compiled to JS before it is executed anyway.) Also, the TS compiler does not do any performance optimizations.
 
 **⁂ What is in this article?**
 
@@ -28,16 +28,18 @@ This article is a long one and it consists of five main sections and their subti
    - Type Aliases
 
 2. [Interfaces](#interfaces)
+   - Optional and readonly properties
+   - Type Aliases vs. Interfaces
 3. [Classes](#classes)
    - Abstract class
-   - Access Modifiers
+   - Access modifiers
    - Static keyword
 4. [Generics](#generics)
    - Using generics with multiple types
    - Using generics with interfaces
 5. [Namespaces and Modules](#namespaces-and-modules)
 
-If you want to replicate the code in the following examples, I suggest you to use [TS Playground](https://www.typescriptlang.org/play), which is an in-browser TS compiler. Or you can install `typescript` and `ts-node` on your machine, and write typescript files in your own code editor. [This article](https://www.digitalocean.com/community/tutorials/typescript-running-typescript-ts-node) describes how to do that clearly.
+If you want to replicate the code in the following examples, I suggest you use [TS Playground](https://www.typescriptlang.org/play), which is an in-browser TS compiler. Or you can install `typescript` and `ts-node` on your machine, and write typescript files in your code editor. [This article](https://www.digitalocean.com/community/tutorials/typescript-running-typescript-ts-node) describes how to do that.
 
 <div id="typescript-type-system"></div>
 
@@ -45,26 +47,25 @@ If you want to replicate the code in the following examples, I suggest you to us
 
 JavaScript has **dynamic types**, which means, you can assign different types of values to a single variable. If you're not familiar with JavaScript types, munch on [this article](https://yagmurcetintas.com/journal/javascript-introduction-to-data-types) first.
 
-Simply put, types are labels that define the certain properties and methods a value has. In TypeScript, there is a supertype called **any**, which encompasses all the data types available. A variable with the type **any** can literally be anything. If a variable is of type any, it means you are not using type checking on it, therefore the variable becomes dynamically typed. There are also **built-in types** which are the classic primitive (string, number, boolean, undefined, null, bigInt, symbol, void) and a reference types (Object, Array, Function, Date). The void type is TypeScript specific and does not exist in JavaScript. In TypeScript there are also **user-defined types** which are enums, classes, arrays, and interfaces, created by and for the developer for specific needs.
+Simply put, types are labels that define the certain properties and methods a value has. In TypeScript, there is a supertype called **any**, which encompasses all the data types available. A variable with the type **any** can literally be anything. If a variable is of type any, it means you are not using type checking on it, therefore the variable becomes dynamically typed. There are also **built-in types** which are the classic primitive (string, number, boolean, undefined, null, bigInt, symbol, void) and the reference types (Object, Array, Function, Date). The void type is TypeScript specific and does not exist in JavaScript. In TypeScript, there are also **user-defined types** which are enums, classes, arrays, and interfaces, created by and for the developer for specific needs.
 
-There are two ways for TypeScript to understand what type a variable is. One of them is the developer writing a chunk of code that specifies what type of a value the variable will hold, and this is called **type annotation**. If it isn't specified by the developer, the compiler itself tries to figure out the type of that variable and assign a type to it, and this is called **type inference**.
+There are two ways for TypeScript to understand what type a variable is. One of them is the developer writing a chunk of code that specifies the type of the value the variable will hold, and this is called **type annotation**. If it isn't specified by the developer, the compiler itself tries to figure out the type of that variable and assign a type to it, and this is called **type inference**.
 
 **Type Annotations:**
 
 Let's create some type annotations ourselves:
 
 ```typescript
-// Type annotation means that we are going to assign a single type of values to that variable:
+// Type annotation means that we are going to assign a specified type of value to that variable:
 let firstName: string = "Cookie"
 let age: number = 3
 let hasWings: boolean = true
 let evilness: null = null
 let eyeColor: undefined = undefined
+let hatchDate: Date = new Date(2018, 5, 28)
 
 // If you try to reassign a different type of value to the same variable, you'll get a type error:
 firstName = true // Error: Type 'boolean' is not assignable to type 'string'.
-
-let hatchDate: Date = new Date(2018, 5, 28)
 
 // Type annotations ending with square brackets denote the type is going to be an array filled with the specified type:
 let colors: string[] = ["blue", "green"]
@@ -92,7 +93,7 @@ const multiplier: (num1: number, num2: number) => number = (
   return num1 * num2
 }
 
-// If we dissect this function, the first half following the variable name is the decription of the function:
+// If we dissect this function, the first half following the variable name is the description of the function:
 // Will take two arguments of type number and will return a number:
 (num1: number, num2: number) => number
 
@@ -103,17 +104,18 @@ const multiplier: (num1: number, num2: number) => number = (
 const multiplier = (num1: number, num2: number) : number => num1 * num2
 
 // If we dissect it, the part below specifies the type of arguments, and the return type, respectively:
+// The part after the fat arrow is the function itself.
 (num1: number, num2: number) : number
 
 // Same style works with anonymous functions as well:
-const divider= function(num1: number, num2: number): number{
+const divider = function(num1: number, num2: number): number{
   return num1 / num2
 }
 ```
 
 **Type Inference:**
 
-While going through all this trouble is necessary for using TypeScript better, it is also optional because of the **type inference**. You could delete all the type annotations and everything would still work perfectly. If the **variable declaration** (naming a variable) and **initialization** (assigning a value to a variable for the first time) are on the same line, TypeScript compiler will infer the type of a value and will hold you responsible for it by not letting you assign any other type to that variable, as you can see in the example below:
+While going through all this trouble is necessary for using TypeScript better, it is also optional because of the **type inference**. You could delete all the type annotations and everything would still work perfectly. If the **variable declaration** (naming a variable) and **initialization** (assigning a value to a variable for the first time) are on the same line, the TypeScript compiler will infer the type of a value and will hold you responsible for it by not letting you assign any other type to that variable, as you can see in the example below:
 
 ```typescript
 let fruitType = "peach"
@@ -137,7 +139,7 @@ favoriteFruit = "strawberry"
 favoriteFruite = true // Error: Type 'boolean' is not assignable to type 'string'.
 ```
 
-In functions, TypeScript compiler can help you by inferring the return value, but specifying it always makes it less prone to errors.
+In functions, the TypeScript compiler can help you by inferring the return value but specifying it always makes it less prone to errors.
 
 ```typescript
 // In multiplier1 function, the return type is implicitly set to number.
@@ -155,11 +157,11 @@ const multiplier3 = (a: number, b: number): number => {
 }
 ```
 
-So when to let the compiler help you by inferring, and where to use type annotations? Simply, if you are going to initialize a variable later, you can use annotations when you are declaring it. Also in places where you know the type is going to be inferred as 'any', as this may introduce bugs in the future.
+So when to let the compiler help you by inferring, and where to use type annotations? Simply, if you are going to initialize a variable later, you can use annotations when you are declaring it. Also in places where you know the type is going to be inferred as 'any', because this may introduce bugs in the future.
 
-Some built-in functions such as `JSON.parse()` has the return type of 'any', mainly because they can return several types of values. The return type of the `JSON.parse()` function heavily depends on the argument it receives, so the compiler cannot do any type checks on the returned value. There are times like this where 'any' makes sense, but most of the time the type 'any' should be avoided at all costs, because it renders the type checking feature of the TypeScript compiler useless.
+Some built-in functions such as `JSON.parse()` have the return type of 'any', mainly because they can return several types of values. The return type of the `JSON.parse()` function heavily depends on the argument it receives, so the compiler cannot do any type checks on the returned value. There are times like this where 'any' makes sense, but most of the time the type 'any' should be avoided at all costs because it renders the type checking feature of the TypeScript compiler useless.
 
-In some scenarios, a variable might have to hold two or more different types of values, and we do that by using a pipe (|). These are called **union types**. In most of these cases the type inference will not work us, so we have to use type annotation.
+In some scenarios, a variable might have to hold two or more different types of values, and we do that by using a pipe (|). These are called **union types**. In most of these cases, the type inference will not work for us, so we have to use type annotation.
 
 Example:
 
@@ -199,7 +201,7 @@ const pets = [
     age: 3,
     message: "gimme almonds please",
     shout(message: string): void {
-      console.log("YAY!")
+      console.log(this.message)
     },
   },
   {
@@ -207,12 +209,26 @@ const pets = [
     age: 5,
     message: "oink oink oink",
     shout(message: string): void {
-      console.log("YAY!")
+      console.log(this.message)
     },
   },
 ]
 
-// destructuring each pet object on the spot, and defining the exact structure with types just after it:
+// Let's print the information given for each pet:
+// When you don't destructure, you need to reach every property of the pet by using dot notation. (pet.something)
+pets.map(
+  (pet: {
+    nickname: string
+    age: number
+    message: string
+    shout: (msg: string) => void
+  }) => {
+    console.log(`${pet.nickname} is ${pet.age} years old.`)
+    pet.shout(`${pet.message}!!!!`)
+  }
+)
+
+// When you destructure, each property is their own variable and you can use them directly with their variable names:
 pets.map(
   ({
     nickname,
@@ -233,7 +249,7 @@ pets.map(
 
 **Typed Arrays:**
 
-Typed arrays are regular arrays where each element is consistently the same type. If you make an array that is only supposed to contain strings, then it will give error when any type of other value is being added to it. If you initialize a variable using an empty array, the TypeScript compiler will implicitly make it as type any[], which is something we want to avoid. If the array is going to be initialized with values inside, we can let the compiler infer the type.
+Typed arrays are regular arrays where each element is consistently the same type. If you make an array that is only supposed to contain strings, then it will give an error when any type of other value is being added to it. If you initialize a variable using an empty array, the TypeScript compiler will implicitly make it as type any[], which is something we want to avoid. If the array is going to be initialized with values inside, we can let the compiler infer the type.
 
 ```typescript
 // initializing a variable with an empty array and type annotation:
@@ -251,7 +267,7 @@ There are many advantages of typed arrays. The most visible one is preventing th
 
 **Tuples:**
 
-Tuple is a data structure very similar to the array. It is used to represent a fixed number of elemens that belong to a single thing in a certain order.
+A tuple is a data structure very similar to an array. It is used to represent a fixed number of elements that belong to a single thing in a certain order.
 
 ```typescript
 // Let's create a simple object:
@@ -303,9 +319,9 @@ console.log(isOlder(u2, 40)) // Prints: "Hi Cake! We are not accepting people un
 
 ### Interfaces
 
-An interface is a custom type that describes the structure of an object. They are not blueprints like classes are, and they are only useful for type checks that TypeScript compiler does for us.
+An interface is a custom type that describes the structure of an object. They are not blueprints like classes are, and they are only useful for type checks that the TypeScript compiler does for us.
 
-This code below works perfectly fine, but as the type annotations get longer and more complex, it makes the whole code crowded. If we used destructuring, it would look even more crowded than it is right now. And if we are using the same type in other places as well, we would be unnecessarily duplicating code, making it harder to manage, debug and read.
+This code below works perfectly fine, but as the type annotations get longer and more complex, it makes the whole code crowded. If we used destructuring, it would look even more crowded than it is right now. And if we are using the same type in other places as well, we would be unnecessarily duplicating code, making it harder to manage, debug and read:
 
 ```typescript
 const car = {
@@ -415,11 +431,130 @@ printInfo(car) // Prints: "Car label: SU2022, Available: false"
 printInfo(fruit) // Prints: "Produce label: ST06, Available: true"
 ```
 
+**Optional and readonly properties:**
+
+Interfaces and type aliases can be declared with excess properties that may or may not exist in objects. To indicate the optional properties we use `?`.
+
+You can also declare readonly properties. If a property is a readonly property, it can only be assigned a value once and that value cannot be changed afterwards.
+
+```typescript
+type Pet = {
+  // Let's make the name property optional:
+  name?: string
+  readonly age: number
+}
+
+let pet: Pet = { age: 3 } // No errors!
+pet.age = 5 // Error: Cannot assign to 'age' because it is a read-only property.
+
+// Let's try the same thing with an interface:
+interface Cat {
+  readonly name: string
+  age?: number
+}
+
+let cat1: Cat = { age: 3 } // Error: Property 'name' is missing in type '{ age: number; }' but required in type 'Cat'.
+let cat2: Cat = { name: "Carrot" } // No errors!
+cat2.name = "Clemons" // Error: Cannot assign to 'name' because it is a read-only property.
+
+// Can we combine interfaces to create a new type? Yes.
+interface Mammal {
+  whiskerCount: number
+}
+
+type Lion = Cat & Mammal // No errors
+// Can we combine interfaces to create a new interface? No.
+interface Lioness = Cat & Mammal // Errors: 'Cat' only refers to a type, but is being used as a value here. & 'Mammal' only refers to a type, but is being used as a value here.
+```
+
+**Type Aliases vs. Interfaces:**
+
+➜ **Declaration merging:** If you declare two interfaces with the same name but different properties, the TypeScript compiler will merge them automatically. Declaration merging doesn't exist in type aliases.
+
+➜ **Extend and implement:** In TypeScript, interfaces can extend classes and classes can implement interfaces, which is also not possible with type aliases.
+
+To extend an interface, we use the `extends` keyword. Extending interfaces can make the overall code more flexible and reusable.
+
+<details>
+  <summary><strong>👉 Click to view extending interfaces example</strong></summary>
+
+```typescript
+// We have a base Cake interface:
+interface Cake {
+  name: string
+  flavors: string[]
+  price: number
+}
+
+// We can use the base Cake interface to create other interfaces with more properties:
+interface TripleChocolateCake extends Cake {
+  topping: string
+}
+
+interface CarrotCake extends Cake {
+  filling: string
+}
+
+let tripleChocolateCake: TripleChocolateCake = {
+  name: "Chocobomb",
+  flavors: ["white chocolate", "milk chocolate", "bitter chocolate"],
+  price: 5.5,
+  topping: "sprinkles",
+}
+
+let carrotCake: CarrotCake = {
+  name: "Carrotlet",
+  flavors: ["carrot", "apple", "vanilla"],
+  price: 5,
+  filling: "walnut cream",
+}
+```
+
+</details>
+
+For a class to implement an interface, we use the `implements` keyword. Any class that implements an interface has to strictly obey the structure of the given interface.
+
+<details>
+  <summary><strong>👉 Click to view implementing interfaces example</strong></summary>
+
+```typescript
+// Implementing an Interface:
+interface IBaker {
+  id: number
+  name: string
+  getCake: () => string
+}
+
+// Now that we are creating a Baker class by implementing the IBaker interface, the Baker class has to have id and name properties and a getCake method:
+class Baker implements IBaker {
+  id: number
+  name: string
+
+  constructor(id: number, name: string) {
+    this.id = id
+    this.name = name
+  }
+
+  getCake(): string {
+    let cakeList = ["Chocolate Tuxedo Cake", "Carrot Cake", "Tres Leches"]
+    let randomCake = cakeList[this.name.length % cakeList.length]
+    return randomCake
+  }
+}
+
+let baker1 = new Baker(1, "Cornelius")
+let baker2 = new Baker(2, "Arisius")
+console.log(baker1.getCake()) // Prints: "Chocolate Tuxedo Cake"
+console.log(baker2.getCake()) // Prints: "Carrot Cake"
+```
+
+</details>
+
 <div id="classes"></div>
 
 ### Classes
 
-Classes define properties and methods of objects and can be referred as "blueprints" for objects. Classes in TypeScript are very much similar to the JavaScript classes with a few differences, such as access modifiers and abstract classes.
+Classes define properties and methods of objects and can be referred to as "blueprints" for objects. Classes in TypeScript are very much similar to the JavaScript classes with a few differences, such as access modifiers and abstract classes.
 
 If you know absolutely nothing about the class concept, read [this article](https://yagmurcetintas.com/journal/introduction-to-object-oriented-programming) first. If you do already know, the example below is there to remind a few simple things:
 
@@ -503,15 +638,18 @@ const cone1 = new Cone("Cone1", 3, 4)
 console.log(cone1.displayInfo()) // Prints: "Name: Cone1, Shape: Cone, Radius: 3, Height: 4, Surface Area: 75.40, Volume: 37.70"
 ```
 
-**Access Modifiers:**
+**Access modifiers:**
 
-Modifiers are keywords that define the behaviors of properties and methods of a class. The main purpose of the modifiers are to restrict the access to certain methods or properties inside a class. There are three modifier keywords: `public`, `private` and `protected`.
+Modifiers are keywords that define the behaviors of properties and methods of a class. The main purpose of the modifiers is to restrict access to certain methods or properties inside a class. There are three modifier keywords: `public`, `private`, and `protected`.
 
 - **Public** modifier represents methods and properties that can be called from anywhere and anytime.
 - **Private** modifier represents methods that can only be called from other methods that are also defined inside this class.
 - **Protected** modifier represents methods that can be called by other methods in this class, or any class that is extended from this class, which are also called child classes.
 
-The default modifier is 'public', which means if there are no specified modifiers, the method or property is public. There is also `readonly` keyword to represent variables that should be initialized only once and should not be changed after.
+The default modifier is 'public', which means if there are no specified modifiers, the method or property is public. There is also the `readonly` keyword to represent variables that should be initialized only once and should not be changed after.
+
+<details>
+  <summary><strong>👉 Click to view the example for the access modifiers</strong></summary>
 
 ```typescript
 class Person {
@@ -541,7 +679,7 @@ console.log(person.shout()) // Prints: "I ate x cookies!!!" or "Me hungry!!!" :)
 person.generateRandomNumber() // Error: Property 'generateRandomNumber' is private and only accessible within class 'Person'.
 console.log(person.eat()) // Prints: Property 'eat' is protected and only accessible within class 'Person' and its subclasses.
 
-// Let's create a child class and see how the protected, public, and private classes work that:
+// Let's create a child class and see how the protected, public, and private classes work with that:
 class Ninja extends Person {
   // A child constructor can have a separate constructor that does a different thing from its parent:
   constructor(public favColor: string, weight: number) {
@@ -568,19 +706,21 @@ console.log(ninja.eatDiscreetly()) // Prints: Different amounts of "Munch!!!!"
 console.log(ninja.whisper()) // Prints: "I ate x cookies!!!" or "Me hungry!!!" :)
 ```
 
+</details>
+
 Note: If you're overriding a method in a child class, you should not change the modifier.
 
 So why do we need modifiers? Simply put, if we have functions inside a class that deeply modifies the class or do major changes, calling it by mistake from elsewhere might be problematic and might cause bugs.
 
 **Static keyword:**
 
-Static properties and methods are also available in TypeScript, just like ES6. To understand the meaning of the `static` keyword, think of the built-in [Math object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) in JavaScript. For example, when you want a random floating-point number between 0 and 1 (only 1 is out of the bounds), you just call `Math.random()` and here you have it. But how can you use a method that belongs to the Math class without creating an instance of it? The answer is by making them static. Math object has numereous static methods all a number manipulation of some sorts, but all of them are static, which means you can call these methods from outside, without creating an instance of the Math class.
+Static properties and methods are also available in TypeScript, just like ES6. To understand the meaning of the `static` keyword, think of the built-in [Math object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) in JavaScript. For example, when you want a random floating-point number between 0 and 1 (only 1 is out of the bounds), you just call `Math.random()` and here you have it. But how can you use a method that belongs to the Math class without creating an instance of it? The answer is by making them static. Math object has numerous static methods all a number manipulation of some sorts, but all of them are static, which means you can call these methods from outside, without creating an instance of the Math class.
 
 Let's do something similar ourselves:
 
 ```typescript
 class Sphere {
-  // Static and non-static properties can exist with the same name, because they will be accessed in different ways:
+  // Static and non-static properties can exist with the same name because they will be accessed in different ways:
   static pi: number = 3.14
   public pi: number = 3
 
@@ -649,10 +789,10 @@ console.log(stack1.push("hai")) // Prints: ["hai", "1", "2"]
 What if I wanted to use the same class with other data types as well? I have 3 options:
 
 1. I could use union types (which will make the code longer and hard to read).
-2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling the compilers ability to type-check.
+2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling compilers ability to type-check.
 3. I could write the same class for every data type I'm planning to use it for.
 
-Or... I could use a placeholder type when defining this class, and specify the data structure when I'm creating an instance of it. And the class that I would create using a placeholder type would be defined as a generic class. Now let's re-write the Stack example with using generics:
+Or... I could use a placeholder type when defining this class, and specify the data structure when I'm creating an instance of it. And the class that I would create using a placeholder type would be defined as a generic class. Now let's re-write the Stack example using generics:
 
 ```typescript
 class Stack<T> {
@@ -758,11 +898,54 @@ console.log(strawberry.createLabel(strawberry.productName, strawberry.id)) // Pr
 console.log(couch.createLabel(couch.productName, couch.id)) // Prints: "987654321couch"
 ```
 
+**The built-in utility types:**
+
+TypeScript also comes with several built-in utility types, such as `Partial<T>`, `Required<T>`, `Readonly<T>`, `Pick<T, Keys>`, `Record<Keys, Value>`, `Omit<T, Keys>`, and more.
+
+**Partial<T>:** Marks all the types in the given input as optional.
+**Required<T>:** Marks all the types in the given input as non-optional. The exact opposite of `Partial<T>`.
+**Readonly<T>:** Marks all the types in the given input as readonly.
+**Pick<T, keys>:** Picks only specified keys from T.
+
+```typescript
+type Pet = { name: string; age: number; isEvil: boolean }
+
+type PartialBird = Partial<Pet> // This is the same as: type PartialBird = {name?: string, age?: number, isEvil?: boolean }
+type RequiredBird = Required<Pet> // This is the same as: type RequiredBird = {name: string, age: number, isEvil: boolean }
+type ReadonlyBird = Readonly<Pet> // This is the same as: type ReadonlyBird = {readonly name: string, readonly age: number, readonly isEvil: boolean }
+type PickedBird = Pick<Pet, "name" | "isEvil"> // This is the same as: type PickedBird = {name: string, isEvil: boolean }
+```
+
+**Record<keys, value>:** If all the members of a type have the same value, this one will be useful.
+**Omit<T, keys>:** If you want to omit certain keys in a type, this one will be useful.
+
+```typescript
+type User = {
+  id: string
+  username: string
+  luckyNumber: number
+}
+
+type Admin = {
+  services: User
+  website: User
+  internal: User
+}
+
+// The Admin type could be written like this as well:
+type Admin = Record<"services" | "website" | "internal", User>
+
+// We decided we don't care about users lucky numbers:
+type modifiedUser = Omit<User, "luckyNumber"> // This is the same as: type modifiedUser = {id: string; username: string}
+```
+
+For more elaborate examples regarding these built-in types, check out [this beautifully written article](https://blog.logrocket.com/using-built-in-utility-types-in-typescript/).
+
 <div id="namespaces-and-modules"></div>
 
 ### Namespaces and Modules
 
-Anything you write in TypeScript is scoped globally, even if you write them in separate files. As the projects get bigger, there might be times that names of the functions and variables get very similar to each other. Also, if you name two variables same in different files, they might get overridden without you even knowing. To fix these problems, you can use either modules or namespaces. In ES6, you don't need to use namespaces, because modules are implied by the file structure. You can simply export a function from a file, and import it and use it another. TypeScript provides both modules and namespaces.
+Anything you write in TypeScript is scoped globally, even if you write them in separate files. As the projects get bigger, there might be times that the names of the functions and variables get very similar to each other. Also, if you name two variables the same in different files, they might get overridden without you even knowing. To fix these problems, you can use either modules or namespaces. In ES6, you don't need to use namespaces, because modules are implied by the file structure. You can simply export a function from a file, and import it and use it another. TypeScript provides both modules and namespaces.
 
 Namespacing helps the logical grouping of related functions. To create a namespace, you use the `namespace` keyword, like so:
 
@@ -799,6 +982,11 @@ That's all folks!
 ### Resources:
 
 1. [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-2. [tutorialspoint - TypeScript](https://www.tutorialspoint.com/typescript/)
-3. https://www.digitalocean.com/community/tutorials/typescript-type-alias
-4. [Essential JavaScript Namespacing Patterns](https://addyosmani.com/blog/essential-js-namespacing/#beginners) by Addy Osmani
+2. [TypeScript Playground](https://www.typescriptlang.org/play)
+3. [tutorialspoint - TypeScript](https://www.tutorialspoint.com/typescript/)
+4. [tutorialsteacher - TypeScript](https://www.tutorialsteacher.com/typescript)
+5. [How To Use Type Aliases in TypeScript](https://www.digitalocean.com/community/tutorials/typescript-type-alias) by Alfred M. Adjei
+6. [How To Use Generics in TypeScript](https://www.digitalocean.com/community/tutorials/typescript-generics-in-typescript) by Adesh Kumar
+7. [Essential JavaScript Namespacing Patterns](https://addyosmani.com/blog/essential-js-namespacing/#beginners) by Addy Osmani
+8. [Types vs. interfaces in TypeScript](https://blog.logrocket.com/types-vs-interfaces-in-typescript/) by Leonardo Maldonado
+9. [Using built-in utility types in TypeScript](https://blog.logrocket.com/using-built-in-utility-types-in-typescript/) by Basarat Ali Syed
