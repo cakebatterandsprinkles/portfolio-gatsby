@@ -31,7 +31,7 @@ Other than these, not much is going to change. There are 2 major topics that we 
 2. [Using types with events and refs](#types-with-events-and-refs)
 
    - Events
-   - Refs
+   - useRef and useEffect
 
 3. [TypeScript with class components](#typescript-with-class-components)
 
@@ -310,13 +310,68 @@ export const DraggableComponent: React.FC = () => {
 }
 ```
 
-**꧙» Refs:**
+**꧙» useRef and useEffect:**
 
 <div id="typescript-with-class-components"></div>
 
 ### TypeScript with class components
 
+As an alternative to the function components, React also provides the option to create class components. All class components in React are created by extending the Component class that React provides for us.
+
+React.Component is a generic type: `React.Component<PropType, StateType>`, so you can provide optional prop and state parameters to it. Let's create a simple counter class with increment and decrement functions that gets props and uses the state at the same time:
+
+```jsx
+// Counter.tsx
+// React.Component is a generic type: React.Component<PropType, StateType>
+import React from "react"
+
+class Counter extends React.Component<{ message: string }, { count: number }> {
+  state = { count: 0 }
+  render() {
+    return (
+      <div style={{ marginTop: "1rem" }}>
+        <button onClick={() => this.increment(1)}> + </button>
+        <button onClick={() => this.decrement(1)}> - </button>
+        <span>Count: {this.state.count}</span>
+      </div>
+    )
+  }
+
+  increment = (amount: number) => {
+    this.setState(prevState => ({
+      count: prevState.count + amount,
+    }))
+    console.log(`Incremented: ${this.props.message}`)
+  }
+  decrement = (amount: number) => {
+    this.setState(prevState => ({
+      count: prevState.count - amount,
+    }))
+    console.log(`Decremented: ${this.props.message}`)
+  }
+}
+
+export default Counter
+
+// Don't forget to render it in the App.tsx file:
+import "./App.css"
+import Counter from "./components/Counter"
+
+function App() {
+  return (
+    <div className="App">
+      <Counter message="Hello from the counter" />
+    </div>
+  )
+}
+
+export default App
+```
+
+Lifecycle methods are used normally.
+
 ### Resources:
 
-1. [Create React App - Adding TypeScript](https://create-react-app.dev/docs/adding-typescript/)
-2. [TypeScript Documentation - What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+1. [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example)
+2. [Create React App - Adding TypeScript](https://create-react-app.dev/docs/adding-typescript/)
+3. [TypeScript Documentation - What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
