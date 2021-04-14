@@ -1109,7 +1109,47 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   // To make sure we are looking at the same date, let's create a specific one:
   const date = new Date(2019, 04, 06, 23, 45, 30)
   console.log(date) // Prints: Mon May 06 2019 23:45:30 GMT-0400 (Eastern Daylight Time)
-  console.log(date.getFullYear()) // Prints: 2019
+  console.log(date.getFullYear()) // Prints: 2019 (Returns a 4-digit number)
+  console.log(date.getMonth()) // Prints: 4 (Months are 0-indexed, this will return a number between 0-11 at all times.)
+  console.log(date.getDate()) // Prints: 6 (Returns a number between 1-31)
+  console.log(date.getHours()) // Prints: 23 (Returns a number between 0-23)
+  console.log(date.getMinutes()) // Prints: 45 (Returns a number between 0-59)
+  console.log(date.getSeconds()) // Prints: 30 (Returns a number between 0-59)
+  console.log(date.getMilliseconds()) // Prints: 0 (Returns a number between 0-999)
+  console.log(date.getTime()) // Prints: 1557200730000 (Returns the miliseconds that has passed since January 1, 1970)
+  console.log(date.getDay()) // Prints: 1 (Returns the weekday as a number, 0-indexed, expect something between 0-6. Weekdays start with sunday, not monday.)
+  ```
+
+  To get a time standard we use **UTC**, which is short for **[Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)**. UTC is a successor for **GMT**, which stands for **[Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time)**. (GMT = UTC±00:00) For anything international, we try to avoid using locale dates. Not using standards in international settings may result with massive losses of time, money, and energy, [such as this one](http://edition.cnn.com/TECH/space/9909/30/mars.metric/). UTC time is used in aviation, air traffic control, flight plans, weather forecasts and by the International Space Station (ISS). It is also used by the [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol), which is the system that is designed to synchronize the clocks of electronic devices that are connected to the internet. Timezones are expressed by using positive or negative offsets from UTC (e.g. UTC+01:00). Some countries have multiple timezones. Check out this map of the world timezones:
+
+  ![World Timezones](../images/blog/data_types/World_Time_Zones_Map.png)
+
+  ###### Map of current official time zones. Click to the following link if you'd like to see a bigger image. Image Credit: TimeZonesBoy, Public domain, via Wikimedia Commons, https://upload.wikimedia.org/wikipedia/commons/8/88/World_Time_Zones_Map.png
+
+  ```javascript
+  // -> Date.UTC() accepts the same parameters as the Date constructor, but treats them as UTC time:
+  // Has to have at least two arguments!
+  const utcDate = new Date(Date.UTC(96, 1, 2))
+
+  console.log(utcDate) // Thu Feb 01 1996 19:00:00 GMT-0500 (Eastern Standard Time)
+  console.log(utcDate.toUTCString()) // "Fri, 02 Feb 1996 00:00:00 GMT"
+
+  // UTC also has several other methods, such as setUTCDate(),setUTCMonth(), setUTCFullYear, etc.
+  ```
+
+  To get a language sensitive representation of a given date, you can use the `toLocaleString()` method. First argument is a string which specifies the language and the country (some countries speak multiple languages and have multiple standards), and second argument is an options object. The first argument is composed of two parts divided by a dash, first half being the ISO-639 language code, the second half being the ISO-3166 country code. You can check [this website](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) for available codes.
+
+  ```javascript
+  const event = new Date(Date.UTC(2018, 8, 23, 14, 30, 30))
+
+  // UK Locale:
+  console.log(event.toLocaleString("en-GB", { timeZone: "UTC" })) // Prints: 23/09/2018, 14:30:30
+
+  // Japan Locale:
+  console.log(event.toLocaleString("ja-JP", { timeZone: "UTC" })) // Prints: 2018/9/23 14:30:30
+
+  // Korea Locale:
+  console.log(event.toLocaleString("ko-KR", { timeZone: "UTC" })) // Prints: 2018. 9. 23. 오후 2:30:30
   ```
 
   There are many properties and methods of the date object and I encourage you to check them from [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) as well.
@@ -1244,6 +1284,7 @@ Don't miss out all the fun!
 1. [The Modern JavaScript Tutorial- javascript.info](https://javascript.info/)
 2. [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management), [Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators) by MDN web docs
 3. [JS V8 Engine Explained- hackernoon](https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
-4. [Academind](https://academind.com/) - Maximilian Schwarzmüller
-5. [Eloquent JavaScript: A Modern Introduction to Programming](https://eloquentjavascript.net/)
-6. [w3schools](https://www.w3schools.com/js/)
+4. [ECMAScript Internationalization API](https://generatedcontent.org/post/59403168016/esintlapi)
+5. [Academind](https://academind.com/) - Maximilian Schwarzmüller
+6. [Eloquent JavaScript: A Modern Introduction to Programming](https://eloquentjavascript.net/)
+7. [w3schools](https://www.w3schools.com/js/)
