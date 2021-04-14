@@ -7,6 +7,30 @@ summary: "In this article, I very briefly explain the data types in JS, gatherin
 
 If you want to imitate any piece of code in this article, I simply suggest using the mighty Chrome console. You can open it by using the `Command + Option + J` shortcut in Mac or the `Control + Shift + J` shortcut in Windows.
 
+**⁂ What is in this article?**
+
+This article is a long one and it consists of five main sections and their subtitles:
+
+1. [Primitive Data Types](#primitive-data-types)
+
+   - [String](#string)
+   - [Number](#number)
+   - [BigInt](#bigint)
+   - [Boolean](#boolean)
+   - [Undefined](#undefined)
+   - [Null](#null)
+   - [Symbol](#symbol)
+
+2. [Non-primitive (Reference) Data Types](#reference-data-types)
+
+   - [Function](#function)
+   - [Object](#object)
+   - [Array](#array)
+   - [Date](#date)
+
+3. [Logical Operators](#logical-operators)
+4. [Type Coercion](#type-coercion)
+
 Let's start by learning how to check the variable types. JavaScript has a simple and very useful operator for this purpose, and that is the **typeof operator.**
 
 We'll go through every data type you see in this example, and some more:
@@ -25,6 +49,8 @@ typeof NaN // ↪ "number"
 Operators like `typeof`, `++`, `--` and `!` are called **unary operators** because they accept a single value. Operators like >, <, +, -, \*, / are called **binary operators** as they accept two inputs and create a single output.
 
 The data types in JS can be divided into 2 major categories: **Primitive** and **Non-primitive** (or Reference).
+
+<div id="primitive-data-types"></div>
 
 ### Primitive data types:
 
@@ -65,6 +91,8 @@ console.log(word) // "hello"
 
 Now, let's talk about all primitive values one by one:
 
+<div id="string"></div>
+
 - **1. String:**
 
   Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double("") or single('') quotes, or backticks(\`\`), it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
@@ -82,7 +110,7 @@ Now, let's talk about all primitive values one by one:
   Some methods come built-in with every string and they are extremely useful. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `String.prototype` to your chrome console, which will return you the String prototype object.
 
   <details>
-    <summary>Built-in String methods cheatsheet</summary>
+    <summary><strong>👉 Click to view built-in string methods cheatsheet</strong></summary>
 
   ```javascript
   let color = "yellow";
@@ -310,6 +338,8 @@ Now, let's talk about all primitive values one by one:
 
   </details>
 
+<div id="number"></div>
+
 - **2. Number:**
 
   Number is a data type that is used to represent integers and decimals.
@@ -366,7 +396,7 @@ Now, let's talk about all primitive values one by one:
   Some methods come built-in with every number. You can check them from the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), or writing `Number.prototype` to your chrome console, which will return you the Number prototype object.
 
   <details>
-    <summary>Built-in Number methods cheatsheet</summary>
+    <summary><strong>👉 Click to view built-in number methods cheatsheet</strong></summary>
 
   ```javascript
   // -> Number.MAX_SAFE_INTEGER static property represents the biggest reliable integer JS can represent as a number.
@@ -468,6 +498,8 @@ Now, let's talk about all primitive values one by one:
 
 </details>
 
+<div id="bigint"></div>
+
 - **3. BigInt:**
 
   BigInt is the data type that is used for numbers that are larger than 2⁵³ - 1, which is the largest number that can be reliably represented with JavaScript Number data type. To indicate that a value is a BigInt type, you either append "n" to the end of the value or call the BigInt function.
@@ -489,6 +521,8 @@ Now, let's talk about all primitive values one by one:
 
   Number to BigInt coercion (or otherwise) is not recommended by [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt), as it can lead to a loss of precision.
 
+<div id="boolean"></div>
+
 - **4. Boolean:**
 
   There are only two boolean values: _true_ or _false_. They are really useful for setting flags.
@@ -504,12 +538,16 @@ Now, let's talk about all primitive values one by one:
   5.  undefined
   6.  NaN
 
+<div id="undefined"></div>
+
 - **5. Undefined:** If a variable is declared and no value is assigned to it, its value is _undefined_. This is a value, but it is not a meaningful one as it carries no information. In JS, operations return the value of undefined, if they are not supposed to return some meaningful value.
 
 ```javascript
 let name
 typeof name // ↪ undefined
 ```
+
+<div id="null"></div>
 
 - **6. Null:**
 
@@ -519,6 +557,8 @@ typeof name // ↪ undefined
   let name = null
   typeof name // ↪ null
   ```
+
+<div id="symbol"></div>
 
 - **7. Symbol:**
 
@@ -613,6 +653,8 @@ typeof name // ↪ undefined
 
   To sum up, symbols are mostly used for providing unique values. Their use cases, however, are somewhat a little miscellaneous.
 
+<div id="reference-data-types"></div>
+
 ### Non-primitive (Reference) data types:
 
 ###### **Arrays, Object Literals, Functions, Dates, and anything else...**
@@ -640,8 +682,11 @@ let pets = ["Cookie", "Dust", "Dander"]
 pets[1] = "Cake"
 console.log(pets) // ["Cookie", "Cake", "Dander"]
 ```
+
+<div id="function"></div>
+
 - **1. Function:**
-  
+
   We have seen many built-in functions up until this point, and we'll keep on seeing them, but this is the time we talk about what functions are. Functions are reusable pieces of code that are designed to do certain tasks. Parentheses (\(\)) that follow the 'function' keyword is the most basic way to indicate that a code block will serve as a function. The parentheses may or may not include arguments.
 
   You have to first define what the function is going to be called and what it is supposed to do, and this is called the **function declaration** or the **function statement**. (The terminology related to this subject are sometimes use synonymously, and although they have some subtle differences, and I'm not exactly sure if they really matter when it comes to everyday programming. For example, function declarations are hoisted to the top of their closures while function expressions are not. This simply means that the declared functions can be used before they were defined, but that won't work with expressed functions. But as a common sense, isn't it better to define functions before calling them anyways?)
@@ -649,40 +694,41 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   Let's create a function in three different ways:
 
   ```javascript
-    // -> Function declaration:
-    function double(num) {
-      return num*2;
-    }
+  // -> Function declaration:
+  function double(num) {
+    return num * 2
+  }
 
-    // -> Function expression:
-    const double = function d(num) { 
-      // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
-      return num*2;
-    } 
+  // -> Function expression:
+  const double = function d(num) {
+    // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
+    return num * 2
+  }
 
-    // If the inner function doesn't have a name, it will be an anonymous function, and it will look like this: (And it is totally fine if nothing else is referring to the inner function anyway.)
-    const double = function(num) { 
-      // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
-      return num*2;
-    } 
+  // If the inner function doesn't have a name, it will be an anonymous function, and it will look like this: (And it is totally fine if nothing else is referring to the inner function anyway.)
+  const double = function (num) {
+    // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
+    return num * 2
+  }
 
-    // -> Arrow function expression: (Introduced with ES6, fairly new.)
-    const double = (num) => {
-      return num*2
-    };
+  // -> Arrow function expression: (Introduced with ES6, fairly new.)
+  const double = num => {
+    return num * 2
+  }
 
-    // Arrow functions can be simplified. If you have one argument, you can omit the parentheses and if you have a single line of code to execute, you can omit the curly braces and the return statement:
+  // Arrow functions can be simplified. If you have one argument, you can omit the parentheses and if you have a single line of code to execute, you can omit the curly braces and the return statement:
 
-    const double = num =>  num*2; // See how cute and simple this is?
+  const double = num => num * 2 // See how cute and simple this is?
   ```
+
   You can return or print something with a function, but you absolutely don't have to. If you return nothing from it, it will simply return `undefined`.
 
   Defining a function will not run that piece of code, it is merely a description. To execute that code, you need to **invoke** or **call** that function.
-   
+
   ```javascript
-    // -> Calling a function:
-    double(2); // prints: 4
-    double(39); // prints: 78
+  // -> Calling a function:
+  double(2) // prints: 4
+  double(39) // prints: 78
   ```
 
   A declared function returns us an arguments object, which we can use if we like to.
@@ -691,85 +737,193 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   function doesntMatter() {
     console.log(arguments)
   }
-  doesntMatter(56, 'hello', true); // prints: [56, "hello", true, callee: ƒ, Symbol(Symbol.iterator): ƒ]
-  // The arguments.callee method contains currently executing function. 
+  doesntMatter(56, "hello", true) // prints: [56, "hello", true, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+  // The arguments.callee method contains currently executing function.
 
   // -> The arrow function has a slightly different syntax called the rest operator:
   const doesntMatter = (...args) => {
     console.log(args)
   }
-  doesntMatter(56, 'hello', true); // prints: [56, "hello", true]
+  doesntMatter(56, "hello", true) // prints: [56, "hello", true]
   ```
+
+  **Higher order functions:**
+
+  Higher order functions are functions that either return a function or take a function as an argument. The function taken as an argument is also referred to as the **callback function (cb)**. Many built-in methods such as setInterval, setTimeout, forEach, map, filter, reduce, and more are higher order functions. You can see many of them with their examples in the `built-in array methods` section of this article.
+
+  Let's create a very simple higher order function ourselves:
+
+  ```javascript
+  function multiplier(n) {
+    return m => m * n
+  }
+  let multiplier2 = multiplier(2)
+  let multiplier3 = multiplier(3)
+  console.log(multiplier2(21)) // prints: 42
+  console.log(multiplier3(21)) // prints: 63
+  ```
+
+  The multiplier function above returns a function using a parameter, therefore it can be used as a custom function creator.
+
+  Built-in functions like `setInterval(cb, duration)` and `setTimeout(cb, duration)` are used to execute functions once in a while and after a duration of time, respectively. Duration is given as miliseconds.
+
+  ```javascript
+  // setInterval pushes the given cb function to the call stack in every given miliseconds.
+  setInterval(() => {
+    console.log("Hello")
+  }, 1000)
+
+  // setInterval pushes the given cb function to the call stack after the specified miliseconds, only to be executed a single time.
+  setTimeout(() => {
+    console.log("What's up?")
+  }, 1000)
+  ```
+
+<div id="object"></div>
 
 - **2. Object:**
 
   An object is an _unordered_ data structure consisting key-value pairs. Object keys can be either of type string or symbol, and nothing else. If the value of a property is a function, that key-value pair is called a **method**, otherwise, keys are also known as the **properties** of an object.
 
   ```javascript
-    // -> To create an object literal, wrap the key-value pairs in double curly braces:
-    let obj = {
-      shape: "rectangle",
-      color: "black",
-      sides: 6
-    };
-    console.log(obj); // prints: {shape: "rectangle", color: "black", sides: 6}
+  // -> To create an object literal, wrap the key-value pairs in double curly braces:
+  let obj = {
+    shape: "rectangle",
+    color: "black",
+    sides: 6,
+  }
+  console.log(obj) // prints: {shape: "rectangle", color: "black", sides: 6}
   ```
+
   Notice something weird? I have no quotation marks around the keys. The keys are directly converted to strings without me doing anything, so I can write them without quotation marks too.
-  
+
   ```javascript
-    // -> You can get the specific values by using either a dot or square brackets notation:
-    console.log(obj.shape); // prints: rectangle
-    console.log(obj["shape"]); // prints: rectangle
+  // -> You can get the specific values by using either a dot or square brackets notation:
+  console.log(obj.shape) // prints: rectangle
+  console.log(obj["shape"]) // prints: rectangle
   ```
+
   There's a special keyword to indicate the properties of the object itself, and it is **this** keyword. (If you're going to use 'this', don't use the arrow function to define the method. 'this' in arrow functions refer to the window object, not the object you're defining the function in.)
-  
+
   ```javascript
-    // Let's add a method to our object and use 'this' keyword as well:
-    obj.ring = function() {
-      console.log(`This ${this.color} ${this.shape} is ringing!`)
-    }
-    console.log(obj) // prints: {shape: "rectangle", color: "black", sides: 6, ring: ƒ}
-    obj.ring() // This black rectangle is ringing!
+  // Let's add a method to our object and use 'this' keyword as well:
+  obj.ring = function () {
+    console.log(`This ${this.color} ${this.shape} is ringing!`)
+  }
+  console.log(obj) // prints: {shape: "rectangle", color: "black", sides: 6, ring: ƒ}
+  obj.ring() // This black rectangle is ringing!
   ```
 
   <details>
-    <summary>Built-in Object methods cheatsheet</summary>
-    
-    ```javascript
-      // -> Object.assign() is used to copy an object (without touching the original object)
-      const obj = {
-        color: "white",
-        luckyNumbers: [12, 34, 56] 
-      }
+    <summary><strong>👉 Click to view built-in object methods cheatsheet</strong></summary>
 
-      const copyObj1 = Object.assign({}, obj);
-      const copyObj2 = Object.assign({hasAnotherProperty: true}, obj);
+  ```javascript
+  // -> Object.assign() is used to copy an object (without touching the original object)
 
-      console.log(copyObj1); // prints: {color: "white", luckyNumbers: Array(3)}
-      console.log(copyObj2); // prints: {hasAnotherProperty: true, color: "white", luckyNumbers: Array(3)}
-      ---------------------------
+  const obj = {
+    color: "white",
+    luckyNumbers: [12, 34, 56],
+  }
 
-      // -> Object.keys() returns the keys of an object as an array
-      // -> Object.values() returns the values of an object as an array
-      // -> Object.entries() returns each key-value pair in their own array inside of another array (returns an array of arrays)
+  const copyObj1 = Object.assign({}, obj)
+  const copyObj2 = Object.assign({ hasAnotherProperty: true }, obj)
 
-      const user = {
-        name: "River Song",
-        id: 12134343454356
-      }
+  console.log(copyObj1) // prints: {color: "white", luckyNumbers: Array(3)}
+  console.log(copyObj2) // prints: {hasAnotherProperty: true, color: "white", luckyNumbers: Array(3)}
 
-      console.log(Object.keys(user)); // prints: ["name", "id"]
-      console.log(Object.values(user)); // prints: ["River Song", 12134343454356]
-      console.log(Object.entries(user)); // prints: [["name", "River Song"], ["id", 12134343454356]]
-    ```
+  // Object.create() method creates a new object by using another object as its prototype
+
+  const artist = {
+    name: "Leonardo",
+    shout: function () {
+      console.log(`I am ${this.name} and I love painting!`)
+    },
+  }
+  const vincent = Object.create(artist)
+
+  vincent.name = "Vincent van Gogh" // you can override values
+  vincent.age = 37 // you can add new properties
+  vincent.shout() // Prints: I am Vincent van Gogh and I love painting!
+
+  // -> Object.keys() returns the keys of an object as an array
+  // -> Object.values() returns the values of an object as an array
+  // -> Object.entries() returns each key-value pair in their own array inside of another array (returns an array of arrays)
+
+  const user = {
+    name: "River Song",
+    id: 12134343454356,
+  }
+
+  console.log(Object.keys(user)) // prints: ["name", "id"]
+  console.log(Object.values(user)) // prints: ["River Song", 12134343454356]
+  console.log(Object.entries(user)) // prints: [["name", "River Song"], ["id", 12134343454356]]
+
+  // -> Object.freeze() is used to freeze an object, which means preventing the addition of new properties and the modification of the existing ones. (So it means the existing properties are immutable.) It returns the same object that was passed to this function.
+  // -> Object.isFrozen() determines if an object is frozen or not, returns a boolean value
+  // -> Object.preventExtensions() prevents new properties from being added to an object
+  // -> Object.isExtensible() determines if we can add new properties to an object, returns a boolean value
+
+  const anyObj = {
+    isCute: true,
+    color: "purple",
+  }
+
+  Object.freeze(anyObj)
+
+  anyObj.isCute = false // Cannot modify existing properties: Throws an error in strict mode
+  anyObj.age = 3 // Cannot add any new properties: Throws an error in strict mode
+  console.log(anyObj.isCute) // Prints: true
+  console.log(anyObj.age) // Prints: undefined
+  console.log(Object.isFrozen(anyObj)) // Prints: true
+  console.log(Object.isExtensible(anyObj)) // Prints: false
+
+  // -> Object.seal() is used to prevent the addition of new properties, but doesn't prevent the modification of the existing ones:
+  // -> Object.isSealed() determines if an object is sealed or not, returns a boolean value
+
+  const newObj = {
+    isRound: true,
+    name: "Bubbles",
+  }
+
+  Object.seal(newObj)
+
+  newObj.isRound = false // No errors
+  newObj.age = 3 // Cannot add any new properties: Throws an error in strict mode
+  console.log(newObj.isRound) // Prints: false
+  console.log(newObj.age) // Prints: undefined
+  console.log(Object.isSealed(newObj)) // Prints: true
+  console.log(Object.isExtensible(newObj)) // Prints: false
+
+  // -> Object.hasOwnProperty() checks if a given object has a specified property and returns a boolean value. Inherited properties return false
+
+  const anotherObj = { id: 123456789 }
+  console.log(anotherObj.hasOwnProperty("id")) // Prints: true
+  console.log(anotherObj.hasOwnProperty("hasOwnProperty")) // Prints: false
+
+  // -> Object.is() determines if two given values are the same, returns a boolean value
+
+  const obj = { id: 1 }
+
+  console.log(Object.is(1, 1)) // Prints: true
+  console.log(Object.is(true, "true")) // Prints: false
+  console.log(Object.is({ id: 1 }, { id: 1 })) // Prints: false
+  console.log(Object.is(obj, obj)) // Prints: true
+  console.log(Object.is([], [])) // Prints: false
+  console.log(Object.is(0, +0)) // Prints: true
+  console.log(Object.is(-0, +0)) // Prints: false
+  console.log(Object.is(null, undefined)) // Prints: false
+  ```
+
   </details>
+
+  <div id="array"></div>
 
 - **3. Array:**
 
   An array is an _ordered_ data structure consisting values and each value has an index number that corresponds to it. They also have a length property just like strings.
 
   <details>
-    <summary>Built-in Array methods cheatsheet</summary>
+    <summary><strong>👉 Click to view built-in array methods cheatsheet</strong></summary>
 
   ```javascript
    // -> Array.from() static method creates a new array of a given iterable object. You can use an optional second argument to map the iterable value.
@@ -800,17 +954,24 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    ---------------------------
 
    // -> concat() method merges two or more arrays and returns the result as a new array.
+   // -> join() method merges the elements of an array with a given separator and returns the result as a string.
+   // -> toString() method merges the elements of an array with a comma between them and returns the result as a string.
 
-   const arr1 = ['h', 'i'];
-   const arr2 = ["M", "r"];
-   const arr3 = ['C', 'a', 't'];
+   const arr1 = ["Sir", "Nicholas"];
+   const arr2 = ['C', 'a', 't'];
 
-   const arr4 = arr1.concat(arr2);
-   const arr5 = arr1.concat(arr2, arr3);
+   const arr3 = arr1.concat(arr2);
 
-   console.log(arr4); // prints: ["h", "i", "M", "r"]
-   console.log(arr5); // prints: ["h", "i", "M", "r", "C", "a", "t"]
-   console.log(arr1); // prints: ['h', 'i']
+   console.log(arr3); // prints: ["Sir", "Nicholas", "C", "a", "t"]
+   console.log(arr3.join()); // prints: Sir,Nicholas,C,a,t
+   console.log(arr3.toString()) // prints: Sir,Nicholas,C,a,t
+   console.log(arr3.join("")); // prints: SirNicholasCat
+   console.log(arr3.join(" ")); // prints: Sir Nicholas C a t
+
+   ---------------------------
+
+   // -> slice(start, end) method slices the arrays from given start and end indexes and return it as a new array. It does not mutate the original array. If an end index is not given, it will start from the given start index and slice
+   // -> splice()
 
    ---------------------------
 
@@ -833,7 +994,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    // -> every() method tests whether every item in a given array passes the test by a given function, and returns a boolean value in the end.
    // every method on an empty array will return true for any condition.
 
-   const isOver21 = age => age>= 21;
+   const isOver21 = age => age >= 21;
 
    const arr = [26, 29, 30, 32];
 
@@ -853,8 +1014,8 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
    ---------------------------
 
-   // filter() method provides a callback function and calls that callback function for every item in the array, constructs a new array of the values that returns true and returns this new array.
-   // filter() is NOT a mutator method, it will return a new array without touching the giving one.
+   // filter() method takes a callback function and calls that callback function for every item in the array, constructs a new array of the values that returns true and returns this new array.
+   // filter() is NOT a mutator method, it will return a new array without touching the given one.
 
    const words = ['camp', 'marshmallow', 'tent', 'firewood', 'mountain', 'bag'];
 
@@ -878,14 +1039,82 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
    ---------------------------
 
-   // -> indexOf() method
+   // -> indexOf() method returns the index of the first value that matches a given value. If the given value doesn't exist in the array, it will return -1.
+   // -> lastIndexOf() method
    // -> includes() method
    // -> some() method
 
+   const words = ['camp', 'marshmallow', 'tent', 'tent', 'firewood', 'mountain', 'tent', 'bag'];
+
+   console.log(words.indexOf('tent')); // prints: 2
+   console.log(words.indexOf('blabber')); // prints: -1
+   console.log(words.indexOf()); // prints: -1
+
+   ---------------------------
+
+   // -> pop()
+   // -> push()
+   // -> shift()
+   // -> unshift()
+
+   ---------------------------
+
+   // -> forEach()
+
+   ---------------------------
+
+   // -> map()
+   // -> flat()
+   // -> flatMap()
+
+   ---------------------------
+
+   // -> reverse()
+   // -> sort()
+
+   ---------------------------
+
+   // -> reduce()
+   // -> reduceRight()
+
   ```
+
   </details>
 
+<div id="date"></div>
+
 - **4. Date:**
+
+  The built-in JavaScript Date object has a variety of properties and methods which are very useful. Dealing with date however, is not always so easy.
+
+  To get the current time as a string, we can do two things:
+
+  ```javascript
+  console.log(Date()) // Prints a string with the current time
+  console.log(new Date().toString()) // Prints the same string as above :]
+  ```
+
+  To create a date for a specific time, you can pass arguments:
+
+  ```javascript
+  let birthday = new Date(1994, 10, 9) // Month is 0-indexed.
+  console.log(birthday) // Prints: "Wed Nov 09 1994 00:00:00 GMT-0500 (Eastern Standard Time)"
+  let event = new Date("August 29, 1987 23:07:30")
+  console.log(event) // Prints: "Sat Aug 29 1987 23:07:30 GMT-0400 (Eastern Daylight Time)"
+  ```
+
+  To get a piece of the date string that is created by using the Date object as a constructor, there are specified methods:
+
+  ```javascript
+  // To make sure we are looking at the same date, let's create a specific one:
+  const date = new Date(2019, 04, 06, 23, 45, 30)
+  console.log(date) // Prints: Mon May 06 2019 23:45:30 GMT-0400 (Eastern Daylight Time)
+  console.log(date.getFullYear()) // Prints: 2019
+  ```
+
+  There are many properties and methods of the date object and I encourage you to check them from [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) as well.
+
+<div id="logical-operators"></div>
 
 #### Logical Operators
 
@@ -958,6 +1187,8 @@ if (status === "offline") {
 let color = status === "offline" ? "red" : "green"
 ```
 
+<div id="type-coercion"></div>
+
 #### Type Coercion
 
 Sometimes, JS automatically converts one type to another, especially if a operation is taking place. This is called the **type coercion**.
@@ -1006,7 +1237,9 @@ If a new programmer is reading this, keep rocking on! If you don't understand th
 
 Don't miss out all the fun!
 
-**Resources:**
+<div id="primitive-data-types"></div>
+
+#### Resources:
 
 1. [The Modern JavaScript Tutorial- javascript.info](https://javascript.info/)
 2. [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management), [Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators) by MDN web docs
