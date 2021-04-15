@@ -1,7 +1,7 @@
 ---
 title: "Introduction to TypeScript"
 date: "2021-03-26"
-tags: ["TypeScript", "React"]
+tags: ["TypeScript"]
 summary: "In this article, I briefly explain some differences between JavaScript and TypeScript, and give small examples of how to use TypeScript features."
 ---
 
