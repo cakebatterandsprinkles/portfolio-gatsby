@@ -152,7 +152,7 @@ const JournalPage = () => {
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
           <div className={styles.headingContainer}>
-            <h1 className={styles.mainHeading}>Portfolio</h1>
+            <h1 className={styles.mainHeading}>Journal</h1>
             <ShareButton link="https://yagmurcetintas.com/journal" />
           </div>
           <div className={styles.disclaimerText}>
