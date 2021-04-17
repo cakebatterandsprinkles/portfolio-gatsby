@@ -98,7 +98,7 @@ If we do the same comparison with a big and arbitrary n number, we see that the 
 
 In this case, the recursive solution is (arguably) easier to read and understand. But as it needs much more space than the browser can allocate to it, the browser won't do it at all. The recursive implementation of the same problem won't work for bigger numbers, and that's a thing to keep in mind.
 
-Another thing to keep in mind is, infinite iteration will increase the CPU usage by simply never ending. If you're working with a system that does multiiyortasking with multiple threads, it will clog that entire thread, rendering it useless. On the other side, infinite recursion can crash your system by causing a stack overflow on the thread it is running. Browsers are smart, they have a cap on the memory space the call stack can use, so if the thread is exhausted, they will just simply abort the mission.
+Another thing to keep in mind is, infinite iteration will increase the CPU usage by simply never ending. If you're working with a system that does multitasking with multiple threads, it will clog that entire thread, rendering it useless. On the other side, infinite recursion can crash your system by causing a stack overflow on the thread it is running. Browsers are smart, they have a cap on the memory space the call stack can use, so if the thread is exhausted, they will just simply abort the mission.
 
 #### Tail Recursion
 
