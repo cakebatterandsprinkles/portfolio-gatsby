@@ -971,7 +971,21 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    ---------------------------
 
    // -> slice(start, end) method slices the arrays from given start and end indexes and return it as a new array. It does not mutate the original array. If an end index is not given, it will start from the given start index and slice
-   // -> splice()
+   // -> splice() method is used to remove or replace some amount of contents in a given array. It mutates the original array, so use it with caution. It will return the removed items as an array.
+
+   const arr = ["cat", "dog", "parrot", "dragon", "monkey"]
+
+   console.log(arr.slice()) // Prints: ["cat", "dog", "parrot", "dragon", "monkey"]
+   console.log(arr.slice(2,4)) // Prints: ["parrot", "dragon"]
+   console.log(arr.slice(2)) // Prints: ["parrot", "dragon", "monkey"]
+   console.log(arr) // Prints: ["cat", "dog", "parrot", "dragon", "monkey"]
+
+   arr.splice(2, 0, "dinosaur") // Delete 0 items starting with index 2 and add "dinosaur" before index 2. Returns []
+   console.log(arr) // Prints: ["cat", "dog", "dinosaur", "parrot", "dragon", "monkey"]
+   arr.splice(1, 1) // Delete 1 item starting with index 1. Returns ["dog"]
+   console.log(arr) // Prints: ["cat", "dinosaur", "parrot", "dragon", "monkey"]
+   arr.splice(3, 2, "wolf", "fox") // Delete 2 items starting with index 3 and add the given values to the same space. Returns ["dragon", "monkey"]
+   console.log(arr) // Prints: ["cat", "dinosaur", "parrot", "wolf", "fox"]
 
    ---------------------------
 
@@ -1040,9 +1054,9 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    ---------------------------
 
    // -> indexOf() method returns the index of the first value that matches a given value. If the given value doesn't exist in the array, it will return -1.
-   // -> lastIndexOf() method
-   // -> includes() method
-   // -> some() method
+   // -> lastIndexOf() method returns the last index at which a given element is found by searching the array from backwards. If the given value doesn't exist in the array, it will return -1.
+   // -> includes() method determines if a given value exists in an array, returns a boolean value. As a second argument, it can take a starting index. The algorithm searches the array from start to finish.
+   // -> some() method checks if at least one element of a given array passes a given condition. It takes a callback function as an argument.
 
    const words = ['camp', 'marshmallow', 'tent', 'tent', 'firewood', 'mountain', 'tent', 'bag'];
 
@@ -1050,32 +1064,97 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    console.log(words.indexOf('blabber')); // prints: -1
    console.log(words.indexOf()); // prints: -1
 
-   ---------------------------
+   console.log(words.lastIndexOf("tent")) // prints: 6
+   console.log(words.lastIndexOf("tent", 5)) // In Latin: Look for a "tent", but instead of starting the search from the last index, start from index 5. Prints: 3
+   console.log(words.lastIndexOf("sunscreen")) // prints: -1
 
-   // -> pop()
-   // -> push()
-   // -> shift()
-   // -> unshift()
+   console.log(words.includes("bear")) // prints: false
+   console.log(words.includes("bag")) // prints: true
+   console.log(words.includes("bag", -1)) // prints: true
+   console.log(words.includes("bag", 2)) // prints: true
+   console.log(words.includes("bag", 50)) // prints: false
 
-   ---------------------------
-
-   // -> forEach()
-
-   ---------------------------
-
-   // -> map()
-   // -> flat()
-   // -> flatMap()
+   console.log(words.some(el => el.length > 6))  // prints: true
+   console.log(words.some(el => el.length < 3)) // prints: false
 
    ---------------------------
 
-   // -> reverse()
-   // -> sort()
+   // -> pop() method removes the last element of a given array and returns the removed element
+   // -> push() method adds one or more elements to the end of a given array and returns the length of the final array
+   // -> shift() method removes the first element of a given array and returns the removed element
+   // -> unshift() methods adds one or more elements to the beginning of a given array and returns the length of the final array
+
+   const veggies = ["broccoli", "kale", "carrot"]
+
+   console.log(veggies.push("spinach", "cauliflower")) // Prints: 5
+   console.log(veggies.unshift("asparagus", "cabbage")) // Prints: 7
+   console.log(veggies) // Prints: ["asparagus", "cabbage", "broccoli", "kale", "carrot", "spinach", "cauliflower"]
+   console.log(veggies.pop()) // Prints: "cauliflower"
+   console.log(veggies.shift()) // Prints: "asparagus"
+   console.log(veggies) // Prints: ["cabbage", "broccoli", "kale", "carrot", "spinach"]
 
    ---------------------------
 
-   // -> reduce()
-   // -> reduceRight()
+   // -> forEach() method executes a provided function for each element of a given array
+
+   const arr = ["sunshine", 22, 'bird'];
+   arr.forEach(el => console.log(el)); // prints: sunshine 22 bird
+
+   ---------------------------
+
+   // -> map() method takes a function as an argument, applies that function to each element of a given array, and creates and returns an array populated with the results of each equation. It can get an optional second argument which denotes the index number, and a third one to denote the array that this method was called upon. If you're not using the returned array, then it is better to use forEach method or for...of loop.
+   // -> flat() method creates a enw array with sub-array elements using the specified depth
+   // -> flatMap() applies a callback function to a given array, then flattens the array one level. It is actually the same as using map() and flat(1) consecutively.
+
+   const arr = [1, 2, 3, 4, 5]
+
+   const mappedArr = arr.map((el, index, arr) => el ** arr[index]) // arr[index] is actually el itself, so this was done for the example's sake :]
+   console.log(mappedArr) // Prints: [1, 4, 27, 256, 3125]
+
+   const nestedArr = [[1, 2], [3, 4, [5, 6, 7]], 8]
+   console.log(nestedArr.flat(1)) // Flattened one level depth, prints: [1, 2, 3, 4, [5, 6, 7], 8]
+   console.log(nestedArr.flat(2)) // Flattened two level depth, prints: [1, 2, 3, 4, 5, 6, 7, 8]
+   console.log(nestedArr) // Original array stays the same, prints: [[1, 2], [3, 4, [5, 6, 7]], 8]
+
+   console.log(arr.map(el => [el * 2])) // prints: [[2], [4], [6], [8], [10]]
+   console.log(arr.flatMap(el => [el * 2])) // prints: [2, 4, 6, 8, 10]
+
+   ---------------------------
+
+   // -> reverse() method reverses an array and returns the new array
+   // -> sort() sorts the given array in ascending order and returns the sorted array. The algorithm converts the elements to strings, and compares their UTF-16 code unit values. The time and space complexity of the algorith changes in between browsers as it depends on implementation details. It can take an optional function argument that defines the comparing parameters, that can reverse the order from ascending to descending.
+   // Both of these functions change the original array, so be careful when using them.
+
+   const numArr = [1, 12, 53, 9, 47, 17]
+   const strArr = ["a", "fl", "cr", "xp", "ei"]
+   const mixedArr = [1, 12, "cat", 9, 47, "dog"]
+
+   console.log(numArr.reverse()) // prints: [17, 47, 9, 53, 12, 1]
+   console.log(numArr) // prints: [17, 47, 9, 53, 12, 1]
+
+   numArr.sort() // In numeric sort, as the characters are converted to strings, other characters come before "9" because that's the Unicode order of strings.
+   strArr.sort()
+   mixedArr.sort()
+
+   console.log(numArr) // prints: [1, 12, 17, 47, 53, 9]
+   console.log(strArr) // sorts in alphabetical order, prints: ["a", "cr", "ei", "fl", "xp"]
+   console.log(mixedArr) // first sorts numbers then strings, prints: [1, 12, 47, 9, "cat", "dog"]
+
+   console.log(numArr.sort((a,b)=> a-b)) // prints: [1, 9, 12, 17, 47, 53]
+   console.log(numArr.sort((a,b)=> b-a)) // prints: [53, 47, 17, 12, 9, 1]
+
+   ---------------------------
+
+   // -> reduce() method executes a specified function on each element of a given array, returns the end result as a single value. The specified function has 2 required (accumulator, currentValue) and 2 optional (currentIndex and array) parameters. It can take an initial value as a second argument. If no initial value is supplied, the first element in the given array is used as the accumulator value.
+   // -> reduceRight() does the same thing as reduce, but at the opposite direction, from right to left.
+
+   const arr = [10, 20, 30, 40];
+
+   console.log(arr.reduce((accumulator, currentValue, currentIndex, array) => accumulator * currentValue)); // 10 * 20 * 30 * 40, prints: 240000
+   console.log(arr.reduce((accumulator, currentValue) => accumulator * currentValue, 2)); // 2 * 10 * 20 * 30 * 40, prints: 480000
+
+   console.log(arr.reduce((acc, currVal)=> acc.toString() + (currVal))) // prints: 10203040
+   console.log(arr.reduceRight((acc, currVal)=> acc.toString() + (currVal))) // prints: 40302010
 
   ```
 
