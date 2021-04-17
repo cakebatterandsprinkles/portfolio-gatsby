@@ -144,7 +144,7 @@ numberMap.forEach((value, key, map) => {
 
 ### Sets:
 
-A [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) is a data collection with unique values. You can't really say that it is unordered, as the iterator functions will follow the insertion order (except the repeated values, which will not be added, so they will not change the previous order). Also, you both in maps and sets, you cannot reorder the values.
+A [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) is a data collection with unique values. You can't really say that it is unordered, as the iterator functions will follow the insertion order (except the repeated values, which will not be added, so they will not change the previous order). Also, in both maps and sets, you cannot reorder the values.
 
 **⁂ Initializing a set, and setting and getting values:**
 
