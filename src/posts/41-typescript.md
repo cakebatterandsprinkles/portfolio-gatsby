@@ -136,7 +136,7 @@ fruitType = "peach"
 let favoriteFruit: string
 favoriteFruit = "strawberry"
 
-favoriteFruite = true // Error: Type 'boolean' is not assignable to type 'string'.
+favoriteFruit = true // Error: Type 'boolean' is not assignable to type 'string'.
 ```
 
 In functions, the TypeScript compiler can help you by inferring the return value but specifying it always makes it less prone to errors.
@@ -754,7 +754,7 @@ console.log(globe.calculateDiameter(2)) // Prints: 4
 
 ### Generics
 
-Generics are useful for writing code that is reusable with different data types. I will eloborate on this sentence, but first check out the code block below:
+Generics are useful for writing code that is reusable with different data types. I will elaborate on this sentence, but first check out the code block below:
 
 ```typescript
 // Let's implement a stack data structure for arrays of strings:
@@ -789,7 +789,7 @@ console.log(stack1.push("hai")) // Prints: ["hai", "1", "2"]
 What if I wanted to use the same class with other data types as well? I have 3 options:
 
 1. I could use union types (which will make the code longer and hard to read).
-2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling compilers ability to type-check.
+2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling compiler's ability to type-check.
 3. I could write the same class for every data type I'm planning to use it for.
 
 Or... I could use a placeholder type when defining this class, and specify the data structure when I'm creating an instance of it. And the class that I would create using a placeholder type would be defined as a generic class. Now let's re-write the Stack example using generics:
@@ -819,8 +819,8 @@ const stack2 = new Stack<number>([11, 22, 33])
 const stack3 = new Stack<boolean>([true, false, true, true, true])
 const stack4 = new Stack<string>(["1", 22]) // Error: Type 'number' is not assignable to type 'string'.
 stack1.printStack() // Prints: ["1", "2", "3"]
-stack2.printStack() // Prints: ["1", "2", "3"]
-stack3.printStack() // Prints: ["1", "2", "3"]
+stack2.printStack() // Prints: [11, 22, 33]
+stack3.printStack() // Prints: [true, false, true, true, true]
 console.log(stack1.pop()) // Prints: "3"
 console.log(stack2.pop()) // Prints: 33
 console.log(stack3.pop()) // Prints: true
@@ -903,8 +903,11 @@ console.log(couch.createLabel(couch.productName, couch.id)) // Prints: "98765432
 TypeScript also comes with several built-in utility types, such as `Partial<T>`, `Required<T>`, `Readonly<T>`, `Pick<T, Keys>`, `Record<Keys, Value>`, `Omit<T, Keys>`, and more.
 
 **Partial<T>:** Marks all the types in the given input as optional.
-**Required<T>:** Marks all the types in the given input as non-optional. The exact opposite of `Partial<T>`.
+
+**Required<T>:** Marks all the types in the given input as non-optional. Opposite of `Partial<T>`.
+
 **Readonly<T>:** Marks all the types in the given input as readonly.
+
 **Pick<T, keys>:** Picks only specified keys from T.
 
 ```typescript
@@ -916,7 +919,8 @@ type ReadonlyBird = Readonly<Pet> // This is the same as: type ReadonlyBird = {r
 type PickedBird = Pick<Pet, "name" | "isEvil"> // This is the same as: type PickedBird = {name: string, isEvil: boolean }
 ```
 
-**Record<keys, value>:** If all the members of a type have the same value, this one will be useful.
+**Record<keys, value>:** If all the values of an object type has the same type, this one will be useful.
+
 **Omit<T, keys>:** If you want to omit certain keys in a type, this one will be useful.
 
 ```typescript
