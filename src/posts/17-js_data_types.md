@@ -95,7 +95,7 @@ Now, let's talk about all primitive values one by one:
 
 - **1. String:**
 
-  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double("") or single('') quotes, or backticks(\`\`), it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
+  Strings are just pieces of text. What makes a string a string is the quotation marks around it. It can be double("...") or single('...') quotes, or backticks(\`\`), it doesn't matter, but you need to be consistent throughout your code. Don't mix both.
 
   JS uses 16 bits to encode a single string element. But some characters (such as emojis) are represented with two character positions (2 blocks of 16 bits).
 
@@ -659,9 +659,9 @@ typeof name // ↪ undefined
 
 ###### **Arrays, Object Literals, Functions, Dates, and anything else...**
 
-In reference data types, when you create a variable, the variable doesn't actually hold a value, instead it holds a pointer to that value. So when you copy a variable, it's the pointer that gets copied, not the value itself.
+In reference data types when you create a variable, the variable doesn't actually hold a value, instead, it holds a pointer to that value. So when you copy a variable, it's the pointer that gets copied, not the value itself.
 
-So if you change the value, all the values of the variables that store a pointer to that value will change. Keep this in mind when you're working with reference type values!
+So if you change the value, all the values of the variables that store a pointer to that value will change. Keep this in mind when you're working with reference-type values!
 
 Example:
 
@@ -689,7 +689,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
   We have seen many built-in functions up until this point, and we'll keep on seeing them, but this is the time we talk about what functions are. Functions are reusable pieces of code that are designed to do certain tasks. Parentheses (\(\)) that follow the 'function' keyword is the most basic way to indicate that a code block will serve as a function. The parentheses may or may not include arguments.
 
-  You have to first define what the function is going to be called and what it is supposed to do, and this is called the **function declaration** or the **function statement**. (The terminology related to this subject are sometimes use synonymously, and although they have some subtle differences, and I'm not exactly sure if they really matter when it comes to everyday programming. For example, function declarations are hoisted to the top of their closures while function expressions are not. This simply means that the declared functions can be used before they were defined, but that won't work with expressed functions. But as a common sense, isn't it better to define functions before calling them anyways?)
+  You have to first define what the function is going to be called and what it is supposed to do, and this is called the **function declaration** or the **function statement**. (The terminology related to this subject is sometimes used synonymously, and although they have some subtle differences, and I'm not exactly sure if they really matter when it comes to everyday programming. For example, function declarations are hoisted to the top of their closures while function expressions are not. This simply means that the declared functions can be used before they were defined, but that won't work with expressed functions. But as common sense, isn't it better to define functions before calling them anyway?)
 
   Let's create a function in three different ways:
 
@@ -721,7 +721,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   const double = num => num * 2 // See how cute and simple this is?
   ```
 
-  You can return or print something with a function, but you absolutely don't have to. If you return nothing from it, it will simply return `undefined`.
+  You can return or print something with a function, but you don't have to. If you return nothing from it, it will simply return `undefined`.
 
   Defining a function will not run that piece of code, it is merely a description. To execute that code, you need to **invoke** or **call** that function.
 
@@ -747,9 +747,9 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   doesntMatter(56, "hello", true) // prints: [56, "hello", true]
   ```
 
-  **Higher order functions:**
+  **Higher-order functions:**
 
-  Higher order functions are functions that either return a function or take a function as an argument. The function taken as an argument is also referred to as the **callback function (cb)**. Many built-in methods such as setInterval, setTimeout, forEach, map, filter, reduce, and more are higher order functions. You can see many of them with their examples in the `built-in array methods` section of this article.
+  Higher-order functions are functions that either return a function or take a function as an argument. The function taken as an argument is also referred to as the **callback function (cb)**. Many built-in methods such as setInterval, setTimeout, forEach, map, filter, reduce, and more are higher-order functions. You can see many of them with their examples in the `built-in array methods` section of this article.
 
   Let's create a very simple higher order function ourselves:
 
@@ -765,7 +765,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
   The multiplier function above returns a function using a parameter, therefore it can be used as a custom function creator.
 
-  Built-in functions like `setInterval(cb, duration)` and `setTimeout(cb, duration)` are used to execute functions once in a while and after a duration of time, respectively. Duration is given as miliseconds.
+  Built-in functions like `setInterval(cb, duration)` and `setTimeout(cb, duration)` are used to execute functions once in a while and after a duration of time, respectively. Duration is given as milliseconds.
 
   ```javascript
   // setInterval pushes the given cb function to the call stack in every given miliseconds.
@@ -783,7 +783,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
 - **2. Object:**
 
-  An object is an _unordered_ data structure consisting key-value pairs. Object keys can be either of type string or symbol, and nothing else. If the value of a property is a function, that key-value pair is called a **method**, otherwise, keys are also known as the **properties** of an object.
+  An object is an _unordered_ data structure consisting of key-value pairs. Object keys can be either of type string or symbol and nothing else. If the value of a property is a function, that key-value pair is called a **method**, otherwise, keys are also known as the **properties** of an object.
 
   ```javascript
   // -> To create an object literal, wrap the key-value pairs in double curly braces:
@@ -920,7 +920,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
 - **3. Array:**
 
-  An array is an _ordered_ data structure consisting values and each value has an index number that corresponds to it. They also have a length property just like strings.
+  An array is an _ordered_ data structure consisting of values and each value has an index number that corresponds to it. They also have a length property just like strings.
 
   <details>
     <summary><strong>👉 Click to view built-in array methods cheatsheet</strong></summary>
@@ -970,7 +970,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
    ---------------------------
 
-   // -> slice(start, end) method slices the arrays from given start and end indexes and return it as a new array. It does not mutate the original array. If an end index is not given, it will start from the given start index and slice
+   // -> slice(start, end) method slices the arrays from given start and end indexes and returns it as a new array. It does not mutate the original array. If an end index is not given, it will start from the given start index and slice
    // -> splice() method is used to remove or replace some amount of contents in a given array. It mutates the original array, so use it with caution. It will return the removed items as an array.
 
    const arr = ["cat", "dog", "parrot", "dragon", "monkey"]
@@ -1028,7 +1028,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
    ---------------------------
 
-   // filter() method takes a callback function and calls that callback function for every item in the array, constructs a new array of the values that returns true and returns this new array.
+   // filter() method takes a callback function and calls that callback function for every item in the array, constructs a new array of the values that returns true, and returns this new array.
    // filter() is NOT a mutator method, it will return a new array without touching the given one.
 
    const words = ['camp', 'marshmallow', 'tent', 'firewood', 'mountain', 'bag'];
@@ -1102,7 +1102,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
    ---------------------------
 
-   // -> map() method takes a function as an argument, applies that function to each element of a given array, and creates and returns an array populated with the results of each equation. It can get an optional second argument which denotes the index number, and a third one to denote the array that this method was called upon. If you're not using the returned array, then it is better to use forEach method or for...of loop.
+   // -> map() method takes a function as an argument, applies that function to each element of a given array, and creates and returns an array populated with the results of each equation. It can get an optional second argument which denotes the index number, and a third one to denote the array that this method was called upon. If you're not using the returned array, then it is better to use the forEach method or the for...of loop.
    // -> flat() method creates a enw array with sub-array elements using the specified depth
    // -> flatMap() applies a callback function to a given array, then flattens the array one level. It is actually the same as using map() and flat(1) consecutively.
 
@@ -1122,7 +1122,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    ---------------------------
 
    // -> reverse() method reverses an array and returns the new array
-   // -> sort() sorts the given array in ascending order and returns the sorted array. The algorithm converts the elements to strings, and compares their UTF-16 code unit values. The time and space complexity of the algorith changes in between browsers as it depends on implementation details. It can take an optional function argument that defines the comparing parameters, that can reverse the order from ascending to descending.
+   // -> sort() sorts the given array in ascending order and returns the sorted array. The algorithm converts the elements to strings and compares their UTF-16 code unit values. The time and space complexity of the algorithm changes in between browsers as it depends on implementation details. It can take an optional function argument that defines the comparing parameters, that can reverse the order from ascending to descending.
    // Both of these functions change the original array, so be careful when using them.
 
    const numArr = [1, 12, 53, 9, 47, 17]
@@ -1145,8 +1145,8 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
    ---------------------------
 
-   // -> reduce() method executes a specified function on each element of a given array, returns the end result as a single value. The specified function has 2 required (accumulator, currentValue) and 2 optional (currentIndex and array) parameters. It can take an initial value as a second argument. If no initial value is supplied, the first element in the given array is used as the accumulator value.
-   // -> reduceRight() does the same thing as reduce, but at the opposite direction, from right to left.
+   // -> reduce() method executes a specified function on each element of a given array, returns the result as a single value. The specified function has 2 required (accumulator, currentValue) and 2 optional (currentIndex and array) parameters. It can take an initial value as a second argument. If no initial value is supplied, the first element in the given array is used as the accumulator value.
+   // -> reduceRight() does the same thing as reduce, but in the opposite direction, from right to left.
 
    const arr = [10, 20, 30, 40];
 
@@ -1164,7 +1164,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
 - **4. Date:**
 
-  The built-in JavaScript Date object has a variety of properties and methods which are very useful. Dealing with date however, is not always so easy.
+  The built-in JavaScript Date object has a variety of properties and methods which are very useful. Dealing with dates, however, is not always so easy.
 
   To get the current time as a string, we can do two things:
 
@@ -1199,11 +1199,11 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   console.log(date.getDay()) // Prints: 1 (Returns the weekday as a number, 0-indexed, expect something between 0-6. Weekdays start with sunday, not monday.)
   ```
 
-  To get a time standard we use **UTC**, which is short for **[Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)**. UTC is a successor for **GMT**, which stands for **[Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time)**. (GMT = UTC±00:00) For anything international, we try to avoid using locale dates. Not using standards in international settings may result with massive losses of time, money, and energy, [such as this one](http://edition.cnn.com/TECH/space/9909/30/mars.metric/). UTC time is used in aviation, air traffic control, flight plans, weather forecasts and by the International Space Station (ISS). It is also used by the [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol), which is the system that is designed to synchronize the clocks of electronic devices that are connected to the internet. Timezones are expressed by using positive or negative offsets from UTC (e.g. UTC+01:00). Some countries have multiple timezones. Check out this map of the world timezones:
+  To get a time standard we use **UTC**, which is short for **[Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)**. UTC is a successor for **GMT**, which stands for **[Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time)**. (GMT = UTC±00:00) For anything international, we try to avoid using locale dates. Not using standards in international settings may result in massive losses of time, money, and energy, [such as this one](http://edition.cnn.com/TECH/space/9909/30/mars.metric/). UTC is used in aviation, air traffic control, flight plans, weather forecasts, and the International Space Station (ISS). It is also used by the [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol), which is the system that is designed to synchronize the clocks of electronic devices that are connected to the internet. Timezones are expressed by using positive or negative offsets from UTC (e.g. UTC+01:00). Some countries have multiple time zones. Check out this map of the world timezones:
 
   ![World Timezones](../images/blog/data_types/World_Time_Zones_Map.png)
 
-  ###### Map of current official time zones. Click to the following link if you'd like to see a bigger image. Image Credit: TimeZonesBoy, Public domain, via Wikimedia Commons, https://upload.wikimedia.org/wikipedia/commons/8/88/World_Time_Zones_Map.png
+  ###### Map of current official time zones. Click on the following link if you'd like to see a bigger image. Image Credit: TimeZonesBoy, Public domain, via Wikimedia Commons, https://upload.wikimedia.org/wikipedia/commons/8/88/World_Time_Zones_Map.png
 
   ```javascript
   // -> Date.UTC() accepts the same parameters as the Date constructor, but treats them as UTC time:
@@ -1216,7 +1216,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   // UTC also has several other methods, such as setUTCDate(),setUTCMonth(), setUTCFullYear, etc.
   ```
 
-  To get a language sensitive representation of a given date, you can use the `toLocaleString()` method. First argument is a string which specifies the language and the country (some countries speak multiple languages and have multiple standards), and second argument is an options object. The first argument is composed of two parts divided by a dash, first half being the ISO-639 language code, the second half being the ISO-3166 country code. You can check [this website](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) for available codes.
+  To get a language-sensitive representation of a given date, you can use the `toLocaleString()` method. The first argument is a string that specifies the language and the country (some countries speak multiple languages and have multiple standards), and the second argument is an options object. The first argument is composed of two parts divided by a dash, the first half being the ISO-639 language code, the second half being the ISO-3166 country code. You can check [this website](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) for available codes.
 
   ```javascript
   const event = new Date(Date.UTC(2018, 8, 23, 14, 30, 30))
@@ -1267,7 +1267,7 @@ console.log(["red", "apple", 12, false] ?? { name: "Barusu" }) // prints: ["red"
 
 The logical operators && and || handle things differently when they are given values of different types.
 
-OR(||) operator checks the leftside value first. If it is true or truthy, it will directly return the first value. If the leftside value is false or falsy, it checks the rightside value. If the rightside value is true or truthy in this situation, it will directly return the rightside value; if it is false as well, then it will return the rightside value.
+OR(||) operator checks the left-side value first. If it is true or truthy, it will directly return the first value. If the left-side value is false or falsy, it returns the right-side value.
 
 ```javascript
 console.log("hello" || null) // prints: "hello"
@@ -1276,7 +1276,7 @@ console.log("!" || 2328) // prints: "!"
 console.log(NaN || undefined) // prints: undefined
 ```
 
-AND(&&) operator works in a different way. It also checks the leftside value first, if it is false or falsy, it directly returns the leftside value. If the leftside value is true or truthy, it returns the rightside value.
+AND(&&) operator works differently. It also checks the left-side value first, if it is false or falsy, it directly returns the left-side value. If the left-side value is true or truthy, it returns the right-side value.
 
 ```javascript
 console.log("hello" && null) // prints: null
@@ -1285,11 +1285,11 @@ console.log("!" && 2328) // prints: 2328
 console.log(NaN && undefined) // prints: NaN
 ```
 
-Both of them have the same logic to it: They don't check the value on the right side unless they have to. An || operator will result with true if the leftside value is true or truthy, and in this case the rightside value doesn't matter, so it is short-circuited. Same goes for the && operator, if the leftside value is false or falsy, the result will be false no matter what the rightside value is, so it is never evaluated.
+Both of them have the same logic to it: They don't check the value on the right side unless they have to. An || operator will result with true if the left-side value is true or truthy, and in this case, the right-side value doesn't matter, so it is short-circuited. The same goes for the && operator, if the left-side value is false or falsy, the result will be false no matter what the right-side value is, so it is never evaluated.
 
 **Ternary Operator:**
 
-We have seen unary and binary operators, but there is also a **ternary operator**, which is also known as the **conditional operator**. Binary operator operates on a single value, binary operator operates on two values, and ternary operator operates on three values. For the syntax, a question mark (?) and a colon (:) is used. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
+We have seen unary and binary operators, but there is also a **ternary operator**, which is also known as the **conditional operator**. The unary operator operates on a single value, the binary operator operates on two values, and the ternary operator operates on three values. For the syntax, a question mark (?) and a colon (:) is used. Statement before the question mark indicates condition, the statement after that is what will happen if that condition is true, and the statement after the colon is what happens if that condition isn't met.
 
 ```javascript
 let status = "offline"
@@ -1310,7 +1310,7 @@ let color = status === "offline" ? "red" : "green"
 
 #### Type Coercion
 
-Sometimes, JS automatically converts one type to another, especially if a operation is taking place. This is called the **type coercion**.
+Sometimes, JS automatically converts one type to another, especially if an operation is taking place. This is called the **type coercion**.
 
 ```javascript
 // Null gets converted to 0 when used with mathematical operations:
@@ -1329,7 +1329,7 @@ console.log(12 + "aa") // Prints: 12aa
 console.log("eightynine" - 1) // Prints: NaN
 ```
 
-There are two types of comparison operators, one is the **double equals(==)**, which tests loose equality, the other one is **triple equals(===)**, which tests for strict equality. Double equals perform type coercion, but triple equals doesn't. Triple equals compare both value and data type, but double equals just check for value.
+There are two types of comparison operators, one is the **double equals(==)**, which tests loose equality, the other one is **triple equals(===)**, which tests for strict equality. Double equals perform type coercion, but triple equals don't. Triple equals compare both value and data type, but double equals just check for value.
 
 ```javascript
 console.log(8 == "8") // Prints: true
@@ -1344,11 +1344,11 @@ console.log(0 == "") // Prints: true
 console.log(NaN == NaN) // Prints: false
 ```
 
-As it behaves loosely and sometimes yields unexpected results, double equals is not much liked by the community. It is strongly recommended to use triple equals for comparison purposes.
+As it behaves loosely and sometimes yields unexpected results, double equals operator is not much liked by the community. It is strongly recommended to use triple equals for comparison purposes.
 
 #### I hate the endings, but here we are
 
-If a new programmer is reading this, keep rocking on! If you don't understand things, guess what, you're just human. There's always cool people who'll help you understand things. And if you keep trying to learn things, one day you'll become a member of that cool and unique club, so keep on going on.
+If a new programmer is reading this, keep rocking on! If you don't understand things, guess what, you're just human. There are always cool people who'll help you understand things. And if you keep trying to learn things, one day you'll become a member of that cool and unique club, so keep on going on.
 
 ![xkcd Ten Thousand comic](../images/blog/data_types/ten_thousand_2x.png)
 
