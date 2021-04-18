@@ -5,11 +5,11 @@ tags: ["TypeScript", "React", "Redux"]
 summary: "In this article, I give examples on how to use TypeScript with React (create-react-app/ CRA) and Redux."
 ---
 
-This is no article for the faint hearted! If you don't know React basics, I suggest you to go through them first. If you don't know how TypeScript works, munch on [this article](https://yagmurcetintas.com/journal/introduction-to-typescript). After that make sure you have Node.js and a code editor installed on your computer and you're good to go!
+This is no article for the faint-hearted! If you don't know React basics, I suggest you go through them first. If you don't know how TypeScript works, munch on [this article](https://yagmurcetintas.com/journal/introduction-to-typescript). After that make sure you have Node.js and a code editor installed on your computer and you're good to go!
 
 **Creating a React starter project with TypeScript support:**
 
-As the browser and Node.js doesn't understand TypeScript, we need the TypeScript compiler to translate our code into JavaScript before running it. To create a starter project that has TypeScript support built into it you need to use the following command in your command line:
+As the browser and Node.js don't understand TypeScript, we need the TypeScript compiler to translate our code into JavaScript before running it. To create a starter project that has TypeScript support built into it you need to use the following command in your command line:
 
 `npx create-react-app <appname> --template typescript`
 
@@ -102,7 +102,7 @@ export const ParentComponent = () => {
 }
 ```
 
-So far so good. But as far as our compiler knows, these are just functions that return some code. The TypeScript compiler does not understand that these are React Components that return JSX code, because we haven't told it yet.
+So far so good. But as far as our compiler knows, these are just functions that return some code. The TypeScript compiler does not understand that these are React Components that return JSX code because we haven't told it yet.
 
 Let's redefine our ChildComponent using another syntax, this time specifying that it will be a React function component that returns some JSX code:
 
@@ -172,7 +172,7 @@ export const ChildComponent: React.FC<ChildProps> = ({
 
 **꧙» How to use State with types:**
 
-Let's tweak our ParentComponent so that we can use states with it. We will add a button to the parent component, and on each click ChildComponent will change color randomly. We will also display every color we changed on the screen.
+Let's tweak our ParentComponent so that we can use states with it. We will add a button to the parent component, and on each click, ChildComponent will change color randomly. We will also display every color we changed on the screen.
 
 ```jsx
 // Parent.tsx:
@@ -244,7 +244,7 @@ Let's create another example to demonstrate how to work with events. EventCompon
 
 ```jsx
 // EventComponent1.tsx
-// The TypeScript compiler knows that an input might recieve an onChange prop, and might have a callback function as an argument to it. It knows that the first argument provided to that function might be an event, and assigns a proper type to that event object. As everything is inferred, we don't need to manually do the annotations ourselves:
+// The TypeScript compiler knows that an HTML input might recieve an onChange prop, and might have a callback function as an argument to it. It knows that the first argument provided to that function might be an event, and assigns a proper type to that event object. As everything is inferred, we don't need to manually do the annotations ourselves:
 export const EventComponent1: React.FC = () => {
   return (
     <div>
@@ -311,6 +311,35 @@ export const DraggableComponent: React.FC = () => {
 ```
 
 **꧙» useRef and useEffect:**
+
+Let's create another example to demonstrate how to work with refs and useEffect.
+
+```jsx
+import { useEffect, useRef, useState } from "react";
+
+const RefComponent: React.FC = () => {
+  const [input, setInput] = useState("");
+
+  // Whenever we create a ref that is going to refer to an HTML element, we need to provide it the appropriate type according to the element we are referring to:
+  const inputRef = useRef<HTMLInputElement | null>(null); 
+  // If you command + click to this <HTMLInputElement>, it will take you to a list where you can find the appropriate types for each HTML element, and choose from this list. You don't have to assign a created ref to an element right away, and if you don't assign it, it will be referring to the type null that we give as an initial value, so we need to consider it as well.
+
+  // Let's set focus on the input element as soon as the component is rendered:
+  useEffect(() => inputRef.current?.focus(), []);
+
+  return (
+    <div>
+      <input
+        ref={inputRef}
+        onChange={e => setInput(e.target.value)}
+        value={input}
+      />
+    </div>
+  );
+};
+
+export default RefComponent;
+```
 
 <div id="typescript-with-class-components"></div>
 
