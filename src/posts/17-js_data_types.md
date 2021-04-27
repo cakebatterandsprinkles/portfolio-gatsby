@@ -84,7 +84,7 @@ Example:
 
 ```javascript
 let word = "hello"
-word[0] = y // This does not throw an error, but it also does not change anything.
+word[0] = "y" // This does not throw an error, but it also does not change anything.
 
 console.log(word) // "hello"
 ```
@@ -307,7 +307,7 @@ Now, let's talk about all primitive values one by one:
   // -> toUpperCase() method returns the string value converted to uppercase. (If it's not a string, it will be converted to a string in the process.)
   // -> toLowerCase() method returns the string value converted to lowercase.
   // -> toLocaleLowerCase() method converts the string value to lowercase with specified locale settings.
-  // -> toLocaleUpperCase() method
+  // -> toLocaleUpperCase() method method converts the string to uppercase with specified locale settings.
 
   const str = "2 Red Foxes";
 
@@ -492,7 +492,7 @@ Now, let's talk about all primitive values one by one:
 
   ```javascript
   let num = "123"
-  Number(num) + num // ↪ 123 // ↪ 123
+  Number(num) // ↪ 123
   parseInt(num) // ↪ 123
   ```
 
@@ -707,7 +707,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
   // If the inner function doesn't have a name, it will be an anonymous function, and it will look like this: (And it is totally fine if nothing else is referring to the inner function anyway.)
   const double = function (num) {
-    // Here, the inner function has a name that is 'd'. It can call itself and be recursive if it wants to.
+    // Here, the inner function doesn't have a name.
     return num * 2
   }
 
@@ -803,7 +803,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   console.log(obj["shape"]) // prints: rectangle
   ```
 
-  There's a special keyword to indicate the properties of the object itself, and it is **this** keyword. (If you're going to use 'this', don't use the arrow function to define the method. 'this' in arrow functions refer to the window object, not the object you're defining the function in.)
+  There's a special keyword to indicate the properties of the object itself, and it is **this** keyword. (If you're going to use 'this', don't use the arrow function to define the method. 'this' in arrow functions refer to the surrounding function scope, which in this example is the window object.)
 
   ```javascript
   // Let's add a method to our object and use 'this' keyword as well:
@@ -1103,7 +1103,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
    ---------------------------
 
    // -> map() method takes a function as an argument, applies that function to each element of a given array, and creates and returns an array populated with the results of each equation. It can get an optional second argument which denotes the index number, and a third one to denote the array that this method was called upon. If you're not using the returned array, then it is better to use the forEach method or the for...of loop.
-   // -> flat() method creates a enw array with sub-array elements using the specified depth
+   // -> flat() method creates a new array with sub-array elements using the specified depth
    // -> flatMap() applies a callback function to a given array, then flattens the array one level. It is actually the same as using map() and flat(1) consecutively.
 
    const arr = [1, 2, 3, 4, 5]
