@@ -1,7 +1,7 @@
 ---
 title: "Using TypeScript with React"
 date: "2021-04-07"
-tags: ["TypeScript", "React", "Redux"]
+tags: ["TypeScript", "React"]
 summary: "In this article, I give examples on how to use TypeScript with React (create-react-app/ CRA) and Redux."
 ---
 
@@ -122,8 +122,7 @@ export const ChildComponent: React.FC<ChildProps> = ({ id, label, color }) => {
     </p>
   )
 }
-
-// Note: FC is short for FunctionComponent, and you React.FC is the same thing as React.FunctionComponent.
+// Note: FC is short for FunctionComponent, and React.FC is the same thing as React.FunctionComponent.
 ```
 
 Now that the TypeScript compiler knows that the ChildComponent is a React function component, it can have additional built-in properties like `propTypes`, `displayName`, `defaultProps`, and `contextTypes`.
@@ -321,7 +320,9 @@ const RefComponent: React.FC = () => {
   const [input, setInput] = useState("")
 
   // Whenever we create a ref that is going to refer to an HTML element, we need to provide it the appropriate type according to the element we are referring to:
-  const inputRef = (useRef < HTMLInputElement) | (null > null)
+
+  const inputRef = useRef<HTMLInputElement | null>(null)
+  
   // If you command + click to this <HTMLInputElement>, it will take you to a list where you can find the appropriate types for each HTML element, and choose from this list. You don't have to assign a created ref to an element right away, and if you don't assign it, it will be referring to the type null that we give as an initial value, so we need to consider it as well.
 
   // Let's set focus on the input element as soon as the component is rendered:
