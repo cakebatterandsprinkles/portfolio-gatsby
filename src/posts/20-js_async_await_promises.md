@@ -281,6 +281,8 @@ fetch("https://swapi.dev/api/planets/")
 
 **Axios:**
 
+Axios is a popular JS library that allows us to do HTTP requests.
+
 #### Async & Await
 
 #### Resources

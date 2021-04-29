@@ -9,6 +9,7 @@
   background-color: white;
   padding: 2.5rem;
   min-height: 90vh;
+  border-radius: 20px;
 }
 
 .headingContainer {
@@ -32,6 +33,10 @@
   padding: 1rem;
   margin-left: 1.5rem;
   min-height: 50vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 5px;
 }
 
 .tagContainer {
@@ -298,7 +303,7 @@ hr {
 // date container styling
 
 .dateContainer {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .year {

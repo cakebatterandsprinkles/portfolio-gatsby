@@ -5,7 +5,7 @@ tags: ["Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain the DOM and navigator, location and history objects. These are mostly tiny notes I took for myself when I was studying the DOM."
 ---
 
-## Document Object Model (DOM)
+### What is DOM?
 
 DOM is a structured representation of the HTML document where each HTML element is represented as objects, an interface between HTML+CSS and JS created by the browser.
 
@@ -15,7 +15,7 @@ If you open the document object in various websites, you'll see that it has a ce
 
 The topmost object in JS is the window object. Document object itself is one of the objects the window object encapsulates. You can simply check out the window object by logging it to your console: `console.log(window)`
 
-### 1. Selecting:
+#### 1. Selecting:
 
 This is the first step of manipulating DOM, and there are various ways to do that.
 

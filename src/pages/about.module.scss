@@ -9,6 +9,7 @@
   background-color: white;
   padding: 3rem;
   min-height: 90vh;
+  border-radius: 20px;
 }
 
 .greetingContainer {
@@ -42,15 +43,6 @@
 .queryWrapper {
   display: flex;
   margin: 1rem 0;
-}
-
-.buttonWrapper {
-  background: var(--snow);
-  margin-top: 1rem;
-  padding: 1.5rem 1rem 1rem 1rem;
-  border: 1px solid var(--lightgray);
-  border-radius: 10px;
-  display: inline-block;
 }
 
 .timeLink {
