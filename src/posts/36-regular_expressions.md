@@ -47,8 +47,8 @@ To say if a string matches _any_ of the characters that are provided in the patt
 
 ```javascript
 // Let's check if any of the characters in a given string either matches c, a, k, or e:
-console.log([cake].text("lois")) // Prints: false
-console.log([cake].text("fiore")) // Prints: true
+console.log(/[cake]/.test("lois")) // Prints: false
+console.log(/[cake]/.test("fiore")) // Prints: true
 ```
 
 A hyphen (-) between two characters is used to symbolize a range of characters, and the order of these characters is determined by their Unicode number. Thankfully Unicode is designed in a way that all Latin lowercase and uppercase letters, and numbers have consecutive numbers, which you can check from [here](https://en.wikipedia.org/wiki/List_of_Unicode_characters). Another thing to keep in mind is Regex being case sensitive:
