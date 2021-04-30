@@ -1,5 +1,5 @@
 .card {
-  min-height: 35vh;
+  min-height: 23vh;
   display: flex;
   margin: 0.5rem 0;
   width: 48%;
@@ -10,8 +10,8 @@
 }
 
 .cardTitle {
-  font-size: 1.1rem;
-  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  padding: 0.25rem;
   background-color: var(--black);
   color: var(--snow);
   border-radius: 5px;
@@ -19,7 +19,7 @@
 }
 
 .cardSummary {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-family: var(--article-font);
 }
 
@@ -31,7 +31,8 @@
 
 .cardlink {
   text-decoration: none;
-  margin-left: 0.25rem;
+  margin-left: 0.1rem;
+  font-size: 0.75rem;
   color: var(--darkviolet);
   padding: 0.25rem 0.5rem;
   word-break: break-word;
@@ -65,11 +66,17 @@
 
 #technologies {
   font-weight: normal;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 1680px) {
+  .card {
+    min-height: 31vh;
+  }
 }
 
 @media (max-width: 1200px) {
   .card {
-    min-height: 40vh;
     width: 100%;
   }
 }
