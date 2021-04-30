@@ -5,7 +5,7 @@
 }
 
 .blogWrapper {
-  width: 800px;
+  width: 1200px;
   background-color: white;
   padding: 2.5rem;
   min-height: 90vh;
@@ -401,6 +401,12 @@ hr {
 
 .paginationButton:hover {
   background-color: var(--dirtysnow);
+}
+
+@media (max-width: 2880px) {
+  .blogWrapper {
+    width: 1000px;
+  }
 }
 
 @media (max-width: 1200px) {

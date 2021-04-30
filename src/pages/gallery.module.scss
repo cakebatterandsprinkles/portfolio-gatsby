@@ -5,7 +5,7 @@
 }
 
 .galleryWrapper {
-  width: 1000px;
+  width: 1200px;
   background-color: white;
   padding: 3rem;
   min-height: 70vh;
@@ -64,6 +64,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 2880px) {
+  .galleryWrapper {
+    width: 1000px;
+  }
 }
 
 @media (max-width: 1200px) {
