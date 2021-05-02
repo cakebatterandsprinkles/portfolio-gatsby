@@ -13,6 +13,20 @@ The second type of component is called **functional components**, and these are 
 
 Let's roll.
 
+**⁂ What is in this article?**
+
+1. [useState()](#useState)
+2. [useEffect()](#useEffect)
+3. [useRef()](#useRef)
+4. [useReducer()](#useReducer)
+5. [useContext()](#useContext)
+6. [useLayoutEffect()](#useLayoutEffect)
+7. [useCallback()](#useCallback)
+8. [useMemo](#useMemo)
+9. [ErrorBoundary Component](#ErrorBoundaryComponent)
+
+<div id="useState"></div>
+
 #### useState()
 
 useState hook accepts a single argument as the initial value of a property of the state, and always returns an array with two elements. Generally, this array is destructured at the spot. The first one in the returned array is the state property with the given value and the second item is a function to update the state. By convention, this function is named by adding the "set" prefix to the name of the property.
@@ -47,6 +61,8 @@ function Example() {
 }
 ```
 
+<div id="useEffect"></div>
+
 #### useEffect()
 
 useEffect hook accepts a function as an argument and runs that function after React renders (or re-renders) your component to the DOM. It also accepts a second (optional) argument, which is the data it should look out for. This second argument is called **the array of dependencies** and it can be of any length. This second argument decides when this hook will run. The point of this list is to keep your component's state fresh and in sync with the side effect you are causing. If there is a second argument, the function that is given as the first argument will only run when the data specified in the second argument changes. If there is no second argument, the function given as the first argument will run for every update of the component. If there is an empty array as the second argument, the function will run when the component is destroyed.
@@ -76,6 +92,8 @@ React.useEffect(
 )
 ```
 
+<div id="useRef"></div>
+
 #### useRef()
 
 After a component is rendered, the DOM nodes are created. If you need to reach the DOM nodes for some reason (for example for creating event handlers, etc.), you use the useRef hook. useRef hook is a function that returns a ref object. When you add the 'ref' attribute to any JSX element, React becomes aware of it and creates a reference to that object, and then you can use that DOM node to create side effects.
@@ -102,6 +120,8 @@ function someComponent({ children }) {
 ```
 
 To sum up, you use the useRef hook whenever you want to maintain a reference to a DOM node and make changes on it without triggering a re-render.
+
+<div id="useReducer"></div>
 
 #### useReducer()
 
@@ -206,6 +226,8 @@ export default App
 
 So why use useReducer instead of useState hook? The main reason is that they are useful in different conditions. Most of the time you will use the useState hook, as you will be managing a state that has elements that are independent of each other. If you have multiple elements of the state that change at the same time in a certain condition, and if one of them depends on the other, useReducer can be helpful. Check out [this awesome article](https://kentcdodds.com/blog/should-i-usestate-or-usereducer) by Kent C. Dodds which helped me understand this subject better.
 
+<div id="useContext"></div>
+
 #### useContext()
 
 Sometimes passing the state between components can be a pain in the grass. You can always **lift a state** (make the data a part of the parent component's state, as the data can only be passed top to down or parent to child) but passing the state more than a single level is very cumbersome and leads to redundant code, and that's where the concept of a shared application state comes in. This 'shared application state' is called the **context**, and all components can reach it without the need of explicitly passing it along as a prop.
@@ -269,6 +291,8 @@ export default App
 
 Most of the time apps are more complicated than this and they have a folder structure, and you may need to keep your context files in a separate folder. It's cool, you'll just import and use them, and all will be fine.
 
+<div id="useLayoutEffect"></div>
+
 #### useLayoutEffect()
 
 When you are causing side effects in your React app, you can use two built-in APIs. One of them is the useEffect hook (mentioned before!) and the other one is the useLayoutEffect hook, which we'll talk about now. These two APIs are incredibly similar, with just a couple of subtle differences.
@@ -286,6 +310,8 @@ It does feel like there is an 'r' missing in this word, doesn't it? But I have n
 Memoization is a form of caching. What is caching? Caching is storing some data for future use. You may not be aware of it, but many websites you visit do cache data in your browser. Memoization is storing the data as an object (as key-value pairs) so if you request some data with the same parameters, it will directly return the previous result. If you request data with different parameters, it will add it to the object as a key-value pair, and return the result. Memoization is especially important if you are doing expensive calculations, and doing them repeatedly will decrease the performance of your app. When using React, memoization can help you prevent unnecessary re-renders and re-calling expensive functions.
 
 Two hooks help us do memoization in React. One is useCallback, and the other one is useMemo. Let's check them out.
+
+<div id="useCallback"></div>
 
 #### useCallback()
 
@@ -334,6 +360,8 @@ export default ColorMode
 
 Although useCallback has improved our performance by preventing unnecessary re-renders in this tiny example, it doesn't mean that you should use it everywhere. As you probably imagined, useCallback keeps a reference to the old version of the function, so it won't be garbage collected.
 
+<div id="useMemo"></div>
+
 #### useMemo()
 
 useMemo is very similar to useCallback. The main difference between the two is, useCallback returns a memoized callback function, while useMemo returns a memoized value. If you're running an expensive calculation (which is a function that uses a lot of resources, such as memory), memoizing it can enhance your performance. If you need to call the same expensive function again with the same parameters, instead of running the function again, the previously calculated value will come from memory. useMemo also requires a second argument, which is an array of the arguments used in the function that is being memoized.
@@ -352,6 +380,8 @@ const memoizedValue2 = useMemo(() => calculate2(), [])
 ```
 
 Don't forget that useMemo also allocates memory to keep the data. If it is overused, it can have an opposite effect on performance, so it is not wise to use it everywhere.
+
+<div id="ErrorBoundaryComponent"></div>
 
 ### ErrorBoundary Component
 
