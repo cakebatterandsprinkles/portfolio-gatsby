@@ -45,11 +45,11 @@ An **[HTML collection](https://developer.mozilla.org/en-US/docs/Web/API/HTMLColl
 
 **❣ `document.getElementsByClassName("")`** -> This will return an _HTML collection_ that consists of all the objects with a specified class name. If there is nothing matching, it will return an empty HTML collection.
 
-**❣ `document.querySelector("")`** -> This will return a single element. You can use any type of CSS selector with it (id, class, tag name) but it will only return the first thing it finds. To indicate a class, use a dot (.) and to indicate an id, use an octothorp (#) at the beginning of the query parameter.
+**❣ `document.querySelector("")`** -> This takes any type of CSS selector (id, class, tag name) but it will only return the first thing it finds. To indicate a class, use a dot (.) and to indicate an id, use an octothorp (#) at the beginning of the query parameter.
 
 You can look for nested objects as well: **`document.querySelector("div a.special")`** means you request the first anchor tag that has a class named special and is nested inside a div.
 
-**❣ `document.querySelectorAll("")`** -> This one takes a tag, id or class, returns all matching elements as a _Node List_.
+**❣ `document.querySelectorAll("")`** -> This one takes any type of CSS selector returns all matching elements as a _Node List_.
 
 A **[node list](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)** is another type of array-like collection. A slight difference between an HTML collection and a node list is that a node list has forEach method available to it while an HTML collection doesn't. Also, an HTML collection can contain only the element nodes, but a NodeList can contain any type. But you can use for...of loop or regular for loop for both of them.
 
@@ -57,7 +57,7 @@ A **[node list](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)** is 
 
 The children property will return an _HTML collection_ that consists of all the nested elements of the specified node.
 
-There are other properties such as nextElementSibling and previousElementSibling, which chooses the next and previous siblings, respectfully.
+There are other properties such as nextElementSibling and previousElementSibling, which chooses the next and previous "element" siblings, skipping over text and comment nodes.
 
 <div id="manipulating"></div>
 
@@ -94,9 +94,9 @@ You can apply this simple example to everything below, so I'm not going to creat
 
 **❣ [classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList):** After selecting a node from the DOM, you can see the assigned classes of the element by typing `element.classList`. It returns a DOMTokenList, which is an array-like collection of the classes. It also has some other methods like `add()`, `remove`, `replace`, and `toggle` that you can use to manipulate the classList collection.
 
-**❣ creatingElements:** [document.createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) method creates an HTML element with the specified tag name.
+**❣ Creating elements:** [document.createElement()](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement) method creates an HTML element with the specified tag name.
 
-**❣ [append](https://developer.mozilla.org/en-US/docs/Web/API/Element/append), [prepend](https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend), [insertBefore](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore):** After creating an element, you can insert an element as the last child of a given element (append), or the first child of a given element (prepend).
+**❣ [append](https://developer.mozilla.org/en-US/docs/Web/API/Element/append), [prepend](https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend), [insertBefore](https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore):** After creating an element, you can insert an element as the last child of a given element (append), or the first child of a given element (prepend), or before a selected child element (insertBefore).
 
 **❣ [removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild), [remove](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove):** `removeChild` method removes a child node from the DOM and returns the removed node. `remove` method removes the specified node.
 
