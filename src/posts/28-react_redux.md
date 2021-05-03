@@ -130,7 +130,7 @@ class Counter extends Component {
 // stateConfigParam: defines which slice of the state the component want to subscribe to
 // actionConfigParam: defines which actions you can dispatch from the component
 
-// This returns the globa state's counter as a count variable, as a prop to the current component. This component is able to reach it from `this.props.count`.
+// This returns the global state's counter as a count variable, as a prop to the current component. This component is able to reach it from `this.props.count`.
 // the state parameter in this function refers to the global application state
 const mapStateToProps = state => {
   return {
@@ -187,7 +187,7 @@ export default CounterContext;
 		authenticated: this.state.authenticated,
 		login: this.loginHandler}}>
 	{...some jsx code}
-  {/* Anything component that is in here (doesn't have to be an immediate child) can access the CounterContext by using <CounterContext.Consumer>*/}
+  {/* Any component that is in here (doesn't have to be an immediate child) can access the CounterContext by using <CounterContext.Consumer>*/}
 </CounterContext.Provider>
 
 // React will re-render when the state or props change. So only changing something in the context object will not cause a re-render cycle.
