@@ -27,9 +27,7 @@ Either way, keeping that information on the client-side saves you from an additi
 
 4. [The Cache API and IndexedDB API](#cacheAPI-indexedDB)
 
-5. [File system API](#file-system-API)
-
-6. [Same Origin Policy](#same-origin-policy)
+5. [Same Origin Policy](#same-origin-policy)
 
 <div id="before-starting"></div>
 
@@ -186,11 +184,17 @@ To see if you have any cookies set on your own browser, you can visit the Applic
 
 **IndexedDB API:**
 
-- Stores key-value pairs
+- Useful for storing large amounts of structured data on the client-side.
+- You can (and probably should) use an abstraction library (like [Dexie.js](https://dexie.org/)) to help you use IndexDB, as it is a low-level API and if used wrong, might break the applications. Check out the other IndexDB open source projects from [here](https://awesomeopensource.com/projects/indexeddb).
+
+**Cache API:**
+
+- Stores pairs of HTTP request and response objects.
+- Useful in Progressive Web Apps. (You can store files that are necessary to make a PWA work, like manifest.json)
+
+For more detailed information, visit [here](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices) and [here](https://web.dev/cache-api-quick-guide/).
 
 <div id="file-system-API"></div>
-
-#### 4. File system API
 
 <div id="same-origin-policy"></div>
 
@@ -219,10 +223,10 @@ If you want more details on the subject, I recommend [this](https://developer.mo
 
 #### Resources
 
-1. [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage), [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), [Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) by MDN Web Docs
+1. [Client-side storage](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage), [Service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API), [Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API), [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests) by MDN Web Docs
 2. [Storage for the web](https://web.dev/storage-for-the-web/), [The Cache API: A quick guide](https://web.dev/cache-api-quick-guide/) by Pete LePage
-3. [Web workers vs Service workers vs Worklets](https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/) by Ire Aderinokun
-4. [A practical, Complete Tutorial on HTTP cookies](https://www.valentinog.com/blog/cookies/) by Valentino Gagliardi
-5. [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests) by MDN Web Docs
+3. [Best Practices for Using IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices) by Philip Walton
+4. [Web workers vs Service workers vs Worklets](https://bitsofco.de/web-workers-vs-service-workers-vs-worklets/) by Ire Aderinokun
+5. [A practical, Complete Tutorial on HTTP cookies](https://www.valentinog.com/blog/cookies/) by Valentino Gagliardi
 6. [How does CORS prevent XSS?](https://security.stackexchange.com/questions/108835/how-does-cors-prevent-xss) by StackExchange
 7. [Storage for the web. IndexedDB, Cache API](https://techplanet.today/post/storage-for-the-web) by Alex
