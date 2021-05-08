@@ -2,20 +2,31 @@
 title: "Creating Transparency"
 date: "2020-12-28"
 tags: ["Neuroscience"]
-summary: "In this article, I start with the history of scientific inventions that lead to tissue clearing and continue with how tissue clearing methods such as Clarity, iDISCO, 3DISCO, and CUBIC work. I also explain how immunofluorescence works."
+summary: "In this article, I talk about the history of scientific inventions that lead to tissue clearing and the logic of tissue clearing methods such as Clarity and 3DISCO."
 ---
 
-During grad school, I had the great privilege to get accustomed to some of the more creative ways of understanding diseases. One of them is called **tissue clearing**, which was an idea that was circulating around for a long time, but was not fully achieved until the early 2000s. Neuroscience, the brain itself, and humans trying to understand themselves are all amazing, but the methods we use to understand ourselves are also worth praise. I have a certain respect for people who create tools for other people to create beautiful things.
+During grad school, I had the great privilege to get accustomed to some of the more creative ways of understanding diseases. One of them is called **tissue clearing**, which was an idea that was circulating for a long time but was not fully achieved until the early 2000s. Neuroscience, the brain itself, and humans trying to understand themselves are all amazing, but the methods we use to understand ourselves are also worth praise. I have a certain respect for people who create tools for other people to create beautiful things.
 
-I love reading about history of things with an amateurish passion. It was no surprise to me when I wanted to write this tiny article too. I appreciate things that society offers to us, like phones, computers, cars, vaccines, cameras. All this exists because lots of people before us took one step more to understand how things work.
+I love reading the history of things with an amateurish passion. It was no surprise to me when I wanted to write this tiny article too. I appreciate things that society offers to us, like phones, computers, cars, vaccines, cameras, and everything else. All this stuff exists because lots of people before us took one more step to understand how things work.
 
-This will be a long and beautiful story. I will try to not get lost in small details, I promise. There will be many people I'll fail to mention for simplicities sake, but that doesn't mean I don't see them or think that their work was not important. Science indeed stands on the giant's shoulders. No contribution is small, and thank you for everything.
+This will be a long and beautiful story. There will be many people I'll fail to mention just to keep things simple, but that doesn't mean I don't see them or think that their work was not important. Science indeed stands on the giant's shoulders. No contribution is small.
+
+**What is in this article?**
+
+1. [The Domino Effect](#the-domino-effect)
+2. [Cell Culture](#cell-culture)
+3. [Immunity, vaccines, and the discovery of antibodies](#immunity-vaccines-and-the-discovery-of-antibodies)
+4. [The development of immunofluoroscence and microscopy](#the-development-of-immunofluoroscence-and-microscopy)
+5. [Tissue Clearing](#tissue-clearing)
+6. [Resources](#resources)
+
+<div id="the-domino-effect"></div>
 
 ### The domino effect
 
-Let's start the story from far back, when the first microscope was constructed by the English physicist **[Robert Hooke](https://en.wikipedia.org/wiki/Robert_Hooke)** in 1665. He's also the first one to put probably anything he can find under the microscope and be amazed with what he sees. One day, he put some mimosa leaves under his microscope and observed the small building blocks that created it, and called them "plant cells". He published **[Micrographia](https://en.wikipedia.org/wiki/Micrographia)**, which consisted of his amazing findings and their drawings.
+Let's start the story from far back, when the first microscope was constructed by the English physicist **[Robert Hooke](https://en.wikipedia.org/wiki/Robert_Hooke)** in 1665. He's also the first one to put probably anything he can find under the microscope and be amazed by what he sees. One day, he put some mimosa leaves under his microscope and observed the small building blocks that created it, and called them "plant cells". He published **[Micrographia](https://en.wikipedia.org/wiki/Micrographia)**, which consisted of his amazing findings and their drawings.
 
-![Robert Hooke Micrographia , plant cells](../images/blog/transparency/RobertHookeMicrographia1665.jpeg)
+![Robert Hooke Micrographia, plant cells](../images/blog/transparency/RobertHookeMicrographia1665.jpeg)
 
 ###### The first observed plant cells.
 
@@ -39,7 +50,9 @@ Meanwhile, in the 19th century, the **cell theory** began to emerge. With the in
 
 ###### Illustration of Virchow's cell theory.
 
-###### Image Credit: https://upload.wikimedia.org/wikipedia/commons/7/7b/Virchow-cell.jpg, Public domain, via Wikimedia Commons
+###### Image Credit: https://upload.wikimedia.org/wikipedia/commons/7/7b/Virchow-cell.jpg, Public domain, via Wikimedia Commons.
+
+<div id="cell-culture"></div>
 
 ### Cell Culture
 
@@ -62,6 +75,8 @@ In 1950's and 1960's, the first cell lines (many of them are used even today) we
 ###### Immunofluorescence imaging of HeLa cells showing microtubules in green, mitochondria in yellow, nucleoli in red and nuclear DNA in purple.
 
 ###### Image Credit: GerryShaw, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
+
+<div id="immunity-vaccines-and-the-discovery-of-antibodies"></div>
 
 ### Immunity, vaccines, and the discovery of antibodies
 
@@ -98,6 +113,8 @@ Now we know that [antibodies](https://en.wikipedia.org/wiki/Antibody) (otherwise
 ###### Image Credit: Tokenzero, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons
 
 In 1975, Georges Köhler and César Milstein invented [monoclonal antibodies](https://en.wikipedia.org/wiki/Monoclonal_antibody). Before I explain what monoclonal antibodies are, I want to introduce another word called **[epitope](https://en.wikipedia.org/wiki/Epitope)**, which is the part of the antigen that is recognized by the immune system. An antigen can have multiple epitopes. Monoclonal antibodies are created by cloning a single lineage of white blood cell, and only bind to a single epitope of a given antigen. Polyclonal antibodies are created by several lineages of white cells and is a more heterogenous group of antibodies that can bind to different epitopes of the same antigen. Monoclonal antibodies take more time to produce and they are more expensive, but they have less [cross-reactivity](https://en.wikipedia.org/wiki/Cross-reactivity), as they are only targeted to react for a single epitope. The invention of monoclonal antibodies lead to [improved and targeted treatments](https://en.wikipedia.org/wiki/Monoclonal_antibody_therapy) of various diseases such as many types of cancer, autoimmune diseases and asthma. It also improved the quality of biomedical research and diagnostic tests.
+
+<div id="the-development-of-immunofluoroscence-and-microscopy"></div>
 
 ### The development of immunofluoroscence and microscopy
 
@@ -143,6 +160,8 @@ One of the most amazing and artsy looking brains I've ever seen is the Brainbow 
 
 ###### Image Credit: Jeff W. Lichtman and Joshua R. Sanes, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons
 
+<div id="tissue-clearing"></div>
+
 ### Tissue Clearing
 
 Until this point in science history, if you wanted to see anything inside of a given tissue, you needed to slice it into thin sections to observe anything. And even then, creating 3D images out of them and understand how the cells connect together was an issue. (Especially if you were working with neural cells that can have long [neurites](https://en.wikipedia.org/wiki/Neurite).) Making tissues transparent was an idea that solved this particular problem.
@@ -170,6 +189,8 @@ Today, there are many tissue clearing methods, such as CLARITY, DISCO methods (i
 ### Final Words
 
 This article is just a tiny crumble that has fallen down from the 12 tiered cake known as the history of science. Anything that we hold in our hands and affect our lives immensely has this type of story: the events, observations, discoveries, and inventions that inspired another smart being. Inventions were only possible because of the other ones before it. It is as Isaac Newton said: "If I have seen further it is by standing on the sholders of Giants". Oh, and if you want to know the story behind the quote, read [this](https://www.brainpickings.org/2016/02/16/newton-standing-on-the-shoulders-of-giants/) great article. Kudos! You have reached the end. :]
+
+<div id="resources"></div>
 
 ### Resources
 
