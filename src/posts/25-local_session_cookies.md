@@ -133,7 +133,7 @@ console.log(localStorage.length) // Prints: 0
 
 [HTTP Cookies](https://en.wikipedia.org/wiki/HTTP_cookie) are mostly used for authentication and user data persistence. You create a token that is unique for the user and the session and add it to every HTTP request made from the client. One of the reasons to use cookies is to keep track of what the user is doing on the website - such as adding items to your cart in an e-commerce site, or the login information.
 
-Cookies are attached to every HTTP request, so you should be cautious about what you put inside. Storing too unnecessary data will make your HTTP requests chonkier, making the application slower than it's supposed to be.
+Cookies are attached to every HTTP request, so you should be cautious about what you put inside. Storing too much data will make your HTTP requests chonkier, making the application slower than it's supposed to be.
 
 - Maximum storage limit is around 4KB, and can only contain strings.
 
@@ -141,7 +141,7 @@ Cookies are attached to every HTTP request, so you should be cautious about what
 
 - They are not accessible from the web workers but accessible from the global `window` object.
 
-Providing that a website uses HTTP cookies, the first cookie is created by the backend of the webpage that is being used. The backend is also responsible for setting the [HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) named `Set-Cookie` to the token that is uniquely created for that session and that user, which consists of a key-value pair. **HTTP headers** let the client and the server share additional information about the HTTP request that is being made.
+Providing that a website uses HTTP cookies, the first cookie is created by the server that is being used. The server is also responsible for setting the [HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) named `Set-Cookie` to the token that is uniquely created for that session and that user, which consists of a key-value pair. **HTTP headers** let the client and the server share additional information about the HTTP request that is being made.
 
 ```javascript
 // The header has to have the id in some form because you need to uniquely identify the user.
@@ -159,7 +159,7 @@ document.cookies = "dark_mode=true" // Adds another key value pair to your cooki
 
 Cookies can also be modified by the user or intercepted in transit. For security purposes, the data should always be encrypted, so in any interception attempt, the user's credentials stay safe. Also, you should never store sensitive information such as passwords in them. There are [several points](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks) where the communication can be compromised:
 
-- **[Cross-site scripting (XSS)](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss):** If a web application is not using enough validation and encryption, it might give a malicious user access to sensitive information, which then can be used by the attacker to inject another client-side code that enables them to impersonate a user.
+- **[Cross-site scripting (XSS)](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss):** If a web application is not using enough validation and encryption, an attacker can inject another client-side code to the application, that gives a malicious user access to sensitive information, and the ability to impersonate another user.
 - **[Cross-site request forgery (CSRF)](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_request_forgery_csrf):** This is an attack pattern that abuses the logged-in user, steal their session, and trick them to execute malicious code which they don't know anything about. In such a scenario, your user is tricked into a fake site that runs a script or makes requests to your server. People should only be able to use your session if they are working with your views, so that session should not be available on any other page.
 - **[Man-in-the-middle (MitM)](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#man-in-the-middle_mitm):** A third party impersonates a server and intercepts the communication between a web server and a client, capturing sensitive data such as login credentials or credit card information. It can also possibly alter data while doing so.
 - **[Session Fixation](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#session_fixation):** A third party steals a user's session identifier (like a cookie) and impersonates the user.
@@ -182,7 +182,7 @@ To see if you have any cookies set on your browser, you can visit the Applicatio
 **IndexedDB API:**
 
 - Useful for storing large amounts of structured data on the client side.
-- You can (and probably should) use an abstraction library (like [Dexie.js](https://dexie.org/)) to help you use IndexDB, as it is a low-level API and if used wrong, might break the applications. Check out the other IndexDB open source projects from [here](https://awesomeopensource.com/projects/indexeddb).
+- You can (and probably should) use an abstraction library (like [Dexie.js](https://dexie.org/)) to help you use IndexedDB, as it is a low-level API and if used wrong, might break the applications. Check out the other IndexedDB open source projects from [here](https://awesomeopensource.com/projects/indexeddb).
 
 **Cache API:**
 
@@ -208,13 +208,13 @@ Let's give an example. Our fake origin host is: `https://smart.monke.com/index.h
 `https://smart.monke.com:81/about.html` || Cross-Origin, Different Port
 ```
 
-For security purposes, the API's that help us make HTTP requests from a server (like [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)) follow the same-origin policy, so unless a specific **[Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)** HTTP header is set, they cannot share information with a website of a different origin. This header is returned by the server and it indicates who can use its resources. It can be set to `*`, which allows any origin to access it (which is less secure), or a specific domain, which allows only that specified domain to access the resource. If you support authentication via cookies, for the backend to allow the cross-origin request, it has to set another header named **[Access-Control-Allow-Credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials)**. You also have to include the credentials flag to the request in the frontend of the application, or the Fetch API ignores the cookie.
+For security purposes, the API's that help us make HTTP requests from a server (like [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)) follow the same-origin policy, so unless a specific **[Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)** HTTP header is set, they cannot share information with a website of a different origin. This header is returned by the server and it indicates who can use its resources. It can be set to `*`, which allows any origin to access it (which is less secure), or a specific domain, which allows only that specified domain to access the resource. If you support authentication via cookies, for the server to allow the cross-origin request, it has to set another header named **[Access-Control-Allow-Credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials)**. You also have to include the credentials flag to the request in the frontend of the application, or the Fetch API ignores the cookie.
 
 Any cross-origin request that is made from a front end falls into the browser's hands. The browser sends something called a **[preflight request](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests)** to the server, which has no request body, but only headers. This request is only made to confirm that the server will allow such a request from that domain. If the required **Access-Control-Allow-Origin** is not set, the request fails, and the browser sends back a CORS error. If the header is set and that domain is allowed to make a request, the browser sends the original request and delivers back the response.
 
 ![CORS](../images/blog/browser_storage/cors.jpg)
 
-This is not required for the requests made from the back end of the applications. CORS is strictly for the front end of the applications and is applied by browsers to protect the users from **cross-site scripting (XSS)** attacks. It is quite a controversial subject (as some say CORS doesn't exist to prevent XSS attacks), but check out [this example](https://security.stackexchange.com/a/224207) that explains how CORS helps to prevent XSS attacks quite nicely.
+This is not required for the requests made from the backend of the applications. CORS is strictly for the front end of the applications and is applied by browsers to protect the users from **cross-site scripting (XSS)** attacks. It is quite a controversial subject (as some say CORS doesn't exist to prevent XSS attacks), but check out [this example](https://security.stackexchange.com/a/224207) that explains how CORS helps to prevent XSS attacks quite nicely.
 
 If you want more details on the subject, I recommend [this](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests) detailed article in MDN Web Docs.
 
