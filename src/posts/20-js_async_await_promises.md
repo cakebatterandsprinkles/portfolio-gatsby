@@ -200,9 +200,9 @@ In Chrome dev tools, under the network tab, you can see the requests being sent 
 
 The original way of sending requests is **XMLHttpRequest**, but it has a hard to remember syntax, and most importantly it does not support promises, so you end up using nested callbacks. There are better alternatives for making an HTTP request, such as **fetch** and **axios**, and these support promises, so I will skip XMLHttpRequest and talk about fetch and axios.
 
-**Fetch:**
+**The Fetch API:**
 
-Fetch is not supported by Internet Explorer. Fetch method accepts a mandatory URL for the first argument, and an optional init object that allows us to control a number of things that are sent with our request. For example, you can send cookies with your request.
+The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is not supported by Internet Explorer. `fetch` method accepts a mandatory URL for the first argument, and an optional init object that allows us to control a number of things that are sent with our request. You can also send cookies with your request.
 
 The [response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) that fetch returns has a body property that is a **readable stream**. A readable stream is a stream of byte data. ([Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) helps us to break a resource that can be huge into smaller chunks, and each chunk of data can be processed one by one.) The data we receive from fetch resides inside this readable stream, and to interact with it, we need to turn it into JSON first. Turning a promise into JSON takes time and it is also asynchronous, that's why .json() method returns us another promise.
 
@@ -214,6 +214,7 @@ fetch("https://swapi.dev/api/planets/").then(res => console.log(res))
 
 // This will print out the data that's being sent form the API:
 fetch("https://swapi.dev/api/planets/").then(response => {
+  // Parse (convert from JSON to JS) the response object, then print it to the console:
   response.json().then(data => {
     console.log(data)
   })
@@ -281,7 +282,39 @@ fetch("https://swapi.dev/api/planets/")
 
 **Axios:**
 
-Axios is a popular JS library that allows us to do HTTP requests.
+[Axios](https://www.npmjs.com/package/axios) is a popular JS library that allows us to do HTTP requests. It simplifies the process of making requests by adding a bunch of methods, and it uses the Fetch API under the hood. Just like the Fetch API, it is promise based, and it can be used in both server side and the client side code.
+
+The axios API is pretty simple. After you import axios to the file you're working on, you can simply use one of the methods provided for you, such as `request`, `get`, `delete`, `head`, `options`, `post`, `put`, `patch`. For the example, we are going to use the the [SWAPI API](https://swapi.dev/) again:
+
+```javascript
+axios.get("https://swapi.dev/api/planets") // This returns us a promise, with a data property that has already been parsed, so we don't have to parse it ourselves. (No more response.json()!)
+
+axios
+  .get("https://swapi.dev/api/planets")
+  .then(res => console.log(res.data))
+  // If the status code of the response is not 200, catch callback will run:
+  .catch(err => console.log(err))
+```
+
+So there are two main differences when compared to the Fetch API: We didn't have to create a checkpoint to check the status code (axios runs the catch callback if it's anything other than 200), and we didn't have to parse (axios parsed it for us).
+
+If you want to chain multiple HTTP requests, you can return the HTTP request and chain `.then` after it, like so:
+
+```javascript
+axios
+  .get("https://swapi.dev/api/planets")
+  .then(res => {
+    console.log(res.data)
+    // You are returning a promise, so you can chain 'then' after this block:
+    return axios.get(res.data.next)
+  })
+  .then(res => {
+    console.log(res.data)
+  })
+  .catch(err => console.log(err))
+```
+
+As you can see, the axios library doesn't provide something new, but a cleaner and more legible syntax.
 
 #### Async & Await
 
