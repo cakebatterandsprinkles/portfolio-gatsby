@@ -122,7 +122,7 @@ So 986 in base-10 becomes this in base-2: (1 \* 512) + (1 \* 256) + (1 \* 128) +
 
 It is the same with hexadecimal, just the place values change (..., 16³(4096), 16²(256), 16¹(16), 16⁰(1)).
 
-So 986 in base-10 becomes this in base-16: (3 _ 256) + (13(D) \* 16) + (10(A) _ 1), which is **3DA**.
+So 986 in base-10 becomes this in base-16: (3 \* 256) + (D(13) \* 16) + (A(10) \* 1), which is **3DA**.
 
 #### Resources:
 
