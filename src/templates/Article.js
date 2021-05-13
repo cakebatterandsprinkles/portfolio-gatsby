@@ -18,7 +18,7 @@ const ArticlePage = props => {
         <div className={styles.blogWrapper}>
           <div className={articleStyle.headerContainer}>
             <div className={articleStyle.mainHeader}>
-              {props.pageContext.metadata.title}
+              {props.pageContext.metadata.title.toLowerCase()}
               <ShareButton
                 link={`https://yagmurcetintas.com/journal/${props.pageContext.slug}`}
               />
