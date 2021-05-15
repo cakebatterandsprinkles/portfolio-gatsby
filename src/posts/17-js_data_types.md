@@ -193,7 +193,7 @@ Now, let's talk about all primitive values one by one:
 
   ---------------------------
 
-  // -> match() method brings the matching string of a regular expression. (For regular expressions, check the bonus section of this article.)
+  // -> match() method returns an array with the matching string of a regular expression.
 
   const sentence = "Roses are red. Violets are blue.";
   console.log(sentence.match(/[A-Z]/g)); // prints: ["R", "V"]
@@ -213,7 +213,7 @@ Now, let's talk about all primitive values one by one:
 
   console.log(string.padEnd(13," are great")); // prints: "snap peas are"
 
-  console.log(string.padStart(13," are great")); // prints: "snap peas are"
+  console.log(string.padStart(15,"great ")); // prints: "great snap peas"
 
   const year = "1991";
   console.log(year.padStart(10,"**/")); // prints: **/**/1991
@@ -221,8 +221,8 @@ Now, let's talk about all primitive values one by one:
   ---------------------------
 
   // -> trim() method removes white spaces from both ends of a given string.
-  // -> trimEnd() method removes white spaces from the beginning of a given string.
-  // -> trimStart() method removes white spaces from the end of a given string.
+  // -> trimEnd() method removes white spaces from the end of a given string.
+  // -> trimStart() method removes white spaces from the beginning of a given string.
 
   const str = "   Greetings!   ";
 
@@ -466,7 +466,7 @@ Now, let's talk about all primitive values one by one:
   num.toFixed(9) // ↪ "12.345678900" // Note the 0's at the end!
 
   // -> Number.prototype.toLocaleString() returns a language specific implementation of a given string.
-  num = 123456789.0
+  let num = 123456789.0
   num.toLocaleString("ar-EG") // ↪ "١٢٣٬٤٥٦٬٧٨٩"
   // As a second argument you can give an optional argument that defines options
   num.toLocaleString("de-DE", { style: "currency", currency: "EUR" }) // ↪ "123.456.789,00 €"
@@ -492,8 +492,12 @@ Now, let's talk about all primitive values one by one:
 
   ```javascript
   let num = "123"
+  // 1.
   Number(num) // ↪ 123
+  // 2.
   parseInt(num) // ↪ 123
+  // 3.
+  console.log(+n) // ↪ 123
   ```
 
 </details>
@@ -643,7 +647,7 @@ typeof name // ↪ undefined
   // key: name, value: Cookie
   ```
 
-  Although, the symbols are not completely hidden: you can reach them by using `Object.getOwnPropertySymbols(obj)` static method.
+  However, the symbols are not completely hidden: you can reach them by using `Object.getOwnPropertySymbols(obj)` static method.
 
   ```javascript
   // I'm using the object in the example above:
@@ -687,7 +691,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
 
 - **1. Function:**
 
-  We have seen many built-in functions up until this point, and we'll keep on seeing them, but this is the time we talk about what functions are. Functions are reusable pieces of code that are designed to do certain tasks. Parentheses (\(\)) that follow the 'function' keyword is the most basic way to indicate that a code block will serve as a function. The parentheses may or may not include arguments.
+  We have seen many built-in functions up until this point, and we'll keep on seeing them, but this is the time we talk about what functions are. Functions are reusable pieces of code that are designed to do certain tasks. Parentheses (**\(\)**) that follow the 'function' keyword is the most basic way to indicate that a code block will serve as a function. The parentheses may or may not include arguments.
 
   You have to first define what the function is going to be called and what it is supposed to do, and this is called the **function declaration** or the **function statement**. (The terminology related to this subject is sometimes used synonymously, and although they have some subtle differences, and I'm not exactly sure if they really matter when it comes to everyday programming. For example, function declarations are hoisted to the top of their closures while function expressions are not. This simply means that the declared functions can be used before they were defined, but that won't work with expressed functions. But as common sense, isn't it better to define functions before calling them anyway?)
 
@@ -773,7 +777,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
     console.log("Hello")
   }, 1000)
 
-  // setInterval pushes the given cb function to the call stack after the specified miliseconds, only to be executed a single time.
+  // setTimeout pushes the given cb function to the call stack after the specified miliseconds, only to be executed a single time.
   setTimeout(() => {
     console.log("What's up?")
   }, 1000)
@@ -1199,7 +1203,7 @@ console.log(pets) // ["Cookie", "Cake", "Dander"]
   console.log(date.getDay()) // Prints: 1 (Returns the weekday as a number, 0-indexed, expect something between 0-6. Weekdays start with sunday, not monday.)
   ```
 
-  To get a time standard we use **UTC**, which is short for **[Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)**. UTC is a successor for **GMT**, which stands for **[Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time)**. (GMT = UTC±00:00) For anything international, we try to avoid using locale dates. Not using standards in international settings may result in massive losses of time, money, and energy, [such as this one](http://edition.cnn.com/TECH/space/9909/30/mars.metric/). UTC is used in aviation, air traffic control, flight plans, weather forecasts, and the International Space Station (ISS). It is also used by the [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol), which is the system that is designed to synchronize the clocks of electronic devices that are connected to the internet. Timezones are expressed by using positive or negative offsets from UTC (e.g. UTC+01:00). Some countries have multiple time zones. Check out this map of the world timezones:
+  To get a time standard we use **UTC**, which is short for **[Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)**. UTC is a successor for **GMT**, which stands for **[Greenwich Mean Time](https://en.wikipedia.org/wiki/Greenwich_Mean_Time)**. (GMT = UTC±00:00) For anything international, we try to avoid using locale dates. Not using standards in international settings may result in massive losses of time, money, and energy, [such as this one](http://edition.cnn.com/TECH/space/9909/30/mars.metric/). UTC is used in aviation, air traffic control, flight plans, weather forecasts, and the International Space Station (ISS). It is also used by the [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol), which is the system that is designed to synchronize the clocks of electronic devices that are connected to the internet. Timezones are expressed by using positive or negative offsets from UTC (e.g. UTC+01:00). Some countries have multiple timezones. For example, France has 12 timezones that range between UTC-10 to UTC+12 and is the country that has the most amount of timezones in the world. Check out this map of the world timezones:
 
   ![World Timezones](../images/blog/data_types/World_Time_Zones_Map.png)
 
