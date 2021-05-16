@@ -44,7 +44,7 @@ const digitalWork = [
     image: (
       <StaticImage
         width={maxImageWidth}
-        src="../images/gallery/digital_art/IMG_0274.png"
+        src="../images/gallery/digital_art/image_0274.png"
         alt="digital illustration of power lines with weird colorful creatures"
       />
     ),
@@ -57,7 +57,7 @@ const digitalWork = [
       <StaticImage
         width={maxImageWidth}
         alt="digital illustration of a beach and road signs with weird creatures"
-        src="../images/gallery/digital_art/IMG_0276.png"
+        src="../images/gallery/digital_art/image_0276.png"
       />
     ),
   },
