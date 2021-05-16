@@ -26,14 +26,18 @@ function AboutPage() {
             <p className={styles.query}>Which version would you like?</p>
             <div className={styles.queryWrapper}>
               <button
-                className={styles.timeLink}
+                className={`${styles.timeLink} ${
+                  text === "long" ? styles.buttonActive : ""
+                }`}
                 onClick={() => setText("long")}
               >
                 <FilmIcon className={styles.icon} />
                 "I have time"
               </button>{" "}
               <button
-                className={styles.timeLink}
+                className={`${styles.timeLink} ${
+                  text === "short" ? styles.buttonActive : ""
+                }`}
                 onClick={() => setText("short")}
               >
                 <FastForwardIcon className={styles.icon} />

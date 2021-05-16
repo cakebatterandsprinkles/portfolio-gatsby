@@ -57,10 +57,11 @@
   font-size: 0.85rem;
 }
 
-.timeLink:focus,
-.timeLink:hover {
-  outline: none;
-  border: 2px solid var(--springgreen);
+.buttonActive {
+  background: var(--candypink);
+  color: var(--dirtysnow);
+  font-weight: bold;
+  border: none;
 }
 
 .icon {
@@ -68,8 +69,6 @@
   width: auto;
   margin: 0;
   margin-right: 0.5rem;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
-    hue-rotate(168deg) brightness(91%) contrast(92%);
 }
 
 .aboutMe {
@@ -174,13 +173,23 @@
     font-size: 0.8rem;
   }
 
+  .timeLink {
+    margin-bottom: 0.5rem;
+  }
+
   .icon {
-    height: 1rem;
+    height: 1.25rem;
     width: auto;
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
   }
 
   .aboutWrapper {
     padding: 2rem 1.5rem;
+    border-radius: 0;
+  }
+
+  .queryWrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
