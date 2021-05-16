@@ -97,7 +97,7 @@ Another society in the Oksapmin area of Papua New Guinea created a counting syst
 
 Here is a video of a woman displaying the Oksapmin counting system:
 
-[![Oksapmin counting system](http://img.youtube.com/vi/0aZZcErLYJQ/0.jpg)](http://www.youtube.com/watch?v=0aZZcErLYJQ "Oksapmin counting system")
+[![Oksapmin counting system](https://img.youtube.com/vi/0aZZcErLYJQ/0.jpg)](http://www.youtube.com/watch?v=0aZZcErLYJQ "Oksapmin counting system")
 
 ### Numbers in computer science
 
