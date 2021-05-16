@@ -11,6 +11,7 @@ const PortfolioPage = () => {
   return (
     <Fragment>
       <Helmet>
+        <title>Portfolio | cakebatterandsprinkles</title>
         <link rel="prefetch" href="https://mendokusai.app" />
         <link rel="prefetch" href="https://whereiscovid.info" />
         <link rel="prefetch" href="https://mockingbird.yagmurcetintas.com" />

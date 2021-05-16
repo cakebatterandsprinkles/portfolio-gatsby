@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import Polaroid from "../components/Polaroid"
 import ShareButton from "../components/shareButton"
@@ -65,6 +66,9 @@ const GalleryPage = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Art Gallery | cakebatterandsprinkles</title>
+      </Helmet>
       {createHaiku()}
       <div className={styles.galleryContainer}>
         <div className={styles.galleryWrapper}>

@@ -1,6 +1,7 @@
 import { FastForwardIcon, FilmIcon } from "@heroicons/react/outline"
 import { StaticImage } from "gatsby-plugin-image"
 import React, { useState } from "react"
+import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import { createHaiku } from "../utility/functions"
 import styles from "./about.module.scss"
@@ -9,6 +10,9 @@ function AboutPage() {
   const [text, setText] = useState("")
   return (
     <Layout>
+      <Helmet>
+        <title>About Me | cakebatterandsprinkles</title>
+      </Helmet>
       {createHaiku()}
       <div className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>

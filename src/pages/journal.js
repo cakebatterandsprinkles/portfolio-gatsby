@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/solid"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
+import { Helmet } from "react-helmet"
 import Layout from "../components/Layout"
 import ShareButton from "../components/shareButton"
 import { tagStyles } from "../utility/blog"
@@ -154,6 +155,9 @@ const JournalPage = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Journal | cakebatterandsprinkles</title>
+      </Helmet>
       {createHaiku()}
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
