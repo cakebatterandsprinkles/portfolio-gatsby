@@ -45,14 +45,14 @@
   background-repeat: no-repeat;
   background-size: 100% 0em;
   background-position: 0 100%;
-  transition: background-size 0.2s ease-in;
+  transition: background-size 0.2s ease-in, border-width 0.05s ease-in 0.15s;
+  line-height: 1.25rem;
 }
 
 .content a:hover {
-  border-color: var(--yellow);
-  color: var(--black);
+  border-bottom: none;
   background-size: 100% 100%;
-  opacity: 90%;
+  padding: 0.2rem 0.1rem;
 }
 
 @media (max-width: 900px) {

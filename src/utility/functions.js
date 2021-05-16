@@ -1,5 +1,5 @@
 function createHaiku() {
-  // console.clear()
+  console.clear()
   console.log(`
 
          
