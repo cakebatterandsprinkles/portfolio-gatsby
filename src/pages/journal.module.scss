@@ -12,10 +12,15 @@
   border-radius: 20px;
 }
 
+.mainHeading {
+  margin: 0;
+}
+
 .headingContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .disclaimerText {
@@ -41,31 +46,38 @@
 
 .tagContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .tagContainer > * {
   margin-bottom: 0;
 }
 
-.tagContainer > .tag {
+.tagWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagWrapper > .tag {
   cursor: default;
   opacity: 65%;
+  white-space: nowrap;
 }
 
 .summaryContainer {
   font-family: var(--article-font), "sans-serif";
   font-size: 0.9rem;
   margin: 1rem 0 2rem 0;
+  color: var(--coolgray);
 }
 
 .bookmarkIcon {
-  height: 1.2rem;
+  height: 1.5rem;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
-    hue-rotate(168deg) brightness(91%) contrast(92%);
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
+  color: var(--coolgray);
 }
 
 .tag {
@@ -192,6 +204,7 @@
 .articleTitle {
   font-family: var(--heading-font);
   font-size: 1.25rem;
+  color: var(--coolgray);
 }
 
 .articleDate {
@@ -206,24 +219,27 @@
 .searchWrapper {
   position: relative;
   display: flex;
+  align-items: center;
   min-width: 120px;
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
 
-.search-icon {
+.searchIcon {
   position: absolute;
   top: 16px;
   left: 16px;
-  width: 14px;
+  width: 1rem;
+  color: var(--coolgray);
 }
 
-.clear-icon {
+.clearIcon {
   position: absolute;
-  top: 17px;
+  top: 14px;
   right: 16px;
-  width: 12px;
+  width: 1.2rem;
   cursor: pointer;
+  color: var(--coolgray);
 }
 
 .invisible {
@@ -285,12 +301,11 @@ hr {
   cursor: pointer;
 }
 
-.chevronRightIcon {
+.chevronIcon {
   height: 1rem;
   width: auto;
   margin-bottom: 0;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(17%) saturate(752%)
-    hue-rotate(168deg) brightness(91%) contrast(92%);
+  color: var(--coolgray);
 }
 
 .resetText {
@@ -343,7 +358,8 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1.25rem;
+  line-height: 2rem;
+  height: 100%;
 }
 
 .paginationButton,
@@ -496,7 +512,6 @@ hr {
 
   .mainHeading {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
   }
 }
 

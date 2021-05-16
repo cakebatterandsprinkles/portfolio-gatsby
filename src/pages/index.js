@@ -1,7 +1,5 @@
-import React, { Fragment, useEffect } from "react"
+import React, { Fragment } from "react"
 import Helmet from "react-helmet"
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
 import Layout from "../components/Layout"
 import ReactCardFlip from "../components/ReactCardFlip"
 import ShareButton from "../components/shareButton"
@@ -10,20 +8,6 @@ import projects from "../utility/projects"
 import styles from "./index.module.scss"
 
 const PortfolioPage = () => {
-  useEffect(() => {
-    toast.configure()
-    toast({
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      pauseOnFocusLoss: false,
-      draggable: true,
-      transition: "bounce",
-    })
-  }, [])
-
   return (
     <Fragment>
       <Helmet>
@@ -52,6 +36,7 @@ const PortfolioPage = () => {
                     demoLink={p.demoLink}
                     repoLink={p.repoLink}
                     repoName={p.repoName}
+                    image={p.image}
                     technologies={p.technologies}
                     key={`${p.name}-${i}`}
                   />

@@ -1,3 +1,8 @@
+import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
+
+const maxImageWidth = 800
+
 const projects = [
   {
     name: "whereiscovid",
@@ -6,6 +11,16 @@ const projects = [
     demoLink: "https://whereiscovid.info/",
     repoLink: "https://github.com/cakebatterandsprinkles/whereiscovid",
     repoName: "whereiscovid",
+    image: (
+      <StaticImage
+        alt=""
+        style={{
+          gridArea: "1/1",
+        }}
+        width={maxImageWidth}
+        src="../images/portfolio/maskedmonalisa.jpg"
+      />
+    ),
     technologies: [
       "React.js",
       "react-router-dom",
@@ -21,6 +36,16 @@ const projects = [
     demoLink: "https://mendokusai.app/",
     repoLink: "https://github.com/cakebatterandsprinkles/mendokusai-react",
     repoName: "mendokusai-react",
+    image: (
+      <StaticImage
+        alt=""
+        style={{
+          gridArea: "1/1",
+        }}
+        width={maxImageWidth}
+        src="../images/portfolio/mendokusai.png"
+      />
+    ),
     technologies: [
       "React.js",
       "react-router-dom",
@@ -39,6 +64,16 @@ const projects = [
     demoLink: "https://mockingbird.yagmurcetintas.com/",
     repoLink: "https://github.com/cakebatterandsprinkles/mockingbird",
     repoName: "mockingbird",
+    image: (
+      <StaticImage
+        alt=""
+        style={{
+          gridArea: "1/1",
+        }}
+        width={maxImageWidth}
+        src="../images/portfolio/mockingbird-landing.jpg"
+      />
+    ),
     technologies: [
       "React.js",
       "react-router-dom",
@@ -54,6 +89,16 @@ const projects = [
     demoLink: "https://cakebatterandsprinkles.github.io/breakout/",
     repoLink: "https://github.com/cakebatterandsprinkles/breakout",
     repoName: "breakout",
+    image: (
+      <StaticImage
+        alt=""
+        style={{
+          gridArea: "1/1",
+        }}
+        width={maxImageWidth}
+        src="../images/portfolio/breakout.png"
+      />
+    ),
     technologies: ["HTML5 Canvas API"],
   },
   {
@@ -63,6 +108,16 @@ const projects = [
     demoLink: "https://cakebatterandsprinkles.github.io/smart-monke",
     repoLink: "https://github.com/cakebatterandsprinkles/smart-monke",
     repoName: "smart-monke",
+    image: (
+      <StaticImage
+        alt=""
+        style={{
+          gridArea: "1/1",
+        }}
+        width={maxImageWidth}
+        src="../images/portfolio/luke-stackpoole-x2qSNIEZuEE-unsplash.jpg"
+      />
+    ),
     technologies: ["CRA", "TypeScript"],
   },
 ]

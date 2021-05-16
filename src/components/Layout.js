@@ -1,9 +1,17 @@
-import React, { useRef } from "react"
+import "@fontsource/anonymous-pro"
+import "@fontsource/raleway"
+import "@fontsource/raleway/600.css"
+import "@fontsource/roboto-mono"
+import "@fontsource/rock-salt"
+import "@fontsource/share-tech-mono"
+import { StaticImage } from "gatsby-plugin-image"
+import React, { Fragment, useRef } from "react"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import "../styles/index.scss"
 import styles from "./Layout.module.scss"
-import robot from "../images/main/robot.png"
 
 function transforms(x, y, el) {
   const constrain = window.innerWidth / 8
@@ -39,23 +47,36 @@ const Layout = props => {
   }, [])
 
   return (
-    <div className={styles.container}>
-      <div className={styles.nav}>
-        <Navigation />
-      </div>
-      <div className={styles.contentWrapper}>
-        <div className={styles.content}>{props.children}</div>
-        <div className={styles.imgContainer}>
-          <img
-            ref={imageRef}
-            src={robot}
-            alt="robot illustration hanging at the bottom of the page"
-            className={styles.img}
-          />
+    <Fragment>
+      <div className={styles.container}>
+        <div className={styles.nav}>
+          <Navigation />
         </div>
-        <Footer />
+        <div className={styles.contentWrapper}>
+          <div className={styles.content}>{props.children}</div>
+          <div className={styles.imgContainer}>
+            <div ref={imageRef}>
+              <StaticImage
+                src="../images/main/robot.png"
+                alt="robot illustration hanging at the bottom of the page"
+                className={styles.img}
+                height={208}
+                placeholder="none"
+              />
+            </div>
+          </div>
+          <Footer />
+        </div>
       </div>
-    </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        closeOnClick={true}
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+      />
+    </Fragment>
   )
 }
 

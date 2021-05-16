@@ -1,5 +1,5 @@
 .card {
-  min-height: 23vh;
+  height: 23vh;
   display: flex;
   margin: 0.5rem 0;
   width: 48%;
@@ -71,7 +71,7 @@
 
 @media (max-width: 1680px) {
   .card {
-    min-height: 31vh;
+    height: 34vh;
   }
 }
 
@@ -95,7 +95,7 @@
   }
 
   .card {
-    min-height: 34vh;
+    height: 34vh;
   }
 
   .hr {

@@ -61,10 +61,15 @@
   outline-offset: -4px;
 }
 
+.mainHeading {
+  margin: 0;
+}
+
 .headingContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 1680px) {

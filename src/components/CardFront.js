@@ -4,12 +4,24 @@ import styles from "./CardFront.module.scss"
 const CardFront = props => {
   return (
     <div
-      className={`${styles[props.cardStyle]} ${styles.frontside}`}
+      className={styles.frontside}
       onClick={props.onClick}
       onKeyDown={() => {}}
       aria-hidden="true"
+      style={{ display: "grid" }}
     >
-      {props.children}
+      {props.image}
+      <div
+        className={styles.frontside}
+        style={{
+          gridArea: "1/1",
+          position: "relative",
+          placeItems: "center",
+          display: "grid",
+        }}
+      >
+        {props.children}
+      </div>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import beaker from "../images/main/beaker.svg"
 import mail from "../images/main/envelope.svg"
-import me from "../images/main/me_in_color.png"
 import github from "../images/main/social-1_round-github.svg"
 import linkedin from "../images/main/social-1_round-linkedin.svg"
 import twitter from "../images/main/social-1_round-twitter.svg"
@@ -23,7 +23,12 @@ const Navigation = () => {
     <div className={styles.mainContainer}>
       <div className={styles.imgBorder}>
         <div className={styles.imgWrapper}>
-          <img src={me} alt="me" className={styles.img} />
+          <StaticImage
+            src="../images/main/me_in_color.png"
+            alt="me"
+            className={styles.img}
+            placeholder="tracedSVG"
+          />
         </div>
       </div>
       <nav className={styles.navList}>

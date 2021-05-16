@@ -1,8 +1,7 @@
+import { FastForwardIcon, FilmIcon } from "@heroicons/react/outline"
+import { StaticImage } from "gatsby-plugin-image"
 import React, { useState } from "react"
 import Layout from "../components/Layout"
-import Child from "../images/main/character404.png"
-import coffee from "../images/main/coffee.svg"
-import watch from "../images/main/time.svg"
 import { createHaiku } from "../utility/functions"
 import styles from "./about.module.scss"
 
@@ -14,10 +13,12 @@ function AboutPage() {
       <div className={styles.aboutContainer}>
         <div className={styles.aboutWrapper}>
           <div className={styles.greetingContainer}>
-            <img
-              src={Child}
+            <StaticImage
+              src="../images/main/character404.png"
               alt="pink character that represents the owner of the website"
+              height={80}
               className={styles.childIcon}
+              placeholder="none"
             />
             <p className={styles.greeting}>Hello!</p>
           </div>
@@ -28,14 +29,14 @@ function AboutPage() {
                 className={styles.timeLink}
                 onClick={() => setText("long")}
               >
-                <img src={coffee} alt="coffee img" className={styles.icon} />
+                <FilmIcon className={styles.icon} />
                 "I have time"
               </button>{" "}
               <button
                 className={styles.timeLink}
                 onClick={() => setText("short")}
               >
-                <img src={watch} alt="watch img" className={styles.icon} />
+                <FastForwardIcon className={styles.icon} />
                 "make it short and fancy"
               </button>
             </div>
@@ -47,12 +48,16 @@ function AboutPage() {
                   <p>Hi there! My name is Yagmur. Nice to meet you.</p>
                   <p>
                     I am a{" "}
-                    <span className={`${styles.orange} ${styles.highlight}`}>
+                    <span className={`${styles.pink} ${styles.highlight}`}>
                       front end web developer
                     </span>{" "}
                     living in Orlando, Florida. I frequently use{" "}
                     <span className={`${styles.yellow} ${styles.highlight}`}>
-                      Javascript
+                      JavaScript
+                    </span>
+                    ,{" "}
+                    <span className={`${styles.blue} ${styles.highlight}`}>
+                      TypeScript
                     </span>
                     ,{" "}
                     <span className={`${styles.crimson} ${styles.highlight}`}>
@@ -90,15 +95,26 @@ function AboutPage() {
                       computer science
                     </span>
                     ,{" "}
-                    <span className={`${styles.green} ${styles.highlight}`}>
-                      animal behaviour
-                    </span>{" "}
-                    and{" "}
-                    <span className={`${styles.blue} ${styles.highlight}`}>
+                    <span className={`${styles.pink} ${styles.highlight}`}>
                       art
                     </span>
-                    . I read a lot and sometimes write a lot. Also I make things
-                    out of clay and ink that I'm sometimes proud of.
+                    {", "}
+                    and{" "}
+                    <span className={`${styles.green} ${styles.highlight}`}>
+                      animal behaviour
+                    </span>
+                    . I read a lot and sometimes write a lot.
+                  </p>
+                  <p>
+                    Also, I make things out of{" "}
+                    <span className={`${styles.orange} ${styles.highlight}`}>
+                      clay
+                    </span>{" "}
+                    and{" "}
+                    <span className={`${styles.purple} ${styles.highlight}`}>
+                      ink
+                    </span>{" "}
+                    that I'm sometimes proud of.
                   </p>
                 </div>
               ) : (

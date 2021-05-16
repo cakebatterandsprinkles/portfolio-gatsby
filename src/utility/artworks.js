@@ -1,23 +1,5 @@
-import Pupper from "../images/gallery/clay/doggo_yagmur.png"
-import Fragile from "../images/gallery/clay/fragile_yagmur.png"
-import Kaonashi from "../images/gallery/clay/kaonashi_yagmur.jpg"
-import Kindred from "../images/gallery/clay/kindred_yagmur.png"
-import Kitsune from "../images/gallery/clay/kitsune_yagmur.jpg"
-import LionMask from "../images/gallery/clay/lionmask_yagmur.png"
-import Pagoda from "../images/gallery/clay/pagoda_yagmur.png"
-import Snowman from "../images/gallery/clay/snowman_yagmur.png"
-import StandingTall from "../images/gallery/clay/standingtall_yagmur.jpg"
-import Warrior from "../images/gallery/clay/warrior_yagmur.png"
-import WolfMask from "../images/gallery/clay/wolf_yagmur.png"
-import ZeldaMask from "../images/gallery/clay/zeldamask_yagmur.png"
-import Lines from "../images/gallery/digital_art/IMG_0274.png"
-import JustChoose from "../images/gallery/digital_art/IMG_0276.png"
-import SocialDistance from "../images/gallery/digital_art/IMG_0277.png"
-import NeuronsWalking from "../images/gallery/digital_art/IMG_0371.png"
-import MeInColor from "../images/gallery/digital_art/me_in_color.png"
-import Bird from "../images/gallery/ink/bird.png"
-import Butterflies from "../images/gallery/ink/butterflies.png"
-import ThisIsFine from "../images/main/img404.jpg"
+import { StaticImage } from "gatsby-plugin-image"
+import React from "react"
 
 const sections = [
   { handle: "digital", title: "Digital" },
@@ -25,20 +7,32 @@ const sections = [
   { handle: "ink", title: "Ink" },
 ]
 
+const maxImageWidth = 800
+
 const inkWork = [
   {
     name: "Bird",
     year: "2020",
     medium: "Sumi-e ink",
-    src: Bird,
-    imgAlt: "bird hanging on a tree branch",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/ink/bird.png"
+        alt="bird hanging on a tree branch"
+      />
+    ),
   },
   {
     name: "Butterflies",
     year: "2020",
     medium: "Sumi-e ink",
-    src: Butterflies,
-    imgAlt: "butterflies why not",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/ink/butterflies.png"
+        alt="butterflies why not"
+      />
+    ),
   },
 ]
 
@@ -47,45 +41,73 @@ const digitalWork = [
     name: "Serene",
     year: "2020",
     medium: "Digital art made by using Procreate.",
-    src: Lines,
-    imgAlt: "digital illustration of power lines with weird colorful creatures",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/IMG_0274.png"
+        alt="digital illustration of power lines with weird colorful creatures"
+      />
+    ),
   },
   {
     name: "Just Choose",
     year: "2020",
     medium: "Digital art made by using Procreate.",
-    src: JustChoose,
-    imgAlt:
-      "digital illustration of a beach and road signs with weird creatures",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        alt="digital illustration of a beach and road signs with weird creatures"
+        src="../images/gallery/digital_art/IMG_0276.png"
+      />
+    ),
   },
   {
     name: "Neuron Riot",
     year: "2020",
     medium: "Digital art made by using Procreate.",
-    src: NeuronsWalking,
-    imgAlt: "digital illustration of neurons walking",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/IMG_0371.png"
+        alt="digital illustration of neurons walking"
+      />
+    ),
   },
   {
     name: "This is fine",
     year: "2020",
     medium: "Digital art made by using Procreate.",
-    src: ThisIsFine,
-    imgAlt:
-      "digital illustration of a character surrounded by little versions of himself.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/main/img404.jpg"
+        alt="digital illustration of a character surrounded by little versions of himself."
+      />
+    ),
   },
   {
     name: "Self Portrait",
     year: "2020",
     medium: "Digital art made by using Procreate.",
-    src: MeInColor,
-    imgAlt: "digital illustration of myself in color",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/me_in_color.png"
+        alt="digital illustration of myself in color"
+      />
+    ),
   },
   {
     name: "Social Distance",
     year: "2020",
     medium: "Digital art made by using Procreate.",
-    src: SocialDistance,
-    imgAlt: "digital illustration of humanity in 2020 social distancing",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/IMG_0277.png"
+        alt="digital illustration of humanity in 2020 social distancing"
+      />
+    ),
   },
 ]
 
@@ -95,96 +117,156 @@ const clayWork = [
     year: "2019",
     medium: "Cone 6 clay & underglaze.",
     studio: "Crealde School of Art",
-    src: Kitsune,
-    imgAlt: "Clay mask of kitsune",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/kitsune_yagmur.jpg"
+        alt="Clay mask of kitsune"
+      />
+    ),
   },
   {
     name: "Kaonashi",
     year: "2019",
     medium: "Cone 6 clay & underglaze.",
     studio: "Crealde School of Art",
-    src: Kaonashi,
-    imgAlt: "Clay mask of kaonashi",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/kaonashi_yagmur.jpg"
+        alt="Clay mask of kaonashi"
+      />
+    ),
   },
   {
     name: "Wolf",
     year: "2019",
     medium: "Cone 10 clay & underglaze.",
     studio: "Crealde School of Art",
-    src: WolfMask,
-    imgAlt: "Clay wolf mask",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/wolf_yagmur.png"
+        alt="Clay wolf mask"
+      />
+    ),
   },
   {
     name: "Zelda Mask",
     year: "2019",
     medium: "Cone 6 clay & underglaze.",
     studio: "Crealde School of Art",
-    src: ZeldaMask,
-    imgAlt: "Clay zelda mask",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/zeldamask_yagmur.png"
+        alt="Clay zelda mask"
+      />
+    ),
   },
   {
     name: "Standing Tall",
     year: "2019",
     medium: "Cone 6 clay, underglaze & clear glaze.",
     studio: "Crealde School of Art",
-    src: StandingTall,
-    imgAlt: "Small clay sculpture",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/standingtall_yagmur.jpg"
+        alt="Small clay sculpture"
+      />
+    ),
   },
   {
     name: "Sandman and cardinal",
     year: "2019",
     medium: "Cone 10 clay & underglaze",
     studio: "Crealde School of Art",
-    src: Snowman,
-    imgAlt: "Small clay sculpture",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/snowman_yagmur.png"
+        alt="Small clay sculpture"
+      />
+    ),
   },
   {
     name: "Kindred: Half lamb, half wolf",
     year: "2019",
     medium: "Cone 6 clay & underglaze.",
     studio: "Crealde School of Art",
-    src: Kindred,
-    imgAlt: "Small clay sculpture of a Kindred mask",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/kindred_yagmur.png"
+        alt="Small clay sculpture of a Kindred mask"
+      />
+    ),
   },
   {
     name: "Happy Pupper",
     year: "2019",
     medium: "Cone 10 clay & underglaze",
     studio: "Crealde School of Art",
-    src: Pupper,
-    imgAlt: "Small clay sculpture of a dog",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/doggo_yagmur.png"
+        alt="Small clay sculpture of a dog"
+      />
+    ),
   },
   {
     name: "Lion",
     year: "2019",
     medium: "Cone 6 clay & underglaze",
     studio: "Crealde School of Art",
-    src: LionMask,
-    imgAlt: "Clay lion mask",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/lionmask_yagmur.png"
+        alt="Clay lion mask"
+      />
+    ),
   },
   {
     name: "Warrior",
     year: "2019",
     medium: "Cone 6 clay & underglaze",
     studio: "Crealde School of Art",
-    src: Warrior,
-    imgAlt: "Small sculpture of a tiny tribal warrior creature",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/warrior_yagmur.png"
+        alt="Small sculpture of a tiny tribal warrior creature"
+      />
+    ),
   },
   {
     name: "Pagoda",
     year: "2019",
     medium: "Cone 6 clay & underglaze",
     studio: "Crealde School of Art",
-    src: Pagoda,
-    imgAlt: "A red and black pagoda with two stores",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/pagoda_yagmur.png"
+        alt="A red and black pagoda with two stores"
+      />
+    ),
   },
   {
     name: "Fragile",
     year: "2019",
     medium: "Cone 6 clay & underglaze",
     studio: "Crealde School of Art",
-    src: Fragile,
-    imgAlt: "Small sculpture of a tiny tribal warrior creatures",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/fragile_yagmur.png"
+        alt="Small sculpture of a tiny tribal warrior creatures"
+      />
+    ),
   },
 ]
 

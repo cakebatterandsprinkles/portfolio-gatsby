@@ -1,6 +1,6 @@
+import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Layout from "../components/Layout"
-import TiredAdult from "../images/main/img404.jpg"
 import { createHaiku } from "../utility/functions"
 import styles from "./404.module.scss"
 import journalStyles from "./journal.module.scss"
@@ -19,7 +19,13 @@ const Page404 = () => {
                 Maybe try something else?
               </div>
             </div>
-            <img src={TiredAdult} alt="404" className={styles.big404Img} />
+            <StaticImage
+              src="../images/main/img404.jpg"
+              alt="404"
+              className={styles.big404Img}
+              width={800}
+              placeholder="tracedSVG"
+            />
           </div>
         </div>
       </div>

@@ -20,6 +20,10 @@
   border-bottom: 1px solid var(--silver);
 }
 
+.mainHeading {
+  margin: 0;
+}
+
 .gridContainer {
   width: 100%;
   min-height: 36vh;
@@ -33,6 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 1680px) {

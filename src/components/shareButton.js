@@ -1,6 +1,6 @@
+import { ShareIcon } from "@heroicons/react/solid"
 import React from "react"
 import { toast } from "react-toastify"
-import shareButtonImage from "../images/main/share.svg"
 import styles from "./shareButton.module.scss"
 
 const shareButton = props => {
@@ -9,12 +9,9 @@ const shareButton = props => {
     toast.warning("‎️‍🔥 Link copied to clipboard!")
   }
   return (
-    <img
-      src={shareButtonImage}
-      alt="share button"
-      className={styles.shareButton}
-      onClick={shareHandler}
-    />
+    <div onClick={shareHandler} className={styles.buttonWrapper}>
+      <ShareIcon className={styles.shareButton} />
+    </div>
   )
 }
 

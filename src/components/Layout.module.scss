@@ -32,12 +32,11 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 0;
+  bottom: 2rem;
   right: 0;
 }
 
 .img {
-  margin: 2rem 0;
   height: 13rem;
   width: auto;
   border-radius: 50%;
@@ -79,6 +78,10 @@
   .img {
     margin: 1.5rem 0;
     height: 10rem;
+  }
+
+  .imgContainer {
+    display: none;
   }
 }
 

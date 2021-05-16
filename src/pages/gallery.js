@@ -20,7 +20,7 @@ const GalleryPage = () => {
           {digitalWork.map((w, i) => (
             <div className={styles.card} key={`card-${i}`}>
               <Polaroid name={w.name} year={w.year} medium={w.medium}>
-                <img src={w.src} alt={w.imgAlt} />
+                {w.image}
               </Polaroid>
             </div>
           ))}
@@ -42,7 +42,7 @@ const GalleryPage = () => {
                     : null
                 }
               >
-                <img src={w.src} alt={w.imgAlt} />
+                {w.image}
               </Polaroid>
             </div>
           ))}
@@ -54,7 +54,7 @@ const GalleryPage = () => {
           {inkWork.map((w, i) => (
             <div className={styles.card} key={`inkwork-${i}`}>
               <Polaroid name={w.name} year={w.year} medium={w.medium}>
-                <img src={w.src} alt={w.imgAlt} />
+                {w.image}
               </Polaroid>
             </div>
           ))}
@@ -62,10 +62,6 @@ const GalleryPage = () => {
       )
     }
   }, [section])
-
-  React.useEffect(() => {
-    renderContent()
-  }, [section, renderContent])
 
   return (
     <Layout>

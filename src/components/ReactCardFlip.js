@@ -17,7 +17,11 @@ const Card = props => {
         flipSpeedBackToFront="2"
         containerStyle={{ width: "100%", height: "100%" }}
       >
-        <CardFront cardStyle={props.name} onClick={clickHandler}>
+        <CardFront
+          cardStyle={props.name}
+          onClick={clickHandler}
+          image={props.image}
+        >
           <p>{props.name}</p>
         </CardFront>
         <CardBack cardStyle="backside" onClick={clickHandler}>

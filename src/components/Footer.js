@@ -1,5 +1,5 @@
+import { StarIcon } from "@heroicons/react/solid"
 import React from "react"
-import star from "../images/main/star-full.svg"
 import styles from "./Footer.module.scss"
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         <p>© 2019-{new Date().getFullYear()} Yagmur C. Tas</p>
       </div>
       <div className={styles.infoContainer}>
-        <img src={star} alt="star icon" className={styles.starIcon} />
+        <StarIcon className={styles.starIcon} />
         Github:{" "}
         <a
           href="https://github.com/cakebatterandsprinkles/portfolio-gatsby"

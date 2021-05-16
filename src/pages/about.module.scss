@@ -80,41 +80,46 @@
 }
 
 .highlight {
-  color: white;
-  padding: 0.15rem 0.35rem;
+  padding: 0.1rem 0.25rem;
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: 600;
   white-space: nowrap;
-  font-family: "Roboto Mono", monospace;
   font-size: 0.85rem;
 }
 
 .yellow {
-  background-color: var(--yellow);
+  color: #8b6f03;
+  background-color: var(--babyyellow);
 }
 
 .orange {
-  background-color: var(--orange);
+  color: #993d03;
+  background-color: var(--babyorange);
 }
 
 .crimson {
-  background-color: var(--crimson);
+  color: #9b1d3d;
+  background-color: var(--babyred);
 }
 
 .green {
-  background-color: var(--limegreen);
+  color: #15820c;
+  background-color: var(--babygreen);
 }
 
 .blue {
-  background-color: var(--cornflowerblue);
+  color: #2b5c85;
+  background-color: var(--babyblue);
 }
 
 .purple {
-  background-color: var(--darkviolet);
+  color: #5c0e9b;
+  background-color: var(--babypurple);
 }
 
 .pink {
-  background-color: var(--deeppink);
+  color: #96277e;
+  background-color: var(--babypink);
 }
 
 .longtext {
@@ -130,7 +135,6 @@
 .longtextHighlight {
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
-  color: var(--snow);
   font-weight: 600;
 }
 

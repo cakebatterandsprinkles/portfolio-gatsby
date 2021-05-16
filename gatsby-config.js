@@ -6,18 +6,14 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: "gatsby-plugin-sass",
       options: {
-        google: {
-          families: [
-            "Roboto Mono",
-            "Anonymous Pro",
-            "Share Tech Mono",
-            "Raleway",
-            "Rock Salt",
-          ],
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
         },
       },
     },
@@ -28,7 +24,9 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -39,6 +37,7 @@ module.exports = {
             options: {
               maxWidth: 750,
               linkImagesToOriginal: false,
+              withWebp: true,
             },
           },
           {
