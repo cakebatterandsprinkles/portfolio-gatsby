@@ -21,6 +21,7 @@
     "@fontsource/share-tech-mono": "^4.3.0",
     "@heroicons/react": "^1.0.1",
     "gatsby": "^3.5.0",
+    "gatsby-plugin-google-gtag": "^3.5.0",
     "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-page-progress": "^2.2.0",
     "gatsby-plugin-react-helmet": "^4.5.0",
