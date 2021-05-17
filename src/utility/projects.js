@@ -105,8 +105,8 @@ const projects = [
     name: "SmartMonke",
     summary:
       "A simple calculator for people who aren't sure if they want to buy or lease a car or rent or buy a house.",
-    demoLink: "https://cakebatterandsprinkles.github.io/smart-monke",
-    repoLink: "https://smart.innermonke.com",
+    demoLink: "https://smart.innermonke.com",
+    repoLink: "https://github.com/cakebatterandsprinkles/smart-monke",
     repoName: "smart-monke",
     image: (
       <StaticImage
