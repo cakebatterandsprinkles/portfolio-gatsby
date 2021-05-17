@@ -5,6 +5,7 @@ module.exports = {
     github: "cakebatterandsprinkles",
   },
   plugins: [
+    "gatsby-plugin-netlify",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-google-gtag",
