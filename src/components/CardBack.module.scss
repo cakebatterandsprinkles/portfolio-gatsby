@@ -9,6 +9,7 @@
   background-color: var(--snow);
   padding: 1rem 2rem;
   box-shadow: 2px 2px 4px 1px #30303038;
+  transform: translateZ(1px);
 }
 
 @media (max-width: 600px) {

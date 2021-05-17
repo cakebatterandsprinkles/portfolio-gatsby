@@ -28,6 +28,7 @@ const Navigation = () => {
             alt="me"
             className={styles.img}
             placeholder="tracedSVG"
+            loading="eager"
             width={208}
           />
         </div>
