@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-netlify",
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-google-gtag",
