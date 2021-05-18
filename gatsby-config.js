@@ -3,6 +3,7 @@ module.exports = {
     title: "portfolio-gatsby",
     author: "Yagmur C. Tas",
     github: "cakebatterandsprinkles",
+    siteUrl: "https://yagmurcetintas.com",
   },
   plugins: [
     "gatsby-plugin-netlify",
