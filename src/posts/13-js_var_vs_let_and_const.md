@@ -5,15 +5,15 @@ tags: ["Web Development", "JavaScript"]
 summary: "In this article, I make a brief comparison between pre-ES6 var keyword and ES6 let and const keywords with simple examples."
 ---
 
-#### What is Scope?
+#### What is scope?
 
-Before we get into let and const, let's simply define these two terms.
+Before we get into let and const, let's simply define what scope means in JavaScript context.
 
 In JavaScript, **scope** can be defined as the area that something covers, which in the end determines the variables it has the access to. There are two main kinds of scope, one being the **global scope**, and the other one being the **local scope**.
 
 **★ Global Scope**
 
-If a variable is defined outside of all functions and curly braces (which can be referred to as **blocks**), it is in the global scope and it can be accessed from anywhere from your code. Although it looks easier to declare every variable globally, it is not advised to, as it can cause name collisions and unintended modifications. You should declare variables as locally as possible so that only the code blocks who actually need that variable will be able to access it or change it.
+If a variable is defined outside of all functions and curly braces (which can be referred to as **blocks**), it is in the global scope and it can be accessed from anywhere from your code. Although it looks easier to declare every variable globally, it is not advised to, as it can cause _name collisions_ and _unintended modifications_. You should declare variables as locally as possible so that only the code blocks who actually need that variable will be able to access it or change it.
 
 **★ Local Scope**
 
@@ -23,7 +23,7 @@ Any variable declared in function scope (between the curly braces in the functio
 
 If a function is defined inside of another function, the inner function has the access to the outer function's variables, but the outer function doesn't have access to the inner function's variables. This is called **lexical scoping**.
 
-A block is any code in between curly braces, and if you declare any variable inside a block using 'let' and 'const', it will only be available inside of that block. (We'll elaborate this in the differences subtitle.)
+**A block** is any code in between curly braces, and if you declare any variable inside a block using 'let' and 'const', it will only be available inside of that block.
 
 #### What is Closure?
 
@@ -79,7 +79,7 @@ function celebrateBirthday(name, age) {
 
 const celebrateFriend1 = celebrateBirthday("Friend1", 30)
 
-console.log(typeof celebrateFriend1, celebrateFriend1) // object
+console.log(typeof celebrateFriend1) // object
 celebrateFriend1.createAlertAndLogInformation()
 ```
 
