@@ -120,6 +120,25 @@ const projects = [
     ),
     technologies: ["CRA", "TypeScript"],
   },
+  {
+    name: "InnerMonke",
+    summary:
+      "The website of a company that does web development and software consulting.",
+    demoLink: "https://innermonke.com/",
+    repoLink: "",
+    repoName: "",
+    image: (
+      <StaticImage
+        alt=""
+        style={{
+          gridArea: "1/1",
+        }}
+        width={maxImageWidth}
+        src="../images/portfolio/innermonkelogo.png"
+      />
+    ),
+    technologies: ["Vite.js", "Tailwind"],
+  },
 ]
 
 export default projects
