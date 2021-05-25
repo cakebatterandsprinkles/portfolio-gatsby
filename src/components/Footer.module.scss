@@ -30,6 +30,12 @@
   margin: 0 0.25rem;
 }
 
+.footerImg {
+  height: 22px !important;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+}
+
 @media (max-width: 900px) {
   .footerContainer {
     font-size: 0.7rem;
