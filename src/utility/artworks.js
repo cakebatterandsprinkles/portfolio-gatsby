@@ -38,6 +38,30 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "I eat rainbows",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/neko_rainbows.jpg"
+        alt="digital illustration of a cat and two birds"
+      />
+    ),
+  },
+  {
+    name: "Neko, hebi, tori",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/neko_hebi_tori.jpg"
+        alt="digital illustration of a portrait of a cat with his best friends"
+      />
+    ),
+  },
+  {
     name: "Serene",
     year: "2020",
     medium: "Digital art made by using Procreate.",
