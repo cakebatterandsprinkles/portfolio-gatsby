@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/Layout"
+import Pagination from "../components/Pagination"
 import Polaroid from "../components/Polaroid"
 import ShareButton from "../components/shareButton"
 import { clayWork, digitalWork, inkWork, sections } from "../utility/artworks"
@@ -8,61 +9,85 @@ import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
 
 const GalleryPage = () => {
-  const [section, setSection] = React.useState("digital")
+  const [section, setSection] = useState("digital")
+  const [currentPage, setCurrentPage] = useState(0)
+  const pageSize = 10
+  const pageCountDigital = Math.ceil(digitalWork.length / pageSize)
+  const pageCountClay = Math.ceil(clayWork.length / pageSize)
+  const pageCountInk = Math.ceil(inkWork.length / pageSize)
 
   const changeSection = str => {
     setSection(str)
+    setCurrentPage(0)
   }
 
   const renderContent = React.useCallback(() => {
     if (section === "digital") {
       return (
         <div className={styles.gridContainer}>
-          {digitalWork.map((w, i) => (
-            <div className={styles.card} key={`card-${i}`}>
-              <Polaroid name={w.name} year={w.year} medium={w.medium}>
-                {w.image}
-              </Polaroid>
-            </div>
-          ))}
+          {digitalWork
+            .sort((a, b) => a.date - b.date)
+            .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+            .map((w, i) => (
+              <div className={styles.card} key={`card-${i}`}>
+                <Polaroid name={w.name} year={w.year} medium={w.medium}>
+                  {w.image}
+                </Polaroid>
+              </div>
+            ))}
+          {pageCountDigital > 1
+            ? Pagination(pageCountDigital, currentPage, setCurrentPage)
+            : null}
         </div>
       )
     } else if (section === "clay") {
       return (
         <div className={styles.gridContainer}>
-          {clayWork.map((w, i) => (
-            <div className={styles.card} key={`claywork-${i}`}>
-              <Polaroid
-                name={w.name}
-                year={w.year}
-                medium={w.medium}
-                studio={w.studio}
-                link={
-                  w.studio === "Crealde School of Art"
-                    ? "http://crealde.org/"
-                    : null
-                }
-              >
-                {w.image}
-              </Polaroid>
-            </div>
-          ))}
+          {clayWork
+            .sort((a, b) => a.date - b.date)
+            .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+            .map((w, i) => (
+              <div className={styles.card} key={`claywork-${i}`}>
+                <Polaroid
+                  name={w.name}
+                  year={w.year}
+                  medium={w.medium}
+                  studio={w.studio}
+                  link={
+                    w.studio === "Crealde School of Art"
+                      ? "http://crealde.org/"
+                      : null
+                  }
+                >
+                  {w.image}
+                </Polaroid>
+              </div>
+            ))}
+          {pageCountClay > 1
+            ? Pagination(pageCountClay, currentPage, setCurrentPage)
+            : null}
         </div>
       )
     } else if (section === "ink") {
       return (
         <div className={styles.gridContainer}>
-          {inkWork.map((w, i) => (
-            <div className={styles.card} key={`inkwork-${i}`}>
-              <Polaroid name={w.name} year={w.year} medium={w.medium}>
-                {w.image}
-              </Polaroid>
-            </div>
-          ))}
+          {inkWork
+            .sort((a, b) => a.date - b.date)
+            .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+            .map((w, i) => (
+              <div className={styles.card} key={`inkwork-${i}`}>
+                <Polaroid name={w.name} year={w.year} medium={w.medium}>
+                  {w.image}
+                </Polaroid>
+              </div>
+            ))}
+          {pageCountInk > 1
+            ? Pagination(pageCountInk, currentPage, setCurrentPage)
+            : null}
         </div>
       )
     }
-  }, [section])
+  }, [section, currentPage, pageCountDigital])
 
   return (
     <Layout>
