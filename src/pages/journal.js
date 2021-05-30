@@ -1,7 +1,5 @@
 import {
   BookmarkIcon,
-  ChevronDoubleLeftIcon,
-  ChevronDoubleRightIcon,
   ChevronRightIcon,
   SearchIcon,
   XCircleIcon,
@@ -10,6 +8,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
 import { Helmet } from "react-helmet"
 import Layout from "../components/Layout"
+import Pagination from "../components/Pagination"
 import ShareButton from "../components/shareButton"
 import { tagStyles } from "../utility/blog"
 import { createHaiku } from "../utility/functions"
@@ -217,48 +216,9 @@ const JournalPage = () => {
                 )
               })}
           </ul>
-          {pageCount > 1 ? (
-            <div className={styles.paginationButtonContainer}>
-              <div
-                className={styles.leftarrow}
-                aria-hidden="true"
-                onClick={() =>
-                  setCurrentPage(
-                    currentPage === 0 ? currentPage : currentPage - 1
-                  )
-                }
-              >
-                <ChevronDoubleLeftIcon className={styles.chevronIcon} />
-              </div>
-              {Array.from({ length: pageCount }).map((d, i) => (
-                <button
-                  className={
-                    i === currentPage
-                      ? styles.activePaginationButton
-                      : styles.paginationButton
-                  }
-                  onClick={() => setCurrentPage(i)}
-                  key={i}
-                  aria-hidden="true"
-                >
-                  <span className={styles.paginationAlignment}>{i + 1}</span>
-                </button>
-              ))}
-              <div
-                className={styles.rightarrow}
-                aria-hidden="true"
-                onClick={() =>
-                  setCurrentPage(
-                    currentPage === pageCount - 1
-                      ? pageCount - 1
-                      : currentPage + 1
-                  )
-                }
-              >
-                <ChevronDoubleRightIcon className={styles.chevronIcon} />
-              </div>
-            </div>
-          ) : null}
+          {pageCount > 1
+            ? Pagination(pageCount, currentPage, setCurrentPage)
+            : null}
         </div>
         <div className={styles.sidebar}>
           <div className={styles.searchWrapper}>
