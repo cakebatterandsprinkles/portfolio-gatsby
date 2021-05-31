@@ -86,9 +86,12 @@ console.log(exampleArr) // prints: [["name", "River"], [1, "one"], [true, "human
 **⁂ Checking if a key exists, the Map size and deleting an entry:**
 
 Checking if a key exists is done with `map.has()`. This method returns a Boolean value.
+
 Maps have a built-in `size` property that returns the number of key-value pairs in a Map.
+
 Deleting an entry is done with `map.delete()`, which takes a key as an argument and returns the new version of the Map.
-Deleting all the values inside a map is done with `map.clear()`
+
+Deleting all the values inside a map is done with `map.clear()`.
 
 ```javascript
 const colorMap = new Map([
@@ -241,6 +244,14 @@ const arr = [18, 26, 34, 13, 13, 45, 18, 19, 47]
 
 const uniqueValueArr = [...new Set(arr)]
 console.log(uniqueValueArr) // Prints: [18, 26, 34, 13, 45, 19, 47]
+```
+
+Converting a Set to an Array can also be done via the `Array.from` method:
+
+```javascript
+const numSet = new Set([1, 1, 1, 2, 4, 6, 7, 7, 9, 9, 9, 9, 9])
+const numArr = Array.from(numSet)
+console.log(numArr) // Prints: [1, 2, 4, 6, 7, 9]
 ```
 
 Removing duplicate values from a string:
