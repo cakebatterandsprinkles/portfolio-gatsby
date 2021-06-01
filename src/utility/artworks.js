@@ -44,7 +44,7 @@ const digitalWork = [
     image: (
       <StaticImage
         width={maxImageWidth}
-        src="../images/gallery/digital_art/neko_rainbows.jpg"
+        src="../images/gallery/digital_art/neko_rainbows.png"
         alt="digital illustration of a cat and two birds"
       />
     ),
@@ -82,6 +82,18 @@ const digitalWork = [
         width={maxImageWidth}
         alt="digital illustration of a beach and road signs with weird creatures"
         src="../images/gallery/digital_art/image_0276.png"
+      />
+    ),
+  },
+  {
+    name: "Mendokusai",
+    year: "2020",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/Mendokusai.jpg"
+        alt="digital illustration of an angry coconut and a parrotlet"
       />
     ),
   },
