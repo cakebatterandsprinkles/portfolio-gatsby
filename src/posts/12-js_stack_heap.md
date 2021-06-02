@@ -48,22 +48,22 @@ You can try running this code snippet in your Chrome console.
 
 So, at the example above, the two functions (getAge and getPermission) are stored in the Heap, and as the code runs, the browser pushes the currently running function to the stack. The topmost item in the call stack is always the thing that's currently happening.
 
-Let's do it step by step:
+Let's dissect the execution of the code above, step by step, by symbolizing the items in the call stack as pancakes:
 
-1. :pancakes: **Bottom pancake gets baked:** First, the overall script that is running is pushed to the stack, and as our script has no name it will run as "anonymous". This makes the first thing that will be pushed in stack anonymous().
-2. :pancakes::pancakes: **Second pancake from the bottom gets baked:** Then the JS engine will read the file from top to bottom and getPermission function will be called. The second item that is pushed to the call stack is getPermission().
-3. :pancakes::pancakes::pancakes: **Third pancake from the bottom gets baked:** parseInt() is pushed on top of the stack.
-4. :pancakes::pancakes::pancakes::pancakes: **Fourth pancake from the bottom gets baked:** getAge() is pushed on top of the stack.
-5. :pancakes::pancakes::pancakes::pancakes::pancakes: **Fifth pancake from the bottom gets baked:** prompt() is pushed on top of the stack.
-6. :pancakes::pancakes::pancakes::pancakes: **Fifth pancake from the bottom is eaten:** Once the user enters clicks ok or cancel, the prompt will return something, so the prompt function is done executing. It is popped off from the call stack. (It doesn't mean that it is also moved from the heap. Functions that are registered in the heap stay there as long as the application is open. The data needed for that function execution is also removed from the heap.)
-7. :pancakes::pancakes::pancakes: **Fourth pancake from the bottom is eaten:** getAge function returns the result of the prompt, therefore it is resolved and removed from the stack.
-8. :pancakes::pancakes:**Third pancake from the bottom is eaten:** parseInt function returns an integer, therefore it is resolved and removed from the stack. It is stored as a variable, so the age variable is added to the heap.
-9. :pancakes: **Second pancake from the bottom is eaten:** getPermission function returns something according to the age variable, therefore it is also resolved and removed from the stack. After this function is resolved, the age variable is not needed, so it is also removed from the heap.
+1. 🥞 **Bottom pancake gets baked:** First, the overall script that is running is pushed to the stack, and as our script has no name it will run as "anonymous". This makes the first thing that will be pushed in stack anonymous().
+2. 🥞🥞 **Second pancake from the bottom gets baked:** Then the JS engine will read the file from top to bottom and getPermission function will be called. The second item that is pushed to the call stack is getPermission().
+3. 🥞🥞🥞 **Third pancake from the bottom gets baked:** parseInt() is pushed on top of the stack.
+4. 🥞🥞🥞🥞 **Fourth pancake from the bottom gets baked:** getAge() is pushed on top of the stack.
+5. 🥞🥞🥞🥞🥞 **Fifth pancake from the bottom gets baked:** prompt() is pushed on top of the stack.
+6. 🥞🥞🥞🥞 **Fifth pancake from the bottom is eaten:** Once the user enters clicks ok or cancel, the prompt will return something, so the prompt function is done executing. It is popped off from the call stack. (It doesn't mean that it is also moved from the heap. Functions that are registered in the heap stay there as long as the application is open. The data needed for that function execution is removed from the heap.)
+7. 🥞🥞🥞 **Fourth pancake from the bottom is eaten:** getAge function returns the result of the prompt, therefore it is resolved and removed from the stack.
+8. 🥞🥞 **Third pancake from the bottom is eaten:** parseInt function returns an integer, therefore it is resolved and removed from the stack. It is stored as a variable, so the age variable is added to the heap.
+9. 🥞 **Second pancake from the bottom is eaten:** getPermission function returns something according to the age variable, therefore it is also resolved and removed from the stack. After this function is resolved, the age variable is not needed, so it is removed from the heap.
 10. **The last pancake is eaten:** Nothing is left in the script to execute, so it is also removed from the stack.
 
 Call stack has a certain type of order, it is to keep the relationship between the functions that are running (to keep track of who called who).
 
-If there is something in the code that gives a compiling error, the code execution will stop and the JS engine will show you an error that contains something called a **[stack trace.](https://en.wikipedia.org/wiki/Stack_trace)** It is a snapshot of the call stack.
+If there is something in the code that gives a compiling error, the code execution will stop and the JS engine will show you an error that contains something called a **[stack trace.](https://en.wikipedia.org/wiki/Stack_trace)** It is a snapshot of the call stack, so that you can figure out where your code failed.
 
 Example of an erroneous function call:
 
@@ -84,7 +84,7 @@ If you run this code snippet in your console, it will give back a stack trace wi
 
 ![error](../images/blog/js_heap_stack/error.png)
 
-Example of a recursive function that causes an error:
+Example of a recursive function that creates an error:
 
 ```javascript
 function callsItself() {
@@ -129,67 +129,67 @@ setTimeout(function () {
 console.log("Wroom wroom!")
 ```
 
-Let's see what happens where step by step:
+Let's see what happens where step by step: (Remember, pancakes symbolize the number of items in your call stack)
 
-1. :pancakes: **Bottom pancake gets baked:** First, the overall script that is running is pushed to the stack, and as our script has no name, the first thing that will be pushed in the stack will be anonymous().
-2. :pancakes::pancakes: **Second pancake from the bottom gets baked:** Then the JS engine will read the file from top to bottom and the first thing it sees will be the console.log("Start") statement, so that is pushed to the call stack.
-3. :pancakes: **Second pancake from the bottom gets eaten:** console.log("Start") is instantly invoked and popped off the stack.
+1. 🥞 **Bottom pancake gets baked:** First, the overall script that is running is pushed to the stack, and as our script has no name, the first thing that will be pushed in the stack will be anonymous().
+2. 🥞🥞 **Second pancake from the bottom gets baked:** Then the JS engine will read the file from top to bottom and the first thing it sees will be the console.log("Start") statement, so that is pushed to the call stack.
+3. 🥞 **Second pancake from the bottom gets eaten:** console.log("Start") is instantly invoked and popped off the stack.
 4. setTimeout(function() { console.log("Finish line")}, 2000); is added to the Web API container.
-5. :pancakes::pancakes: **Second pancake from the bottom gets baked:** Code execution continues. console.log("Wroom wroom!") statement is pushed to the call stack.
-6. :pancakes: **Second pancake from the bottom gets eaten:** console.log("Wroom wroom!") is instantly invoked and popped off the stack.
+5. 🥞🥞 **Second pancake from the bottom gets baked:** Code execution continues. console.log("Wroom wroom!") statement is pushed to the call stack.
+6. 🥞 **Second pancake from the bottom gets eaten:** console.log("Wroom wroom!") is instantly invoked and popped off the stack.
 7. After the 2 second delay, the callback function is pushed to the callback queue.
-8. :pancakes::pancakes: **Second pancake from the bottom gets baked:** The event loop checks the callback queue, sees a callback function there, checks the call stack, sees no function there, so pushes the callback function to the call stack.
-9. :pancakes::pancakes::pancakes: **Third pancake from the bottom gets baked:** The callback function wants to execute a console.log. console.log("Finish line") is added to the top of the call stack.
-10. :pancakes::pancakes: **Third pancake from the bottom gets eaten:** console.log("Finish line") is instantly invoked and popped off the stack.
-11. :pancakes: **Second pancake from the bottom gets eaten:** callback function is resolved and popped off the stack.
+8. 🥞🥞 **Second pancake from the bottom gets baked:** The event loop checks the callback queue, sees a callback function there, checks the call stack, sees no function there, so pushes the callback function to the call stack.
+9. 🥞🥞🥞 **Third pancake from the bottom gets baked:** The callback function wants to execute a console.log after 2000 miliseconds. console.log("Finish line") is added to the top of the call stack.
+10. 🥞🥞 **Third pancake from the bottom gets eaten:** console.log("Finish line") is instantly invoked and popped off the stack.
+11. 🥞 **Second pancake from the bottom gets eaten:** callback function is also resolved and popped off the stack.
 12. **The last pancake is eaten:** Nothing is left in the script to execute, so it is also removed from the stack.
 
 Loops (for, while) run synchronously, meaning that if a loop starts getting executed, it will block the code execution until it is finished.
 
 - _Let's see an example:_
 
-```
-const button = document.querySelector('button');
-button.addEventListener('click', function(){
-   console.log("Clicked!")
-});
+```javascript
+const button = document.querySelector("button")
+button.addEventListener("click", function () {
+  console.log("Clicked!")
+})
 
-let sum = 0;
+let sum = 0
 
 for (let i = 0; i < 100000000000; i++) {
-   sum += i;
+  sum += i
 }
 
-console.log(sum);
+console.log(sum)
 ```
 
-In this code snippet, we assumed that we have a button on our HTML page, and on line 2 a click event listener is added to that button. The event listener is added to the Web API container, and just after that the for loop starts being executed. So when you run this code, no matter how fast or how many times you click the button, "Clicked!" will print out later than the sum.
+In this code snippet, we assumed that we have a single button on our HTML page, and on line 2 a click event listener is added to that button. The event listener is added to the Web API container, and just after that the for loop starts being executed. So when you run this code, no matter how fast or how many times you click the button, "Clicked!" will print out later than the sum.
 
 - _Another example:_
 
-```
-const button = document.querySelector('button');
+```javascript
+const button = document.querySelector("button")
 
 function getUserPosition() {
-   navigator.geolocation.getCurrentPosition(
-      data => {
-         console.log(data);
-      },
-      error => {
-         console.log(error);
-      }
-   );
-   console.log("Fetching user location data. Please wait.");
+  navigator.geolocation.getCurrentPosition(
+    data => {
+      console.log(data)
+    },
+    error => {
+      console.log(error)
+    }
+  )
+  console.log("Fetching user location data. Please wait.")
 }
 
-button.addEventListener('click', getUserPosition);
+button.addEventListener("click", getUserPosition)
 ```
 
 In this example, when the button is clicked, "Fetching user location data. Please wait." will always print sooner than the error message or the user location data. The Web API is always pushed to the Web API container initially, and the script execution continues. Only after `console.log("Fetching user location data. Please wait.")` line runs, the callback function that is pushed into the callback queue by the Web API will run.
 
 ### Bonus: Garbage Collection
 
-We have described the heap is a long term memory allocated to the browser by the operating system. The variables and function declarations of the programs that are currently being used by your browser, they all live here. Heap is a limited resource, as all memory spaces in a computer are expensive and must be used correctly. If your browser exceeds the heap limits allocated for its use, the browser gets angry and it simply kills the browser. (Don't worry, although it's being killed, it doesn't easily die. Who wants their browser to shut itself off when they are doing something? Only crazy people.)
+We have described the heap is a long term memory allocated to the browser by the operating system. The variables and function declarations of the programs that are currently being used by your browser, they all live here. Heap is a limited resource, as all memory spaces in a computer are expensive and must be used correctly. If your browser exceeds the heap limits allocated for its use, the browser gets angry and it simply kills itself. (Don't worry, although it's being killed, it doesn't easily die. Who wants their browser to shut itself off when they are doing something? Only crazy people.)
 
 Good news! You seldom need to actively manage the heap as a user. It is something your browser does for you in the shadows, and you simply take it for granted. (Not judging, I do too!)
 
@@ -207,29 +207,29 @@ Let's give some examples to demonstrate:
 
 **_Code snippet-1:_**
 
-```
-let article = {title: "Rolling Stones"};
+```javascript
+let article = { title: "Rolling Stones" }
 
-article = {title: "Paint it, black"};
+article = { title: "Paint it, black" }
 ```
 
 So the first example doesn't make sense as a whole, but it will demonstrate what I mean, so try to stick with me. In the first line, we created a new object which is `{title: "Rolling Stones"}` and assigned a reference to that object which is "article". If we finished the code here, the garbage collector wouldn't have cleaned this object at its next round, because a reference still points out to it. But with the second line we change what that reference points out to, we create another object, which is `{title: "Paint it, black"}` and we point that reference to the new object, so now, there is nothing that points out to the old one. The garbage collector will clean out the `{title: "Rolling Stones"}` object the next time it visits the heap.
 
 **_Code snippet-2:_**
 
-```
-const listenerAdderButton = document.getElementById('listener-adder-btn');
-const printButton = document.getElementById('print-btn');
+```javascript
+const listenerAdderButton = document.getElementById("listener-adder-btn")
+const printButton = document.getElementById("print-btn")
 
 function printSomeMessage() {
-   console.log("Nan desu ka.");
+  console.log("Nan desu ka.")
 }
 
 function addEventListener() {
-   printButton.addEventListener('click', printSomeMessage);
+  printButton.addEventListener("click", printSomeMessage)
 }
 
-listenerAdderButton.addEventListener('click', addEventListener);
+listenerAdderButton.addEventListener("click", addEventListener)
 ```
 
 Here, we have two buttons, one of them adds an event listener to the other one (listenerAdderButton), and after that button is clicked, the other button (printButton) can print some text to the console when it is clicked.
@@ -240,26 +240,26 @@ You would expect it to add more and more event listeners as you click. But that 
 
 **_Code snippet-3:_**
 
-```
-const listenerAdderButton = document.getElementById('listener-adder-btn');
-const printButton = document.getElementById('print-btn');
+```javascript
+const listenerAdderButton = document.getElementById("listener-adder-btn")
+const printButton = document.getElementById("print-btn")
 
 function printSomeMessage() {
-   console.log("Nan desu ka.");
+  console.log("Nan desu ka.")
 }
 
-listenerAdderButton.addEventListener('click', function(){
-   printButton.addEventListener('click', printSomeMessage);
-});
+listenerAdderButton.addEventListener("click", function () {
+  printButton.addEventListener("click", printSomeMessage)
+})
 ```
 
-Things change when you are using an anonymous function (a function without a reference) when adding a new event listener. The function is created on the fly, and every anonymous function that is created is a new object. The browser will not recognize the function so it will keep creating a new function and adding it as a callback function. In code snippet-3, you will end up with multiple event listeners if you click the listenerAdderButton multiple times. This is a potential problem because it will most definitely cause memory leaks.
+Things change when you are using an anonymous function (a function without a reference) when adding a new event listener. The function is created on the fly, and every anonymous function that is created is a new object. Now, if you click the listenerAdderButton multiple times, the browser will not recognize the function as it is anonymous, so it will keep creating a new function and adding it as a callback function. So you will end up with multiple event listeners if you click the listenerAdderButton multiple times. This is a potential problem because it will most definitely cause memory leaks.
 
 ### <3 V8 Engine
 
 V8 engine is the JS engine that Chrome and Node.js uses. It is written in C++ and developed by Google. It can run standalone or be embedded into other C++ applications.
 
-V8 engine (the one embedded in your browser) compiles and executes JS code, handles the call stack, manages the heap memory, does garbage collection and provides all the data types, operators, objects and functions.
+V8 engine (the one embedded in your browser) compiles and executes JS code, handles the call stack, manages the heap memory, does garbage collection and provides all the main data types, operators, objects and functions.
 
 It doesn't provide the event loop, event loop is implemented by the browser. It also doesn't know anything about the DOM (Document Object Model) which is also provided by the browser.
 
