@@ -112,6 +112,7 @@ const factorialRecursive = n => {
   if (n === 1) {
     return 1
   }
+  // Here, we still have to multiply the result of the final recursive function with n before returning it
   return n * factorialRecursive(n - 1)
 }
 
@@ -147,14 +148,16 @@ const foo = (n, i = 1) => {
 }
 
 // trampoline function also returns a function
-const trampoline = fn => (...args) => {
-  let result = fn(...args)
-  // repeat until result comes back as 1, which is of type number
-  while (typeof result === "function") {
-    result = result()
+const trampoline =
+  fn =>
+  (...args) => {
+    let result = fn(...args)
+    // repeat until result comes back as 1, which is of type number
+    while (typeof result === "function") {
+      result = result()
+    }
+    return result
   }
-  return result
-}
 
 let factorial = trampoline(foo)
 factorial(10) // prints: 3628800
