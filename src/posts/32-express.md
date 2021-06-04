@@ -3,6 +3,7 @@ title: "Middlewares and Express.js"
 date: "2021-01-07"
 tags: ["Express.js", "Web Development", "JavaScript"]
 summary: "In this article, I briefly talk about the concept of middleware in the context of Node.js backend, and a popular Node.js framework named Express.js."
+contributor: ""
 ---
 
 If you've ever done a backend of a project using Node.js, then you might have encountered middlewares and Express.js. This article aims to explain what both of them are used for and their connection to each other.

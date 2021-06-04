@@ -3,6 +3,7 @@ title: "REST vs. GraphQL"
 date: "2021-01-03"
 tags: ["GraphQL", "Web Development"]
 summary: "In this article, I briefly talk about what REST API and GraphQL API are and make a comparison using a very simple example."
+contributor: ""
 ---
 
 1, 2, 3... Fight!

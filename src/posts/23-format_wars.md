@@ -3,6 +3,7 @@ title: "The Format Wars"
 date: "2020-11-09"
 tags: ["Web Development"]
 summary: "In this article, I briefly talk about how to represent an image in bits, what image compression is, and various image file formats."
+contributor: ""
 ---
 
 This is the time and place where we talk about image file formats, yay! This is going to be a long one because there are so many of them.

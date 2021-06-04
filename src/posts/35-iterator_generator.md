@@ -3,6 +3,7 @@ title: "Iterators and generators"
 date: "2021-01-28"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain what generator functions and iterators are in the JavaScript context."
+contributor: ""
 ---
 
 In this article, we are going to talk about generator functions and the iterable concept in the JavaScript context.

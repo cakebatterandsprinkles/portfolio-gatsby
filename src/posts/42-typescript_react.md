@@ -3,6 +3,7 @@ title: "Using TypeScript with React"
 date: "2021-04-07"
 tags: ["TypeScript", "React"]
 summary: "In this article, I give examples on how to use TypeScript with React (create-react-app/ CRA) and Redux."
+contributor: ""
 ---
 
 This is no article for the faint-hearted! If you don't know React basics, I suggest you go through them first. If you don't know how TypeScript works, munch on [this article](https://yagmurcetintas.com/journal/introduction-to-typescript). After that make sure you have Node.js and a code editor installed on your computer and you're good to go!
@@ -321,8 +322,8 @@ const RefComponent: React.FC = () => {
 
   // Whenever we create a ref that is going to refer to an HTML element, we need to provide it the appropriate type according to the element we are referring to:
 
-  const inputRef = useRef<HTMLInputElement | null>(null)
-  
+  const inputRef = (useRef < HTMLInputElement) | (null > null)
+
   // If you command + click to this <HTMLInputElement>, it will take you to a list where you can find the appropriate types for each HTML element, and choose from this list. You don't have to assign a created ref to an element right away, and if you don't assign it, it will be referring to the type null that we give as an initial value, so we need to consider it as well.
 
   // Let's set focus on the input element as soon as the component is rendered:

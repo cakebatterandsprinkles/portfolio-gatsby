@@ -3,6 +3,7 @@ title: "Introduction to Japanese- Where did the Kanji come from anyway?"
 date: "2020-08-23"
 tags: ["Japan"]
 summary: "In this article, I briefly talk about the origins and history of Japanese kana (hiragana, katakana) and kanji."
+contributor: ""
 ---
 
 In the quarantine period of 2020, I got the chance to start learning something I wanted to learn for such a long time. I started learning Japanese. The delicate culture and the intricate but beautiful mythology of Japan never ceased to impress me since I was a teenager.

@@ -3,6 +3,7 @@ title: "Digital vs. Analog"
 date: "2020-10-08"
 tags: ["Computer Science"]
 summary: "In this article, I explain the difference between digital and analog data. I also briefly talk about how analog/digital phones and telegraphs work."
+contributor: ""
 ---
 
 Is everything associated with computers "digital"? If not, what is [digital](https://en.wikipedia.org/wiki/Digital_data) and what is [analog](https://en.wikipedia.org/wiki/Analog_signal)? Is digital better than analog or vice versa?

@@ -3,6 +3,7 @@ title: "JavaScript- Introduction to Data Types"
 date: "2019-04-06"
 tags: ["Computer Science", "Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain the data types in JS, gathering them under 2 major classes: Primitive and Reference. I also explain logical operators (!, ||, && and ??) in a separate subtitle at the end of the article."
+contributor: ""
 ---
 
 If you want to imitate any piece of code in this article, I simply suggest using the mighty Chrome console. You can open it by using the `Command + Option + J` shortcut in Mac or the `Control + Shift + J` shortcut in Windows.

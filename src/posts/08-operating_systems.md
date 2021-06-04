@@ -3,6 +3,7 @@ title: "Operating Systems"
 date: "2020-08-14"
 tags: ["Computer Science"]
 summary: "In this article, I briefly talk about what operating systems are. I also simply describe what API, GUI, and CLI are."
+contributor: ""
 ---
 
 The **[Operating System](https://en.wikipedia.org/wiki/Operating_system)** (OS for short) is the most important software that runs on a computer. Without an operating system, a computer wouldn't be able to work.

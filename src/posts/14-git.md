@@ -3,6 +3,7 @@ title: "The mighty `Git`osaurus"
 date: "2020-10-02"
 tags: ["Web Development", "Computer Science"]
 summary: "In this article, I aim to explain what Git and services like GitHub, GitLab, and Bitbucket are."
+contributor: ""
 ---
 
 #### What is Git?

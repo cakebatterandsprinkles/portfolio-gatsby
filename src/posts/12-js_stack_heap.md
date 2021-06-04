@@ -3,6 +3,7 @@ title: "JavaScript- How JavaScript code is executed"
 date: "2020-09-17"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain how the JS engine works and what the Call Stack, Heap, Web API's are. I also talk about garbage collection feature of the JS engine."
+contributor: ""
 ---
 
 This article is about understanding how the browser executes a script. The details of this topic differ from engine to engine (or browser to browser, you could say), but they share the main ideas. This article will be an information-intensive article, so grab your coffee and stay calm. Everything is fine. You are doing great.

@@ -3,6 +3,7 @@ title: "Introduction to Programming Paradigms"
 date: "2020-09-01"
 tags: ["Computer Science"]
 summary: "In this article, I briefly explain programming paradigms under two main titles: imperative and declarative programming."
+contributor: ""
 ---
 
 A **[paradigm](https://en.wikipedia.org/wiki/Paradigm)** is a thought pattern, a way of thinking, a way of looking at something.

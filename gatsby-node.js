@@ -30,6 +30,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
               date
               tags
               summary
+              contributor
             }
             fields {
               slug

@@ -3,6 +3,7 @@ title: "How the Internet Works: Computer Networks, Ethernet, and the World Wide 
 date: "2020-07-26"
 tags: ["Computer Science"]
 summary: "In this article I briefly explain how the internet works, what world wide web is and the underlying technologies supporting these."
+contributor: ""
 ---
 
 I bet you have a computer, a smartphone, or a tablet that's connected to the internet. How do I know? I know it because that's how you are reading this piece of text that I wrote on my computer. So you and I, we are sharing information somehow. This article will exactly be about this: our connection to each other.

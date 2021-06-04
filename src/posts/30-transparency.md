@@ -3,6 +3,7 @@ title: "Creating Transparency"
 date: "2020-12-28"
 tags: ["Neuroscience"]
 summary: "In this article, I talk about the history of scientific inventions that lead to tissue clearing and the logic of tissue clearing methods such as Clarity and 3DISCO."
+contributor: ""
 ---
 
 During grad school, I had the great privilege to get accustomed to some of the more creative ways of understanding diseases. One of them is called **tissue clearing**, which was an idea that was circulating for a long time but was not fully achieved until the early 2000s. Neuroscience, the brain itself, and humans trying to understand themselves are all amazing, but the methods we use to understand ourselves are also praiseworthy. I have a certain respect for people who build tools for other people to create beautiful things.

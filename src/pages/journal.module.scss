@@ -44,6 +44,11 @@
   border-bottom-left-radius: 5px;
 }
 
+.tagAndContributorContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .tagContainer {
   display: flex;
   align-items: flex-start;
@@ -331,6 +336,40 @@ hr {
   color: var(--darkgray);
   background-color: var(--dirtysnow);
   border-radius: 5px;
+}
+
+// Contributor related styling
+
+.contributorContainer {
+  display: flex;
+  align-items: center;
+  font-family: var(--article-font), "sans-serif";
+  font-size: 0.9rem;
+}
+
+.contributorContainer > * {
+  margin-right: 0.25rem;
+}
+
+.contributorIcon {
+  width: 1rem;
+  height: auto;
+  color: var(--orange);
+}
+
+.contributorAvatar {
+  border-radius: 20px;
+  height: 1.5rem;
+  margin-bottom: 0;
+}
+
+.contributorLink {
+  text-decoration: none;
+}
+
+.contributorHeading {
+  font-family: var(--heading-font);
+  margin-bottom: 0;
 }
 
 @media (max-width: 1680px) {

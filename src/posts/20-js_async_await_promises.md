@@ -3,6 +3,7 @@ title: "Asynchronous JS, callbacks, and promises"
 date: "2019-07-27"
 tags: ["Web Development", "JavaScript", "Neuroscience"]
 summary: "In this article, I briefly explain what asynchronous code is and how we use promises to manage it. After that, I talk about how to make HTTP requests, what Async & Await is, and see how it can be used."
+contributor: ""
 ---
 
 #### Before we talk about asynchronous code

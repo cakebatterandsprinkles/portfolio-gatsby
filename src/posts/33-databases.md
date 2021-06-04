@@ -3,6 +3,7 @@ title: "Introduction to databases"
 date: "2021-01-17"
 tags: ["Computer Science"]
 summary: "In this article, I briefly talk about what databases are, SQL and NoSQL databases and their pro's and con's."
+contributor: ""
 ---
 
 #### What is a database?

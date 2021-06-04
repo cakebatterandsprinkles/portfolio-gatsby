@@ -3,6 +3,7 @@ title: "Memory Cell"
 date: "2020-07-19"
 tags: ["Computer Science", "Genetics"]
 summary: "In this article, I briefly explain how computers can retain data, by showing how a single memory cell operates. I also talk about how human cells can 'remember'."
+contributor: ""
 ---
 
 #### What is memory?

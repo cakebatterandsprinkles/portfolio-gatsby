@@ -3,6 +3,7 @@ title: "React- Hooks"
 date: "2020-11-26"
 tags: ["React", "Web Development"]
 summary: "In this article, I talk about what React hooks are and how to use some of them, such as useState, useEffect, useRef, useReducer, useContext, useCallback, useLayoutEffect, and useMemo."
+contributor: ""
 ---
 
 React is a UI library that works with separate and reusable code blocks that render a piece of the application's UI, which are called **components**.
@@ -369,10 +370,10 @@ useMemo is very similar to useCallback. The main difference between the two is, 
 Let's see an example of this:
 
 ```javascript
-const memoizedValue1 = useMemo(() => calculate1(param1, param2), [
-  param1,
-  param2,
-])
+const memoizedValue1 = useMemo(
+  () => calculate1(param1, param2),
+  [param1, param2]
+)
 
 // if there are no parameters to the first function, you have to pass an empty array or it will not be memoized:
 

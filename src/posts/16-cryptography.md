@@ -3,6 +3,7 @@ title: "Cryptography"
 date: "2020-10-13"
 tags: ["Computer Science"]
 summary: "In this article, I briefly talk about the history of cryptography, symmetric and asymmetric key cryptography techniques and explain the logic behind digital signatures and digital certificates."
+contributor: ""
 ---
 
 **[Cryptography](https://en.wikipedia.org/wiki/Cryptography)** is the art of taking a text and scrambling it in a very precise way, so only the people who know precisely how you scrambled it can read the original text. Cryptography is very old and has been used for centuries to protect sensitive information from unwelcome eyes. It has been used by merchants, by emperors, and today, normal people like us, even if we don't notice it. With the invention of the computer, the internet, and the world wide web, we started keeping personal information on our personal computers and we send data to each other occasionally. But how do we keep our information safe? That's where cryptography comes into play.

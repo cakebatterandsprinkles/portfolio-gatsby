@@ -1,6 +1,7 @@
 import {
   BookmarkIcon,
   ChevronRightIcon,
+  FireIcon,
   SearchIcon,
   XCircleIcon,
 } from "@heroicons/react/solid"
@@ -25,6 +26,7 @@ const JournalPage = () => {
               date
               tags
               summary
+              contributor
             }
             fields {
               slug
@@ -49,6 +51,7 @@ const JournalPage = () => {
   const [tags, setTags] = useState([])
   const [years, setYears] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
+  const [allContributors, setAllContributors] = useState({})
 
   const pageSize = 10
 
@@ -85,9 +88,37 @@ const JournalPage = () => {
     setYears(Array.from(availableYears).sort())
   }, [posts.allMarkdownRemark.edges])
 
+  const fetchContributors = posts => {
+    const postsArr = posts.allMarkdownRemark.edges
+    const contributors = [
+      ...new Set(
+        postsArr
+          .filter(post => post.node.frontmatter.contributor)
+          .map(post => post.node.frontmatter.contributor)
+      ),
+    ]
+
+    contributors.forEach(contributor => {
+      fetch(`https://api.github.com/users/${contributor}`)
+        .then(res => res.json())
+        .then(data => {
+          setAllContributors(oldCont => ({
+            ...oldCont,
+            [contributor]: {
+              handle: contributor,
+              name: data.name,
+              avatarURL: data.avatar_url,
+              url: data.html_url,
+            },
+          }))
+        })
+    })
+  }
+
   useEffect(() => {
     setCurrentTags()
     setAvailableYears()
+    fetchContributors(posts)
   }, [posts, setAvailableYears, setCurrentTags])
 
   const handleClearClick = () => {
@@ -191,26 +222,56 @@ const JournalPage = () => {
                     <div className={styles.summaryContainer}>
                       {post.node.frontmatter.summary}
                     </div>
-                    <div className={styles.tagContainer}>
-                      <BookmarkIcon className={styles.bookmarkIcon} />
-                      <div className={styles.tagWrapper}>
-                        {post.node.frontmatter.tags
-                          ? post.node.frontmatter.tags.map((tag, index) => {
-                              return (
-                                <p
-                                  className={
-                                    tagStyles[tag]
-                                      ? `${tagStyles[tag]} ${styles.tag}`
-                                      : `${tagStyles["default"]} ${styles.tag}`
-                                  }
-                                  key={index}
-                                >
-                                  {tag}
-                                </p>
-                              )
-                            })
-                          : null}
+                    <div className={styles.tagAndContributorContainer}>
+                      <div className={styles.tagContainer}>
+                        <BookmarkIcon className={styles.bookmarkIcon} />
+                        <div className={styles.tagWrapper}>
+                          {post.node.frontmatter.tags
+                            ? post.node.frontmatter.tags.map((tag, index) => {
+                                return (
+                                  <p
+                                    className={
+                                      tagStyles[tag]
+                                        ? `${tagStyles[tag]} ${styles.tag}`
+                                        : `${tagStyles["default"]} ${styles.tag}`
+                                    }
+                                    key={index}
+                                  >
+                                    {tag}
+                                  </p>
+                                )
+                              })
+                            : null}
+                        </div>
                       </div>
+                      {post.node.frontmatter.contributor &&
+                      allContributors[post.node.frontmatter.contributor] ? (
+                        <div className={styles.contributorContainer}>
+                          <FireIcon className={styles.contributorIcon} />
+                          <p className={styles.contributorHeading}>
+                            Contributor:
+                          </p>
+                          <a
+                            href={
+                              allContributors[post.node.frontmatter.contributor]
+                                .url
+                            }
+                            target="_blank"
+                            rel="noreferrer"
+                            className={styles.contributorLink}
+                          >
+                            <img
+                              src={
+                                allContributors[
+                                  post.node.frontmatter.contributor
+                                ].avatarURL
+                              }
+                              alt="contributor avatar"
+                              className={styles.contributorAvatar}
+                            />
+                          </a>
+                        </div>
+                      ) : null}
                     </div>
                   </li>
                 )

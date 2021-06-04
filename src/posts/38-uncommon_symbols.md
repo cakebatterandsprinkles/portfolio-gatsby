@@ -3,6 +3,7 @@ title: "Typographical Symbols and Punctuation Marks"
 date: "2021-02-21"
 tags: ["Typography"]
 summary: "In this article, I write about some typographical symbols that I find interesting, such as the interrobang, interpunct, dinkus, silcrow, pilcrow, dagger, lozenge, various types of dashes and copyright/copyleft symbols."
+contributor: ""
 ---
 
 Punctuation marks are pretty valuable in any written language. Their mere existence, and if they do exist, their positions can change the overall meaning of a sentence.

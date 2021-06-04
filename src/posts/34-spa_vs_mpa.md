@@ -3,6 +3,7 @@ title: "Single-Page Application vs. Multi-Page Application vs. Progressive Web A
 date: "2021-01-22"
 tags: ["Web Development"]
 summary: "In this article, I briefly explain about two main web application patterns, single-page application and multi-page application, and their differences. I also talk about what progressive web apps are."
+contributor: ""
 ---
 
 There are two main design patterns for web applications: One being the single-page approach, and the other one is the multi-page approach. The decision of which one to use depends on the content and the needs of the web app. Progressive Web Applications can be built with a single-page or a multi-page approach, and I will explain them in a separate subtitle.

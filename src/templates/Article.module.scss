@@ -19,6 +19,24 @@
 .date {
   font-size: 1rem;
   color: var(--darkgray);
+  display: flex;
+  justify-content: space-between;
+}
+
+.articleContributorLink {
+  display: flex;
+  align-items: center;
+  color: var(--seagreen);
+}
+
+.linkWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.contributorName {
+  margin-bottom: 0;
+  margin-left: 0.25rem;
 }
 
 .content {

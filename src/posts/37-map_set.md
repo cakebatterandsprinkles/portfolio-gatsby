@@ -3,6 +3,7 @@ title: "The Tale of Maps & Sets"
 date: "2021-02-16"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain Map and Set data structures in JavaScript."
+contributor: ""
 ---
 
 Before ES6 (ECMAScript 2015), there were only two built-in data structures in the JavaScript world that were used predominantly, and these two are known as Arrays and Objects. **Arrays** are data structures that keep the data as indexed lists. **Objects** keep the data as key-value pairs.

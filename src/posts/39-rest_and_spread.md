@@ -3,6 +3,7 @@ title: "JavaScript- Object Destructuring & Spread and Rest Operators"
 date: "2021-03-02"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain Object and Array destructuring, default parameters and spread and rest syntax with simple examples."
+contributor: ""
 ---
 
 ES6 brought us new ways to work with arrays and objects. They are simple to use and understand, and if used efficiently, make our lives easier. In this article, I'll show basic usage of default parameters, array and object destructuring, and spread and rest operators.

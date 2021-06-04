@@ -3,6 +3,7 @@ title: "JavaScript- DOM and Some Useful Web API's"
 date: "2019-05-10"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I very briefly explain the DOM and navigator, location and history objects."
+contributor: ""
 ---
 
 ### What is DOM?

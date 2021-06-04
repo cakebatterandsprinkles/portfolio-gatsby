@@ -3,6 +3,7 @@ title: "JavaScript- A brief introduction"
 date: "2020-09-12"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I give general information about the history of JavaScript, JavaScript engines, and explain some related terminology, such as scopes and hoisting. "
+contributor: ""
 ---
 
 #### ECMAScript, JavaScript engines, and some other things

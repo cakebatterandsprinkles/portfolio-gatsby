@@ -3,6 +3,7 @@ title: "Introduction to Object Oriented Programming"
 date: "2020-10-29"
 tags: ["Computer Science", "Web Development", "JavaScript"]
 summary: "In this article, I briefly explain what Object-Oriented Programming is, the difference between constructor functions and factory functions and super and extends keywords, using JavaScript."
+contributor: ""
 ---
 
 I suggest you use the Chrome console to test out the code written in code blocks (only if you want to). Way easier than anything else. (I love you, Chrome console!)

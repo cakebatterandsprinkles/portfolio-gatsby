@@ -3,6 +3,7 @@ title: "React- Router"
 date: "2020-12-02"
 tags: ["React", "Web Development"]
 summary: "In this article, I briefly talk about routing in React apps, how to use react-router-dom, and the difference between relative and absolute paths."
+contributor: ""
 ---
 
 Let's start with what routing is. What is routing in the web development context?

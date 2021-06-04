@@ -3,6 +3,7 @@ title: "ALU, CPU, RAM, ROM, the disk and how they get along"
 date: "2020-08-03"
 tags: ["Computer Science", "Neuroscience"]
 summary: "In this article, I briefly explain what ALU, CPU, RAM, ROM and the disk are. I also talk about how parts of computer memory work together, and compare computer memory to human memory. Disclaimer: This article is a very simplified version of the real things inside a computer and human brain."
+contributor: ""
 ---
 
 This article aims to explain what [Arithmetic Logic Unit (ALU)](https://en.wikipedia.org/wiki/Arithmetic_logic_unit), [Central Processing Unit (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit), [Random Access Memory (RAM)](https://en.wikipedia.org/wiki/Random-access_memory), [Read-Only Memory (ROM)](https://en.wikipedia.org/wiki/Read-only_memory) and the [hard disk](https://en.wikipedia.org/wiki/Hard_disk_drive) are, in a very simple manner. If you have heard some of these terms before and you don't understand what they are, then you are in luck. This article is for you.

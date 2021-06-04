@@ -3,6 +3,7 @@ title: "Introduction to Recursion"
 date: "2021-03-13"
 tags: ["Computer Science", "JavaScript"]
 summary: "In this article, I briefly explain recursion using simple examples written in JavaScript."
+contributor: ""
 ---
 
 #### What is recursion?

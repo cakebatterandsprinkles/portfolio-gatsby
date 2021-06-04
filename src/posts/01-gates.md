@@ -3,6 +3,7 @@ title: "Small things that make up a computer: Bits and Logic Gates"
 date: "2020-06-02"
 tags: ["Computer Science"]
 summary: "In this article, I briefly explain the binary system, bits, and logic gates. I also talk about a very weird room with crazy light switches."
+contributor: ""
 ---
 
 #### Binary and bit

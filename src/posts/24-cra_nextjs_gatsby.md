@@ -3,6 +3,7 @@ title: "React- CRA vs. Next.js vs. Gatsby"
 date: "2020-11-14"
 tags: ["React", "Web Development", "JavaScript"]
 summary: "In this article, I compare create-react-app (CRA), Next.js, and Gatsby, and how I choose between them. I also briefly explain static rendering, server-side rendering (SSR), and client-side rendering(CSR)."
+contributor: ""
 ---
 
 React.js is an open-source JS library developed by Facebook for developing User Interfaces (UI's for short). It is one of the most in-demand frontend libraries of today. React breaks the UI elements into reusable components. As the code is being reused, it means the overall code is easier to read, maintain and debug.

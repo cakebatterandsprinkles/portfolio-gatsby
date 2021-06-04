@@ -3,6 +3,7 @@ title: "Introduction to Browser Storage Mechanisms: Local Storage, Session Stora
 date: "2020-11-19"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain the browser storage mechanism and their differences from each other. JavaScript was used for the examples."
+contributor: ""
 ---
 
 Browser storage mechanisms are useful for a variety of reasons:

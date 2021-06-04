@@ -3,6 +3,7 @@ title: "Introduction to Regular Expressions"
 date: "2021-02-07"
 tags: ["Web Development", "JavaScript"]
 summary: "In this article, I briefly explain what regular expressions are and how to use them in JavaScript context."
+contributor: ""
 ---
 
 I like it when people who can do something admit what they are doing is hard. When time passes and you begin doing something good (after doing it badly for some time, for sure), you unwittingly find it easier and easier each day, and sometimes you forget how it looks in the beginner's eye. Regular expressions can look very complicated and awkward to the naked eye (and sometimes they really are), but they are really useful on certain occasions, so there is no running away from them.

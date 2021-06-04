@@ -3,6 +3,7 @@ title: "React- Redux vs. Context API"
 date: "2020-12-09"
 tags: ["React", "Web Development", "JavaScript", "Redux"]
 summary: "In this article, I briefly compare React-Redux and the Context API, and give examples on how to use both."
+contributor: ""
 ---
 
 **Redux** is a tool used for global state management and it can be used independently from React. In a React application, the data flow works one way- from parent to child components. In bigger applications, passing the state through sibling components and multiple layers might be a problem. This is why we need to have a global state where all components can access and use. You cannot use global variables, since React doesn't track the changes in variables other than the state. There are two main solutions to make our lives easier: [React-Redux](https://react-redux.js.org/) and [the Context API](https://reactjs.org/docs/context.html). We'll talk about both of them.

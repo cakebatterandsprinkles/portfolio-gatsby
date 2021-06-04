@@ -3,6 +3,7 @@ title: "Layers of Abstraction"
 date: "2020-07-08"
 tags: ["Computer Science", "Neuroscience"]
 summary: "In this article, I try to define two important concepts: abstraction and modularity. I also try to explain why we (as humans) need abstraction to do programming."
+contributor: ""
 ---
 
 I began to think every article here will start with these sentences: Everything inside computers is made of bits, and bits can only be 0's and 1's. So this means everything inside computers is 0's and 1's.
