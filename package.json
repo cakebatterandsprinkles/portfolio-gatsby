@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "yagmurcetintas-portfolio",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Web development portfolio of Yagmur Cetin Tas",
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "CC BY-NC-ND 4.0.",
   "scripts": {
     "build": "gatsby build",
     "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
@@ -14,30 +14,30 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@fontsource/anonymous-pro": "^4.3.0",
-    "@fontsource/raleway": "^4.3.0",
-    "@fontsource/roboto-mono": "^4.3.0",
-    "@fontsource/rock-salt": "^4.3.0",
-    "@fontsource/share-tech-mono": "^4.3.0",
-    "@heroicons/react": "^1.0.1",
-    "gatsby": "^3.5.1",
-    "gatsby-plugin-google-gtag": "^3.5.0",
-    "gatsby-plugin-image": "^1.5.0",
-    "gatsby-plugin-netlify": "^3.5.0",
-    "gatsby-plugin-page-progress": "^2.2.0",
-    "gatsby-plugin-react-helmet": "^4.5.0",
-    "gatsby-plugin-sass": "^4.5.0",
-    "gatsby-plugin-sharp": "^3.5.0",
-    "gatsby-plugin-sitemap": "^4.1.0",
-    "gatsby-remark-images": "^5.2.1",
+    "@fontsource/anonymous-pro": "^4.5.0",
+    "@fontsource/raleway": "^4.5.0",
+    "@fontsource/roboto-mono": "^4.5.0",
+    "@fontsource/rock-salt": "^4.5.0",
+    "@fontsource/share-tech-mono": "^4.5.0",
+    "@heroicons/react": "^1.0.2",
+    "gatsby": "^3.9.1",
+    "gatsby-plugin-google-gtag": "^3.9.0",
+    "gatsby-plugin-image": "^1.9.0",
+    "gatsby-plugin-netlify": "^3.9.0",
+    "gatsby-plugin-page-progress": "^2.2.1",
+    "gatsby-plugin-react-helmet": "^4.9.0",
+    "gatsby-plugin-sass": "^4.9.0",
+    "gatsby-plugin-sharp": "^3.9.0",
+    "gatsby-plugin-sitemap": "^4.5.0",
+    "gatsby-remark-images": "^5.6.0",
     "gatsby-remark-interactive-gifs": "^1.0.4",
-    "gatsby-remark-prismjs": "^5.2.1",
+    "gatsby-remark-prismjs": "^5.6.0",
     "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-source-filesystem": "^3.5.0",
-    "gatsby-transformer-remark": "^4.2.0",
-    "gatsby-transformer-sharp": "^3.5.0",
-    "node-sass": "^6.0.0",
-    "prismjs": "^1.23.0",
+    "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-transformer-remark": "^4.6.0",
+    "gatsby-transformer-sharp": "^3.9.0",
+    "node-sass": "^6.0.1",
+    "prismjs": "^1.24.1",
     "react": "^17.0.2",
     "react-card-flip": "^1.1.1",
     "react-dom": "^17.0.2",
@@ -46,13 +46,10 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "prettier": "2.3.0"
+    "prettier": "2.3.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/cakebatterandsprinkles/portfolio-gatsby"
   }
 }
