@@ -1,4 +1,5 @@
 import { FireIcon } from "@heroicons/react/solid"
+import { graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/Layout"
@@ -11,38 +12,38 @@ const ArticlePage = props => {
   const [contributorAvatar, setContributorAvatar] = useState("")
   const [contributorGithubURL, setContributorGithubURL] = useState("")
 
+  const { fields, frontmatter, html } = props.data.markdownRemark
+
   useEffect(() => {
-    fetch(
-      `https://api.github.com/users/${props.pageContext.metadata.contributor}`
-    )
-      .then(res => res.json())
-      .then(data => {
-        setContributorName(data.name)
-        setContributorAvatar(data.avatar_url)
-        setContributorGithubURL(data.html_url)
-      })
-  }, [])
+    if (frontmatter.contributor) {
+      fetch(`https://api.github.com/users/${frontmatter.contributor}`)
+        .then(res => res.json())
+        .then(data => {
+          setContributorName(data.name)
+          setContributorAvatar(data.avatar_url)
+          setContributorGithubURL(data.html_url)
+        })
+    }
+  }, [frontmatter.contributor])
 
   return (
     <Layout>
       <Helmet>
-        <title>
-          {props.pageContext.metadata.title} | cakebatterandsprinkles
-        </title>
-        <meta name="description" content={props.pageContext.metadata.summary} />
+        <title>{frontmatter.title} | cakebatterandsprinkles</title>
+        <meta name="description" content={frontmatter.summary} />
       </Helmet>
       <div className={styles.blogContainer}>
         <div className={styles.blogWrapper}>
           <div className={articleStyle.headerContainer}>
             <div className={articleStyle.mainHeader}>
-              {props.pageContext.metadata.title.toLowerCase()}
+              {frontmatter.title.toLowerCase()}
               <ShareButton
-                link={`https://yagmurcetintas.com/journal/${props.pageContext.slug}`}
+                link={`https://yagmurcetintas.com/journal/${fields.slug}`}
               />
             </div>
             <div className={articleStyle.date}>
-              {props.pageContext.metadata.date}
-              {props.pageContext.metadata.contributor ? (
+              {frontmatter.date}
+              {frontmatter.contributor ? (
                 <div className={styles.contributorContainer}>
                   <FireIcon className={styles.contributorIcon} />
                   <p className={styles.contributorHeading}>Contributor:</p>
@@ -69,7 +70,7 @@ const ArticlePage = props => {
           </div>
           <div
             className={articleStyle.content}
-            dangerouslySetInnerHTML={{ __html: props.pageContext.content }}
+            dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
       </div>
@@ -78,3 +79,21 @@ const ArticlePage = props => {
 }
 
 export default ArticlePage
+
+export const query = graphql`
+  query ($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date
+        tags
+        summary
+        contributor
+      }
+    }
+  }
+`

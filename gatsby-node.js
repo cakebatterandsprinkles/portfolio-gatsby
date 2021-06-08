@@ -25,17 +25,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
-            frontmatter {
-              title
-              date
-              tags
-              summary
-              contributor
-            }
             fields {
               slug
             }
-            html
           }
         }
       }
@@ -47,8 +39,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
       component: articleTemplate,
       path: `/journal/${edge.node.fields.slug}`,
       context: {
-        metadata: edge.node.frontmatter,
-        content: edge.node.html,
         slug: edge.node.fields.slug,
       },
     })

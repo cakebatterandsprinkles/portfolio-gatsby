@@ -9,7 +9,15 @@ const shareButton = props => {
     toast.warning("‎️‍🔥 Link copied to clipboard!")
   }
   return (
-    <div onClick={shareHandler} className={styles.buttonWrapper}>
+    <div
+      onClick={shareHandler}
+      className={styles.buttonWrapper}
+      role="button"
+      onKeyDown={e => {
+        if (e.code === "Enter") shareHandler()
+      }}
+      tabIndex="0"
+    >
       <ShareIcon className={styles.shareButton} />
     </div>
   )

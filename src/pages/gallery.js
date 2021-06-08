@@ -87,7 +87,7 @@ const GalleryPage = () => {
         </div>
       )
     }
-  }, [section, currentPage, pageCountDigital])
+  }, [section, currentPage, pageCountDigital, pageCountInk, pageCountClay])
 
   return (
     <Layout>
