@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Accessibility in Web Development"
+title: "Introduction to Accessibility"
 date: "2021-05-07"
 tags: ["Web Development"]
 summary: "In this article, I briefly talk about what accessibility is and what we can do to make our websites more accessible as web developers."
@@ -8,15 +8,17 @@ contributor: ""
 
 ### Making sense of the world
 
-As humans, we understand the world around us using similar tools. The first thing we do is to retrieve as much data as we can. We have so many ways to collect data: we can use our eyes to see the light reflected from objects around us or use our ears to hear the upcoming soundwaves. We can even choose more intrusive methods if we think that's a good idea, like touching and feeling the objects with our skin (soft, hard, hot, cold, tiny, big), or smelling the chemicals in the air, or even tasting it. But we use the last three mostly based on the observations we make with the first two: you don't want to touch a poisonous mushroom or lick a random caterpillar, right?
+As humans, we understand the world around us using similar tools. The first thing we do is to retrieve as much data as we can. We have so many ways of collecting data: we can use our eyes to see the light reflected from objects around us or use our ears to hear the upcoming soundwaves. We can even choose more intrusive methods if we think that's a good idea, like touching, smelling, or tasting. But we use the last three mostly based on the observations we make with the first two, as it is evolutionarily disadvantageous and might be pretty deadly to touch a poisonous mushroom, lick a random caterpillar or smell a grizzly bear.
 
-After collecting all the data we possibly can, we use our brains to make sense of it. Have I seen something like this before? Is it dangerous? Is it edible? We are much like computers in a sense: our somatosensory systems are like the I/O's (data in, data out) and our brain is our CPU, RAM, ROM, and hard disk. After that comes the action part, if it's dangerous, run away as fast as you can (or play dead maybe?) or if it's a mushroom you can eat, pick it up. The action part requires a whole other system that we call the musculoskeletal system.
+After collecting the data, we use our brains to make sense of it. _**Have I seen something like this before? Is it possibly dangerous? Is it edible?**_ We are much like computers in a sense: our somatosensory systems are like the I/O's (data in, data out) and our brain is our CPU, RAM, ROM, and hard disk. After that comes the action part, if it's dangerous, run away as fast as you can (or play dead maybe?) or if it's a mushroom you think you can eat, pick it up. The action part requires a whole other system that we call the musculoskeletal system.
 
-We are creatures that are composed of multiple systems that work together. But not all of us have all the systems working in full capacity- we simply might not be born with it or permanently or temporarily lose it along the way. That means although we experience the world in _similar_ ways, each of us experiences something _different_. And most importantly, we share spaces. Therefore, we try to create things keeping this question in mind: **can everybody use it?** Or as an alternative, can we create another version of the same thing that is more friendly to people that lack some ability? The web is also a place that we all share, so creating an environment where everybody can understand and navigate is important. In the web context, this is called **accessibility**, which can be very simply defined as designing websites and software everyone can use easily. This article briefly explores some stuff that we can keep in our minds when creating websites, and for information that has more depth to it, visit the links I provided in the resources section.
+We are creatures that are composed of many systems that work together. But not all of us have all the systems working in full capacity- we simply might not be born with it, or permanently or temporarily lose it along the way. That means although we experience the world in _similar_ ways, each of us experiences something _different_. As a byproduct of living as a society, we also share tools and common spaces. Therefore, people who create anything for humans to use should have these questions in their mind: **who am I creating this for?** and **can everybody in that group use it?** As an alternative, we can create other versions of the same thing that is more friendly to people that lack some ability. But as this option is not always available, we should create things keeping all the humans in mind as much as possible.
+
+The web is a place that we all share as well, so creating an environment where everybody can understand and navigate is important. In the web context, this is called **accessibility**, which can be very simply defined as designing websites and software everyone can use easily. This article briefly explores some stuff that we can keep in our minds when creating websites, and for information that has more depth to it, visit the links I provided in the resources section.
 
 ### Accessibility in Web Development
 
-In this section, we will explore what we can do to provide a better accessibility experience.
+In this section, we will explore what we can do to provide a better accessibility experience in our web applications.
 
 **Keyboard only design**
 
@@ -72,7 +74,7 @@ The result of this formula ranges between 1:1, which means there is no contrast 
 
 One thing to keep in mind is that the tone (the color) is not a determining factor in this contrast ratio, meaning [it shouldn't matter if you cannot see any colors at all](https://www.accessibility-developer-guide.com/knowledge/colours-and-contrast/colour-is-not-enough/), you still need to be able to distinguish items through contrast differences. But to make it even more clear, you can use different shapes and additional features like underlines, borders, etc. to make things even more clear. There are many tools you can use to check the contrast levels on a website, such as this [Chrome extension](https://chrome.google.com/webstore/detail/colour-contrast-checker/nmmjeclfkgjdomacpcflgdkgpphpmnfe).
 
-### What else?
+### What else can we do?
 
 Although I mainly focused on motor and visual impairments, the disabilities are not limited to these.
 
@@ -82,7 +84,23 @@ We can provide some help with some of the cognitive impairments as well. For att
 
 The websites also should provide a warning beforehand if the content includes flickering lights and motions that can cause epileptic seizures and migraines.
 
-Many people are working and thinking hard to create a better shared experience of the web. We can follow these rules as much as we can to make the web a better experience for everybody.
+### The End
+
+Products that are not carefully thought of can be infuriating, even if you don't have an accessibility issue. For example, check out this mug:
+
+![Infuriating, badly designed mug](../images/blog/accessibility/person.jpeg)
+
+###### I have a very similar mug that cuts my fingers each time I try to clean it, but I like my eyes the way they are so it serves as a pencil holder now.
+
+###### **Image Credit:** https://cheezburger.com/8206597/17-terrible-product-designs-that-will-have-you-asking-why
+
+Or check out this sign pollution that takes at least several minutes to decipher, even on a good day:
+
+![Infuriating, badly designed roadsign](../images/blog/accessibility/C6cm_6QWgAEvlf1.jpeg)
+
+###### **Image Credit:** https://twitter.com/NxtLvlBranding/status/839682762823041024/photo/1 by [Michelle McCoy](https://twitter.com/NxtLvlBranding)
+
+So accessibility is not only a web issue, but a daily one, and one that we tend to miss. If you're interested for more, check out [The Design of Everyday Things](https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things) by Donald A. Norman, I am sure that you'll find it interesting.
 
 ### Resources
 
