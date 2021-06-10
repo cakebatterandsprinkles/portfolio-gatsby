@@ -143,8 +143,8 @@ favoriteFruit = true // Error: Type 'boolean' is not assignable to type 'string'
 In functions, the TypeScript compiler can help you by inferring the return value but specifying it always makes it less prone to errors.
 
 ```typescript
-// In multiplier1 function, the return type is implicitly set to number.
-// In multiplier2 function, the return type is implicitly set to void, because we forgot the return keyword. If we have explicitly set the return type to number, the compiler would have warned us that this function wasn't returning anything.
+// In the multiplier1 function, the return type is implicitly set to number.
+// In the multiplier2 function, the return type is implicitly set to void, because we forgot the return keyword. If we have explicitly set the return type to number, the compiler would have warned us that this function wasn't returning anything.
 const multiplier1 = (a: number, b: number) => {
   return a * b
 }
@@ -291,7 +291,7 @@ console.log(pet2) // Prints: [true, 7, false]
 pet3[0] = true // Error: Type 'boolean' is not assignable to type 'string'.
 ```
 
-Tuples are kinda hard to read, and from the human perspective, objects with key-value pairs seem much more legible. But if you're working with lots of data and tables, they might be useful at certain corner cases.
+Tuples are kinda hard to read, and from the human perspective, objects with key-value pairs seem much more legible. But if you're working with lots of data and tables, they might be useful in certain corner cases.
 
 **Type Aliases:**
 
@@ -555,7 +555,7 @@ console.log(baker2.getCake()) // Prints: "Carrot Cake"
 
 ### Classes
 
-Classes define properties and methods of objects and can be referred to as "blueprints" for objects. Classes in TypeScript are very much similar to the JavaScript classes with a few differences, such as access modifiers and abstract classes.
+Classes define the properties and methods of objects and can be referred to as "blueprints" for objects. Classes in TypeScript are very much similar to the JavaScript classes with a few differences, such as access modifiers and abstract classes.
 
 If you know absolutely nothing about the class concept, read [this article](https://yagmurcetintas.com/journal/introduction-to-object-oriented-programming) first. If you do already know, the example below is there to remind a few simple things:
 
@@ -829,7 +829,7 @@ console.log(stack3.push(false)) // Prints: [true, false, true, true, false]
 
 **Using generics with multiple types:**
 
-It is also possible to use generics with classes and functions that require multiple types. But when using generic types, you can only use built-in methods available for every type. Type specific built-in methods are not available for use.
+It is also possible to use generics with classes and functions that require multiple types. But when using generic types, you can only use built-in methods available for every type. Type-specific built-in methods are not available for use.
 
 ```typescript
 function displayInfo<T, U>(
@@ -914,7 +914,7 @@ type ReadonlyBird = Readonly<Pet> // This is the same as: type ReadonlyBird = {r
 type PickedBird = Pick<Pet, "name" | "isEvil"> // This is the same as: type PickedBird = {name: string, isEvil: boolean }
 ```
 
-**Record<keys, value>:** If all the values of an object type has the same type, this one will be useful.
+**Record<keys, value>:** If all the values of an object type have the same type, this one will be useful.
 
 **Omit<T, keys>:** If you want to omit certain keys in a type, this one will be useful.
 
