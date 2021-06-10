@@ -765,13 +765,10 @@ class StackStr {
     this.stack = arr
   }
   public push(item: string): string[] {
-    this.stack = [item, ...this.stack]
-    return this.stack
+    return this.stack.push(item)
   }
   public pop(): string {
-    let popped = this.stack[this.stack.length - 1]
-    this.stack = this.stack.slice(0, -1)
-    return popped
+    return this.stack.pop()
   }
   public printStack(): void {
     console.log(this.stack)
@@ -784,13 +781,13 @@ const stack3 = new StackStr([])
 stack1.printStack() // Prints: ["1", "2", "3"]
 console.log(stack1.pop()) // Prints: "3"
 stack1.printStack() // Prints: ["1", "2"]
-console.log(stack1.push("hai")) // Prints: ["hai", "1", "2"]
+console.log(stack1.push("hai")) // Prints: ["1", "2", "hai"]
 ```
 
 What if I wanted to use the same class with other data types as well? I have 3 options:
 
 1. I could use union types (which will make the code longer and hard to read).
-2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling compiler's ability to type-check.
+2. I could use type `any`, which will make my code no longer type-safe, which means I am crippling compiler's ability to do type-check.
 3. I could write the same class for every data type I'm planning to use it for.
 
 Or... I could use a placeholder type when defining this class, and specify the data structure when I'm creating an instance of it. And the class that I would create using a placeholder type would be defined as a generic class. Now let's re-write the Stack example using generics:
@@ -802,13 +799,10 @@ class Stack<T> {
     this.stack = arr
   }
   public push(item: T): T[] {
-    this.stack = [item, ...this.stack]
-    return this.stack
+    return this.stack.push(item)
   }
   public pop(): T {
-    let popped = this.stack[this.stack.length - 1]
-    this.stack = this.stack.slice(0, -1)
-    return popped
+    return this.stack.pop()
   }
   public printStack(): void {
     console.log(this.stack)
@@ -828,9 +822,9 @@ console.log(stack3.pop()) // Prints: true
 stack1.printStack() // Prints: ["1", "2"]
 stack2.printStack() // Prints: [11, 22]
 stack3.printStack() // Prints: [true, false, true, true]
-console.log(stack1.push("hai")) // Prints: ["hai", "1", "2"]
+console.log(stack1.push("hai")) // Prints: ["1", "2", "hai"]
 console.log(stack2.push("hai")) // Error: Argument of type 'string' is not assignable to parameter of type 'number'.
-console.log(stack3.push(false)) // Prints: [false, true, false, true, true]
+console.log(stack3.push(false)) // Prints: [true, false, true, true, false]
 ```
 
 **Using generics with multiple types:**
