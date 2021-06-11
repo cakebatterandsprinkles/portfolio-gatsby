@@ -38,6 +38,30 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "Home is wherever your heart sings",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/peace.jpg"
+        alt="digital illustration of my dream home"
+      />
+    ),
+  },
+  {
+    name: "彼はすごい",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/ari.jpg"
+        alt="digital illustration of my husband"
+      />
+    ),
+  },
+  {
     name: "I eat rainbows",
     year: "2021",
     medium: "Digital art made by using Procreate.",
