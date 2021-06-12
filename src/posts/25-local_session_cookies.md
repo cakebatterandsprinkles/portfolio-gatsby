@@ -128,6 +128,8 @@ console.log(localStorage.length) // Prints: 0
 
 - Stored data is only available on the same origin for both of them. (They use the same-origin policy. For more explanation check out the last subtitle in this article.)
 
+- localStorage data can be accessed from different tabs if the domain and subdomain are the same, while sessionStorage data cannot be accessed, even if it's the exact same page.
+
 <div id="cookies"></div>
 
 #### 2. HTTP Cookies
@@ -182,7 +184,7 @@ To see if you have any cookies set on your browser, you can visit the Applicatio
 
 **IndexedDB API:**
 
-- Useful for storing large amounts of structured data on the client side.
+- Useful for storing large amounts of structured data on the client side. Keeps the data as key-value pairs.
 - You can (and probably should) use an abstraction library (like [Dexie.js](https://dexie.org/)) to help you use IndexedDB, as it is a low-level API and if used wrong, might break the applications. Check out the other IndexedDB open source projects from [here](https://awesomeopensource.com/projects/indexeddb).
 
 **Cache API:**
