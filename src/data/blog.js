@@ -1,7 +1,7 @@
 import styles from "../pages/journal.module.scss"
 
 const tagStyles = {
-  JavaScript: styles.yellow,
+  JavaScript: styles.darkyellow,
   "Computer Science": styles.orange,
   Mathematics: styles.crimson,
   Genetics: styles.green,
