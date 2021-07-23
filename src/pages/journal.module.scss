@@ -47,6 +47,7 @@
 .tagAndContributorContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .tagContainer {
@@ -73,7 +74,7 @@
 .summaryContainer {
   font-family: var(--article-font), "sans-serif";
   font-size: 0.9rem;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1.5rem 0;
   color: var(--coolgray);
 }
 
@@ -345,6 +346,10 @@ hr {
   align-items: center;
   font-family: var(--article-font), "sans-serif";
   font-size: 0.9rem;
+  padding: .2rem .3rem;
+  border: 1px solid var(--lightgray);
+  background-color: var(--snow);
+  border-radius: 5px;
 }
 
 .contributorContainer > * {
