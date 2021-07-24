@@ -1,5 +1,6 @@
 import { CalendarIcon } from "@heroicons/react/outline"
 import { FireIcon } from "@heroicons/react/solid"
+import { graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/Layout"
