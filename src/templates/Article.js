@@ -1,5 +1,5 @@
+import { CalendarIcon } from "@heroicons/react/outline"
 import { FireIcon } from "@heroicons/react/solid"
-import { graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/Layout"
@@ -42,7 +42,9 @@ const ArticlePage = props => {
               />
             </div>
             <div className={articleStyle.date}>
-              {frontmatter.date}
+              <div className={styles.dateContainer}>
+                <CalendarIcon className={styles.dateIcon}/>{frontmatter.date}
+              </div>
               {frontmatter.contributor ? (
                 <div className={styles.contributorContainer}>
                   <FireIcon className={styles.contributorIcon} />

@@ -324,7 +324,20 @@ hr {
 // date container styling
 
 .dateContainer {
+ display: flex;
+ align-items:center;
+ font-size: .9rem
+}
+
+.dateContainerSidebar{
   margin-top: 1.5rem;
+}
+
+.dateIcon{
+  width: 1rem;
+  height: auto;
+  margin-right: .2rem;
+  margin-bottom: .1rem;
 }
 
 .year {
@@ -370,6 +383,8 @@ hr {
 
 .contributorLink {
   text-decoration: none;
+  display:flex;
+  align-items: center;
 }
 
 .contributorHeading {
@@ -404,10 +419,9 @@ hr {
     margin-top: 1rem;
   }
 
-  .dateContainer {
+  .dateContainerSidebar{
     margin-top: 1rem;
   }
-
   .mainHeading {
     font-size: 2rem;
   }
@@ -465,6 +479,23 @@ hr {
 
   .mainHeading {
     font-size: 1.5rem;
+  }
+
+  .contributorContainer{
+    font-size: .75rem;
+    border:none;
+    padding: 0;
+    background-color: inherit;
+    margin-top: .25rem;
+  }
+
+  .contributorAvatar{
+    height: 1.3rem;
+  }
+
+  .tagAndContributorContainer {
+    flex-direction:column;
+    align-items: flex-start
   }
 }
 

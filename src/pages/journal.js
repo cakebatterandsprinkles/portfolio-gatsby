@@ -3,7 +3,7 @@ import {
   ChevronRightIcon,
   FireIcon,
   SearchIcon,
-  XCircleIcon,
+  XCircleIcon
 } from "@heroicons/react/solid"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
@@ -332,7 +332,7 @@ const JournalPage = () => {
               <ChevronRightIcon className={styles.chevronIcon} />
               <p className={styles.resetText}>View all articles</p>
             </div>
-            <div className={styles.dateContainer}>
+            <div className={styles.dateContainerSidebar}>
               <p className={styles.heading}>Years</p>
               <hr></hr>
               {years !== []
