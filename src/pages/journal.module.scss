@@ -52,11 +52,8 @@
 
 .tagContainer {
   display: flex;
-  align-items: flex-start;
-}
-
-.tagContainer > * {
-  margin-bottom: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .tagWrapper {
@@ -82,11 +79,10 @@
   height: 1.5rem;
   width: auto;
   margin-right: 0.25rem;
-  margin-bottom: 0.25rem;
   color: var(--coolgray);
 }
 
-.tag {
+.tagSideWrapper > .tag {
   padding: 0.25rem 0.4rem;
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
@@ -95,7 +91,18 @@
   font-size: 0.7rem;
   border-radius: 5px;
   font-family: "Roboto Mono", monospace;
-  // text-shadow: 0.5px 0.5px 1px var(--darkgray);
+  cursor: pointer;
+}
+
+.tagWrapper > .tag {
+  padding: 0.25rem 0.4rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0;
+  color: var(--snow);
+  font-weight: bold;
+  font-size: 0.7rem;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
   cursor: pointer;
 }
 
@@ -358,8 +365,8 @@ hr {
   display: flex;
   align-items: center;
   font-family: var(--article-font), "sans-serif";
-  font-size: 0.9rem;
-  padding: .2rem .3rem;
+  font-size: 0.85rem;
+  padding: .1rem .25rem;
   border: 1px solid var(--lightgray);
   background-color: var(--snow);
   border-radius: 5px;
