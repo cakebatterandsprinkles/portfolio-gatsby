@@ -10,7 +10,7 @@ const Page404 = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Not Found | cakebatterandsprinkles</title>
+        <title>Not Found | Yagmur Cetin Tas</title>
       </Helmet>
       {createHaiku()}
       <div className={journalStyles.blogContainer}>

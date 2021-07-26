@@ -11,7 +11,7 @@ function AboutPage() {
   return (
     <Layout>
       <Helmet>
-        <title>About Me | cakebatterandsprinkles</title>
+        <title>About Me | Yagmur Cetin Tas</title>
       </Helmet>
       {createHaiku()}
       <div className={styles.aboutContainer}>

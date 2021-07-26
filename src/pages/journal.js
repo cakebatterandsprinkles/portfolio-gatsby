@@ -186,7 +186,7 @@ const JournalPage = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Journal | cakebatterandsprinkles</title>
+        <title>Journal | Yagmur Cetin Tas</title>
       </Helmet>
       {createHaiku()}
       <div className={styles.blogContainer}>

@@ -92,7 +92,7 @@ const GalleryPage = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Art Gallery | cakebatterandsprinkles</title>
+        <title>Art Gallery | Yagmur Cetin Tas</title>
       </Helmet>
       {createHaiku()}
       <div className={styles.galleryContainer}>

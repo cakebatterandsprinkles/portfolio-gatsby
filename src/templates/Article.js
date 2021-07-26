@@ -30,7 +30,7 @@ const ArticlePage = props => {
   return (
     <Layout>
       <Helmet>
-        <title>{frontmatter.title} | cakebatterandsprinkles</title>
+        <title>{frontmatter.title} | Yagmur Cetin Tas</title>
         <meta name="description" content={frontmatter.summary} />
       </Helmet>
       <div className={styles.blogContainer}>
