@@ -76,6 +76,7 @@
   line-height: 1.75rem;
   padding-top: 2rem;
   font-family: var(--article-font);
+  font-feature-settings: "lnum";
 }
 
 .highlight {
@@ -123,6 +124,7 @@
 
 .longtext {
   font-family: var(--article-font);
+  font-feature-settings: "lnum";
   font-size: 0.9rem;
   line-height: 1.5rem;
 }

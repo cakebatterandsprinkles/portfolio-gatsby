@@ -44,6 +44,7 @@
   font-family: var(--article-font);
   line-height: 1.75rem;
   color: var(--coolgray);
+  font-feature-settings: "lnum";
 }
 
 .content *::selection {
