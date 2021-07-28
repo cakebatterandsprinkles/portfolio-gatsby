@@ -62,12 +62,6 @@
   flex-wrap: wrap;
 }
 
-.tagWrapper > .tag {
-  cursor: default;
-  opacity: 65%;
-  white-space: nowrap;
-}
-
 .summaryContainer {
   font-family: var(--article-font), "sans-serif";
   font-size: 0.9rem;
@@ -104,7 +98,9 @@
   font-size: 0.7rem;
   border-radius: 5px;
   font-family: "Roboto Mono", monospace;
-  cursor: pointer;
+  cursor: default;
+  opacity: 65%;
+  white-space: nowrap;
 }
 
 .link {
