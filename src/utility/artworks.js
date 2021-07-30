@@ -38,7 +38,7 @@ const inkWork = [
 
 const digitalWork = [
   {
-    name: "Bonsai fun",
+    name: "Your own little part of the world",
     year: "2021",
     medium: "Digital art made by using Procreate.",
     image: (
