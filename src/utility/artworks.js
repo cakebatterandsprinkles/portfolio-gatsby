@@ -38,6 +38,18 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "Bonsai fun",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/bonsai.jpg"
+        alt="digital illustration of little monsters hanging around a bonsai tree"
+      />
+    ),
+  },
+  {
     name: "Home is wherever your heart sings",
     year: "2021",
     medium: "Digital art made by using Procreate.",
