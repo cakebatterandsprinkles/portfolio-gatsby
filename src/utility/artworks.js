@@ -38,6 +38,18 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "Calistoga",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/astronaut.jpg"
+        alt="digital illustration of an astronaut reading a book under traffic lights"
+      />
+    ),
+  },
+  {
     name: "Your own little part of the world",
     year: "2021",
     medium: "Digital art made by using Procreate.",
