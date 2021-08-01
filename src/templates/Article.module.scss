@@ -76,6 +76,10 @@
   padding: 0.2rem 0.1rem;
 }
 
+.content h6 a {
+  word-break: break-all;
+}
+
 @media (max-width: 900px) {
   .mainHeader {
     font-size: 1.1rem;
@@ -84,7 +88,7 @@
 
 @media (max-width: 600px) {
   .date {
-    font-size: .9rem;
+    font-size: 0.9rem;
     flex-direction: column;
     align-items: flex-start;
   }
