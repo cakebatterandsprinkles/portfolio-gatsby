@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "portfolio-gatsby",
+    title: "Yagmur Cetin Tas",
+    description: "A journal about tech, neuroscience, and other things.",
     author: "Yagmur C. Tas",
     github: "cakebatterandsprinkles",
     siteUrl: "https://yagmurcetintas.com",
@@ -42,14 +43,6 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-embedder`,
-            options: {
-              customTransformers: [
-                // Your custom transformers
-              ],
-              services: {
-                // The service-specific options by the name of the service
-              },
-            },
           },
           "gatsby-remark-relative-images",
           {
@@ -93,6 +86,70 @@ module.exports = {
         prependToBody: false,
         color: `var(--palepink)`,
         footerHeight: 500,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.summary,
+                  date: edge.node.frontmatter.date,
+                  url:
+                    site.siteMetadata.siteUrl +
+                    "/journal/" +
+                    edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl +
+                    "/journal/" +
+                    edge.node.fields.slug,
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                        tags
+                        summary
+                        contributor
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Yagmur Cetin Tas | Journal",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            match: "^/journal/",
+          },
+        ],
       },
     },
   ],

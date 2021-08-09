@@ -44,7 +44,8 @@ const ArticlePage = props => {
             </div>
             <div className={articleStyle.date}>
               <div className={styles.dateContainer}>
-                <CalendarIcon className={styles.dateIcon}/>{frontmatter.date}
+                <CalendarIcon className={styles.dateIcon} />
+                {frontmatter.date}
               </div>
               {frontmatter.contributor ? (
                 <div className={styles.contributorContainer}>

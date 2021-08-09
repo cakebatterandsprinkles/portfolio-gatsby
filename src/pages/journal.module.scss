@@ -12,6 +12,24 @@
   border-radius: 20px;
 }
 
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rssIcon {
+  text-decoration: none;
+  height: 1.75rem;
+  width: auto;
+  cursor: pointer;
+  color: var(--cadmiumorange);
+  margin-left: 0.5rem;
+}
+
+.rssIcon:hover {
+  color: var(--orange);
+}
+
 .mainHeading {
   margin: 0;
 }
@@ -328,20 +346,20 @@ hr {
 // date container styling
 
 .dateContainer {
- display: flex;
- align-items:center;
- font-size: .9rem
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
 }
 
-.dateContainerSidebar{
+.dateContainerSidebar {
   margin-top: 1.5rem;
 }
 
-.dateIcon{
+.dateIcon {
   width: 1rem;
   height: auto;
-  margin-right: .2rem;
-  margin-bottom: .1rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 
 .year {
@@ -363,7 +381,7 @@ hr {
   align-items: center;
   font-family: var(--article-font), "sans-serif";
   font-size: 0.85rem;
-  padding: .1rem .25rem;
+  padding: 0.1rem 0.25rem;
   border: 1px solid var(--lightgray);
   background-color: var(--snow);
   border-radius: 5px;
@@ -387,7 +405,7 @@ hr {
 
 .contributorLink {
   text-decoration: none;
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
@@ -423,7 +441,7 @@ hr {
     margin-top: 1rem;
   }
 
-  .dateContainerSidebar{
+  .dateContainerSidebar {
     margin-top: 1rem;
   }
   .mainHeading {
@@ -485,21 +503,21 @@ hr {
     font-size: 1.5rem;
   }
 
-  .contributorContainer{
-    font-size: .75rem;
-    border:none;
+  .contributorContainer {
+    font-size: 0.75rem;
+    border: none;
     padding: 0;
     background-color: inherit;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
   }
 
-  .contributorAvatar{
+  .contributorAvatar {
     height: 1.3rem;
   }
 
   .tagAndContributorContainer {
-    flex-direction:column;
-    align-items: flex-start
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

@@ -2,8 +2,9 @@ import {
   BookmarkIcon,
   ChevronRightIcon,
   FireIcon,
+  RssIcon,
   SearchIcon,
-  XCircleIcon
+  XCircleIcon,
 } from "@heroicons/react/solid"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { useEffect, useRef, useState } from "react"
@@ -193,7 +194,15 @@ const JournalPage = () => {
         <div className={styles.blogWrapper}>
           <div className={styles.headingContainer}>
             <h1 className={styles.mainHeading}>Journal</h1>
-            <ShareButton link="https://yagmurcetintas.com/journal" />
+            <div className={styles.iconContainer}>
+              <ShareButton link="https://yagmurcetintas.com/journal" />
+              <a
+                href="https://yagmurcetintas.com/rss.xml"
+                className={styles.iconContainer}
+              >
+                <RssIcon className={styles.rssIcon} />
+              </a>
+            </div>
           </div>
           <div className={styles.disclaimerText}>
             If you have copyright claims, mail me and I'll take it down. If you
