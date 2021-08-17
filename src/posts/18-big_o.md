@@ -165,7 +165,7 @@ Runtime complexity describes the performance of an algorithm in terms of how muc
 
 To get an idea of how complex and algorithm would be, we can count the number of simple operations the computer has to perform.
 
-The complexity of the algorithm is shown next to a capital O, inside of parenthesis, like this: **O(n).** Let's break this syntax down. O(n) is short for "Order of n", as O is known as the Order function. This is a simplified version of something called **[the order of magnitude.](https://en.wikipedia.org/wiki/Order_of_magnitude)** Now I'm not a mathematician so I'll keep this as simple as possible. The order of magnitude of a number can be defined as the number of powers of 10 contained in the number. We use it in our daily lives too, think of the phrase "x figure income". If it is a 6 figure income, the order of magnitude is 5. As an example, let's think of a random 6 figure income, such as 300.000, this number has 5 powers of 10, and it is multiplied by 3. But 3 is less than 10, so we round it to the nearest power of 10. If the number we were working with was 600.000, the order of magnitude would have been rounded to 7. The order of magnitude provides **approximation** on a logarithmic scale, not an actual number. Another example that could be given is on a planetary scale, the mass of [Saturn](https://en.wikipedia.org/wiki/Saturn) (5.683 × 10^26 kg) is 95 times that of [the Earth](https://en.wikipedia.org/wiki/Earth) (5.972 × 10^24 kg), so Saturn is two orders of magnitude more massive than Earth.
+The complexity of the algorithm is shown next to a capital O, inside of parenthesis, like this: **O(n).** Let's break this syntax down. O(n) is short for "Order of n", as O is known as the Order function. This is a simplified version of something called **[the order of magnitude.](https://en.wikipedia.org/wiki/Order_of_magnitude)** Now I'm not a mathematician so I'll keep this as simple as possible. The order of magnitude of a number can be defined as the number of powers of 10 contained in the number. We use it in our daily lives too, think of the phrase "x figure income". If it is a 6 figure income, the order of magnitude is 5. As an example, let's think of a random 6 figure income, such as 300.000, this number has 5 powers of 10, and it is multiplied by 3. But 3 is less than 10, so we round it to the nearest power of 10. If the number we were working with was 600.000, the order of magnitude would have been rounded to 6. The order of magnitude provides **approximation** on a logarithmic scale, not an actual number. Another example that could be given is on a planetary scale, the mass of [Saturn](https://en.wikipedia.org/wiki/Saturn) (5.683 × 10^26 kg) is 95 times that of [the Earth](https://en.wikipedia.org/wiki/Earth) (5.972 × 10^24 kg), so Saturn is two orders of magnitude more massive than Earth.
 
 #### Comparing Typical Big Os
 
@@ -306,7 +306,7 @@ Example-1:
 ```javascript
 function sum(arr) {
   let total = 0
-  for (let i = 1; i <= arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     total += arr[i]
   }
   return total
@@ -315,19 +315,17 @@ function sum(arr) {
 
 Let's break up the space we need for this single sum function:
 
-We have a variable named "total" and a variable named "i". Other than these two variable declarations, we have nothing that takes up space. Of course, a calculation is being made, but the space we need for that calculation is already reserved at the second line of the code.
-
-This means this algorithm always requires constant space, no matter what the input is. So the big O for space complexity for this algorithm is O(1).
+We have a variable named "total" and a variable named "i". Other than these two variable declarations, we have nothing that takes up space. Of course, a calculation is being made, but the space we need for that calculation is already reserved at the second line of the code. This means this algorithm always requires constant space, no matter what the input is. So the big O for space complexity for this algorithm is O(1).
 
 Example-2:
 
 ```javascript
 function double(arr) {
-let newArr = [];
-for (let i = 1; i <= arr.length; i++) {
-newArr.push(2 \* arr[i]);
-}
-return newArr;
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(2 * arr[i])
+  }
+  return newArr
 }
 ```
 
@@ -355,7 +353,7 @@ In this example, as the input length approaches infinity, the length of the arra
 
 - Insertion -> O(1)
 - Removal -> O(1)
-- Access -> O(1)
+- Access (`obj["key"]` or `obj.key`) -> O(1)
 - Search -> Searching for a key is O(1), but searching for a value is O(n).
 
 **Big O's of some object methods:**
@@ -369,7 +367,7 @@ In this example, as the input length approaches infinity, the length of the arra
 
 - Insertion -> If you are inserting to the end of the array (push) it is O(1). If you insert an item to the beginning of an array (unshift), it becomes O(n), because you will be changing the indices of every item on that array.
 - Removal -> If you are removing from the end of the array (pop) it is O(1). If you remove an item from the beginning of an array (shift), it becomes O(n), because you will be changing the indices of every item on that array.
-- Access -> O(1)
+- Access (`arr[i]`)-> O(1)
 - Search -> O(n)
 
 **Big O's of array methods:**
@@ -381,10 +379,12 @@ In this example, as the input length approaches infinity, the length of the arra
 - concat -> O(n)
 - slice -> O(n)
 - splice -> O(n)
+- includes -> O(n)
 - sort -> O(n\*log(n))
+- every/some -> O(n)
 - forEach/map/filter/reduce -> O(n)
 
-Note: Accessing elements in an array (by index) or object (by key) is constant!
+**Note:** Math.max() / Math.min() has the time complexity of O(n)
 
 #### Sorting Algorithms:
 
