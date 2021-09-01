@@ -1,5 +1,5 @@
 import { CalendarIcon } from "@heroicons/react/outline"
-import { FireIcon } from "@heroicons/react/solid"
+import { FireIcon, RssIcon } from "@heroicons/react/solid"
 import { graphql } from "gatsby"
 import React, { useEffect, useState } from "react"
 import Helmet from "react-helmet"
@@ -38,9 +38,17 @@ const ArticlePage = props => {
           <div className={articleStyle.headerContainer}>
             <div className={articleStyle.mainHeader}>
               {frontmatter.title.toLowerCase()}
-              <ShareButton
-                link={`https://yagmurcetintas.com/journal/${fields.slug}`}
-              />
+              <div className={articleStyle.iconContainer}>
+                <ShareButton
+                  link={`https://yagmurcetintas.com/journal/${fields.slug}`}
+                />
+                <a
+                  href="https://yagmurcetintas.com/rss.xml"
+                  className={styles.iconContainer}
+                >
+                  <RssIcon className={styles.rssIcon} />
+                </a>
+              </div>
             </div>
             <div className={articleStyle.date}>
               <div className={styles.dateContainer}>

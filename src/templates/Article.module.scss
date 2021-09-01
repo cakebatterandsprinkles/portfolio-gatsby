@@ -79,6 +79,24 @@
   word-break: break-all;
 }
 
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rssIcon {
+  text-decoration: none;
+  height: 1.75rem;
+  width: auto;
+  cursor: pointer;
+  color: var(--cadmiumorange);
+  margin-left: 0.5rem;
+}
+
+.rssIcon:hover {
+  color: var(--orange);
+}
+
 @media (max-width: 900px) {
   .mainHeader {
     font-size: 1.1rem;
