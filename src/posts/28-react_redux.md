@@ -203,7 +203,7 @@ export default CounterContext;
 </CounterContext.Consumer>
 ```
 
-For the use of the Context API in functional components, check out [useContext hook](http://localhost:8000/journal/react-hooks#useContext).
+For the use of the Context API in functional components, check out [useContext hook](https://yagmurcetintas.com/journal/react-hooks#useContext).
 
 ### Which one to choose?
 
