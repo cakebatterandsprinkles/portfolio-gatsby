@@ -5,6 +5,8 @@ const sections = [
   { handle: "digital", title: "Digital" },
   { handle: "clay", title: "Clay" },
   { handle: "ink", title: "Ink" },
+  { handle: "linocut", title: "Linocut" },
+  { handle: "intaglio", title: "Intaglio" },
 ]
 
 const maxImageWidth = 800
@@ -197,6 +199,32 @@ const digitalWork = [
 
 const clayWork = [
   {
+    name: "Jack-o'-lantern",
+    year: "2021",
+    medium: "Cone 6 clay & glaze.",
+    studio: "Crealde School of Art",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/pumpkin.jpg"
+        alt="Jack-o'-lantern made from clay"
+      />
+    ),
+  },
+  {
+    name: "Calcifer",
+    year: "2019",
+    medium: "Cone 6 clay & underglaze.",
+    studio: "Crealde School of Art",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/clay/calcifer.png"
+        alt="Clay mask of Calcifer"
+      />
+    ),
+  },
+  {
     name: "Kitsune",
     year: "2019",
     medium: "Cone 6 clay & underglaze.",
@@ -354,4 +382,58 @@ const clayWork = [
   },
 ]
 
-export { sections, digitalWork, clayWork, inkWork }
+const linocutWork = [
+  {
+    name: "Astronaut-1",
+    year: "2020",
+    medium: "Linoleum block, Speedball Block Printing Water Soluble Ink",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/linocut/astronaut.png"
+        alt="A linocut artwork of an astronaut on a planet"
+      />
+    ),
+  },
+  {
+    name: "Astronaut-2",
+    year: "2020",
+    medium: "Linoleum block, Speedball Block Printing Water Soluble Ink",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/linocut/astronaut2.png"
+        alt="A linocut artwork of an astronaut on a planet"
+      />
+    ),
+  },
+  {
+    name: "Spidey",
+    year: "2020",
+    medium: "Carved linoleum block",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/linocut/spidey.png"
+        alt="The linocut block of a jumping spider"
+      />
+    ),
+  }
+]
+
+const intaglioWork = [
+  {
+    name: "The bumblebee",
+    year: "2021",
+    medium: "Copper block, etching ink",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/intaglio/thebumblebee.png"
+        alt="An intaglio print of a bumblebee flying around flowers"
+      />
+    ),
+  }
+]
+
+export { sections, digitalWork, clayWork, inkWork, linocutWork, intaglioWork }

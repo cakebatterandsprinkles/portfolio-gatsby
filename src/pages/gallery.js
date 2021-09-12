@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import Pagination from "../components/Pagination"
 import Polaroid from "../components/Polaroid"
 import ShareButton from "../components/shareButton"
-import { clayWork, digitalWork, inkWork, sections } from "../utility/artworks"
+import { clayWork, digitalWork, inkWork, linocutWork, intaglioWork, sections } from "../utility/artworks"
 import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
 
@@ -15,6 +15,8 @@ const GalleryPage = () => {
   const pageCountDigital = Math.ceil(digitalWork.length / pageSize)
   const pageCountClay = Math.ceil(clayWork.length / pageSize)
   const pageCountInk = Math.ceil(inkWork.length / pageSize)
+  const pageCountLinocut = Math.ceil(linocutWork.length / pageSize)
+  const pageCountIntaglio = Math.ceil(intaglioWork.length / pageSize)
 
   const changeSection = str => {
     setSection(str)
@@ -86,6 +88,42 @@ const GalleryPage = () => {
             : null}
         </div>
       )
+    } else if (section === "linocut") {
+      return (
+        <div className={styles.gridContainer}>
+          {linocutWork
+            .sort((a, b) => a.date - b.date)
+            .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+            .map((w, i) => (
+              <div className={styles.card} key={`linocutwork-${i}`}>
+                <Polaroid name={w.name} year={w.year} medium={w.medium}>
+                  {w.image}
+                </Polaroid>
+              </div>
+            ))}
+          {pageCountLinocut > 1
+            ? Pagination(pageCountLinocut, currentPage, setCurrentPage)
+            : null}
+        </div>
+      )
+    } else if (section === "intaglio") {
+      return (
+        <div className={styles.gridContainer}>
+          {intaglioWork
+            .sort((a, b) => a.date - b.date)
+            .slice(currentPage * pageSize, (currentPage + 1) * pageSize)
+            .map((w, i) => (
+              <div className={styles.card} key={`intaglioWork-${i}`}>
+                <Polaroid name={w.name} year={w.year} medium={w.medium}>
+                  {w.image}
+                </Polaroid>
+              </div>
+            ))}
+          {pageCountIntaglio > 1
+            ? Pagination(pageCountIntaglio, currentPage, setCurrentPage)
+            : null}
+        </div>
+      )
     }
   }, [section, currentPage, pageCountDigital, pageCountInk, pageCountClay])
 
@@ -108,9 +146,8 @@ const GalleryPage = () => {
             {sections.map((s, i) => (
               <div
                 key={`section-${i}`}
-                className={`${styles.navbarLink} ${
-                  section === s.handle ? styles.activeLink : ""
-                }`}
+                className={`${styles.navbarLink} ${section === s.handle ? styles.activeLink : ""
+                  }`}
                 aria-hidden="true"
                 onClick={() => changeSection(s.handle)}
               >
