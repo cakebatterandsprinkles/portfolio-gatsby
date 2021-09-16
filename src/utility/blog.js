@@ -10,6 +10,8 @@ const tagStyles = {
   Japan: styles.pink,
   History: styles.seagreen,
   "Web Development": styles.salmon,
+  Docker: styles.cadmiumorange,
+  Redis: styles.indianred,
   React: styles.lightpurple,
   GraphQL: styles.grassgreen,
   "Express.js": styles.palepink,
