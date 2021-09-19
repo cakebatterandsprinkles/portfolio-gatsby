@@ -117,14 +117,14 @@ const Navigation = () => {
             />
           </a>
           <a
-            href="https://www.researchgate.net/profile/Yagmur-Cetin-Tas"
+            href="https://scholar.google.com/citations?user=wJctGgcAAAAJ&hl=en&oi=ao"
             target="_blank"
             rel="noreferrer"
           >
             <img
               src={beaker}
-              alt="researchgate"
-              className={`${styles.socialIcon} ${styles.researchgateLink}`}
+              alt="google scholar link"
+              className={`${styles.socialIcon} ${styles.scienceLink}`}
             />
           </a>
           <a
