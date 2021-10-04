@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import ReactCardFlip from "react-card-flip"
 import CardBack from "../components/CardBack"
 import CardFront from "../components/CardFront"
@@ -6,6 +6,24 @@ import styles from "./ReactCardFlip.module.scss"
 
 const Card = props => {
   const [isFlipped, setIsFlipped] = useState(false)
+  const [showImage, setShowImage] = useState(false)
+
+  useEffect(() => {
+    let timeoutHandler;
+    if (isFlipped) {
+      timeoutHandler = setTimeout(() => {
+        setShowImage(false);
+      }, 1000);
+    } else {
+      setShowImage(true);
+    }
+
+    return () => {
+      if (timeoutHandler)
+        clearTimeout(timeoutHandler)
+    }
+  }, [isFlipped])
+
   const clickHandler = () => setIsFlipped(prevState => !prevState)
 
   return (
@@ -20,7 +38,7 @@ const Card = props => {
         <CardFront
           cardStyle={props.name}
           onClick={clickHandler}
-          image={props.image}
+          image={showImage ? props.image : null}
         >
           <p>{props.name}</p>
         </CardFront>
