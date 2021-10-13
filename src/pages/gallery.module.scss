@@ -150,6 +150,16 @@
   .gridContainer {
     padding-top: 0.5rem;
   }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navbarLink {
+    margin-right: 0.35rem;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 300px) {
