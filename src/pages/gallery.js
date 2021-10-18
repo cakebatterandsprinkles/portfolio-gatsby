@@ -9,7 +9,9 @@ import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
 
 const GalleryPage = () => {
-  const [section, setSection] = useState("digital")
+  const handles = sections.map(section => section.handle)
+  const hash = window.location.hash.slice(1)
+  const [section, setSection] = useState(handles.includes(hash) ? hash : "digital")
   const [currentPage, setCurrentPage] = useState(0)
   const pageSize = 10
   const pageCountDigital = Math.ceil(digitalWork.length / pageSize)
@@ -20,6 +22,7 @@ const GalleryPage = () => {
 
   const changeSection = str => {
     setSection(str)
+    window.location.hash = str
     setCurrentPage(0)
   }
 
@@ -137,7 +140,7 @@ const GalleryPage = () => {
         <div className={styles.galleryWrapper}>
           <div className={styles.headingContainer}>
             <h1 className={styles.heading}>Art Gallery</h1>
-            <ShareButton link="https://yagmurcetintas.com/gallery" />
+            <ShareButton link={`https://yagmurcetintas.com/gallery/#${section}`} />
           </div>
           <div className={styles.disclaimerText}>
             Be a kind human and get permission before using my content. Thanks!
