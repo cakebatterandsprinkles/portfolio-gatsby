@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import Pagination from "../components/Pagination"
@@ -9,9 +9,7 @@ import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
 
 const GalleryPage = () => {
-  const handles = sections.map(section => section.handle)
-  const hash = window.location.hash.slice(1)
-  const [section, setSection] = useState(handles.includes(hash) ? hash : "digital")
+  const [section, setSection] = useState("digital")
   const [currentPage, setCurrentPage] = useState(0)
   const pageSize = 10
   const pageCountDigital = Math.ceil(digitalWork.length / pageSize)
@@ -19,6 +17,14 @@ const GalleryPage = () => {
   const pageCountInk = Math.ceil(inkWork.length / pageSize)
   const pageCountLinocut = Math.ceil(linocutWork.length / pageSize)
   const pageCountIntaglio = Math.ceil(intaglioWork.length / pageSize)
+
+  useEffect(() => {
+    const handles = sections.map(section => section.handle)
+    const hash = window.location.hash.slice(1)
+    if (handles.includes(hash)) {
+      setSection(hash)
+    }
+  }, [])
 
   const changeSection = str => {
     setSection(str)
