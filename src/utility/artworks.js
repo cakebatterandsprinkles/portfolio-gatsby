@@ -40,6 +40,18 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "Cottonflower",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/cottonflower.jpg"
+        alt="digital illustration of a cottonflower and little monsters that inhabit the island it's in"
+      />
+    ),
+  },
+  {
     name: "Calistoga",
     year: "2021",
     medium: "Digital art made by using Procreate.",
@@ -60,6 +72,18 @@ const digitalWork = [
         width={maxImageWidth}
         src="../images/gallery/digital_art/bonsai.jpg"
         alt="digital illustration of little monsters hanging around a bonsai tree"
+      />
+    ),
+  },
+  {
+    name: "Surprised",
+    year: "2021",
+    medium: "Digital art made by using Procreate. You can see the artist's obvious efforts to not draw hands or feet (or hair, for that matter).",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/surprised.jpg"
+        alt="digital illustration of a surprised tribal people with pink monsters"
       />
     ),
   },
