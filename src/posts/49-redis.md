@@ -10,7 +10,7 @@ Welcome to our `understanding Redis` quest! Today we're trying to explain what R
 
 **What's in this article?**
 
-- [What is Redis?](#what-is-redis) - [I made this funky diagram to somewhat explain how Redis works](#i-made-this-funky-diagram-to-somewhat-explain-how-redis-works)
+- [What is Redis?](#what-is-redis)
 - [Redis and Security](#redis-and-security)
 - [How to use Redis](#how-to-use-redis)
   - [The Redis CLI](#the-redis-cli)
