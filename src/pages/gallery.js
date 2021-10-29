@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import Pagination from "../components/Pagination"
 import Polaroid from "../components/Polaroid"
 import ShareButton from "../components/shareButton"
+import RedBubbleIcon from "../images/main/redbubble-icon.png"
 import { clayWork, digitalWork, inkWork, linocutWork, intaglioWork, sections } from "../utility/artworks"
 import { createHaiku } from "../utility/functions"
 import styles from "./gallery.module.scss"
@@ -30,6 +31,10 @@ const GalleryPage = () => {
     setSection(str)
     window.location.hash = str
     setCurrentPage(0)
+  }
+
+  const handleRedBubbleIconClick = () => {
+    window.open("https://www.redbubble.com/people/yagmurcetintas/shop", '_blank');
   }
 
   const renderContent = React.useCallback(() => {
@@ -134,7 +139,7 @@ const GalleryPage = () => {
         </div>
       )
     }
-  }, [section, currentPage, pageCountDigital, pageCountInk, pageCountClay])
+  }, [section, currentPage, pageCountDigital, pageCountInk, pageCountClay, pageCountIntaglio, pageCountLinocut])
 
   return (
     <Layout>
@@ -146,7 +151,16 @@ const GalleryPage = () => {
         <div className={styles.galleryWrapper}>
           <div className={styles.headingContainer}>
             <h1 className={styles.heading}>Art Gallery</h1>
-            <ShareButton link={`https://yagmurcetintas.com/gallery/#${section}`} />
+            <div className={styles.iconWrapper}>
+              <img
+                src={RedBubbleIcon}
+                alt="RedBubble Icon"
+                className={styles.icon}
+                onClick={handleRedBubbleIconClick}
+                aria-hidden="true"
+              />
+              <ShareButton link={`https://yagmurcetintas.com/gallery/#${section}`} />
+            </div>
           </div>
           <div className={styles.disclaimerText}>
             Be a kind human and get permission before using my content. Thanks!
