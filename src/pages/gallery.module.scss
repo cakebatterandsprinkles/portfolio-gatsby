@@ -72,6 +72,21 @@
   margin-bottom: 0.5rem;
 }
 
+.iconWrapper {
+  display: flex;
+}
+
+.icon {
+  height: 1.75rem;
+  margin: 0.15rem 0.25rem 0 0.25rem;
+}
+
+.icon:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px var(--coolgray));
+  filter: drop-shadow(1px 1px 3px var(--coolgray));
+  cursor: pointer;
+}
+
 @media (max-width: 1680px) {
   .galleryWrapper {
     width: 900px;
