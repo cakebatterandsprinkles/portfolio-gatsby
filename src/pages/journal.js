@@ -258,7 +258,7 @@ const JournalPage = () => {
                         <div className={styles.contributorContainer}>
                           <FireIcon className={styles.contributorIcon} />
                           <p className={styles.contributorHeading}>
-                            Contributor:
+                            Co-author:
                           </p>
                           <a
                             href={

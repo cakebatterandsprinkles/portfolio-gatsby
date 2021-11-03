@@ -58,7 +58,7 @@ const ArticlePage = props => {
               {frontmatter.contributor ? (
                 <div className={styles.contributorContainer}>
                   <FireIcon className={styles.contributorIcon} />
-                  <p className={styles.contributorHeading}>Contributor:</p>
+                  <p className={styles.contributorHeading}>Co-author:</p>
                   <a
                     href={contributorGithubURL}
                     target="_blank"
