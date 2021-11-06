@@ -30,18 +30,14 @@ function AboutPage() {
             <p className={styles.query}>Which version would you like?</p>
             <div className={styles.queryWrapper}>
               <button
-                className={`${styles.timeLink} ${
-                  text === "long" ? styles.buttonActive : ""
-                }`}
+                className={`${styles.timeLink} ${text === "long" ? styles.buttonActive : ""}`}
                 onClick={() => setText("long")}
               >
                 <FilmIcon className={styles.icon} />
                 "I have time"
               </button>{" "}
               <button
-                className={`${styles.timeLink} ${
-                  text === "short" ? styles.buttonActive : ""
-                }`}
+                className={`${styles.timeLink} ${text === "short" ? styles.buttonActive : ""}`}
                 onClick={() => setText("short")}
               >
                 <FastForwardIcon className={styles.icon} />
@@ -59,7 +55,8 @@ function AboutPage() {
                     <span className={`${styles.pink} ${styles.highlight}`}>
                       front end web developer
                     </span>{" "}
-                    living in Orlando, Florida. I frequently use{" "}
+                    living in Orlando, Florida. </p>
+                  <p>I frequently use{" "}
                     <span className={`${styles.yellow} ${styles.highlight}`}>
                       JavaScript
                     </span>
@@ -73,9 +70,9 @@ function AboutPage() {
                     </span>
                     ,{" "}
                     <span className={`${styles.blue} ${styles.highlight}`}>
-                      react-redux
+                      Redux
                     </span>
-                    ,{" "}
+                    , and in addition to these, I use{" "}
                     <span className={`${styles.green} ${styles.highlight}`}>
                       Express.js
                     </span>
@@ -84,13 +81,17 @@ function AboutPage() {
                       Node.js
                     </span>
                     ,{" "}
+                    <span className={`${styles.pink} ${styles.highlight}`}>
+                      NestJS
+                    </span>
+                    ,{" "}
                     <span className={`${styles.orange} ${styles.highlight}`}>
                       MongoDB
                     </span>{" "}
                     and{" "}
                     <span className={`${styles.yellow} ${styles.highlight}`}>
-                      various 3rd party API's.
-                    </span>{" "}
+                      various 3rd party API's
+                    </span>{" "} in both personal an professional projects.
                   </p>
                   <p>
                     I happen to have an immense curiosity for many things in
@@ -103,13 +104,21 @@ function AboutPage() {
                       computer science
                     </span>
                     ,{" "}
-                    <span className={`${styles.pink} ${styles.highlight}`}>
+                    <span className={`${styles.orange} ${styles.highlight}`}>
                       art
+                    </span>
+                    ,{" "}
+                    <span className={`${styles.blue} ${styles.highlight}`}>
+                      linguistics
+                    </span>
+                    ,{" "}
+                    <span className={`${styles.crimson} ${styles.highlight}`}>
+                      history
                     </span>
                     {", "}
                     and{" "}
                     <span className={`${styles.green} ${styles.highlight}`}>
-                      animal behaviour
+                      animal (mostly corvid or rodent) behaviour
                     </span>
                     . I read a lot and sometimes write a lot.
                   </p>
@@ -207,7 +216,7 @@ function AboutPage() {
                       </span>{" "}
                       to hasten my learning process. I have been coding ever
                       since. I love the community and the ever changing
-                      enviroment of computer science. I think I have finally
+                      environment of computer science. I think I have finally
                       found home.
                     </p>
                   </div>
