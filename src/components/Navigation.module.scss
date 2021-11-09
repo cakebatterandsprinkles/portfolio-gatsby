@@ -119,8 +119,14 @@
   height: 1.35rem;
   width: auto;
   margin-bottom: 1.5rem;
+  margin-right: 0.75rem;
   filter: invert(19%) sepia(0%) saturate(1833%) hue-rotate(136deg)
     brightness(79%) contrast(67%);
+}
+
+.spotifyLink:hover {
+  filter: invert(61%) sepia(29%) saturate(5031%) hue-rotate(99deg)
+    brightness(96%) contrast(77%);
 }
 
 .githubLink:hover {

@@ -6,6 +6,7 @@ import mail from "../images/main/envelope.svg"
 import github from "../images/main/social-1_round-github.svg"
 import linkedin from "../images/main/social-1_round-linkedin.svg"
 import twitter from "../images/main/social-1_round-twitter.svg"
+import spotify from "../images/main/spotify.svg"
 import styles from "./Navigation.module.scss"
 
 const Navigation = () => {
@@ -136,6 +137,17 @@ const Navigation = () => {
               src={mail}
               alt="mail"
               className={`${styles.mailIcon} ${styles.mailLink}`}
+            />
+          </a>
+          <a
+            href="https://open.spotify.com/playlist/3TfdGxK3hPKiVXef3JIOt2?si=903b78b4551f43fc"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={spotify}
+              alt="mail"
+              className={`${styles.socialIcon} ${styles.spotifyLink}`}
             />
           </a>
         </div>
