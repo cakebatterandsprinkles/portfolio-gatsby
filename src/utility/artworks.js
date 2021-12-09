@@ -40,6 +40,18 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "Looking over your shoulder",
+    year: "2021",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/looking_over_your_shoulder.jpg"
+        alt="digital illustration of a cat in a flower field, looking over a human's shoulder"
+      />
+    ),
+  },
+  {
     name: "Cottonflower",
     year: "2021",
     medium: "Digital art made by using Procreate.",
