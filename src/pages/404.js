@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import { createHaiku } from "../utility/functions"
 import styles from "./404.module.scss"
-import journalStyles from "./journal.module.scss"
+import journalStyles from "./index.module.scss"
 
 const Page404 = () => {
   return (

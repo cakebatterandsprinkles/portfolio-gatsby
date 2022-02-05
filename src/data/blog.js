@@ -1,4 +1,4 @@
-import styles from "../pages/journal.module.scss"
+import styles from "../pages/index.module.scss"
 
 const tagStyles = {
   JavaScript: styles.darkyellow,

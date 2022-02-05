@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react"
 import Helmet from "react-helmet"
 import Layout from "../components/Layout"
 import ShareButton from "../components/shareButton"
-import styles from "../pages/journal.module.scss"
+import styles from "../pages/index.module.scss"
 import articleStyle from "./Article.module.scss"
 
 const ArticlePage = props => {
