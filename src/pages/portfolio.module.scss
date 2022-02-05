@@ -1,0 +1,93 @@
+.portfolioContainer {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.portfolioWrapper {
+  width: 1200px;
+  background-color: white;
+  padding: 3rem;
+  min-height: 70vh;
+  border-radius: 20px;
+}
+
+.disclaimerText {
+  font-size: 0.8rem;
+  color: var(--darkgray);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--silver);
+}
+
+.mainHeading {
+  margin: 0;
+}
+
+.gridContainer {
+  width: 100%;
+  min-height: 36vh;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.headingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1680px) {
+  .portfolioWrapper {
+    width: 900px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .portfolioWrapper {
+    width: 100%;
+    padding: 3rem;
+    min-height: 80vh;
+    margin-top: 0;
+  }
+
+  .portfolioContainer {
+    min-height: 80vh;
+    flex-direction: column;
+  }
+
+  .gridContainer {
+    padding-top: 0;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  .headingContainer {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolioWrapper {
+    padding: 2rem 1rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .disclaimerText {
+    font-size: 0.7rem;
+  }
+}
