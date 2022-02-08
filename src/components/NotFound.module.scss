@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.text {
+  font-family: var(--article-font);
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+.chicks {
+  border-radius: 10px;
+}
