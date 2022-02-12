@@ -45,7 +45,17 @@ const Navigation = () => {
           <li>
             <div className={`${styles.point} ${styles.yellow}`}></div>
             <Link
-              to="/"
+              to="/tidbits"
+              className={styles.navLink}
+              activeClassName={styles.activeNavLink}
+            >
+              Tidbits{" "}
+            </Link>
+          </li>
+          <li>
+            <div className={`${styles.point} ${styles.orange}`}></div>
+            <Link
+              to="/portfolio"
               className={styles.navLink}
               activeClassName={styles.activeNavLink}
             >
@@ -53,9 +63,9 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <div className={`${styles.point} ${styles.orange}`}></div>
+            <div className={`${styles.point} ${styles.crimson}`}></div>
             <Link
-              to="/journal"
+              to="/"
               className={styles.navLink}
               activeClassName={styles.activeNavLink}
             >
@@ -63,7 +73,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <div className={`${styles.point} ${styles.crimson}`}></div>
+            <div className={`${styles.point} ${styles.green}`}></div>
             <Link
               to="/gallery"
               className={styles.navLink}
@@ -73,7 +83,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <div className={`${styles.point} ${styles.green}`}></div>
+            <div className={`${styles.point} ${styles.blue}`}></div>
             <Link
               to="/about"
               className={styles.navLink}
