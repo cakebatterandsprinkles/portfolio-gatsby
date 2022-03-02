@@ -22,4 +22,13 @@ export const tidbitsArray = [
       { title: 'Which game am I playing?', icon: monster8, contentText: 'Stardew Valley', comment: 'Can I just live in my 8-bit farm from now on? I am so happy here.', creator: '', link: 'https://www.stardewvalley.net' },
       { title: 'Food of the month', icon: monster9, contentText: 'Strawberry Hazelnut Crepe', comment: `We found a crepe stand which has amazingly long waiting time. I am not making it up, it seriously takes an hour to get your crepe, but the end results are worth it. 😆`, creator: '', link: '' },]
   },
+  {
+    month: 3, year: 2022, content: [
+      { title: 'A new thing that I learned', icon: monster1, contentText: 'Humans introduce viable seeds to the Arctic on footwear.', creator: 'Chris Ware, Dana M. Bergstrom, Eike Müller & Inger Greve Alsos', comment: `We carry things everywhere we go. This study sampled the footwear of 259 travelers that arrived by air to to the high-Arctic archipelago of Svalbard which is in Norway, and recorded 1,019 seeds. (3.9 (±0.8) seeds per traveler, that belongs to 53 species.) And the growth of non-native species is expected to increase with climate change.`, link: 'https://link.springer.com/article/10.1007/s10530-011-0098-4#page-1' },
+      { title: 'What am I reading?', icon: monster6, contentText: 'Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch', creator: 'Neil Gaiman & Terry Pratchett', comment: '', link: 'https://www.goodreads.com/book/show/12067.Good_Omens' },
+      { title: 'Which song is on repeat?', icon: monster5, contentText: 'Journey', comment: `Love the rain in the background.`, creator: 'Tenno', link: 'https://open.spotify.com/track/2pAPo7r9woX5AwLDNzAgaV?si=0899616d2fc24305' },
+      { title: 'Something that made me think', icon: monster7, contentText: 'Every relationship is reciprocal. When you touch something, it touches you.', comment: '', creator: 'Fringe', link: 'https://www.imdb.com/title/tt1119644/' },
+      { title: 'Which game am I playing?', icon: monster8, contentText: 'Stardew Valley', comment: 'It is summer now, and we\'re planting melons and poppies. Farm is looking good and we haven\'t fallen asleep in the mines yet.', creator: '', link: 'https://www.stardewvalley.net' },
+      { title: 'Food of the month', icon: monster9, contentText: 'Blueberries', comment: `We went to a farm close to us to collect blueberries. It was so much fun. It tickles your inner obsessive and makes it happy.`, creator: '', link: '' },]
+  },
 ]
