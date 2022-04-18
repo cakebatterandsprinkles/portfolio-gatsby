@@ -18,6 +18,8 @@ const tagStyles = {
   Ornithology: styles.aeroblue,
   TypeScript: styles.candypink,
   Typography: styles.indigo,
+  "Node.js": styles.ivygreen,
+  "DevOps": styles.firered,
   default: styles.mediumpurple,
 }
 
