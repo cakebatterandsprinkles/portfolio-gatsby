@@ -40,6 +40,18 @@ const inkWork = [
 
 const digitalWork = [
   {
+    name: "Business Natural",
+    year: "2022",
+    medium: "Digital art made by using Procreate.",
+    image: (
+      <StaticImage
+        width={maxImageWidth}
+        src="../images/gallery/digital_art/taking_care_of_business.jpg"
+        alt="digital illustration of a caterpillar, a sparrow and a bee on a branch, looking rather serious"
+      />
+    ),
+  },
+  {
     name: "Looking over your shoulder",
     year: "2021",
     medium: "Digital art made by using Procreate.",
