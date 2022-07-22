@@ -51,9 +51,9 @@ const TidbitsPage = () => {
               Some stuff I want to share for no good reason
             </div>
             <div className={styles.dateContainer}>
-              <img src={ChevronLeft} className={styles.chevronLeft} onClick={handleLeftChevronClick} />
+              <img src={ChevronLeft} alt="left chevron" className={styles.chevronLeft} onClick={handleLeftChevronClick} />
               <p className={styles.date}>{displayMonthName(displayedMonth, displayedYear)}, {displayedYear}</p>
-              <img src={ChevronRight} className={styles.chevronRight} onClick={handleRightChevronClick} />
+              <img src={ChevronRight} alt="right chevron" className={styles.chevronRight} onClick={handleRightChevronClick} />
             </div>
             <div className={styles.gridContainer}>
               {findCorrectAnnouncement(tidbitsArray, displayedMonth, displayedYear) ?
@@ -61,7 +61,7 @@ const TidbitsPage = () => {
                   return (
                     <div key={`${item.contentText.slice(0, 8)}-${index}`} className={styles.cardWrapper}>
                       <div className={styles.titleAndIconWrapper}>
-                        <img src={item.icon} className={styles.icon} />
+                        <img src={item.icon} alt="monster figure that is relevant for the title" className={styles.icon} />
                         <p className={styles.title}>{item.title}</p>
                       </div>
                       <div className={styles.contentAndCreatorWrapper}>
