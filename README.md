@@ -1,6 +1,6 @@
 ## License
 
-The content of this project itself is licensed under the [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/), and the underlying source code used to format and display that content is licensed under the MIT license.
+The content of this project itself is licensed under the [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
 This is my portfolio, my little binary space on Earth. I love my portfolio and I love maintaining and adding new things to it. If you'd like to use the art content in it, please be kind and ask for it first. For the journal content, proper crediting would make me happy.
 
